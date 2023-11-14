@@ -1,0 +1,90 @@
+@font-face {
+  font-family: 'webarq-icons';
+  src:  url('fonts/webarq-iconscc53.eot?tmolne');
+  src:  url('fonts/webarq-iconscc53.eot?tmolne#iefix') format('embedded-opentype'),
+    url('fonts/webarq-iconscc53.ttf?tmolne') format('truetype'),
+    url('fonts/webarq-iconscc53.woff?tmolne') format('woff'),
+    url('fonts/webarq-iconscc53.svg?tmolne#webarq-icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="ic-"], [class*=" ic-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'webarq-icons' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ic-globe:before {
+  content: "\e914";
+}
+.ic-call-center:before {
+  content: "\e900";
+}
+.ic-chat:before {
+  content: "\e901";
+}
+.ic-chevron-down:before {
+  content: "\e902";
+}
+.ic-chevron-down-sm:before {
+  content: "\e903";
+}
+.ic-chevron-left:before {
+  content: "\e904";
+}
+.ic-chevron-left-sm:before {
+  content: "\e905";
+}
+.ic-chevron-right:before {
+  content: "\e906";
+}
+.ic-chevron-right-sm:before {
+  content: "\e907";
+}
+.ic-chevron-up:before {
+  content: "\e908";
+}
+.ic-chevron-up-sm:before {
+  content: "\e909";
+}
+.ic-cross:before {
+  content: "\e90a";
+}
+.ic-email:before {
+  content: "\e90b";
+}
+.ic-fax:before {
+  content: "\e90c";
+}
+.ic-location:before {
+  content: "\e90d";
+}
+.ic-minus:before {
+  content: "\e90e";
+}
+.ic-phone:before {
+  content: "\e90f";
+}
+.ic-pin-point:before {
+  content: "\e910";
+}
+.ic-plus:before {
+  content: "\e911";
+}
+.ic-search:before {
+  content: "\e912";
+}
+.ic-trash:before {
+  content: "\e913";
+}

@@ -234,7 +234,7 @@ function myFunction() {
 					<li class="nav-item dropdown ">
 						<!-- 						<a href="https://www.jne.co.id/produk-dan-layanan" class="nav-link">Produk dan Layanan</a>
 						 -->
-						<a href="produk-dan-layanan.html" class="nav-link">Produk dan Layanan</a>
+						<a href="produk-dan-layanan.html" class="nav-link">ABOUT US</a>
 
 						<span class="nav-arrow ic-chevron-down"></span>
 
@@ -267,7 +267,7 @@ function myFunction() {
 					<li class="nav-item dropdown ">
 						<!-- 						<a href="javascript:void(0)" class="nav-link">Solusi Bisnis</a>
 						 -->
-						<a href="solusi-bisnis.html" class="nav-link">Solusi Bisnis</a>
+						<a href="solusi-bisnis.html" class="nav-link">LATEST RESULT</a>
 
 						<span class="nav-arrow ic-chevron-down"></span>
 
@@ -291,18 +291,16 @@ function myFunction() {
 							</div>
 						</div>
 					</li>
-																				<li class="nav-item ">
-												<a href="hubungi-kami.html" class="nav-link">Hubungi Kami</a>
-											</li>
-																				<li class="nav-item ">
-												<a href="berita.html" class="nav-link">Berita</a>
-											</li>
-																				<li class="nav-item ">
-												<a href="karir.html" class="nav-link">Karir</a>
-											</li>
-															
-					<li class="nav-item">
-						<button type="button" class="nav-search">
+                    <li class="nav-item ">
+                        <a href="hubungi-kami.html" class="nav-link">Hubungi Kami</a>
+                    </li>
+                    <a href="berita.html" class="nav-link">CARA PEMESANAN</a>
+                </li>
+                <li class="nav-item ">
+                    <a href="karir.html" class="nav-link">Karir</a>
+                </li>
+                <li class="nav-item">
+                    <button type="button" class="nav-search">
 							<i class="ic-search"></i>
 						</button>
 					</li>
@@ -462,44 +460,36 @@ function myFunction() {
                     </p>
                 </div>
                 <div class="box-socmed">
-                                        <a href="https://www.instagram.com/jne_id/" target="_blank nofollow"><img src="asset/cfind/source/images/ico-socmed-instagram.svg" alt=""></a>
-                                        <a href="https://www.tiktok.com/@jne_id" target="_blank nofollow"><img src="asset/cfind/source/images/ico-socmed-tiktok.svg" alt=""></a>
-                                        <a href="https://twitter.com/JNE_ID" target="_blank nofollow"><img src="asset/cfind/source/images/x.svg" alt=""></a>
-                                        <a href="https://www.linkedin.com/company/pt--tiki-jalur-nugraha-ekakurir-jne-/mycompany/?viewAsMember=true" target="_blank nofollow"><img src="asset/cfind/source/images/untitled.svg" alt=""></a>
-                                        <a href="https://www.facebook.com/JNEPusat" target="_blank nofollow"><img src="asset/cfind/source/images/untitled-_1__1.svg" alt=""></a>
-                    
+                    <a href="https://www.instagram.com/jne_id/" target="_blank nofollow"><img src="asset/cfind/source/images/ico-socmed-instagram.svg" alt=""></a>
+                    <a href="https://www.tiktok.com/@jne_id" target="_blank nofollow"><img src="asset/cfind/source/images/ico-socmed-tiktok.svg" alt=""></a>
+                    <a href="https://twitter.com/JNE_ID" target="_blank nofollow"><img src="asset/cfind/source/images/x.svg" alt=""></a>
+                    <a href="https://www.linkedin.com/company/pt--tiki-jalur-nugraha-ekakurir-jne-/mycompany/?viewAsMember=true" target="_blank nofollow"><img src="asset/cfind/source/images/untitled.svg" alt=""></a>
+                    <a href="https://www.facebook.com/JNEPusat" target="_blank nofollow"><img src="asset/cfind/source/images/untitled-_1__1.svg" alt=""></a>
                 </div>
             </div>
-
             <div class="wrap-footer-top__right">
                 <div class="box-nav">
-                                        <div class="box-nav__column">
+                    <div class="box-nav__column">
                         <div class="nav-foot">
-                            <h5>PERUSAHAAN</h5>
+                            <h5>HOME</h5>
                             <ul>
-                                                                                                <li><a href="profil-perusahaan.html"   target="_blank nofollow"
-                                        >Profil Perusahaan</a></li>
-                                                                                                <li><a href="penghargaan.html"   target="_blank nofollow"
-                                        >Penghargaan</a></li>
-                                                                                                <li><a href="keberlanjutan.html"   target="_blank nofollow"
-                                        >CSR</a></li>
-                                                                                                <li><a href="hubungi-kami.html"   target="_blank nofollow"
-                                        >Hubungi Kami</a></li>
-                                                                                                <li><a href="karir.html"   target="_blank nofollow"
-                                        >Karir</a></li>
-                                                            </ul>
+                                <li><a href="profil-perusahaan.html"   target="_blank nofollow">Profil Perusahaan</a></li>
+                                <li><a href="penghargaan.html"   target="_blank nofollow">Penghargaan</a></li>
+                                <li><a href="keberlanjutan.html"   target="_blank nofollow">CSR</a></li>
+                                <li><a href="hubungi-kami.html"   target="_blank nofollow">Hubungi Kami</a></li><li><a href="karir.html"   target="_blank nofollow">Karir</a></li>
+                            </ul>
                         </div>
                     </div>
                     <div class="box-nav__column">
                         <div class="nav-foot">
                             <h5>PRODUK</h5>
                             <ul>
-                                                                                                <li><a href="produk.html#product-1">JNE Express</a></li>
-                                                                <li><a href="produk.html#product-2">JNE Logistics</a></li>
-                                                                <li><a href="produk.html#product-3">JNE Freight</a></li>
-                                                                <li><a href="produk.html#product-4">JNE International</a></li>
-                                                                <li><a href="produk.html#product-5">Roket Indonesia</a></li>
-                                                            </ul>
+                                <li><a href="produk.html#product-1">JNE Express</a></li>
+                                <li><a href="produk.html#product-2">JNE Logistics</a></li>
+                                <li><a href="produk.html#product-3">JNE Freight</a></li>
+                                <li><a href="produk.html#product-4">JNE International</a></li>
+                                <li><a href="produk.html#product-5">Roket Indonesia</a></li>
+                            </ul>
                         </div>
                     </div>
 

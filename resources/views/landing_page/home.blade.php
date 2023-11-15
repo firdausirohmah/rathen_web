@@ -2,9 +2,6 @@
 
 @section('content')
     <style>
-        .jersey {
-            margin-top: 10px;
-        },
         a:hover{
             color: red;
         },
@@ -24,7 +21,7 @@
                 <a class="form button-search"  href="{{ url('/page-costum') }}">
                     <i><img src="asset/images/icon baju - biru.png"></i>
                     <div class="input-box" >
-                        <h4 class="item-center jersey">COSTUM JARSEY</h4>
+                        <h4 class="item-center jersey">COSTUM JERSEY</h4>
                         {{-- <input type="text" placeholder="Masukkan nomor pesanan" name="pesanan" required> --}}
                         {{-- <input type="submit" class="button-search" placeholder="COSTUM JARSEY"> --}}
                         {{-- <small>*Beri tanda koma jika lebih dari 1 resi</small> --}}
@@ -35,7 +32,7 @@
                 <a class="form button-search"  href="{{ url('/page-costum') }}">
                     <i><img src="asset/images/icon baju - ungu.png"></i>
                     <div class="input-box">
-                        <h4 class="item-center jersey">COSTUM JARSEY</h4>
+                        <h4 class="item-center jersey">COSTUM JERSEY</h4>
                     </div>
                 </a>
             </div>

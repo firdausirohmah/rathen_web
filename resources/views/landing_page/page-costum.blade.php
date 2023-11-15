@@ -1,14 +1,7 @@
 @extends('layout.landingpage')
 
 @section('content')
-    <style>
-        .jersey {
-            margin-top: 10px;
-        },
-        a:hover{
-            color: red;
-        },
-    </style>
+    
 <section style="overflow: hidden;">
     <section class="main-banner">
         <div class="main-banner__logo">
@@ -21,10 +14,10 @@
         </div> --}}
         <div class="main-banner__cekresi">
             <div class="main-banner__cekresi--list cek-lacak">
-                <a class="form button-search"  href="{{ url('/page-costum') }}">
+                <a class="form"  href="https://www.jne.co.id/tracking-package">
                     <i><img src="asset/images/icon baju - biru.png"></i>
-                    <div class="input-box" >
-                        <h4 class="item-center jersey">COSTUM JARSEY</h4>
+                    <div class="input-box" style="margin-top: 10px">
+                        <h4 class="item-center mt-10">COSTUM JARSEY</h4>
                         {{-- <input type="text" placeholder="Masukkan nomor pesanan" name="pesanan" required> --}}
                         {{-- <input type="submit" class="button-search" placeholder="COSTUM JARSEY"> --}}
                         {{-- <small>*Beri tanda koma jika lebih dari 1 resi</small> --}}
@@ -32,12 +25,44 @@
                 </a>
             </div>
             <div class="main-banner__cekresi--list cek-tarif">
-                <a class="form button-search"  href="{{ url('/page-costum') }}">
-                    <i><img src="asset/images/icon baju - ungu.png"></i>
+                <div class="box-tarif">
+                    <form action="https://www.jne.co.id/shipping-fee" id="formResi">
+                        <div class="field field-from field-autocomplete">
+                            <i class="ico">
+                                <img src="asset/images/material/ico-cek-map.svg">
+                            </i>
+                            <input type="text" placeholder="Kota Awal" autocomplete="off" params="1" required>
+                            <input type="hidden" name="origin">
+                            <div class="autocomplete-box"></div>
+                        </div>
+                        <div class="field field-to field-autocomplete">
+                            <i class="ico">
+                                <img src="asset/images/material/ico-cek-to.svg">
+                            </i>
+                            <input type="text" placeholder="Kota Tujuan" autocomplete="off" params="2" required>
+                            <input type="hidden" name="destination">
+                            <div class="autocomplete-box"></div>
+                        </div>
+                        <div class="field field-weight">
+                            <i class="ico">
+                                <img src="asset/images/material/ico-cek-weight.svg">
+                            </i>
+                            <input type="text" placeholder="Berat barang" name="weight" required>
+                            <span class="weight">kg</span>
+                        </div>
+                        <div class="field field-button">
+                            <button href="shipping-fee.html" class="button button-outline btn-hitung" type="submit">Check</button>
+                        </div>
+                    </form>
+                </div>
+                <form class="form">
+                    <i><img src="asset/images/material/ico-cek.svg"></i>
                     <div class="input-box">
-                        <h4 class="item-center jersey">COSTUM JARSEY</h4>
+                        <label>CEK HARGA</label>
+                        <input type="text" placeholder="Masukan data pesanan">
+                        <a class="button-search button-search-resi"></a>
                     </div>
-                </a>
+                </form>
             </div>
         </div>
         <div class="main-banner__video">

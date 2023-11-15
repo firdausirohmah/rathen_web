@@ -170,7 +170,7 @@ function myFunction() {
 </script>
 
 <div  id="floatingMenu" class="floating-menu" onClick="myFunction()" style="position: fixed; z-index: 10; margin: auto; right: 10px; bottom: 5%;">
-  <a href="#" class="kurir-bt" style="max-width:150px"><img src="https://pttikijalurnugrahaekakurir.force.com/eclaimform/resource/1671433394000/chatLogo" width= "150" height="160"/><!--<img src="https://www.jne.co.id/frontend/images/material/joni_ramadhan.png" />--></a>
+  <a href="#" class="kurir-bt" style="max-width:150px"><img src="asset/images/chat.png" width= "150" height="160"/><!--<img src="https://www.jne.co.id/frontend/images/material/joni_ramadhan.png" />--></a>
 </div>
 
 </body>

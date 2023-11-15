@@ -9,7 +9,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     
-<title>JNE Menyambung Kebahagiaan Dari Generasi ke Generasi</title>
+<title>Rathen</title>
+
 <meta name="title" content="JNE Menyambung Kebahagiaan Dari Generasi ke Generasi">
 <meta name="description" content="PT. Tiki Jalur Nugraha Ekakurir atau biasa dikenal sebagai JNE merupakan salah satu perusahaan ekspedisi barang terbesar di Indonesia.">
 <meta name="keywords" content="PT. Tiki Jalur Nugraha Ekakurir atau biasa dikenal sebagai JNE merupakan salah satu perusahaan ekspedisi barang terbesar di Indonesia.">
@@ -30,6 +31,7 @@
 <meta name="twitter:description" content="PT. Tiki Jalur Nugraha Ekakurir atau biasa dikenal sebagai JNE merupakan salah satu perusahaan ekspedisi barang terbesar di Indonesia.">
 <meta name="twitter:twitter-id" content="">
 <meta name="twitter:image" content="">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-7V32MGQLQ4"></script>
 <script>
@@ -191,8 +193,7 @@ function myFunction() {
 		<div class="navbar-collapse offcanvas">
 			<div class="offcanvas-overlay"></div>
 			<div class="offcanvas-body">
-				<ul class="navbar-nav">
-															 
+                <ul class="navbar-nav">
 					<li class="nav-item dropdown ">
 						<!-- 						<a href="https://www.jne.co.id/perusahaan" class="nav-link">Perusahaan</a>
 						 -->
@@ -203,34 +204,33 @@ function myFunction() {
 						<div class="dropdown-menu-lg">
 							<div class="bg-line">
 								<div class="line-solid"></div>
-								<div class="line-dashed"></div>
-								<div class="line-point">
-									<div class="circle-point"></div>
-								</div>
-							</div>
-							<div class="wrapper">
-								<div class="row">
-																		<div class="column column-33">
-										<a href="profil-perusahaan.html" class="nav-link-title">Profil Perusahaan</a>
-																					<p>Cari tahu lebih lanjut mengenai JNE</p>
-																				<a href="profil-perusahaan.html" class="button button-clear button-arrow">Pelajari Lebih Lanjut</a>	
-									</div>
-																		<div class="column column-33">
-										<a href="penghargaan.html" class="nav-link-title">Penghargaan</a>
-																					<p>Beberapa apresiasi yang kami terima</p>
-																				<a href="penghargaan.html" class="button button-clear button-arrow">Pelajari Lebih Lanjut</a>	
-									</div>
-																		<div class="column column-33">
-										<a href="keberlanjutan.html" class="nav-link-title">CSR</a>
-																					<p>Sesuai dengan nilai perusahaan, kami sangat aktif dalam bidang kemanusiaan.</p>
-																				<a href="keberlanjutan.html" class="button button-clear button-arrow">Pelajari Lebih Lanjut</a>	
-									</div>
-																		
-								</div>
-							</div>
-						</div>
-					</li>
-															 
+                                <div class="line-dashed"></div>
+                                <div class="line-point">
+                                    <div class="circle-point"></div>
+                                </div>
+                            </div>
+                            <div class="wrapper">
+                                <div class="row">
+                                    <div class="column column-33">
+                                        <a href="profil-perusahaan.html" class="nav-link-title">Profil Perusahaan</a>
+                                        <p>Cari tahu lebih lanjut mengenai JNE</p>
+                                        <a href="profil-perusahaan.html" class="button button-clear button-arrow">Pelajari Lebih Lanjut</a>	
+                                    </div>
+                                    <div class="column column-33">
+                                        <a href="penghargaan.html" class="nav-link-title">Penghargaan</a>
+                                        <p>Beberapa apresiasi yang kami terima</p>
+                                        <a href="penghargaan.html" class="button button-clear button-arrow">Pelajari Lebih Lanjut</a>	
+                                    </div>
+                                    <div class="column column-33">
+                                        <a href="keberlanjutan.html" class="nav-link-title">CSR</a>
+                                        <p>Sesuai dengan nilai perusahaan, kami sangat aktif dalam bidang kemanusiaan.</p>
+                                        <a href="keberlanjutan.html" class="button button-clear button-arrow">Pelajari Lebih Lanjut</a>	
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                                                                
 					<li class="nav-item dropdown ">
 						<!-- 						<a href="https://www.jne.co.id/produk-dan-layanan" class="nav-link">Produk dan Layanan</a>
 						 -->
@@ -248,17 +248,16 @@ function myFunction() {
 							</div>
 							<div class="wrapper">
 								<div class="row">
-																		<div class="column column-33">
+                                    <div class="column column-33">
 										<a href="produk.html" class="nav-link-title">Produk</a>
-																					<p>Pengiriman aman dan nyaman bersama ekspedisi terpercaya</p>
-																				<a href="produk.html" class="button button-clear button-arrow">Pelajari Lebih Lanjut</a>	
+										<p>Pengiriman aman dan nyaman bersama ekspedisi terpercaya</p>
+										<a href="produk.html" class="button button-clear button-arrow">Pelajari Lebih Lanjut</a>	
 									</div>
-																		<div class="column column-33">
+                                    <div class="column column-33">
 										<a href="layanan.html" class="nav-link-title">Layanan</a>
-																					<p>Nikmati layanan yang dapat mengantarkan kebahagiaan</p>
-																				<a href="layanan.html" class="button button-clear button-arrow">Pelajari Lebih Lanjut</a>	
+										<p>Nikmati layanan yang dapat mengantarkan kebahagiaan</p>
+										<a href="layanan.html" class="button button-clear button-arrow">Pelajari Lebih Lanjut</a>	
 									</div>
-																		
 								</div>
 							</div>
 						</div>
@@ -281,35 +280,32 @@ function myFunction() {
 							</div>
 							<div class="wrapper">
 								<div class="row">
-																		<div class="column column-33">
+                                    <div class="column column-33">
 										<a href="kemitraan.html" class="nav-link-title">Kemitraan</a>
-																					<p>Kembangkan bisnismu bersama JNE</p>
-																				<a href="kemitraan.html" class="button button-clear button-arrow">Pelajari Lebih Lanjut</a>	
+                                        <p>Kembangkan bisnismu bersama JNE</p>
+                                        <a href="kemitraan.html" class="button button-clear button-arrow">Pelajari Lebih Lanjut</a>	
 									</div>
-																		
-								</div>
+                                </div>
 							</div>
 						</div>
 					</li>
-																				<li class="nav-item ">
-												<a href="hubungi-kami.html" class="nav-link">Hubungi Kami</a>
-											</li>
-																				<li class="nav-item ">
-												<a href="berita.html" class="nav-link">Berita</a>
-											</li>
-																				<li class="nav-item ">
-												<a href="karir.html" class="nav-link">Karir</a>
-											</li>
-															
-					<li class="nav-item">
+                    <li class="nav-item ">
+                        <a href="hubungi-kami.html" class="nav-link">Hubungi Kami</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a href="berita.html" class="nav-link">Berita</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a href="karir.html" class="nav-link">Karir</a>
+                    </li>
+                    <li class="nav-item">
 						<button type="button" class="nav-search">
 							<i class="ic-search"></i>
 						</button>
 					</li>
 				</ul>
-
-				<form action="https://www.jne.co.id/search" class="navbar-search">
-					<div class="input-group">
+                <form action="https://www.jne.co.id/search" class="navbar-search">
+                    <div class="input-group">
 						<i class="ic-search"></i>
 						<input type="text" placeholder="Cari atau masukan nomor resi" name="search" value=" ">
 						<button type="button" class="nav-close-search">
@@ -684,6 +680,7 @@ function myFunction() {
         });
     });
 </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <!--end of Footer -->
 </body>
 

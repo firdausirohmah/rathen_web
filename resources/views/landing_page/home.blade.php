@@ -5,22 +5,22 @@
 <section style="overflow: hidden;">
     <section class="main-banner">
         <div class="main-banner__logo">
-            <img src="asset/cfind/source/images/logo-white.svg" alt="">
+            <img src="asset/cfind/source/images/rathen.png" alt="">
         </div>
 
-        <div class="main-banner__text">
+        {{-- <div class="main-banner__text">
             <h1>Menyambung Kebahagiaan dari Generasi ke Generasi</h1>
             <a class="button button-outline button-trigger-say">Jelajahi Lebih Jauh</a>
-        </div>
+        </div> --}}
         <div class="main-banner__cekresi">
             <div class="main-banner__cekresi--list cek-lacak">
                 <form class="form" method="get" action="https://www.jne.co.id/tracking-package">
                     <i><img src="asset/images/material/ico-lacak.svg"></i>
                     <div class="input-box">
-                        <label>Lacak Pengiriman</label>
-                        <input type="text" placeholder="Masukkan nomor resi" name="resi" required>
+                        <label>LACAK PESANANN</label>
+                        <input type="text" placeholder="Masukkan nomor pesanan" name="pesanan" required>
                         <button type="submit" class="button-search"></button>
-                        <small>*Beri tanda koma jika lebih dari 1 resi</small>
+                        {{-- <small>*Beri tanda koma jika lebih dari 1 resi</small> --}}
                     </div>
                 </form>
             </div>
@@ -58,8 +58,8 @@
                 <form class="form">
                     <i><img src="asset/images/material/ico-cek.svg"></i>
                     <div class="input-box">
-                        <label>Cek Tarif</label>
-                        <input type="text" placeholder="Masukan data pengiriman">
+                        <label>CEK HARGA</label>
+                        <input type="text" placeholder="Masukan data pesanan">
                         <a class="button-search button-search-resi"></a>
                     </div>
                 </form>
@@ -67,8 +67,9 @@
         </div>
         <div class="main-banner__video">
             <video muted="muted" loop="loop" id="videohome" autoplay="autoplay" playsinline>
-                <source src="asset/cfind/source/files/hugo-papua-15-website.mp4" type="video/mp4">
-                <source src="asset/cfind/source/files/hugo-papua-15-website.webm" type="video/webm">
+                <source src="asset/cfind/source/files/video.mp4" type="video/mp4">
+                {{-- <source src="asset/cfind/source/files/hugo-papua-15-website.mp4" type="video/mp4"> --}}
+                {{-- <source src="asset/cfind/source/files/hugo-papua-15-website.webm" type="video/webm"> --}}
             </video>
         </div>
     </section>

@@ -17,6 +17,7 @@
     height: 80px;
     left: 0;
     max-height: 80px;
+
     position: fixed;
     font-family: Montheavy;
     color: #1890fd;
@@ -1425,7 +1426,11 @@ header.show {
     margin: 0 auto;
     position: absolute;
     right: 0;
-    z-index: 3;
+  z-index: 3;
+}
+.jersey {
+    margin-top: 10px;
+    font-family: Montheavy;
 }
 .main-banner__logo {
     top: 40px;

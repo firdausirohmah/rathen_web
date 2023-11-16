@@ -11,11 +11,7 @@
         <div class="main-banner__logo">
             <img src="asset/cfind/source/images/rathen.png" alt="">
         </div>
-
-        {{-- <div class="main-banner__text">
-            <h1>Menyambung Kebahagiaan dari Generasi ke Generasi</h1>
-            <a class="button button-outline button-trigger-say">Jelajahi Lebih Jauh</a>
-        </div> --}}
+        {{--  --}}
         <div class="main-banner__cekresi">
             <div class="main-banner__cekresi--list cek-lacak">
                 <a class="form button-search"  href="{{ url('/page-costum') }}">

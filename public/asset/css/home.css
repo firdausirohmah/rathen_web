@@ -17,9 +17,10 @@
     height: 80px;
     left: 0;
     max-height: 80px;
-    font-family: Monheavy;
-    color: #1890fd;
+
     position: fixed;
+    font-family: Montheavy;
+    color: #1890fd;
     right: 0;
     top: 0;
     transition: all 0.3s ease-out;
@@ -53,6 +54,8 @@
     display: flex;
     flex-wrap: wrap;
     font-family: Heebo;
+    /* font-family: "Mont-Heavy", Mont-Heavy; */
+    color: #1890fd;
     justify-content: space-between;
     margin: 0;
 }
@@ -1423,7 +1426,7 @@ header.show {
     margin: 0 auto;
     position: absolute;
     right: 0;
-    z-index: 3;
+  z-index: 3;
 }
 .jersey {
     margin-top: 10px;

@@ -170,8 +170,9 @@ function myFunction() {
 </script>
 
 <div  id="floatingMenu" class="floating-menu" onClick="myFunction()" style="position: fixed; z-index: 10; margin: auto; right: 10px; bottom: 5%;">
-  <a href="#" class="kurir-bt" style="max-width:150px"><img src="asset/images/chat.png" width= "150" height="160"/><!--<img src="https://www.jne.co.id/frontend/images/material/joni_ramadhan.png" />--></a>
-</div>
+    <a href="https://wa.me/628123456789" class="kurir-bt" style="max-width:150px">
+        <img src="asset/images/chat.png" width="150" height="160" />
+      </a></div>
 
 </body>
 
@@ -194,112 +195,37 @@ function myFunction() {
 				<ul class="navbar-nav">
 															 
 					<li class="nav-item dropdown ">
-						<!-- 						<a href="https://www.jne.co.id/perusahaan" class="nav-link">Perusahaan</a>
-						 -->
-						<a href="perusahaan.html" class="nav-link">Perusahaan</a>
+				
+						<a href="/" class="nav-link">Home</a>
 
 						<span class="nav-arrow ic-chevron-down"></span>
 
-						<div class="dropdown-menu-lg">
-							<div class="bg-line">
-								<div class="line-solid"></div>
-								<div class="line-dashed"></div>
-								<div class="line-point">
-									<div class="circle-point"></div>
-								</div>
-							</div>
-							<div class="wrapper">
-								<div class="row">
-																		<div class="column column-33">
-										<a href="profil-perusahaan.html" class="nav-link-title">Profil Perusahaan</a>
-																					<p>Cari tahu lebih lanjut mengenai JNE</p>
-																				<a href="profil-perusahaan.html" class="button button-clear button-arrow">Pelajari Lebih Lanjut</a>	
-									</div>
-																		<div class="column column-33">
-										<a href="penghargaan.html" class="nav-link-title">Penghargaan</a>
-																					<p>Beberapa apresiasi yang kami terima</p>
-																				<a href="penghargaan.html" class="button button-clear button-arrow">Pelajari Lebih Lanjut</a>	
-									</div>
-																		<div class="column column-33">
-										<a href="keberlanjutan.html" class="nav-link-title">CSR</a>
-																					<p>Sesuai dengan nilai perusahaan, kami sangat aktif dalam bidang kemanusiaan.</p>
-																				<a href="keberlanjutan.html" class="button button-clear button-arrow">Pelajari Lebih Lanjut</a>	
-									</div>
-																		
-								</div>
-							</div>
-						</div>
+															 
+					<li class="nav-item dropdown ">
+						
+						<a href="/about" class="nav-link">About Us</a>
+
+						<span class="nav-arrow ic-chevron-down"></span>
+
 					</li>
 															 
 					<li class="nav-item dropdown ">
-						<!-- 						<a href="https://www.jne.co.id/produk-dan-layanan" class="nav-link">Produk dan Layanan</a>
-						 -->
-						<a href="produk-dan-layanan.html" class="nav-link">Produk dan Layanan</a>
-
+						<a href="/result" class="nav-link">Latest Result</a>
 						<span class="nav-arrow ic-chevron-down"></span>
-
-						<div class="dropdown-menu-lg">
-							<div class="bg-line">
-								<div class="line-solid"></div>
-								<div class="line-dashed"></div>
-								<div class="line-point">
-									<div class="circle-point"></div>
-								</div>
-							</div>
-							<div class="wrapper">
-								<div class="row">
-																		<div class="column column-33">
-										<a href="produk.html" class="nav-link-title">Produk</a>
-																					<p>Pengiriman aman dan nyaman bersama ekspedisi terpercaya</p>
-																				<a href="produk.html" class="button button-clear button-arrow">Pelajari Lebih Lanjut</a>	
-									</div>
-																		<div class="column column-33">
-										<a href="layanan.html" class="nav-link-title">Layanan</a>
-																					<p>Nikmati layanan yang dapat mengantarkan kebahagiaan</p>
-																				<a href="layanan.html" class="button button-clear button-arrow">Pelajari Lebih Lanjut</a>	
-									</div>
-																		
-								</div>
-							</div>
-						</div>
+                        
 					</li>
-															 
-					<li class="nav-item dropdown ">
-						<!-- 						<a href="javascript:void(0)" class="nav-link">Solusi Bisnis</a>
-						 -->
-						<a href="solusi-bisnis.html" class="nav-link">Solusi Bisnis</a>
-
-						<span class="nav-arrow ic-chevron-down"></span>
-
-						<div class="dropdown-menu-lg">
-							<div class="bg-line">
-								<div class="line-solid"></div>
-								<div class="line-dashed"></div>
-								<div class="line-point">
-									<div class="circle-point"></div>
-								</div>
-							</div>
-							<div class="wrapper">
-								<div class="row">
-																		<div class="column column-33">
-										<a href="kemitraan.html" class="nav-link-title">Kemitraan</a>
-																					<p>Kembangkan bisnismu bersama JNE</p>
-																				<a href="kemitraan.html" class="button button-clear button-arrow">Pelajari Lebih Lanjut</a>	
-									</div>
-																		
-								</div>
-							</div>
-						</div>
-					</li>
-																				<li class="nav-item ">
-												<a href="hubungi-kami.html" class="nav-link">Hubungi Kami</a>
-											</li>
-																				<li class="nav-item ">
-												<a href="berita.html" class="nav-link">Berita</a>
-											</li>
-																				<li class="nav-item ">
-												<a href="karir.html" class="nav-link">Karir</a>
-											</li>
+						<li class="nav-item ">
+							<a href="/pemesanan" class="nav-link">Cara Pemesanan</a>
+						</li>
+						<li class="nav-item ">
+							<a href="/pricelist" class="nav-link">Price List</a>
+						</li>
+                		<li class="nav-item ">
+							<a href="/location" class="nav-link">Location</a>
+						</li>
+                        <li class="nav-item ">
+							<a href="/contact" class="nav-link">Contact Us</a>
+						</li>
 															
 					<li class="nav-item">
 						<button type="button" class="nav-search">
@@ -373,7 +299,7 @@ function myFunction() {
 	</nav>
 </header>    </header>
     <!-- end of header -->
-    
+
 @yield('content')
 <script>
     function setCookie(name, value, days) {
@@ -475,7 +401,7 @@ function myFunction() {
                 <div class="box-nav">
                                         <div class="box-nav__column">
                         <div class="nav-foot">
-                            <h5>PERUSAHAAN</h5>
+                            <h5>ABOUT US</h5>
                             <ul>
                                                                                                 <li><a href="profil-perusahaan.html"   target="_blank nofollow"
                                         >Profil Perusahaan</a></li>

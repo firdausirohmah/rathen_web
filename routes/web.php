@@ -16,12 +16,21 @@ use Illuminate\Support\Facades\Route;
 // home
 Route::get('/', function () {
     return view('landing_page.home');
-    // return view('welcome');
 });
 
 // landing page
 Route::get('/page-costum', function () {
     return view('landing_page.page-costum');
+});
+
+// about us
+Route::get('/landingpage', function () {
+    return view('about');
+});
+
+// latest result
+Route::get('/landingpage', function () {
+    return view('result');
 });
 
 

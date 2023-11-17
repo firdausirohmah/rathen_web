@@ -8,28 +8,13 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    
-<title>rathen</title>
-<meta name="title" content="JNE Menyambung Kebahagiaan Dari Generasi ke Generasi">
-<meta name="description" content="PT. Tiki Jalur Nugraha Ekakurir atau biasa dikenal sebagai JNE merupakan salah satu perusahaan ekspedisi barang terbesar di Indonesia.">
-<meta name="keywords" content="PT. Tiki Jalur Nugraha Ekakurir atau biasa dikenal sebagai JNE merupakan salah satu perusahaan ekspedisi barang terbesar di Indonesia.">
-<meta name="url" content="index.html">
-<meta name="image" content="">
-<meta name="fb::app_id" content="">
-<meta name="article:author" content="">
 
-<meta name="og:type" content="website">
-<meta name="og:title" content="JNE Menyambung Kebahagiaan Dari Generasi ke Generasi">
-<meta name="og:description" content="PT. Tiki Jalur Nugraha Ekakurir atau biasa dikenal sebagai JNE merupakan salah satu perusahaan ekspedisi barang terbesar di Indonesia.">
-<meta name="og:url" content="index.html">
-<meta name="og:image" content="">
-<meta name="og:author" content="">
-
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JNE Menyambung Kebahagiaan Dari Generasi ke Generasi">
-<meta name="twitter:description" content="PT. Tiki Jalur Nugraha Ekakurir atau biasa dikenal sebagai JNE merupakan salah satu perusahaan ekspedisi barang terbesar di Indonesia.">
-<meta name="twitter:twitter-id" content="">
-<meta name="twitter:image" content="">
+   
+    <script src="/js/app.js" defer></script>
+    <link href="/css/app.css" rel="stylesheet">
+    {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> --}}
+   <title>Rathen</title>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-7V32MGQLQ4"></script>
 <script>
@@ -81,7 +66,15 @@ src="https://www.facebook.com/tr?id=1058956608607048&amp;ev=PageView&amp;noscrip
 <link rel="stylesheet" href="asset/css/milligram.css" preload>
 <link rel="stylesheet" href="asset/fonts/webarq-icons/style.css" preload>
 <!--endbuild-->
-
+<style type='text/css'>
+    .embeddedServiceHelpButton .helpButton .uiButton {
+       background-color: #cf142B;
+       font-family: "Arial", sans-serif;
+   }
+   .embeddedServiceHelpButton .helpButton .uiButton:focus {
+       outline: 1px solid #005290;
+   }
+</style>
 <!--js-->
 <script async type="text/javascript" src="asset/js/app.js"></script>
 <!--endbuild-->
@@ -89,235 +82,71 @@ src="https://www.facebook.com/tr?id=1058956608607048&amp;ev=PageView&amp;noscrip
 </head>
 
 <body>
-    <body>
-        
-        
-        
-<style type='text/css'>
-     .embeddedServiceHelpButton .helpButton .uiButton {
-        background-color: #cf142B;
-        font-family: "Arial", sans-serif;
-    }
-    .embeddedServiceHelpButton .helpButton .uiButton:focus {
-        outline: 1px solid #005290;
-    }
-</style>
-
-<script>
-function myFunction() {
-  embedded_svc.bootstrapEmbeddedService();
-}
-</script>
-
-<script type='text/javascript' src='../service.force.com/embeddedservice/5.0/esw.min.js'></script>
-<script type='text/javascript'>
-    var initESW = function(gslbBaseURL) {
-        embedded_svc.settings.displayHelpButton = false; //Or false
-        embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
-        
-        var init = true;
-        embedded_svc.addEventHandler("afterMinimize", function() {
-    				console.log('afterMinimized triggered');
-            var x = document.getElementById("floatingMenu");
-            x.style.display = "none";
-				});
-        embedded_svc.addEventHandler("afterDestroy", function() {
-    				console.log('afterDestroy triggered');
-            var x = document.getElementById("floatingMenu");
-            x.style.display = "block";
-				});
-
-        
-
-        embedded_svc.settings.enabledFeatures = ['LiveAgent'];
-        embedded_svc.settings.entryFeature = 'LiveAgent';
-        embedded_svc.settings.extraPrechatFormDetails = [ {
-            'label': 'Origin',
-            'value': 'WEB',
-            'transcriptFields':[ 'Resource__c' ],
-            'displayToAgent': true
-        } 
-        ];
-        
-
-        embedded_svc.init(
-            'https://pttikijalurnugrahaekakurir.my.salesforce.com/',
-            'https://jne.secure.force.com/liveAgentSetupFlow',
-            gslbBaseURL,
-            '00D5g000008Y2Fo',
-            'Live_Chat',
-            {
-                baseLiveAgentContentURL: 'https://c.la2-c1-hnd.salesforceliveagent.com/content',
-                deploymentId: '5725g000000gjxP',
-                buttonId: '5735g000000gnVc',
-                baseLiveAgentURL: 'https://d.la2-c1-hnd.salesforceliveagent.com/chat',
-                eswLiveAgentDevName: 'Live_Chat',
-                isOfflineSupportEnabled: false
-            }
-        );
-    };
-
-    if (!window.embedded_svc) {
-        var s = document.createElement('script');
-        s.setAttribute('src', '../pttikijalurnugrahaekakurir.my.salesforce.com/embeddedservice/5.0/esw.min.js');
-        s.onload = function() {
-            initESW(null);
-        };
-        document.body.appendChild(s);
-    } else {
-        initESW('https://service.force.com/');
-    }
-</script>
-
-<div  id="floatingMenu" class="floating-menu" onClick="myFunction()" style="position: fixed; z-index: 10; margin: auto; right: 10px; bottom: 5%;">
-  <a href="#" class="kurir-bt" style="max-width:150px"><img src="asset/images/chat.png" width= "150" height="160"/><!--<img src="https://www.jne.co.id/frontend/images/material/joni_ramadhan.png" />--></a>
-</div>
+    <div  id="floatingMenu" class="floating-menu" onClick="myFunction()" style="position: fixed; z-index: 10;       margin: auto; right: 10px; bottom: 5%;">
+        <a href="https://wa.me/628123456789" class="kurir-bt" style="max-width:150px">
+            <img src="asset/images/chat.png" width="150" height="160" />
+          </a>
+        </div>
 
 </body>
 
 
 <!-- Mirrored from www.jne.co.id/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 14 Nov 2023 14:19:33 GMT -->
 </htmL>
-    <!-- header -->
-    <header>
-        <header class="navbar">
-	<nav class="wrapper">
-		<div class="navbar-logo">
-			<a href="index.html">
-				<img src="asset/cfind/source/images/logo.svg">
-			</a>
-		</div>
-		
-		<div class="navbar-collapse offcanvas">
-			<div class="offcanvas-overlay"></div>
-			<div class="offcanvas-body">
-				<ul class="navbar-nav">
-															 
-					<li class="nav-item dropdown ">
-						<!-- 						<a href="https://www.jne.co.id/perusahaan" class="nav-link">Perusahaan</a>
-						 -->
-						<a href="perusahaan.html" class="nav-link">Perusahaan</a>
 
-						<span class="nav-arrow ic-chevron-down"></span>
+<header>
+    <header class="navbar-main">
+<nav class="wrapper">
+    <div class="navbar-main-logo">
+        {{-- <a href="index.html"> --}}
+            <img src="asset/images/LOGO.png" style="width:60px; height:60px; margin-top:10%;">
+            {{-- <link rel="icon" type="image/png" href="asset/images/logo.png" sizes="32x32"> --}}
 
-						<div class="dropdown-menu-lg">
-							<div class="bg-line">
-								<div class="line-solid"></div>
-								<div class="line-dashed"></div>
-								<div class="line-point">
-									<div class="circle-point"></div>
-								</div>
-							</div>
-							<div class="wrapper">
-								<div class="row">
-                                    <div class="column column-33">
-										<a href="profil-perusahaan.html" class="nav-link-title">Profil Perusahaan</a>
-                                        <p>Cari tahu lebih lanjut mengenai JNE</p>
-                                        <a href="profil-perusahaan.html" class="button button-clear button-arrow">Pelajari Lebih Lanjut</a>	
-									</div>
-                                    <div class="column column-33">
-										<a href="penghargaan.html" class="nav-link-title">Penghargaan</a>
-                                        <p>Beberapa apresiasi yang kami terima</p>
-                                        <a href="penghargaan.html" class="button button-clear button-arrow">Pelajari Lebih Lanjut</a>	
-									</div>
-																		<div class="column column-33">
-										<a href="keberlanjutan.html" class="nav-link-title">CSR</a>
-																					<p>Sesuai dengan nilai perusahaan, kami sangat aktif dalam bidang kemanusiaan.</p>
-																				<a href="keberlanjutan.html" class="button button-clear button-arrow">Pelajari Lebih Lanjut</a>	
-									</div>
-																		
-								</div>
-							</div>
-						</div>
-					</li>
-															 
-					<li class="nav-item dropdown ">
-						<!-- 						<a href="https://www.jne.co.id/produk-dan-layanan" class="nav-link">Produk dan Layanan</a>
-						 -->
-						<a href="produk-dan-layanan.html" class="nav-link">ABOUT US</a>
-
-						<span class="nav-arrow ic-chevron-down"></span>
-
-						<div class="dropdown-menu-lg">
-							<div class="bg-line">
-								<div class="line-solid"></div>
-								<div class="line-dashed"></div>
-								<div class="line-point">
-									<div class="circle-point"></div>
-								</div>
-							</div>
-							<div class="wrapper">
-								<div class="row">
-																		<div class="column column-33">
-										<a href="produk.html" class="nav-link-title">Produk</a>
-																					<p>Pengiriman aman dan nyaman bersama ekspedisi terpercaya</p>
-																				<a href="produk.html" class="button button-clear button-arrow">Pelajari Lebih Lanjut</a>	
-									</div>
-																		<div class="column column-33">
-										<a href="layanan.html" class="nav-link-title">Layanan</a>
-																					<p>Nikmati layanan yang dapat mengantarkan kebahagiaan</p>
-																				<a href="layanan.html" class="button button-clear button-arrow">Pelajari Lebih Lanjut</a>	
-									</div>
-																		
-								</div>
-							</div>
-						</div>
-					</li>
-															 
-					<li class="nav-item dropdown ">
-						<!-- 						<a href="javascript:void(0)" class="nav-link">Solusi Bisnis</a>
-						 -->
-						<a href="solusi-bisnis.html" class="nav-link">LATEST RESULT</a>
-
-						<span class="nav-arrow ic-chevron-down"></span>
-
-						<div class="dropdown-menu-lg">
-							<div class="bg-line">
-								<div class="line-solid"></div>
-								<div class="line-dashed"></div>
-								<div class="line-point">
-									<div class="circle-point"></div>
-								</div>
-							</div>
-							<div class="wrapper">
-								<div class="row">
-																		<div class="column column-33">
-										<a href="kemitraan.html" class="nav-link-title">Kemitraan</a>
-																					<p>Kembangkan bisnismu bersama JNE</p>
-																				<a href="kemitraan.html" class="button button-clear button-arrow">Pelajari Lebih Lanjut</a>	
-									</div>
-																		
-								</div>
-							</div>
-						</div>
-					</li>
-                    <li class="nav-item ">
-                        <a href="hubungi-kami.html" class="nav-link">Hubungi Kami</a>
-                    </li>
-                    <a href="berita.html" class="nav-link">CARA PEMESANAN</a>
+        </a>
+    </div>
+    
+    <div class="navbar-main-collapse offcanvas">
+        <div class="offcanvas-overlay"></div>
+        <div class="offcanvas-body">
+            <ul class="navbar-main-nav">                                     
+                <li class="nav-item dropdown ">
+                    <a href="/" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item dropdown ">
+                    <a href="/about" class="nav-link">ABOUT US</a>
+                </li>
+                <li class="nav-item dropdown ">
+                    <a href="/result" class="nav-link">LATEST RESULT</a>
                 </li>
                 <li class="nav-item ">
-                    <a href="karir.html" class="nav-link">Karir</a>
+                    <a href="/pemesanan" class="nav-link">Cara Pemesanan</a>
                 </li>
-                <li class="nav-item">
-                    <button type="button" class="nav-search">
-							<i class="ic-search"></i>
-						</button>
-					</li>
-				</ul>
+                <a href="/pricelist" class="nav-link">Price List</a>
+            </li>
+            <li class="nav-item ">
+                <a href="/location" class="nav-link">Location</a>
+            </li>
+            <li class="nav-item ">
+                <a href="/contact" class="nav-link">Contact Us</a>
+            </li>
 
-				<form action="https://www.jne.co.id/search" class="navbar-search">
-					<div class="input-group">
-						<i class="ic-search"></i>
-						<input type="text" placeholder="Cari atau masukan nomor resi" name="search" value=" ">
-						<button type="button" class="nav-close-search">
-							<span>Batalkan</span>
+            <li class="nav-item">
+                <button type="button" class="nav-search">
+                        <i class="ic-search"></i>
+                    </button>
+                </li>
+            </ul>
+            <form action="https://www.jne.co.id/search" class="navbar-main-search">
+                <div class="input-group">
+                    <i class="ic-search"></i>
+                    <input type="text" placeholder="Cari atau masukan nomor resi" name="search" value=" ">
+                    <span>Batalkan</span>
 							<i class="ic-cross"></i>
 						</button>
 					</div>
 				</form>
 
-				<ul class="navbar-lang"> 
+				<ul class="navbar-main-lang"> 
 					 
 						<li class="nav-item" >
 							<a href="index.html" class="  active  ">INDONESIA</a>
@@ -331,8 +160,8 @@ function myFunction() {
 			</div>
 		</div>
         
-		<div class="navbar-other">
-			<ul class="navbar-nav">
+		<div class="navbar-main-other">
+			<ul class="navbar-main-nav">
 				 
 				
 				<li class="nav-item dropdown">
@@ -360,7 +189,7 @@ function myFunction() {
 				</li>
 			</ul>
 			
-			<div class="navbar-toggle">
+			<div class="navbar-main-toggle">
 				<button type="button" class="nav-toggler">
 					<span></span>
 					<span></span>
@@ -373,6 +202,106 @@ function myFunction() {
     <!-- end of header -->
     
 @yield('content')
+
+
+<!--Footer -->
+    <a class="floating-chat">
+    <img src="asset/images/material/ask-joni.png">
+</a>
+<footer>
+    <div class="footer-top">
+        <div class="wrapper wrap-footer-top">
+            <div class="wrap-footer-top__left">
+                <div class="box-cs">
+                    <h5>HUBUNGI KAMI</h5>
+                    <p>
+                        <a class="phone" href="tel:+6289611081988">
+                            <i><img src="asset/images/material/ico-cs-call.svg" alt=""></i>+6289611081988
+                        </a>
+                    </p>
+                    <p>
+                        <a class="email" href="rathen.apparel@gmail.com">
+                            <i><img src="asset/images/material/ico-cs-email.svg" alt=""></i>rathen.apparel@gmail.com
+                        </a>
+                    </p>
+                </div>
+                <div class="box-socmed" style="position: center;">
+                    <a href="https://www.instagram.com/rathen.apparel/" target="_blank nofollow"><img src="asset/images/ig.png" alt=""></a>
+                    <a href="https://shopee.co.id/rathen.id" target="_blank nofollow"><img src="asset/images/SHOPEE.png" alt=""></a>
+                    <a href="https://www.tokopedia.com/rathenid" target="_blank nofollow"><img src="asset/images/toko.png" alt=""></a>
+                    </div>
+            </div>
+            
+
+                  
+</footer>  
+<script async type="text/javascript" src="asset/js/home.js"></script>
+<script>
+    function myFunction() {
+      embedded_svc.bootstrapEmbeddedService();
+    }
+    </script>
+    
+    <script type='text/javascript' src='../service.force.com/embeddedservice/5.0/esw.min.js'></script>
+    <script type='text/javascript'>
+        var initESW = function(gslbBaseURL) {
+            embedded_svc.settings.displayHelpButton = false; //Or false
+            embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
+            
+            var init = true;
+            embedded_svc.addEventHandler("afterMinimize", function() {
+                        console.log('afterMinimized triggered');
+                var x = document.getElementById("floatingMenu");
+                x.style.display = "none";
+                    });
+            embedded_svc.addEventHandler("afterDestroy", function() {
+                        console.log('afterDestroy triggered');
+                var x = document.getElementById("floatingMenu");
+                x.style.display = "block";
+                    });
+    
+            
+    
+            embedded_svc.settings.enabledFeatures = ['LiveAgent'];
+            embedded_svc.settings.entryFeature = 'LiveAgent';
+            embedded_svc.settings.extraPrechatFormDetails = [ {
+                'label': 'Origin',
+                'value': 'WEB',
+                'transcriptFields':[ 'Resource__c' ],
+                'displayToAgent': true
+            } 
+            ];
+            
+    
+            embedded_svc.init(
+                'https://pttikijalurnugrahaekakurir.my.salesforce.com/',
+                'https://jne.secure.force.com/liveAgentSetupFlow',
+                gslbBaseURL,
+                '00D5g000008Y2Fo',
+                'Live_Chat',
+                {
+                    baseLiveAgentContentURL: 'https://c.la2-c1-hnd.salesforceliveagent.com/content',
+                    deploymentId: '5725g000000gjxP',
+                    buttonId: '5735g000000gnVc',
+                    baseLiveAgentURL: 'https://d.la2-c1-hnd.salesforceliveagent.com/chat',
+                    eswLiveAgentDevName: 'Live_Chat',
+                    isOfflineSupportEnabled: false
+                }
+            );
+        };
+    
+        if (!window.embedded_svc) {
+            var s = document.createElement('script');
+            s.setAttribute('src', '../pttikijalurnugrahaekakurir.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+            s.onload = function() {
+                initESW(null);
+            };
+            document.body.appendChild(s);
+        } else {
+            initESW('https://service.force.com/');
+        }
+    </script>
+    
 <script>
     function setCookie(name, value, days) {
 
@@ -434,163 +363,6 @@ function myFunction() {
 
     checkCookieAndHideElement();
 </script>
-   
-
-
-
-<!--Footer -->
-    <a class="floating-chat">
-    <img src="asset/images/material/ask-joni.png">
-</a>
-<footer>
-    <div class="footer-top">
-        <div class="wrapper wrap-footer-top">
-            <div class="wrap-footer-top__left">
-                <div class="box-cs">
-                    <h5>CUSTOMER SERVICE</h5>
-                    <p>
-                        <a class="phone" href="tel:(021)29278888">
-                            <i><img src="asset/images/material/ico-cs-call.svg" alt=""></i>(021) 2927 8888
-                        </a>
-                    </p>
-                    <p>
-                        <a class="email" href="mailto:customercare@jne.co.id">
-                            <i><img src="asset/images/material/ico-cs-email.svg" alt=""></i>customercare@jne.co.id
-                        </a>
-                    </p>
-                </div>
-                <div class="box-socmed">
-                    <a href="https://www.instagram.com/jne_id/" target="_blank nofollow"><img src="asset/cfind/source/images/ico-socmed-instagram.svg" alt=""></a>
-                    <a href="https://www.tiktok.com/@jne_id" target="_blank nofollow"><img src="asset/cfind/source/images/ico-socmed-tiktok.svg" alt=""></a>
-                    <a href="https://twitter.com/JNE_ID" target="_blank nofollow"><img src="asset/cfind/source/images/x.svg" alt=""></a>
-                    <a href="https://www.linkedin.com/company/pt--tiki-jalur-nugraha-ekakurir-jne-/mycompany/?viewAsMember=true" target="_blank nofollow"><img src="asset/cfind/source/images/untitled.svg" alt=""></a>
-                    <a href="https://www.facebook.com/JNEPusat" target="_blank nofollow"><img src="asset/cfind/source/images/untitled-_1__1.svg" alt=""></a>
-                </div>
-            </div>
-            <div class="wrap-footer-top__right">
-                <div class="box-nav">
-                    <div class="box-nav__column">
-                        <div class="nav-foot">
-                            <h5>HOME</h5>
-                            <ul>
-                                <li><a href="profil-perusahaan.html"   target="_blank nofollow">Profil Perusahaan</a></li>
-                                <li><a href="penghargaan.html"   target="_blank nofollow">Penghargaan</a></li>
-                                <li><a href="keberlanjutan.html"   target="_blank nofollow">CSR</a></li>
-                                <li><a href="hubungi-kami.html"   target="_blank nofollow">Hubungi Kami</a></li><li><a href="karir.html"   target="_blank nofollow">Karir</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="box-nav__column">
-                        <div class="nav-foot">
-                            <h5>PRODUK</h5>
-                            <ul>
-                                <li><a href="produk.html#product-1">JNE Express</a></li>
-                                <li><a href="produk.html#product-2">JNE Logistics</a></li>
-                                <li><a href="produk.html#product-3">JNE Freight</a></li>
-                                <li><a href="produk.html#product-4">JNE International</a></li>
-                                <li><a href="produk.html#product-5">Roket Indonesia</a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="box-nav__column">
-                        <div class="nav-foot">
-                            <h5>LAINNYA</h5>
-                            <ul>
-                                
-
-                                                                
-
-                                                                                                <li><a href="https://jne.co.id/tracking-package"   target="_blank nofollow"
-                                        >Lacak Pengiriman</a></li>
-
-                                                                
-
-                                                                                                <li><a href="shipping-fee.html"   target="_blank nofollow"
-                                        >Cek Tarif</a></li>
-
-                                                                
-
-                                                                                                <li><a href="https://geoloc.jne.co.id/jne-public/"   target="_blank nofollow"
-                                        >Lokasi</a></li>
-
-                                                                
-
-                                                                
-
-                                                                
-
-                                                                                                <li><a href="berita.html"   target="_blank nofollow"
-                                        >Berita</a></li>
-
-                                                                
-
-                                                                                                <li><a href="promo-id.html"   target="_blank nofollow"
-                                        >Promo</a></li>
-
-                                                                
-
-                                                                                                <li><a href="bantuan.html"   target="_blank nofollow"
-                                        >FAQ</a></li>
-
-                                                                                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="box-nav__column">
-                        <div class="nav-foot">
-                            <h5>SOLUSI BISNIS</h5>
-                            <ul>
-                                
-                                                                <li><a href="kemitraan.html"   target="_blank nofollow"
-                                        >Kemitraan</a></li>
-                                                            </ul>
-                        </div>
-                    </div>
-                    <div class="box-nav__column">
-                        <div class="nav-foot">
-                            <h5>LAYANAN</h5>
-                            <ul>
-                                                                                                                                <li><a href="myjne-id.html" >MyJNE</a></li>
-                                                                                                                                <li><a href="pesona-id.html" >PESONA</a></li>
-                                                                                                                                <li><a href="jlc-loyalty-card-id.html" >JLC Loyalty Card</a></li>
-                                                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="box-app">
-                    <h6><b>Download Aplikasi MyJNE!</b> #JadiLebihLengkap</h6>
-                    <div class="box-app__list">
-                                                <a href="https://apps.apple.com/id/app/my-jne/id1447606780?l=id" target="_blank nofollow"><img src="asset/cfind/source/images/app-apple.svg" alt=""></a>
-                                                <a href="https://play.google.com/store/apps/details?id=com.indivara.jneone&amp;hl=id&amp;gl=US" target="_blank nofollow"><img src="asset/cfind/source/images/app-google.svg" alt=""></a>
-                                            </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <div class="wrapper wrap-footer-bottom">
-            <div class="wrap-footer-bottom__left">
-
-                <p class="copyright">
-                    2023 copyright JNE
-                </p>
-            </div>
-            <div class="wrap-footer-bottom__right">
-                <div class="nav-static">
-                                        
-                                        <a href="hubungi-kami.html"   target="_blank nofollow"
-                        >Hubungi Kami</a>
-                    
-                                        <a href="kebijakan-privasi-dan-pengamanan.html"   target="_blank nofollow"
-                        >Kebijakan Privasi dan Pengamanan</a>
-                                                        </div>
-            </div>
-        </div>
-    </div>
-</footer>    <script async type="text/javascript" src="asset/js/home.js"></script>
-
-
 <script type="text/javascript">
     let searchInputs = document.querySelectorAll(".field-autocomplete");
 

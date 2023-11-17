@@ -16,7 +16,6 @@ use Illuminate\Support\Facades\Route;
 // home
 Route::get('/', function () {
     return view('landing_page.home');
-    // return view('welcome');
 });
 
 // landing page
@@ -27,8 +26,36 @@ Route::get('/price-list', function () {
     return view('landing_page.price-list');
 });
 
+// about
+Route::get('/about', function () {
+    return view('landing_page.about');
+});
 
-// admin
+// latest result
+Route::get('/result', function () {
+    return view('landing_page.result');
+});
 
+// cara pemesanan
+Route::get('/pemesanan', function () {
+    return view('landing_page.pemesanan');
+});
 
-// controler
+// pricelist
+Route::get('/pricelist', function () {
+    return view('landing_page.pricelist');
+});
+
+// location
+Route::get('/location', function () {
+    return view('landing_page.location');
+});
+
+// contact us
+Route::get('/contact', function () {
+    return view('landing_page.contact');
+});
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

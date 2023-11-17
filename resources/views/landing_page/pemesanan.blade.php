@@ -9,10 +9,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-<link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+{{-- <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.2/components/services/service-1/assets/css/service-1.css">
 <script src="/js/app.js" defer></script>
-<link href="/css/app.css" rel="stylesheet">
+<link href="/css/app.css" rel="stylesheet"> --}}
 <body>
     <!-- Service 1 - Bootstrap Brain Component -->
 <section class="py-5 py-xl-8">
@@ -32,10 +32,10 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-1-circle-fill text-primary mb-4" viewBox="0 0 16 16">
               <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM9.283 4.002V12H7.971V5.338h-.065L6.072 6.656V5.385l1.899-1.383h1.312Z" />
             </svg>
-            <h5 class="m-2" style="font-family: 'Mont Heavy', sans-serif; color: #1890fd; font-size: 24px; font-weight: bold; margin-bottom: 15px; text-align: center; ">1. MIN. ORDER</h5>
+            <h5 class="m-2" style="font-family: 'Mont Heavy', sans-serif; color: #1890fd; font-size: 24px; font-weight: bold; margin-bottom: 15px; text-align: center; ">1. MIN. ORDERh</h5>
             <p class="m-0 text-secondary">
                 - Dapatkan 
-                <span style="font-weight: bold;">500RB untuk kamu yang baru pertama kali pesan jersey</span>
+                <span style="font-weight: bold;">500RaB untuk kamu yang baru pertama kali pesan jersey</span>
                 di 
                 <span style="font-weight: bold; font-size: smaller;">RATHEN</span><span style="color:red">*)</span>
                 <br><span style="font-weight: bold; color: red; font-family: 'Mont Heavy', sans-serif;"> Note: *) Minimal Order 50 PCS</span><br>

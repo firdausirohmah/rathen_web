@@ -3527,7 +3527,7 @@ header.show {
         width: 100%;
     }
 
-    .container {
+    /* .container {
         width: 80%;
         /* Menetapkan lebar container */
         margin: 0 auto;
@@ -3543,6 +3543,6 @@ header.show {
         box-sizing: border-box;
         /* Menjamin padding dan border tidak menambah lebar container secara keseluruhan */
     }
-}
+} */
 
 /*# sourceMappingURL=home.css.map*/

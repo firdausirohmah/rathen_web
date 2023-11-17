@@ -1,9 +1,14 @@
+@extends('layout.landingpage')
+@section('content')
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prosedur Pemesanan</title>
+    <script src="/js/app.js" defer></script>
+    <link href="/css/app.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Mont:wght@700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -108,3 +113,5 @@
 
 </body>
 </html>
+
+@endsection

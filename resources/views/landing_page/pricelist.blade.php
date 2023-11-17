@@ -1,10 +1,15 @@
+@extends('layout.landingpage')
+@section('content')
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Price List Form</title>
-    <style>
+    <script src="/js/app.js" defer></script>
+    <link href="/css/app.css" rel="stylesheet">
+   <style>
         body {
             font-family: Arial, sans-serif;
         }
@@ -94,3 +99,6 @@
 
 </body>
 </html>
+
+
+@endsection

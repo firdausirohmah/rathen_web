@@ -70,7 +70,7 @@
         </div>
     </section>
 
-    <section class="home-what-say">
+    {{-- <section class="home-what-say">
         <div class="wrapper">
             <div class="wrapper-left">
                 <figure class="">
@@ -79,10 +79,10 @@
                     </div>
                                     </figure>
                 <figcaption><span></span></figcaption>
-            </div>
+            </div> --}}
 
 
-            <div class="what-say">
+            {{-- <div class="what-say">
                 <h1>Apa kata mereka</h1>
 
                 <div class="what-say-slider">
@@ -506,6 +506,6 @@
                 <p> Kami menggunakan cookie untuk meningkatkan pengalaman Anda. Dengan mengklik 'Setuju', Anda menyetujui <a href="kebijakan-privasi-dan-pengamanan.html">Kebijakan Cookie</a>.</p>
         <button onclick="setCookie('jnecookies', 'jnec', 3);">Setuju</button>
     </div>
-</div>
+</div> --}}
 @endsection
 

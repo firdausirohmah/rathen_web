@@ -23,18 +23,32 @@ Route::get('/page-costum', function () {
     return view('landing_page.page-costum');
 });
 
-// about us
-Route::get('/landingpage', function () {
-    return view('about');
+// about
+Route::get('/landing_page/about', function () {
+    return view('landing_page.about');
 });
 
 // latest result
-Route::get('/landingpage', function () {
-    return view('result');
+Route::get('/landing_page/result', function () {
+    return view('landing_page.result');
 });
 
+// cara pemesanan
+Route::get('/landing_page/pemesanan', function () {
+    return view('landing_page.pemesanan');
+});
 
-// admin
+// pricelist
+Route::get('/landing_page/pricelist', function () {
+    return view('landing_page.pricelist');
+});
 
+// location
+Route::get('/location', function () {
+    return view('landing_page.location');
+});
 
-// controler
+// contact us
+Route::get('/landing_page/contact', function () {
+    return view('landing_page.contact');
+});

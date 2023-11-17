@@ -9,7 +9,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     
-<title>JNE Menyambung Kebahagiaan Dari Generasi ke Generasi</title>
+<title>Rathen</title>
+
 <meta name="title" content="JNE Menyambung Kebahagiaan Dari Generasi ke Generasi">
 <meta name="description" content="PT. Tiki Jalur Nugraha Ekakurir atau biasa dikenal sebagai JNE merupakan salah satu perusahaan ekspedisi barang terbesar di Indonesia.">
 <meta name="keywords" content="PT. Tiki Jalur Nugraha Ekakurir atau biasa dikenal sebagai JNE merupakan salah satu perusahaan ekspedisi barang terbesar di Indonesia.">
@@ -30,6 +31,7 @@
 <meta name="twitter:description" content="PT. Tiki Jalur Nugraha Ekakurir atau biasa dikenal sebagai JNE merupakan salah satu perusahaan ekspedisi barang terbesar di Indonesia.">
 <meta name="twitter:twitter-id" content="">
 <meta name="twitter:image" content="">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-7V32MGQLQ4"></script>
 <script>
@@ -192,8 +194,7 @@ function myFunction() {
 		<div class="navbar-collapse offcanvas">
 			<div class="offcanvas-overlay"></div>
 			<div class="offcanvas-body">
-				<ul class="navbar-nav">
-															 
+                <ul class="navbar-nav">
 					<li class="nav-item dropdown ">
 				
 						<a href="/" class="nav-link">Home</a>
@@ -233,9 +234,8 @@ function myFunction() {
 						</button>
 					</li>
 				</ul>
-
-				<form action="https://www.jne.co.id/search" class="navbar-search">
-					<div class="input-group">
+                <form action="https://www.jne.co.id/search" class="navbar-search">
+                    <div class="input-group">
 						<i class="ic-search"></i>
 						<input type="text" placeholder="Cari atau masukan nomor resi" name="search" value=" ">
 						<button type="button" class="nav-close-search">
@@ -388,44 +388,36 @@ function myFunction() {
                     </p>
                 </div>
                 <div class="box-socmed">
-                                        <a href="https://www.instagram.com/jne_id/" target="_blank nofollow"><img src="asset/cfind/source/images/ico-socmed-instagram.svg" alt=""></a>
-                                        <a href="https://www.tiktok.com/@jne_id" target="_blank nofollow"><img src="asset/cfind/source/images/ico-socmed-tiktok.svg" alt=""></a>
-                                        <a href="https://twitter.com/JNE_ID" target="_blank nofollow"><img src="asset/cfind/source/images/x.svg" alt=""></a>
-                                        <a href="https://www.linkedin.com/company/pt--tiki-jalur-nugraha-ekakurir-jne-/mycompany/?viewAsMember=true" target="_blank nofollow"><img src="asset/cfind/source/images/untitled.svg" alt=""></a>
-                                        <a href="https://www.facebook.com/JNEPusat" target="_blank nofollow"><img src="asset/cfind/source/images/untitled-_1__1.svg" alt=""></a>
-                    
+                    <a href="https://www.instagram.com/jne_id/" target="_blank nofollow"><img src="asset/cfind/source/images/ico-socmed-instagram.svg" alt=""></a>
+                    <a href="https://www.tiktok.com/@jne_id" target="_blank nofollow"><img src="asset/cfind/source/images/ico-socmed-tiktok.svg" alt=""></a>
+                    <a href="https://twitter.com/JNE_ID" target="_blank nofollow"><img src="asset/cfind/source/images/x.svg" alt=""></a>
+                    <a href="https://www.linkedin.com/company/pt--tiki-jalur-nugraha-ekakurir-jne-/mycompany/?viewAsMember=true" target="_blank nofollow"><img src="asset/cfind/source/images/untitled.svg" alt=""></a>
+                    <a href="https://www.facebook.com/JNEPusat" target="_blank nofollow"><img src="asset/cfind/source/images/untitled-_1__1.svg" alt=""></a>
                 </div>
             </div>
-
             <div class="wrap-footer-top__right">
                 <div class="box-nav">
-                                        <div class="box-nav__column">
+                    <div class="box-nav__column">
                         <div class="nav-foot">
                             <h5>ABOUT US</h5>
                             <ul>
-                                                                                                <li><a href="profil-perusahaan.html"   target="_blank nofollow"
-                                        >Profil Perusahaan</a></li>
-                                                                                                <li><a href="penghargaan.html"   target="_blank nofollow"
-                                        >Penghargaan</a></li>
-                                                                                                <li><a href="keberlanjutan.html"   target="_blank nofollow"
-                                        >CSR</a></li>
-                                                                                                <li><a href="hubungi-kami.html"   target="_blank nofollow"
-                                        >Hubungi Kami</a></li>
-                                                                                                <li><a href="karir.html"   target="_blank nofollow"
-                                        >Karir</a></li>
-                                                            </ul>
+                                <li><a href="profil-perusahaan.html"   target="_blank nofollow">Profil Perusahaan</a></li>
+                                <li><a href="penghargaan.html"   target="_blank nofollow">Penghargaan</a></li>
+                                <li><a href="keberlanjutan.html"   target="_blank nofollow">CSR</a></li>
+                                <li><a href="hubungi-kami.html"   target="_blank nofollow">Hubungi Kami</a></li><li><a href="karir.html"   target="_blank nofollow">Karir</a></li>
+                            </ul>
                         </div>
                     </div>
                     <div class="box-nav__column">
                         <div class="nav-foot">
                             <h5>PRODUK</h5>
                             <ul>
-                                                                                                <li><a href="produk.html#product-1">JNE Express</a></li>
-                                                                <li><a href="produk.html#product-2">JNE Logistics</a></li>
-                                                                <li><a href="produk.html#product-3">JNE Freight</a></li>
-                                                                <li><a href="produk.html#product-4">JNE International</a></li>
-                                                                <li><a href="produk.html#product-5">Roket Indonesia</a></li>
-                                                            </ul>
+                                <li><a href="produk.html#product-1">JNE Express</a></li>
+                                <li><a href="produk.html#product-2">JNE Logistics</a></li>
+                                <li><a href="produk.html#product-3">JNE Freight</a></li>
+                                <li><a href="produk.html#product-4">JNE International</a></li>
+                                <li><a href="produk.html#product-5">Roket Indonesia</a></li>
+                            </ul>
                         </div>
                     </div>
 
@@ -610,6 +602,7 @@ function myFunction() {
         });
     });
 </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <!--end of Footer -->
 </body>
 

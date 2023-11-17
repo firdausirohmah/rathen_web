@@ -2,9 +2,6 @@
 
 @section('content')
     <style>
-        .jersey {
-            margin-top: 10px;
-        },
         a:hover{
             color: red;
         },
@@ -14,17 +11,13 @@
         <div class="main-banner__logo">
             <img src="asset/cfind/source/images/rathen.png" alt="">
         </div>
-
-        {{-- <div class="main-banner__text">
-            <h1>Menyambung Kebahagiaan dari Generasi ke Generasi</h1>
-            <a class="button button-outline button-trigger-say">Jelajahi Lebih Jauh</a>
-        </div> --}}
+        {{--  --}}
         <div class="main-banner__cekresi">
             <div class="main-banner__cekresi--list cek-lacak">
                 <a class="form button-search"  href="{{ url('/page-costum') }}">
                     <i><img src="asset/images/icon baju - biru.png"></i>
                     <div class="input-box" >
-                        <h4 class="item-center jersey">COSTUM JARSEY</h4>
+                        <h4 class="item-center jersey">COSTUM JERSEY</h4>
                         {{-- <input type="text" placeholder="Masukkan nomor pesanan" name="pesanan" required> --}}
                         {{-- <input type="submit" class="button-search" placeholder="COSTUM JARSEY"> --}}
                         {{-- <small>*Beri tanda koma jika lebih dari 1 resi</small> --}}
@@ -35,7 +28,7 @@
                 <a class="form button-search"  href="{{ url('/page-costum') }}">
                     <i><img src="asset/images/icon baju - ungu.png"></i>
                     <div class="input-box">
-                        <h4 class="item-center jersey">COSTUM JARSEY</h4>
+                        <h4 class="item-center jersey">COSTUM JERSEY</h4>
                     </div>
                 </a>
             </div>

@@ -23,6 +23,9 @@ Route::get('/', function () {
 Route::get('/page-costum', function () {
     return view('landing_page.page-costum');
 });
+Route::get('/price-list', function () {
+    return view('landing_page.price-list');
+});
 
 
 // admin

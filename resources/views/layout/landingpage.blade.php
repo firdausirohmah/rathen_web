@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     
-<title>JNE Menyambung Kebahagiaan Dari Generasi ke Generasi</title>
+<title>rathen</title>
 <meta name="title" content="JNE Menyambung Kebahagiaan Dari Generasi ke Generasi">
 <meta name="description" content="PT. Tiki Jalur Nugraha Ekakurir atau biasa dikenal sebagai JNE merupakan salah satu perusahaan ekspedisi barang terbesar di Indonesia.">
 <meta name="keywords" content="PT. Tiki Jalur Nugraha Ekakurir atau biasa dikenal sebagai JNE merupakan salah satu perusahaan ekspedisi barang terbesar di Indonesia.">
@@ -210,15 +210,15 @@ function myFunction() {
 							</div>
 							<div class="wrapper">
 								<div class="row">
-																		<div class="column column-33">
+                                    <div class="column column-33">
 										<a href="profil-perusahaan.html" class="nav-link-title">Profil Perusahaan</a>
-																					<p>Cari tahu lebih lanjut mengenai JNE</p>
-																				<a href="profil-perusahaan.html" class="button button-clear button-arrow">Pelajari Lebih Lanjut</a>	
+                                        <p>Cari tahu lebih lanjut mengenai JNE</p>
+                                        <a href="profil-perusahaan.html" class="button button-clear button-arrow">Pelajari Lebih Lanjut</a>	
 									</div>
-																		<div class="column column-33">
+                                    <div class="column column-33">
 										<a href="penghargaan.html" class="nav-link-title">Penghargaan</a>
-																					<p>Beberapa apresiasi yang kami terima</p>
-																				<a href="penghargaan.html" class="button button-clear button-arrow">Pelajari Lebih Lanjut</a>	
+                                        <p>Beberapa apresiasi yang kami terima</p>
+                                        <a href="penghargaan.html" class="button button-clear button-arrow">Pelajari Lebih Lanjut</a>	
 									</div>
 																		<div class="column column-33">
 										<a href="keberlanjutan.html" class="nav-link-title">CSR</a>

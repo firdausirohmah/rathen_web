@@ -39,11 +39,42 @@
         p {
             margin: 10px 0;
         }
+        .row {
+            background-color: red;
+        }
+        .contact {
+            width: 100px;
+            height: 100px;
+            border-radius: 12px;
+            background-color: white;
+        }
+        .contact,.icon {
+            align-items: center;
+            margin: auto;
+            display: block;
+        }
     </style>
 </head>
 <body>
-<div container>
-  <h1 > stay connected <br> with us </h1> 
+<div class="container-xxl ">
+    <div class="row-cols-2">
+        <div class="col-lg-12">
+            <h1 > stay connected <br> with us </h1>
+        </div>
+        <div class="col-lg-12">
+            <h1 > stay connected <br> with us </h1>
+        </div>
+    </div>
+</div>
+<br>
+<div class="container mb-4">
+    <div class="row lg-12">
+        <div class="col-lg-4 contact">
+            <img src="asset/images/wa.png" class="icon" width="70%%" alt="wa">
+        </div>
+    </div>
+</div>
+
   
 </div>
 </body>

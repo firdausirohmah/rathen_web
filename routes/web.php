@@ -53,6 +53,6 @@ Route::get('/contact', function () {
     return view('landing_page.contact');
 });
 
-Auth::routes();
+// Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

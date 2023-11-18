@@ -12,7 +12,7 @@
 </head>
 <body>
 
-    <div class="container">
+    {{-- <div class="container">
         <div class="row">
             <div class="col-lg-6">
                 <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
@@ -30,15 +30,15 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     
     <!-- Tambahkan script berikut -->
-    <script>
+    {{-- <script>
         // Menginisialisasi carousel dengan interval 2000 milidetik (2 detik)
         var myCarousel = new bootstrap.Carousel(document.getElementById('carouselExampleSlidesOnly'), {
             interval: 2000
         });
-    </script>
+    </script> --}}
     
 </body>
 </html>

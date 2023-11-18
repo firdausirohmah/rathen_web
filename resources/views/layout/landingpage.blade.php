@@ -8,13 +8,14 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
    
-    <script src="/js/app.js" defer></script>
-    <link href="/css/app.css" rel="stylesheet">
+    <link href="asset/css/ex.css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
     {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> --}}
    <title>Rathen</title>
-
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-7V32MGQLQ4"></script>
 <script>
@@ -93,8 +94,9 @@ src="https://www.facebook.com/tr?id=1058956608607048&amp;ev=PageView&amp;noscrip
 
 <!-- Mirrored from www.jne.co.id/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 14 Nov 2023 14:19:33 GMT -->
 </htmL>
+
 <header>
-    <header class="navbar-main">
+    <header class="navbar-main"> 
 <nav class="wrapper">
     <div class="navbar-main-logo">
         {{-- <a href="index.html"> --}}
@@ -118,7 +120,7 @@ src="https://www.facebook.com/tr?id=1058956608607048&amp;ev=PageView&amp;noscrip
                     <a href="/result" class="nav-link">LATEST RESULT</a>
                 </li>
                 <li class="nav-item ">
-                    <a href="/pemesanan" class="nav-link">Cara Pemesanan</a>
+                    <a href="/pemesanan" class="nav-link" >Cara Pemesanan</a>
                 </li>
                 <a href="/pricelist" class="nav-link">Price List</a>
             </li>
@@ -202,7 +204,6 @@ src="https://www.facebook.com/tr?id=1058956608607048&amp;ev=PageView&amp;noscrip
     
 @yield('content')
 
-
 <!--Footer -->
     <a class="floating-chat">
     <img src="asset/images/material/ask-joni.png">
@@ -234,6 +235,7 @@ src="https://www.facebook.com/tr?id=1058956608607048&amp;ev=PageView&amp;noscrip
 
                   
 </footer>  
+
 <script async type="text/javascript" src="asset/js/home.js"></script>
 <script>
     function myFunction() {
@@ -445,6 +447,8 @@ src="https://www.facebook.com/tr?id=1058956608607048&amp;ev=PageView&amp;noscrip
         });
     });
 </script>
+<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <!--end of Footer -->
 </body>
 

@@ -10,8 +10,6 @@
     <title>Document</title>
     
 </head>
-    <script src="/js/app.js" defer></script>
-    <link href="/css/app.css" rel="stylesheet">
 <body>
     <section class="py-5 py-xl-8">
         <div class="container">

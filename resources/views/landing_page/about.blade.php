@@ -77,7 +77,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     
     <script>
-        // Tambahkan script untuk mengaktifkan perpindahan otomatis
+        // Tambahkan script untuk mengaktifkan perpindahan otomatisa
         $(document).ready(function () {
             $('#carouselExample').carousel({
                 interval: 2000

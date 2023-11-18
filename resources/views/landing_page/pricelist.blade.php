@@ -19,9 +19,10 @@
             margin: 0 auto;
         }
 
-        h2 {
+        .judul {
             text-align: center;
             color: #1890fd;
+            font-size: 24px;
         }
 
         form {
@@ -65,7 +66,7 @@
 <body>
 
 <div class="container">
-    <h2>PRICE LIST</h2>
+    <h2 class="judul">PRICE LIST</h2>
     <form>
         <label for="category">Kategori:</label>
         <select id="category" name="category">

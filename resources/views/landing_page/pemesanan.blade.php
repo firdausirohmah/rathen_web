@@ -18,7 +18,7 @@
     <div class="container">
       <div class="row justify-content-md-center">
         <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
-          <h2 class="mb-4 display-5 text-center" style="font-family: Montheavy color: #1890fd; font-size: 24px; font-weight: bold; margin-bottom: 20px; text-align: center;">PROSEDUR PEMESANAN</h2>
+          <h1 class="mb-4 display-5 text-center" style="font-family: Montheavy color: #1890fd; font-size: 24px; font-weight: bold; margin-bottom: 20px; text-align: center;">PROSEDUR PEMESANAN</h1>
           
         </div>
       </div>

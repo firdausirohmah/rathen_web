@@ -1,6 +1,9 @@
 @extends('layout.landingpage_nofooter')
 @section('content')
-    
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="asset/css/ex.css">
+
+
     <style>
         body {
             margin: 0;
@@ -79,11 +82,29 @@
             padding-top: 50px;
             align-content: center;
             text-align: center;
+    
         }
         .footer{
             font-family: Montheavy;
             color:gray;
         }
+     
+        
+        @media (max-width: 768px) {
+    .btn-mid {
+        width: 20%; /* Ubah lebar tombol menjadi 100% */
+        height: 20%;
+
+    }
+    h5{
+        font-size: 18px;
+    }
+
+    .icon {
+        width: 40%; /* Ubah lebar ikon menjadi 50% */
+    }
+    
+}
     </style>
 
 <div class="container frame mt-4">
@@ -95,16 +116,17 @@
 
         <div class="row sosmed">
             <div class="col-lg-2"></div>
-                <a href="" class="btn-mid"><img src="asset/images/wa.png" class="icon" width="50%" alt="wa"><h5>whatsapp</h5></a>
-                <a href="" class="btn-mid"><img src="asset/images/SHOPEE.png" class="icon" width="50%" alt="wa"><h5>shopee</h5></a>
-                <a href="" class="btn-mid"><img src="asset/images/toko.png" class="icon" width="50%" alt="wa"><h5>tokopedia</h5></a>
+                <a href="https://wa.me/6289611081988?text=halo%20RATHEN..%20Saya%20ingin%20membuat%20custom%20jersey" class="btn-mid"><img src="asset/images/wa.png" class="icon" width="50%" alt="wa"><h5>whatsapp</h5></a>
+                <a href="https://shopee.co.id/rathen.id" class="btn-mid"><img src="asset/images/SHOPEE.png" class="icon" width="50%" alt="wa"><h5>shopee</h5></a>
+                <a href="https://www.tokopedia.com/rathenid" class="btn-mid"><img src="asset/images/toko.png" class="icon" width="50%" alt="wa"><h5>tokopedia</h5></a>
             <div class="col-lg-2"></div>
         </div>
         <div class="row sosmed">
             <div class="btn-sosmed">
-                <a href="" class="btn-sosmed"><img src="asset/images/ig-biru.png" width="80px" alt="wa"></a>
-                <a href="" class="btn-sosmed"><img src="asset/images/mail.png" width="80px" alt="wa"></a>
+                <a href="https://www.instagram.com/rathen.apparel/" class="btn-sosmed"><img src="asset/images/ig-biru.png" width="80px" alt="wa"></a>
+                <a href="mailto:rathen.apparel@gmail.com" class="email btn-sosmed"><img src="asset/images/mail.png" width="80px" alt="wa"></a>
                 <p class="footer">copycight &copy; rathen indonesia 2023</p>
+                {{-- <a href="https://wa.me/628123456789" --}}
             </div>
         </div>
         

@@ -147,7 +147,7 @@ src="https://www.facebook.com/tr?id=1058956608607048&amp;ev=PageView&amp;noscrip
 					</div>
 				</form>
 
-				<ul class="navbar-main-lang"> 
+				{{-- <ul class="navbar-main-lang"> 
 					 
 						<li class="nav-item" >
 							<a href="index.html" class="  active  ">INDONESIA</a>
@@ -157,12 +157,12 @@ src="https://www.facebook.com/tr?id=1058956608607048&amp;ev=PageView&amp;noscrip
 							<a href="en.html" class="">ENGLISH</a>
 						</li>  
                     					 
-				</ul>
+				</ul> --}}
 			</div>
 		</div>
         
 		<div class="navbar-main-other">
-			<ul class="navbar-main-nav">
+			{{-- <ul class="navbar-main-nav">
 				 
 				
 				<li class="nav-item dropdown">
@@ -188,7 +188,7 @@ src="https://www.facebook.com/tr?id=1058956608607048&amp;ev=PageView&amp;noscrip
 						</ul>
 					</div>
 				</li>
-			</ul>
+			</ul> --}}
 			
 			<div class="navbar-main-toggle">
 				<button type="button" class="nav-toggler">

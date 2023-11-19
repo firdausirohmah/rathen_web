@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -45,8 +46,9 @@ Route::get('/pemesanan', function () {
 Route::get('/pricelist', function () {
     return view('landing_page.pricelist');
 });
-Route::post('/pricelist', function () {
-    
+Route::post('/pricelist', function (Request $request) {
+    $list = $request->lang;
+    dd($list);
     return view('landing_page.pricelist');
 });
 

@@ -342,7 +342,7 @@
     color: #14245e;
 }
 footer {
-    box-shadow: inset 0 1px 0 #eee;
+    /* box-shadow: inset 0 1px 0 #eee; */
 }
 footer h5 {
     color: #4d4d4d;

@@ -82,21 +82,7 @@ src="https://www.facebook.com/tr?id=1058956608607048&amp;ev=PageView&amp;noscrip
     <link rel="stylesheet" type="text/css" href="asset/css/home.css" preload>
 </head>
 
-<body>
-    <div  id="floatingMenu" class="floating-menu" onClick="myFunction()" style="position: fixed; z-index: 10;       margin: auto; right: 10px; bottom: 5%;">
-        <a href="https://wa.me/628123456789" class="kurir-bt" style="max-width:150px">
-            <img src="asset/images/chat.png" width="150" height="160" />
-          </a>
-        </div>
-
-</body>
-
-
-<!-- Mirrored from www.jne.co.id/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 14 Nov 2023 14:19:33 GMT -->
-</htmL>
-
-<header>
-    <header class="navbar-main"> 
+<header class="navbar-main"> 
 <nav class="wrapper">
     <div class="navbar-main-logo">
         {{-- <a href="index.html"> --}}
@@ -131,108 +117,87 @@ src="https://www.facebook.com/tr?id=1058956608607048&amp;ev=PageView&amp;noscrip
                 <a href="/contact" class="nav-link">Contact Us</a>
             </li>
 
-            {{-- <li class="nav-item">
+            <li class="nav-item">
                 <button type="button" class="nav-search">
                         <i class="ic-search"></i>
                     </button>
-                </li> --}}
+                </li>
             </ul>
-            <form action="https://www.jne.co.id/search" class="navbar-main-search">
+            {{-- <form action="https://www.jne.co.id/search" class="navbar-main-search">
                 <div class="input-group">
                     <i class="ic-search"></i>
                     <input type="text" placeholder="Cari atau masukan nomor resi" name="search" value=" ">
                     <span>Batalkan</span>
-							<i class="ic-cross"></i>
-						</button>
-					</div>
-				</form>
+                            <i class="ic-cross"></i>
+                        </button>
+                    </div>
+                </form> --}}
 
-				<ul class="navbar-main-lang"> 
-					 
-						<li class="nav-item" >
-							<a href="index.html" class="  active  ">INDONESIA</a>
-						</li>  
+                <ul class="navbar-main-lang"> 
                      
-						<li class="nav-item" >
-							<a href="en.html" class="">ENGLISH</a>
-						</li>  
-                    					 
-				</ul>
-			</div>
-		</div>
+                        <li class="nav-item" >
+                            <a href="index.html" class="  active  ">INDONESIA</a>
+                        </li>  
+                     
+                        <li class="nav-item" >
+                            <a href="en.html" class="">ENGLISH</a>
+                        </li>  
+                                         
+                </ul>
+            </div>
+        </div>
         
-		<div class="navbar-main-other">
-			<ul class="navbar-main-nav">
-				 
-				
-				<li class="nav-item dropdown">
-					 
-					<div class="nav-lang">
-						<i class="ic-globe"></i>
-												 
-						<span>INDONESIA</span>
-						                    							                    	  
-					</div>
+        <div class="navbar-main-other">
+            <ul class="navbar-main-nav">
+                 
+                
+                <li class="nav-item dropdown">
+                     
+                    <div class="nav-lang">
+                        <i class="ic-globe"></i>
+                                                 
+                        <span>INDONESIA</span>
+                                                                                                  
+                    </div>
 
-					<div class="dropdown-menu">
-						<ul>
-							 
-							<li class="dropdown-item   active  ">
-								<a href="index.html" class="dropdown-link">INDONESIA</a>
-							</li>
-							 
-							<li class="dropdown-item ">
-								<a href="en.html" class="dropdown-link">ENGLISH</a>
-							</li>
-														 
-						</ul>
-					</div>
-				</li>
-			</ul>
-			
-			<div class="navbar-main-toggle">
-				<button type="button" class="nav-toggler">
-					<span></span>
-					<span></span>
-					<span></span>
-				</button>
-			</div>
-		</div>
-	</nav>
-</header>    </header>
+                    <div class="dropdown-menu">
+                        <ul>
+                             
+                            <li class="dropdown-item   active  ">
+                                <a href="index.html" class="dropdown-link">INDONESIA</a>
+                            </li>
+                             
+                            <li class="dropdown-item ">
+                                <a href="en.html" class="dropdown-link">ENGLISH</a>
+                            </li>
+                                                         
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+            
+            <div class="navbar-main-toggle">
+                <button type="button" class="nav-toggler">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+</header>  
+<body>
+
+
     <!-- end of header -->
     
 @yield('content')
 
-<!--Footer -->
-    <a class="floating-chat">
-    <img src="asset/images/material/ask-joni.png">
-</a>
-<footer>
-    <div class="footer-top">
-        <div class="wrapper wrap-footer-top">
-            <div class="wrap-footer-top__left">
-                <div class="box-cs">
-                    <h5>HUBUNGI KAMI</h5>
-                    <p>
-                        <a class="phone" href="tel:+6289611081988">
-                            <i><img src="asset/images/material/ico-cs-call.svg" alt=""></i>+6289611081988
-                        </a>
-                    </p>
-                    <p>
-                        <a class="email" href="rathen.apparel@gmail.com">
-                            <i><img src="asset/images/material/ico-cs-email.svg" alt=""></i>rathen.apparel@gmail.com
-                        </a>
-                    </p>
-                </div>
-                <div class="box-socmed" style="position: center;">
-                    <a href="https://www.instagram.com/rathen.apparel/" target="_blank nofollow"><img src="asset/images/ig.png" alt=""></a>
-                    <a href="https://shopee.co.id/rathen.id" target="_blank nofollow"><img src="asset/images/SHOPEE.png" alt=""></a>
-                    <a href="https://www.tokopedia.com/rathenid" target="_blank nofollow"><img src="asset/images/toko.png" alt=""></a>
-                    </div>
-            </div>
-            
 
+</body>
+<!--Footer -->
+    
+<footer>
                   
 </footer>  
 

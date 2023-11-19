@@ -45,6 +45,10 @@ Route::get('/pemesanan', function () {
 Route::get('/pricelist', function () {
     return view('landing_page.pricelist');
 });
+Route::post('/pricelist', function () {
+    
+    return view('landing_page.pricelist');
+});
 
 // location
 Route::get('/location', function () {

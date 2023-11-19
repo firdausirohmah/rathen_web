@@ -1,24 +1,19 @@
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Background Image</title>
-    <script src="/js/app.js" defer></script>
-    <link href="/css/app.css" rel="stylesheet">
+@extends('layout.landingpage_nofooter')
+@section('content')
+    
     <style>
         body {
             margin: 0;
             padding: 0;
-            background: url('/asset/images/kontak.png') center/cover no-repeat fixed;
-            height: 100vh; /* Menetapkan tinggi elemen ke tinggi layar (viewport height) */
-            display: flex;
+            background: url('/asset/images/kontak.png') ;
+            background-repeat: no-repeat;
+            background-size:cover;
+            height: 100vh   ; /* Menetapkan tinggi elemen ke tinggi layar (viewport height) */
+            /* display:grid; */
             align-items: center;
             justify-content: center;
             color: #fff; /* Warna teks */
-            font-family: Arial, sans-serif;
+            font-family: Montheavy;
         }
 
         .content {
@@ -39,44 +34,82 @@
         p {
             margin: 10px 0;
         }
-        .row {
-            background-color: red;
-        }
         .contact {
             width: 100px;
             height: 100px;
             border-radius: 12px;
-            background-color: white;
+            padding-top: 50px;
+            /* background-color: white; */
         }
         .contact,.icon {
             align-items: center;
             margin: auto;
             display: block;
+            padding-top: 20%;
+            padding-bottom: 10px;
+        }
+        .btn-mid{
+            width: 150px;
+            height: 150px;
+            background-color: #fff;
+            border-radius: 14px;
+            box-shadow:black 2px 2px 2px !important;
+            margin: auto;
+            display: block;
+            transition: all 0.5s ease-in-out;
+            cursor: pointer;
+            outline: none;
+
+        }
+        .btn-sosmed{
+            border-radius: 14px;
+            align-items: center;
+            /* display: flex; */
+            transition: all 0.5s ease-in-out;
+            /* transition: cubic-bezier(0.95, 0.05, 0.795, 0.035); */
+            cursor: pointer;
+            outline: none;
+        }
+        .frame{
+            padding: 10%;
+            width: 100%;
+            height: 90vh;
+        }
+        .sosmed{
+            padding-top: 50px;
+            align-content: center;
+            text-align: center;
+        }
+        .footer{
+            font-family: Montheavy;
+            color:gray;
         }
     </style>
-</head>
-<body>
-<div class="container-xxl ">
-    <div class="row-cols-2">
-        <div class="col-lg-12">
-            <h1 > stay connected <br> with us </h1>
-        </div>
-        <div class="col-lg-12">
-            <h1 > stay connected <br> with us </h1>
-        </div>
-    </div>
-</div>
-<br>
-<div class="container mb-4">
-    <div class="row lg-12">
-        <div class="col-lg-4 contact">
-            <img src="asset/images/wa.png" class="icon" width="70%%" alt="wa">
-        </div>
-    </div>
-</div>
 
-  
-</div>
+<div class="container frame mt-4">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 style="color: #fff"> stay connected <br> with us </h1>
+        </div>
+    </div>
+
+        <div class="row sosmed">
+            <div class="col-lg-2"></div>
+                <a href="" class="btn-mid"><img src="asset/images/wa.png" class="icon" width="50%" alt="wa"><h5>whatsapp</h5></a>
+                <a href="" class="btn-mid"><img src="asset/images/SHOPEE.png" class="icon" width="50%" alt="wa"><h5>shopee</h5></a>
+                <a href="" class="btn-mid"><img src="asset/images/toko.png" class="icon" width="50%" alt="wa"><h5>tokopedia</h5></a>
+            <div class="col-lg-2"></div>
+        </div>
+        <div class="row sosmed">
+            <div class="btn-sosmed">
+                <a href="" class="btn-sosmed"><img src="asset/images/ig-biru.png" width="80px" alt="wa"></a>
+                <a href="" class="btn-sosmed"><img src="asset/images/mail.png" width="80px" alt="wa"></a>
+                <p class="footer">copycight &copy; rathen indonesia 2023</p>
+            </div>
+        </div>
+        
+    </div>
 </body>
 </html>
 
+@endsection

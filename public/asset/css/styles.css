@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.form-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.image-slider {
+    display: flex;
+    overflow-x: auto;
+    margin-bottom: 10px;
+}
+
+.slider-image {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+.slider-image.active {
+    transform: scale(1.2); /* Memperbesar gambar saat aktif */
+    filter: blur(0); /* Menghilangkan efek buram saat aktif */
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}

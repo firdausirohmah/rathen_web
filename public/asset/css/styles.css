@@ -10,6 +10,7 @@ body {
 }
 
 .form-container {
+    /* display: flex; */
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
@@ -31,6 +32,7 @@ body {
 }
 
 .slider-image.active {
+    transform: translateX(50%);
     transform: scale(1.2); /* Memperbesar gambar saat aktif */
     filter: blur(0); /* Menghilangkan efek buram saat aktif */
 }
@@ -59,4 +61,20 @@ button {
 
 button:hover {
     background-color: #45a049;
+}
+
+.image-container {
+    display: flex;
+}
+
+.clickable-image {
+    width: 100px;
+    height: 100px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.active {
+    transform: translateX(100%); /* Pindahkan gambar aktif ke tengah */
 }

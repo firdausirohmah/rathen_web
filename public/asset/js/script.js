@@ -48,10 +48,10 @@ document.addEventListener("DOMContentLoaded", function () {
     imageText.forEach(function (image) {
         image.addEventListener("click", function () {
             imageText.forEach(function (img) {
-                img.classList.remove("active");
+                img.classList.remove("active-img");
             });
 
-            image.classList.add("active");
+            image.classList.add("active-img");
             activeImageIndex = Array.from(imageText).indexOf(image);
             updateImagePosition();
         });

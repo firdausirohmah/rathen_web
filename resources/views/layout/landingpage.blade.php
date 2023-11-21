@@ -86,20 +86,13 @@ src="https://www.facebook.com/tr?id=1058956608607048&amp;ev=PageView&amp;noscrip
     <div  id="floatingMenu" class="floating-menu" onClick="myFunction()" style="position: fixed; z-index: 10;       margin: auto; right: 10px; bottom: 5%;">
         <a href="https://wa.me/628123456789" class="kurir-bt" style="max-width:150px">
             <img src="asset/images/chat.png"  height="160" />
-          </a>
-        </div>
+        </a>
+    </div>
 
-</body>
-
-
-<!-- Mirrored from www.jne.co.id/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 14 Nov 2023 14:19:33 GMT -->
-</htmL>
-
-<header>
-    <header class="navbar-main"> 
+<header class="navbar-main"> 
 <nav class="wrapper">
     <div class="navbar-main-logo">
-        {{-- <a href="index.html"> --}}
+        <a href="/">
             <img src="asset/images/LOGO.png" style="width:60px; height:60px; margin-top:10%;">
             {{-- <link rel="icon" type="image/png" href="asset/images/logo.png" sizes="32x32"> --}}
 
@@ -110,25 +103,27 @@ src="https://www.facebook.com/tr?id=1058956608607048&amp;ev=PageView&amp;noscrip
         <div class="offcanvas-overlay"></div>
         <div class="offcanvas-body">
             <ul class="navbar-main-nav">                                     
-                <li class="nav-item dropdown ">
-                    <a href="/" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item dropdown ">
-                    <a href="/about" class="nav-link">ABOUT US</a>
-                </li>
-                <li class="nav-item dropdown ">
-                    <a href="/result" class="nav-link">LATEST RESULT</a>
+                <li class="nav-item  ">
+                    <a href="#home" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item ">
-                    <a href="/pemesanan" class="nav-link" >Cara Pemesanan</a>
+                    <a href="#about" class="nav-link">ABOUT US</a>
                 </li>
-                <a href="/pricelist" class="nav-link">Price List</a>
+                <li class="nav-item ">
+                    <a href="#result" class="nav-link">LATEST RESULT</a>
+                </li>
+                <li class="nav-item ">
+                    <a href="#order" class="nav-link" >Cara Pemesanan</a>
+                </li>
+                <li class="nav-item ">
+                    <a href="#pricelist" class="nav-link">Price List</a>
+                </li>
             </li>
             <li class="nav-item ">
-                <a href="/location" class="nav-link">Location</a>
+                <a href="#location" class="nav-link">Location</a>
             </li>
             <li class="nav-item ">
-                <a href="/contact" class="nav-link">Contact Us</a>
+                <a href="#contact" class="nav-link">Contact Us</a>
             </li>
 
             {{-- <li class="nav-item">
@@ -137,7 +132,7 @@ src="https://www.facebook.com/tr?id=1058956608607048&amp;ev=PageView&amp;noscrip
                     </button>
                 </li> --}}
             </ul>
-            <form action="https://www.jne.co.id/search" class="navbar-main-search">
+            {{-- <form action="https://www.jne.co.id/search" class="navbar-main-search">
                 <div class="input-group">
                     <i class="ic-search"></i>
                     <input type="text" placeholder="Cari atau masukan nomor resi" name="search" value=" ">
@@ -145,7 +140,7 @@ src="https://www.facebook.com/tr?id=1058956608607048&amp;ev=PageView&amp;noscrip
 							<i class="ic-cross"></i>
 						</button>
 					</div>
-				</form>
+				</form> --}}
 
 				{{-- <ul class="navbar-main-lang"> 
 					 
@@ -199,23 +194,63 @@ src="https://www.facebook.com/tr?id=1058956608607048&amp;ev=PageView&amp;noscrip
 			</div>
 		</div>
 	</nav>
-</header>    </header>
+</header> 
     <!-- end of header -->
     
 @yield('content')
 
-<!--Footer -->
+{{-- <!--Footer -->
     <a class="floating-chat">
     <img src="asset/images/material/ask-joni.png">
 </a>
- 
+
+<footer>
+    <div class="footer-top">
+        <div class="wrapper wrap-footer-top">
+            <div class="wrap-footer-top__left">
+                <div class="box-cs">
+                    <h5>HUBUNGI KAMI</h5>
+                    <p>
+                        <a class="phone" href="tel:+6289611081988">
+                            <i><img src="asset/images/material/ico-cs-call.svg" alt=""></i>+6289611081988
+                        </a>
+                    </p>
+                    <p>
+                        <a class="email" href="rathen.apparel@gmail.com">
+                            <i><img src="asset/images/material/ico-cs-email.svg" alt=""></i>rathen.apparel@gmail.com
+                        </a>
+                    </p>
+                </div>
+                <div class="box-socmed" style="position: center;">
+                    <a href="https://www.instagram.com/rathen.apparel/" target="_blank nofollow"><img src="asset/images/ig.png" alt=""></a>
+                    <a href="https://shopee.co.id/rathen.id" target="_blank nofollow"><img src="asset/images/SHOPEE.png" alt=""></a>
+                    <a href="https://www.tokopedia.com/rathenid" target="_blank nofollow"><img src="asset/images/toko.png" alt=""></a>
+                    </div>
+            </div>
+            
+
+                  
+</footer> 
+  --}}
 
 <script async type="text/javascript" src="asset/js/home.js"></script>
-<script>
-    function myFunction() {
-      embedded_svc.bootstrapEmbeddedService();
-    }
-    </script>
+{{-- <script>
+    $(document).ready(function(){
+       $(window).scroll(function(){
+          $('section').each(function(){
+             var sectionId = $(this).attr('id');
+             var sectionTop = $(this).offset().top - 100;
+             var sectionBottom = sectionTop + $(this).height();
+             var scrollPosition = $(window).scrollTop();
+    
+             if(scrollPosition >= sectionTop && scrollPosition < sectionBottom){
+                $('div').removeClass('active');
+                $('div[href="#' + sectionId + '"]').addClass('active');
+            }
+          });
+       });
+    });
+    </script> --}}
     
     <script type='text/javascript' src='../service.force.com/embeddedservice/5.0/esw.min.js'></script>
     <script type='text/javascript'>

@@ -1,17 +1,30 @@
+/* * {
+    font-family: Montheavy;
+} */
+
 .image-container {
-    max-width: 1400px; /* Mengatur lebar maksimum container */
-    margin: 0 auto; /* Pusatkan container di tengah halaman */
+    max-width: 1400px;
+    /* Mengatur lebar maksimum container */
+    margin: 0 auto;
+    /* Pusatkan container di tengah halaman */
     padding: 20px;
     background-color: #f4f4f4;
     display: flex;
 }
+
 .image-wrapper {
-    max-width: 450px; /* Mengatur lebar maksimum container */
-    width: 150px; /* Mengatur lebar maksimum container */
+    max-width: 450px;
+    /* Mengatur lebar maksimum container */
+    width: 150px;
+    /* Mengatur lebar maksimum container */
     padding: 10px;
+    font-size: 10px;
     transition: transform 0.5s ease-in-out, width 0.4s ease-in-out;
     cursor: pointer;
+    font-family: Montheavy;
+
 }
+
 /* .clickable-image {
     width: 80%;
     height: 80%;
@@ -19,10 +32,13 @@
     cursor: pointer;
 } */
 
-.active {
+.active-img {
     /* transform: translateX(50%);  */
-    width: 250px; /* Lebih besar saat aktif */
-    height: 250px; /* Lebih besar saat aktif */
+    width: 250px;
+    /* Lebih besar saat aktif */
+    height: 250px;
+    font-size: 15px;
+    /* Lebih besar saat aktif */
     color: red;
     /* background-color: rgba(0, 0, 0, 1); */
 
@@ -42,6 +58,7 @@ button {
 button:hover {
     background-color: #45a049;
 }
+
 .slide {
     width: 250px;
     height: 250px;
@@ -55,6 +72,7 @@ button:hover {
     border-radius: 12px;
     border: 2px solid #ddd;
 }
+
 .image-text-active {
     text-align: center;
     background-color: rgba(0, 0, 0, 1);

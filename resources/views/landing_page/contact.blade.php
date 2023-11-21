@@ -5,19 +5,19 @@
 
 
     <style>
-        body {
+        /* body {
             margin: 0;
             padding: 0;
             background: url('/asset/images/kontak.png') ;
             background-repeat: no-repeat;
             background-size:cover;
-            height: 100vh   ; /* Menetapkan tinggi elemen ke tinggi layar (viewport height) */
-            /* display:grid; */
+            height: 100vh   ; 
+            display:grid;
             align-items: center;
             justify-content: center;
-            color: #fff; /* Warna teks */
+            color: #fff; 
             font-family: Montheavy;
-        }
+        } */
 
         .content {
             text-align: center;

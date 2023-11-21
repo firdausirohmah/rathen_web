@@ -24,7 +24,9 @@
     
     <div class="container">
         <div class="row">
+            {{-- <div class="col-lg-3"></div> --}}
             <div class="col-lg-6">
+
                 <div id="carouselExample" class="carousel slide w-100" data-ride="carousel">
                     <div class="carousel-inner ">
                         
@@ -36,7 +38,7 @@
                         </div>
                         <div class="carousel-item">
                             <!-- Gunakan tag video untuk video -->
-                            <video id="video1" class="d-block w-50" controls autoplay>
+                            <video id="video1" class="d-block w-50" controls autoplay muted>
                                 <!-- Sediakan sumber video -->
                                 <source src="asset/images/video1.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
@@ -44,7 +46,7 @@
                         </div>
                         <div class="carousel-item" >
                             <!-- Gunakan tag video untuk video -->
-                            <video id="video2" class="d-block w-50" controls autoplay>
+                            <video id="video2" class="d-block w-50" controls autoplay muted>
                                 <!-- Sediakan sumber video -->
                                 <source src="asset/images/video2.mp4" type="video/mp4">
                                 Your browser does not support the video tag.

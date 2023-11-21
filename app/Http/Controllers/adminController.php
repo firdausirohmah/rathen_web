@@ -23,7 +23,7 @@ class adminController extends Controller
         foreach ($data as $pemesanan){
             return view('auth.tables',[
                 'pages' => "View Order",
-                'collection' => $pemesanan,
+                'order' => $pemesanan,
             ]);
 
         }

@@ -64,7 +64,7 @@
  *
  * Copyright (c) 2017 CJ Patoilo
  * Licensed under the MIT license
- */a{display:inline-block;text-decoration:none}a,a:focus,a:hover{color:#e11c22}a.link-arrow{font-size:.875rem;font-weight:500;height:22px;line-height:18px;padding:0 26px 0 0;position:relative}a.link-arrow.arrow-left{padding:0 0 0 26px}a.link-arrow.arrow-left:after{left:0;right:unset;transform:scaleX(-1)}a.link-arrow.arrow-left:hover:after{left:-3px}a.link-arrow:after{background:url(../images/material/icon-arrow.svg) no-repeat 0 0;content:"";height:18px;position:absolute;right:0;top:0;transition:all .2s ease-out;width:18px}a.link-arrow:hover:after{right:-3px}
+ */a{display:inline-block;text-decoration:none}a,a:focus,.a.link-arrow{font-size:.875rem;font-weight:500;height:22px;line-height:18px;padding:0 26px 0 0;position:relative}a.link-arrow.arrow-left{padding:0 0 0 26px}a.link-arrow.arrow-left:after{left:0;right:unset;transform:scaleX(-1)}a.link-arrow.arrow-left:hover:after{left:-3px}a.link-arrow:after{background:url(../images/material/icon-arrow.svg) no-repeat 0 0;content:"";height:18px;position:absolute;right:0;top:0;transition:all .2s ease-out;width:18px}a.link-arrow:hover:after{right:-3px}
 
 /*!
  * Milligram-scss v1.3.0

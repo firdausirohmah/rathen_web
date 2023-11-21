@@ -11,12 +11,13 @@
         <div class="main-banner__cekresi">
             <div class="main-banner__cekresi--list cek-lacak">
                 <a class="form"  href="https://www.jne.co.id/tracking-package">
-                    <i><img src="asset/images/icon baju - biru.png"></i>
+                    <i><img src="asset/images//material/ico-lacak.svg"></i>
                     <div class="input-box" style="margin-top: 10px">
-                        <h4 class="item-center mt-10">COSTUM JARSEY</h4>
+                        <label>Lacak Pengiriman</label>
+                        <input type="text" placeholder="Masukan nomor resi">
                         {{-- <input type="text" placeholder="Masukkan nomor pesanan" name="pesanan" required> --}}
                         {{-- <input type="submit" class="button-search" placeholder="COSTUM JARSEY"> --}}
-                        {{-- <small>*Beri tanda koma jika lebih dari 1 resi</small> --}}
+                        <small style="text-decoration: none;">*Beri tanda koma jika lebih dari 1 resi</small>
                     </div>
                 </a>
             </div>
@@ -507,5 +508,38 @@
         <button onclick="setCookie('jnecookies', 'jnec', 3);">Setuju</button>
     </div>
 </div> --}}
+
+<footer class="footer pt-3  ">
+    <div class="container-fluid">
+      <div class="row align-items-center justify-content-lg-between">
+        <div class="col-lg-6 mb-lg-0 mb-4">
+          <div class="copyright text-center text-sm text-muted text-lg-start">
+            © <script>
+              document.write(new Date().getFullYear())
+            </script>,
+            made with <i class="fa fa-heart"></i> by
+            <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">Creative Tim</a>
+            for a better web.
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <ul class="nav nav-footer justify-content-center justify-content-lg-end">
+            <li class="nav-item">
+              <a href="https://www.creative-tim.com" class="nav-link text-muted" target="_blank">Creative Tim</a>
+            </li>
+            <li class="nav-item">
+              <a href="https://www.creative-tim.com/presentation" class="nav-link text-muted" target="_blank">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a href="https://creative-tim.com/blog" class="nav-link text-muted" target="_blank">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a href="https://www.creative-tim.com/license" class="nav-link pe-0 text-muted" target="_blank">License</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+</footer>
 @endsection
 

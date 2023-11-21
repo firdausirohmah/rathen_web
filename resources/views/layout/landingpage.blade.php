@@ -85,7 +85,7 @@ src="https://www.facebook.com/tr?id=1058956608607048&amp;ev=PageView&amp;noscrip
 <body>
     <div  id="floatingMenu" class="floating-menu" onClick="myFunction()" style="position: fixed; z-index: 10;       margin: auto; right: 10px; bottom: 5%;">
         <a href="https://wa.me/628123456789" class="kurir-bt" style="max-width:150px">
-            <img src="asset/images/chat.png" width="150" height="160" />
+            <img src="asset/images/chat.png"  height="160" />
           </a>
         </div>
 
@@ -208,33 +208,7 @@ src="https://www.facebook.com/tr?id=1058956608607048&amp;ev=PageView&amp;noscrip
     <a class="floating-chat">
     <img src="asset/images/material/ask-joni.png">
 </a>
-<footer>
-    <div class="footer-top">
-        <div class="wrapper wrap-footer-top">
-            <div class="wrap-footer-top__left">
-                <div class="box-cs">
-                    <h5>HUBUNGI KAMI</h5>
-                    <p>
-                        <a class="phone" href="tel:+6289611081988">
-                            <i><img src="asset/images/material/ico-cs-call.svg" alt=""></i>+6289611081988
-                        </a>
-                    </p>
-                    <p>
-                        <a class="email" href="rathen.apparel@gmail.com">
-                            <i><img src="asset/images/material/ico-cs-email.svg" alt=""></i>rathen.apparel@gmail.com
-                        </a>
-                    </p>
-                </div>
-                <div class="box-socmed" style="position: center;">
-                    <a href="https://www.instagram.com/rathen.apparel/" target="_blank nofollow"><img src="asset/images/ig.png" alt=""></a>
-                    <a href="https://shopee.co.id/rathen.id" target="_blank nofollow"><img src="asset/images/SHOPEE.png" alt=""></a>
-                    <a href="https://www.tokopedia.com/rathenid" target="_blank nofollow"><img src="asset/images/toko.png" alt=""></a>
-                    </div>
-            </div>
-            
-
-                  
-</footer>  
+ 
 
 <script async type="text/javascript" src="asset/js/home.js"></script>
 <script>

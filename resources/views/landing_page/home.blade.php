@@ -14,10 +14,10 @@
         {{--  --}}
         <div class="main-banner__cekresi">
             <div class="main-banner__cekresi--list cek-lacak">
-                <a class="form button-search"  href="{{ url('/page-costum') }}">
+                <a class="form button-search"  href="{{ url('page-costum') }}" style="margin-left:66px; margin-top:15px">
                     <i><img src="asset/images/icon baju - biru.png" style="width : 100%;"></i>
                     <div class="input-box" >
-                        <h5 class="item-center jersey">COSTUM JERSEY</h5>
+                        <h5 class="item-center jersey">CUSTOM JERSEY</h5>
                         {{-- <input type="text" placeholder="Masukkan nomor pesanan" name="pesanan" required> --}}
                         {{-- <input type="submit" class="button-search" placeholder="COSTUM JARSEY"> --}}
                         {{-- <small>*Beri tanda koma jika lebih dari 1 resi</small> --}}
@@ -25,7 +25,7 @@
                 </a>
             </div>
             <div class="main-banner__cekresi--list cek-tarif">
-                <a class="form button-search"  href="{{ url('/page-costum') }}">
+                <a class="form button-search"  href="{{ url('') }}" style="margin-left:66px; margin-top:15px">
                     <i><img src="asset/images/icon baju - ungu.png"></i>
                     <div class="input-box">
                         <h5 class="item-center jersey">SPORTWEARS</h5>
@@ -36,8 +36,7 @@
         <div class="main-banner__video">
             <video muted="muted" loop="loop" id="videohome" autoplay="autoplay" playsinline>
                 <source src="asset/cfind/source/files/video.mp4" type="video/mp4">
-                {{-- <source src="asset/cfind/source/files/hugo-papua-15-website.mp4" type="video/mp4"> --}}
-                {{-- <source src="asset/cfind/source/files/hugo-papua-15-website.webm" type="video/webm"> --}}
+                
             </video>
         </div>
     </section>

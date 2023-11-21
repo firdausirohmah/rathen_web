@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\adminController;
+use App\Http\Controllers\loginController;
+use App\Http\Controllers\registerController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -62,6 +65,21 @@ Route::get('/contact', function () {
     return view('landing_page.contact');
 });
 
+Route::controller(loginController::class)->group(function(){
+    Route::get('/login','login')->name('login');
+    Route::post('/login/actionlogin','actionlogin')->name('actionlogin');
+    Route::get('actionlogout','actionlogout')->name('actionlogout');
+});
+Route::controller(registerController::class)->group(function(){
+    Route::get('/daftar','daftar')->name('daftar');
+    Route::post('/daftar/actiondaftar','actionregister')->name('actionregister');
+});
+
+Route::controller(adminController::class)->group(function(){
+    Route::get('/dashboard','dashboard')->name('dashboard');
+    Route::get('/view-order','vieworder')->name('vieworder');
+    Route::get('/finance','finance')->name('finance');
+});
 // Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

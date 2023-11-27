@@ -59,14 +59,12 @@ src="https://www.facebook.com/tr?id=1058956608607048&amp;ev=PageView&amp;noscrip
 <!-- End Meta Pixel Code -->
 
 
-<link rel="icon" type="image/png" href="asset/cfind/thumbs/images/thumb_32_32_contain_jne-express-1.png" sizes="32x32">
+
 <link rel="canonical" href="index.html" />
 
 
     <!--Style-->
-<link rel="stylesheet" href="asset/css/reset.css" preload>
-<link rel="stylesheet" href="asset/css/milligram.css" preload>
-<link rel="stylesheet" href="asset/fonts/webarq-icons/style.css" preload>
+
 <!--endbuild-->
 <style type='text/css'>
     .embeddedServiceHelpButton .helpButton .uiButton {
@@ -78,9 +76,16 @@ src="https://www.facebook.com/tr?id=1058956608607048&amp;ev=PageView&amp;noscrip
    }
 </style>
 <!--js-->
-<script async type="text/javascript" src="asset/js/app.js"></script>
+
+<link rel="stylesheet" href="{{asset('asset/css/reset.css')}}" preload>
+<link rel="stylesheet" href="{{asset('asset/css/milligram.css')}}" preload>
+<link rel="stylesheet" href="{{asset('asset/fonts/webarq-icons/style.css')}}" preload>
+<link rel="stylesheet" type="text/css" href="{{asset('asset/css/home.css')}}" preload>
+<script async type="text/javascript" src="{{asset('asset/js/app.js')}}"></script>
+
+<link rel="icon" type="image/png" href="{{asset('asset/cfind/source/images/rathen.png')}}" sizes="32x32">
 <!--endbuild-->
-    <link rel="stylesheet" type="text/css" href="asset/css/home.css" preload>
+
 </head>
 <body>
     <style>
@@ -117,7 +122,7 @@ src="https://www.facebook.com/tr?id=1058956608607048&amp;ev=PageView&amp;noscrip
         </div>
         <div class="main-banner__video">
             <video muted="muted" loop="loop" id="videohome" autoplay="autoplay" playsinline>
-                <source src="asset/cfind/source/files/video.mp4" type="video/mp4">
+                <source src="{{asset('asset/cfind/source/files/video.mp4')}}" type="video/mp4">
                 
             </video>
         </div>

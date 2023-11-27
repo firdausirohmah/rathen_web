@@ -5,13 +5,14 @@
 <section id="home" style="overflow: hidden;">
     <section class="main-banner">
         <div class="main-banner__logo">
-            <img src="asset/cfind/source/images/rathen.png" alt="">
+            <img src="{{asset('asset/cfind/source/images/rathen.png')}}" alt="">
+            
         </div>
 {{--  --}}
         <div class="main-banner__cekresi">
             <div class="main-banner__cekresi--list cek-lacak">
                 <a class="form"  href="">
-                    <i><img src="asset/images//material/ico-lacak.svg"></i>
+                    <i><img src="{{asset('asset/images/material/ico-lacak.svg')}}"></i> 
                     <div class="input-box" style="margin-top: 10px">
                         <label>Lacak Pesanan</label>
                         <input type="text" placeholder="Masukan nomor pesanan">
@@ -26,7 +27,8 @@
                     {{-- <form action="" id="formResi">
                         <div class="field field-from field-autocomplete">
                             <i class="ico">
-                                <img src="asset/images/material/ico-cek-map.svg">
+                                <img src="{{asset('asset/images/material/ico-cek-map.svg')}}">
+                                
                             </i>
                             <input type="text" placeholder="Kategori" autocomplete="off" params="1" required>
                             <input type="hidden" name="origin">
@@ -34,7 +36,8 @@
                         </div>
                         <div class="field field-to field-autocomplete">
                             <i class="ico">
-                                <img src="asset/images/material/ico-cek-to.svg">
+                                <img src="{{asset('asset/images/material/ico-cek-to.svg')}}">
+                                
                             </i>
                             <input type="text" placeholder="Kualitas"  autocomplete="off" params="2" required>
                             <select name="kualitas" id="">
@@ -47,7 +50,8 @@
                         </div>
                         <div class="field field-weight">
                             <i class="ico">
-                                <img src="asset/images/material/ico-cek-weight.svg">
+                                <img src="{{asset('asset/images/material/ico-cek-weight.svg')}">
+                                
                             </i>
                             <input type="text" placeholder="Jumlah Pesanan" name="jumlah" required>
                         </div>
@@ -57,7 +61,8 @@
                     </form> --}}
                 {{-- </div> --}}
                 <form class="form">
-                    <i><img src="asset/images/material/ico-cek.svg"></i>
+                    <i><img src="{{asset('asset/images/material/ico-cek.svg')}}"></i>
+                    
                     <div class="input-box">
                         <label>CEK HARGA</label>
                         <input type="text" placeholder="Masukan data pesanan">
@@ -68,7 +73,8 @@
         </div>
         <div class="main-banner__video">
             <video muted="muted" loop="loop" id="videohome" autoplay="autoplay" playsinline>
-                <source src="asset/cfind/source/files/video.mp4" type="video/mp4">
+                <source src="{{asset('asset/cfind/source/files/video.mp4')}}" type="video/mp4">
+                
                 {{-- <source src="asset/cfind/source/files/hugo-papua-15-website.mp4" type="video/mp4"> --}}
                 {{-- <source src="asset/cfind/source/files/hugo-papua-15-website.webm" type="video/webm"> --}}
             </video>
@@ -97,16 +103,20 @@
                     <div class="carousel-inner ">
                         
                         <div class="carousel-item active">
-                            <img src="asset/images/swiss.jpg" class="d-block w-100" alt="swiss">
+                            <img src="{{asset('asset/images/swiss.jpg')}}" class="d-block w-100" alt="swiss">
+                            
+                            
                         </div>
                         <div class="carousel-item">
-                            <img src="asset/images/top.jpg" class="d-block w-100" alt="top">
+                            <img src=" {{asset('/asset/images/top.jpg')}}" class="d-block w-100" alt="top">
+                           
                         </div>
                         <div class="carousel-item">
                             <!-- Gunakan tag video untuk video -->
                             <video id="video1" class="d-block w-50" controls autoplay muted>
                                 <!-- Sediakan sumber video -->
-                                <source src="asset/images/video1.mp4" type="video/mp4">
+                                <source src="{{asset('asset/images/video1.mp4')}}" type="video/mp4">
+                                 
                                 Your browser does not support the video tag.
                             </video>
                         </div>
@@ -114,7 +124,8 @@
                             <!-- Gunakan tag video untuk video -->
                             <video id="video2" class="d-block w-50" controls autoplay muted>
                                 <!-- Sediakan sumber video -->
-                                <source src="asset/images/video2.mp4" type="video/mp4">
+                                <source src="{{asset('asset/images/video2.mp4')}}" type="video/mp4">
+                                
                                 Your browser does not support the video tag.
                             </video>
                         </div>
@@ -377,7 +388,22 @@
                   </section>
 
 </section>
-
+<style>
+.button {
+    /* padding: 100px 100px 100px 100px; */
+    position: relative;
+    &--left {
+          left: 50%;
+          top: 50%;
+          transform: translateX(-400px);
+        }
+    &--right {
+          right: 50%;
+          top: 50%;
+          transform: translateX(50px);
+        }
+      }
+</style>
 <section id="pricelist">
     <section class="py-5 py-xl-8">
         <div class="container">
@@ -388,24 +414,29 @@
             </div>
           </div>
         </div>
-      <div class="container">
+        <div class="container">
           <div class="row">
               <div class="col-12">
-                <form action="" id="priceList"></form>
-                @csrf
-                  <div class="image-container justify-content-md-center">
-                      <div class="image-wrapper active-img">
-                          <img src="asset/images/image1.jpg" alt="non-print" class="clickable-image" data-position="1">
+                  <form action="" id="priceList">
+                      @csrf
+                      
+                      <div class="image-container justify-content-md-center">
+                          <button class="btn btn-outline-primary">Left</button>
+                      <div class="image-wrapper active-img item--1" data-position="1">
+                          <img src="{{asset('asset/images/image1.jpg')}}" alt="non-print" class="clickable-image" data-position="1">
+                          
                           <p class="image-text">NON - PRINT</p>
                       </div>
-                      <div class="image-wrapper">
-                          <img src="asset/images/image2.jpg" alt="half-print" class="clickable-image" data-position="2">
+                      <div class="image-wrapper" data-position="2">
+                          <img src="{{asset('asset/images/image2.jpg')}}" alt="half-print" class="clickable-image" data-position="2">
                           <p class="image-text">HALF - PRINT</p>
                       </div>
-                      <div class="image-wrapper">
-                          <img src="asset/images/image3.jpg" alt="full-print" class="clickable-image" data-position="3">
+                      <div class="image-wrapper" data-position="3">
+                          <img src="{{asset('asset/images/image3.jpg')}}" alt="full-print" class="clickable-image" data-position="3">
                           <p class="image-text">FULL - PRINT</p>
                       </div>
+                        <button class="btn btn-outline-primary">Right</button>
+
                     </div>
                     <label for="nama">Nama Pemesan:</label>
                         <input type="text" id="nama_pelanggan" name="nama" required>
@@ -423,9 +454,10 @@
                         <input type="text" id="kualitas" name="kualitas" required>
                         <button type="button" >Kirim Data</button>
                     </form>
-              </div>
-          </div>
-      </div>
+
+                </div>
+            </div>
+        </div>
     </section>
     <script src="asset/js/script.js"></script>
     <script>
@@ -489,7 +521,8 @@
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.4343833806684!2d106.77431907418564!3d-6.5928088934009095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c57a439b19c9%3A0x4a05cc1ee48848ba!2sRATHEN%20Store%20-%20Sportwears%20Outlet!5e0!3m2!1sid!2sid!4v1700127350226!5m2!1sid!2sid" style="width: 100%; height: 100%; " allowfullscreen class="mx-auto"></iframe>
             </div>
             <div class="col-lg-6">
-                <img src="/asset/images/top.jpg" alt="Your Image" style="width: 100%; height: 100%;" class="img-fluid">
+                <img src="{{asset('asset/images/top.jpg')}}" alt="Your Image" style="width: 100%; height: 100%;" class="img-fluid">
+            
             </div>
         </div>
     </div>
@@ -528,7 +561,7 @@
             background: url('/asset/images/kontak.png') ;
             background-repeat: no-repeat;
             /* background-size:cover; */
-            height: 100vh   ; 
+            height: 120vh   ; 
 
         }
         .content {
@@ -556,6 +589,10 @@
             padding-top: 50px;
             /* background-color: white; */
         }
+        .contact-title{
+            color: #fff;
+            font-size: 4.2rem;
+        }
         .contact,.icon {
             align-items: center;
             margin: auto;
@@ -576,7 +613,33 @@
             outline: none;
 
         }
-        .btn-sosmed{
+        .btn-mid:hover{
+            width: 150px;
+            height: 150px;
+            background-color: #fff;
+            border: 0.2rem solid #1890fd;
+            /* border-radius: 6rem; */
+            padding: 0.4em;
+            box-shadow: 0 0 .2rem #fff,
+              0 0 .2rem #fff,
+              0 0 2rem #1890fd,
+              0 0 0.8rem #1890fd,
+              0 0 2.8rem #1890fd,
+              inset 0 0 1.3rem #1890fd;
+        }
+        .btn-mid:visited{
+           width: 150px;
+            height: 150px;
+            background-color: #fff;
+            border-radius: 14px;
+            box-shadow:black 2px 2px 2px !important;
+            margin: auto;
+            display: block;
+            transition: all 0.5s ease-in-out;
+            cursor: pointer;
+            outline: none;
+        }
+        .container-sosmed{
             border-radius: 14px;
             align-items: center;
             /* display: flex; */
@@ -584,6 +647,23 @@
             /* transition: cubic-bezier(0.95, 0.05, 0.795, 0.035); */
             cursor: pointer;
             outline: none;
+        }
+        .btn-sosmed{
+            transition: all 0.5s ease-in;
+            width: 80px;
+
+        }
+        .btn-sosmed:hover{
+            transition: all 0.5s ease-in-out;
+            /* width: 100px; */
+            border-radius: 12px;
+            padding: 0.4em;
+            box-shadow: 0 0 .1rem #fff,
+              0 0 .2rem #fff,
+              0 0 1rem #1890fd,
+              0 0 0.4rem #1890fd,
+              0 0 1.2rem #1890fd,
+              inset 0 0 1.0rem #1890fd;
         }
         .frame{
             padding: 10%;
@@ -600,14 +680,30 @@
         .footer{
             font-family: Montheavy;
             color:gray;
+            margin-top: 20px;
+            padding-top: 20px;
         }
-     
-        
+    .kurir-img{
+        width: 80px;
+    }
+@media (max-width: 340px) {
+    .contact-title {
+        color: #fff;
+        font-size: 1.8rem;
+    }
+}
+/* @media (min-width: 300px) {
+    .contact-title {
+        color: #fff;
+        font-size: 1.8rem;
+    }
+} */
         @media (max-width: 768px) {
     .btn-mid {
-        width: 20%; /* Ubah lebar tombol menjadi 100% */
-        height: 20%;
-
+        width: 50%; /* Ubah lebar tombol menjadi 100% */
+        height: 50%;
+        padding: 5px 5px 5px 5px;
+        margin-top: 5px;
     }
     h5{
         font-size: 18px;
@@ -616,37 +712,61 @@
     .icon {
         width: 40%; /* Ubah lebar ikon menjadi 50% */
     }
-    
+    .contact-title{
+        font-size: 2.2rem;
+    }
+    .kurir-img{
+        width: 50px;
+    }
+    .wp{
+        /* background: url('/asset/images/kontak.png') ; */
+            /* background-repeat: no-repeat; */
+            /* background-size:cover; */
+            height: 130vh; 
+    }
+    .footer{
+            font-size: 13px;
+        }
 }
     </style>
 
 <div class="container frame mt-4">
     <div class="row">
         <div class="col-lg-12">
-            <h1 style="color: #fff"> stay connected <br> with us </h1>
+            <h1 class="contact-title"> stay connected <br> with us </h1>
         </div>
     </div>
 
         <div class="row sosmed">
             <div class="col-lg-2"></div>
-                <a href="https://wa.me/6289611081988?text=halo%20RATHEN..%20Saya%20ingin%20membuat%20custom%20jersey" class="btn-mid"><img src="asset/images/wa.png" class="icon" width="50%" alt="wa"><h5>whatsapp</h5></a>
-                <a href="https://shopee.co.id/rathen.id" class="btn-mid"><img src="asset/images/SHOPEE.png" class="icon" width="50%" alt="wa"><h5>shopee</h5></a>
-                <a href="https://www.tokopedia.com/rathenid" class="btn-mid"><img src="asset/images/toko.png" class="icon" width="50%" alt="wa"><h5>tokopedia</h5></a>
+                <a href="https://wa.me/6289611081988?text=halo%20RATHEN..%20Saya%20ingin%20membuat%20custom%20jersey" target="_blank" class="btn-mid"><img src="asset/images/wa.png" class="icon" width="50%" alt="wa"><h5>whatsapp</h5></a>
+                <a href="https://shopee.co.id/rathen.id" target="_blank" class="btn-mid"><img src="asset/images/SHOPEE.png" class="icon" width="50%" alt="wa"><h5>shopee</h5></a>
+                <a href="https://www.tokopedia.com/rathenid" target="_blank" class="btn-mid"><img src="asset/images/toko.png" class="icon" width="50%" alt="wa"><h5>tokopedia</h5></a>
             <div class="col-lg-2"></div>
         </div>
         <div class="row sosmed">
-            <div class="btn-sosmed">
-                <a href="https://www.instagram.com/rathen.apparel/" class="btn-sosmed"><img src="asset/images/ig-biru.png" width="80px" alt="wa"></a>
-                <a href="mailto:rathen.apparel@gmail.com" class="email btn-sosmed"><img src="asset/images/mail.png" width="80px" alt="wa"></a>
-                <p class="footer">copycight &copy; rathen indonesia 2023</p>
+            <div class="container-sosmed">
+                <a href="https://www.instagram.com/rathen.apparel/" target="_blank" ><img src="asset/images/ig-biru.png" class="btn-sosmed" alt="wa"></a>
+                <a href="mailto:rathen.apparel@gmail.com" target="_blank" class="emai"><img src="asset/images/mail.png" class="btn-sosmed" alt="wa"></a>
+                <p class="footer">copyright &copy; rathen indonesia 2023</p>
                 {{-- <a href="https://wa.me/628123456789" --}}
             </div>
         </div>
         
     </div>
-
+</div>
+<div class="container">
+    <div class="row">
+        <ul class="carousel-2">
+            <button class="button button--left">Left</button>
+            <li class="item item--1" data-position="1"></li>
+            <li class="item item--2" data-position="2"></li>
+            <li class="item item--3" data-position="3">
+            <button class="button button--right">Right</button>
+          </li>
+        </ul>
+    </div>
+</div>
 </section>
 
-    
 @endsection
-

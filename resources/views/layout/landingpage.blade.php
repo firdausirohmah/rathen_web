@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
    
-    <link href="asset/css/ex.css" rel="stylesheet">
+
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
     {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -58,15 +58,18 @@ src="https://www.facebook.com/tr?id=1058956608607048&amp;ev=PageView&amp;noscrip
 <!-- End Meta Pixel Code -->
 
 
-<link rel="icon" type="image/png" href="asset/cfind/thumbs/images/thumb_32_32_contain_jne-express-1.png" sizes="32x32">
 <link rel="canonical" href="index.html" />
 
 
+<link rel="stylesheet" href="{{asset('/asset/css/reset.css')}}" preload>
+<link rel="stylesheet" href="{{asset('/asset/css/milligram.css')}}" preload>
+<link rel="stylesheet" href="{{asset('/asset/fonts/webarq-icons/style.css')}}" preload>
+<link rel="stylesheet" type="text/css" href="{{asset('/asset/css/home.css')}}" preload>
+<script async type="text/javascript" src="{{asset('/asset/js/app.js')}}"></script>
+    <link href="{{asset('/asset/css/ex.css')}}" rel="stylesheet">
+<link rel="icon" type="image/png" href="{{asset('/asset/cfind/source/images/rathen.png')}}" sizes="32x32">
     <!--Style-->
-<link rel="stylesheet" href="asset/css/reset.css" preload>
-<link rel="stylesheet" href="asset/css/milligram.css" preload>
-<link rel="stylesheet" href="asset/fonts/webarq-icons/style.css" preload>
-<!--endbuild-->
+
 <style type='text/css'>
     .embeddedServiceHelpButton .helpButton .uiButton {
        background-color: #cf142B;
@@ -77,13 +80,11 @@ src="https://www.facebook.com/tr?id=1058956608607048&amp;ev=PageView&amp;noscrip
    }
 </style>
 <!--js-->
-<script async type="text/javascript" src="asset/js/app.js"></script>
-<!--endbuild-->
-    <link rel="stylesheet" type="text/css" href="asset/css/home.css" preload>
+
 </head>
 
 <body>
-    <div  id="floatingMenu" class="floating-menu" onClick="myFunction()" style="position: fixed; z-index: 10;       margin: auto; right: 10px; bottom: 5%;">
+    <div  id="floatingMenu" class="floating-menu" onClick="myFunction()" style="position: fixed; z-index: 10;margin: auto; right: 10px; bottom: 70px;">
         <a href="https://wa.me/628123456789" class="kurir-bt" style="max-width:150px">
             <img src="asset/images/chat.png"  height="160" />
         </a>

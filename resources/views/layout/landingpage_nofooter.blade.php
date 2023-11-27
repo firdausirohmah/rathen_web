@@ -26,6 +26,13 @@
   gtag('config', 'G-7V32MGQLQ4');
 </script>
 
+<link rel="stylesheet" href="{{asset('public/asset/css/reset.css')}}" preload>
+<link rel="stylesheet" href="{{asset('public/asset/css/milligram.css')}}" preload>
+<link rel="stylesheet" href="{{asset('public/asset/fonts/webarq-icons/style.css')}}" preload>
+<link rel="stylesheet" type="text/css" href="{{asset('public/asset/css/home.css')}}" preload>
+<script async type="text/javascript" src="{{asset('public/asset/js/app.js')}}"></script>
+
+<link rel="icon" type="image/png" href="{{asset('public/asset/cfind/source/images/rathen.png')}}" sizes="32x32">
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],

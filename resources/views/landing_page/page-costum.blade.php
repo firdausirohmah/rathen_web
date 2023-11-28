@@ -402,13 +402,13 @@
 </style>
 <style>
     .level{
-    margin-left: 5%;
+    text-align: left ;
     font-family: Montheavy; 
     font-weight: bold;
     }
     .btn-dark-transparent {
         background-color: transparent;
-        color: black;
+        color: #000;
         border: 1px solid black;
         transition: background-color 0.3s ease-in-out;
         margin-right: 5%; /* Jarak kanan antara tombol dan elemen di sebelah kanan */
@@ -420,24 +420,30 @@
     }
     .harga{
         font-weight: bold;
+        text-align: left ;
         color: red;
         font-family: Montheavy; 
-        margin-left: 5%;
+        margin-left: auto;
         font-size: 20px;
 
 
     }
 
     .btn-dark-transparent:hover {
-        background-color: black;
+        background-color: gray;
         color: white;
     }
-    .total{
-        margin-left: 55%;
-        width: 150px; /* Lebar tombol */
-         height: 40px;
-         background-color: red;
-         margin-top: 3%;
+    .btn-dark-transparent:focus{
+        background-color: #000;
+        color: #fff
+
+    }
+    .cek-harga{
+        width: 200px;
+        margin-top: 10px;
+        height: 40px;
+        border-radius: 14px;
+        padding-top: 3%;
     }
     </style>
 <section id="pricelist">
@@ -450,41 +456,59 @@
             </div>
           </div>
         </div>
-      <div class="container" >
-    <div class="row">
-        <div class="col-lg-12">
-                    <!-- Produk Gambar -->
-            <div class="image-container justify-content-md-center">
-                <div class="image-wrapper" data-position="1">
-                    <img src="{{asset('asset/images/image1.jpg')}}" alt="Product 1" class="clickable-image" data-price="100000">
-                    <p class="image-text" style="border: none;">NON - PRINT</p>
+        <div class="container" >
+            <div class="row">
+                <div class="col-lg-12">
+                            <!-- Produk Gambar -->
+                    <div class="image-container justify-content-md-center">
+                        <div class="image-wrapper" data-position="1">
+                            <img src="{{asset('asset/images/image1.jpg')}}" alt="Product 1" class="clickable-image" data-price="100000">
+                            <p class="image-text" style="border: none;">NON - PRINT </p>
+                        </div>
+                        <div class="image-wrapper" data-position="2">
+                            <img src="{{asset('asset/images/image1.jpg')}}" alt="Product 2" class="clickable-image" data-price="150000">
+                            <p class="image-text" style="border: none;">FULL- PRINT </p>
+                        </div>
+                        <div class="image-wrapper" data-position="3">
+                            <img src="{{asset('asset/images/image1.jpg')}}" alt="Product 3" class="clickable-image" data-price="200000">
+                            <p class="image-text" style="border: none;">HALF - PRINT </p>
+                        </div>
+                    </div>
                 </div>
-                <div class="image-wrapper" data-position="2">
-                    <img src="{{asset('asset/images/image1.jpg')}}" alt="Product 2" class="clickable-image" data-price="150000">
-                    <p class="image-text" style="border: none;">FULL - PRINT</p>
+                <div class="col-lg-12 mt-4">
+                        <label for="nama">Level Kualitas:</label>
                 </div>
-                <div class="image-wrapper" data-position="3">
-                    <img src="{{asset('asset/images/image1.jpg')}}" alt="Product 3" class="clickable-image" data-price="200000">
-                    <p class="image-text" style="border: none;">HALF - PRINT</p>
-                </div>
-                <label for="nama">Level Kualitas:</label>
-                <div class="col">
-                    <button id="fans" class="btn btn-outline-secondary">Fans</button>
-                </div>
-                <div class="col">
-                    <button id="stadium" class="btn btn-outline-secondary">Stadium</button>
-                </div>
-                <div class="col"></div>
-                    <button id="pro" class="btn btn-outline-secondary">Pro</button>
             </div>
+        </div>
+        <div class="container text-center mt-2">
+            <div class="row">
+                <div class="col">
+                    <button type="button" class="btn btn-dark-transparent total1" id="fans" data-multiplier="1">FANS</button>
                 </div>
-                <button type="submit" class="btn btn-primary mt-4">Kirim Data</button>
-                
-                </form>
+                <div class="col">
+                    <button type="button" class="btn btn-dark-transparent total2" id="stadium" data-multiplier="1.5">STADIUM</button>
+                </div>
+                <div class="col">
+                    <button type="button" class="btn btn-dark-transparent total3" id="pro" data-multiplier="2">PRO</button>
+                </div>
             </div>
+        </div>
+        <div class="container text-center mt-2">
+            <div class="row">
+                <div class="col">
+                    <p class="level">Harga :</p>
+                    <h6 class="harga">IDR <span class="bg-dangger" id="displayText">0</span></h6>
+                </div>
+                <div class="col">
+                </div>
+                <div class="col">
+                    <a href="/form-1"><button type="button"  class="cek-harga btn btn-danger">Cek Total Harga</button></a>
+                </div>
+            </div>
+        </div>
 
             <!-- Tombol Kualitas -->
-            <button type="button" class="btn btn-dark btn-dark-transparent" id="fans" data-multiplier="1">FANS</button>
+            {{-- <button type="button" class="btn btn-dark btn-dark-transparent" id="fans" data-multiplier="1">FANS</button>
             <button type="button" class="btn btn-dark btn-dark-transparent" id="stadium" data-multiplier="1.5">STADIUM</button>
             <button type="button" class="btn btn-dark btn-dark-transparent" id="pro" data-multiplier="2">PRO</button>
 
@@ -492,10 +516,8 @@
             <button type="button" class="btn btn-danger total">Cek Total Harga</button>
 
             <!-- Total Harga -->
-            <p class="level">Total Harga :</p>
-            <h6 class="harga"> IDR <span class="bg-dangger" id="displayText">0</span></h6>
             </div>
-        </div>
+        </div> --}}
     </div>
     </section>
     <script src="asset/js/script.js"></script>
@@ -527,7 +549,39 @@
             });
     
             // Event listener untuk tombol cek total harga
-            document.querySelector('.total').addEventListener('click', function () {
+            document.querySelector('.total1').addEventListener('click', function () {
+                // Cek apakah gambar dan kualitas sudah dipilih
+                if (selectedImage && selectedQuality) {
+                    // Ambil harga dari data-price pada gambar yang dipilih
+                    var hargaProduk = parseFloat(selectedImage.getAttribute('data-price'));
+    
+                    // Hitung total harga dengan mengalikan harga produk dengan multiplier kualitas
+                    var totalHarga = hargaProduk * selectedQuality;
+    
+                    // Tampilkan total harga pada elemen dengan ID displayText
+                    document.getElementById('displayText').innerText = totalHarga.toLocaleString('id-ID');
+                } else {
+                    // Tampilkan pesan jika gambar atau kualitas belum dipilih
+                    alert('Pilih gambar dan kualitas terlebih dahulu.');
+                }
+            });
+            document.querySelector('.total2').addEventListener('click', function () {
+                // Cek apakah gambar dan kualitas sudah dipilih
+                if (selectedImage && selectedQuality) {
+                    // Ambil harga dari data-price pada gambar yang dipilih
+                    var hargaProduk = parseFloat(selectedImage.getAttribute('data-price'));
+    
+                    // Hitung total harga dengan mengalikan harga produk dengan multiplier kualitas
+                    var totalHarga = hargaProduk * selectedQuality;
+    
+                    // Tampilkan total harga pada elemen dengan ID displayText
+                    document.getElementById('displayText').innerText = totalHarga.toLocaleString('id-ID');
+                } else {
+                    // Tampilkan pesan jika gambar atau kualitas belum dipilih
+                    alert('Pilih gambar dan kualitas terlebih dahulu.');
+                }
+            });
+            document.querySelector('.total3').addEventListener('click', function () {
                 // Cek apakah gambar dan kualitas sudah dipilih
                 if (selectedImage && selectedQuality) {
                     // Ambil harga dari data-price pada gambar yang dipilih
@@ -545,31 +599,24 @@
             });
         });
     </script>
-    
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var buttons = document.querySelectorAll('.btn-dark-transparent');
-            buttons.forEach(function (button) {
-                button.addEventListener('click', function () {
-                    // Tambahkan logika atau aksi yang diperlukan saat tombol diklik di sini
-                });
-            });
-        });
-    </script>
 
 </section>
 <section id="location">
     <style>
-        .abc{
+        .store{
+            font-family: 'Montheavy'; 
+            color: #1890fd;
             font-weight: bold;
             text-align: center;
             position: center;
+            font-size: 18px;
         }
-        .abc {
-            font-family: 'Mont Heavy', sans-serif; color: #1890fd;
+        .addres{
+            font-family: 'Montheavy'; 
             font-weight: bold;
             text-align: center;
             position: center;
+            font-size: 12px;
         }
     </style>
     <body>
@@ -577,14 +624,35 @@
         <div style="font-family: Montheavy; color: black; font-size: 24px; font-weight: bold; margin-bottom: 20px; text-align: center; ">
             LOCATION
         </div>
-    <div class="container text-center" style="position: center;">
-        <div class="row">
+    <div class="container text-cente" style="position: center; width: 150vh">
+        <div class="row ">
             <div class="col-lg-6">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.4343833806684!2d106.77431907418564!3d-6.5928088934009095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c57a439b19c9%3A0x4a05cc1ee48848ba!2sRATHEN%20Store%20-%20Sportwears%20Outlet!5e0!3m2!1sid!2sid!4v1700127350226!5m2!1sid!2sid" style="width: 100%; height: 100%; " allowfullscreen class="mx-auto"></iframe>
             </div>
             <div class="col-lg-6">
-                <img src="{{asset('asset/images/top.jpg')}}" alt="Your Image" style="width: 100%; height: 100%;" class="img-fluid">
-            
+        
+                <div id="carouselExample" class="carousel slide w-100" style="width: 100%; height: 100%;" data-ride="carousel">
+                    <div class="carousel-inner ">
+                        
+                        <div class="carousel-item active">
+                            <img src="{{asset('asset/images/location/f1.JPG')}}" class="d-block w-100" alt="swiss">
+                        </div>
+                        <div class="carousel-item">
+                            <img src=" {{asset('/asset/images/location/F2a.JPG')}}" class="d-block w-100" alt="top">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{{asset('asset/images/location/F5.JPG')}}" class="d-block w-100" alt="swiss">
+                        </div>
+                        <div class="carousel-item" >
+                            <img src="{{asset('asset/images/location/F7.JPG')}}" class="d-block w-100" alt="swiss">
+                            </video>
+                        </div>
+                        <div class="carousel-item" >
+                            <img src="{{asset('asset/images/location/F8.JPG')}}" class="d-block w-100" alt="swiss">
+                            </video>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -594,8 +662,8 @@
          <div class="row">
     
             <div class="col-lg-12" >
-                <p class="abc" style=" font-family: Montheavy; font-size:18px;">RATHEN STORE </p>
-                <p style=" font-family: Montheavy; font-size:12px;"> Ruko Sentra Gunungbatu<br>Jl. Mayjen Ishak Djuarsa no. 167B<br>Bogor 16118 </p>
+                <p class="store">RATHEN STORE </p>
+                <p class="addres"> Ruko Sentra Gunungbatu<br>Jl. Mayjen Ishak Djuarsa no. 167B<br>Bogor 16118 </p>
             </div>
         </div>
     </div>
@@ -622,7 +690,7 @@
         .wp {
             background: url('/asset/images/kontak.png') ;
             background-repeat: no-repeat;
-            /* background-size:cover; */
+            background-size:cover;
             height: 120vh   ; 
 
         }
@@ -653,6 +721,8 @@
         }
         .contact-title{
             color: #fff;
+            font-family: Montheavy;
+            font-weight: bold;
             font-size: 4.2rem;
         }
         .contact,.icon {
@@ -742,8 +812,8 @@
         .footer{
             font-family: Montheavy;
             color:gray;
-            margin-top: 20px;
-            padding-top: 20px;
+            margin-top: 3rem;
+            padding-top: 4.2rem;
         }
     .kurir-img{
         width: 80px;
@@ -795,7 +865,7 @@
 <div class="container frame mt-4">
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="contact-title" style=" font-family: Montheavy;"> stay connected <br> with us </h1>
+            <h1 class="contact-title"> stay connected <br> with us </h1>
         </div>
     </div>
 

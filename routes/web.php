@@ -4,6 +4,7 @@ use App\Http\Controllers\adminController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\loginController;
 use App\Http\Controllers\PesananController;
+use App\Http\Controllers\PriceListController;
 use App\Http\Controllers\registerController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -32,6 +33,9 @@ Route::get('/page-costum', function () {
 Route::get('/price-list', function () {
     return view('landing_page.price-list');
 });
+Route::get('/coba', function () {
+    return view('landing_page.coba');
+});
 
 // about
 Route::get('/about', function () {
@@ -52,10 +56,11 @@ Route::get('/pemesanan', function () {
 Route::get('/pricelist', function () {
     return view('landing_page.pricelist');
 });
-Route::post('/pricelist', function (Request $request) {
-    $list = $request->lang;
-    dd($list);
-    return view('landing_page.pricelist');
+// Route::post('/store-price-list', function (Request $request) {
+//     return view('landing_page.pricelist');
+// });
+Route::controller(PriceListController::class)->group(function () {
+    Route::post('/store-price-list', 'store')->name('sotre');
 });
 
 // location

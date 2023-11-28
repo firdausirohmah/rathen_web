@@ -1,6 +1,7 @@
 @extends('layout.landingpage')
 
 @section('content')
+<meta name="csrf-token" content="{{ csrf_token() }}">
 <link rel="stylesheet" href="asset/css/styles.css">
 <section id="home" style="overflow: hidden;">
     <section class="main-banner">
@@ -415,51 +416,53 @@
           </div>
         </div>
         <div class="container">
-          <div class="row">
-              <div class="col-12">
-                  <form action="" id="priceList">
-                      @csrf
-                      
-                      <div class="image-container justify-content-md-center">
-                          <button class="btn btn-outline-primary">Left</button>
-                      <div class="image-wrapper active-img item--1" data-position="1">
-                          <img src="{{asset('asset/images/image1.jpg')}}" alt="non-print" class="clickable-image" data-position="1">
-                          
-                          <p class="image-text">NON - PRINT</p>
-                      </div>
-                      <div class="image-wrapper" data-position="2">
-                          <img src="{{asset('asset/images/image2.jpg')}}" alt="half-print" class="clickable-image" data-position="2">
-                          <p class="image-text">HALF - PRINT</p>
-                      </div>
-                      <div class="image-wrapper" data-position="3">
-                          <img src="{{asset('asset/images/image3.jpg')}}" alt="full-print" class="clickable-image" data-position="3">
-                          <p class="image-text">FULL - PRINT</p>
-                      </div>
-                        <button class="btn btn-outline-primary">Right</button>
-
+            <div class="row">
+                {{-- <form action="/pricelist" method="POST"> --}}
+            <form id="priceList" >
+                <div class="col-lg-12">
+                    <form action="" id="priceList">
+                    @csrf
+                    <div class="image-container justify-content-md-center">
+                        <div class="image-wrapper active-img item--1" data-position="1">
+                            <img src="{{asset('asset/images/image1.jpg')}}" alt="non-print" class="clickable-image" data-position="1">
+                            
+                            <p class="image-text">NON - PRINT</p>
+                        </div>
+                        <div class="image-wrapper" data-position="2">
+                            <img src="{{asset('asset/images/image2.jpg')}}" alt="half-print" class="clickable-image" data-position="2">
+                            <p class="image-text">HALF - PRINT</p>
+                        </div>
+                        <div class="image-wrapper" data-position="3">
+                            <img src="{{asset('asset/images/image3.jpg')}}" alt="full-print" class="clickable-image" data-position="3">
+                            <p class="image-text">FULL - PRINT</p>
+                        </div>
                     </div>
-                    <label for="nama">Nama Pemesan:</label>
-                        <input type="text" id="nama_pelanggan" name="nama" required>
-    
-                        <label for="nama">Nama Tim:</label>
-                        <input type="text" id="nama_tim" name="nama_tim" required>
-    
-                        <label for="nama">No Hp:</label>
-                        <input type="text" id="no_hp" name="no_hp" required>
-    
-                        <label for="nama">Alamat:</label>
-                        <input type="text" id="alamat" name="alamat" required>
-    
-                        <label for="nama">Kualitas:</label>
-                        <input type="text" id="kualitas" name="kualitas" required>
-                        <button type="button" >Kirim Data</button>
-                    </form>
-
                 </div>
+                <div class="col-lg-4">
+                    <label for="nama">Nama Pemesan:</label>
+                    <input type="text" id="nama_pelanggan" name="nama" required>
+                    
+                    <label for="nama">Nama Tim:</label>
+                    <input type="text" id="nama_tim" name="nama_tim" required>
+                    
+                    <label for="nama">No Hp:</label>
+                    <input type="text" id="no_hp" name="no_hp" required>
+    
+                    <label for="nama">Alamat:</label>
+                    <input type="text" id="alamat" name="alamat" required>
+    
+                    <label for="nama">Kualitas:</label>
+                    <input type="text" id="kualitas" name="kualitas" required>
+                </div>
+                <button type="submit" class="btn btn-primary mt-4">Kirim Data</button>
+                
+                </form>
             </div>
         </div>
-    </section>
-    <script src="asset/js/script.js"></script>
+    </div>
+</div>
+</section>
+<script src="asset/js/script.js"></script>
     <script>
         $(document).ready(function() {
         $('.clickable-image img').on('click', function() {
@@ -473,8 +476,7 @@
             event.preventDefault();
     
             // Get selected image information
-            var selectedImage = $('.clickable-image img.selected');
-            var selectedImageSrc = selectedImage.attr('src');
+            var selectedImage = $('.clickable-image');
             var selectedImageAlt = selectedImage.attr('alt');
     
             // Get other form data
@@ -483,14 +485,27 @@
             var alamat = $('#alamat').val();
             var nh = $('#no_hp').val();
             var kualitas = $('#kualitas').val();
-    
-            // You can now use the collected information as needed (e.g., send it to the server)
-            console.log('Selected Image:', selectedImageSrc, '(', selectedImageAlt, ')');
-            console.log('Nama Tim:', nt);
-            console.log('Nama Pelanggan:', np);
-            console.log('Alamat:', alamat);
-            console.log('No Hp:', nh);
-            console.log('Kualitas:', kualitas);
+            
+            $.ajax({
+            url: '/store-price-list',
+            type: 'POST',
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            data: {
+                nama_pelanggan: np,
+                nama_tim: nt,
+                alamat: alamat,
+                no_hp: nh,
+                kualitas: kualitas
+            },
+            success: function(response) {
+                console.log('Data berhasil dikirim ke server:', response.data);
+            },
+            error: function(error) {
+                console.error('Terjadi kesalahan:', error);
+            }
+        });
         });
     });
     </script>

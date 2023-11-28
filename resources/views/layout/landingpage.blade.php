@@ -119,6 +119,9 @@ src="https://www.facebook.com/tr?id=1058956608607048&amp;ev=PageView&amp;noscrip
                 <li class="nav-item ">
                     <a href="#pricelist" class="nav-link">Price List</a>
                 </li>
+                <li class="nav-item ">
+                    <a href="#faq" class="nav-link">FAQ</a>
+                </li>
             </li>
             <li class="nav-item ">
                 <a href="#location" class="nav-link">Location</a>

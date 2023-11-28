@@ -263,117 +263,59 @@
           <div class="row justify-content-md-center">
             <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
               <h1 class="mb-4 display-5 text-center" style="font-family: Montheavy; color: black; font-size: 22px; font-weight: bold; margin-bottom: 20px; text-align: center;">CARA PEMESANAN</h1>
-    
-              
             </div>
           </div>
         </div>
-      
         <div class="container overflow-hidden">
           <div class="row mb-4 gy-5">
-            <div class="col-12 col-sm-6 col-lg-4">
-              <div class="text-center px-xl-2">
-                <h1 class='bx bx-cart'></h1>
-                <h6 class="m-2" style="font-family: 'Mont Heavy', sans-serif; font-size: 18px; color: black; font-weight: bold; margin-bottom: 15px;   ">1. MINIMUM ORDER QUANTITY (MOQ)</h6>
-                <p class="m-0 text-secondary text-justify">
-                    {{-- - Dapatkan 
-                    <span style="font-weight: bold;">500RB untuk kamu yang baru pertama kali pesan jersey</span>
-                    di 
-                    <span style="font-weight: bold; font-size: smaller;">RATHEN</span><span style="color:red">*)</span>
-                    <br><span style="font-weight: bold; color: red; font-family: 'Mont Heavy', sans-serif;"> Note: *) Minimal Order 50 PCS</span><br>
-                    <span>- Kami memiliki 3 Level kualitas:</ p> <br>
-                    <span> <strong>1. FANS VERSION (Minimun order 12 pcs) - </strong> Kualitas Standar </span><br>
-                    <span> <strong>2. STADIUM  VERSION (Minimun order 12 pcs) -  </strong> Kualitas Medium </span> <br>
-                    <span> <strong>3. PRO VERSION (Minimun order 24 pcs) -  </strong> Kualitas PRO</span> --}}
-                    <style>
-						table{
-						  width: 80%;
-						  align-content: center;
-						  text-align: left;
-						  border-spacing: 100px; /* Mengatur jarak antar sel menjadi 0 */ 
-						  border-collapse: collapse; /* Menggabungkan batas sel */
-						}
-						tr{
-						  margin-top: -10px;
-						  padding-top: -10px;
-						}
-						tr, td {
-						padding: 0px; /* Menambahkan padding untuk ruang di dalam sel */
-						text-align: left; /* Penataan teks di dalam sel */
-					  }
-						.col-1{
-						   margin-top: auto;
-						  width: 40%;
-						}
-						.col-2{
-						  margin-top: auto;
-						  width: 1%;
-						  font-weight: bold;
-						}
-						.col-3{
-						   margin-top: auto;
-						  width: 62%;
-						}
-					  </style>
-					  <div class="container">
-						<div class="row">
-						  <table style="width: 100%; border:10px; font-size:12px; font-weight: bold;  font-weight:100; color:rgba(0, 0, 0, 0.75);">
-							  <tr style="font-weight: bold; ">
-								<td class="col-1 fw-bold">STADIUM Version</td>
-								<td class="col-2">:</td>
-								<td class="col-3 fw-semibold">MOQ 12 pcs</td>
-							  </tr> 
-							  <tr style="font-weight: bold; ">
-								<td class="col-1 fw-semibold">PRO Version</td>
-								<td class="col-2">:</td>
-								<td class="col-3 fw-semibold">
-                                    MOQ 24 pcs
-                                    </td>
-							  </tr>  
-							  <tr style="font-weight: bold; ">
-								<td class="col-1 fw-semibold">
-                                    PRO+ Version</td>
-								<td class="col-2">:</td>
-								<td class="col-3 fw-semibold">MOQ 24 pcs</td>
-							  </tr> 
-							 
-						  </table>
-                </p>
-                        </div>
+            <div class="col-sm-6 col-lg-4">
+                <div class="text-center px-xl-2">
+                    <h1 class='bx bx-cart'></h1>
+                    <h6 class="m-2" style=" font-size: 18px; color: black; font-weight: bold; margin-bottom: 15px;   ">1. MINIMUM ORDER QUANTITY (MOQ)</h6>
+                    
+                    <p class="m-0 text-secondary text-justify" style=" font-size:12px;  color:rgba(0, 0, 0, 0.75);">- <strong> 
+                        STADIUM Version: MOQ 12 pcs
+                        </strong></p>
+                    <p class="m-0 text-secondary text-justify" style=" font-size:12px;  color:rgba(0, 0, 0, 0.75);">- <strong>
+                        PRO Version: MOQ 24 pcs</strong>:  </p>
+                    <p class="m-0 text-secondary text-justify" style=" font-size:12px;  color:rgba(0, 0, 0, 0.75);">- <strong> 
+                        PRO+ Version: MOQ 24 pcs</strong></p>  
+                        </p>
+                   
+                </div>
             </div>
-            <div class="col-12 col-sm-6 col-lg-4">
+            <div class="col-sm-6 col-lg-4">
               <div class="text-center px-xl-2">
                 <h1 class='bx bx-desktop'></h1>
-                <h6 class="m-2"style="font-family: 'Mont Heavy', sans-serif; color: #1890fd; font-weight: bold; margin-bottom: 20px;  ">2. DESIGN</h6>
-                <p class="m-0 text-secondary text-justify">- Wajib kirim final Design</p>
-                <P class="m-0 text-secondary text-justify"> - Untuk design printing wajib kirim mentahan file <strong> (.cdr X7 atau Ai) </strong></P>
-                <P class="m-0 text-secondary text-justify"> - Design dan fitur mempengaruhi nilai harga</P>
-                <p class="m-0 text-secondary text-justify" style="font-family: 'Mont Heavy'; color: #1890fd;">- Belum punya design?</p>
-            {{-- WARNA BELUM BERUBAHHHHHHHHHHHHHHHHHHHHHH --}}
-                <P class="m-0 text-secondary text-justify"> Bisa melihat referensi design kita di  <strong> Rathen.apparel </strong> atau <strong> Soccerkitdesign </strong></P>
-                <P class="m-0 text-secondary text-justify"> - Tim design rathen juga dapat membantu anda membuatkan 3D , cukup dengan melakukan pembayaran <strong> Komitmen FEE </strong>  Rp.  <strong> 500,000 </strong> <em style="color: #1890fd;"> (biaya ini termasuk ke dalam total biaya produksi sehingga setara dengan free design !!! ) </em> </P>
-                <P class="m-0 text-secondary text-justify"> - Diperbolehkan untuk revisi design minor 3x  <em style="color: #1890fd;"> (Bukan ganti total design)</em> </P>
+                <h6 class="m-2"style=" font-size: 18px; color: black; font-weight: bold;  margin-bottom: 20px;">2. DESIGN</h6>
+                <p class="m-0 text-secondary text-justify" style="  font-size:12px;  color:rgba(0, 0, 0, 0.75);">- Kirim design via whatsapp atau email</p>
+                <P class="m-0 text-secondary text-justify" style=" font-size:12px;  color:rgba(0, 0, 0, 0.75);"> <strong> - Belum punya design? </strong></P>
+                <P class="m-0 text-secondary text-justify" style="  font-size:12px;  color:rgba(0, 0, 0, 0.75);"> - Tim kami bisa bantu buatkan 3D design nya cukup dengan membayar <strong> Komitmen FEE </strong> sebesar Rp.  <strong>500,000 </strong>  <em>(biaya ini termasuk ke dalam total biaya produksi sehingga setara dengan free design) </em> 
+                </P>
+                <p class="m-0 text-secondary text-justify" style=" font-size:12px;  color:rgba(0, 0, 0, 0.75);">- Revisi minor design 3x
+                </p>
+                
     
             </div>
             </div>
             <div class="col-12 col-sm-6 col-lg-4">
               <div class="text-center px-xl-2">
                 <h1 class='bx bx-wallet'></h1>
-                <h6 class="m-2" style="font-family: 'Mont Heavy', sans-serif; color: #1890fd;  font-weight: bold; margin-bottom: 20px;  ">3. PEMBAYARAN DP</h6>
-                <p class="m-0 text-secondary text-justify">- Setelah Preview 3D pesanan kamu sudah OK, maka kamu wajib membayar tambahan uang DP <strong> PRODUKSI Min. 50% </strong> dari total biaya untuk masuk antrian produksi </p>
-                <p class="m-0 text-secondary text-justify">- Rekening resmi kami hanya ada 1 akun Bank <strong> BCA 0060435898 A.n R Esa Pangersa Gusti </strong> </p>
-                <p class="m-0 text-secondary text-justify">- Pembayaran juga bisa dilakukan secara tunai di store kami </p>
+                <h6 class="m-2" style=" font-size: 18px; color: black; font-weight: bold;  margin-bottom: 20px;">3. PEMBAYARAN DP</h6>
+                <p class="m-0 text-secondary text-justify" style=" font-size:12px;  color:rgba(0, 0, 0, 0.75);">- Pembayaran DP  <strong> PRODUKSI Min. 50%</strong> dari total biaya untuk masuk antrian produksi melalui Rekening resmi kami <span style="color:red;">BCA 0060435898 A.n R Esa Pangersa Gusti  </span> 
+                </p>
+                <p class="m-0 text-secondary text-justify" style=" font-size:12px;  color:rgba(0, 0, 0, 0.75);">- Pembayaran juga bisa dilakukan secara tunai di store.</p>
     
               </div>
             </div>
             <div class="col-12 col-sm-6 col-lg-4">
               <div class="text-center px-xl-2">
                 <h1 class='bx bxs-t-shirt'></h1>
-                <h6 class="m-2" style="font-family: 'Mont Heavy', sans-serif; color: #1890fd;  font-weight: bold; margin-bottom: 20px;  ">4. DATA PRODUKSI</h5>
-                <p class="m-0 text-secondary text-justify">
-                    - Berisi: <strong> Nama/No Punggung/Ukuran </strong> diisi berurutan mulai dari size paling kecil.
-                    Bisa pakai template FORM DATA kami, klik link 
-                    <a href="https://shorturl.at/mpO36" style="color: #1890fd;">https://shorturl.at/mpO36</a></p>
+                <h6 class="m-2" style=" font-size: 18px; color: black; font-weight: bold;  margin-bottom: 20px;">4. DATA PRODUKSI</h5>
+                <p class="m-0 text-secondary text-justify" style=" font-size:12px;  color:rgba(0, 0, 0, 0.75);">
+                    - Berisi: <strong> Nama/No Punggung/Ukuran  </strong>diisi berurutan mulai dari size paling kecil atau bisa menggunakan template FORM DATA kami, klik link :  <span style="color: #1890fd;     text-decoration: underline;
+                    ">form order </span> </p>
+                    {{-- <a href="https://shorturl.at/mpO36" style="color: #1890fd;">https://shorturl.at/mpO36</a></p> --}}
                           </div>
             </div>
             <div class="col-12 col-sm-6 col-lg-4">
@@ -384,11 +326,11 @@
                 <h1 class='bx bxs-time-five'></h1>
                 {{-- <i class='bx bxs-time-five'></i> --}}
     
-                <h6 class="m-2" style="font-family: 'Mont Heavy', sans-serif; color: #1890fd;  font-weight: bold; margin-bottom: 20px;  ">5. WAKTU PRODUKSI</h6>
-                <p class="m-0 text-secondary text-justify">- <strong>  Non Printing</strong>: 2-3 Minggu </p>
-                <p class="m-0 text-secondary text-justify">- <strong>  Printing</strong>: 3-4 Minggu </p>
-                <p class="m-0 text-secondary text-justify">- <strong> PRO VERSION</strong>: 3-4 Minggu </p> <br>
-                <P class="m-0 text-secondary text-justify">Sejak pembayaran DP 50% kami terimaApabila selesai lebih cepat, kami akan informasikan kepada Anda.</P>
+                <h6 class="m-2" style=" font-size: 18px; color: black; font-weight: bold;  margin-bottom: 20px;">5. WAKTU PRODUKSI</h6>
+                <p class="m-0 text-secondary text-justify" style=" font-size:12px;  color:rgba(0, 0, 0, 0.75);">- <strong>  Non Printing</strong>: 2-3 Minggu </p>
+                <p class="m-0 text-secondary text-justify" style=" font-size:12px;  color:rgba(0, 0, 0, 0.75);">- <strong>  Printing</strong>: 3-4 Minggu </p>
+                <p class="m-0 text-secondary text-justify" style=" font-size:12px;  color:rgba(0, 0, 0, 0.75);">- <strong> PRO dan PRO+ Version</strong>: 3-4 Minggu </p> 
+                <P class="m-0 text-secondary text-justify" style=" font-size:12px;  color:rgba(0, 0, 0, 0.75);">Sejak pembayaran DP 50 <strong>%</strong> kami terimaApabila selesai lebih cepat, kami akan informasikan kepada Anda.</P>
                         </div>
                       </div>
                       <div class="col-12 col-sm-6 col-lg-4">
@@ -397,15 +339,14 @@
                             <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0Zm-8.006 4.158c1.74 0 2.924-1.119 2.924-2.806 0-1.641-1.178-2.584-2.56-2.584-.897 0-1.442.421-1.612.68h-.064l.193-2.344h3.621V4.002H5.791L5.445 8.63h1.149c.193-.358.668-.809 1.435-.809.85 0 1.582.604 1.582 1.57 0 1.085-.779 1.682-1.57 1.682-.697 0-1.389-.31-1.53-1.031H5.276c.065 1.213 1.149 2.115 2.72 2.115Z" />
                           </svg> --}}
                           <h1 class='bx bx-money-withdraw'></h1>
-                          <h6 class="m-2" style="font-family: 'Mont Heavy', sans-serif; color: #1890fd;  font-weight: bold; margin-bottom: 20px;  ">6. PELUNASAN + PENGAMBILAN</h6>
-                          <p class="m-0 text-secondary text-justify">  Pelunasan dilakukan ketika jersey polosan sudah selesai dijahit, agar dapat lanjut ke proses finishing (pasang name set, logo, dll ) hal ini guna menghindari penumpukan jersey di gudang yang dapat menyebabkan kerusakan pada jersey  </p>
-                          <p class="m-0 text-secondary text-justify">Pesanan jersey kamu akan selesai 2-3 hari kerja sejak pembayaran pelunasan kami terima.                    </p>
-                          <p class="m-0 text-secondary text-justify ">Bagi yang mau melakukan pengambilan jersey <strong>  self-pickup</strong>, bisa langsung datang ke offline store kami.  </p>
-                          <p class="m-0 text-secondary text-justify">
-                            Bagi yang mau di kirim, bisa melalui: 
-                            <strong> JNE / JNT / jasa pengiriman lainnya</strong> 
-                            bisa langsung datang ke offline store kami. 
-                            <em style="color: #bf00ff; font-weight: bold;"> (Ongkos kirim di tanggung customer) </em>
+                          <h6 class="m-2" style=" font-size: 18px; color: black; font-weight: bold;  margin-bottom: 20px;">6. PELUNASAN + PENGAMBILAN</h6>
+                          <p class="m-0 text-secondary text-justify" style=" font-size:12px;  color:rgba(0, 0, 0, 0.75);"> - Pelunasan dilakukan ketika jersey sudah selesai produksi. Pengiriman paling cepat 1-3 hari sejak pelunasan dibayarkan.
+                        </p>
+                          <p class="m-0 text-secondary text-justify" style=" font-size:12px;  color:rgba(0, 0, 0, 0.75);">- Mekanisme pengambilan jersey  <span style="font-weight: bold; text-decoration: underline;">self-pickup,</span> bisa langsung datang ke offline store kami.
+                        </p>
+                          <p class="m-0 text-secondary text-justify" style=" font-size:12px;  color:rgba(0, 0, 0, 0.75);">- Mekanisme pengiriman, bisa melalui: <strong>JNE/JNT/Driver online/jasa pengiriman lainnya</strong><em style="color: red; font-weight: bold;"> (Ongkos kirim di tanggung customer) </em>
+                        </p>
+                          
                         </p>
                                 </div>
                         </div>
@@ -415,9 +356,10 @@
                                 <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0Zm-8.006 4.158c1.74 0 2.924-1.119 2.924-2.806 0-1.641-1.178-2.584-2.56-2.584-.897 0-1.442.421-1.612.68h-.064l.193-2.344h3.621V4.002H5.791L5.445 8.63h1.149c.193-.358.668-.809 1.435-.809.85 0 1.582.604 1.582 1.57 0 1.085-.779 1.682-1.57 1.682-.697 0-1.389-.31-1.53-1.031H5.276c.065 1.213 1.149 2.115 2.72 2.115Z" />
                               </svg> --}}
                               <h1 class='bx bx-receipt'></h1>
-                              <h6 class="m-2 text-center" style="font-family: 'Mont Heavy', sans-serif; color: #1890fd;  font-weight: bold; margin-bottom: 20px;  ">7. GARANSI PELUNASAN</h6>
-                              <p class="m-0 text-secondary text-justify align-left"> Segala bentuk kesalahan produksi yang disebabkan oleh tim produksi, akan kami perbaiki sebagai bentuk komitmen kami untuk selalu memberikan pelayanan yang terbaik untuk customer. </p>
-                              <br><p class="m-0 text-secondary text-justify">Hal ini tidak berlaku apabila kelalaian atau kerusakan disebabkan oleh customer.</p>
+                              <h6 class="m-2 text-center" style=" font-size: 18px; color: black; font-weight: bold;  margin-bottom: 20px;">7. GARANSI PELUNASAN</h6>
+                              <p class="m-0 text-secondary text-justify align-left" style=" font-size:12px;  color:rgba(0, 0, 0, 0.75);"> Segala bentuk kesalahan produksi yang disebabkan oleh tim produksi, akan kami perbaiki sebagai bentuk komitmen kami untuk selalu memberikan pelayanan yang terbaik untuk customer. Hal ini tidak berlaku apabila kelalaian atau kerusakan disebabkan oleh customer.
+                            </p>
+                             
                               
                                     </div>
                             </div>
@@ -428,9 +370,9 @@
                                   </svg> --}}
                                   <h1 class='bx bxs-star'></h1>
     
-                                  <h6 class="m-2" style="font-family: 'Mont Heavy', sans-serif; color: #1890fd;  font-weight: bold; margin-bottom: 20px; ">8. PUAS & ORDER LAGI</h6>
-                                  <p class="m-0 text-secondary text-justify">Menyebar kebaikan dengan berbagi informasi kepada rekan-rekan terdekat.</p>
-                                  <br><p class="m-0 text-secondary text-justify">Dapatkan berbagai merchandise unik sebagai refferal benefits.</p>
+                                  <h6 class="m-2" style=" font-size: 18px; color: black; font-weight: bold;  margin-bottom: 20px;">8. PUAS & ORDER LAGI</h6>
+                                  <p class="m-0 text-secondary text-justify" style=" font-size:12px;  color:rgba(0, 0, 0, 0.75);">Menyebar kebaikan dengan berbagi informasi kepada rekan-rekan terdekat. Dapatkan berbagai merchandise unik sebagai refferal benefits.</p>
+                                  
                                   
                                         </div>
                                 </div>
@@ -494,6 +436,7 @@
         width: 150px; /* Lebar tombol */
          height: 40px;
          background-color: red;
+         margin-top: 3%;
     }
     </style>
 <section id="pricelist">
@@ -501,7 +444,7 @@
         <div class="container">
           <div class="row justify-content-md-center">
             <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
-              <h1 class="mb-4 display-5 text-center" style="font-family: Montheavy; color: #1890fd; font-size: 24px; font-weight: bold; margin-bottom: 20px; text-align: center;">PRICE LIST</h1>
+              <h1 class="mb-4 display-5 text-center" style="font-family: Montheavy; color:black; font-size: 24px; font-weight: bold; margin-bottom: 20px; text-align: center;">PRICE LIST</h1>
                 {{-- <hr class="w-50 mx-auto mb-5 mb-xl-9 border-dark-subtle"> --}}
             </div>
           </div>
@@ -513,24 +456,24 @@
             <div class="image-container justify-content-md-center">
                 <div class="image-wrapper" data-position="1">
                     <img src="{{asset('asset/images/image1.jpg')}}" alt="Product 1" class="clickable-image" data-price="100000">
-                    <p class="image-text" style="border: none;">Product 1</p>
+                    <p class="image-text" style="border: none;">NON - PRINT</p>
                 </div>
                 <div class="image-wrapper" data-position="2">
                     <img src="{{asset('asset/images/image1.jpg')}}" alt="Product 2" class="clickable-image" data-price="150000">
-                    <p class="image-text" style="border: none;">Product 2</p>
+                    <p class="image-text" style="border: none;">FULL - PRINT</p>
                 </div>
                 <div class="image-wrapper" data-position="3">
                     <img src="{{asset('asset/images/image1.jpg')}}" alt="Product 3" class="clickable-image" data-price="200000">
-                    <p class="image-text" style="border: none;">Product 3</p>
+                    <p class="image-text" style="border: none;">HALF - PRINT</p>
                 </div>
             </div>
 
             <!-- Tombol Kualitas -->
-            <button type="button" class="btn btn-dark btn-dark-transparent" id="fans" data-multiplier="1">Fans</button>
-            <button type="button" class="btn btn-dark btn-dark-transparent" id="stadium" data-multiplier="1.5">Stadium</button>
-            <button type="button" class="btn btn-dark btn-dark-transparent" id="pro" data-multiplier="2">Pro</button>
+            <button type="button" class="btn btn-dark btn-dark-transparent" id="fans" data-multiplier="1">FANS</button>
+            <button type="button" class="btn btn-dark btn-dark-transparent" id="stadium" data-multiplier="1.5">STADIUM</button>
+            <button type="button" class="btn btn-dark btn-dark-transparent" id="pro" data-multiplier="2">PRO</button>
 
-            <!-- Tombol Cek Total Harga -->
+            <!-- Tombol Cek Total Harga --> <br>
             <button type="button" class="btn btn-danger total">Cek Total Harga</button>
 
             <!-- Total Harga -->
@@ -616,7 +559,7 @@
     </style>
     <body>
         <br>
-        <div style="font-family: Montheavy; color: #1890fd; font-size: 24px; font-weight: bold; margin-bottom: 20px; text-align: center; ">
+        <div style="font-family: Montheavy; color: black; font-size: 24px; font-weight: bold; margin-bottom: 20px; text-align: center; ">
             LOCATION
         </div>
     <div class="container text-center" style="position: center;">
@@ -859,18 +802,7 @@
         
     </div>
 </div>
-<div class="container">
-    <div class="row">
-        <ul class="carousel-2">
-            {{-- <button class="button button--left">Left</button> --}}
-            <li class="item item--1" data-position="1"></li>
-            <li class="item item--2" data-position="2"></li>
-            <li class="item item--3" data-position="3">
-            {{-- <button class="button button--right">Right</button> --}}
-          </li>
-        </ul>
-    </div>
-</div>
+
 </section>
 
 @endsection

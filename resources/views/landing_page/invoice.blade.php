@@ -185,17 +185,25 @@
 								<td class="col-3 fw-semibold">Bogor</td>
 							  </tr> 
 						  </table>
+						</div>
+					  </div>
 						
 						  <style>
 							.right-align {
 							  text-align: right;
-							  margin-bottom: 10px; /* Atur tinggi margin antar paragraf sesuai kebutuhan */
+							  margin-top: 10px; 
 							}
 						  </style>
+						  <div class="container">
+							<div class="row">
+								<div class="col-lg-12">
+									<p class="right-align mb-4 pb-4">Best regard,</p>
+									<p class="right-align mt-4 pt-4"><u>R. Esa Pangersa Gusti</u></p>
+									<p class="right-align" style="line-height: 0px">RATHEN INDONESIA</p>
+								</div>
+							</div>
+						  </div>
 						  
-						  <p class="right-align">Best regard,</p>
-						  <p class="right-align"><u>R. Esa Pangersa Gusti</u></p>
-						  <p class="right-align">RATHEN INDONESIA</p>
 						  
 						  
 

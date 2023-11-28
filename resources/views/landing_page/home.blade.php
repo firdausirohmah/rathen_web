@@ -102,7 +102,7 @@ src="https://www.facebook.com/tr?id=1058956608607048&amp;ev=PageView&amp;noscrip
         <div class="main-banner__cekresi">
             <div class="main-banner__cekresi--list cek-lacak">
                 <a class="form button-search"  href="{{ url('page-costum') }}" style="margin-left:66px; margin-top:15px">
-                    <i><img src="asset/images/icon baju - biru.png" style="width : 100%;"></i>
+                    <i><img src="{{asset('asset/images/icon baju - biru.png')}}" style="width : 100%;"></i>
                     <div class="input-box" >
                         <h5 class="item-center jersey">CUSTOM JERSEY</h5>
                         {{-- <input type="text" placeholder="Masukkan nomor pesanan" name="pesanan" required> --}}
@@ -113,7 +113,8 @@ src="https://www.facebook.com/tr?id=1058956608607048&amp;ev=PageView&amp;noscrip
             </div>
             <div class="main-banner__cekresi--list cek-tarif">
                 <a class="form button-search"  href="{{ url('https://rathen-apparel.com/') }}" style="margin-left:66px; margin-top:15px">
-                    <i><img src="asset/images/icon baju - ungu.png"></i>
+                    <i><img src="{{asset('asset/images/icon baju - ungu.png')}}"></i>
+                    
                     <div class="input-box">
                         <h5 class="item-center jersey">SPORTWEARS</h5>
                     </div>

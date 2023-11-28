@@ -85,6 +85,7 @@ Route::controller(PriceListController::class)->group(function () {
 
 Route::controller(PesananController::class)->group(function () {
     Route::get('/form-1', 'form_1')->name('form_1');
+    Route::post('/form-1/action', 'addForm1')->name('addForm1');
     Route::get('/form-2', 'form_2')->name('form_2');
     Route::get('/form-3', 'form_3')->name('form_3');
     Route::get('/form-4', 'form_4')->name('form_4');

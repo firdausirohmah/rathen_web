@@ -438,21 +438,16 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <label for="nama">Nama Pemesan:</label>
-                    <input type="text" id="nama_pelanggan" name="nama" required>
-                    
-                    <label for="nama">Nama Tim:</label>
-                    <input type="text" id="nama_tim" name="nama_tim" required>
-                    
-                    <label for="nama">No Hp:</label>
-                    <input type="text" id="no_hp" name="no_hp" required>
-    
-                    <label for="nama">Alamat:</label>
-                    <input type="text" id="alamat" name="alamat" required>
-    
-                    <label for="nama">Kualitas:</label>
-                    <input type="text" id="kualitas" name="kualitas" required>
+                <label for="nama">Level Kualitas:</label>
+                <div class="col">
+                    <button id="fans" class="btn btn-outline-secondary">Fans</button>
+                </div>
+                <div class="col">
+                    <button id="stadium" class="btn btn-outline-secondary">Stadium</button>
+                </div>
+                <div class="col"></div>
+                    <button id="pro" class="btn btn-outline-secondary">Pro</button>
+            </div>
                 </div>
                 <button type="submit" class="btn btn-primary mt-4">Kirim Data</button>
                 
@@ -768,18 +763,6 @@
             </div>
         </div>
         
-    </div>
-</div>
-<div class="container">
-    <div class="row">
-        <ul class="carousel-2">
-            <button class="button button--left">Left</button>
-            <li class="item item--1" data-position="1"></li>
-            <li class="item item--2" data-position="2"></li>
-            <li class="item item--3" data-position="3">
-            <button class="button button--right">Right</button>
-          </li>
-        </ul>
     </div>
 </div>
 </section>

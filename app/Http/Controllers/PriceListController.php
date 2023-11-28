@@ -17,8 +17,7 @@ class PriceListController extends Controller
             'no_hp' => 'required',
             'kualitas' => 'required',
         ]);
-        dd($validatedData);
-        // Simpan data ke database
+        // dd($validatedData);        // Simpan data ke database
 
         $priceList = DB::table('tbl_pemesanan')->insert($validatedData);
 

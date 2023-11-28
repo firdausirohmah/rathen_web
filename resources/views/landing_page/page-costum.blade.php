@@ -1,6 +1,7 @@
 @extends('layout.landingpage')
 
 @section('content')
+<meta name="csrf-token" content="{{ csrf_token() }}">
 <link rel="stylesheet" href="asset/css/styles.css">
 <section id="home" style="overflow: hidden;">
     <section class="main-banner">
@@ -466,6 +467,20 @@
                     <img src="{{asset('asset/images/image1.jpg')}}" alt="Product 3" class="clickable-image" data-price="200000">
                     <p class="image-text" style="border: none;">HALF - PRINT</p>
                 </div>
+                <label for="nama">Level Kualitas:</label>
+                <div class="col">
+                    <button id="fans" class="btn btn-outline-secondary">Fans</button>
+                </div>
+                <div class="col">
+                    <button id="stadium" class="btn btn-outline-secondary">Stadium</button>
+                </div>
+                <div class="col"></div>
+                    <button id="pro" class="btn btn-outline-secondary">Pro</button>
+            </div>
+                </div>
+                <button type="submit" class="btn btn-primary mt-4">Kirim Data</button>
+                
+                </form>
             </div>
 
             <!-- Tombol Kualitas -->
@@ -802,7 +817,10 @@
         
     </div>
 </div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> e346c68842ac7712d8c2ff4e5c0408de7e6f2468
 </section>
 
 @endsection

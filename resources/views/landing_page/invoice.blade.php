@@ -191,7 +191,7 @@
 						  <style>
 							.right-align {
 							  text-align: right;
-							  margin-top: 10px; 
+							  margin-top: 10px;  
 							}
 						  </style>
 						  <div class="container">

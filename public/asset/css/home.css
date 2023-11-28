@@ -12,9 +12,9 @@
 
 .navbar-main {
     /* background: #fff; */
-    background-image: url("../images/bismillah.jpg");
+    /* background-image: url("../images/bismillah.jpg"); */
     /* background-image: url("../images/nav.jpg"); */
-    /* background-color: #000; */
+    background-color: #000;
     background-size: cover;
     background-repeat: no-repeat;
     /* transform: scaleX(-1); */

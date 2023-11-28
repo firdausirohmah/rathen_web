@@ -87,15 +87,15 @@
         <div class="container">
           <div class="row justify-content-md-center">
             <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
-              <h1 class="mb-4 display-5 text-center" style="font-family: Montheavy; color: #1890fd; font-size: 24px; font-weight: bold; margin-bottom: 20px; text-align: center;">ABOUT US</h1>
-                <hr class="w-50 mx-auto mb-5 mb-xl-9 border-dark-subtle">
+              <h1 class="mb-2 display-5 text-center" style="font-family: Montheavy; color: black; font-size: 24px; font-weight: bold; margin-bottom: 20px; text-align: center;">ABOUT US</h1>
+                {{-- <hr class="w-50 mx-auto mb-5 mb-xl-9 border-dark-subtle"> --}}
             </div>
           </div>
         </div>
     </section>
     
     <div class="container">
-        <div class="row mb-4">
+        <div class="row">
             {{-- <div class="col-lg-3"></div> --}}
             <div class="col-lg-6">
 
@@ -140,8 +140,8 @@
                     </button>
                 </div>
             </div>
-            <div class="col-lg-6" >
-                <p class=" text-justify">RATHEN merupakan sportwears brand yang berasal dari Bogor, Indonesia. Memulai industri sportwears pada tahun 2014 dengan berfokus pada pembuatan custom jersey sepakbola/futsal. Berbagai jenis tim, baik dari level korporasi, akademisi, komunitas sepakbola, hingga tim liga futsal profesional telah menjadi bagian perjalanan manis rathen di dunia industri sportwear.</p>
+            <div class="col-lg-6" style="font-family: Montheavy; color: rgba(0, 0, 0, 0.8);">
+                <p class=" text-justify">RATHEN merupakan sportwears brand yang berasal dari Bogor, Indonesia. Memulai industri sportwears pada tahun 2014 dengan berfokus pada pembuatan custom jersey sepakbola atau futsal. Berbagai jenis tim, baik dari level korporasi, akademisi, komunitas sepakbola, hingga tim liga futsal profesional telah menjadi bagian perjalanan manis rathen di dunia industri sportwear.</p>
                 <p class=" text-justify">Hingga akhirnya, Pada tahun 2016, RATHEN dipercaya menjadi penyedia jersey latihan tim nasional Futsal Indonesia. 
                 </p>
                 <p class=" text-justify">Tahun 2020 menjadi langkah awal RATHEN menembus pasar Internasional. Dimulai dari negara di kawasan Asia seperti Timor Leste, bergerak perlahan ke Malaysia, hingga akhirnya Korea Selatan.</p>
@@ -221,11 +221,11 @@
 </section>
 
 <section id="result">
-    <section class="py-5 py-xl-8">
+    <section class="py-2 py-xl-4">
         <div class="container">
           <div class="row justify-content-md-center">
             <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
-              <h1 class="mb-4 display-5 text-center" style="font-family: Montheavy; padding-top:20%; color: #1890fd; font-size: 24px; font-weight: bold; margin-bottom: 20px; text-align: center;">LATEST RESULT</h1>
+              <h1 class="mb-4 display-5 text-center" style="font-family: Montheavy; padding-top:10%; color: black; font-size: 24px; font-weight: bold; margin-bottom: 20px; text-align: center;">LATEST RESULT</h1>
             </div>
           </div>
         </div>
@@ -262,7 +262,7 @@
         <div class="container">
           <div class="row justify-content-md-center">
             <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
-              <h1 class="mb-4 display-5 text-center" style="font-family: Montheavy; color: #1890fd; font-size: 24px; font-weight: bold; margin-bottom: 20px; text-align: center;">CARA PEMESANAN</h1>
+              <h1 class="mb-4 display-5 text-center" style="font-family: Montheavy; color: black; font-size: 22px; font-weight: bold; margin-bottom: 20px; text-align: center;">CARA PEMESANAN</h1>
     
               
             </div>
@@ -274,9 +274,9 @@
             <div class="col-12 col-sm-6 col-lg-4">
               <div class="text-center px-xl-2">
                 <h1 class='bx bx-cart'></h1>
-                <h6 class="m-2" style="font-family: 'Mont Heavy', sans-serif; color: #1890fd;  font-weight: bold; margin-bottom: 15px;   ">1. MIN. ORDER</h6>
+                <h6 class="m-2" style="font-family: 'Mont Heavy', sans-serif; font-size: 18px; color: black; font-weight: bold; margin-bottom: 15px;   ">1. MINIMUM ORDER QUANTITY (MOQ)</h6>
                 <p class="m-0 text-secondary text-justify">
-                    - Dapatkan 
+                    {{-- - Dapatkan 
                     <span style="font-weight: bold;">500RB untuk kamu yang baru pertama kali pesan jersey</span>
                     di 
                     <span style="font-weight: bold; font-size: smaller;">RATHEN</span><span style="color:red">*)</span>
@@ -284,7 +284,60 @@
                     <span>- Kami memiliki 3 Level kualitas:</ p> <br>
                     <span> <strong>1. FANS VERSION (Minimun order 12 pcs) - </strong> Kualitas Standar </span><br>
                     <span> <strong>2. STADIUM  VERSION (Minimun order 12 pcs) -  </strong> Kualitas Medium </span> <br>
-                    <span> <strong>3. PRO VERSION (Minimun order 24 pcs) -  </strong> Kualitas PRO</span>
+                    <span> <strong>3. PRO VERSION (Minimun order 24 pcs) -  </strong> Kualitas PRO</span> --}}
+                    <style>
+						table{
+						  width: 80%;
+						  align-content: center;
+						  text-align: left;
+						  border-spacing: 100px; /* Mengatur jarak antar sel menjadi 0 */ 
+						  border-collapse: collapse; /* Menggabungkan batas sel */
+						}
+						tr{
+						  margin-top: -10px;
+						  padding-top: -10px;
+						}
+						tr, td {
+						padding: 0px; /* Menambahkan padding untuk ruang di dalam sel */
+						text-align: left; /* Penataan teks di dalam sel */
+					  }
+						.col-1{
+						   margin-top: auto;
+						  width: 40%;
+						}
+						.col-2{
+						  margin-top: auto;
+						  width: 1%;
+						  font-weight: bold;
+						}
+						.col-3{
+						   margin-top: auto;
+						  width: 62%;
+						}
+					  </style>
+					  <div class="container">
+						<div class="row">
+						  <table style="width: 100%; border:10px; font-size:12px; font-weight: bold;  font-weight:100; color:rgba(0, 0, 0, 0.75);">
+							  <tr style="font-weight: bold; ">
+								<td class="col-1 fw-bold">STADIUM Version</td>
+								<td class="col-2">:</td>
+								<td class="col-3 fw-semibold">MOQ 12 pcs</td>
+							  </tr> 
+							  <tr style="font-weight: bold; ">
+								<td class="col-1 fw-semibold">PRO Version</td>
+								<td class="col-2">:</td>
+								<td class="col-3 fw-semibold">
+                                    MOQ 24 pcs
+                                    </td>
+							  </tr>  
+							  <tr style="font-weight: bold; ">
+								<td class="col-1 fw-semibold">
+                                    PRO+ Version</td>
+								<td class="col-2">:</td>
+								<td class="col-3 fw-semibold">MOQ 24 pcs</td>
+							  </tr> 
+							 
+						  </table>
                 </p>
                         </div>
             </div>
@@ -404,6 +457,45 @@
         }
       }
 </style>
+<style>
+    .level{
+    margin-left: 5%;
+    font-family: Montheavy; 
+    font-weight: bold;
+    }
+    .btn-dark-transparent {
+        background-color: transparent;
+        color: black;
+        border: 1px solid black;
+        transition: background-color 0.3s ease-in-out;
+        margin-right: 5%; /* Jarak kanan antara tombol dan elemen di sebelah kanan */
+         /* margin-bottom: 10px; */
+         width: 150px; /* Lebar tombol */
+         height: 40px;
+         margin-left: 7%
+         
+    }
+    .harga{
+        font-weight: bold;
+        color: red;
+        font-family: Montheavy; 
+        margin-left: 5%;
+        font-size: 20px;
+
+
+    }
+
+    .btn-dark-transparent:hover {
+        background-color: black;
+        color: white;
+    }
+    .total{
+        margin-left: 55%;
+        width: 150px; /* Lebar tombol */
+         height: 40px;
+         background-color: red;
+    }
+    </style>
 <section id="pricelist">
     <section class="py-5 py-xl-8">
         <div class="container">
@@ -414,85 +506,97 @@
             </div>
           </div>
         </div>
-        <div class="container">
-          <div class="row">
-              <div class="col-12">
-                  <form action="" id="priceList">
-                      @csrf
-                      
-                      <div class="image-container justify-content-md-center">
-                          <button class="btn btn-outline-primary">Left</button>
-                      <div class="image-wrapper active-img item--1" data-position="1">
-                          <img src="{{asset('asset/images/image1.jpg')}}" alt="non-print" class="clickable-image" data-position="1">
-                          
-                          <p class="image-text">NON - PRINT</p>
-                      </div>
-                      <div class="image-wrapper" data-position="2">
-                          <img src="{{asset('asset/images/image2.jpg')}}" alt="half-print" class="clickable-image" data-position="2">
-                          <p class="image-text">HALF - PRINT</p>
-                      </div>
-                      <div class="image-wrapper" data-position="3">
-                          <img src="{{asset('asset/images/image3.jpg')}}" alt="full-print" class="clickable-image" data-position="3">
-                          <p class="image-text">FULL - PRINT</p>
-                      </div>
-                        <button class="btn btn-outline-primary">Right</button>
-
-                    </div>
-                    <label for="nama">Nama Pemesan:</label>
-                        <input type="text" id="nama_pelanggan" name="nama" required>
-    
-                        <label for="nama">Nama Tim:</label>
-                        <input type="text" id="nama_tim" name="nama_tim" required>
-    
-                        <label for="nama">No Hp:</label>
-                        <input type="text" id="no_hp" name="no_hp" required>
-    
-                        <label for="nama">Alamat:</label>
-                        <input type="text" id="alamat" name="alamat" required>
-    
-                        <label for="nama">Kualitas:</label>
-                        <input type="text" id="kualitas" name="kualitas" required>
-                        <button type="button" >Kirim Data</button>
-                    </form>
-
+      <div class="container" >
+    <div class="row">
+        <div class="col-lg-12">
+                    <!-- Produk Gambar -->
+            <div class="image-container justify-content-md-center">
+                <div class="image-wrapper" data-position="1">
+                    <img src="{{asset('asset/images/image1.jpg')}}" alt="Product 1" class="clickable-image" data-price="100000">
+                    <p class="image-text" style="border: none;">Product 1</p>
+                </div>
+                <div class="image-wrapper" data-position="2">
+                    <img src="{{asset('asset/images/image1.jpg')}}" alt="Product 2" class="clickable-image" data-price="150000">
+                    <p class="image-text" style="border: none;">Product 2</p>
+                </div>
+                <div class="image-wrapper" data-position="3">
+                    <img src="{{asset('asset/images/image1.jpg')}}" alt="Product 3" class="clickable-image" data-price="200000">
+                    <p class="image-text" style="border: none;">Product 3</p>
                 </div>
             </div>
+
+            <!-- Tombol Kualitas -->
+            <button type="button" class="btn btn-dark btn-dark-transparent" id="fans" data-multiplier="1">Fans</button>
+            <button type="button" class="btn btn-dark btn-dark-transparent" id="stadium" data-multiplier="1.5">Stadium</button>
+            <button type="button" class="btn btn-dark btn-dark-transparent" id="pro" data-multiplier="2">Pro</button>
+
+            <!-- Tombol Cek Total Harga -->
+            <button type="button" class="btn btn-danger total">Cek Total Harga</button>
+
+            <!-- Total Harga -->
+            <p class="level">Total Harga :</p>
+            <h6 class="harga"> IDR <span class="bg-dangger" id="displayText">0</span></h6>
+            </div>
         </div>
+    </div>
     </section>
     <script src="asset/js/script.js"></script>
     <script>
-        $(document).ready(function() {
-        $('.clickable-image img').on('click', function() {
-            // Handle image click event (you can implement image selection logic here)
-            // For example, you can highlight the selected image
-            $('.clickable-image img').removeClass('selected');
-            $(this).addClass('selected');
+        document.addEventListener('DOMContentLoaded', function () {
+            var selectedImage;
+            var selectedQuality = 1;  // Default multiplier
+    
+            // Event listener untuk gambar yang diklik
+            document.querySelectorAll('.clickable-image').forEach(function (img) {
+                img.addEventListener('click', function () {
+                    // Hapus kelas selected dari semua gambar
+                    document.querySelectorAll('.clickable-image').forEach(function (img) {
+                        img.classList.remove('selected');
+                    });
+    
+                    // Tambahkan kelas selected pada gambar yang dipilih
+                    this.classList.add('selected');
+                    selectedImage = this;
+                });
+            });
+    
+            // Event listener untuk tombol kualitas
+            document.querySelectorAll('.btn-dark-transparent').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    // Set multiplier berdasarkan data-multiplier pada tombol
+                    selectedQuality = parseFloat(this.getAttribute('data-multiplier'));
+                });
+            });
+    
+            // Event listener untuk tombol cek total harga
+            document.querySelector('.total').addEventListener('click', function () {
+                // Cek apakah gambar dan kualitas sudah dipilih
+                if (selectedImage && selectedQuality) {
+                    // Ambil harga dari data-price pada gambar yang dipilih
+                    var hargaProduk = parseFloat(selectedImage.getAttribute('data-price'));
+    
+                    // Hitung total harga dengan mengalikan harga produk dengan multiplier kualitas
+                    var totalHarga = hargaProduk * selectedQuality;
+    
+                    // Tampilkan total harga pada elemen dengan ID displayText
+                    document.getElementById('displayText').innerText = totalHarga.toLocaleString('id-ID');
+                } else {
+                    // Tampilkan pesan jika gambar atau kualitas belum dipilih
+                    alert('Pilih gambar dan kualitas terlebih dahulu.');
+                }
+            });
         });
+    </script>
     
-        $('#priceList').submit(function(event) {
-            event.preventDefault();
-    
-            // Get selected image information
-            var selectedImage = $('.clickable-image img.selected');
-            var selectedImageSrc = selectedImage.attr('src');
-            var selectedImageAlt = selectedImage.attr('alt');
-    
-            // Get other form data
-            var np = $('#nama_pelanggan').val();
-            var nt = $('#nama_tim').val();
-            var alamat = $('#alamat').val();
-            var nh = $('#no_hp').val();
-            var kualitas = $('#kualitas').val();
-    
-            // You can now use the collected information as needed (e.g., send it to the server)
-            console.log('Selected Image:', selectedImageSrc, '(', selectedImageAlt, ')');
-            console.log('Nama Tim:', nt);
-            console.log('Nama Pelanggan:', np);
-            console.log('Alamat:', alamat);
-            console.log('No Hp:', nh);
-            console.log('Kualitas:', kualitas);
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var buttons = document.querySelectorAll('.btn-dark-transparent');
+            buttons.forEach(function (button) {
+                button.addEventListener('click', function () {
+                    // Tambahkan logika atau aksi yang diperlukan saat tombol diklik di sini
+                });
+            });
         });
-    });
     </script>
 
 </section>
@@ -532,8 +636,8 @@
          <div class="row">
     
             <div class="col-lg-12" >
-                <p class="abc">RATHEN STORE </p>
-                <p> Ruko Sentra Gunungbatu<br>Jl. Mayjen Ishak Djuarsa no. 167B<br>Bogor 16118 </p>
+                <p class="abc" style=" font-family: Montheavy; font-size:18px;">RATHEN STORE </p>
+                <p style=" font-family: Montheavy; font-size:12px;"> Ruko Sentra Gunungbatu<br>Jl. Mayjen Ishak Djuarsa no. 167B<br>Bogor 16118 </p>
             </div>
         </div>
     </div>
@@ -733,7 +837,7 @@
 <div class="container frame mt-4">
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="contact-title"> stay connected <br> with us </h1>
+            <h1 class="contact-title" style=" font-family: Montheavy;"> stay connected <br> with us </h1>
         </div>
     </div>
 
@@ -758,11 +862,11 @@
 <div class="container">
     <div class="row">
         <ul class="carousel-2">
-            <button class="button button--left">Left</button>
+            {{-- <button class="button button--left">Left</button> --}}
             <li class="item item--1" data-position="1"></li>
             <li class="item item--2" data-position="2"></li>
             <li class="item item--3" data-position="3">
-            <button class="button button--right">Right</button>
+            {{-- <button class="button button--right">Right</button> --}}
           </li>
         </ul>
     </div>

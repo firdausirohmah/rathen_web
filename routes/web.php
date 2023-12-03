@@ -37,6 +37,10 @@ Route::get('/coba', function () {
     return view('landing_page.coba');
 });
 
+Route::get('/pricelist', function () {
+    return view('landing_page.pricelist');
+});
+
 // about
 // Route::get('/about', function () {
 //     return view('landing_page.about');

@@ -126,10 +126,10 @@
     </style>
     <div class="container">
       <div class="row">
-        <p style="color: #1890fd;  font-family: Montheavy;  font-weight: bold; padding-left:0%;">Step 1. Data Pesanan</p>
-        <form action="{{ url('/form-1/action') }}" method="POST">
-          @csrf
+        {{-- <p style="color: #1890fd;  font-family: Montheavy;  font-weight: bold; padding-left:0%;">Step 1. Data Pesanan</p> --}}
         <table style="width: 100%; border:10px; font-size:14px; font-weight:100; color:black;">
+          <form action="{{ url('/form-1/action') }}" method="POST">
+            @csrf
             <tr>
               <td class="col-1 fw-semibold">Nama Tim</td>
               <td class="col-2">:</td>

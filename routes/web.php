@@ -104,6 +104,10 @@ Route::get('/unduh-format-file', [FileController::class, 'unduhFormatFile'])->na
 Route::get('/contact', function () {
     return view('landing_page.contact');
 });
+Route::get('/part', function () {
+    // return view('landing_page.price-list-part');
+    return view('landing_page.part-pricelist');
+});
 
 
 

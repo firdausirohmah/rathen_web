@@ -3788,6 +3788,9 @@ fieldset:disabled .btn {
     --bs-btn-disabled-border-color: #6c757d;
     --bs-gradient: none;
 }
+.btn-outline-secondary:focus {
+    background-color: #000;
+}
 
 .btn-outline-success {
     --bs-btn-color: #198754;

@@ -41,12 +41,12 @@ body {
 }
 
 /*!
- * Milligram-scss v1.3.0
- * https://milligram.github.io
- *
- * Copyright (c) 2017 CJ Patoilo
- * Licensed under the MIT license
- */
+  * Milligram-scss v1.3.0
+  * https://milligram.github.io
+  *
+  * Copyright (c) 2017 CJ Patoilo
+  * Licensed under the MIT license
+  */
 blockquote {
     border-left: 3px solid #d1d1d1;
     margin-left: 0;
@@ -58,209 +58,209 @@ blockquote :last-child {
 }
 
 /*!
- * Milligram-scss v1.3.0
- * https://milligram.github.io
- *
- * Copyright (c) 2017 CJ Patoilo
- * Licensed under the MIT license
- */
-.button,
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-    background-color: #e11c22;
-    border: 2px solid #e11c22;
-    border-radius: 30px;
-    color: #fff;
-    cursor: pointer;
-    display: inline-block;
-    font-size: 1rem;
-    font-weight: 700;
-    height: 56px;
-    letter-spacing: normal;
-    line-height: 54px;
-    padding: 0 32px;
-    text-align: center;
-    text-decoration: none;
-    text-transform: none;
-    transition: all 0.2s ease-out;
-    white-space: nowrap;
-}
-.button:focus,
-.button:hover,
-button:focus,
-button:hover,
-input[type="button"]:focus,
-input[type="button"]:hover,
-input[type="reset"]:focus,
-input[type="reset"]:hover,
-input[type="submit"]:focus,
-input[type="submit"]:hover {
-    background-color: #203475;
-    border-color: #203475;
-    color: #fff;
-    outline: 0;
-}
-.button[disabled],
-button[disabled],
-input[type="button"][disabled],
-input[type="reset"][disabled],
-input[type="submit"][disabled] {
-    cursor: default;
-    opacity: 0.5;
-}
-.button[disabled]:focus,
-.button[disabled]:hover,
-button[disabled]:focus,
-button[disabled]:hover,
-input[type="button"][disabled]:focus,
-input[type="button"][disabled]:hover,
-input[type="reset"][disabled]:focus,
-input[type="reset"][disabled]:hover,
-input[type="submit"][disabled]:focus,
-input[type="submit"][disabled]:hover {
-    background-color: #e11c22;
-    border-color: #e11c22;
-}
-.button.button-outline,
-button.button-outline,
-input[type="button"].button-outline,
-input[type="reset"].button-outline,
-input[type="submit"].button-outline {
-    background-color: transparent;
-    color: #e11c22;
-}
-.button.button-outline:focus,
-.button.button-outline:hover,
-button.button-outline:focus,
-button.button-outline:hover,
-input[type="button"].button-outline:focus,
-input[type="button"].button-outline:hover,
-input[type="reset"].button-outline:focus,
-input[type="reset"].button-outline:hover,
-input[type="submit"].button-outline:focus,
-input[type="submit"].button-outline:hover {
-    color: #203475;
-}
-.button.button-outline[disabled]:focus,
-.button.button-outline[disabled]:hover,
-button.button-outline[disabled]:focus,
-button.button-outline[disabled]:hover,
-input[type="button"].button-outline[disabled]:focus,
-input[type="button"].button-outline[disabled]:hover,
-input[type="reset"].button-outline[disabled]:focus,
-input[type="reset"].button-outline[disabled]:hover,
-input[type="submit"].button-outline[disabled]:focus,
-input[type="submit"].button-outline[disabled]:hover {
-    border-color: inherit;
-    color: #e11c22;
-}
-.button.button-clear,
-button.button-clear,
-input[type="button"].button-clear,
-input[type="reset"].button-clear,
-input[type="submit"].button-clear {
-    background-color: transparent;
-    border-color: transparent;
-    color: #e11c22;
-    font-weight: 500;
-}
-.button.button-clear:focus,
-.button.button-clear:hover,
-button.button-clear:focus,
-button.button-clear:hover,
-input[type="button"].button-clear:focus,
-input[type="button"].button-clear:hover,
-input[type="reset"].button-clear:focus,
-input[type="reset"].button-clear:hover,
-input[type="submit"].button-clear:focus,
-input[type="submit"].button-clear:hover {
-    background-color: transparent;
-    border-color: transparent;
-}
-.button.button-clear[disabled]:focus,
-.button.button-clear[disabled]:hover,
-button.button-clear[disabled]:focus,
-button.button-clear[disabled]:hover,
-input[type="button"].button-clear[disabled]:focus,
-input[type="button"].button-clear[disabled]:hover,
-input[type="reset"].button-clear[disabled]:focus,
-input[type="reset"].button-clear[disabled]:hover,
-input[type="submit"].button-clear[disabled]:focus,
-input[type="submit"].button-clear[disabled]:hover {
-    color: #e11c22;
-}
-.button.button-grey,
-button.button-grey,
-input[type="button"].button-grey,
-input[type="reset"].button-grey,
-input[type="submit"].button-grey {
-    background-color: #999;
-    border-color: #999;
-}
-.button.button-outline-grey,
-button.button-outline-grey,
-input[type="button"].button-outline-grey,
-input[type="reset"].button-outline-grey,
-input[type="submit"].button-outline-grey {
-    background-color: transparent;
-    border-color: #999;
-    color: #999;
-}
-.button.button-arrow,
-button.button-arrow,
-input[type="button"].button-arrow,
-input[type="reset"].button-arrow,
-input[type="submit"].button-arrow {
-    font-size: 0.875rem;
-    height: 22px;
-    line-height: 18px;
-    padding: 0 26px 0 0;
-    position: relative;
-}
-.button.button-arrow:after,
-button.button-arrow:after,
-input[type="button"].button-arrow:after,
-input[type="reset"].button-arrow:after,
-input[type="submit"].button-arrow:after {
-    background: url(../images/material/icon-arrow.svg) no-repeat 0 0;
-    content: "";
-    height: 18px;
-    position: absolute;
-    right: 0;
-    top: 0;
-    transition: all 0.2s ease-out;
-    width: 18px;
-}
-.button.button-arrow:hover:after,
-button.button-arrow:hover:after,
-input[type="button"].button-arrow:hover:after,
-input[type="reset"].button-arrow:hover:after,
-input[type="submit"].button-arrow:hover:after {
-    right: -3px;
-}
-.button.button-arrow:hover[disabled]:after,
-button.button-arrow:hover[disabled]:after,
-input[type="button"].button-arrow:hover[disabled]:after,
-input[type="reset"].button-arrow:hover[disabled]:after,
-input[type="submit"].button-arrow:hover[disabled]:after {
-    right: 0;
-}
-.button.button-arrow.button-arrow-grey,
-button.button-arrow.button-arrow-grey,
-input[type="button"].button-arrow.button-arrow-grey,
-input[type="reset"].button-arrow.button-arrow-grey,
-input[type="submit"].button-arrow.button-arrow-grey {
-    color: #999;
-}
-.button.button-arrow.button-arrow-grey:after,
-button.button-arrow.button-arrow-grey:after,
-input[type="button"].button-arrow.button-arrow-grey:after,
-input[type="reset"].button-arrow.button-arrow-grey:after,
-input[type="submit"].button-arrow.button-arrow-grey:after {
-    background: url(../images/material/icon-arrow-grey.svg) no-repeat 0 0;
-}
+  * Milligram-scss v1.3.0
+  * https://milligram.github.io
+  *
+  * Copyright (c) 2017 CJ Patoilo
+  * Licensed under the MIT license
+  */
+/* .button,
+ button,
+ input[type="button"],
+ input[type="reset"],
+ input[type="submit"] {
+     background-color: #e11c22;
+     border: 2px solid #e11c22;
+     border-radius: 30px;
+     color: #fff;
+     cursor: pointer;
+     display: inline-block;
+     font-size: 1rem;
+     font-weight: 700;
+     height: 56px;
+     letter-spacing: normal;
+     line-height: 54px;
+     padding: 0 32px;
+     text-align: center;
+     text-decoration: none;
+     text-transform: none;
+     transition: all 0.2s ease-out;
+     white-space: nowrap;
+ }
+ .button:focus,
+ .button:hover,
+ button:focus,
+ button:hover,
+ input[type="button"]:focus,
+ input[type="button"]:hover,
+ input[type="reset"]:focus,
+ input[type="reset"]:hover,
+ input[type="submit"]:focus,
+ input[type="submit"]:hover {
+     background-color: #203475;
+     border-color: #203475;
+     color: #fff;
+     outline: 0;
+ }
+ .button[disabled],
+ button[disabled],
+ input[type="button"][disabled],
+ input[type="reset"][disabled],
+ input[type="submit"][disabled] {
+     cursor: default;
+     opacity: 0.5;
+ }
+ .button[disabled]:focus,
+ .button[disabled]:hover,
+ button[disabled]:focus,
+ button[disabled]:hover,
+ input[type="button"][disabled]:focus,
+ input[type="button"][disabled]:hover,
+ input[type="reset"][disabled]:focus,
+ input[type="reset"][disabled]:hover,
+ input[type="submit"][disabled]:focus,
+ input[type="submit"][disabled]:hover {
+     background-color: #e11c22;
+     border-color: #e11c22;
+ }
+ .button.button-outline,
+ button.button-outline,
+ input[type="button"].button-outline,
+ input[type="reset"].button-outline,
+ input[type="submit"].button-outline {
+     background-color: transparent;
+     color: #e11c22;
+ }
+ .button.button-outline:focus,
+ .button.button-outline:hover,
+ button.button-outline:focus,
+ button.button-outline:hover,
+ input[type="button"].button-outline:focus,
+ input[type="button"].button-outline:hover,
+ input[type="reset"].button-outline:focus,
+ input[type="reset"].button-outline:hover,
+ input[type="submit"].button-outline:focus,
+ input[type="submit"].button-outline:hover {
+     color: #203475;
+ }
+ .button.button-outline[disabled]:focus,
+ .button.button-outline[disabled]:hover,
+ button.button-outline[disabled]:focus,
+ button.button-outline[disabled]:hover,
+ input[type="button"].button-outline[disabled]:focus,
+ input[type="button"].button-outline[disabled]:hover,
+ input[type="reset"].button-outline[disabled]:focus,
+ input[type="reset"].button-outline[disabled]:hover,
+ input[type="submit"].button-outline[disabled]:focus,
+ input[type="submit"].button-outline[disabled]:hover {
+     border-color: inherit;
+     color: #e11c22;
+ }
+ .button.button-clear,
+ button.button-clear,
+ input[type="button"].button-clear,
+ input[type="reset"].button-clear,
+ input[type="submit"].button-clear {
+     background-color: transparent;
+     border-color: transparent;
+     color: #e11c22;
+     font-weight: 500;
+ }
+ .button.button-clear:focus,
+ .button.button-clear:hover,
+ button.button-clear:focus,
+ button.button-clear:hover,
+ input[type="button"].button-clear:focus,
+ input[type="button"].button-clear:hover,
+ input[type="reset"].button-clear:focus,
+ input[type="reset"].button-clear:hover,
+ input[type="submit"].button-clear:focus,
+ input[type="submit"].button-clear:hover {
+     background-color: transparent;
+     border-color: transparent;
+ }
+ .button.button-clear[disabled]:focus,
+ .button.button-clear[disabled]:hover,
+ button.button-clear[disabled]:focus,
+ button.button-clear[disabled]:hover,
+ input[type="button"].button-clear[disabled]:focus,
+ input[type="button"].button-clear[disabled]:hover,
+ input[type="reset"].button-clear[disabled]:focus,
+ input[type="reset"].button-clear[disabled]:hover,
+ input[type="submit"].button-clear[disabled]:focus,
+ input[type="submit"].button-clear[disabled]:hover {
+     color: #e11c22;
+ }
+ .button.button-grey,
+ button.button-grey,
+ input[type="button"].button-grey,
+ input[type="reset"].button-grey,
+ input[type="submit"].button-grey {
+     background-color: #999;
+     border-color: #999;
+ }
+ .button.button-outline-grey,
+ button.button-outline-grey,
+ input[type="button"].button-outline-grey,
+ input[type="reset"].button-outline-grey,
+ input[type="submit"].button-outline-grey {
+     background-color: transparent;
+     border-color: #999;
+     color: #999;
+ }
+ .button.button-arrow,
+ button.button-arrow,
+ input[type="button"].button-arrow,
+ input[type="reset"].button-arrow,
+ input[type="submit"].button-arrow {
+     font-size: 0.875rem;
+     height: 22px;
+     line-height: 18px;
+     padding: 0 26px 0 0;
+     position: relative;
+ }
+ .button.button-arrow:after,
+ button.button-arrow:after,
+ input[type="button"].button-arrow:after,
+ input[type="reset"].button-arrow:after,
+ input[type="submit"].button-arrow:after {
+     background: url(../images/material/icon-arrow.svg) no-repeat 0 0;
+     content: "";
+     height: 18px;
+     position: absolute;
+     right: 0;
+     top: 0;
+     transition: all 0.2s ease-out;
+     width: 18px;
+ }
+ .button.button-arrow:hover:after,
+ button.button-arrow:hover:after,
+ input[type="button"].button-arrow:hover:after,
+ input[type="reset"].button-arrow:hover:after,
+ input[type="submit"].button-arrow:hover:after {
+     right: -3px;
+ }
+ .button.button-arrow:hover[disabled]:after,
+ button.button-arrow:hover[disabled]:after,
+ input[type="button"].button-arrow:hover[disabled]:after,
+ input[type="reset"].button-arrow:hover[disabled]:after,
+ input[type="submit"].button-arrow:hover[disabled]:after {
+     right: 0;
+ }
+ .button.button-arrow.button-arrow-grey,
+ button.button-arrow.button-arrow-grey,
+ input[type="button"].button-arrow.button-arrow-grey,
+ input[type="reset"].button-arrow.button-arrow-grey,
+ input[type="submit"].button-arrow.button-arrow-grey {
+     color: #999;
+ }
+ .button.button-arrow.button-arrow-grey:after,
+ button.button-arrow.button-arrow-grey:after,
+ input[type="button"].button-arrow.button-arrow-grey:after,
+ input[type="reset"].button-arrow.button-arrow-grey:after,
+ input[type="submit"].button-arrow.button-arrow-grey:after {
+     background: url(../images/material/icon-arrow-grey.svg) no-repeat 0 0;
+ } */
 .button-nav-slider {
     align-items: center;
     background: #fff;
@@ -312,12 +312,12 @@ input[type="submit"].button-arrow.button-arrow-grey:after {
     }
 }
 /*!
- * Milligram-scss v1.3.0
- * https://milligram.github.io
- *
- * Copyright (c) 2017 CJ Patoilo
- * Licensed under the MIT license
- */
+  * Milligram-scss v1.3.0
+  * https://milligram.github.io
+  *
+  * Copyright (c) 2017 CJ Patoilo
+  * Licensed under the MIT license
+  */
 code {
     border-radius: 4px;
     font-size: 86%;
@@ -341,12 +341,12 @@ pre > code {
 }
 
 /*!
- * Milligram-scss v1.3.0
- * https://milligram.github.io
- *
- * Copyright (c) 2017 CJ Patoilo
- * Licensed under the MIT license
- */
+  * Milligram-scss v1.3.0
+  * https://milligram.github.io
+  *
+  * Copyright (c) 2017 CJ Patoilo
+  * Licensed under the MIT license
+  */
 hr {
     border: 0;
     border-top: 1px solid #f4f5f6;
@@ -354,56 +354,56 @@ hr {
 }
 
 /*!
- * Milligram-scss v1.3.0
- * https://milligram.github.io
- *
- * Copyright (c) 2017 CJ Patoilo
- * Licensed under the MIT license
- */
-input,
-input[type="email"],
-input[type="number"],
-input[type="password"],
-input[type="search"],
-input[type="tel"],
-input[type="text"],
-input[type="url"],
-select,
-textarea {
-    appearance: none;
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    background-color: transparent;
-    border: 1px solid #d1d1d1;
-    border-radius: 32px;
-    box-shadow: none;
-    box-sizing: inherit;
-    color: #999;
-    font-size: 1.25rem;
-    height: 64px;
-    padding: 6px 32px;
-    width: 100%;
-}
-input:focus,
-input[type="email"]:focus,
-input[type="number"]:focus,
-input[type="password"]:focus,
-input[type="search"]:focus,
-input[type="tel"]:focus,
-input[type="text"]:focus,
-input[type="url"]:focus,
-select:focus,
-textarea:focus {
-    border-color: #e11c22;
-    color: #212121;
-    outline: 0;
-}
-input,
-select,
-textarea {
-    font-family: Outfit;
-    font-weight: 400;
-}
+  * Milligram-scss v1.3.0
+  * https://milligram.github.io
+  *
+  * Copyright (c) 2017 CJ Patoilo
+  * Licensed under the MIT license
+  */
+/* input,
+ input[type="email"],
+ input[type="number"],
+ input[type="password"],
+ input[type="search"],
+ input[type="tel"],
+ input[type="text"],
+ input[type="url"],
+ select,
+ textarea {
+     appearance: none;
+     -moz-appearance: none;
+     -webkit-appearance: none;
+     background-color: transparent;
+     border: 1px solid #d1d1d1;
+     border-radius: 32px;
+     box-shadow: none;
+     box-sizing: inherit;
+     color: #999;
+     font-size: 1.25rem;
+     height: 64px;
+     padding: 6px 32px;
+     width: 100%;
+ }
+ input:focus,
+ input[type="email"]:focus,
+ input[type="number"]:focus,
+ input[type="password"]:focus,
+ input[type="search"]:focus,
+ input[type="tel"]:focus,
+ input[type="text"]:focus,
+ input[type="url"]:focus,
+ select:focus,
+ textarea:focus {
+     border-color: #e11c22;
+     color: #212121;
+     outline: 0;
+ }
+ input,
+ select,
+ textarea {
+     font-family: Outfit;
+     font-weight: 400;
+ } */
 select {
     background: url(../images/material/ico-arrow-bottom.svg) center right 24px
         no-repeat;
@@ -817,13 +817,6 @@ input[type="radio"] {
     .form .wrap-btn-form {
         margin-top: 20px;
     }
-}
-.container {
-    margin: 0 auto;
-    max-width: 1120px;
-    padding: 0 20px;
-    position: relative;
-    width: 100%;
 }
 .wrapper {
     max-width: 1170px;
@@ -1636,12 +1629,12 @@ input[type="radio"] {
     }
 }
 /*!
- * Milligram-scss v1.3.0
- * https://milligram.github.io
- *
- * Copyright (c) 2017 CJ Patoilo
- * Licensed under the MIT license
- */
+  * Milligram-scss v1.3.0
+  * https://milligram.github.io
+  *
+  * Copyright (c) 2017 CJ Patoilo
+  * Licensed under the MIT license
+  */
 a {
     display: inline-block;
     text-decoration: none;
@@ -1682,12 +1675,12 @@ a.link-arrow:hover:after {
 }
 
 /*!
- * Milligram-scss v1.3.0
- * https://milligram.github.io
- *
- * Copyright (c) 2017 CJ Patoilo
- * Licensed under the MIT license
- */
+  * Milligram-scss v1.3.0
+  * https://milligram.github.io
+  *
+  * Copyright (c) 2017 CJ Patoilo
+  * Licensed under the MIT license
+  */
 dl,
 ol,
 ul {
@@ -1778,12 +1771,12 @@ ul ul {
 }
 
 /*!
- * Milligram-scss v1.3.0
- * https://milligram.github.io
- *
- * Copyright (c) 2017 CJ Patoilo
- * Licensed under the MIT license
- */
+  * Milligram-scss v1.3.0
+  * https://milligram.github.io
+  *
+  * Copyright (c) 2017 CJ Patoilo
+  * Licensed under the MIT license
+  */
 .button,
 button,
 dd,
@@ -1814,12 +1807,12 @@ p {
 }
 
 /*!
- * Milligram-scss v1.3.0
- * https://milligram.github.io
- *
- * Copyright (c) 2017 CJ Patoilo
- * Licensed under the MIT license
- */
+  * Milligram-scss v1.3.0
+  * https://milligram.github.io
+  *
+  * Copyright (c) 2017 CJ Patoilo
+  * Licensed under the MIT license
+  */
 table {
     border-spacing: 0;
     width: 100%;
@@ -1840,12 +1833,12 @@ th:last-child {
 }
 
 /*!
- * Milligram-scss v1.3.0
- * https://milligram.github.io
- *
- * Copyright (c) 2017 CJ Patoilo
- * Licensed under the MIT license
- */
+  * Milligram-scss v1.3.0
+  * https://milligram.github.io
+  *
+  * Copyright (c) 2017 CJ Patoilo
+  * Licensed under the MIT license
+  */
 b,
 strong {
     font-weight: 700;
@@ -1959,12 +1952,12 @@ h6 {
     }
 }
 /*!
- * Milligram-scss v1.3.0
- * https://milligram.github.io
- *
- * Copyright (c) 2017 CJ Patoilo
- * Licensed under the MIT license
- */
+  * Milligram-scss v1.3.0
+  * https://milligram.github.io
+  *
+  * Copyright (c) 2017 CJ Patoilo
+  * Licensed under the MIT license
+  */
 img {
     max-width: 100%;
 }
@@ -1976,12 +1969,12 @@ figure img {
 }
 
 /*!
- * Milligram-scss v1.3.0
- * https://milligram.github.io
- *
- * Copyright (c) 2017 CJ Patoilo
- * Licensed under the MIT license
- */
+  * Milligram-scss v1.3.0
+  * https://milligram.github.io
+  *
+  * Copyright (c) 2017 CJ Patoilo
+  * Licensed under the MIT license
+  */
 .clearfix:after {
     clear: both;
     content: " ";

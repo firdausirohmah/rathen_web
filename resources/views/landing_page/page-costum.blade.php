@@ -7,12 +7,14 @@
     <section class="main-banner">
         <div class="main-banner__logo">
             <img src="{{asset('asset/cfind/source/images/rathen.png')}}" alt="">
+            <img src="{{asset('asset/cfind/source/images/rathen.png')}}" alt="">
             
         </div>
 {{--  --}}
         <div class="main-banner__cekresi">
             <div class="main-banner__cekresi--list cek-lacak">
                 <a class="form"  href="">
+                    <i><img src="{{asset('asset/images/material/ico-lacak.svg')}}"></i> 
                     <i><img src="{{asset('asset/images/material/ico-lacak.svg')}}"></i> 
                     <div class="input-box" style="margin-top: 10px">
                         <label>Lacak Pesanan</label>
@@ -63,6 +65,7 @@
                 {{-- </div> --}}
                 <form class="form">
                     <i><img src="{{asset('asset/images/material/ico-cek.svg')}}"></i>
+                    <i><img src="{{asset('asset/images/material/ico-cek.svg')}}"></i>
                     
                     <div class="input-box">
                         <label>CEK HARGA</label>
@@ -74,6 +77,7 @@
         </div>
         <div class="main-banner__video">
             <video muted="muted" loop="loop" id="videohome" autoplay="autoplay" playsinline>
+                <source src="{{asset('asset/cfind/source/files/video.mp4')}}" type="video/mp4">
                 <source src="{{asset('asset/cfind/source/files/video.mp4')}}" type="video/mp4">
                 
                 {{-- <source src="asset/cfind/source/files/hugo-papua-15-website.mp4" type="video/mp4"> --}}
@@ -95,12 +99,12 @@
         </div>
     </section>
     
-    <div class="container">
+    <div class="container mb-4 pb-4">
         <div class="row">
             {{-- <div class="col-lg-3"></div> --}}
             <div class="col-lg-6">
 
-                <div id="carouselExample" class="carousel slide w-100" data-ride="carousel">
+                <div id="carouselExample" class="carousel slide w-100 " data-ride="carousel">
                     <div class="carousel-inner ">
                         
                         <div class="carousel-item active">
@@ -142,12 +146,12 @@
                 </div>
             </div>
             <div class="col-lg-6" style="font-family: Montheavy; color: rgba(0, 0, 0, 0.8);">
-                <p class=" text-justify">RATHEN merupakan sportwears brand yang berasal dari Bogor, Indonesia. Memulai industri sportwears pada tahun 2014 dengan berfokus pada pembuatan custom jersey sepakbola atau futsal. Berbagai jenis tim, baik dari level korporasi, akademisi, komunitas sepakbola, hingga tim liga futsal profesional telah menjadi bagian perjalanan manis rathen di dunia industri sportwear.</p>
-                <p class=" text-justify">Hingga akhirnya, Pada tahun 2016, RATHEN dipercaya menjadi penyedia jersey latihan tim nasional Futsal Indonesia. 
+                <p class=" text-justify mb-4" >RATHEN merupakan sportwears brand yang berasal dari Bogor, Indonesia. Memulai industri sportwears pada tahun 2014 dengan berfokus pada pembuatan custom jersey sepakbola atau futsal. Berbagai jenis tim, baik dari level korporasi, akademisi, komunitas sepakbola, hingga tim liga futsal profesional telah menjadi bagian perjalanan manis rathen di dunia industri sportwear.</p>
+                <p class=" text-justify mb-4">Hingga akhirnya, Pada tahun 2016, RATHEN dipercaya menjadi penyedia jersey latihan tim nasional Futsal Indonesia. 
                 </p>
-                <p class=" text-justify">Tahun 2020 menjadi langkah awal RATHEN menembus pasar Internasional. Dimulai dari negara di kawasan Asia seperti Timor Leste, bergerak perlahan ke Malaysia, hingga akhirnya Korea Selatan.</p>
-                <p class=" text-justify">Tidak hanya puas di level Asia, Rathen melanjutkan langkah awal penetrasi ke pasar Eropa melalui negara Swiss hingga dapat memperluas jangkauan ke benua Amerika, tepatnya negara USA. </p>
-                <p class=" text-justify">Pasar internasional memiliki standar mutu produk yang tinggi.
+                <p class=" text-justify mb-4">Tahun 2020 menjadi langkah awal RATHEN menembus pasar Internasional. Dimulai dari negara di kawasan Asia seperti Timor Leste, bergerak perlahan ke Malaysia, hingga akhirnya Korea Selatan.</p>
+                <p class=" text-justify mb-4">Tidak hanya puas di level Asia, Rathen melanjutkan langkah awal penetrasi ke pasar Eropa melalui negara Swiss hingga dapat memperluas jangkauan ke benua Amerika, tepatnya negara USA. </p>
+                <p class=" text-justify mb-4">Pasar internasional memiliki standar mutu produk yang tinggi.
                     Kami, RATHEN Indonesia, dengan bangga dapat memenuhi persyaratan standar mutu tersebut.
                     </p>
             </div>
@@ -221,12 +225,12 @@
 </script>    
 </section>
 
-<section id="result">
+<section id="result mt-4 pt-4">
     <section class="py-2 py-xl-4">
         <div class="container">
           <div class="row justify-content-md-center">
             <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
-              <h1 class="mb-4 display-5 text-center" style="font-family: Montheavy; padding-top:10%; color: black; font-size: 24px; font-weight: bold; margin-bottom: 5px; text-align: center;">LATEST RESULT</h1>
+              <h1 class="mb-4 display-5 text-center pt-4 fw-bold" style="font-family: Montheavy; font-size: 24px; text-align: center;">LATEST RESULT</h1>
             </div>
           </div>
         </div>
@@ -887,10 +891,6 @@
         
     </div>
 </div>
-<<<<<<< HEAD
-
-=======
->>>>>>> e346c68842ac7712d8c2ff4e5c0408de7e6f2468
 </section>
 
 @endsection

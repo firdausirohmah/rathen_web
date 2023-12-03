@@ -6,14 +6,14 @@
 <section id="home" style="overflow: hidden;">
     <section class="main-banner">
         <div class="main-banner__logo">
-            <img src="{{asset('public/asset/cfind/source/images/rathen.png')}}" alt="">
+            <img src="{{asset('asset/cfind/source/images/rathen.png')}}" alt="">
             
         </div>
 {{--  --}}
         <div class="main-banner__cekresi">
             <div class="main-banner__cekresi--list cek-lacak">
                 <a class="form"  href="">
-                    <i><img src="{{asset('public/asset/images/material/ico-lacak.svg')}}"></i> 
+                    <i><img src="{{asset('asset/images/material/ico-lacak.svg')}}"></i> 
                     <div class="input-box" style="margin-top: 10px">
                         <label>Lacak Pesanan</label>
                         <input type="text" placeholder="Masukan nomor pesanan">
@@ -28,7 +28,7 @@
                     {{-- <form action="" id="formResi">
                         <div class="field field-from field-autocomplete">
                             <i class="ico">
-                                <img src="{{asset('public/asset/images/material/ico-cek-map.svg')}}">
+                                <img src="{{asset('asset/images/material/ico-cek-map.svg')}}">
                                 
                             </i>
                             <input type="text" placeholder="Kategori" autocomplete="off" params="1" required>
@@ -37,7 +37,7 @@
                         </div>
                         <div class="field field-to field-autocomplete">
                             <i class="ico">
-                                <img src="{{asset('public/asset/images/material/ico-cek-to.svg')}}">
+                                <img src="{{asset('asset/images/material/ico-cek-to.svg')}}">
                                 
                             </i>
                             <input type="text" placeholder="Kualitas"  autocomplete="off" params="2" required>
@@ -51,7 +51,7 @@
                         </div>
                         <div class="field field-weight">
                             <i class="ico">
-                                <img src="{{asset('public/asset/images/material/ico-cek-weight.svg')}">
+                                <img src="{{asset('asset/images/material/ico-cek-weight.svg')}">
                                 
                             </i>
                             <input type="text" placeholder="Jumlah Pesanan" name="jumlah" required>
@@ -62,7 +62,7 @@
                     </form> --}}
                 {{-- </div> --}}
                 <form class="form">
-                    <i><img src="{{asset('public/asset/images/material/ico-cek.svg')}}"></i>
+                    <i><img src="{{asset('asset/images/material/ico-cek.svg')}}"></i>
                     
                     <div class="input-box">
                         <label>CEK HARGA</label>
@@ -74,7 +74,7 @@
         </div>
         <div class="main-banner__video">
             <video muted="muted" loop="loop" id="videohome" autoplay="autoplay" playsinline>
-                <source src="{{asset('public/asset/cfind/source/files/video.mp4')}}" type="video/mp4">
+                <source src="{{asset('asset/cfind/source/files/video.mp4')}}" type="video/mp4">
                 
                 {{-- <source src="asset/cfind/source/files/hugo-papua-15-website.mp4" type="video/mp4"> --}}
                 {{-- <source src="asset/cfind/source/files/hugo-papua-15-website.webm" type="video/webm"> --}}
@@ -95,16 +95,16 @@
         </div>
     </section>
     
-    <div class="container">
+    <div class="container mb-4 pb-4">
         <div class="row">
             {{-- <div class="col-lg-3"></div> --}}
             <div class="col-lg-6">
 
-                <div id="carouselExample" class="carousel slide w-100" data-ride="carousel">
+                <div id="carouselExample" class="carousel slide w-100 " data-ride="carousel">
                     <div class="carousel-inner ">
                         
                         <div class="carousel-item active">
-                            <img src="{{asset('public/asset/images/swiss.jpg')}}" class="d-block w-100" alt="swiss">
+                            <img src="{{asset('asset/images/swiss.jpg')}}" class="d-block w-100" alt="swiss">
                             
                             
                         </div>
@@ -116,7 +116,7 @@
                             <!-- Gunakan tag video untuk video -->
                             <video id="video1" class="d-block w-50" controls autoplay muted>
                                 <!-- Sediakan sumber video -->
-                                <source src="{{asset('public/asset/images/video1.mp4')}}" type="video/mp4">
+                                <source src="{{asset('asset/images/video1.mp4')}}" type="video/mp4">
                                  
                                 Your browser does not support the video tag.
                             </video>
@@ -125,7 +125,7 @@
                             <!-- Gunakan tag video untuk video -->
                             <video id="video2" class="d-block w-50" controls autoplay muted>
                                 <!-- Sediakan sumber video -->
-                                <source src="{{asset('public/asset/images/video2.mp4')}}" type="video/mp4">
+                                <source src="{{asset('asset/images/video2.mp4')}}" type="video/mp4">
                                 
                                 Your browser does not support the video tag.
                             </video>
@@ -142,12 +142,12 @@
                 </div>
             </div>
             <div class="col-lg-6" style="font-family: Montheavy; color: rgba(0, 0, 0, 0.8);">
-                <p class=" text-justify">RATHEN merupakan sportwears brand yang berasal dari Bogor, Indonesia. Memulai industri sportwears pada tahun 2014 dengan berfokus pada pembuatan custom jersey sepakbola atau futsal. Berbagai jenis tim, baik dari level korporasi, akademisi, komunitas sepakbola, hingga tim liga futsal profesional telah menjadi bagian perjalanan manis rathen di dunia industri sportwear.</p>
-                <p class=" text-justify">Hingga akhirnya, Pada tahun 2016, RATHEN dipercaya menjadi penyedia jersey latihan tim nasional Futsal Indonesia. 
+                <p class=" text-justify mb-4" >RATHEN merupakan sportwears brand yang berasal dari Bogor, Indonesia. Memulai industri sportwears pada tahun 2014 dengan berfokus pada pembuatan custom jersey sepakbola atau futsal. Berbagai jenis tim, baik dari level korporasi, akademisi, komunitas sepakbola, hingga tim liga futsal profesional telah menjadi bagian perjalanan manis rathen di dunia industri sportwear.</p>
+                <p class=" text-justify mb-4">Hingga akhirnya, Pada tahun 2016, RATHEN dipercaya menjadi penyedia jersey latihan tim nasional Futsal Indonesia. 
                 </p>
-                <p class=" text-justify">Tahun 2020 menjadi langkah awal RATHEN menembus pasar Internasional. Dimulai dari negara di kawasan Asia seperti Timor Leste, bergerak perlahan ke Malaysia, hingga akhirnya Korea Selatan.</p>
-                <p class=" text-justify">Tidak hanya puas di level Asia, Rathen melanjutkan langkah awal penetrasi ke pasar Eropa melalui negara Swiss hingga dapat memperluas jangkauan ke benua Amerika, tepatnya negara USA. </p>
-                <p class=" text-justify">Pasar internasional memiliki standar mutu produk yang tinggi.
+                <p class=" text-justify mb-4">Tahun 2020 menjadi langkah awal RATHEN menembus pasar Internasional. Dimulai dari negara di kawasan Asia seperti Timor Leste, bergerak perlahan ke Malaysia, hingga akhirnya Korea Selatan.</p>
+                <p class=" text-justify mb-4">Tidak hanya puas di level Asia, Rathen melanjutkan langkah awal penetrasi ke pasar Eropa melalui negara Swiss hingga dapat memperluas jangkauan ke benua Amerika, tepatnya negara USA. </p>
+                <p class=" text-justify mb-4">Pasar internasional memiliki standar mutu produk yang tinggi.
                     Kami, RATHEN Indonesia, dengan bangga dapat memenuhi persyaratan standar mutu tersebut.
                     </p>
             </div>
@@ -221,12 +221,12 @@
 </script>    
 </section>
 
-<section id="result">
+<section id="result mt-4 pt-4">
     <section class="py-2 py-xl-4">
         <div class="container">
           <div class="row justify-content-md-center">
             <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
-              <h1 class="mb-4 display-5 text-center" style="font-family: Montheavy; padding-top:10%; color: black; font-size: 24px; font-weight: bold; margin-bottom: 20px; text-align: center;">LATEST RESULT</h1>
+              <h1 class="mb-4 display-5 text-center pt-4 fw-bold" style="font-family: Montheavy; font-size: 24px; text-align: center;">LATEST RESULT</h1>
             </div>
           </div>
         </div>
@@ -462,15 +462,15 @@
                             <!-- Produk Gambar -->
                     <div class="image-container justify-content-md-center">
                         <div class="image-wrapper" data-position="1">
-                            <img src="{{asset('public/asset/images/image1.jpg')}}" alt="Product 1" class="clickable-image" data-price="100000">
+                            <img src="{{asset('asset/images/image1.jpg')}}" alt="Product 1" class="clickable-image" data-price="100000">
                             <p class="image-text" style="border: none;">NON - PRINT </p>
                         </div>
                         <div class="image-wrapper" data-position="2">
-                            <img src="{{asset('public/asset/images/image1.jpg')}}" alt="Product 2" class="clickable-image" data-price="150000">
+                            <img src="{{asset('asset/images/image1.jpg')}}" alt="Product 2" class="clickable-image" data-price="150000">
                             <p class="image-text" style="border: none;">FULL- PRINT </p>
                         </div>
                         <div class="image-wrapper" data-position="3">
-                            <img src="{{asset('public/asset/images/image1.jpg')}}" alt="Product 3" class="clickable-image" data-price="200000">
+                            <img src="{{asset('asset/images/image1.jpg')}}" alt="Product 3" class="clickable-image" data-price="200000">
                             <p class="image-text" style="border: none;">HALF - PRINT </p>
                         </div>
                     </div>
@@ -520,7 +520,7 @@
         </div> --}}
     </div>
     </section>
-    <script src="{{ asset('public/asset/js/script.js') }}"></script>
+    <script src="{{ asset('asset/js/script.js') }}"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             var selectedImage;
@@ -635,20 +635,20 @@
                     <div class="carousel-inner ">
                         
                         <div class="carousel-item active">
-                            <img src="{{asset('public/asset/images/location/f1.JPG')}}" class="d-block w-100" alt="swiss">
+                            <img src="{{asset('asset/images/location/f1.JPG')}}" class="d-block w-100" alt="swiss">
                         </div>
                         <div class="carousel-item">
                             <img src=" {{asset('/asset/images/location/F2a.JPG')}}" class="d-block w-100" alt="top">
                         </div>
                         <div class="carousel-item">
-                            <img src="{{asset('public/asset/images/location/F5.JPG')}}" class="d-block w-100" alt="swiss">
+                            <img src="{{asset('asset/images/location/F5.JPG')}}" class="d-block w-100" alt="swiss">
                         </div>
                         <div class="carousel-item" >
-                            <img src="{{asset('public/asset/images/location/F7.JPG')}}" class="d-block w-100" alt="swiss">
+                            <img src="{{asset('asset/images/location/F7.JPG')}}" class="d-block w-100" alt="swiss">
                             </video>
                         </div>
                         <div class="carousel-item" >
-                            <img src="{{asset('public/asset/images/location/F8.JPG')}}" class="d-block w-100" alt="swiss">
+                            <img src="{{asset('asset/images/location/F8.JPG')}}" class="d-block w-100" alt="swiss">
                             </video>
                         </div>
                     </div>

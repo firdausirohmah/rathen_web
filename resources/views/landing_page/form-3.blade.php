@@ -1,96 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-</head>
-<link rel="stylesheet" href="{{ asset('asset/css/core.css') }}" class="template-customizer-core-css" />
-<script src="asset/js\bootstrap.js"></script>
-</head>
-<body>
-    <br>
-    <h3 style="font-family: Montheavy; color: #1890fd;  font-weight: bold; text-decoration: underline;
-    margin-bottom: 20px; text-align: center;">FORM ORDER - CUSTOM RATHEN</h3>
-    <div class="container">
-        <div class="row ">
-            <div class="col-xl-7">
-              <div class="nav-align-top mb-4">
-                <ul class="nav nav-tabs" role="tablist">
-                  <li class="nav-item">
-                    <button
-                      type="button"
-                      class="nav-link"
-                      role="tab" 
-                      data-bs-toggle="tab"
-                      data-bs-target="#navs-top-home"
-                      aria-controls="navs-top-home"
-                      aria-selected="true"
-                      
-                      >Step 1
-                    </button>
-                  </li>
-    
-                  <li class="nav-item">
-                    <button
-                      type="button"
-                      class="nav-link"
-                      role="tab" 
-                      data-bs-toggle="tab"
-                      data-bs-target="#navs-top-home"
-                      aria-controls="navs-top-home"
-                      aria-selected="true"
-                    >
-                      Step 2
-                    </button>
-                  </li>
-    
-                  <li class="nav-item">
-                    <button
-                      type="button"
-                      class="nav-link active"
-                      role="tab" 
-                      data-bs-toggle="tab"
-                      data-bs-target="#navs-top-profile"
-                      aria-controls="navs-top-profile"
-                      aria-selected="false"
-                    >
-                      Step 3
-                    </button>
-                  </li>
-                  <li class="nav-item">
-                    <button
-                      type="button"
-                      class="nav-link"
-                      role="tab" 
-                      data-bs-toggle="tab"
-                      data-bs-target="#navs-top-profile"
-                      aria-controls="navs-top-profile"
-                      aria-selected="false"
-                    >
-                      Step 4
-                    </button>
-                  </li>
-                  <li class="nav-item">
-                    <button
-                      type="button"
-                      class="nav-link"
-                      role="tab" 
-                      data-bs-toggle="tab"
-                      data-bs-target="#navs-top-messages"
-                      aria-controls="navs-top-messages"
-                      aria-selected="false"
-                    >
-                      Step 5
-                    </button>
-                  </li>
-                  
-                </ul>
-              </div>
-            </div>
-          </div>
+@extends('layout.form-order')
+
+@section('content')
+
           <style>
             table{
               width: 80%;
@@ -313,5 +224,5 @@
 
     </div>
 </div>
-</body>
-</html>
+
+@endsection

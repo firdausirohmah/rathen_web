@@ -7,7 +7,7 @@
     <section class="main-banner">
         <div class="main-banner__logo">
             <img src="{{asset('asset/cfind/source/images/rathen.png')}}" alt="">
-            <img src="{{asset('asset/cfind/source/images/rathen.png')}}" alt="">
+            {{-- <img src="{{asset('asset/cfind/source/images/rathen.png')}}" alt=""> --}}
             
         </div>
 {{--  --}}
@@ -15,7 +15,7 @@
             <div class="main-banner__cekresi--list cek-lacak">
                 <a class="form"  href="">
                     <i><img src="{{asset('asset/images/material/ico-lacak.svg')}}"></i> 
-                    <i><img src="{{asset('asset/images/material/ico-lacak.svg')}}"></i> 
+                    {{-- <i><img src="{{asset('asset/images/material/ico-lacak.svg')}}"></i>  --}}
                     <div class="input-box" style="margin-top: 10px">
                         <label>Lacak Pesanan</label>
                         <input type="text" placeholder="Masukan nomor pesanan">
@@ -65,7 +65,7 @@
                 {{-- </div> --}}
                 <form class="form">
                     <i><img src="{{asset('asset/images/material/ico-cek.svg')}}"></i>
-                    <i><img src="{{asset('asset/images/material/ico-cek.svg')}}"></i>
+                    {{-- <i><img src="{{asset('asset/images/material/ico-cek.svg')}}"></i> --}}
                     
                     <div class="input-box">
                         <label>CEK HARGA</label>

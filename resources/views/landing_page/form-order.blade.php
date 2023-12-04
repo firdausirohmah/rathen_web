@@ -36,12 +36,21 @@
   }
   .img-thumbnail{
     width: 80%;
+    border-radius: 14px;
   }
-  .img-thumbnail:hover{
+  .normal{
+    opacity: 1;
+    transform: rotate(0deg); /* Mulai dengan rotasi 0 derajat */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Efek transisi dengan durasi 0.3 detik dan fungsi timing ease */
+  }
+  .normal:hover{
+    /* opacity: 0.5; */
+    -webkit-transition: content 2s ease-out;
+    content: url('/asset/extra/kuning2.png');
+  }
+  .raglan:hover{
     /* background-color: black; */
-    content: url('/asset/extra/kuning2.jpeg');
-    content: url('/asset/extra/kuning1.jpeg');
-    
+    content: url('/asset/extra/kuning1.png');
   }
 </style>
 <div class="container">
@@ -260,10 +269,10 @@
 <div class="container text-center">
   <div class="row">
     <div class="col">
-      <img src="{{asset('/asset/extra/putih2.jpeg')}}" class="img-thumbnail" alt="putih1">
+      <img src="{{asset('/asset/extra/putih2.png')}}" class="img-thumbnail normal" alt="putih1">
     </div>
     <div class="col">
-      <img src="{{asset('/asset/extra/putih1.jpeg')}}" class="img-thumbnail" alt="putih2">
+      <img src="{{asset('/asset/extra/putih1.png')}}" class="img-thumbnail raglan" alt="putih2">
     </div>
   </div>
 </div>

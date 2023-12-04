@@ -32,12 +32,16 @@
   .inpt-harga{
     background-color: transparent;
     width: 10%;
+    margin-top: 5%;
   }
   .img-thumbnail{
     width: 80%;
   }
   .img-thumbnail:hover{
-    background-color: black;
+    /* background-color: black; */
+    content: url('/asset/extra/kuning2.jpeg');
+    content: url('/asset/extra/kuning1.jpeg');
+    
   }
 </style>
 <div class="container">
@@ -232,22 +236,89 @@
       </tr> --}}
     </table>
   </div>
-  <div class="row bg-primary" style="text-align: left">
-    <div class="col"><h4 style="color: #71BF72; text-align:left;">Keterangan Extra:</h4></div>
+  <div class="row mb-4" style="text-align: left">
+    <div class="col-12" style="padding-left: 0; margin-left: 0;"><h4 style="color: #71BF72; text-align:left;">Keterangan Extra:</h4></div>
+  </div>
+  <div class="row mb-4" style="text-align: left">
+    <div class="col-12" style="padding-left: 0; margin-left: 0;"><h5 style="color: #1890fd;   text-align:left;">POLA BADAN : </h5></div>
+  </div>
+</div>
+  <div class="container text-center">
+    <div class="row">
+      <div class="col">
+        {{-- <img src="{{asset('/asset/extra/putih1.jpeg')}}" class="img-thumbnail" alt="putih2"> --}}
+      </div>
+      <div class="col">
+        {{-- <img src="{{asset('/asset/extra/putih2.jpeg')}}" class="img-thumbnail" alt="putih1"> --}}
+      </div>
+    </div>
+  </div>
+  <div class="row mb-4" style="text-align: left">
+    <div class="col-12" style="padding-left: 9.5%; margin-left: 0; margin-buttom:100px; "><h5 style="color: #1890fd;   text-align:left;">POLA LENGAN : </h5></div>
   </div>
 </div>
 <div class="container text-center">
   <div class="row">
     <div class="col">
-      <img src="https://th.bing.com/th/id/OIP.nyFLBYjD207JNHC4hBQBAwHaE8?rs=1&pid=ImgDetMain" class="img-thumbnail" alt="...">
+      <img src="{{asset('/asset/extra/putih2.jpeg')}}" class="img-thumbnail" alt="putih1">
     </div>
     <div class="col">
-      <img src="https://th.bing.com/th/id/OIP.nyFLBYjD207JNHC4hBQBAwHaE8?rs=1&pid=ImgDetMain" class="img-thumbnail" alt="...">
+      <img src="{{asset('/asset/extra/putih1.jpeg')}}" class="img-thumbnail" alt="putih2">
+    </div>
+  </div>
+</div>
+<div class="row mb-4" style="text-align: left">
+  <div class="col-12" style="padding-left: 9.5%; margin-left: 0; margin-buttom:100px; "><h5 style="color: #1890fd;   text-align:left;">MATERIAL (bahan) : </h5></div>
+</div>
+</div>
+<div class="container text-center">
+  <div class="row">
+    <div class="col">
+      {{-- <img src="{{asset('/asset/extra/putih2.jpeg')}}" class="img-thumbnail" alt="putih1"> --}}
+    </div>
+    <div class="col">
+      {{-- <img src="{{asset('/asset/extra/putih1.jpeg')}}" class="img-thumbnail" alt="putih2"> --}}
+    </div>
+  </div>
+</div>
+
+<div class="row mb-4" style="text-align: left">
+  <div class="col-12" style="padding-left: 9.5%; margin-left: 0; margin-buttom:100px; "><h5 style="color: #1890fd;   text-align:left;">MATERIAL (bahan) : </h5></div>
+</div>
+</div>
+<div class="container text-center">
+  <div class="row">
+    <div class="col">
+      {{-- <img src="{{asset('/asset/extra/putih2.jpeg')}}" class="img-thumbnail" alt="putih1"> --}}
+    </div>
+    <div class="col">
+      {{-- <img src="{{asset('/asset/extra/putih1.jpeg')}}" class="img-thumbnail" alt="putih2"> --}}
+    </div>
+    <div class="col">
+      {{-- <img src="{{asset('/asset/extra/putih1.jpeg')}}" class="img-thumbnail" alt="putih2"> --}}
+    </div>
+  </div>
+</div>
+
+<div class="row mb-4" style="text-align: left">
+  <div class="col-12" style="padding-left: 9.5%; margin-left: 0; margin-buttom:100px; "><h5 style="color: #1890fd;   text-align:left;">JENIS KERAH : </h5></div>
+</div>
+</div>
+<div class="container text-center">
+  <div class="row">
+    <div class="col">
+      {{-- <img src="{{asset('/asset/extra/putih2.jpeg')}}" class="img-thumbnail" alt="putih1"> --}}
+    </div>
+    <div class="col">
+      {{-- <img src="{{asset('/asset/extra/putih1.jpeg')}}" class="img-thumbnail" alt="putih2"> --}}
+    </div>
+    <div class="col">
+      {{-- <img src="{{asset('/asset/extra/putih1.jpeg')}}" class="img-thumbnail" alt="putih2"> --}}
     </div>
   </div>
 </div>
 <div class="container">
-  <div class="row">
+  <div class="row-12">
     <div class="col-lg-12">
       <h5  class="fw-bold" style="color: red">TOTAL HARGA <span class="mx-5">:</span> IDR <input type="text" class="inpt-harga text-danger fw-bold" name="total_harga" value="124.000" placeholder="124.000"></h5>
     </div>

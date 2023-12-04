@@ -37,8 +37,8 @@ Route::get('/coba', function () {
     return view('landing_page.coba');
 });
 
-Route::get('/pricelist', function () {
-    return view('landing_page.pricelist');
+Route::get('/part-pricelist', function () {
+    return view('landing_page.part-pricelist');
 });
 
 // about

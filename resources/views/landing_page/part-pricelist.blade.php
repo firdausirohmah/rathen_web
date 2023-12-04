@@ -91,7 +91,7 @@
             <div class="col"><small class="text-muted">Home / Half-Print</small></div>
         </div>
     </div>
-    <div class="d-inline-flex gap-1">
+    {{-- <div class="d-inline-flex gap-1">
       <a href="#" class="btn" role="button" data-bs-toggle="button">Toggle link</a>
       <a href="#" class="btn active" role="button" data-bs-toggle="button" aria-pressed="true">Active toggle link</a>
       <a class="btn disabled" aria-disabled="true" role="button" data-bs-toggle="button">Disabled toggle link</a>
@@ -100,7 +100,7 @@
       <a href="#" class="btn btn-primary" role="button" data-bs-toggle="button">Toggle link</a>
       <a href="#" class="btn btn-primary active" role="button" data-bs-toggle="button" aria-pressed="true">Active toggle link</a>
       <a class="btn btn-primary disabled" aria-disabled="true" role="button" data-bs-toggle="button">Disabled toggle link</a>
-    </p>
+    </p> --}}
     <div class="container-xxl">
         <div class="row">
             <div class="col-lg-3">

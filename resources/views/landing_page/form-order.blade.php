@@ -416,13 +416,14 @@
       <td colspan="1" class="input-group extra-3">
         {{-- <input type="text" class="form-extra" placeholder="Input Jumlah"  aria-describedby="basic-addon1" name="bbm"> --}}
         {{-- <span class="input-group-text fw-lighter" id="basic-addon1">pcs </span><small style="font-size: 12px; color:grey;" class="input-group-text fw-lighter">(utk stadium, free utk PRO dan PRO+)</small><tr> --}}
-          <input type="number" id="jumlah" value="12" min="12" readonly>
-          <button onclick="tambahSatu()">+</button>
+         
         </tr>
           <tr>
       <td class="extra-1"><span class="fw-semibold"><i class='bx bx-circle' style="font-size: 10px"></i> Extra logo tim (DTF)</span></td>
       <td class="harga extra-2" >(+30,000)</td>
       <td colspan="1" class="input-group extra-3">
+        <input type="number" id="jumlah" value="12" min="12" readonly>
+        <button onclick="tambahSatu()">+</button>
         {{-- <input type="text" class="form-extra" placeholder="Input Jumlah"  aria-describedby="basic-addon1" name="plr"> --}}
         {{-- <span class="input-group-text fw-lighter" id="basic-addon1"> </span><small style="font-size: 12px; color:grey;" class="input-group-text fw-lighter">(utk stadium, free utk PRO dan PRO+)</small> --}}
       </td>

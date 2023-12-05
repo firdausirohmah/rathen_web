@@ -2,43 +2,7 @@
 
 @section('content')
 
-{{-- title page --}}
-{{-- <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-          </li>
-        </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-      </div>
-    </div>
-  </nav> --}}
+
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 <style>
@@ -83,6 +47,32 @@
           background-color: #000;
           color: #fff;
         }
+        #imageSlider {
+      width: 70%;
+      margin: auto;
+    }
+
+    /* Gaya untuk pilihan gambar di bawah slider */
+    .thumbnail-container {
+      margin-top: 20px;
+    }
+
+    .thumbnail {
+      width: 40px;
+      height: 40px;
+      /* margin-right: 5px; */
+      cursor: pointer;
+    }
+
+    .thumbnail img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .selected-thumbnail {
+      border: 2px solid #007bff;
+    }
     </style>
     <link rel="stylesheet" href="asset/css/styles.css">
     <section id="home" style="overflow: hidden;">
@@ -104,8 +94,68 @@
     <div class="container-xxl">
         <div class="row">
             <div class="col-lg-3">
-                <img src="https://www.shutterstock.com/image-vector/adventure-offroad-4x4-badges-logo-260nw-2041894727.jpg" width="90%" class="img-fluid rounded-top mx-auto my-auto" alt="">
+              <div class="card">
+                <div class="card-body">
+                {{-- <img src="https://www.shutterstock.com/image-vector/adventure-offroad-4x4-badges-logo-260nw-2041894727.jpg" width="90%" class="img-fluid rounded-top mx-auto my-auto" alt=""> --}}
+                <div id="imageSlider" class="carousel slide mx-auto" data-bs-interval="false">
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img src="{{ asset('asset/extra/casual/C-1.png') }}" class="d-block w-100" alt="Image 1">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="{{ asset('asset/extra/casual/C-2.png') }}" class="d-block w-100" alt="Image 2">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="{{ asset('asset/extra/casual/C-3.png') }}" class="d-block w-100" alt="Image 3">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="{{ asset('asset/extra/casual/C-4.png') }}" class="d-block w-100" alt="Image 4">
+                    </div>
+                  </div>
+                </div>
+                <div class="container">
+                  <div class="row">
+                    <div class="col">
+                      <div class="thumbnail bg-primary selected-thumbnail" onclick="changeSlide(0)">
+                        <img src="{{ asset('asset/extra/casual/C-1.png') }}" alt="Thumbnail 1">
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="thumbnail" onclick="changeSlide(1)">
+                        <img src="{{ asset('asset/extra/casual/C-2.png') }}" alt="Thumbnail 2">
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="thumbnail" onclick="changeSlide(2)">
+                        <img src="{{ asset('asset/extra/casual/C-3.png') }}" alt="Thumbnail 3">
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="thumbnail" onclick="changeSlide(3)">
+                        <img src="{{ asset('asset/extra/casual/C-4.png') }}" alt="Thumbnail 4">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+              </div>
             </div>
+            <script>
+              // Fungsi untuk mengubah slide berdasarkan thumbnail yang dipilih
+              function changeSlide(index) {
+                document.querySelector('#imageSlider').querySelector('.carousel-inner').children[index].classList.add('active');
+                document.querySelector('#imageSlider').querySelector('.carousel-inner').children[(index + 1) % 3].classList.remove('active');
+                document.querySelector('#imageSlider').querySelector('.carousel-inner').children[(index + 2) % 3].classList.remove('active');
+            
+                // Menghapus kelas 'selected-thumbnail' dari semua thumbnail
+                document.querySelectorAll('.thumbnail').forEach(function(thumbnail) {
+                  thumbnail.classList.remove('selected-thumbnail');
+                });
+            
+                // Menambahkan kelas 'selected-thumbnail' ke thumbnail yang dipilih
+                document.querySelector('.thumbnail-container').querySelectorAll('.thumbnail')[index].classList.add('selected-thumbnail');
+              }
+            </script>
             <div class="col-lg-6 " style="font-weight: 200; padding-left:10px;">
                 <div class="card">
                     <div class="card-body">
@@ -195,14 +245,14 @@
         }
       </style>
     <!-- Jenis pilihan 1 -->
-    <button class="menu-button" onclick="selectOption(1, 1)">Pilihan 1A</button>
+    {{-- <button class="menu-button" onclick="selectOption(1, 1)">Pilihan 1A</button>
     <button class="menu-button" onclick="selectOption(1, 2)">Pilihan 1B</button>
-    <button class="menu-button" onclick="selectOption(1, 3)">Pilihan 1C</button>
+    <button class="menu-button" onclick="selectOption(1, 3)">Pilihan 1C</button> --}}
     
     <!-- Jenis pilihan 2 -->
-    <button class="menu-button" onclick="selectOption(2, 1)">Pilihan 2A</button>
+    {{-- <button class="menu-button" onclick="selectOption(2, 1)">Pilihan 2A</button>
     <button class="menu-button" onclick="selectOption(2, 2)">Pilihan 2B</button>
-    <button class="menu-button" onclick="selectOption(2, 3)">Pilihan 2C</button>
+    <button class="menu-button" onclick="selectOption(2, 3)">Pilihan 2C</button> --}}
     
     <!-- Tombol untuk mengubah warna jika minimal 2 menu telah dipilih -->
     <button id="submitBtn" onclick="changeColor()">Submit</button>

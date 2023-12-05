@@ -61,9 +61,9 @@ Route::get('/price-list', function () {
 // });
 
 // pricelist
-// Route::get('/pricelist', function () {
-//     return view('landing_page.pricelist');
-// });
+Route::get('/price-list', function () {
+    return view('landing_page.part-pricelist');
+});
 // Route::post('/store-price-list', function (Request $request) {
 //     return view('landing_page.pricelist');
 // });

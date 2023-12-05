@@ -1,6 +1,11 @@
 @extends('layout.form-order')
 @section('content')
 <style>
+   .input-container {
+      margin-bottom: 10px;
+      background-color: transparent;
+
+    }
   table{
     width: 80%;
     align-content: center;
@@ -87,7 +92,7 @@
     -webkit-transition: content 2s ease-out;
     content: url('/asset/extra/oneck/O-2Kuning.png');
   }
- 
+ =
 </style>
 <div class="container">
   <div class="row">
@@ -377,7 +382,7 @@
 </div>
 </div>
 <div class="container text-center">
-  <div class="row">
+  <div class="row wd">
     <div class="col-4">
       <img src="{{asset('/asset/extra/oneck/O-1a.png')}}" class="img-thumbnail O1" alt="">
     </div>
@@ -395,6 +400,97 @@
     </div>
   </div>
 </div>
+
+{{-- LOGO TIM --}}
+<div class="container">
+<div class="row">
+  <table style="width: 100%; border:10px; font-size:14px;  color:black;">
+    <tr>
+      <td colspan="2">
+        <h4 style="color: #1890fd; ">LOGO TIM :</h4>
+      </td>
+    </tr>
+    <tr>
+      <td class="extra-1"><span class="fw-semibold"><i class='bx bx-circle' style="font-size: 10px"></i> DTF</span></td>
+      <td class="harga extra-2 style" style="margin-left: 5%;" >Free</td>
+      <td colspan="1" class="input-group extra-3">
+        {{-- <input type="text" class="form-extra" placeholder="Input Jumlah"  aria-describedby="basic-addon1" name="bbm"> --}}
+        {{-- <span class="input-group-text fw-lighter" id="basic-addon1">pcs </span><small style="font-size: 12px; color:grey;" class="input-group-text fw-lighter">(utk stadium, free utk PRO dan PRO+)</small><tr> --}}
+          <input type="number" id="jumlah" value="12" min="12" readonly>
+          <button onclick="tambahSatu()">+</button>
+        </tr>
+          <tr>
+      <td class="extra-1"><span class="fw-semibold"><i class='bx bx-circle' style="font-size: 10px"></i> Extra logo tim (DTF)</span></td>
+      <td class="harga extra-2" >(+30,000)</td>
+      <td colspan="1" class="input-group extra-3">
+        {{-- <input type="text" class="form-extra" placeholder="Input Jumlah"  aria-describedby="basic-addon1" name="plr"> --}}
+        {{-- <span class="input-group-text fw-lighter" id="basic-addon1"> </span><small style="font-size: 12px; color:grey;" class="input-group-text fw-lighter">(utk stadium, free utk PRO dan PRO+)</small> --}}
+      </td>
+    </tr></small>
+      </td>
+    </tr>
+   
+    <tr>
+      <td class="extra-1"><span class="fw-semibold"><i class='bx bx-circle' style="font-size: 10px"></i> 3D TPU</span></td>
+      <td class="harga extra-2" >(+30,000):</td>
+      <td colspan="1" class="input-group extra-3">
+        {{-- <input type="text" class="form-extra" placeholder="Input Jumlah"  aria-describedby="basic-addon1" name="up3d"> --}}
+        {{-- <span class="input-group-text fw-lighter" id="basic-addon1"></span><small style="font-size: 12px; color:grey;" class="input-group-text fw-lighter">(utk stadium, free utk PRO dan PRO+)</small> --}}
+      </td>
+    </tr>
+
+    <tr>
+      <td class="extra-1"><span class="fw-semibold"> <i class='bx bx-circle' style="font-size: 10px"></i> 3D RUBBER</span></td>
+      <td class="harga extra-2" >(+30,000):</td>
+      <td class="input-group extra-3">
+        {{-- <input type="text" class="form-extra" placeholder="Input Jumlah"  aria-describedby="basic-addon1" name="logo_celana"> --}}
+        {{-- <span class="input-group-text fw-lighter" id="basic-addon1">pcs</span><small style="font-size: 12px; color:grey;" class="input-group-text fw-lighter">(utk stadium dan PRO, free utk PRO+) </small> --}}
+      </td>
+    </tr>
+
+    <tr>
+      <td class="extra-1"><span class="fw-semibold"><i class='bx bx-circle' style="font-size: 10px"></i>  Rubber on Tatammi</span></td>
+      <td class="harga extra-2" >(+30,000):</td>
+      <td class="input-group extra-3 ">
+        {{-- <input type="text" class="form-extra" placeholder="Input Jumlah"   aria-describedby="basic-addon1" name="lengan_panjang"> --}}
+        {{-- <span class="input-group-text fw-lighter" id="basic-addon1">pcs</span> --}}
+      </td>
+    </tr>
+
+    <tr>
+      <td class="extra-1"><span class="fw-semibold"><i class='bx bx-circle' style="font-size: 10px"></i> Silicon HD </span></td>
+      <td class="harga extra-2" >(+30,000):</td>
+      <td class="input-group extra-3 ">
+        {{-- <input type="text" class="form-extra" placeholder="Input Jumlah"  aria-describedby="basic-addon1" name="xxl"> --}}
+        {{-- <span class="input-group-text fw-lighter" id="basic-addon1"></span> --}}
+      </td>
+    </tr>
+
+    <tr>
+      <td class="extra-1"><span class="fw-semibold"><i class='bx bx-circle' style="font-size: 10px"></i>  Woven HD</span></td>
+      <td class="harga extra-2" >(+30,000):</td>
+      <td class="input-group  extra-3">
+        {{-- <input type="text" class="form-extra" placeholder="Input Jumlah"  aria-describedby="basic-addon1" name="xxxl"> --}}
+        {{-- <span class="input-group-text fw-lighter" id="basic-addon1"></span> --}}
+      </td>
+    </tr>
+
+    <tr>
+      <td class="extra-1"><span class="fw-semibold"> <i class='bx bx-circle' style="font-size: 10px"></i> Woven lokal</span></td>
+      <td class="harga extra-2" >(+50,000):</td>
+      <td class="input-group extra-3 ">
+        {{-- <input type="text" class="form-extra" placeholder="Input Jumlah"  aria-describedby="basic-addon1" name="xxxxl"> --}}
+        {{-- <span class="input-group-text fw-lighter" id="basic-addon1"></span> --}}
+      </td>
+    </tr>
+
+    
+  </div>
+</table>
+
+
+
+{{-- ORDER --}}
 <div class="container">
   <div class="row-12">
     <div class="col-lg-12">
@@ -409,4 +505,19 @@
     <a href="/page-costum" style="font-family: Montheavy; width:15%" class="btn btn-black">CANCEL </a>
   </div>
 </div>
+
+
+<script>
+  function tambahSatu() {
+    var inputJumlah = document.getElementById('jumlah');
+    var nilaiJumlah = parseInt(inputJumlah.value);
+    
+    // Tambah 1 ke nilai jumlah
+    nilaiJumlah++;
+
+    // Update nilai input jumlah
+    inputJumlah.value = nilaiJumlah;
+  }
+</script>
+
 @endsection

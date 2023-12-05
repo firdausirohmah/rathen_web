@@ -70,7 +70,11 @@ Route::get('/price-list', function () {
 Route::controller(PriceListController::class)->group(function () {
     Route::post('/store-price-list', 'store')->name('sotre');
 });
-
+Route::controller(HomeController::class)->group(function () {
+    Route::get('/price-list', 'priceList')->name('priceList');
+    Route::get('/price-list/{id}', 'priceList')->name('priceList');
+    Route::post('/daftar/actiondaftar', 'actionregister')->name('actionregister');
+});
 // location
 // Route::get('/location', function () {
 //     return view('landing_page.location');
@@ -112,8 +116,6 @@ Route::get('/part-pricelist', function () {
     // return view('landing_page.price-list-part');
     return view('landing_page.part-pricelist');
 });
-
-
 
 Route::controller(loginController::class)->group(function () {
     Route::get('/login', 'login')->name('login');

@@ -52,6 +52,32 @@
     /* background-color: black; */
     content: url('/asset/extra/kuning1.png');
   }
+  .C1:hover{
+    /* opacity: 0.5; */
+    -webkit-transition: content 2s ease-out;
+    content: url('/asset/extra/casual/C-1Kuning.png');
+  }
+  .C2:hover{
+    /* opacity: 0.5; */
+    -webkit-transition: content 2s ease-out;
+    content: url('/asset/extra/casual/C-2Kuning.png');
+  }
+  .C3:hover{
+    /* opacity: 0.5; */
+    -webkit-transition: content 2s ease-out;
+    content: url('/asset/extra/casual/C-3Kuning.png');
+  }
+  .C4:hover{
+    /* opacity: 0.5; */
+    -webkit-transition: content 2s ease-out;
+    content: url('/asset/extra/casual/C-4Kuning.png');
+  }
+  .C5:hover{
+    /* opacity: 0.5; */
+    -webkit-transition: content 2s ease-out;
+    content: url('/asset/extra/casual/C-5Kuning.png');
+  }
+ 
 </style>
 <div class="container">
   <div class="row">
@@ -268,11 +294,11 @@
 </div>
 <div class="container text-center">
   <div class="row">
-    <div class="col">
-      <img src="{{asset('/asset/extra/putih2.png')}}" class="img-thumbnail normal" alt="putih1">
+    <div class="col" >
+      <img src="{{asset('/asset/extra/putih2.png')}}" style="width: 70%"class="img-thumbnail normal" alt="putih1">
     </div>
     <div class="col">
-      <img src="{{asset('/asset/extra/putih1.png')}}" class="img-thumbnail raglan" alt="putih2">
+      <img src="{{asset('/asset/extra/putih1.png')}}" style="width: 70%"class="img-thumbnail raglan" alt="putih2">
     </div>
   </div>
 </div>
@@ -315,14 +341,20 @@
 </div>
 <div class="container text-center">
   <div class="row">
-    <div class="col">
-      {{-- <img src="{{asset('/asset/extra/putih2.jpeg')}}" class="img-thumbnail" alt="putih1"> --}}
+    <div class="col-4">
+      <img src="{{asset('/asset/extra/casual/C-1.png')}}" class="img-thumbnail C1" alt="">
     </div>
-    <div class="col">
-      {{-- <img src="{{asset('/asset/extra/putih1.jpeg')}}" class="img-thumbnail" alt="putih2"> --}}
+    <div class="col-4">
+      <img src="{{asset('/asset/extra/casual/C-2.png')}}" class="img-thumbnail C2" alt="">
     </div>
-    <div class="col">
-      {{-- <img src="{{asset('/asset/extra/putih1.jpeg')}}" class="img-thumbnail" alt="putih2"> --}}
+    <div class="col-4">
+      <img src="{{asset('/asset/extra/casual/C-3.png')}}"class="img-thumbnail C3" alt=""> 
+    </div>
+    <div class="col-4">
+      <img src="{{asset('/asset/extra/casual/C-4.png')}}" class="img-thumbnail C4" alt="">
+    </div>
+    <div class="col-4">
+      <img src="{{asset('/asset/extra/casual/C-5.png')}}" class="img-thumbnail C5" alt=""> 
     </div>
   </div>
 </div>

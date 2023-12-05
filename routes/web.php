@@ -30,16 +30,16 @@ Route::get('/', function () {
 Route::get('/page-costum', function () {
     return view('landing_page.page-costum');
 });
-// Route::get('/price-list', function () {
-//     return view('landing_page.price-list');
-// });
-Route::get('/coba', function () {
-    return view('landing_page.coba');
-});
 
 Route::get('/part-pricelist', function () {
     return view('landing_page.part-pricelist');
 });
+
+
+
+// Route::get('/part-pricelist', function () {
+//     return view('landing_page.part-pricelist');
+// });
 
 // about
 // Route::get('/about', function () {
@@ -57,9 +57,9 @@ Route::get('/part-pricelist', function () {
 // });
 
 // pricelist
-Route::get('/pricelist', function () {
-    return view('landing_page.pricelist');
-});
+// Route::get('/pricelist', function () {
+//     return view('landing_page.pricelist');
+// });
 // Route::post('/store-price-list', function (Request $request) {
 //     return view('landing_page.pricelist');
 // });
@@ -104,7 +104,7 @@ Route::get('/unduh-format-file', [FileController::class, 'unduhFormatFile'])->na
 Route::get('/contact', function () {
     return view('landing_page.contact');
 });
-Route::get('/part', function () {
+Route::get('/part-pricelist', function () {
     // return view('landing_page.price-list-part');
     return view('landing_page.part-pricelist');
 });

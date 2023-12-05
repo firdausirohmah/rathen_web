@@ -225,7 +225,7 @@
 </script>    
 </section>
 
-<section id="result mt-4 pt-4">
+<section id="result" class="mt-4 pt-4">
     <section class="py-2 py-xl-4">
         <div class="container">
           <div class="row justify-content-md-center">

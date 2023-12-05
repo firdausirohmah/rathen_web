@@ -117,7 +117,8 @@ src="https://www.facebook.com/tr?id=1058956608607048&amp;ev=PageView&amp;noscrip
                     <a href="#order" class="nav-link" >Cara Pemesanan</a>
                 </li>
                 <li class="nav-item ">
-                    <a href="#pricelist" class="nav-link">Price List</a>
+                    <a href="/price-list" class="nav-link">Price List</a>
+                    {{-- <a href="#pricelist" class="nav-link">Price List</a> --}}
                 </li>
                 <li class="nav-item ">
                     <a href="#faq" class="nav-link">FAQ</a>

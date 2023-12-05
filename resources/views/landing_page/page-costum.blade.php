@@ -450,14 +450,14 @@
         padding-top: 3%;
     }
     </style>
-<section id="pricelist">
+{{-- <section id="pricelist">
     <section class="py-5 py-xl-8">
         <div class="container">
           <div class="row justify-content-md-center">
             <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
-              <h1 class="mb-4 display-5 text-center" style="font-family: Montheavy; color:black; font-size: 24px; font-weight: bold; margin-bottom: 20px; text-align: center;">PRICE LIST</h1>
+              <h1 class="mb-4 display-5 text-center" style="font-family: Montheavy; color:black; font-size: 24px; font-weight: bold; margin-bottom: 20px; text-align: center;">PRICE LIST</h1> --}}
                 {{-- <hr class="w-50 mx-auto mb-5 mb-xl-9 border-dark-subtle"> --}}
-            </div>
+            {{-- </div>
           </div>
         </div>
         <div class="container" >
@@ -511,19 +511,8 @@
             </div>
         </div>
 
-            <!-- Tombol Kualitas -->
-            {{-- <button type="button" class="btn btn-dark btn-dark-transparent" id="fans" data-multiplier="1">FANS</button>
-            <button type="button" class="btn btn-dark btn-dark-transparent" id="stadium" data-multiplier="1.5">STADIUM</button>
-            <button type="button" class="btn btn-dark btn-dark-transparent" id="pro" data-multiplier="2">PRO</button>
-
-            <!-- Tombol Cek Total Harga --> <br>
-            <button type="button" class="btn btn-danger total">Cek Total Harga</button>
-
-            <!-- Total Harga -->
-            </div>
-        </div> --}}
     </div>
-    </section>
+    </section> --}}
     <script src="{{ asset('asset/js/script.js') }}"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {

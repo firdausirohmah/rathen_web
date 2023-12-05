@@ -37,7 +37,6 @@
   .inpt-harga{
     background-color: transparent;
     width: 10%;
-    margin-top: 5%;
   }
   .img-thumbnail{
     width: 80%;
@@ -92,7 +91,7 @@
     -webkit-transition: content 2s ease-out;
     content: url('/asset/extra/oneck/O-2Kuning.png');
   }
- =
+  
 </style>
 <div class="container">
   <div class="row">
@@ -149,7 +148,7 @@
           <td class="col-1 fw-semibold">Harga</td>
           <td class="col-2">:</td>
           <td class="col-3">
-            <span class="mx-3 fw-bold">IDR</span><input type="text" name="harga" class="inpt-harga"> <strong>/</strong><span class="fw-normal">pcs</span>
+            <span class="mx-3 fw-bold">IDR</span><input type="text" name="harga" class="inpt-harga"> <b>/</b><span class="fw-normal">pcs</span>
           </td>
         </tr>
        
@@ -286,42 +285,71 @@
       </tr> --}}
     </table>
   </div>
-  <div class="row mb-4" style="text-align: left">
+  <hr>
+  <div class="row " style="text-align: left">
     <div class="col-12" style="padding-left: 0; margin-left: 0;"><h4 style="color: #71BF72; text-align:left;">Keterangan Extra:</h4></div>
   </div>
-  <div class="row mb-4" style="text-align: left">
+  <div class="row " style="text-align: left">
     <div class="col-12" style="padding-left: 0; margin-left: 0;"><h5 style="color: #1890fd;   text-align:left;">POLA BADAN : </h5></div>
-  </div>
-</div>
-  <div class="container text-center">
-    <div class="row">
+  </div> 
+   
+    <div class="row mb-2">
+      <table style="width: 100%; border:10px; font-size:14px;  color:black;">
+        <tr>
+          <td class="extra-1"><span class="fw-semibold"><i class='bx bx-circle' style="font-size: 10px"></i> Normal</span></td>
+          <td class="harga extra-2 style" style="margin-left: 5%;" >Free</td>
+          <td colspan="1" class="input-group extra-3">
+            
+           </tr>
+           <tr>
+            <td class="extra-1"><span class="fw-semibold"><i class='bx bx-circle' style="font-size: 10px"></i> Badan bawah meleng</span></td>
+            <td class="harga extra-2 style" style="margin-left: 5%;" >(+15,000)</td>
+            <td colspan="1" class="input-group extra-3">
+             </tr>
+      </table>
+    </div> 
+    <div class="row mb-4">
       <div class="col">
-        {{-- <img src="{{asset('/asset/extra/putih1.jpeg')}}" class="img-thumbnail" alt="putih2"> --}}
+        <img src="{{asset('/asset/polabadan/belakangNormal.png')}}"  class="img-thumbnail" alt="putih1">
       </div>
       <div class="col">
-        {{-- <img src="{{asset('/asset/extra/putih2.jpeg')}}" class="img-thumbnail" alt="putih1"> --}}
+        <img src="{{asset('/asset/polabadan/belakang.png')}}" class="img-thumbnail" alt="putih2">
+        
       </div>
-    </div>
-  </div>
+    </div> 
+    <div class="row" style="text-align: left">
+      <div class="col-12" style="padding-left: 0; margin-left: 0;"><h5 style="color: #1890fd;   text-align:left;">POLA LENGAN : </h5></div>
+    </div> 
+  <div class="row">
+    <table style="width: 100%; border:10px; font-size:14px;  color:black;">
+      <tr>
+        <td class="extra-1"><span class="fw-semibold"><i class='bx bx-circle' style="font-size: 10px"></i> Normal</span></td>
+        <td class="harga extra-2 style" style="margin-left: 5%;" >Free</td>
+        <td colspan="1" class="input-group extra-3">
+          
+         </tr>
+         <tr>
+          <td class="extra-1"><span class="fw-semibold"><i class='bx bx-circle' style="font-size: 10px"></i> Raglan</span></td>
+          <td class="harga extra-2 style" style="margin-left: 5%;" >(+15,000)</td>
+          <td colspan="1" class="input-group extra-3">
+           </tr>
+    </table>
+  </div> 
+  <div class="row">
+    <div class="col ">
+      {{-- <div class="card w-50"> --}}
+        <img src="{{asset('/asset/extra/putih2.png')}} "class="img-thumbnail w-25 normal" alt="putih1">
+      </div>
+      {{-- <div class="card w-50"> --}}
+        <img src="{{asset('/asset/extra/putih1.png')}}" class="img-thumbnail w-25 raglan" alt="putih2">
+      </div>
+    {{-- </div> --}}
+  {{-- </div>  --}}
   <div class="row mb-4" style="text-align: left">
-    <div class="col-12" style="padding-left: 9.5%; margin-left: 0; margin-buttom:100px; "><h5 style="color: #1890fd;   text-align:left;">POLA LENGAN : </h5></div>
-  </div>
-</div>
-<div class="container text-center">
-  <div class="row">
-    <div class="col" >
-      <img src="{{asset('/asset/extra/putih2.png')}}" style="width: 70%"class="img-thumbnail normal" alt="putih1">
-    </div>
-    <div class="col">
-      <img src="{{asset('/asset/extra/putih1.png')}}" style="width: 70%"class="img-thumbnail raglan" alt="putih2">
-    </div>
-  </div>
-</div>
-<div class="row mb-4" style="text-align: left">
-  <div class="col-12" style="padding-left: 9.5%; margin-left: 0; margin-buttom:100px; "><h5 style="color: #1890fd;   text-align:left;">MATERIAL (bahan) : </h5></div>
-</div>
-</div>
-<div class="container text-center">
+    <div class="col-12" style="padding-left: 0; margin-left: 0;"><h5 style="color: #1890fd;   text-align:left;">MATERIAL (bahan) : </h5></div>
+  </div> 
+
+{{-- <div class="container text-center"> --}}
   <div class="row">
     <div class="col">
       {{-- <img src="{{asset('/asset/extra/putih2.jpeg')}}" class="img-thumbnail" alt="putih1"> --}}
@@ -330,46 +358,29 @@
       {{-- <img src="{{asset('/asset/extra/putih1.jpeg')}}" class="img-thumbnail" alt="putih2"> --}}
     </div>
   </div>
-</div>
 
-<div class="row mb-4" style="text-align: left">
-  <div class="col-12" style="padding-left: 9.5%; margin-left: 0; margin-buttom:100px; "><h5 style="color: #1890fd;   text-align:left;">MATERIAL (bahan) : </h5></div>
-</div>
-</div>
-<div class="container text-center">
-  <div class="row">
-    <div class="col">
-      {{-- <img src="{{asset('/asset/extra/putih2.jpeg')}}" class="img-thumbnail" alt="putih1"> --}}
-    </div>
-    <div class="col">
-      {{-- <img src="{{asset('/asset/extra/putih1.jpeg')}}" class="img-thumbnail" alt="putih2"> --}}
-    </div>
-    <div class="col">
-      {{-- <img src="{{asset('/asset/extra/putih1.jpeg')}}" class="img-thumbnail" alt="putih2"> --}}
-    </div>
-  </div>
-</div>
 
-<div class="row mb-4" style="text-align: left">
-  <div class="col-12" style="padding-left: 9.5%; margin-left: 0; margin-buttom:100px; "><h5 style="color: #1890fd;   text-align:left;">JENIS KERAH : </h5></div>
-</div>
-</div>
-<div class="row mb-4" style="text-align: left">
-  <div class="col-12" style="padding-left: 9.5%; margin-left: 0; margin-buttom:100px; "><p style="color: #1890fd;   text-align:left;">Casual </p></div>
-</div>
-</div>
-<div class="container text-center">
-  <div class="row">
-    <div class="col-4 bg-primary">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Special title treatment</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <img src="{{asset('/asset/extra/casual/C-1.png')}}" class="img-thumbnail C1" alt="">
 
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
+<div class="row  " style="text-align: left">
+  <div class="col "  style="padding-left: 0; margin-left: 0;"><h5 style="color: #1890fd;">JENIS KERAH : </h5></div>
+</div>
+<div class="row mb-2">
+  <table style="width: 100%; border:10px; font-size:14px;  color:black;">
+    <tr>
+      <td class="extra-1"><span class="fw-semibold"><i class='bx bx-circle' style="font-size: 10px"></i> Kerah custom elastic rib</span></td>
+      <td class="harga extra-2 style" style="margin-left: 5%;" >(+20,000)</td>
+      <td colspan="1" class="input-group extra-3">
+       </tr>
+      
+  </table>
+</div> 
+
+<div class="row mb-4 " style="text-align: left">
+  <div class="col-12 mt-0 " style="padding-left: 0; margin-left: 0;"><h6 style="color: #1890fd;   text-align:left;">Casual </h6></div>
+</div> 
+  <div class="row text-center">
+    <div class="col-4">
+      <img src="{{asset('/asset/extra/casual/C-1.png')}}" class="img-thumbnail C1" alt="">
     </div>
     <div class="col-4">
       <img src="{{asset('/asset/extra/casual/C-2.png')}}" class="img-thumbnail C2" alt="">
@@ -382,15 +393,13 @@
     </div>
     <div class="col-4">
       <img src="{{asset('/asset/extra/casual/C-5.png')}}" class="img-thumbnail C5" alt=""> 
-    </div>
-  </div>
+    </div> 
 </div>
-<div class="row mb-4" style="text-align: left">
-  <div class="col-12" style="padding-left: 9.5%; margin-left: 0; margin-buttom:100px; "><p style="color: #1890fd;   text-align:left;">O-neck</p></div>
-</div>
-</div>
-<div class="container text-center">
-  <div class="row wd">
+
+<div class="row mb-4 " style="text-align: left">
+  <div class="col-12 mt-0 " style="padding-left: 0; margin-left: 0;"><h6 style="color: #1890fd;   text-align:left;"> O-neck </h6></div>
+</div> 
+  <div class="row text-center">
     <div class="col-4">
       <img src="{{asset('/asset/extra/oneck/O-1a.png')}}" class="img-thumbnail O1" alt="">
     </div>
@@ -406,11 +415,16 @@
     <div class="col-4">
       {{-- <img src="{{asset('/asset/extra/casual/C-5.png')}}" class="img-thumbnail C5" alt="">  --}}
     </div>
-  </div>
-</div>
+  </div> 
 
 {{-- LOGO TIM --}}
-<div class="container">
+<style>
+  .int {
+    width: 6%;
+    
+  }
+</style>
+ 
 <div class="row">
   <table style="width: 100%; border:10px; font-size:14px;  color:black;">
     <tr>
@@ -428,10 +442,36 @@
         </tr>
           <tr>
       <td class="extra-1"><span class="fw-semibold"><i class='bx bx-circle' style="font-size: 10px"></i> Extra logo tim (DTF)</span></td>
-      <td class="harga extra-2" >(+30,000)</td>
+      <td class="harga extra-2 " >(+30,000)</td>
       <td colspan="1" class="input-group extra-3">
-        <input type="number" id="jumlah" value="12" min="12" readonly>
-        <button onclick="tambahSatu()">+</button>
+        {{-- <div class="container">
+          <div class="input-group">
+            <button class="add-button" onclick="increment()">-</button>
+           
+            <input type="text" class="input-box" id="quantity" value="12" readonly>
+            <button class="add-button" onclick="increment()">+</button>
+          </div>
+        </div> --}}
+        <style>
+          .btn-hidden{
+            border: 0px;
+            background-color: transparent;
+            /* margin-right:auto; */
+            margin-left:0px;
+          }
+          .input-extra{
+            border: 2px solid; /* Warna dan ketebalan border */
+            padding: 4px; /* Ruang dalam input */
+            margin-left: 4px;
+            /* padding-left: 5px; */
+            margin-right: 1px;
+            width: 40px;
+            outline: black 10px;
+            background-color: transparent;
+          }
+        </style>
+        <input type="number" id="jumlah1" value="12" class="mx-2 input-extra" min="12" readonly>
+        <button onclick="tambahSatu('jumlah1')" type="button" class="btn-hidden">+</button>
         {{-- <input type="text" class="form-extra" placeholder="Input Jumlah"  aria-describedby="basic-addon1" name="plr"> --}}
         {{-- <span class="input-group-text fw-lighter" id="basic-addon1"> </span><small style="font-size: 12px; color:grey;" class="input-group-text fw-lighter">(utk stadium, free utk PRO dan PRO+)</small> --}}
       </td>
@@ -441,68 +481,199 @@
    
     <tr>
       <td class="extra-1"><span class="fw-semibold"><i class='bx bx-circle' style="font-size: 10px"></i> 3D TPU</span></td>
-      <td class="harga extra-2" >(+30,000):</td>
+      <td class="harga extra-2" >(+30,000)</td>
       <td colspan="1" class="input-group extra-3">
+        <input type="number" id="jumlah2" value="24" class="mx-2 input-extra" min="24" readonly>
+        <button onclick="tambahSatu('jumlah2')"  type="button" class="btn-hidden">+</button>
         {{-- <input type="text" class="form-extra" placeholder="Input Jumlah"  aria-describedby="basic-addon1" name="up3d"> --}}
-        {{-- <span class="input-group-text fw-lighter" id="basic-addon1"></span><small style="font-size: 12px; color:grey;" class="input-group-text fw-lighter">(utk stadium, free utk PRO dan PRO+)</small> --}}
+        <span class="input-group-text fw-lighter" id="basic-addon1"></span><small style="font-size: 12px; color:grey;" class="input-group-text fw-lighter">(utk stadium, free utk PRO dan PRO+)</small>
       </td>
     </tr>
 
     <tr>
       <td class="extra-1"><span class="fw-semibold"> <i class='bx bx-circle' style="font-size: 10px"></i> 3D RUBBER</span></td>
-      <td class="harga extra-2" >(+30,000):</td>
+      <td class="harga extra-2" >(+30,000)</td>
       <td class="input-group extra-3">
+        <input type="number" id="jumlah3" value="50" class="mx-2 input-extra" min="50" readonly>
+        <button onclick="tambahSatu('jumlah3')"  type="button" class="btn-hidden">+</button>
         {{-- <input type="text" class="form-extra" placeholder="Input Jumlah"  aria-describedby="basic-addon1" name="logo_celana"> --}}
-        {{-- <span class="input-group-text fw-lighter" id="basic-addon1">pcs</span><small style="font-size: 12px; color:grey;" class="input-group-text fw-lighter">(utk stadium dan PRO, free utk PRO+) </small> --}}
+        <span class="input-group-text fw-lighter" id="basic-addon1"></span><small style="font-size: 12px; color:grey;" class="input-group-text fw-lighter">(utk stadium dan PRO, free utk PRO+) </small>
       </td>
     </tr>
 
     <tr>
       <td class="extra-1"><span class="fw-semibold"><i class='bx bx-circle' style="font-size: 10px"></i>  Rubber on Tatammi</span></td>
-      <td class="harga extra-2" >(+30,000):</td>
+      <td class="harga extra-2" >(+30,000)</td>
       <td class="input-group extra-3 ">
+        <input type="number" id="jumlah4" value="100" class="mx-2 input-extra" min="100" readonly>
+        <button onclick="tambahSatu('jumlah4')"  type="button" class="btn-hidden">+</button>
         {{-- <input type="text" class="form-extra" placeholder="Input Jumlah"   aria-describedby="basic-addon1" name="lengan_panjang"> --}}
+        <span class="input-group-text fw-lighter" id="basic-addon1"></span><small style="font-size: 12px; color:grey;" class="input-group-text fw-lighter">(utk stadium dan PRO, free utk PRO+) </small>
+
         {{-- <span class="input-group-text fw-lighter" id="basic-addon1">pcs</span> --}}
       </td>
     </tr>
 
     <tr>
       <td class="extra-1"><span class="fw-semibold"><i class='bx bx-circle' style="font-size: 10px"></i> Silicon HD </span></td>
-      <td class="harga extra-2" >(+30,000):</td>
+      <td class="harga extra-2" >(+30,000)</td>
       <td class="input-group extra-3 ">
+        <input type="number" id="jumlah5" value="50" class="mx-2 input-extra" min="50" readonly>
+        <button onclick="tambahSatu('jumlah5')"  type="button" class="btn-hidden">+</button>
         {{-- <input type="text" class="form-extra" placeholder="Input Jumlah"  aria-describedby="basic-addon1" name="xxl"> --}}
         {{-- <span class="input-group-text fw-lighter" id="basic-addon1"></span> --}}
+        <span class="input-group-text fw-lighter" id="basic-addon1"></span><small style="font-size: 12px; color:grey;" class="input-group-text fw-lighter">(utk stadium dan PRO, free utk PRO+) </small>
+
       </td>
     </tr>
 
     <tr>
       <td class="extra-1"><span class="fw-semibold"><i class='bx bx-circle' style="font-size: 10px"></i>  Woven HD</span></td>
-      <td class="harga extra-2" >(+30,000):</td>
+      <td class="harga extra-2" >(+30,000)</td>
       <td class="input-group  extra-3">
+        <input type="number" id="jumlah6" value="50" class="mx-2 input-extra" min="50" readonly>
+        <button onclick="tambahSatu('jumlah6')"  type="button" class="btn-hidden">+</button>
         {{-- <input type="text" class="form-extra" placeholder="Input Jumlah"  aria-describedby="basic-addon1" name="xxxl"> --}}
         {{-- <span class="input-group-text fw-lighter" id="basic-addon1"></span> --}}
+        <span class="input-group-text fw-lighter" id="basic-addon1"></span><small style="font-size: 12px; color:grey;" class="input-group-text fw-lighter">(utk stadium dan PRO, free utk PRO+) </small>
+
       </td>
     </tr>
 
     <tr>
       <td class="extra-1"><span class="fw-semibold"> <i class='bx bx-circle' style="font-size: 10px"></i> Woven lokal</span></td>
-      <td class="harga extra-2" >(+50,000):</td>
+      <td class="harga extra-2" >(+50,000)</td>
       <td class="input-group extra-3 ">
+        <input type="number" id="jumlah7" value="12" class="mx-2 input-extra" min="12" readonly>
+        <button onclick="tambahSatu('jumlah7')"  type="button" class="btn-hidden">+</button>
         {{-- <input type="text" class="form-extra" placeholder="Input Jumlah"  aria-describedby="basic-addon1" name="xxxxl"> --}}
         {{-- <span class="input-group-text fw-lighter" id="basic-addon1"></span> --}}
+        <span class="input-group-text fw-lighter" id="basic-addon1"></span><small style="font-size: 12px; color:grey;" class="input-group-text fw-lighter">(utk stadium dan PRO, free utk PRO+) </small>
+
       </td>
     </tr>
+    <tr>
+      <td>
+        <div style="margin-bottom: 30px;"></div>
 
+      </td>
+    </tr>
     
-  </div>
-</table>
+  </table>
+</div>
 
+{{-- SPONSOR DEPAN --}}
+
+  <div class="row">
+    <table style="width: 100%; border:10px; font-size:14px;  color:black;">
+      <tr>
+        <td colspan="2">
+          <h4 style="color: #1890fd; ">SPONSOR DEPAN :</h4>
+        </td>
+      </tr>
+      <tr>
+        <td class="extra-1"><span class="fw-semibold"><i class='bx bx-circle' style="font-size: 10px"></i> Printing</span></td>
+        <td class="harga extra-2 style" style="margin-left: 5%;" >Free</td>
+        <td colspan="1" class="input-group extra-3">
+          {{-- <input type="text" class="form-extra" placeholder="Input Jumlah"  aria-describedby="basic-addon1" name="bbm"> --}}
+          <span class="input-group-text fw-lighter" id="basic-addon1"></span><small style="font-size: 12px; color:grey;" class="input-group-text fw-lighter">(utk kategori HALF - PRINT dan FULL - PRINT)</small><tr>
+           
+          </tr>
+            <tr>
+        <td class="extra-1"><span class="fw-semibold"><i class='bx bx-circle' style="font-size: 10px"></i> Tulisan poliflek 1 warna 1 baris</span></td>
+        <td class="harga extra-2" >Free</td>
+        <td colspan="1" class="input-group extra-3">
+          {{-- <div class="container">
+            <div class="input-group">
+              <button class="add-button" onclick="increment()">-</button>
+             
+              <input type="text" class="input-box" id="quantity" value="12" readonly>
+              <button class="add-button" onclick="increment()">+</button>
+            </div>
+          </div> --}}
+          {{-- <input type="number" id="jumlah" value="12" class="int" min="12" readonly>
+          <button onclick="tambahSatu()">+</button> --}}
+          {{-- <input type="text" class="form-extra" placeholder="Input Jumlah"  aria-describedby="basic-addon1" name="plr"> --}}
+          {{-- <span class="input-group-text fw-lighter" id="basic-addon1"> </span><small style="font-size: 12px; color:grey;" class="input-group-text fw-lighter">(utk stadium, free utk PRO dan PRO+)</small> --}}
+        </td>
+      </tr></small>
+        </td>
+      </tr>
+     
+      <tr>
+        <td class="extra-1"><span class="fw-semibold"><i class='bx bx-circle' style="font-size: 10px"></i> Extra Tulisan poliflek 1 warna 1 baris</span></td>
+        <td class="harga extra-2" >(+10,000)</td>
+        <td colspan="1" class="input-group extra-3">
+          {{-- <input type="number" id="jumlah" value="24" class="int" min="24" readonly>
+          <button onclick="tambahSatu()">+</button> --}}
+          {{-- <input type="text" class="form-extra" placeholder="Input Jumlah"  aria-describedby="basic-addon1" name="up3d"> --}}
+          {{-- <span class="input-group-text fw-lighter" id="basic-addon1"></span><small style="font-size: 12px; color:grey;" class="input-group-text fw-lighter">(utk stadium, free utk PRO dan PRO+)</small> --}}
+        </td>
+      </tr>
+  
+      <tr>
+        <td class="extra-1"><span class="fw-semibold"> <i class='bx bx-circle' style="font-size: 10px"></i> Logo + Tulisan poliflek 1 warna</span></td>
+        <td class="harga extra-2" >(+35,000)</td>
+        <td class="input-group extra-3">
+  
+          {{-- <input type="text" class="form-extra" placeholder="Input Jumlah"  aria-describedby="basic-addon1" name="logo_celana"> --}}
+          {{-- <span class="input-group-text fw-lighter" id="basic-addon1"></span><small style="font-size: 12px; color:grey;" class="input-group-text fw-lighter">(utk stadium dan PRO, free utk PRO+) </small> --}}
+        </td>
+      </tr>
+  
+      <tr>
+        <td class="extra-1"><span class="fw-semibold"><i class='bx bx-circle' style="font-size: 10px"></i>  Extra Tulisan poliflek >1 warna</span></td>
+        <td class="harga extra-2" >(+45,000)</td>
+        <td class="input-group extra-3 ">
+        
+          {{-- <input type="text" class="form-extra" placeholder="Input Jumlah"   aria-describedby="basic-addon1" name="lengan_panjang"> --}}
+          {{-- <span class="input-group-text fw-lighter" id="basic-addon1"></span><small style="font-size: 12px; color:grey;" class="input-group-text fw-lighter">(utk stadium dan PRO, free utk PRO+) </small> --}}
+  
+          {{-- <span class="input-group-text fw-lighter" id="basic-addon1">pcs</span> --}}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div style="margin-bottom: 30px;"></div>
+
+        </td>
+      </tr>
+    </table>
+    </div>
+  {{-- lengan --}}
+
+  <div class="row">
+    <table style="width: 100%; border:10px; font-size:14px;  color:black;">
+      <tr>
+        <td colspan="2">
+          <h4 style="color: #1890fd; ">LENGAN:</h4>
+        </td>
+      </tr>
+      <tr>
+        <td class="extra-1"><span class="fw-semibold"><i class='bx bx-circle' style="font-size: 10px"></i> Extra logo DTF</span></td>
+        <td class="harga extra-2 style" style="margin-left: 5%;" >(+15,000)</td>
+        <td colspan="1" class="input-group extra-3">
+          {{-- <input type="text" class="form-extra" placeholder="Input Jumlah"  aria-describedby="basic-addon1" name="bbm"> --}}
+          {{-- <span class="input-group-text fw-lighter" id="basic-addon1"></span><small style="font-size: 12px; color:grey;" class="input-group-text fw-lighter">(utk kategori HALF - PRINT dan FULL - PRINT)</small><tr> --}}
+           
+          </tr>
+            <tr>
+        <td class="extra-1"><span class="fw-semibold"><i class='bx bx-circle' style="font-size: 10px"></i> Extra Tulisan 1 baris</span></td>
+        <td class="harga extra-2" >(+10,000)</td>
+        <td colspan="1" class="input-group extra-3">
+        </td>
+      </tr></small>
+        </td>
+      </tr>
+     
+    </table>
+    </div>
 
 
 {{-- ORDER --}}
 <div class="container">
   <div class="row-12">
-    <div class="col-lg-12">
+    <div class="col-lg-12 mt-4">
       <h5  class="fw-bold" style="color: red">TOTAL HARGA <span class="mx-5">:</span> IDR <input type="text" class="inpt-harga text-danger fw-bold" name="total_harga" value="124.000" placeholder="124.000"></h5>
     </div>
   </div>
@@ -516,7 +687,7 @@
 </div>
 
 
-<script>
+{{-- <script>
   function tambahSatu() {
     var inputJumlah = document.getElementById('jumlah');
     var nilaiJumlah = parseInt(inputJumlah.value);
@@ -527,6 +698,20 @@
     // Update nilai input jumlah
     inputJumlah.value = nilaiJumlah;
   }
+</script> --}}
+
+<script>
+  function tambahSatu(idInput) {
+    var inputJumlah = document.getElementById(idInput);
+    var nilaiJumlah = parseInt(inputJumlah.value);
+    
+    // Tambah 1 ke nilai jumlah
+    nilaiJumlah++;
+
+    // Update nilai input jumlah
+    inputJumlah.value = nilaiJumlah;
+  }
 </script>
+
 
 @endsection

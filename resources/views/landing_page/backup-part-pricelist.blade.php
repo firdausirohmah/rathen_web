@@ -136,28 +136,16 @@
                 <div id="imageSlider" class="carousel slide mx-auto" data-bs-interval="false">
                   <div class="carousel-inner">
                     <div class="carousel-item active">
-                      <img src="{{ $data->g1}}" class="img-thumbnail" alt="Image 1">
+                      <img src="{{ asset('asset/extra/casual/C-1.png') }}" class="img-thumbnail" alt="Image 1">
                     </div>
                     <div class="carousel-item">
-                      <img src="{{ $data->g2}}" class="img-thumbnail" alt="Image 2">
+                      <img src="{{ asset('asset/extra/casual/C-2.png') }}" class="img-thumbnail" alt="Image 2">
                     </div>
                     <div class="carousel-item">
-                      <img src="{{ $data->g3}}" class="img-thumbnail" alt="Image 3">
+                      <img src="{{ asset('asset/extra/casual/C-3.png') }}" class="img-thumbnail" alt="Image 3">
                     </div>
                     <div class="carousel-item">
-                      <img src="{{ $data->g4}}" class="img-thumbnail" alt="Image 4">
-                    </div>
-                    <div class="carousel-item">
-                      <img src="{{ $data->g5}}" class="img-thumbnail" alt="Image 5">
-                    </div>
-                    <div class="carousel-item">
-                      <img src="{{ $data->g6}}" class="img-thumbnail" alt="Image 6">
-                    </div>
-                    <div class="carousel-item">
-                      <img src="{{ $data->g7}}" class="img-thumbnail" alt="Image 7">
-                    </div>
-                    <div class="carousel-item">
-                      <img src="{{ $data->g8}}" class="img-thumbnail" alt="Image 8">
+                      <img src="{{ asset('asset/extra/casual/C-4.png') }}" class="img-thumbnail" alt="Image 4">
                     </div>
                   </div>
                 </div>
@@ -181,26 +169,6 @@
                     <div class="col">
                       <div class="thumbnail" onclick="changeSlide(3)">
                         <img src="{{ asset('asset/extra/casual/C-4.png') }}" alt="Thumbnail 4">
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="thumbnail" onclick="changeSlide(4)">
-                        <img src="{{ asset('asset/extra/casual/C-5.png') }}" alt="Thumbnail 4">
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="thumbnail" onclick="changeSlide(5)">
-                        <img src="{{ asset('asset/extra/casual/C-6.png') }}" alt="Thumbnail 4">
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="thumbnail" onclick="changeSlide(6)">
-                        <img src="{{ asset('asset/extra/casual/C-7.png') }}" alt="Thumbnail 4">
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="thumbnail" onclick="changeSlide(7)">
-                        <img src="{{ asset('asset/extra/casual/C-8.png') }}" alt="Thumbnail 4">
                       </div>
                     </div>
                   </div>
@@ -260,48 +228,44 @@
                         <div class="row mt-4 ">
                           <span>Kualitas :</span>
                           <div class="col">
-                                <button class="btn btn-outline-secondary {{ $data->stadium }} w-25 mx-3 menu-button" id="buttonA" onclick="selectOption(1, 1)"><span class="fs-6">STADIUM</span></button>
-                                <button class="btn btn-outline-secondary {{ $data->pro }} w-25 mx-3 menu-button" id="buttonB" onclick="changeContent('data4'),selectOption(1, 2)">PRO</button>
-                                <button class="btn btn-outline-secondary {{ $data->pro_plus }} w-25 mx-3 menu-button" id="buttonC" onclick="changeContent('data5'),selectOption(1, 3)">PRO<sup>+</sup></button>
+                                <button class="btn btn-outline-secondary w-25 mx-3 menu-button" id="buttonA" onclick="selectOption(1, 1)"><span class="fs-6">STADIUM</span></button>
+                                <button class="btn btn-outline-secondary w-25 mx-3 menu-button" id="buttonB" onclick="changeContent('data4'),selectOption(1, 2)">PRO</button>
+                                <button class="btn btn-outline-secondary w-25 mx-3 menu-button" id="buttonC" onclick="changeContent('data5'),selectOption(1, 3)">PRO<sup>+</sup></button>
                             </div>
                         </div>
                         <div class="row mt-4 ">
                           <span>Kategori :</span>
                           <div class="col">
-                                <a href="{{ url('/price-list', ['kd_part' => 1]) }}"><button class="btn btn-outline-secondary {{ $data->non_print }} w-25 mx-3 menu-button" id="button1" onclick="changeContent('data1'),selectOption(2, 1)">Non - Print</button></a>
-                                <a href="{{ url('/price-list', ['kd_part' => 2]) }}"><button class="btn btn-outline-secondary {{ $data->half_print }} w-25 mx-3 menu-button" id="button2" onclick="changeContent('data2'),selectOption(2, 2)">Half - Print</button></a>
-                                <button class="btn btn-outline-secondary {{ $data->full_print }} w-25 mx-3 menu-button" id="button3" onclick="changeContent('data3'),selectOption(2, 3)">Full Print</button>
-                                {{-- <button onclick="changeContent('data1')">Tombol 1</button>
-                                <button onclick="changeContent('data2')">Tombol 2</button> --}}
+                                <button class="btn btn-outline-secondary w-25 mx-3 menu-button" id="button1" onclick="changeContent('data1'),selectOption(2, 1)">Non - Print</button>
+                                <button class="btn btn-outline-secondary w-25 mx-3 menu-button" id="button2" onclick="changeContent('data2'),selectOption(2, 2)">Half - Print</button>
+                                <button class="btn btn-outline-secondary w-25 mx-3 menu-button" id="button3" onclick="changeContent('data3'),selectOption(2, 3)">Full Print</button>
+                                <button onclick="changeContent('data1')">Tombol 1</button>
+                                <button onclick="changeContent('data2')">Tombol 2</button>
                             </div>
                         </div>
                     </div>
                     </div>
                   </div>
             </div>
-
             <!-- Tombol untuk memilih konten -->
-    {{-- <button onclick="changeContent('menu1')">Menu 1</button>
-    <button onclick="changeContent('menu2')">Menu 2</button> --}}
+    <button onclick="changeContent('menu1')">Menu 1</button>
+    <button onclick="changeContent('menu2')">Menu 2</button>
     <!-- Tambahkan tombol lainnya sesuai kebutuhan -->
 
     <!-- Konten yang berubah sesuai dengan tombol yang dipilih -->
-    {{-- <div id="menu1Content" class="menu-content">
-        <h2>Konten Menu 1</h2> --}}
-        {{-- <p>{{ $jsonData['menu1']['g1'] }}</p> --}}
-    {{-- </div>
     <div id="menu1Content" class="menu-content">
-      <h2>Konten Menu 1</h2> --}}
-      {{-- <p>{{ $jsonData['menu1']['g1'] }}</p> --}}
-  {{-- </div>
+        <h2>Konten Menu 1</h2>
+        <p>{{ $jsonData['menu1']['content'] }}</p>
+    </div>
+
     <div id="menu2Content" class="menu-content">
-        <h2>Konten Menu 2</h2> --}}
-        {{-- <p>{{ $jsonData['menu2']['content'] }}</p> --}}
-    {{-- </div> --}}
+        <h2>Konten Menu 2</h2>
+        <p>{{ $jsonData['menu2']['content'] }}</p>
+    </div>
 
     <!-- ... tambahkan konten lainnya ... -->
 
-    {{-- <script>
+    <script>
         function changeContent(selectedMenu) {
             // Menyembunyikan semua konten
             document.getElementById('menu1Content').style.display = 'none';
@@ -313,7 +277,7 @@
         }
         var mainMenu = "menu1";
             changeContent(mainMenu);
-    </script> --}}
+    </script>
             {{-- <div>
               <h2>Data:</h2>
               <p><strong>Name:</strong> {{ $jsonData['name'] }}</p>
@@ -360,7 +324,7 @@
             <div class="col-lg-3" style="font-weight: 200;">
                 <div class="card">
                     <div class="card-body">
-                      <h5 class="card-title">Rp {{ $data->harga }}</h5>
+                      <h5 class="card-title">Rp 24.000.000</h5>
                         <div class="container mt-4">
                             <div class="row">
                                 <div class="col">
@@ -441,30 +405,29 @@
                         </div>
                       </div> --}}
                       <div class="row bg-dark">
-                        
                         <div class="col-sm-6 mb-3 mb-sm-0 bg-dark">
-                          <img src="{{ $data->g1 }}" class="img-fluid w-100" alt="...">
+                          <img src="{{ asset('asset/images/price-list/detail/Nonprint-1.jpg') }}" class="img-fluid w-100" alt="...">
                         </div>
                         <div class="col-sm-6 mb-4">
-                          <img src="{{ $data->g2 }}" class="img-fluid w-100" alt="...">
+                          <img src="{{ asset('asset/images/price-list/detail/Nonprint-2.jpg') }}" class="img-fluid w-100" alt="...">
                         </div>
                         <div class="col-sm-6 mb-4">
-                          <img src="{{ $data->g3 }}" class="img-fluid w-100" alt="...">
+                          <img src="{{ asset('asset/images/price-list/detail/Nonprint-3.jpg') }}" class="img-fluid w-100" alt="...">
                         </div>
                         <div class="col-sm-6 mb-4">
-                          <img src="{{ $data->g4 }}" class="img-fluid w-100" alt="...">
+                          <img src="{{ asset('asset/images/price-list/detail/Nonprint-4.jpg') }}" class="img-fluid w-100" alt="...">
                         </div>
                         <div class="col-sm-6 mb-4">
-                          <img src="{{ $data->g5 }}" class="img-fluid w-100" alt="...">
+                          <img src="{{ asset('asset/images/price-list/detail/Nonprint-5.jpg') }}" class="img-fluid w-100" alt="...">
                         </div>
                         <div class="col-sm-6 mb-4">
-                          <img src="{{ $data->g6 }}" class="img-fluid w-100" alt="...">
+                          <img src="{{ asset('asset/images/price-list/detail/Nonprint-6.jpg') }}" class="img-fluid w-100" alt="...">
                         </div>
                         <div class="col-sm-6 mb-4">
-                          <img src="{{ $data->g7 }}" class="img-fluid w-100" alt="...">
+                          <img src="{{ asset('asset/images/price-list/detail/Nonprint-7.jpg') }}" class="img-fluid w-100" alt="...">
                         </div>
                         <div class="col-sm-6 mb-4">
-                          <img src="{{ $data->g8 }}" class="img-fluid w-100" alt="...">
+                          <img src="{{ asset('asset/images/price-list/detail/Nonprint-8.jpg') }}" class="img-fluid w-100" alt="...">
                         </div>
                       </div>
                     </div>

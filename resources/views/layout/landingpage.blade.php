@@ -117,19 +117,19 @@ src="https://www.facebook.com/tr?id=1058956608607048&amp;ev=PageView&amp;noscrip
                     <a href="#order" class="nav-link" >Cara Pemesanan</a>
                 </li>
                 <li class="nav-item ">
-                    <a href="/price-list" class="nav-link">Price List</a>
+                    <a href="{{ url('/price-list', ['kd_part' => 1]) }}" class="nav-link">Price List</a>
                     {{-- <a href="#pricelist" class="nav-link">Price List</a> --}}
                 </li>
                 <li class="nav-item ">
                     <a href="#faq" class="nav-link">FAQ</a>
                 </li>
-            </li>
-            <li class="nav-item ">
-                <a href="#location" class="nav-link">Location</a>
-            </li>
-            <li class="nav-item ">
-                <a href="#contact" class="nav-link">Contact Us</a>
-            </li>
+                </li>
+                <li class="nav-item ">
+                    <a href="#location" class="nav-link">Location</a>
+                </li>
+                <li class="nav-item ">
+                    <a href="#contact" class="nav-link">Contact Us</a>
+                </li>
 
             {{-- <li class="nav-item">
                 <button type="button" class="nav-search">

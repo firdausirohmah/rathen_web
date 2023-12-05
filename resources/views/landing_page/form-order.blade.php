@@ -299,50 +299,60 @@
           <td class="extra-1"><span class="fw-semibold"><i class='bx bx-circle' style="font-size: 10px"></i> Normal</span></td>
           <td class="harga extra-2 style" style="margin-left: 5%;" >Free</td>
           <td colspan="1" class="input-group extra-3">
+        <img src="{{asset('/asset/polabadan/belakangNormal.png')}}"  class="img-thumbnail w-25" alt="putih1">
+
             
            </tr>
            <tr>
             <td class="extra-1"><span class="fw-semibold"><i class='bx bx-circle' style="font-size: 10px"></i> Badan bawah meleng</span></td>
             <td class="harga extra-2 style" style="margin-left: 5%;" >(+15,000)</td>
             <td colspan="1" class="input-group extra-3">
+        <img src="{{asset('/asset/polabadan/belakang.png')}}" class="img-thumbnail w-25" alt="putih2">
+
              </tr>
       </table>
     </div> 
     <div class="row mb-4">
       <div class="col">
-        <img src="{{asset('/asset/polabadan/belakangNormal.png')}}"  class="img-thumbnail" alt="putih1">
+        {{-- <img src="{{asset('/asset/polabadan/belakangNormal.png')}}"  class="img-thumbnail" alt="putih1"> --}}
       </div>
       <div class="col">
-        <img src="{{asset('/asset/polabadan/belakang.png')}}" class="img-thumbnail" alt="putih2">
+        {{-- <img src="{{asset('/asset/polabadan/belakang.png')}}" class="img-thumbnail" alt="putih2"> --}}
         
       </div>
     </div> 
     <div class="row" style="text-align: left">
       <div class="col-12" style="padding-left: 0; margin-left: 0;"><h5 style="color: #1890fd;   text-align:left;">POLA LENGAN : </h5></div>
     </div> 
+    
+    {{--  --}}
   <div class="row">
     <table style="width: 100%; border:10px; font-size:14px;  color:black;">
       <tr>
         <td class="extra-1"><span class="fw-semibold"><i class='bx bx-circle' style="font-size: 10px"></i> Normal</span></td>
         <td class="harga extra-2 style" style="margin-left: 5%;" >Free</td>
         <td colspan="1" class="input-group extra-3">
+        <img src="{{asset('/asset/extra/putih2.png')}} "class="img-thumbnail w-25 normal" alt="putih1">
+
           
          </tr>
          <tr>
           <td class="extra-1"><span class="fw-semibold"><i class='bx bx-circle' style="font-size: 10px"></i> Raglan</span></td>
           <td class="harga extra-2 style" style="margin-left: 5%;" >(+15,000)</td>
           <td colspan="1" class="input-group extra-3">
+          <img src="{{asset('/asset/extra/putih1.png')}}" class="img-thumbnail w-25 raglan" alt="putih2">
+
            </tr>
     </table>
   </div> 
-  <div class="row">
+  {{-- <div class="row mx-12">
     <div class="col ">
-      {{-- <div class="card w-50"> --}}
+      <div class="card w-50">
         <img src="{{asset('/asset/extra/putih2.png')}} "class="img-thumbnail w-25 normal" alt="putih1">
       </div>
-      {{-- <div class="card w-50"> --}}
+      <div class="card w-50">
         <img src="{{asset('/asset/extra/putih1.png')}}" class="img-thumbnail w-25 raglan" alt="putih2">
-      </div>
+      </div> --}}
     {{-- </div> --}}
   {{-- </div>  --}}
   <div class="row mb-4" style="text-align: left">
@@ -367,15 +377,32 @@
 <div class="row mb-2">
   <table style="width: 100%; border:10px; font-size:14px;  color:black;">
     <tr>
-      <td class="extra-1"><span class="fw-semibold"><i class='bx bx-circle' style="font-size: 10px"></i> Kerah custom elastic rib</span></td>
+      <td class="extra-1"><span class="fw-semibold"><i class='bx bx-circle' style="font-size: 10px"></i> Kerah custom elastic rib</span>
+      </td>
       <td class="harga extra-2 style" style="margin-left: 5%;" >(+20,000)</td>
       <td colspan="1" class="input-group extra-3">
+        
+      <img src="{{asset('/asset/extra/casual/C-1.png')}}" class="img-thumbnail C1 w-25" alt="">
+      <img src="{{asset('/asset/extra/casual/C-2.png')}}" class="img-thumbnail C2 w-25" alt="">
+      <img src="{{asset('/asset/extra/casual/C-3.png')}}"class="img-thumbnail C3 w-25" alt=""> 
+      <img src="{{asset('/asset/extra/casual/C-4.png')}}" class="img-thumbnail C4 w-25" alt="">
+      <img src="{{asset('/asset/extra/casual/C-5.png')}}" class="img-thumbnail C5 w-25" alt=""> 
+
+      <img src="{{asset('/asset/extra/oneck/O-1a.png')}}" class="img-thumbnail O1 w-25" alt="">
+      <img src="{{asset('/asset/extra/oneck/O-2.png')}}" class="img-thumbnail O2 w-25" alt="">
+
+
+
+
+
+
+
        </tr>
       
   </table>
 </div> 
 
-<div class="row mb-4 " style="text-align: left">
+{{-- <div class="row mb-4 " style="text-align: left">
   <div class="col-12 mt-0 " style="padding-left: 0; margin-left: 0;"><h6 style="color: #1890fd;   text-align:left;">Casual </h6></div>
 </div> 
   <div class="row text-center">
@@ -394,9 +421,9 @@
     <div class="col-4">
       <img src="{{asset('/asset/extra/casual/C-5.png')}}" class="img-thumbnail C5" alt=""> 
     </div> 
-</div>
+</div> --}}
 
-<div class="row mb-4 " style="text-align: left">
+{{-- <div class="row mb-4 " style="text-align: left">
   <div class="col-12 mt-0 " style="padding-left: 0; margin-left: 0;"><h6 style="color: #1890fd;   text-align:left;"> O-neck </h6></div>
 </div> 
   <div class="row text-center">
@@ -407,21 +434,20 @@
       <img src="{{asset('/asset/extra/oneck/O-2.png')}}" class="img-thumbnail O2" alt="">
     </div>
     <div class="col-4">
-      {{-- <img src="{{asset('/asset/extra/casual/C-3.png')}}"class="img-thumbnail C3" alt="">  --}}
+      <img src="{{asset('/asset/extra/casual/C-3.png')}}"class="img-thumbnail C3" alt=""> 
     </div>
     <div class="col-4">
-      {{-- <img src="{{asset('/asset/extra/casual/C-4.png')}}" class="img-thumbnail C4" alt=""> --}}
+      <img src="{{asset('/asset/extra/casual/C-4.png')}}" class="img-thumbnail C4" alt="">
     </div>
     <div class="col-4">
-      {{-- <img src="{{asset('/asset/extra/casual/C-5.png')}}" class="img-thumbnail C5" alt="">  --}}
+      <img src="{{asset('/asset/extra/casual/C-5.png')}}" class="img-thumbnail C5" alt=""> 
     </div>
-  </div> 
+  </div>  --}}
 
 {{-- LOGO TIM --}}
 <style>
   .int {
     width: 6%;
-    
   }
 </style>
  
@@ -433,25 +459,21 @@
       </td>
     </tr>
     <tr>
-      <td class="extra-1"><span class="fw-semibold"><i class='bx bx-circle' style="font-size: 10px"></i> DTF</span></td>
+      <td class="extra-1 "><span class="fw-semibold"><i class='bx bx-circle' style="font-size: 10px"></i> DTF</span></td>
       <td class="harga extra-2 style" style="margin-left: 5%;" >Free</td>
       <td colspan="1" class="input-group extra-3">
+
+     
         {{-- <input type="text" class="form-extra" placeholder="Input Jumlah"  aria-describedby="basic-addon1" name="bbm"> --}}
         {{-- <span class="input-group-text fw-lighter" id="basic-addon1">pcs </span><small style="font-size: 12px; color:grey;" class="input-group-text fw-lighter">(utk stadium, free utk PRO dan PRO+)</small><tr> --}}
          
         </tr>
           <tr>
-      <td class="extra-1"><span class="fw-semibold"><i class='bx bx-circle' style="font-size: 10px"></i> Extra logo tim (DTF)</span></td>
+      <td class="extra-1 "><span class="fw-semibold"><i class='bx bx-circle' style="font-size: 10px"></i> Extra logo tim (DTF)</span></td>
       <td class="harga extra-2 " >(+30,000)</td>
       <td colspan="1" class="input-group extra-3">
-        {{-- <div class="container">
-          <div class="input-group">
-            <button class="add-button" onclick="increment()">-</button>
-           
-            <input type="text" class="input-box" id="quantity" value="12" readonly>
-            <button class="add-button" onclick="increment()">+</button>
-          </div>
-        </div> --}}
+
+        
         <style>
           .btn-hidden{
             border: 0px;
@@ -472,6 +494,8 @@
         </style>
         <input type="number" id="jumlah1" value="12" class="mx-2 input-extra" min="12" readonly>
         <button onclick="tambahSatu('jumlah1')" type="button" class="btn-hidden">+</button>
+        {{-- <img src="{{asset('/asset/logotim/logo - rubber on tatami.png')}}" class="img-thumbnail  w-25" alt=""> --}}
+
         {{-- <input type="text" class="form-extra" placeholder="Input Jumlah"  aria-describedby="basic-addon1" name="plr"> --}}
         {{-- <span class="input-group-text fw-lighter" id="basic-addon1"> </span><small style="font-size: 12px; color:grey;" class="input-group-text fw-lighter">(utk stadium, free utk PRO dan PRO+)</small> --}}
       </td>
@@ -487,6 +511,9 @@
         <button onclick="tambahSatu('jumlah2')"  type="button" class="btn-hidden">+</button>
         {{-- <input type="text" class="form-extra" placeholder="Input Jumlah"  aria-describedby="basic-addon1" name="up3d"> --}}
         <span class="input-group-text fw-lighter" id="basic-addon1"></span><small style="font-size: 12px; color:grey;" class="input-group-text fw-lighter">(utk stadium, free utk PRO dan PRO+)</small>
+        <img src="{{asset('/asset/logotim/logotim/logo - tpu.png')}}" class="img-thumbnail  w-25" alt="">
+      
+
       </td>
     </tr>
 
@@ -551,11 +578,42 @@
         <span class="input-group-text fw-lighter" id="basic-addon1"></span><small style="font-size: 12px; color:grey;" class="input-group-text fw-lighter">(utk stadium dan PRO, free utk PRO+) </small>
 
       </td>
+      <style>
+        /* Menerapkan Flexbox pada elemen <tr> */
+       
+    
+        /* Mengatur ukuran dan gaya pada gambar */
+        .img-thumbnaill {
+          max-width: 100%;
+          height: auto;
+          margin-left: 5%;
+          
+        }
+     
+      </style>
+      <tr>
+        <td colspan="1">
+          <div class="mx-4 px-4" ></div>
+        </td>
+        <td>
+          <div style="margin-bottom: 30px;"></div>
+
+          <div class="d-flex">
+            <img src="{{asset('/asset/logotim/logo - DTF.png')}}" style="te" class="img-thumbnaill w-50 mr-2" alt="">
+            <img src="{{asset('/asset/logotim/logo - tpu.png')}}" class="img-thumbnaill w-50" alt="">
+            <img src="{{asset('/asset/logotim/logo - rubber.png')}}" class="img-thumbnaill w-50" alt="">
+            <img src="{{asset('/asset/logotim/logo - rubber on tatami.png')}}" class="img-thumbnaill w-50" alt="">
+            <img src="{{asset('/asset/logotim/logo - sicone HD.png')}}" class="img-thumbnaill w-50" alt="">
+            <img src="{{asset('/asset/logotim/logo - woven HD.png')}}" class="img-thumbnaill w-50" alt="">
+            <img src="{{asset('/asset/logotim/logo - woven.png')}}" class="img-thumbnaill w-50" alt="">
+
+          </div>
+        </td>
+      </tr>
     </tr>
     <tr>
       <td>
         <div style="margin-bottom: 30px;"></div>
-
       </td>
     </tr>
     
@@ -634,6 +692,7 @@
       </tr>
       <tr>
         <td>
+
           <div style="margin-bottom: 30px;"></div>
 
         </td>

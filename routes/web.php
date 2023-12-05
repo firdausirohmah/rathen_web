@@ -34,6 +34,10 @@ Route::get('/page-costum', function () {
 Route::get('/part-pricelist', function () {
     return view('landing_page.part-pricelist');
 });
+// pricelist
+Route::get('/price-list', function () {
+    return view('landing_page.part-pricelist');
+});
 
 
 

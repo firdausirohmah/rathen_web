@@ -77,6 +77,16 @@
     -webkit-transition: content 2s ease-out;
     content: url('/asset/extra/casual/C-5Kuning.png');
   }
+  .O1:hover{
+    /* opacity: 0.5; */
+    -webkit-transition: content 2s ease-out;
+    content: url('/asset/extra/oneck/O-1akuning.png');
+  }
+  .O2:hover{
+    /* opacity: 0.5; */
+    -webkit-transition: content 2s ease-out;
+    content: url('/asset/extra/oneck/O-2Kuning.png');
+  }
  
 </style>
 <div class="container">
@@ -339,6 +349,10 @@
   <div class="col-12" style="padding-left: 9.5%; margin-left: 0; margin-buttom:100px; "><h5 style="color: #1890fd;   text-align:left;">JENIS KERAH : </h5></div>
 </div>
 </div>
+<div class="row mb-4" style="text-align: left">
+  <div class="col-12" style="padding-left: 9.5%; margin-left: 0; margin-buttom:100px; "><p style="color: #1890fd;   text-align:left;">Casual </p></div>
+</div>
+</div>
 <div class="container text-center">
   <div class="row">
     <div class="col-4">
@@ -355,6 +369,29 @@
     </div>
     <div class="col-4">
       <img src="{{asset('/asset/extra/casual/C-5.png')}}" class="img-thumbnail C5" alt=""> 
+    </div>
+  </div>
+</div>
+<div class="row mb-4" style="text-align: left">
+  <div class="col-12" style="padding-left: 9.5%; margin-left: 0; margin-buttom:100px; "><p style="color: #1890fd;   text-align:left;">O-neck</p></div>
+</div>
+</div>
+<div class="container text-center">
+  <div class="row">
+    <div class="col-4">
+      <img src="{{asset('/asset/extra/oneck/O-1a.png')}}" class="img-thumbnail O1" alt="">
+    </div>
+    <div class="col-4">
+      <img src="{{asset('/asset/extra/oneck/O-2.png')}}" class="img-thumbnail O2" alt="">
+    </div>
+    <div class="col-4">
+      {{-- <img src="{{asset('/asset/extra/casual/C-3.png')}}"class="img-thumbnail C3" alt="">  --}}
+    </div>
+    <div class="col-4">
+      {{-- <img src="{{asset('/asset/extra/casual/C-4.png')}}" class="img-thumbnail C4" alt=""> --}}
+    </div>
+    <div class="col-4">
+      {{-- <img src="{{asset('/asset/extra/casual/C-5.png')}}" class="img-thumbnail C5" alt="">  --}}
     </div>
   </div>
 </div>

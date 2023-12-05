@@ -341,8 +341,16 @@
 </div>
 <div class="container text-center">
   <div class="row">
-    <div class="col-4">
-      <img src="{{asset('/asset/extra/casual/C-1.png')}}" class="img-thumbnail C1" alt="">
+    <div class="col-4 bg-primary">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Special title treatment</h5>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <img src="{{asset('/asset/extra/casual/C-1.png')}}" class="img-thumbnail C1" alt="">
+
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
     </div>
     <div class="col-4">
       <img src="{{asset('/asset/extra/casual/C-2.png')}}" class="img-thumbnail C2" alt="">

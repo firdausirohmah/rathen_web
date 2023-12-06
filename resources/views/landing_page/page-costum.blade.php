@@ -3,7 +3,14 @@
 @section('content')
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <link rel="stylesheet" href="asset/css/styles.css">
-<section id="home" style="overflow: hidden;">
+<section id="home" class="section-home" style="overflow: hidden;">
+    {{-- <style>
+        @media and (max-width: 300px) {
+         #home.section-home {
+
+         
+  }
+} --}}
     <section class="main-banner">
         <div class="main-banner__logo">
             <img src="{{asset('asset/cfind/source/images/rathen.png')}}" alt="">
@@ -19,50 +26,11 @@
                     <div class="input-box" style="margin-top: 10px">
                         <label>Lacak Pesanan</label>
                         <input type="text" placeholder="Masukan nomor pesanan">
-                        {{-- <input type="text" placeholder="Masukkan nomor pesanan" name="pesanan" required> --}}
-                        {{-- <input type="submit" class="button-search" placeholder="COSTUM JARSEY"> --}}
-                        {{-- <small style="text-decoration: none;">*Beri tanda koma jika lebih dari 1 resi</small> --}}
-                    </div>
+                       </div>
                 </a>
             </div>
             <div class="main-banner__cekresi--list cek-tarif">
-                {{-- <div class="box-tarif"> --}}
-                    {{-- <form action="" id="formResi">
-                        <div class="field field-from field-autocomplete">
-                            <i class="ico">
-                                <img src="{{asset('asset/images/material/ico-cek-map.svg')}}">
-                                
-                            </i>
-                            <input type="text" placeholder="Kategori" autocomplete="off" params="1" required>
-                            <input type="hidden" name="origin">
-                            <div class="autocomplete-box"></div>
-                        </div>
-                        <div class="field field-to field-autocomplete">
-                            <i class="ico">
-                                <img src="{{asset('asset/images/material/ico-cek-to.svg')}}">
-                                
-                            </i>
-                            <input type="text" placeholder="Kualitas"  autocomplete="off" params="2" required>
-                            <select name="kualitas" id="">
-                                <option value="fans">FANS</option>
-                                <option value="stadium">STADIUM</option>
-                                <option value="pro">PRO</option>
-                            </select>
-                            <input type="hidden" name="destination">
-                            <div class="autocomplete-box"></div>
-                        </div>
-                        <div class="field field-weight">
-                            <i class="ico">
-                                <img src="{{asset('asset/images/material/ico-cek-weight.svg')}">
-                                
-                            </i>
-                            <input type="text" placeholder="Jumlah Pesanan" name="jumlah" required>
-                        </div>
-                        <div class="field field-button">
-                            <button href="shipping-fee.html" class="button button-outline btn-hitung" type="submit">Check</button>
-                        </div>
-                    </form> --}}
-                {{-- </div> --}}
+               
                 <form class="form">
                     <i><img src="{{asset('asset/images/material/ico-cek.svg')}}"></i>
                     {{-- <i><img src="{{asset('asset/images/material/ico-cek.svg')}}"></i> --}}
@@ -79,15 +47,26 @@
             <video muted="muted" loop="loop" id="videohome" autoplay="autoplay" playsinline>
                 <source src="{{asset('asset/cfind/source/files/video.mp4')}}" type="video/mp4">
                 <source src="{{asset('asset/cfind/source/files/video.mp4')}}" type="video/mp4">
-                
-                {{-- <source src="asset/cfind/source/files/hugo-papua-15-website.mp4" type="video/mp4"> --}}
-                {{-- <source src="asset/cfind/source/files/hugo-papua-15-website.webm" type="video/webm"> --}}
-            </video>
+             </video>
         </div>
     </section>
 </section>
 
-<section id="about">
+<section id="about" class="section-about">
+    <style>
+        @media  and (max-width: 300px) {
+         .csabout {
+            width: 100%; /* Lebar gambar sesuai dengan lebar kontennya */
+            height: 100%; /* Mempertahankan aspek rasio gambar */
+            max-width: 100%; /* Batas maksimum lebar gambar */
+            display: block; /* Menghilangkan whitespace di sekitar gambar */
+            margin: 0 auto; /* Pusatkan gambar di dalam kontennya jika perlu */
+}
+         
+         
+  }
+
+    </style>
     <section class="py-5 py-xl-8">
         <div class="container">
           <div class="row justify-content-md-center">
@@ -102,23 +81,23 @@
     <div class="container mb-4 pb-4">
         <div class="row">
             {{-- <div class="col-lg-3"></div> --}}
-            <div class="col-lg-6">
+            <div class="col-lg-6 bg-primary">
 
                 <div id="carouselExample" class="carousel slide w-100 " data-ride="carousel">
                     <div class="carousel-inner ">
                         
                         <div class="carousel-item active">
-                            <img src="{{asset('asset/images/swiss.jpg')}}" class="d-block w-100" alt="swiss">
+                            <img src="{{asset('asset/images/swiss.jpg')}}" class="d-block csabout img-fluid" style="" alt="swiss">
                             
                             
                         </div>
                         <div class="carousel-item">
-                            <img src=" {{asset('asset/images/top.jpg')}}" class="d-block w-100" alt="top">
+                            <img src=" {{asset('asset/images/top.jpg')}}" class="d-block csabout" alt="top">
                            
                         </div>
                         <div class="carousel-item">
                             <!-- Gunakan tag video untuk video -->
-                            <video id="video1" class="d-block w-50" controls autoplay muted>
+                            <video id="video1" class="d-block w-50 csabout" controls autoplay muted>
                                 <!-- Sediakan sumber video -->
                                 <source src="{{asset('asset/images/video1.mp4')}}" type="video/mp4">
                                  
@@ -127,7 +106,7 @@
                         </div>
                         <div class="carousel-item" >
                             <!-- Gunakan tag video untuk video -->
-                            <video id="video2" class="d-block w-50" controls autoplay muted>
+                            <video id="video2" class="d-block w-50 csabout" controls autoplay muted>
                                 <!-- Sediakan sumber video -->
                                 <source src="{{asset('asset/images/video2.mp4')}}" type="video/mp4">
                                 
@@ -145,7 +124,7 @@
                     </button>
                 </div>
             </div>
-            <div class="col-lg-6" style="font-family: Montheavy; color: rgba(0, 0, 0, 0.8);">
+            <div class="col-lg-6 about" style="font-family: Montheavy; color: rgba(0, 0, 0, 0.8);">
                 <p class=" text-justify mb-4" >RATHEN merupakan sportwears brand yang berasal dari Bogor, Indonesia. Memulai industri sportwears pada tahun 2014 dengan berfokus pada pembuatan custom jersey sepakbola atau futsal. Berbagai jenis tim, baik dari level korporasi, akademisi, komunitas sepakbola, hingga tim liga futsal profesional telah menjadi bagian perjalanan manis rathen di dunia industri sportwear.</p>
                 <p class=" text-justify mb-4">Hingga akhirnya, Pada tahun 2016, RATHEN dipercaya menjadi penyedia jersey latihan tim nasional Futsal Indonesia. 
                 </p>
@@ -225,7 +204,8 @@
 </script>    
 </section>
 
-<section id="result" class="mt-4 pt-4">
+<section id="result" class="result" class="mt-4 pt-4">
+    
     <section class="py-2 py-xl-4">
         <div class="container">
           <div class="row justify-content-md-center">

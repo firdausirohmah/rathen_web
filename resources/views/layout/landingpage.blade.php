@@ -34,7 +34,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-WP6QSF5T');</script>
 <!-- End Google Tag Manager —>
 
-<!-- Google Tag Manager (noscript) -->
+ Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WP6QSF5T"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
@@ -78,12 +78,13 @@ src="https://www.facebook.com/tr?id=1058956608607048&amp;ev=PageView&amp;noscrip
    .embeddedServiceHelpButton .helpButton .uiButton:focus {
        outline: 1px solid #005290;
    }
-</style>
-<!--js-->
 
+  
+</style>
 </head>
 
 <body>
+    
     <div  id="floatingMenu" class="floating-menu" onClick="myFunction()" style="position: fixed; z-index: 10;margin: auto; right: 10px; bottom: 70px;">
         <a href="https://wa.me/628123456789" class="kurir-bt" style="max-width:150px">
             <img src="asset/images/chat.png"  height="160" />

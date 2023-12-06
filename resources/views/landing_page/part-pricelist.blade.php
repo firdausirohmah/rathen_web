@@ -139,7 +139,7 @@
                       <img src="{{ $data->g1}}" class="img-thumbnail" alt="Image 1">
                     </div>
                     <div class="carousel-item">
-                      {{-- <img src="{{ $data->g2}}" class="img-thumbnail" alt="Image 2"> --}}
+                      <img src="{{ $data->g2}}" class="img-thumbnail" alt="Image 2">
                     </div>
                     <div class="carousel-item">
                       <img src="{{ $data->g3}}" class="img-thumbnail" alt="Image 3">
@@ -165,42 +165,42 @@
                   <div class="row">
                     <div class="col">
                       <div class="thumbnail selected-thumbnail" onclick="changeSlide(0)">
-                        <img src="{{ asset('asset/extra/casual/C-1.png') }}" alt="Thumbnail 1">
+                        <img src="{{ $data->g1}}" alt="Thumbnail 1">
                       </div>
                     </div>
                     <div class="col">
                       <div class="thumbnail" onclick="changeSlide(1)">
-                        <img src="{{ asset('asset/extra/casual/C-2.png') }}" alt="Thumbnail 2">
+                        <img src="{{ $data->g2}}" alt="Thumbnail 2">
                       </div>
                     </div>
                     <div class="col">
                       <div class="thumbnail" onclick="changeSlide(2)">
-                        <img src="{{ asset('asset/extra/casual/C-3.png') }}" alt="Thumbnail 3">
+                        <img src="{{ $data->g3}}" alt="Thumbnail 3">
                       </div>
                     </div>
                     <div class="col">
                       <div class="thumbnail" onclick="changeSlide(3)">
-                        <img src="{{ asset('asset/extra/casual/C-4.png') }}" alt="Thumbnail 4">
+                        <img src="{{ $data->g4}}" alt="Thumbnail 4">
                       </div>
                     </div>
                     <div class="col">
                       <div class="thumbnail" onclick="changeSlide(4)">
-                        <img src="{{ asset('asset/extra/casual/C-5.png') }}" alt="Thumbnail 4">
+                        <img src="{{ $data->g5}}" alt="Thumbnail 4">
                       </div>
                     </div>
                     <div class="col">
                       <div class="thumbnail" onclick="changeSlide(5)">
-                        <img src="{{ asset('asset/extra/casual/C-6.png') }}" alt="Thumbnail 4">
+                        <img src="{{ $data->g6}}" alt="Thumbnail 4">
                       </div>
                     </div>
                     <div class="col">
                       <div class="thumbnail" onclick="changeSlide(6)">
-                        <img src="{{ asset('asset/extra/casual/C-7.png') }}" alt="Thumbnail 4">
+                        <img src="{{ $data->g7}}" alt="Thumbnail 4">
                       </div>
                     </div>
                     <div class="col">
                       <div class="thumbnail" onclick="changeSlide(7)">
-                        <img src="{{ asset('asset/extra/casual/C-8.png') }}" alt="Thumbnail 4">
+                        <img src="{{ $data->g8}}" alt="Thumbnail 4">
                       </div>
                     </div>
                   </div>

@@ -139,7 +139,7 @@
                       <img src="{{ $data->g1}}" class="img-thumbnail" alt="Image 1">
                     </div>
                     <div class="carousel-item">
-                      <img src="{{ $data->g2}}" class="img-thumbnail" alt="Image 2">
+                      {{-- <img src="{{ $data->g2}}" class="img-thumbnail" alt="Image 2"> --}}
                     </div>
                     <div class="carousel-item">
                       <img src="{{ $data->g3}}" class="img-thumbnail" alt="Image 3">

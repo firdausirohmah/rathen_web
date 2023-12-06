@@ -261,8 +261,8 @@
                           <span>Kualitas :</span>
                           <div class="col">
                                 <button class="btn btn-outline-secondary {{ $data->stadium }} w-25 mx-3 menu-button" id="buttonA" onclick="selectOption(1, 1)"><span class="fs-6">STADIUM</span></button>
-                                <button class="btn btn-outline-secondary {{ $data->pro }} w-25 mx-3 menu-button" id="buttonB" onclick="changeContent('data4'),selectOption(1, 2)">PRO</button>
-                                <button class="btn btn-outline-secondary {{ $data->pro_plus }} w-25 mx-3 menu-button" id="buttonC" onclick="changeContent('data5'),selectOption(1, 3)">PRO<sup>+</sup></button>
+                                <a href="{{ url('/price-list', ['kd_part' => 'pro']) }}"><button class="btn btn-outline-secondary {{ $data->pro }} w-25 mx-3 menu-button" id="buttonB" onclick="changeContent('data4'),selectOption(1, 2)">PRO</button></a>
+                                <a href="{{ url('/price-list', ['kd_part' => 'pro-plus']) }}"><button class="btn btn-outline-secondary {{ $data->pro_plus }} w-25 mx-3 menu-button" id="buttonC" onclick="changeContent('data5'),selectOption(1, 3)">PRO<sup>+</sup></button></a>
                             </div>
                         </div>
                         <div class="row mt-4 ">

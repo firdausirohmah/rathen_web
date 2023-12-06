@@ -96,7 +96,7 @@ src="https://www.facebook.com/tr?id=1058956608607048&amp;ev=PageView&amp;noscrip
 <section style="overflow: hidden;">
     <section class="main-banner">
         <div class="main-banner__logo">
-            <img src="asset/cfind/source/images/rathen.png" alt="">
+            <img src="asset/cfind/source/images/rathen.png" class="rounded mx-auto d-block" alt="">
         </div>
         {{--  --}}
         <div class="main-banner__cekresi">

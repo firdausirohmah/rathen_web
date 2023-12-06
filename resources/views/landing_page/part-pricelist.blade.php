@@ -165,42 +165,42 @@
                   <div class="row">
                     <div class="col">
                       <div class="thumbnail selected-thumbnail" onclick="changeSlide(0)">
-                        <img src="{{ asset('asset/extra/casual/C-1.png') }}" alt="Thumbnail 1">
+                        <img src="{{ $data->g1}}" alt="Thumbnail 1">
                       </div>
                     </div>
                     <div class="col">
                       <div class="thumbnail" onclick="changeSlide(1)">
-                        <img src="{{ asset('asset/extra/casual/C-2.png') }}" alt="Thumbnail 2">
+                        <img src="{{ $data->g2}}" alt="Thumbnail 2">
                       </div>
                     </div>
                     <div class="col">
                       <div class="thumbnail" onclick="changeSlide(2)">
-                        <img src="{{ asset('asset/extra/casual/C-3.png') }}" alt="Thumbnail 3">
+                        <img src="{{ $data->g3}}" alt="Thumbnail 3">
                       </div>
                     </div>
                     <div class="col">
                       <div class="thumbnail" onclick="changeSlide(3)">
-                        <img src="{{ asset('asset/extra/casual/C-4.png') }}" alt="Thumbnail 4">
+                        <img src="{{ $data->g4}}" alt="Thumbnail 4">
                       </div>
                     </div>
                     <div class="col">
                       <div class="thumbnail" onclick="changeSlide(4)">
-                        <img src="{{ asset('asset/extra/casual/C-5.png') }}" alt="Thumbnail 4">
+                        <img src="{{ $data->g5}}" alt="Thumbnail 4">
                       </div>
                     </div>
                     <div class="col">
                       <div class="thumbnail" onclick="changeSlide(5)">
-                        <img src="{{ asset('asset/extra/casual/C-6.png') }}" alt="Thumbnail 4">
+                        <img src="{{ $data->g6}}" alt="Thumbnail 4">
                       </div>
                     </div>
                     <div class="col">
                       <div class="thumbnail" onclick="changeSlide(6)">
-                        <img src="{{ asset('asset/extra/casual/C-7.png') }}" alt="Thumbnail 4">
+                        <img src="{{ $data->g7}}" alt="Thumbnail 4">
                       </div>
                     </div>
                     <div class="col">
                       <div class="thumbnail" onclick="changeSlide(7)">
-                        <img src="{{ asset('asset/extra/casual/C-8.png') }}" alt="Thumbnail 4">
+                        <img src="{{ $data->g8}}" alt="Thumbnail 4">
                       </div>
                     </div>
                   </div>
@@ -268,9 +268,9 @@
                         <div class="row mt-4 ">
                           <span>Kategori :</span>
                           <div class="col">
-                                <a href="{{ url('/price-list', ['kd_part' => 1]) }}"><button class="btn btn-outline-secondary {{ $data->non_print }} w-25 mx-3 menu-button" id="button1" onclick="changeContent('data1'),selectOption(2, 1)">Non - Print</button></a>
-                                <a href="{{ url('/price-list', ['kd_part' => 2]) }}"><button class="btn btn-outline-secondary {{ $data->half_print }} w-25 mx-3 menu-button" id="button2" onclick="changeContent('data2'),selectOption(2, 2)">Half - Print</button></a>
-                                <button class="btn btn-outline-secondary {{ $data->full_print }} w-25 mx-3 menu-button" id="button3" onclick="changeContent('data3'),selectOption(2, 3)">Full Print</button>
+                                <a href="{{ url('/price-list', ['kd_part' => 'non-print']) }}"><button class="btn btn-outline-secondary {{ $data->non_print }} w-25 mx-3 menu-button" id="button1" onclick="changeContent('data1'),selectOption(2, 1)">Non - Print</button></a>
+                                <a href="{{ url('/price-list', ['kd_part' => 'half-print']) }}"><button class="btn btn-outline-secondary {{ $data->half_print }} w-25 mx-3 menu-button" id="button2" onclick="changeContent('data2'),selectOption(2, 2)">Half - Print</button></a>
+                                <a href="{{ url('/price-list', ['kd_part' => 'full-print']) }}"><button class="btn btn-outline-secondary {{ $data->full_print }} w-25 mx-3 menu-button" id="button3" onclick="changeContent('data3'),selectOption(2, 3)">Full Print</button></a>
                                 {{-- <button onclick="changeContent('data1')">Tombol 1</button>
                                 <button onclick="changeContent('data2')">Tombol 2</button> --}}
                             </div>

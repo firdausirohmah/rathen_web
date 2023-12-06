@@ -13,7 +13,7 @@
 } --}}
     <section class="main-banner">
         <div class="main-banner__logo">
-            <img src="{{asset('asset/cfind/source/images/rathen.png')}}" alt="">
+            <img src="{{asset('asset/images/LOGO.png')}}" class="rounded mx-auto d-block" alt="">
             {{-- <img src="{{asset('asset/cfind/source/images/rathen.png')}}" alt=""> --}}
             
         </div>

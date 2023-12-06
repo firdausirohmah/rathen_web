@@ -67,7 +67,7 @@ src="https://www.facebook.com/tr?id=1058956608607048&amp;ev=PageView&amp;noscrip
 <link rel="stylesheet" type="text/css" href="{{asset('/asset/css/home.css')}}" preload>
 <script async type="text/javascript" src="{{asset('/asset/js/app.js')}}"></script>
     <link href="{{asset('/asset/css/ex.css')}}" rel="stylesheet">
-<link rel="icon" type="image/png" href="{{asset('/asset/cfind/source/images/rathen.png')}}" sizes="32x32">
+{{-- <link rel="icon" type="image/png" href="{{asset('/asset/cfind/source/images/rathen.png')}}" sizes="32x32"> --}}
     <!--Style-->
 
 <style type='text/css'>
@@ -118,7 +118,7 @@ src="https://www.facebook.com/tr?id=1058956608607048&amp;ev=PageView&amp;noscrip
                     <a href="#order" class="nav-link" >Cara Pemesanan</a>
                 </li>
                 <li class="nav-item ">
-                    <a href="{{ url('/price-list', ['kd_part' => 1]) }}" class="nav-link">Price List</a>
+                    <a href="{{ url('/price-list', ['kd_part' => 'non-print']) }}" class="nav-link">Price List</a>
                     {{-- <a href="#pricelist" class="nav-link">Price List</a> --}}
                 </li>
                 <li class="nav-item ">

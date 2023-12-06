@@ -480,7 +480,7 @@
         </div>
       </div>
       <div class="container-xxl" id="kategori2">
-        bobok
+       
       </div>
       <script>
         // Fungsi untuk mengubah warna tautan setelah diklik
@@ -561,7 +561,7 @@
     </script>
     </section>
     
-    <footer>
+    {{-- <footer>
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center">
@@ -580,7 +580,7 @@
                         </div>
                         </div>
 
-    </footer>
+    </footer> --}}
   
     {{-- end of title page --}}
     <script>

@@ -277,7 +277,13 @@
                         </div>
                         <div class="row mt-4">
                           <div class="col">
+                            <p>{{ $jsonData['menu1']['{{ $data->desc }}'] }}</p>
                             <span>{{ $data->deskripsi }}</span>
+                            <form action="{{ route('your.route') }}" method="post">
+                              @csrf
+                              <textarea name="paragraphs"></textarea>
+                              <button type="submit">Simpan</button>
+                          </form>
                           </div>
                         </div>
                     </div>

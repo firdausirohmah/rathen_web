@@ -13,7 +13,6 @@
 
             <style>
                 .teks{
-<<<<<<< HEAD
                     font-size: 12px;
                     margin-top: 0px;
                 }
@@ -31,17 +30,10 @@
                     .teks {
                         margin-top: 0px;
                     }
-=======
-                    font-size: 12px
->>>>>>> e1e9f2a809a11192c61dc431d3e5e9cf6fa611c0
                 }
                 @media (min-width: 350.98px) { 
                     .teks {
-<<<<<<< HEAD
                         margin-top: 10px;
-=======
-                        background-color: red;
->>>>>>> e1e9f2a809a11192c61dc431d3e5e9cf6fa611c0
                     }
                     .carousel-about{
                         width: 100% !important;
@@ -74,29 +66,11 @@
                 }
                 @media (max-width: 991.98px) { 
                     .teks {
-<<<<<<< HEAD
                         margin-top:5%;
                  }
                 }
                 /* @media (max-width: 1199.98px) { ... }
                 @media (max-width: 1399.98px) { ... } */
-=======
-                        margin-top: 80%;
-                 }
-                }
-                @media (max-width: 1199.98px) { 
-                    .teks {
-                        margin-top: 10px;
-                 }
-                 }
-                @media (max-width: 1399.98px) { 
-                    .teks {
-                        margin-top: 4px;
-                        color: red;
-
-                 }
-                 }
->>>>>>> e1e9f2a809a11192c61dc431d3e5e9cf6fa611c0
                 /* new */
             </style>
             

@@ -13,7 +13,6 @@
 
             <style>
                 .teks{
-<<<<<<< HEAD
                     font-size: 12px;
                     margin-top: 0px;
                 }
@@ -37,49 +36,48 @@
                     } .img-carousel{
                         padding-bottom: 10px;
                     }
-=======
-                    font-size: 12px
->>>>>>> e1e9f2a809a11192c61dc431d3e5e9cf6fa611c0
                 }
-                @media (min-width: 350.98px) { 
+                @media screen and (max-width: 350.98px)  { 
                     .teks {
-<<<<<<< HEAD
                         margin-top: 10px;
-=======
-                        background-color: red;
->>>>>>> e1e9f2a809a11192c61dc431d3e5e9cf6fa611c0
                     }
                     .carousel-about{
                         width: 100% !important;
                         height: 400px;
-                        background-color: yellow;
+                        /* background-color: yellow; */
 
+                    }.wp{
+                        width: 100% !important;
+                        height: 230vh;
                     }
-                 }
-                 @media screen and (max-width: 579.98px) {
-                    .teks{
-                        margin-top: 80%;
-                        padding-top: 4px;                        
-                        font-size: 14px;
-
-                    }
-                    .location-crs{
-                        width: 100%;
-                        height: 30%;
-                        /* height: 100vh; */
-                    }
-                    .card_location{
-                        width: 100%;
-                        height: 20vh;
-                    }
-                    .btn-mid{
-                        background-color: #000;
-                        width: 50px;
-                        height: 50px;
+                    *{
+                        /* background-color: red; */
                     }
                     .cstore{
+                        margin-top:0px;
+                        padding-top: 0px;
+                    }
+                 }
+                 @media screen and (max-width: 399.98px) {
+                    
+                    .cstore{
                         /* padding-top: 5%; */
-                        margin-top: 2px;
+                        margin-top: 10px;
+                    }
+                    *{
+                        /* background-color: yellow; */
+                    }
+                }
+                @media screen and (max-width: 450.98px) {
+                    
+                    .cstore{
+                        /* padding-top: 5%; */
+                        margin-top: 30px;
+                        padding-top: 30px;
+                    }
+                    .
+                    *{
+                        /* background-color: yellow; */
                     }
                 }
                 @media (min-width: 767.98px) { 
@@ -108,19 +106,12 @@
                         height: 50px;
                     }
                     .cstore{
-                        padding-top: 20%;
+                        padding-top: 10%;
                         margin-top: 20%;
                     }
                 }
                 @media (max-width: 991.98px) { 
                     .teks {
-<<<<<<< HEAD
-                        margin-top:5%;
-                 }
-                }
-                /* @media (max-width: 1199.98px) { ... }
-                @media (max-width: 1399.98px) { ... } */
-=======
                         margin-top: 80%;
                  }
                 }
@@ -132,12 +123,10 @@
                 @media (max-width: 1399.98px) { 
                     .teks {
                         margin-top: 4px;
-                        color: red;
+                        /* color: red; */
 
                  }
-                 }
->>>>>>> e1e9f2a809a11192c61dc431d3e5e9cf6fa611c0
-                /* new */
+                }
             </style>
             
         <div class="main-banner__cekresi">

@@ -4,27 +4,136 @@
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <link rel="stylesheet" href="asset/css/styles.css">
 <section id="home" class="section-home" style="overflow: hidden;">
-    {{-- <style>
-        @media and (max-width: 300px) {
-         #home.section-home {
-
-         
-  }
-} --}}
+ 
     <section class="main-banner">
         <div class="main-banner__logo">
             <img src="{{asset('asset/images/LOGO.png')}}" class="rounded mx-auto d-block" alt="">
-            {{-- <img src="{{asset('asset/cfind/source/images/rathen.png')}}" alt=""> --}}
+            </div>
+
+            <style>
+                @media (max-width: 350px) {
+                    .ip {
+                        font-size: 8px;
+                    }
+                    .teks {
+                        font-size: 12px;
+                        margin-top: 50px;
+                    }
+                }
+                @media (max-width: 355px) {
+                    .ip {
+                        font-size: 8px;
+                    }
+                    .teks {
+                        font-size: 12px;
+                        margin-top: 60px;
+                    }
+                }
+                @media (max-width: 360px) {
+                    .ip {
+                        font-size: 8px;
+                    }
+                    .teks {
+                        font-size: 12px;
+                        margin-top: 65px;
+                    }
+                }
+                @media (max-width: 365px) {
+                    .teks {
+                        font-size: 12px;
+                        margin-top: 75px;
+                    }
+                }
+                @media (max-width: 370px) {
+                    .ip {
+                        font-size: 8px;
+                    }
+                    .teks {
+                        font-size: 12px;
+                        margin-top: 80px;
+                    }
+                }
+                @media (max-width: 375px) {
+                    .ip {
+                        font-size: 8px;
+                    }
+                    .teks {
+                        font-size: 12px;
+                        margin-top: 85px;
+                    }
+                }
+                @media (max-width: 380px) {
+                    .ip {
+                        font-size: 8px;
+                    }
+                    .teks {
+                        font-size: 12px;
+                        margin-top: 90px;
+                    }
+                }
+                @media (max-width: 385px) {
+                    .ip {
+                        font-size: 8px;
+                    }
+                    .teks {
+                        font-size: 12px;
+                        margin-top: 95px;
+                    }
+                }
+                @media (max-width: 390px) {
+                    .ip {
+                        font-size: 8px;
+                    }
+                    .teks {
+                        font-size: 12px;
+                        margin-top: 100px;
+                    }
+                }
+                @media (max-width: 395px) {
+                    .ip {
+                        font-size: 8px;
+                    }
+                    .teks {
+                        font-size: 12px;
+                        margin-top: 105px;
+                    }
+                }
+                @media (max-width: 400px) {
+                    .ip {
+                        font-size: 8px;
+                    }
+                    .teks {
+                        font-size: 12px;
+                        margin-top: 115px;
+                    }
+                }
+                @media (max-width: 405px) {
+                    .ip {
+                        font-size: 8px;
+                    }
+                    .teks {
+                        font-size: 12px;
+                        margin-top: 120px;
+                    }
+                }
+                @media (max-width: 410px) {
+                    .ip {
+                        font-size: 8px;
+                    }
+                    .teks {
+                        font-size: 14px;
+                        margin-top: 125px;
+                    }
+                }
+            </style>
             
-        </div>
-{{--  --}}
         <div class="main-banner__cekresi">
             <div class="main-banner__cekresi--list cek-lacak">
                 <a class="form"  href="">
                     <i><img src="{{asset('asset/images/material/ico-lacak.svg')}}"></i> 
                     {{-- <i><img src="{{asset('asset/images/material/ico-lacak.svg')}}"></i>  --}}
-                    <div class="input-box" style="margin-top: 10px">
-                        <label>Lacak Pesanan</label>
+                    <div class="input-box ip" style="margin-top: 10px">
+                        <label class="ip">Lacak Pesanan</label>
                         <input type="text" placeholder="Masukan nomor pesanan">
                        </div>
                 </a>
@@ -43,7 +152,7 @@
                 </form>
             </div>
         </div>
-        <div class="main-banner__video">
+        <div class="main-banner__video vid ">
             <video muted="muted" loop="loop" id="videohome" autoplay="autoplay" playsinline>
                 <source src="{{asset('asset/cfind/source/files/video.mp4')}}" type="video/mp4">
                 <source src="{{asset('asset/cfind/source/files/video.mp4')}}" type="video/mp4">
@@ -54,45 +163,42 @@
 
 <section id="about" class="section-about">
     <style>
-        @media  and (max-width: 300px) {
+        @media  and (max-width: 350px) {
          .csabout {
             width: 100%; /* Lebar gambar sesuai dengan lebar kontennya */
             height: 100%; /* Mempertahankan aspek rasio gambar */
             max-width: 100%; /* Batas maksimum lebar gambar */
             display: block; /* Menghilangkan whitespace di sekitar gambar */
             margin: 0 auto; /* Pusatkan gambar di dalam kontennya jika perlu */
-}
-         
-         
+            }
+              
   }
-
     </style>
     <section class="py-5 py-xl-8">
         <div class="container">
           <div class="row justify-content-md-center">
             <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
               <h1 class="mb-2 display-5 text-center" style="font-family: Montheavy; color: black; font-size: 24px; font-weight: bold; margin-bottom: 20px; text-align: center;">ABOUT US</h1>
-                {{-- <hr class="w-50 mx-auto mb-5 mb-xl-9 border-dark-subtle"> --}}
             </div>
           </div>
         </div>
     </section>
     
-    <div class="container mb-4 pb-4">
+    <div class="container mb-4 pb-4 ">
         <div class="row">
             {{-- <div class="col-lg-3"></div> --}}
             <div class="col-lg-6">
 
-                <div id="carouselExample" class="carousel slide w-100 " data-ride="carousel">
-                    <div class="carousel-inner ">
+                <div id="carouselExample" class="carousel slide w-100 slider" data-ride="carousel">
+                    <div class="carousel-inner">
                         
                         <div class="carousel-item active">
-                            <img src="{{asset('asset/images/swiss.jpg')}}" class="d-block csabout w-100 img-fluid" style="" alt="swiss">
+                            <img src="{{asset('asset/images/swiss.jpg')}}" class="d-block  w-100 img-fluid"  alt="swiss">
                             
                             
                         </div>
                         <div class="carousel-item">
-                            <img src=" {{asset('asset/images/top.jpg')}}" class="d-block w-100 csabout" alt="top">
+                            <img src=" {{asset('asset/images/top.jpg')}}" class="d-block w-100"   alt="top">
                            
                         </div>
                         <div class="carousel-item">
@@ -124,8 +230,8 @@
                     </button>
                 </div>
             </div>
-            <div class="col-lg-6 about" style="font-family: Montheavy; color: rgba(0, 0, 0, 0.8);">
-                <p class=" text-justify mb-4" >RATHEN merupakan sportwears brand yang berasal dari Bogor, Indonesia. Memulai industri sportwears pada tahun 2014 dengan berfokus pada pembuatan custom jersey sepakbola atau futsal. Berbagai jenis tim, baik dari level korporasi, akademisi, komunitas sepakbola, hingga tim liga futsal profesional telah menjadi bagian perjalanan manis rathen di dunia industri sportwear.</p>
+            <div class="col-lg-6 about teks" style="font-family: Montheavy; color: rgba(0, 0, 0, 0.8);">
+                <p class=" text-justify mb-4 " >RATHEN merupakan sportwears brand yang berasal dari Bogor, Indonesia. Memulai industri sportwears pada tahun 2014 dengan berfokus pada pembuatan custom jersey sepakbola atau futsal. Berbagai jenis tim, baik dari level korporasi, akademisi, komunitas sepakbola, hingga tim liga futsal profesional telah menjadi bagian perjalanan manis rathen di dunia industri sportwear.</p>
                 <p class=" text-justify mb-4">Hingga akhirnya, Pada tahun 2016, RATHEN dipercaya menjadi penyedia jersey latihan tim nasional Futsal Indonesia. 
                 </p>
                 <p class=" text-justify mb-4">Tahun 2020 menjadi langkah awal RATHEN menembus pasar Internasional. Dimulai dari negara di kawasan Asia seperti Timor Leste, bergerak perlahan ke Malaysia, hingga akhirnya Korea Selatan.</p>
@@ -141,29 +247,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     
-    <script>
-        $(document).ready(function () {
-            // Inisialisasi carousel dengan interval
-            $('#carouselExample').carousel({
-                interval: 2000
-            });
-    
-            // Menangani peristiwa slid.bs.carousel
-            $('#carouselExample').on('slid.bs.carousel', function (e) {
-                // Menghentikan pemutaran otomatis video1 dan video2
-                $('#video1')[0].pause();
-                $('#video2')[0].pause();
-    
-                // Memulai pemutaran video pada slide yang aktif
-                var activeIndex = $(this).find('.carousel-item.active').index();
-                if (activeIndex === 2) { // Jika slide ketiga (indeks dimulai dari 0)
-                    $('#video1')[0].play();
-                } else if (activeIndex === 3) { // Jika slide keempat
-                    $('#video2')[0].play();
-                }
-            });
-        });
-    </script>
+   
 
 <script>
     $(document).ready(function () {

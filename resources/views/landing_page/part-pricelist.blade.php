@@ -109,6 +109,7 @@
     .button-content {
         display: none;
       }
+      
     </style>
     <link rel="stylesheet" href="asset/css/styles.css">
     <section id="home" style="overflow: hidden;">
@@ -425,20 +426,42 @@
 .img-fluid:hover {
   transform: scale(1.1); /* Membesarkan gambar saat dihover */
 }
+/* .image-container {
+  position: relative;
+  width: 100%;
+  height: 50%
+  padding-top: 75%; 
+}
+
+.image-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; }
+.card1{
+  width: 50%;
+  height: 100%;
+} */
+
+
       </style> 
       <div class="container-xxl" id="kategori1">
         <div class="col">
-          <div class="card">
+          <div class="card card1">
             <div class="card-header">
               <div class="card-body">
                 <a class="mx-2 fw-bold clickable" onclick="showContent('content1'), changeLinkColor(this)">DETAIL</a>
                 <a class="mx-4 fw-bold clickable" onclick="showContent('content2'), changeLinkColor(this)">KOMPARASI</a>
                 <hr>
-                <div class="card-title">
+                <div class="card-title card1">
                   <div id="content1" class="card-text content">
                     <div class="container-fluid">
                       <div class="row">
-                        <div class="col-sm-6 mb-3 mb-sm-0">
+                       
+
+                        <div class="col-sm-6 mb-3 mb-sm-0  image-container">
                           <img src="{{ $data->g1 }}" class="img-fluid w-100" alt="Image 1">
                         </div>
                         <div class="col-sm-6 mb-3 mb-sm-0">

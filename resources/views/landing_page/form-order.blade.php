@@ -746,18 +746,7 @@
 </div>
 
 
-{{-- <script>
-  function tambahSatu() {
-    var inputJumlah = document.getElementById('jumlah');
-    var nilaiJumlah = parseInt(inputJumlah.value);
-    
-    // Tambah 1 ke nilai jumlah
-    nilaiJumlah++;
 
-    // Update nilai input jumlah
-    inputJumlah.value = nilaiJumlah;
-  }
-</script> --}}
 
 <script>
   function tambahSatu(idInput) {

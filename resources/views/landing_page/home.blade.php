@@ -35,7 +35,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-WP6QSF5T');</script>
 <!-- End Google Tag Manager —>
 
-<!-- Google Tag Manager (noscript) -->
+Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WP6QSF5T"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
@@ -56,16 +56,9 @@ fbq('track', 'PageView');
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=1058956608607048&amp;ev=PageView&amp;noscript=1"
 /></noscript>
-<!-- End Meta Pixel Code -->
-
-
 
 <link rel="canonical" href="index.html" />
 
-
-    <!--Style-->
-
-<!--endbuild-->
 <style type='text/css'>
     .embeddedServiceHelpButton .helpButton .uiButton {
        background-color: #cf142B;
@@ -75,7 +68,7 @@ src="https://www.facebook.com/tr?id=1058956608607048&amp;ev=PageView&amp;noscrip
        outline: 1px solid #005290;
    }
 </style>
-<!--js-->
+
 
 <link rel="stylesheet" href="{{asset('asset/css/reset.css')}}" preload>
 <link rel="stylesheet" href="{{asset('asset/css/milligram.css')}}" preload>
@@ -84,7 +77,7 @@ src="https://www.facebook.com/tr?id=1058956608607048&amp;ev=PageView&amp;noscrip
 <script async type="text/javascript" src="{{asset('asset/js/app.js')}}"></script>
 
 <link rel="icon" type="image/png" href="{{asset('asset/cfind/source/images/rathen.png')}}" sizes="32x32">
-<!--endbuild-->
+
 
 </head>
 <body>
@@ -92,22 +85,26 @@ src="https://www.facebook.com/tr?id=1058956608607048&amp;ev=PageView&amp;noscrip
         a:hover{
             color: red;
         },
+
+        @media (max-width: 575.98px) {
+            
+        }
+        
+
     </style>
 <section style="overflow: hidden;">
     <section class="main-banner">
         <div class="main-banner__logo">
             <img src="asset/cfind/source/images/rathen.png" class="rounded mx-auto d-block" alt="">
         </div>
-        {{--  --}}
+      
         <div class="main-banner__cekresi">
             <div class="main-banner__cekresi--list cek-lacak">
                 <a class="form button-search"  href="{{ url('page-costum') }}" style="margin-left:66px; margin-top:15px">
                     <i><img src="{{asset('asset/images/icon baju - biru.png')}}" style="width : 100%;"></i>
                     <div class="input-box" >
                         <h5 class="item-center jersey">CUSTOM JERSEY</h5>
-                        {{-- <input type="text" placeholder="Masukkan nomor pesanan" name="pesanan" required> --}}
-                        {{-- <input type="submit" class="button-search" placeholder="COSTUM JARSEY"> --}}
-                        {{-- <small>*Beri tanda koma jika lebih dari 1 resi</small> --}}
+             
                     </div>
                 </a>
             </div>

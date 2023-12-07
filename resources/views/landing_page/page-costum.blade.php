@@ -1,6 +1,7 @@
 @extends('layout.landingpage')
 
 @section('content')
+{{-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> --}}
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <link rel="stylesheet" href="asset/css/styles.css">
 <section id="home" class="section-home" style="overflow: hidden;">
@@ -11,138 +12,60 @@
             </div>
 
             <style>
-                @media (max-width: 350px) {
-                    .ip {
-                        font-size: 8px;
-                    }
-                    .teks {
-                        /* margin-top: 4px; */
-                        font-size: 12px;
-                        margin-top: 50px;
-                    }
+                .teks{
+                    font-size: 12px
                 }
-                @media (max-width: 355px) {
-                    .ip {
-                        font-size: 8px;
-                    }
+                @media (min-width: 350.98px) { 
                     .teks {
-                        font-size: 12px;
-                        margin-top: 60px;
+                        background-color: red;
                     }
-                }
-                @media (max-width: 360px) {
-                    .ip {
-                        font-size: 8px;
-                    }
-                    .teks {
-                        font-size: 12px;
-                        margin-top: 65px;
-                    }
-                }
-                @media (max-width: 365px) {
-                    .teks {
-                        font-size: 12px;
-                        margin-top: 75px;
-                    }
-                }
-                @media (max-width: 370px) {
-                    .ip {
-                        font-size: 8px;
-                    }
-                    .teks {
-                        font-size: 12px;
-                        margin-top: 80px;
-                    }
-                }
-                @media (max-width: 375px) {
-                    .ip {
-                        font-size: 8px;
-                    }
-                    .teks {
-                        font-size: 12px;
-                        margin-top: 85px;
-                    }
-                }
-                @media (max-width: 380px) {
-                    .ip {
-                        font-size: 8px;
-                    }
-                    .teks {
-                        font-size: 12px;
-                        margin-top: 90px;
-                    }
-                }
-                @media (max-width: 385px) {
-                    .ip {
-                        font-size: 8px;
-                    }
-                    .teks {
-                        font-size: 12px;
-                        margin-top: 95px;
-                    }
-                }
-                @media (max-width: 390px) {
-                    .ip {
-                        font-size: 8px;
-                    }
-                    .teks {
-                        font-size: 12px;
-                        margin-top: 100px;
-                    }
-                }
-                @media (max-width: 395px) {
-                    .ip {
-                        font-size: 8px;
-                    }
-                    .teks {
-                        font-size: 12px;
-                        margin-top: 105px;
-                    }
-                }
-                @media (max-width: 400px) {
-                    .ip {
-                        font-size: 8px;
-                    }
-                    .teks {
-                        font-size: 12px;
-                        margin-top: 115px;
-                    }
-                }
-                @media (max-width: 430px) {
-                    .ip {
-                        font-size: 8px;
-                    }
-                    .teks {
-                        font-size: 12px;
-                        margin-top: 120px;
-                    }
-                }
-                @media (max-width: 460px) {
-                    .ip {
-                        font-size: 8px;
-                    }
-                    .teks {
-                        font-size: 14px;
-                        margin-top: 125px;
-                    }
-                }
-                @media (max-width: 575.98px) { 
-                    .teks {
-                        margin-top: 50%;
+                    .carousel-about{
+                        width: 100% !important;
+                        height: 400px;
+                        background-color: yellow;
+
                     }
                  }
-                @media (max-width: 767.98px) { 
+                @media (min-width: 575.98px) { 
                     .teks {
-                        margin-top: 50%;
+                        background-color: red;
+                    }
+                    .carousel-about{
+                        width: 100% !important;
+                        height: 500px;
+                        background-color: yellow;
+
+                    }
                  }
+                @media (min-width: 767.98px) { 
+                    .teks {
+                        background-color: green;
+                    }
+                    .carousel-about{
+                        width: 100% !important;
+                        height: 500px;
+                        background-color: gray;
+
+                    }
                 }
                 @media (max-width: 991.98px) { 
                     .teks {
-                        margin-top: 62%;
+                        margin-top: 80%;
                  }
                 }
-                /* @media (max-width: 1199.98px) { ... }
-                @media (max-width: 1399.98px) { ... } */
+                @media (max-width: 1199.98px) { 
+                    .teks {
+                        margin-top: 10px;
+                 }
+                 }
+                @media (max-width: 1399.98px) { 
+                    .teks {
+                        margin-top: 4px;
+                        color: red;
+
+                 }
+                 }
+                /* new */
             </style>
             
         <div class="main-banner__cekresi">
@@ -205,14 +128,14 @@
     <div class="container mb-4 pb-4 ">
         <div class="row">
             {{-- <div class="col-lg-3"></div> --}}
-            <div class="col-lg-6">
+            <div class="col-lg-6 carousel-about">
 
                 <div id="carouselExample" class="carousel slide w-100 slider" data-ride="carousel">
                     <div class="carousel-inner">
                         
                         <div class="carousel-item active">
                             <img src="{{asset('asset/images/swiss.jpg')}}" class="d-block  w-100 img-fluid"  alt="swiss">
-                            
+                              
                             
                         </div>
                         <div class="carousel-item">
@@ -248,8 +171,8 @@
                     </button>
                 </div>
             </div>
-            <div class="col-lg-6 about teks" style="font-family: Montheavy; color: rgba(0, 0, 0, 0.8);">
-                <p class=" text-justify mb-4" >RATHEN merupakan sportwears brand yang berasal dari Bogor, Indonesia. Memulai industri sportwears pada tahun 2014 dengan berfokus pada pembuatan custom jersey sepakbola atau futsal. Berbagai jenis tim, baik dari level korporasi, akademisi, komunitas sepakbola, hingga tim liga futsal profesional telah menjadi bagian perjalanan manis rathen di dunia industri sportwear.</p>
+            <div class="col-lg-6 teks" style="font-family: Montheavy; color: rgba(0, 0, 0, 0.8);">
+                <p class=" text-justify" >RATHEN merupakan sportwears brand yang berasal dari Bogor, Indonesia. Memulai industri sportwears pada tahun 2014 dengan berfokus pada pembuatan custom jersey sepakbola atau futsal. Berbagai jenis tim, baik dari level korporasi, akademisi, komunitas sepakbola, hingga tim liga futsal profesional telah menjadi bagian perjalanan manis rathen di dunia industri sportwear.</p>
                 <p class=" text-justify mb-4">Hingga akhirnya, Pada tahun 2016, RATHEN dipercaya menjadi penyedia jersey latihan tim nasional Futsal Indonesia. 
                 </p>
                 <p class=" text-justify mb-4">Tahun 2020 menjadi langkah awal RATHEN menembus pasar Internasional. Dimulai dari negara di kawasan Asia seperti Timor Leste, bergerak perlahan ke Malaysia, hingga akhirnya Korea Selatan.</p>

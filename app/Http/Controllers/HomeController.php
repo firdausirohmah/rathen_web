@@ -57,38 +57,100 @@ class HomeController extends Controller
     public function priceList($kd_part){
         $jsonData = [
             'menu1' => [
-                'desc-1' => '<h6>TYPE KUALITAS : STADIUM Version</h6>
-                <p>Kategori : Non - Print</p>
-                <p>Harga : IDR 149,900 / pcs</p>
-                <p>Minimum Order : 12 pcs</p>
+                'non-print' => "TYPE KUALITAS : STADIUM Version
+                Kategori : Non - Print
+                Harga : IDR 149,900 / pcs
+                Minimum Order : 12 pcs
                 
-                <b>Deksripsi:</b>
-                <p>- Bahan warna solid non-printing (bisa kombinasi warna)</p>
-                <p>- Logo R polyflex</p>
-                <p>- Logo tim Printable / DTF</p>
-                <p>- FREE tulisan dada 1 baris</p>
-                <p>- Authentic R DTF</p>
-                <p>- Name + number polyflex</p>
-                <p>- Bahan Celana solid</p>
-                <p>- Nomor celana polyflex</p>',
-                'desc-2' => 'asset/images/price-list/detail/Nonprint-1.jpg',
-                'desc-3' => 'asset/images/price-list/detail/Nonprint-1.jpg',
-                'desc-4' => 'asset/images/price-list/detail/Nonprint-1.jpg',
-                'desc-5' => 'asset/images/price-list/detail/Nonprint-1.jpg',
-            ],
-            
-            'menu2' => [
-                'desc' => 'Menu 1',
-                'content' => 'Ini adalah konten untuk Menu 1.'
+                Deksripsi:
+                - Bahan warna solid non-printing
+                  (bisa kombinasi warna)
+                - Logo R polyflex
+                - Logo tim Printable / DTF
+                - FREE tulisan dada 1 baris
+                - Authentic R DTF
+                - Name + number polyflex
+                - Bahan Celana solid
+                - Nomor celana polyflex\n.",
+                
+                'half-print' => "TYPE KUALITAS : STADIUM Version
+                Kategori : Half - Print
+                Harga : IDR 174,900 / pcs
+                Minimum Order : 12 pcs
+                
+                Deksripsi:
+                - Badan depan motif printing
+                - Lengan dan badan belakang bahan solid
+                - Logo dan sponsor depan printing
+                - Logo tim printing/ DTF
+                - Authentic R DTF
+                - Name + number polyflex
+                - Bahan Celana solid
+                - Nomor celana polyflex\n",
+                'full-print' => "TYPE KUALITAS : STADIUM Version
+                Kategori : Full - Print
+                Harga : IDR 199,900 / pcs
+                Minimum Order : 12 pcs
+                
+                Deksripsi:
+                - Badan depan, belakang, dan tangan motif printing
+                - Logo R printing / polyflex
+                - Logo tim printing / DTF
+                - Sponsor set printing
+                - Authentic R DTF
+                - Name + number printing
+                - Bahan Celana solid
+                - Nomor celana polyflex\n",
+                'pro' =>  "TYPE KUALITAS : PRO Version
+                Harga : IDR 299,900 / pcs
+                Minimum Order : 24 pcs
+                
+                Deksripsi:
+                - Bahan : VAPORKNIT
+                  (jacquard fabric)
+                - Badan depan, belakang, dan
+                  tangan motif printing
+                - Logo R 3D Screen print
+                - Logo tim 3D TPU
+                  (>50 pcs 3D rubber)
+                - Authentic R 3D Screen print
+                - Sponsor set depan printing
+                - Name + number bisa printing
+                - Bahan Celana solid
+                - Nomor celana polyflex
+                - FREE nama tim di celana\n",
+                'pro-plus' => "TYPE KUALITAS : PRO+ Version
+                Harga : IDR 399,900 / pcs
+                Minimum Order : 24 pcs
+                
+                Deksripsi:
+                - Bahan : MOVINGKNIT
+                  (single knit jacquard tech)
+                - Badan depan, belakang, dan
+                  tangan motif printing
+                - Logo R 3D Shape
+                - Logo tim 3D Rubber
+                  (>50 pcs 3D rubber on tatami)
+                - Premium authentic R
+                  (3D Rubber on tatami)
+                - Fitur LASER-CUT air circulation - Sponsor set depan printing
+                - Name + number bisa printing /
+                  polyflex 1 layer warna
+                - Bahan Celana solid
+                - Nomor celana polyflex
+                - FREE nama tim di celana
+                - FREE logo tim 3D di celana\n",
             ],
             // Tambahkan data untuk menu lainnya
         ];
+        // dd($jsonData);
+        // dd($jsonData['menu1']['desc-1']);
         $data = DB::table('tbl_part')->where('kd_part', $kd_part)->get();
         // dd($data);
         foreach ($data as $key) {
             return view ('landing_page.part-pricelist',[
                 'data' =>$key,
-                compact('jsonData'),
+                'jsonData' => $jsonData,
             ]);
 
         }

@@ -87,6 +87,7 @@ class HomeController extends Controller
                 - Name + number polyflex
                 - Bahan Celana solid
                 - Nomor celana polyflex\n",
+               
                 'full-print' => "TYPE KUALITAS : STADIUM Version
                 Kategori : Full - Print
                 Harga : IDR 199,900 / pcs
@@ -101,6 +102,7 @@ class HomeController extends Controller
                 - Name + number printing
                 - Bahan Celana solid
                 - Nomor celana polyflex\n",
+                
                 'pro' =>  "TYPE KUALITAS : PRO Version
                 Harga : IDR 299,900 / pcs
                 Minimum Order : 24 pcs
@@ -119,6 +121,7 @@ class HomeController extends Controller
                 - Bahan Celana solid
                 - Nomor celana polyflex
                 - FREE nama tim di celana\n",
+                
                 'pro-plus' => "TYPE KUALITAS : PRO+ Version
                 Harga : IDR 399,900 / pcs
                 Minimum Order : 24 pcs

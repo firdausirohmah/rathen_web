@@ -37,17 +37,10 @@
                     } .img-carousel{
                         padding-bottom: 10px;
                     }
-=======
-                    font-size: 12px
->>>>>>> e1e9f2a809a11192c61dc431d3e5e9cf6fa611c0
                 }
                 @media screen and (max-width: 350.98px)  { 
                     .teks {
-<<<<<<< HEAD
                         margin-top: 10px;
-=======
-                        background-color: red;
->>>>>>> e1e9f2a809a11192c61dc431d3e5e9cf6fa611c0
                     }
                     .carousel-about{
                         width: 100% !important;
@@ -135,7 +128,6 @@
 
                  }
                  }
->>>>>>> e1e9f2a809a11192c61dc431d3e5e9cf6fa611c0
                 /* new */
             </style>
             

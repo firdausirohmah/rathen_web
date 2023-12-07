@@ -1,6 +1,7 @@
 @extends('layout.landingpage')
 
 @section('content')
+{{-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> --}}
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <link rel="stylesheet" href="asset/css/styles.css">
 <section id="home" class="section-home" style="overflow: hidden;">
@@ -12,6 +13,7 @@
 
             <style>
                 .teks{
+<<<<<<< HEAD
                     font-size: 12px;
                     margin-top: 0px;
                 }
@@ -29,128 +31,72 @@
                     .teks {
                         margin-top: 0px;
                     }
+=======
+                    font-size: 12px
+>>>>>>> e1e9f2a809a11192c61dc431d3e5e9cf6fa611c0
                 }
-                @media (max-width: 355px) {
-                    .ip {
-                        font-size: 8px;
-                    }
+                @media (min-width: 350.98px) { 
                     .teks {
+<<<<<<< HEAD
                         margin-top: 10px;
+=======
+                        background-color: red;
+>>>>>>> e1e9f2a809a11192c61dc431d3e5e9cf6fa611c0
                     }
-                }
-                @media (max-width: 360px) {
-                    .ip {
-                        font-size: 8px;
-                    }
-                    .teks {
-                        font-size: 12px;
-                        margin-top: 65px;
-                    }
-                }
-                @media (max-width: 365px) {
-                    .teks {
-                        font-size: 12px;
-                        margin-top: 75px;
-                    }
-                }
-                @media (max-width: 370px) {
-                    .ip {
-                        font-size: 8px;
-                    }
-                    .teks {
-                        font-size: 12px;
-                        margin-top: 80px;
-                    }
-                }
-                @media (max-width: 375px) {
-                    .ip {
-                        font-size: 8px;
-                    }
-                    .teks {
-                        font-size: 12px;
-                        margin-top: 85px;
-                    }
-                }
-                @media (max-width: 380px) {
-                    .ip {
-                        font-size: 8px;
-                    }
-                    .teks {
-                        font-size: 12px;
-                        margin-top: 90px;
-                    }
-                }
-                @media (max-width: 385px) {
-                    .ip {
-                        font-size: 8px;
-                    }
-                    .teks {
-                        font-size: 12px;
-                        margin-top: 95px;
-                    }
-                }
-                @media (max-width: 390px) {
-                    .ip {
-                        font-size: 8px;
-                    }
-                    .teks {
-                        font-size: 12px;
-                        margin-top: 100px;
-                    }
-                }
-                @media (max-width: 395px) {
-                    .ip {
-                        font-size: 8px;
-                    }
-                    .teks {
-                        font-size: 12px;
-                        margin-top: 105px;
-                    }
-                }
-                @media (max-width: 400px) {
-                    .ip {
-                        font-size: 8px;
-                    }
-                    .teks {
-                        font-size: 12px;
-                        margin-top: 115px;
-                    }
-                }
-                @media (max-width: 430px) {
-                    .ip {
-                        font-size: 8px;
-                    }
-                    .teks {
-                        font-size: 12px;
-                        margin-top: 120px;
-                    }
-                }
-                @media (max-width: 460px) {
-                    .ip {
-                        font-size: 8px;
-                    }
-                    .teks {
-                        font-size: 14px;
-                        margin-top: 125px;
-                    }
-                }
-                @media (max-width: 575.98px) { 
-                    .teks {
-                        margin-top: 50%;
+                    .carousel-about{
+                        width: 100% !important;
+                        height: 400px;
+                        background-color: yellow;
+
                     }
                  }
-                @media (max-width: 767.98px) { 
+                @media (min-width: 575.98px) { 
                     .teks {
-                        margin-top: 50%;
+                        background-color: red;
+                    }
+                    .carousel-about{
+                        width: 100% !important;
+                        height: 500px;
+                        background-color: yellow;
+
+                    }
                  }
+                @media (min-width: 767.98px) { 
+                    .teks {
+                        background-color: green;
+                    }
+                    .carousel-about{
+                        width: 100% !important;
+                        height: 500px;
+                        background-color: gray;
+
+                    }
                 }
                 @media (max-width: 991.98px) { 
                     .teks {
+<<<<<<< HEAD
                         margin-top:5%;
                  }
                 }
                 /* @media (max-width: 1199.98px) { ... }
                 @media (max-width: 1399.98px) { ... } */
+=======
+                        margin-top: 80%;
+                 }
+                }
+                @media (max-width: 1199.98px) { 
+                    .teks {
+                        margin-top: 10px;
+                 }
+                 }
+                @media (max-width: 1399.98px) { 
+                    .teks {
+                        margin-top: 4px;
+                        color: red;
+
+                 }
+                 }
+>>>>>>> e1e9f2a809a11192c61dc431d3e5e9cf6fa611c0
                 /* new */
             </style>
             
@@ -203,14 +149,14 @@
     <div class="container mb-4 pb-4 ">
         <div class="row">
             {{-- <div class="col-lg-3"></div> --}}
-            <div class="col-lg-6">
+            <div class="col-lg-6 carousel-about">
 
                 <div id="carouselExample" class="carousel slide w-100 slider" data-ride="carousel">
                     <div class="carousel-inner">
                         
                         <div class="carousel-item active">
                             <img src="{{asset('asset/images/swiss.jpg')}}" class="d-block  w-100 img-fluid"  alt="swiss">
-                            
+                              
                             
                         </div>
                         <div class="carousel-item">

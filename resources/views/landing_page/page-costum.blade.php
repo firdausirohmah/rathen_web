@@ -21,6 +21,13 @@
                 .h-image{
                     height: 30%;
                 }
+                .store{
+                    text-align: center; 
+                    align-items: center; 
+                    justify-content: center; text-align:center; 
+                    font-weight: bold;
+                    margin-top:4px;
+                }
                 @media (min-width: 280.98px) { 
                     .teks {
                         font-size: 12px;
@@ -38,10 +45,32 @@
                         padding-bottom: 20px;
                     }
                  }
-                @media (min-width: 575.98px) { 
-                    .teks {
-                    } 
-                 }
+                 @media screen and (max-width: 579.98px) {
+                    .teks{
+                        margin-top: 80%;
+                        padding-top: 4px;                        
+                        font-size: 14px;
+
+                    }
+                    .location-crs{
+                        width: 100%;
+                        height: 30%;
+                        /* height: 100vh; */
+                    }
+                    .card_location{
+                        width: 100%;
+                        height: 20vh;
+                    }
+                    .btn-mid{
+                        background-color: #000;
+                        width: 50px;
+                        height: 50px;
+                    }
+                    .cstore{
+                        /* padding-top: 5%; */
+                        margin-top: 2px;
+                    }
+                }
                 @media (min-width: 767.98px) { 
                     .teks {
                     } 
@@ -57,6 +86,19 @@
                         width: 100%;
                         height: 30%;
                         /* height: 100vh; */
+                    }
+                    .card_location{
+                        width: 100%;
+                        height: 40vh;
+                    }
+                    .btn-mid{
+                        background-color: #000;
+                        width: 50px;
+                        height: 50px;
+                    }
+                    .cstore{
+                        padding-top: 20%;
+                        margin-top: 20%;
                     }
                 }
                 @media (max-width: 991.98px) { 
@@ -622,10 +664,7 @@
             position: center;
             font-size: 12px;
         }
-        .card_location{
-            width: 100%;
-            /* height: 100vh; */
-        }
+        
         .img_location{
             width: 100%;
             height: 100%;
@@ -638,12 +677,12 @@
         </div>
     <div class="container text-center">
         <div class="row ">
-            <div class="col-lg-6 location-crs">
-                <div class="img_location">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.4343833806684!2d106.77431907418564!3d-6.5928088934009095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c57a439b19c9%3A0x4a05cc1ee48848ba!2sRATHEN%20Store%20-%20Sportwears%20Outlet!5e0!3m2!1sid!2sid!4v1700127350226!5m2!1sid!2sid" allowfullscreen class="w-100"></iframe>
+            <div class="col-lg-6 card_location mt-4">
+                <div class="img_location ">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.4343833806684!2d106.77431907418564!3d-6.5928088934009095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c57a439b19c9%3A0x4a05cc1ee48848ba!2sRATHEN%20Store%20-%20Sportwears%20Outlet!5e0!3m2!1sid!2sid!4v1700127350226!5m2!1sid!2sid" allowfullscreen class="d-block img_location"></iframe>
                 </div>
             </div>
-            <div class="col-lg-6 location-crs">
+            <div class="col-lg-6 card_location mt-4">
         
                 <div id="carouselExample" class="img_location carousel slide"  data-ride="carousel">
                     <div class="carousel-inner ">
@@ -672,7 +711,7 @@
     </div>
     
     <br>
-    <div class="container" style="text-align: center; align-items: center; justify-content: center; text-align: center; font-weight: bold;">
+    <div class="container cstore">
          <div class="row">
     
             <div class="col-lg-12" >
@@ -706,7 +745,7 @@
             background-repeat: no-repeat;
             background-size: cover;
             width: 100%;
-            height: 120vh; 
+            height: 40%; 
 
         }
         .content {

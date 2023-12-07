@@ -109,6 +109,20 @@
     .button-content {
         display: none;
       }
+
+      .carousel-indicators button{
+        width: 5px !important;
+        height: 5px !important;
+      }
+
+      .carousel-indicators button.active{
+        width: 7px !important;
+        height: 7px !important;
+      }
+
+      .carousel-indicators{
+        align-items: center;
+      }
       
     </style>
     <link rel="stylesheet" href="asset/css/styles.css">
@@ -132,10 +146,10 @@
         <div class="row">
             <div class="col-lg-3">
               <div class="card">
-                <div class="card-body">
+                <div class="card-body overflow-hidden">
                 {{-- <img src="https://www.shutterstock.com/image-vector/adventure-offroad-4x4-badges-logo-260nw-2041894727.jpg" width="90%" class="img-fluid rounded-top mx-auto my-auto" alt=""> --}}
                 <div id="imageSlider" class="carousel slide mx-auto" data-bs-interval="false">
-                  <div class="carousel-inner">
+                  <div class="carousel-inner mb-3">
                     <div class="carousel-item active">
                       <img src="{{ $data->g1}}" class="img-thumbnail" alt="Image 1">
                     </div>
@@ -161,70 +175,77 @@
                       <img src="{{ $data->g8}}" class="img-thumbnail" alt="Image 8">
                     </div>
                   </div>
+
+                  <button id="btnPrev" class="carousel-control-prev" type="button" data-bs-target="#imageSlider" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button id="btnNext" class="carousel-control-next" type="button" data-bs-target="#imageSlider" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+
+                  <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#imageSlider" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">
+                    </button>
+                    <button type="button" data-bs-target="#imageSlider" data-bs-slide-to="1" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#imageSlider" data-bs-slide-to="2" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#imageSlider" data-bs-slide-to="3" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#imageSlider" data-bs-slide-to="4" aria-label="Slide 4"></button>
+                    <button type="button" data-bs-target="#imageSlider" data-bs-slide-to="5" aria-label="Slide 5"></button>
+                    <button type="button" data-bs-target="#imageSlider" data-bs-slide-to="6" aria-label="Slide 6"></button>
+                    <button type="button" data-bs-target="#imageSlider" data-bs-slide-to="7" aria-label="Slide 7"></button>
+                  </div>
+
                 </div>
                 <div class="container">
-                  <div class="row">
-                    <div class="col">
-                      <div class="thumbnail selected-thumbnail" onclick="changeSlide(0)">
+                  <div class="row flex-nowrap overflow-x-scroll">
+                    <div class="col" type="button" data-bs-target="#imageSlider" data-bs-slide-to="0" aria-label="Slide 0">
+                      <div class="thumbnail selected-thumbnail">
                         <img src="{{ $data->g1}}" alt="Thumbnail 1">
                       </div>
                     </div>
-                    <div class="col">
-                      <div class="thumbnail" onclick="changeSlide(1)">
+                    <div class="col" type="button" data-bs-target="#imageSlider" data-bs-slide-to="1" aria-label="Slide 1">
+                      <div class="thumbnail">
                         <img src="{{ $data->g2}}" alt="Thumbnail 2">
                       </div>
                     </div>
-                    <div class="col">
-                      <div class="thumbnail" onclick="changeSlide(2)">
+                    <div class="col" type="button" data-bs-target="#imageSlider" data-bs-slide-to="2" aria-label="Slide 2">
+                      <div class="thumbnail">
                         <img src="{{ $data->g3}}" alt="Thumbnail 3">
                       </div>
                     </div>
-                    <div class="col">
-                      <div class="thumbnail" onclick="changeSlide(3)">
+                    <div class="col" type="button" data-bs-target="#imageSlider" data-bs-slide-to="3" aria-label="Slide 3">
+                      <div class="thumbnail">
                         <img src="{{ $data->g4}}" alt="Thumbnail 4">
                       </div>
                     </div>
-                    <div class="col">
-                      <div class="thumbnail" onclick="changeSlide(4)">
+                    <div class="col" type="button" data-bs-target="#imageSlider" data-bs-slide-to="4" aria-label="Slide 4">
+                      <div class="thumbnail">
                         <img src="{{ $data->g5}}" alt="Thumbnail 4">
                       </div>
                     </div>
-                    <div class="col">
-                      <div class="thumbnail" onclick="changeSlide(5)">
+                    <div class="col" type="button" data-bs-target="#imageSlider" data-bs-slide-to="5" aria-label="Slide 5">
+                      <div class="thumbnail">
                         <img src="{{ $data->g6}}" alt="Thumbnail 4">
                       </div>
                     </div>
-                    <div class="col">
-                      <div class="thumbnail" onclick="changeSlide(6)">
+                    <div class="col" type="button" data-bs-target="#imageSlider" data-bs-slide-to="6" aria-label="Slide 6">
+                      <div class="thumbnail">
                         <img src="{{ $data->g7}}" alt="Thumbnail 4">
                       </div>
                     </div>
-                    <div class="col">
-                      <div class="thumbnail" onclick="changeSlide(7)">
+                    <div class="col" type="button" data-bs-target="#imageSlider" data-bs-slide-to="7" aria-label="Slide 7">
+                      <div class="thumbnail">
                         <img src="{{ $data->g8}}" alt="Thumbnail 4">
                       </div>
                     </div>
                   </div>
-                </div>
+                  </div>
                 </div>
               </div>
             </div>
-            <script>
-              // Fungsi untuk mengubah slide berdasarkan thumbnail yang dipilih
-              function changeSlide(index) {
-                document.querySelector('#imageSlider').querySelector('.carousel-inner').children[index].classList.add('active');
-                document.querySelector('#imageSlider').querySelector('.carousel-inner').children[(index + 1) % 3].classList.remove('active');
-                document.querySelector('#imageSlider').querySelector('.carousel-inner').children[(index + 2) % 3].classList.remove('active');
-            
-                // Menghapus kelas 'selected-thumbnail' dari semua thumbnail
-                document.querySelectorAll('.thumbnail').forEach(function(thumbnail) {
-                  thumbnail.classList.remove('selected-thumbnail');
-                });
-            
-                // Menambahkan kelas 'selected-thumbnail' ke thumbnail yang dipilih
-                document.querySelector('.thumbnail-container').querySelectorAll('.thumbnail')[index].classList.add('selected-thumbnail');
-              }
-            </script>
+
             <div class="col-lg-6 " style="font-weight: 200; padding-left:10px;">
                 <div class="card">
                     <div class="card-body">

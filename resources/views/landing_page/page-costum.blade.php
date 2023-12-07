@@ -13,27 +13,34 @@
 
             <style>
                 .teks{
+<<<<<<< HEAD
                     font-size: 12px;
                     margin-top: 0px;
                 }
-                @media (max-width: 350px) {
-                    .csabout {
-                        width: 100%; /* Lebar gambar sesuai dengan lebar kontennya */
-                        height: 100%; /* Mempertahankan aspek rasio gambar */
-                        max-width: 100%; /* Batas maksimum lebar gambar */
-                        display: block; /* Menghilangkan whitespace di sekitar gambar */
-                        margin: 0 auto; /* Pusatkan gambar di dalam kontennya jika perlu */
-                    }
-                    .ip {
-                        font-size: 8px;
-                    }
+                .h-carousel{
+                    height: 30%;
+                }
+                .h-image{
+                    height: 30%;
+                }
+                @media (min-width: 280.98px) { 
                     .teks {
-                        margin-top: 0px;
+                        font-size: 12px;
+
+                    } .img-carousel{
+                        padding-bottom: 10px;
                     }
+=======
+                    font-size: 12px
+>>>>>>> e1e9f2a809a11192c61dc431d3e5e9cf6fa611c0
                 }
                 @media (min-width: 350.98px) { 
                     .teks {
+<<<<<<< HEAD
                         margin-top: 10px;
+=======
+                        background-color: red;
+>>>>>>> e1e9f2a809a11192c61dc431d3e5e9cf6fa611c0
                     }
                     .carousel-about{
                         width: 100% !important;
@@ -44,33 +51,50 @@
                  }
                 @media (min-width: 575.98px) { 
                     .teks {
-                        background-color: red;
-                    }
-                    .carousel-about{
-                        width: 100% !important;
-                        height: 500px;
-                        background-color: yellow;
-
-                    }
+                    } 
                  }
                 @media (min-width: 767.98px) { 
                     .teks {
-                        background-color: green;
-                    }
-                    .carousel-about{
-                        width: 100% !important;
-                        height: 500px;
-                        background-color: gray;
+                    } 
+                }
+                @media screen and (max-width: 800px) {
+                    .teks{
+                        margin-top: 80%;
+                        padding-top: 4px;                        
+                        font-size: 14px;
 
+                    }
+                    .location-crs{
+                        width: 100%;
+                        height: 30%;
+                        /* height: 100vh; */
                     }
                 }
                 @media (max-width: 991.98px) { 
                     .teks {
+<<<<<<< HEAD
                         margin-top:5%;
                  }
                 }
                 /* @media (max-width: 1199.98px) { ... }
                 @media (max-width: 1399.98px) { ... } */
+=======
+                        margin-top: 80%;
+                 }
+                }
+                @media (max-width: 1199.98px) { 
+                    .teks {
+                        margin-top: 10px;
+                 }
+                 }
+                @media (max-width: 1399.98px) { 
+                    .teks {
+                        margin-top: 4px;
+                        color: red;
+
+                 }
+                 }
+>>>>>>> e1e9f2a809a11192c61dc431d3e5e9cf6fa611c0
                 /* new */
             </style>
             
@@ -109,7 +133,18 @@
 </section>
 
 <section id="about" class="section-about">
-   
+    <style>
+        @media  and (max-width: 350px) {
+         .csabout {
+            width: 100%; /* Lebar gambar sesuai dengan lebar kontennya */
+            height: 100%; /* Mempertahankan aspek rasio gambar */
+            max-width: 100%; /* Batas maksimum lebar gambar */
+            display: block; /* Menghilangkan whitespace di sekitar gambar */
+            margin: 0 auto; /* Pusatkan gambar di dalam kontennya jika perlu */
+            }
+              
+  }
+    </style>
     <section class="py-5 py-xl-8">
         <div class="container">
           <div class="row justify-content-md-center">
@@ -123,26 +158,19 @@
     <div class="container mb-4 pb-4 ">
         <div class="row">
             {{-- <div class="col-lg-3"></div> --}}
-            <div class="col-lg-6 carousel-about">
+            <div class="col-lg-6">
 
-                <div id="carouselExample" class="carousel slide w-100 slider" data-ride="carousel">
-                    <div class="carousel-inner">
-                        
-                        <div class="carousel-item active">
-                            <img src="{{asset('asset/images/swiss.jpg')}}" class="d-block  w-100 img-fluid"  alt="swiss">
-                              
-                            
+                <div id="carouselExample" class="carousel slide w-100 h-carousel slider" data-ride="carousel">
+                    <div class="carousel-inner"> 
+                        <div class="carousel-item img-carousel active">
+                            <img src="{{asset('asset/images/swiss.jpg')}}" class="d-block  w-100 img-fluid"  alt="swiss"> 
                         </div>
                         <div class="carousel-item">
-                            <img src=" {{asset('asset/images/top.jpg')}}" class="d-block w-100"   alt="top">
-                           
+                            <img src=" {{asset('asset/images/top.jpg')}}" class="d-block w-100"   alt="top"> 
                         </div>
-                        <div class="carousel-item">
-                            <!-- Gunakan tag video untuk video -->
-                            <video id="video1" class="d-block w-50 csabout" controls autoplay muted>
-                                <!-- Sediakan sumber video -->
-                                <source src="{{asset('asset/images/video1.mp4')}}" type="video/mp4">
-                                 
+                        <div class="carousel-item"> 
+                            <video id="video1" class="d-block w-50 csabout" controls autoplay muted> 
+                                <source src="{{asset('asset/images/video1.mp4')}}" type="video/mp4"> 
                                 Your browser does not support the video tag.
                             </video>
                         </div>
@@ -611,24 +639,34 @@
             position: center;
             font-size: 12px;
         }
+        .card_location{
+            width: 100%;
+            /* height: 100vh; */
+        }
+        .img_location{
+            width: 100%;
+            height: 100%;
+        }
     </style>
     <body>
         <br>
         <div style="font-family: Montheavy; color: black; font-size: 24px; font-weight: bold; margin-bottom: 20px; text-align: center; ">
             LOCATION
         </div>
-    <div class="container text-cente" style="position: center; width: 150vh">
+    <div class="container text-center">
         <div class="row ">
-            <div class="col-lg-6">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.4343833806684!2d106.77431907418564!3d-6.5928088934009095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c57a439b19c9%3A0x4a05cc1ee48848ba!2sRATHEN%20Store%20-%20Sportwears%20Outlet!5e0!3m2!1sid!2sid!4v1700127350226!5m2!1sid!2sid" style="width: 100%; height: 100%; " allowfullscreen class="mx-auto"></iframe>
+            <div class="col-lg-6 location-crs">
+                <div class="img_location">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.4343833806684!2d106.77431907418564!3d-6.5928088934009095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c57a439b19c9%3A0x4a05cc1ee48848ba!2sRATHEN%20Store%20-%20Sportwears%20Outlet!5e0!3m2!1sid!2sid!4v1700127350226!5m2!1sid!2sid" allowfullscreen class="w-100"></iframe>
+                </div>
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-6 location-crs">
         
-                <div id="carouselExample" class="carousel slide w-100" style="width: 100%; height: 100%;" data-ride="carousel">
+                <div id="carouselExample" class="img_location carousel slide"  data-ride="carousel">
                     <div class="carousel-inner ">
                         
                         <div class="carousel-item active">
-                            <img src="{{asset('asset/images/location/f1.JPG')}}" class="d-block w-100" alt="swiss">
+                            <img src="{{asset('asset/images/location/f1.JPG')}}" class="d-block w-100 h-carousel" alt="swiss">
                         </div>
                         <div class="carousel-item">
                             <img src=" {{asset('asset/images/location/F2a.JPG')}}" class="d-block w-100" alt="top">
@@ -683,8 +721,9 @@
         .wp {
             background: url('asset/images/kontak.png') ;
             background-repeat: no-repeat;
-            background-size:cover;
-            height: 120vh   ; 
+            background-size: cover;
+            width: 100%;
+            height: 120vh; 
 
         }
         .content {

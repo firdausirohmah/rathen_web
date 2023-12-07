@@ -46,7 +46,28 @@ class PesananController extends Controller
             'pesanan' => $data,
         ]);
     }
+    // ==========================quotation===================================
+    public function quotation(Request $request)
+    {
+        $nama_pemesaanan = $request->nama_pemesanan;
+        $kontak = $request->kontak;
+        $tanggalSekarang = date("d F Y");
+        $data = DB::table('tbl_step1')
+            ->join('tbl_step2', 'tbl_step1.kd_step2', '=', 'tbl_step2.kd_step2')
+            ->join('tbl_step3', 'tbl_step1.kd_step3', '=', 'tbl_step3.kd_step3')
+            ->select('tbl_step1.*', 'tbl_step2.*', 'tbl_step3.*')
+            ->get();
+        // dd($tanggalSekarang);
+        foreach ($data as $pesanan) {
 
+            return view('landing_page.quotation', [
+                'data' => $pesanan,
+                'nama' => $nama_pemesaanan,
+                'kontak' => $kontak,
+                'tanggal' => $tanggalSekarang,
+            ]);
+        }
+    }
     // ================================ add ==================================
     public function addForm1(Request $request)
     {

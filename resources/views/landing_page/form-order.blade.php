@@ -284,7 +284,29 @@
         </td>
       </tr> --}}
     </table>
+    <div class="container">
+      <div class="row-12">
+        <div class="col-lg-12 mt-4">
+          <h5  class="fw-bold" style="color: red">TOTAL HARGA <span class="mx-5">:</span> IDR <input type="text" class="inpt-harga text-danger fw-bold" name="total_harga" value="124.000" placeholder="124.000"></h5>
+        </div>
+      </div>
+    </div>
+
+    <a type="button"  data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="font-family: Montheavy;  font-size:12px; margin-left:30%; font-weight: bold; font-style: italic;"> Download QUOTATION (.pdf)</a>
+  
+ 
+
+<div class="container">
+  <div class="row">
+    <button type="submit" style="font-family: Montheavy; width:15%" class="btn btn-black mx-4">ORDER </button>
+    </form>
+    <a href="/page-costum" style="font-family: Montheavy; width:15%" class="btn btn-black">CANCEL </a>
   </div>
+</div>
+
+  </div>
+
+  
   <hr>
   <div class="row " style="text-align: left">
     <div class="col-12" style="padding-left: 0; margin-left: 0;"><h4 style="color: #71BF72; text-align:left;">Keterangan Extra:</h4></div>
@@ -730,20 +752,7 @@
 
 
 {{-- ORDER --}}
-<div class="container">
-  <div class="row-12">
-    <div class="col-lg-12 mt-4">
-      <h5  class="fw-bold" style="color: red">TOTAL HARGA <span class="mx-5">:</span> IDR <input type="text" class="inpt-harga text-danger fw-bold" name="total_harga" value="124.000" placeholder="124.000"></h5>
-    </div>
-  </div>
-</div>
-<div class="container">
-  <div class="row">
-    <button type="submit" style="font-family: Montheavy; width:15%" class="btn btn-black mx-4">ORDER </button>
-    </form>
-    <a href="/page-costum" style="font-family: Montheavy; width:15%" class="btn btn-black">CANCEL </a>
-  </div>
-</div>
+
 
 
 
@@ -760,6 +769,29 @@
     inputJumlah.value = nilaiJumlah;
   }
 </script>
-
+ <!-- Modal -->
+ <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form action="{{ route('quotation') }}" method="POST">
+        @csrf
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Masukkan Data</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <label for="" class="subtitle">Nama Pelanggan</label>
+        <input type="text" class="form-control" name="nama_pemesanan">
+        <label for="" class="subtitle">Kontak (Whatsapp)</label>
+        <input type="text" class="form-control" name="kontak"> 
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary">Save changes</button>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>
+{{-- end modal --}}
 
 @endsection

@@ -13,7 +13,9 @@
 
             <style>
                 .teks{
-                    font-size: 14px;
+<<<<<<< HEAD
+                    font-size: 12px;
+                    margin-top: 0px;
                 }
                 .h-carousel{
                     height: 30%;
@@ -35,14 +37,23 @@
                     } .img-carousel{
                         padding-bottom: 10px;
                     }
-                 }
-                
+=======
+                    font-size: 12px
+>>>>>>> e1e9f2a809a11192c61dc431d3e5e9cf6fa611c0
+                }
                 @media (min-width: 350.98px) { 
                     .teks {
-                        font-size: 12px;
+<<<<<<< HEAD
+                        margin-top: 10px;
+=======
+                        background-color: red;
+>>>>>>> e1e9f2a809a11192c61dc431d3e5e9cf6fa611c0
+                    }
+                    .carousel-about{
+                        width: 100% !important;
+                        height: 400px;
+                        background-color: yellow;
 
-                    } .img-carousel{
-                        padding-bottom: 20px;
                     }
                  }
                  @media screen and (max-width: 579.98px) {
@@ -103,23 +114,29 @@
                 }
                 @media (max-width: 991.98px) { 
                     .teks {
+<<<<<<< HEAD
+                        margin-top:5%;
+                 }
+                }
+                /* @media (max-width: 1199.98px) { ... }
+                @media (max-width: 1399.98px) { ... } */
+=======
                         margin-top: 80%;
-                        font-size: 14px;
                  }
                 }
                 @media (max-width: 1199.98px) { 
                     .teks {
-                        font-size: 14px;
                         margin-top: 10px;
                  }
                  }
                 @media (max-width: 1399.98px) { 
                     .teks {
                         margin-top: 4px;
-                        font-size: 14px;
+                        color: red;
 
-                    }
                  }
+                 }
+>>>>>>> e1e9f2a809a11192c61dc431d3e5e9cf6fa611c0
                 /* new */
             </style>
             

@@ -10,15 +10,24 @@
             <img src="{{asset('asset/images/LOGO.png')}}" class="rounded mx-auto d-block" alt="">
             </div>
 
-            {{-- <style>
+            <style>
+                .teks{
+                    font-size: 12px;
+                    margin-top: 0px;
+                }
                 @media (max-width: 350px) {
+                    .csabout {
+                        width: 100%; /* Lebar gambar sesuai dengan lebar kontennya */
+                        height: 100%; /* Mempertahankan aspek rasio gambar */
+                        max-width: 100%; /* Batas maksimum lebar gambar */
+                        display: block; /* Menghilangkan whitespace di sekitar gambar */
+                        margin: 0 auto; /* Pusatkan gambar di dalam kontennya jika perlu */
+                    }
                     .ip {
                         font-size: 8px;
                     }
                     .teks {
-                        /* margin-top: 4px; */
-                        font-size: 12px;
-                        margin-top: 50px;
+                        margin-top: 0px;
                     }
                 }
                 @media (max-width: 355px) {
@@ -26,8 +35,7 @@
                         font-size: 8px;
                     }
                     .teks {
-                        font-size: 12px;
-                        margin-top: 60px;
+                        margin-top: 10px;
                     }
                 }
                 @media (max-width: 360px) {
@@ -126,7 +134,25 @@
                         margin-top: 125px;
                     }
                 }
-            </style> --}}
+                @media (max-width: 575.98px) { 
+                    .teks {
+                        margin-top: 50%;
+                    }
+                 }
+                @media (max-width: 767.98px) { 
+                    .teks {
+                        margin-top: 50%;
+                 }
+                }
+                @media (max-width: 991.98px) { 
+                    .teks {
+                        margin-top:5%;
+                 }
+                }
+                /* @media (max-width: 1199.98px) { ... }
+                @media (max-width: 1399.98px) { ... } */
+                /* new */
+            </style>
             
         <div class="main-banner__cekresi">
             <div class="main-banner__cekresi--list cek-lacak">
@@ -163,18 +189,7 @@
 </section>
 
 <section id="about" class="section-about">
-    <style>
-        @media  and (max-width: 350px) {
-         .csabout {
-            width: 100%; /* Lebar gambar sesuai dengan lebar kontennya */
-            height: 100%; /* Mempertahankan aspek rasio gambar */
-            max-width: 100%; /* Batas maksimum lebar gambar */
-            display: block; /* Menghilangkan whitespace di sekitar gambar */
-            margin: 0 auto; /* Pusatkan gambar di dalam kontennya jika perlu */
-            }
-              
-  }
-    </style>
+   
     <section class="py-5 py-xl-8">
         <div class="container">
           <div class="row justify-content-md-center">
@@ -231,7 +246,7 @@
                     </button>
                 </div>
             </div>
-            <div class="col-lg-6 about teks" style="font-family: Montheavy; color: rgba(0, 0, 0, 0.8);">
+            <div class="col-lg-6 teks" style="font-family: Montheavy; color: rgba(0, 0, 0, 0.8);">
                 <p class=" text-justify mb-4" >RATHEN merupakan sportwears brand yang berasal dari Bogor, Indonesia. Memulai industri sportwears pada tahun 2014 dengan berfokus pada pembuatan custom jersey sepakbola atau futsal. Berbagai jenis tim, baik dari level korporasi, akademisi, komunitas sepakbola, hingga tim liga futsal profesional telah menjadi bagian perjalanan manis rathen di dunia industri sportwear.</p>
                 <p class=" text-justify mb-4">Hingga akhirnya, Pada tahun 2016, RATHEN dipercaya menjadi penyedia jersey latihan tim nasional Futsal Indonesia. 
                 </p>

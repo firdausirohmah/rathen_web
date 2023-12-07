@@ -101,7 +101,7 @@ src="https://www.facebook.com/tr?id=1058956608607048&amp;ev=PageView&amp;noscrip
         </a>
     </div>
     
-    <div class="navbar-main-collapse offcanvas">
+    <div class="navbar-main-collapse offcanvas d-flex align-items-center">
         <div class="offcanvas-overlay"></div>
         <div class="offcanvas-body">
             <ul class="navbar-main-nav">                                     

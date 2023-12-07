@@ -81,18 +81,18 @@
     <div class="container mb-4 pb-4">
         <div class="row">
             {{-- <div class="col-lg-3"></div> --}}
-            <div class="col-lg-6 bg-primary">
+            <div class="col-lg-6">
 
                 <div id="carouselExample" class="carousel slide w-100 " data-ride="carousel">
                     <div class="carousel-inner ">
                         
                         <div class="carousel-item active">
-                            <img src="{{asset('asset/images/swiss.jpg')}}" class="d-block csabout img-fluid" style="" alt="swiss">
+                            <img src="{{asset('asset/images/swiss.jpg')}}" class="d-block csabout w-100 img-fluid" style="" alt="swiss">
                             
                             
                         </div>
                         <div class="carousel-item">
-                            <img src=" {{asset('asset/images/top.jpg')}}" class="d-block csabout" alt="top">
+                            <img src=" {{asset('asset/images/top.jpg')}}" class="d-block w-100 csabout" alt="top">
                            
                         </div>
                         <div class="carousel-item">

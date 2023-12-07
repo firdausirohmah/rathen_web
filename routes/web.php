@@ -20,6 +20,7 @@ use PHPUnit\TextUI\XmlConfiguration\Group;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// Route::get('/buat-deskripsi/{kategori}/{kualitas}', [DeskripsiController::class, 'buatDeskripsi']);
 
 // home
 Route::get('/', function () {

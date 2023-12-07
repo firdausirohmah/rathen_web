@@ -13,6 +13,7 @@
 
             <style>
                 .teks{
+
                     font-size: 12px;
                     margin-top: 0px;
                 }
@@ -36,10 +37,17 @@
                     } .img-carousel{
                         padding-bottom: 10px;
                     }
+=======
+                    font-size: 12px
+>>>>>>> e1e9f2a809a11192c61dc431d3e5e9cf6fa611c0
                 }
                 @media screen and (max-width: 350.98px)  { 
                     .teks {
+<<<<<<< HEAD
                         margin-top: 10px;
+=======
+                        background-color: red;
+>>>>>>> e1e9f2a809a11192c61dc431d3e5e9cf6fa611c0
                     }
                     .carousel-about{
                         width: 100% !important;
@@ -72,8 +80,7 @@
                     
                     .cstore{
                         /* padding-top: 5%; */
-                        margin-top: 30px;
-                        padding-top: 30px;
+                        margin-top: 2px;
                     }
                     .
                     *{
@@ -118,15 +125,18 @@
                 @media (max-width: 1199.98px) { 
                     .teks {
                         margin-top: 10px;
+                        font-size: 15px;
                  }
                  }
                 @media (max-width: 1399.98px) { 
                     .teks {
                         margin-top: 4px;
-                        /* color: red; */
+                        color: red;
 
                  }
-                }
+                 }
+>>>>>>> e1e9f2a809a11192c61dc431d3e5e9cf6fa611c0
+                /* new */
             </style>
             
         <div class="main-banner__cekresi">
@@ -751,7 +761,7 @@
             background-repeat: no-repeat;
             background-size: cover;
             width: 100%;
-            height: 40%; 
+            height: 130vh; 
 
         }
         .content {

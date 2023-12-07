@@ -16,6 +16,7 @@
                         font-size: 8px;
                     }
                     .teks {
+                        /* margin-top: 4px; */
                         font-size: 12px;
                         margin-top: 50px;
                     }
@@ -107,7 +108,7 @@
                         margin-top: 115px;
                     }
                 }
-                @media (max-width: 405px) {
+                @media (max-width: 430px) {
                     .ip {
                         font-size: 8px;
                     }
@@ -116,7 +117,7 @@
                         margin-top: 120px;
                     }
                 }
-                @media (max-width: 410px) {
+                @media (max-width: 460px) {
                     .ip {
                         font-size: 8px;
                     }
@@ -231,7 +232,7 @@
                 </div>
             </div>
             <div class="col-lg-6 about teks" style="font-family: Montheavy; color: rgba(0, 0, 0, 0.8);">
-                <p class=" text-justify mb-4 " >RATHEN merupakan sportwears brand yang berasal dari Bogor, Indonesia. Memulai industri sportwears pada tahun 2014 dengan berfokus pada pembuatan custom jersey sepakbola atau futsal. Berbagai jenis tim, baik dari level korporasi, akademisi, komunitas sepakbola, hingga tim liga futsal profesional telah menjadi bagian perjalanan manis rathen di dunia industri sportwear.</p>
+                <p class=" text-justify mb-4" >RATHEN merupakan sportwears brand yang berasal dari Bogor, Indonesia. Memulai industri sportwears pada tahun 2014 dengan berfokus pada pembuatan custom jersey sepakbola atau futsal. Berbagai jenis tim, baik dari level korporasi, akademisi, komunitas sepakbola, hingga tim liga futsal profesional telah menjadi bagian perjalanan manis rathen di dunia industri sportwear.</p>
                 <p class=" text-justify mb-4">Hingga akhirnya, Pada tahun 2016, RATHEN dipercaya menjadi penyedia jersey latihan tim nasional Futsal Indonesia. 
                 </p>
                 <p class=" text-justify mb-4">Tahun 2020 menjadi langkah awal RATHEN menembus pasar Internasional. Dimulai dari negara di kawasan Asia seperti Timor Leste, bergerak perlahan ke Malaysia, hingga akhirnya Korea Selatan.</p>

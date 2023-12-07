@@ -98,6 +98,7 @@ Route::controller(HomeController::class)->group(function () {
 
 Route::controller(PesananController::class)->group(function () {
     Route::get('/form-1', 'form_1')->name('form_1');
+    Route::get('/form-1/generate', 'generate')->name('generate');
     Route::post('/form-1/quotation', 'quotation')->name('quotation');
     Route::post('/form-1/action', 'addForm1')->name('addForm1');
     Route::get('/form-2', 'form_2')->name('form_2');

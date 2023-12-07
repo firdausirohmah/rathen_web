@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\ModelStep1;
+use Barryvdh\DomPDF\PDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
@@ -58,6 +59,7 @@ class PesananController extends Controller
             ->select('tbl_step1.*', 'tbl_step2.*', 'tbl_step3.*')
             ->get();
         // dd($tanggalSekarang);
+        // $html = view('welcome')->render();
         foreach ($data as $pesanan) {
 
             return view('landing_page.quotation', [
@@ -67,6 +69,15 @@ class PesananController extends Controller
                 'tanggal' => $tanggalSekarang,
             ]);
         }
+        // $pdf = PDF::loadView('landing_page.quotation', [
+        //     // 'data' => $data,
+        //     'nama' => $nama_pemesaanan,
+        //     'kontak' => $kontak,
+        //     'tanggal' => $tanggalSekarang,
+        // ]);
+
+        // Simpan atau tampilkan PDF
+        // return $pdf->download('output.pdf');
     }
     // ================================ add ==================================
     public function addForm1(Request $request)
@@ -148,5 +159,16 @@ class PesananController extends Controller
         ]);
 
         return redirect()->back();
+    }
+    public function generatePDF()
+    {
+        // Baca konten HTML dari file
+        $html = file_get_contents(storage_path('app/quotation.html'));
+
+        // Buat objek PDF
+        $pdf = PDF::loadHTML($html);
+
+        // Simpan atau tampilkan PDF
+        return $pdf->download('output.pdf');
     }
 }

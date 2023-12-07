@@ -55,11 +55,40 @@ class HomeController extends Controller
 
     }
     public function priceList($kd_part){
+        $jsonData = [
+            'menu1' => [
+                'desc-1' => '<h6>TYPE KUALITAS : STADIUM Version</h6>
+                <p>Kategori : Non - Print</p>
+                <p>Harga : IDR 149,900 / pcs</p>
+                <p>Minimum Order : 12 pcs</p>
+                
+                <b>Deksripsi:</b>
+                <p>- Bahan warna solid non-printing (bisa kombinasi warna)</p>
+                <p>- Logo R polyflex</p>
+                <p>- Logo tim Printable / DTF</p>
+                <p>- FREE tulisan dada 1 baris</p>
+                <p>- Authentic R DTF</p>
+                <p>- Name + number polyflex</p>
+                <p>- Bahan Celana solid</p>
+                <p>- Nomor celana polyflex</p>',
+                'desc-2' => 'asset/images/price-list/detail/Nonprint-1.jpg',
+                'desc-3' => 'asset/images/price-list/detail/Nonprint-1.jpg',
+                'desc-4' => 'asset/images/price-list/detail/Nonprint-1.jpg',
+                'desc-5' => 'asset/images/price-list/detail/Nonprint-1.jpg',
+            ],
+            
+            'menu2' => [
+                'desc' => 'Menu 1',
+                'content' => 'Ini adalah konten untuk Menu 1.'
+            ],
+            // Tambahkan data untuk menu lainnya
+        ];
         $data = DB::table('tbl_part')->where('kd_part', $kd_part)->get();
         // dd($data);
         foreach ($data as $key) {
             return view ('landing_page.part-pricelist',[
                 'data' =>$key,
+                compact('jsonData'),
             ]);
 
         }

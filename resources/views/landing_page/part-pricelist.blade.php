@@ -261,19 +261,30 @@
                           <span>Kualitas :</span>
                           <div class="col">
                                 <button class="btn btn-outline-secondary {{ $data->stadium }} w-25 mx-3 menu-button" id="buttonA" onclick="selectOption(1, 1)"><span class="fs-6">STADIUM</span></button>
-                                <button class="btn btn-outline-secondary {{ $data->pro }} w-25 mx-3 menu-button" id="buttonB" onclick="changeContent('data4'),selectOption(1, 2)">PRO</button>
-                                <button class="btn btn-outline-secondary {{ $data->pro_plus }} w-25 mx-3 menu-button" id="buttonC" onclick="changeContent('data5'),selectOption(1, 3)">PRO<sup>+</sup></button>
+                                <a href="{{ url('/price-list', ['kd_part' => 'pro']) }}"><button class="btn btn-outline-secondary {{ $data->pro }} w-25 mx-3 menu-button" id="buttonB" onclick="changeContent('data4'),selectOption(1, 2)">PRO</button></a>
+                                <a href="{{ url('/price-list', ['kd_part' => 'pro-plus']) }}"><button class="btn btn-outline-secondary {{ $data->pro_plus }} w-25 mx-3 menu-button" id="buttonC" onclick="changeContent('data5'),selectOption(1, 3)">PRO<sup>+</sup></button></a>
                             </div>
                         </div>
                         <div class="row mt-4 ">
                           <span>Kategori :</span>
                           <div class="col">
-                                <a href="{{ url('/price-list', ['kd_part' => 'non-print']) }}"><button class="btn btn-outline-secondary {{ $data->non_print }} w-25 mx-3 menu-button" id="button1" onclick="changeContent('data1'),selectOption(2, 1)">Non - Print</button></a>
+                                <a href="{{ url('/price-list', ['kd_part' => 'non-print']) }}" ><button class="btn btn-outline-secondary {{ $data->non_print }} w-25 mx-3 menu-button" id="button1" onclick="changeContent('data1'),selectOption(2, 1)" @disabled(true)>Non - Print</button></a>
                                 <a href="{{ url('/price-list', ['kd_part' => 'half-print']) }}"><button class="btn btn-outline-secondary {{ $data->half_print }} w-25 mx-3 menu-button" id="button2" onclick="changeContent('data2'),selectOption(2, 2)">Half - Print</button></a>
                                 <a href="{{ url('/price-list', ['kd_part' => 'full-print']) }}"><button class="btn btn-outline-secondary {{ $data->full_print }} w-25 mx-3 menu-button" id="button3" onclick="changeContent('data3'),selectOption(2, 3)">Full Print</button></a>
                                 {{-- <button onclick="changeContent('data1')">Tombol 1</button>
                                 <button onclick="changeContent('data2')">Tombol 2</button> --}}
                             </div>
+                        </div>
+                        <div class="row mt-4">
+                          <div class="col">
+                            <p>{{ $jsonData['menu1']['{{ $data->desc }}'] }}</p>
+                            <span>{{ $data->deskripsi }}</span>
+                            <form action="{{ route('your.route') }}" method="post">
+                              @csrf
+                              <textarea name="paragraphs"></textarea>
+                              <button type="submit">Simpan</button>
+                          </form>
+                          </div>
                         </div>
                     </div>
                     </div>

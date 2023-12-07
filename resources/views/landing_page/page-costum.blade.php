@@ -18,6 +18,9 @@
                 .h-carousel{
                     height: 30%;
                 }
+                .h-image{
+                    height: 30%;
+                }
                 @media (min-width: 280.98px) { 
                     .teks {
                         font-size: 12px;
@@ -46,7 +49,14 @@
                 @media screen and (max-width: 800px) {
                     .teks{
                         margin-top: 80%;
-                        padding-top: 4px;
+                        padding-top: 4px;                        
+                        font-size: 14px;
+
+                    }
+                    .location-crs{
+                        width: 100%;
+                        height: 30%;
+                        /* height: 100vh; */
                     }
                 }
                 @media (max-width: 991.98px) { 
@@ -57,12 +67,14 @@
                 }
                 @media (max-width: 1199.98px) { 
                     .teks {
+                        font-size: 14px;
                         margin-top: 10px;
                  }
                  }
                 @media (max-width: 1399.98px) { 
                     .teks {
                         margin-top: 4px;
+                        font-size: 14px;
 
                     }
                  }
@@ -132,23 +144,16 @@
             <div class="col-lg-6">
 
                 <div id="carouselExample" class="carousel slide w-100 h-carousel slider" data-ride="carousel">
-                    <div class="carousel-inner">
-                        
+                    <div class="carousel-inner"> 
                         <div class="carousel-item img-carousel active">
-                            <img src="{{asset('asset/images/swiss.jpg')}}" class="d-block  w-100 img-fluid"  alt="swiss">
-                              
-                            
+                            <img src="{{asset('asset/images/swiss.jpg')}}" class="d-block  w-100 img-fluid"  alt="swiss"> 
                         </div>
                         <div class="carousel-item">
-                            <img src=" {{asset('asset/images/top.jpg')}}" class="d-block w-100"   alt="top">
-                           
+                            <img src=" {{asset('asset/images/top.jpg')}}" class="d-block w-100"   alt="top"> 
                         </div>
-                        <div class="carousel-item">
-                            <!-- Gunakan tag video untuk video -->
-                            <video id="video1" class="d-block w-50 csabout" controls autoplay muted>
-                                <!-- Sediakan sumber video -->
-                                <source src="{{asset('asset/images/video1.mp4')}}" type="video/mp4">
-                                 
+                        <div class="carousel-item"> 
+                            <video id="video1" class="d-block w-50 csabout" controls autoplay muted> 
+                                <source src="{{asset('asset/images/video1.mp4')}}" type="video/mp4"> 
                                 Your browser does not support the video tag.
                             </video>
                         </div>
@@ -173,7 +178,7 @@
                 </div>
             </div>
             <div class="col-lg-6 teks" style="font-family: Montheavy; color: rgba(0, 0, 0, 0.8);">
-                <p class=" text-justify" >RATHEN merupakan sportwears brand yang berasal dari Bogor, Indonesia. Memulai industri sportwears pada tahun 2014 dengan berfokus pada pembuatan custom jersey sepakbola atau futsal. Berbagai jenis tim, baik dari level korporasi, akademisi, komunitas sepakbola, hingga tim liga futsal profesional telah menjadi bagian perjalanan manis rathen di dunia industri sportwear.</p>
+                <p class=" text-justify mb-4" >RATHEN merupakan sportwears brand yang berasal dari Bogor, Indonesia. Memulai industri sportwears pada tahun 2014 dengan berfokus pada pembuatan custom jersey sepakbola atau futsal. Berbagai jenis tim, baik dari level korporasi, akademisi, komunitas sepakbola, hingga tim liga futsal profesional telah menjadi bagian perjalanan manis rathen di dunia industri sportwear.</p>
                 <p class=" text-justify mb-4">Hingga akhirnya, Pada tahun 2016, RATHEN dipercaya menjadi penyedia jersey latihan tim nasional Futsal Indonesia. 
                 </p>
                 <p class=" text-justify mb-4">Tahun 2020 menjadi langkah awal RATHEN menembus pasar Internasional. Dimulai dari negara di kawasan Asia seperti Timor Leste, bergerak perlahan ke Malaysia, hingga akhirnya Korea Selatan.</p>
@@ -617,24 +622,34 @@
             position: center;
             font-size: 12px;
         }
+        .card_location{
+            width: 100%;
+            /* height: 100vh; */
+        }
+        .img_location{
+            width: 100%;
+            height: 100%;
+        }
     </style>
     <body>
         <br>
         <div style="font-family: Montheavy; color: black; font-size: 24px; font-weight: bold; margin-bottom: 20px; text-align: center; ">
             LOCATION
         </div>
-    <div class="container text-cente" style="position: center; width: 150vh">
+    <div class="container text-center">
         <div class="row ">
-            <div class="col-lg-6">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.4343833806684!2d106.77431907418564!3d-6.5928088934009095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c57a439b19c9%3A0x4a05cc1ee48848ba!2sRATHEN%20Store%20-%20Sportwears%20Outlet!5e0!3m2!1sid!2sid!4v1700127350226!5m2!1sid!2sid" style="width: 100%; height: 100%; " allowfullscreen class="mx-auto"></iframe>
+            <div class="col-lg-6 location-crs">
+                <div class="img_location">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.4343833806684!2d106.77431907418564!3d-6.5928088934009095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c57a439b19c9%3A0x4a05cc1ee48848ba!2sRATHEN%20Store%20-%20Sportwears%20Outlet!5e0!3m2!1sid!2sid!4v1700127350226!5m2!1sid!2sid" allowfullscreen class="w-100"></iframe>
+                </div>
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-6 location-crs">
         
-                <div id="carouselExample" class="carousel slide w-100" style="width: 100%; height: 100%;" data-ride="carousel">
+                <div id="carouselExample" class="img_location carousel slide"  data-ride="carousel">
                     <div class="carousel-inner ">
                         
                         <div class="carousel-item active">
-                            <img src="{{asset('asset/images/location/f1.JPG')}}" class="d-block w-100" alt="swiss">
+                            <img src="{{asset('asset/images/location/f1.JPG')}}" class="d-block w-100 h-carousel" alt="swiss">
                         </div>
                         <div class="carousel-item">
                             <img src=" {{asset('asset/images/location/F2a.JPG')}}" class="d-block w-100" alt="top">
@@ -690,7 +705,7 @@
             background: url('asset/images/kontak.png') ;
             background-repeat: no-repeat;
             background-size: cover;
-            display: contents;
+            width: 100%;
             height: 120vh; 
 
         }

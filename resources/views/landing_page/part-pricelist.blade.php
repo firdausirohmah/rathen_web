@@ -114,7 +114,7 @@
     <section id="home" style="overflow: hidden;">
     <div class="container mt-4 mb-4">
         <div class="row">
-            <div class="col"><a href="/page-costum"><small class="text-muted">Home / Half-Print</small></a></div>
+            {{-- <div class="col"><a href="/page-costum"><small class="text-muted">Home / Half-Print</small></a></div> --}}
         </div>
     </div>
     {{-- <div class="d-inline-flex gap-1">
@@ -228,7 +228,6 @@
                 <div class="card">
                     <div class="card-body">
                       <h5 class="card-title">DAFTAR HARGA JERSEY RATHEN</h5>
-                      {{-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> --}}
                       <div class="container">
                         <div class="row">
                             <div class="col-lg-3">
@@ -250,7 +249,7 @@
                             <div class="col-lg-5">
                                 <div class="container">
                                     <div class="row">
-                                        <div class="col-lg-3" style="margin-top: auto; margin-bottom:auto; margin-left:0px; margin-right:0px;"><img src="{{ asset('asset/images/price-list/presen.png') }}" width="20px" alt=""></div>
+                                        {{-- <div class="col-lg-3" style="margin-top: auto; margin-bottom:auto; margin-left:0px; margin-right:0px;"><img src="{{ asset('asset/images/price-list/presen.png') }}" width="20px" alt=""></div> --}}
                                         <div class="col-lg-8" style="font-size: 14px">Cicilan 0% Hingga <br>24 Bulan</div>
                                     </div>
                                 </div>
@@ -271,8 +270,7 @@
                                 <a href="{{ url('/price-list', ['kd_part' => 'non-print']) }}" ><button class="btn btn-outline-secondary {{ $data->non_print }} w-25 mx-3 menu-button" id="button1" onclick="changeContent('data1'),selectOption(2, 1)" @disabled(true)>Non - Print</button></a>
                                 <a href="{{ url('/price-list', ['kd_part' => 'half-print']) }}"><button class="btn btn-outline-secondary {{ $data->half_print }} w-25 mx-3 menu-button" id="button2" onclick="changeContent('data2'),selectOption(2, 2)">Half - Print</button></a>
                                 <a href="{{ url('/price-list', ['kd_part' => 'full-print']) }}"><button class="btn btn-outline-secondary {{ $data->full_print }} w-25 mx-3 menu-button" id="button3" onclick="changeContent('data3'),selectOption(2, 3)">Full Print</button></a>
-                                {{-- <button onclick="changeContent('data1')">Tombol 1</button>
-                                <button onclick="changeContent('data2')">Tombol 2</button> --}}
+                          
                             </div>
                         </div>
                         <div class="row mt-4">
@@ -381,7 +379,7 @@
                     <div class="card-body">
                       <h5 class="card-title"></h5>
                       <h6 class="card-subtitle mb-2 text-body-secondary">Simulasi Harga</h6>
-                      <a href="/form-1"><button class="btn btn-outline-secondary w-100">Form Order</button></a>
+                      <a href="/form-1"><button class="btn btn-outline-secondary w-100">Order Now</button></a>
                     </div>
                   </div>
             </div>
@@ -436,40 +434,33 @@
                 <a class="mx-2 fw-bold clickable" onclick="showContent('content1'), changeLinkColor(this)">DETAIL</a>
                 <a class="mx-4 fw-bold clickable" onclick="showContent('content2'), changeLinkColor(this)">KOMPARASI</a>
                 <hr>
-                <div class="card-title">                                
+                <div class="card-title">
                   <div id="content1" class="card-text content">
-                    <div class="contaner bg-dark">
-                      {{-- <div class="row">
-                        <div class="col">
-                          <h6 class="subtitlecard-subtitle mb-2 text-body-secondary">Stadium Version : Non - Print</h6>
-                          <img src="{{ asset('asset/images/price-list/detail/Nonprint-1.jpg') }}" class="img-fluid w-100" alt="...">
+                    <div class="container-fluid">
+                      <div class="row">
+                        <div class="col-sm-6 mb-3 mb-sm-0">
+                          <img src="{{ $data->g1 }}" class="img-fluid w-100" alt="Image 1">
                         </div>
-                      </div> --}}
-                      <div class="row bg-dark">
-                        
-                        <div class="col-sm-6 mb-3 mb-sm-0 bg-dark">
-                          <img src="{{ $data->g1 }}" class="img-fluid w-100" alt="...">
+                        <div class="col-sm-6 mb-3 mb-sm-0">
+                          <img src="{{ $data->g2 }}" class="img-fluid w-100" alt="Image 2">
                         </div>
-                        <div class="col-sm-6 mb-4">
-                          <img src="{{ $data->g2 }}" class="img-fluid w-100" alt="...">
+                        <div class="col-sm-6 mb-3 mb-sm-0">
+                          <img src="{{ $data->g3 }}" class="img-fluid w-100" alt="Image 3">
                         </div>
-                        <div class="col-sm-6 mb-4">
-                          <img src="{{ $data->g3 }}" class="img-fluid w-100" alt="...">
+                        <div class="col-sm-6 mb-3 mb-sm-0">
+                          <img src="{{ $data->g4 }}" class="img-fluid w-100" alt="Image 4">
                         </div>
-                        <div class="col-sm-6 mb-4">
-                          <img src="{{ $data->g4 }}" class="img-fluid w-100" alt="...">
+                        <div class="col-sm-6 mb-3 mb-sm-0">
+                          <img src="{{ $data->g5 }}" class="img-fluid w-100" alt="Image 5">
                         </div>
-                        <div class="col-sm-6 mb-4">
-                          <img src="{{ $data->g5 }}" class="img-fluid w-100" alt="...">
+                        <div class="col-sm-6 mb-3 mb-sm-0">
+                          <img src="{{ $data->g6 }}" class="img-fluid w-100" alt="Image 6">
                         </div>
-                        <div class="col-sm-6 mb-4">
-                          <img src="{{ $data->g6 }}" class="img-fluid w-100" alt="...">
+                        <div class="col-sm-6 mb-3 mb-sm-0">
+                          <img src="{{ $data->g7 }}" class="img-fluid w-100" alt="Image 7">
                         </div>
-                        <div class="col-sm-6 mb-4">
-                          <img src="{{ $data->g7 }}" class="img-fluid w-100" alt="...">
-                        </div>
-                        <div class="col-sm-6 mb-4">
-                          <img src="{{ $data->g8 }}" class="img-fluid w-100" alt="...">
+                        <div class="col-sm-6 mb-3 mb-sm-0">
+                          <img src="{{ $data->g8 }}" class="img-fluid w-100" alt="Image 8">
                         </div>
                       </div>
                     </div>
@@ -484,6 +475,7 @@
           </div>
         </div>
       </div>
+      
       <div class="container-xxl" id="kategori2">
        
       </div>

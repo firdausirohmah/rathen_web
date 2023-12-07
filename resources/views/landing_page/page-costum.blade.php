@@ -13,44 +13,46 @@
 
             <style>
                 .teks{
-                    font-size: 12px
+                    font-size: 14px;
                 }
+                .h-carousel{
+                    height: 30%;
+                }
+                @media (min-width: 280.98px) { 
+                    .teks {
+                        font-size: 12px;
+
+                    } .img-carousel{
+                        padding-bottom: 10px;
+                    }
+                 }
+                
                 @media (min-width: 350.98px) { 
                     .teks {
-                        background-color: red;
-                    }
-                    .carousel-about{
-                        width: 100% !important;
-                        height: 400px;
-                        background-color: yellow;
+                        font-size: 12px;
 
+                    } .img-carousel{
+                        padding-bottom: 20px;
                     }
                  }
                 @media (min-width: 575.98px) { 
                     .teks {
-                        background-color: red;
-                    }
-                    .carousel-about{
-                        width: 100% !important;
-                        height: 500px;
-                        background-color: yellow;
-
-                    }
+                    } 
                  }
                 @media (min-width: 767.98px) { 
                     .teks {
-                        background-color: green;
-                    }
-                    .carousel-about{
-                        width: 100% !important;
-                        height: 500px;
-                        background-color: gray;
-
+                    } 
+                }
+                @media screen and (max-width: 800px) {
+                    .teks{
+                        margin-top: 80%;
+                        padding-top: 4px;
                     }
                 }
                 @media (max-width: 991.98px) { 
                     .teks {
                         margin-top: 80%;
+                        font-size: 14px;
                  }
                 }
                 @media (max-width: 1199.98px) { 
@@ -61,9 +63,8 @@
                 @media (max-width: 1399.98px) { 
                     .teks {
                         margin-top: 4px;
-                        color: red;
 
-                 }
+                    }
                  }
                 /* new */
             </style>
@@ -128,12 +129,12 @@
     <div class="container mb-4 pb-4 ">
         <div class="row">
             {{-- <div class="col-lg-3"></div> --}}
-            <div class="col-lg-6 carousel-about">
+            <div class="col-lg-6">
 
-                <div id="carouselExample" class="carousel slide w-100 slider" data-ride="carousel">
+                <div id="carouselExample" class="carousel slide w-100 h-carousel slider" data-ride="carousel">
                     <div class="carousel-inner">
                         
-                        <div class="carousel-item active">
+                        <div class="carousel-item img-carousel active">
                             <img src="{{asset('asset/images/swiss.jpg')}}" class="d-block  w-100 img-fluid"  alt="swiss">
                               
                             
@@ -688,8 +689,9 @@
         .wp {
             background: url('asset/images/kontak.png') ;
             background-repeat: no-repeat;
-            background-size:cover;
-            height: 120vh   ; 
+            background-size: cover;
+            display: contents;
+            height: 120vh; 
 
         }
         .content {

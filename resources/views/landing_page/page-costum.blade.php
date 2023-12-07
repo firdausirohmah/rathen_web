@@ -10,7 +10,7 @@
             <img src="{{asset('asset/images/LOGO.png')}}" class="rounded mx-auto d-block" alt="">
             </div>
 
-            <style>
+            {{-- <style>
                 @media (max-width: 350px) {
                     .ip {
                         font-size: 8px;
@@ -125,7 +125,7 @@
                         margin-top: 125px;
                     }
                 }
-            </style>
+            </style> --}}
             
         <div class="main-banner__cekresi">
             <div class="main-banner__cekresi--list cek-lacak">

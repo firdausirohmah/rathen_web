@@ -13,9 +13,7 @@
 
             <style>
                 .teks{
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
+
                     font-size: 12px;
                     margin-top: 0px;
                 }
@@ -39,9 +37,7 @@
                     } .img-carousel{
                         padding-bottom: 10px;
                     }
-=======
->>>>>>> 90c1bfe9d186136693c8b6e1946a8ace6da1d651
-                    font-size: 12px
+
                 }
                 @media (min-width: 350.98px) { 
                     .teks {
@@ -77,7 +73,7 @@
                     }
                     .cstore{
                         /* padding-top: 5%; */
-                        margin-top: 2px;
+                        margin-top: 15px;
                     }
                 }
                 @media (min-width: 767.98px) { 
@@ -118,11 +114,13 @@
                 @media (max-width: 1199.98px) { 
                     .teks {
                         margin-top: 10px;
+                        font-size: 15px;
                  }
                  }
                 @media (max-width: 1399.98px) { 
                     .teks {
                         margin-top: 4px;
+                        font-size: 15px;
                         /* color: red; */
 
                  }
@@ -752,7 +750,7 @@
             background-repeat: no-repeat;
             background-size: cover;
             width: 100%;
-            height: 40%; 
+            height: 130vh; 
 
         }
         .content {

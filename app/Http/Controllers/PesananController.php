@@ -70,7 +70,7 @@ class PesananController extends Controller
             ]);
         }
         // $pdf = PDF::loadView('landing_page.quotation', [
-        //     // 'data' => $data,
+        //     'data' => $data,
         //     'nama' => $nama_pemesaanan,
         //     'kontak' => $kontak,
         //     'tanggal' => $tanggalSekarang,
@@ -160,15 +160,14 @@ class PesananController extends Controller
 
         return redirect()->back();
     }
-    public function generatePDF()
-    {
-        // Baca konten HTML dari file
-        $html = file_get_contents(storage_path('app/quotation.html'));
+    // public function generatePDF()
+    // {
+        
+    //     $html = file_get_contents(storage_path('app/quotation.html'));
 
-        // Buat objek PDF
-        $pdf = PDF::loadHTML($html);
+      
+    //     $pdf = PDF::loadHTML($html);
 
-        // Simpan atau tampilkan PDF
-        return $pdf->download('output.pdf');
-    }
+    //     return $pdf->download('output.pdf');
+    // }
 }

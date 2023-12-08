@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title>Invoice</title>
+	<title>QUOTATION</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -195,46 +195,173 @@
 							<table class="table table-bordered mt-4 mb-0 ">
 								<thead class="text-center">
 									<tr class="text-center">
-										<th class="text-uppercase small font-weight-bold" colspan="4">Keterangan untuk
+										<th class="text-uppercase small font-weight-bold"  colspan="4">Keterangan untuk
 											Extra</th>
-
-
-										{{-- <th class="text-uppercase small font-weight-bold">Min. Order</th> --}}
+										</tr>
+											<tr class="text-center">
+										<th class="text-uppercase small font-weight-bold">Extra</th>
+										<th class="text-uppercase small font-weight-bold">Jenis</th>
+										{{-- <th class="text-uppercase small font-weight-bold">Keterangan</th> --}}
+										<th class="text-uppercase small font-weight-bold">Harga</th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr>
-										<td>Pola Badan</td>
-										<td class="text-center"></td>
-										<td class="text-center">untuk stadium, free utk PRO dan PRO+</td>
+										<td rowspan="2">Pola Badan</td>
+										<td class="text-center">Normal</td>
+										<td class="text-center">Free</td>
 									<tr>
-										<td>Pola lengan raglan</td>
-										<td class="text-center">15,000/pcs</td>
-										<td class="text-center">untuk stadium, free utk PRO dan PRO+</td>
+										<td class="text-center">Badan bawah melengkung</td>
+										<td class="text-center">15,000</td>
+									</tr>
+									<tr>
+										<td rowspan="2">Pola Lengan</td>
+										<td class="text-center">Normal</td>
+										<td class="text-center">Free</td>
+									<tr>
+										<td class="text-center">Raglan</td>
+										<td class="text-center">15,000</td>
+									</tr>
+									<tr>
+										<td >Material (Bahan)</td>
+										<td class="text-center">-</td>
+										<td class="text-center">-</td>
+									</tr>
+									<tr>
+										<td>Kerah</td>
+										<td class="text-center">custom elastic rib</td>
+										<td class="text-center">20,000</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+
+						{{-- LOGO TIM --}}
+						<div class="table-responsive">
+							<table class="table table-bordered mt-4 mb-0 ">
+								<thead class="text-center">
+									<tr class="text-center">
+										<th class="text-uppercase small font-weight-bold"  colspan="4">EXTRA LOGO TIM</th>
+										</tr>
+											<tr class="text-center">
+										<th class="text-uppercase small font-weight-bold">Jenis</th>
+										<th class="text-uppercase small font-weight-bold">Harga</th>
+										{{-- <th class="text-uppercase small font-weight-bold">Keterangan</th> --}}
+										<th class="text-uppercase small font-weight-bold">Keterangan</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td >DTF</td>
+										<td class="text-center">Free</td>
+										<td class="text-center">-</td>
+									<tr>
+										<td >Extra logo tim (DTF)</td>
+										<td class="text-center">15,000</td>
+										<td class="text-center">Min order 12 pcs dan untuk stadium, free utk PRO dan PRO+</td>
+									</tr>
+									<tr>
+										<td >3D TPU</td>
+										<td class="text-center">30,000</td>
+										<td class="text-center">Min order 24 pcs dan untuk stadium, free utk PRO dan PRO+</td>
+									<tr>
+										<td >Rubber on Tatami</td>
+										<td class="text-center">30,000</td>
+										<td class="text-center">Min order 50 pcs dan untuk stadium, free utk PRO dan PRO+</td>
 
 									</tr>
 									<tr>
-										<td>Upgrade logo 3D</td>
-										<td class="text-center">30,000/pcs</td>
-										<td class="text-center">untuk stadium, free utk PRO dan PRO+</td>
+
+										<td >Silicone HD</td>
+										<td class="text-center">30,000</td>
+										<td class="text-center">Min order 100 pcs dan untuk stadium, free utk PRO dan PRO+</td>
+									</tr>
+									<tr>
+										<td >Woven HD</td>
+										<td class="text-center">30,000</td>
+										<td class="text-center">Min order 50 pcs dan untuk stadium, free utk PRO dan PRO+</td>
+									</tr>
+									<tr>
+										<td >Woven Lokal</td>
+										<td class="text-center">30,000</td>
+										<td class="text-center">Min order 12 pcs dan untuk stadium, free utk PRO dan PRO+</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						{{-- SPONSOR DEPAN --}}
+						<div class="table-responsive">
+							<table class="table table-bordered mt-4 mb-0 ">
+								<thead class="text-center">
+									<tr class="text-center">
+										<th class="text-uppercase small font-weight-bold"  colspan="4">EXTRA SPONSOR DEPAN</th>
+										</tr>
+											<tr class="text-center">
+										<th class="text-uppercase small font-weight-bold">Jenis</th>
+										<th class="text-uppercase small font-weight-bold">Harga</th>
+										{{-- <th class="text-uppercase small font-weight-bold">Keterangan</th> --}}
+										<th class="text-uppercase small font-weight-bold">Keterangan</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td > Printing</td>
+										<td class="text-center">Free</td>
+										<td class="text-center">untuk kategori HALF - PRINT dan FULL - PRINT</td>
+									<tr>
+										<td >Tulisan poliflek 1 warna 1 baris</td>
+										<td class="text-center">Free</td>
+										<td class="text-center">-</td>
+									</tr>
+									<tr>
+										<td > Extra Tulisan poliflek 1 warna 1 baris</td>
+										<td class="text-center">10,000</td>
+										<td class="text-center">-</td>
+									<tr>
+										<td >Logo + Tulisan poliflek 1 warnaa</td>
+										<td class="text-center">35,000</td>
+										<td class="text-center">-</td>
 
 									</tr>
 									<tr>
-										<td>Logo tim di celana</td>
-										<td class="text-center">10,000/pcs</td>
-										<td class="text-center"> untuk stadium dan PRO, free utk PRO+</td>
-
-
+										<td > Extra Tulisan poliflek >1 warna</td>
+										<td class="text-center">45,000</td>
+										<td class="text-center">-</td>
 									</tr>
-
+								</tbody>
+							</table>
+						</div>
+						{{-- LENGAN --}}
+						<div class="table-responsive">
+							<table class="table table-bordered mt-4 mb-0 ">
+								<thead class="text-center">
+									<tr class="text-center">
+										<th class="text-uppercase small font-weight-bold"  colspan="4">EXTRA LENGAN</th>
+										</tr>
+											<tr class="text-center">
+										<th class="text-uppercase small font-weight-bold">Jenis</th>
+										<th class="text-uppercase small font-weight-bold">Harga</th>
+										{{-- <th class="text-uppercase small font-weight-bold">Keterangan</th> --}}
+										{{-- <th class="text-uppercase small font-weight-bold">Keterangan</th> --}}
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td >Extra logo DTF</td>
+										<td class="text-center">15,000</td>
+									<tr>
+										<td >Extra Tulisan 1 baris</td>
+										<td class="text-center">10,000</td>
+									</tr>
+									
 								</tbody>
 							</table>
 						</div>
 
 
 						<br>
-						<p style="font-style: italic;">Note: All payment should be direct bank in into our official bank
-							account as following bank:</p>
+						{{-- <p style="font-style: italic;">Note: All payment should be direct bank in into our official bank
+							account as following bank:</p> --}}
 						<style>
 							table {
 								width: 80%;
@@ -275,7 +402,7 @@
 								width: 62%;
 							}
 						</style>
-						<div class="container">
+						{{-- <div class="container">
 							<div class="row">
 								<table
 									style="width: 100%; border:10px; font-size:14px; font-weight: bold;  font-weight:100; color:black;">
@@ -301,7 +428,7 @@
 									</tr>
 								</table>
 							</div>
-						</div>
+						</div> --}}
 
 						<style>
 							.right-align {

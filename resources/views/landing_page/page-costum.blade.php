@@ -13,6 +13,7 @@
 
             <style>
                 
+                
                 .teks{
 
                     font-size: 15px;
@@ -232,6 +233,7 @@
                     } .img-carousel{
                         padding-bottom: 10px;
                     }
+                   
                 }
                 @media screen and (max-width: 350.98px)  { 
                     .teks {
@@ -246,6 +248,14 @@
                         margin-top:0px;
                         padding-top: 0px;
                     }
+                    .btn-mid{
+                        width: 30%;
+                        height: 10%;
+                    }
+                    .footer {
+                        margin-top: 10px;
+                        /* font-size: 12px; */
+                    }
                  }
                  @media screen and (max-width: 399.98px) {
                     
@@ -256,6 +266,10 @@
                     .btn-mid{
                         width: 30%;
                         height: 10%;
+                    }
+                    .footer {
+                        margin-top: 10px;
+                        
                     }
                 }
                 @media screen and (max-width: 450.98px) {

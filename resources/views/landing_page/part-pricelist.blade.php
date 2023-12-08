@@ -249,14 +249,14 @@
             <div class="col-lg-6 " style="font-weight: 200; padding-left:10px;">
                 <div class="card">
                     <div class="card-body">
-                      <h5 class="card-title">DAFTAR HARGA JERSEY RATHEN</h5>
+                      <h5 class="card-title" style="position: relative">DAFTAR HARGA JERSEY RATHEN</h5>
                       <div class="container">
                         <div class="row">
                             <div class="col-lg-3">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col" style="margin-top: auto; margin-bottom:auto; margin-left:0px; margin-right:0px;"><img src="{{ asset('asset/images/price-list/ceklis.png') }}" style="width:20px;" alt=""></div>
-                                        <div class="col" style="font-size: 14px">Stok <br> Tersedia</div>
+                                        <div class="col" style="font-size: 13px">Stok <br> Tersedia</div>
                                     </div>
                                 </div>
                             </div>
@@ -264,7 +264,7 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-lg-4" style="margin-top: auto; margin-bottom:auto; margin-left:0px; margin-right:0px;"><img src="{{ asset('asset/images/price-list/broom.png') }}" width="20px" alt=""></div>
-                                        <div class="col-lg-8" style="font-size: 14px">Bebas Biaya <br> Pengiriman</div>
+                                        <div class="col-lg-8" style="font-size: 13px">Bebas Biaya <br> Pengiriman</div>
                                     </div>
                                 </div>
                             </div>
@@ -272,7 +272,7 @@
                                 <div class="container">
                                     <div class="row">
                                         {{-- <div class="col-lg-3" style="margin-top: auto; margin-bottom:auto; margin-left:0px; margin-right:0px;"><img src="{{ asset('asset/images/price-list/presen.png') }}" width="20px" alt=""></div> --}}
-                                        <div class="col-lg-8" style="font-size: 14px">Cicilan 0% Hingga <br>24 Bulan</div>
+                                        <div class="col-lg-8" style="font-size: 13px">Cicilan 0% Hingga <br>24 Bulan</div>
                                     </div>
                                 </div>
                                  

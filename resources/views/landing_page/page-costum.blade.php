@@ -12,9 +12,15 @@
             </div>
 
             <style>
+                
                 .teks{
 
-                    font-size: 12px;
+                    font-size: 15px;
+                    margin-top: 0px;
+                }
+                .text-about{
+                    font-size: 14px;
+                    line-height: 25px;
                     margin-top: 0px;
                 }
                 .h-carousel{
@@ -23,6 +29,195 @@
                 .h-image{
                     height: 30%;
                 }
+                /* body {
+            margin: 0;
+            padding: 0;
+            background: url('/asset/images/kontak.png') ;
+            background-repeat: no-repeat;
+            background-size:cover;
+            height: 100vh   ; 
+            display:grid;
+            align-items: center;
+            justify-content: center;
+            color: #fff; 
+            font-family: Montheavy;
+        } */
+        .wp {
+            background-image: url('asset/images/kontak.png');
+            height: 800px;
+            background-size: cover;
+            -o-object-position: center;
+            object-position: center;
+            /* transform: scale(1.5); */
+            width: 100%;
+
+        }
+        .content {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7); /* Warna latar belakang dengan opasitas */
+            border-radius: 10px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 3em;
+            position: center;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+        .contact {
+            width: 100px;
+            height: 100px;
+            border-radius: 12px;
+            padding-top: 50px;
+            /* background-color: white; */
+        }
+        .contact-title{
+            color: #fff;
+            font-family: Montheavy;
+            font-weight: bold;
+            font-size: 4.2rem;
+        }
+        .contact,.icon {
+            align-items: center;
+            margin: auto;
+            display: block;
+            padding-top: 20%;
+            padding-bottom: 10px;
+        }
+        .btn-mid{
+            width: 150px;
+            height: 150px;
+            background-color: #fff;
+            border-radius: 14px;
+            box-shadow:black 2px 2px 2px !important;
+            margin: auto;
+            display: block;
+            transition: all 0.5s ease-in-out;
+            cursor: pointer;
+            outline: none;
+
+        }
+        .btn-mid:hover{
+            width: 150px;
+            height: 150px;
+            background-color: #fff;
+            border: 0.2rem solid #1890fd;
+            /* border-radius: 6rem; */
+            padding: 0.4em;
+            box-shadow: 0 0 .2rem #fff,
+              0 0 .2rem #fff,
+              0 0 2rem #1890fd,
+              0 0 0.8rem #1890fd,
+              0 0 2.8rem #1890fd,
+              inset 0 0 1.3rem #1890fd;
+        }
+        .btn-mid:visited{
+           width: 150px;
+            height: 150px;
+            background-color: #fff;
+            border-radius: 14px;
+            box-shadow:black 2px 2px 2px !important;
+            margin: auto;
+            display: block;
+            transition: all 0.5s ease-in-out;
+            cursor: pointer;
+            outline: none;
+        }
+        .container-sosmed{
+            border-radius: 14px;
+            align-items: center;
+            /* display: flex; */
+            transition: all 0.5s ease-in-out;
+            /* transition: cubic-bezier(0.95, 0.05, 0.795, 0.035); */
+            cursor: pointer;
+            outline: none;
+        }
+        .btn-sosmed{
+            transition: all 0.5s ease-in;
+            width: 80px;
+
+        }
+        .btn-sosmed:hover{
+            transition: all 0.5s ease-in-out;
+            /* width: 100px; */
+            border-radius: 12px;
+            padding: 0.4em;
+            box-shadow: 0 0 .1rem #fff,
+              0 0 .2rem #fff,
+              0 0 1rem #1890fd,
+              0 0 0.4rem #1890fd,
+              0 0 1.2rem #1890fd,
+              inset 0 0 1.0rem #1890fd;
+        }
+        .frame{
+            padding: 10%;
+            width: 100%;
+            height: 90vh;
+
+        }
+        .sosmed{
+            padding-top: 50px;
+            align-content: center;
+            text-align: center;
+    
+        }
+        .footer{
+            font-family: Montheavy;
+            color:gray;
+            margin-top: 3rem;
+            padding-top: 4.2rem;
+        }
+    .kurir-img{
+        width: 80px;
+    }
+@media (max-width: 340px) {
+    .contact-title {
+        color: #fff;
+        font-size: 1.8rem;
+    }
+}
+/* @media (min-width: 300px) {
+    .contact-title {
+        color: #fff;
+        font-size: 1.8rem;
+    }
+} */
+        @media  (max-width: 768px) {
+    .btn-mid {
+        width: 50%; /* Ubah lebar tombol menjadi 100% */
+        height: 50%;
+        padding: 5px 5px 5px 5px;
+        margin-top: 5px;
+    }
+    h5{
+        font-size: 18px;
+    }
+
+    .icon {
+        width: 40%; /* Ubah lebar ikon menjadi 50% */
+    }
+    .contact-title{
+        font-size: 2.2rem;
+    }
+    .kurir-img{
+        width: 50px;
+    }
+    /* .wp{
+        background: url('/asset/images/kontak.png') ;
+            background-repeat: no-repeat;
+            background-size:cover;
+            height: 130vh; 
+    } */
+    .footer{
+            font-size: 13px;
+        }
+    }
                 .store{
                     text-align: center; 
                     align-items: center; 
@@ -30,13 +225,14 @@
                     font-weight: bold;
                     margin-top:4px;
                 }
-                @media (min-width: 280.98px) { 
+                @media screen and(max-width: 280.98px) { 
                     .teks {
                         font-size: 12px;
 
                     } .img-carousel{
                         padding-bottom: 10px;
                     }
+                   
                 }
                 @media screen and (max-width: 350.98px)  { 
                     .teks {
@@ -46,17 +242,18 @@
                         width: 100% !important;
                         height: 400px;
                         /* background-color: yellow; */
-
-                    }.wp{
-                        width: 100% !important;
-                        height: 230vh;
-                    }
-                    *{
-                        /* background-color: red; */
                     }
                     .cstore{
                         margin-top:0px;
                         padding-top: 0px;
+                    }
+                    .btn-mid{
+                        width: 30%;
+                        height: 10%;
+                    }
+                    .footer {
+                        margin-top: 10px;
+                        /* font-size: 12px; */
                     }
                  }
                  @media screen and (max-width: 399.98px) {
@@ -65,8 +262,13 @@
                         /* padding-top: 5%; */
                         margin-top: 10px;
                     }
-                    *{
-                        /* background-color: yellow; */
+                    .btn-mid{
+                        width: 30%;
+                        height: 10%;
+                    }
+                    .footer {
+                        margin-top: 10px;
+                        
                     }
                 }
                 @media screen and (max-width: 450.98px) {
@@ -80,15 +282,25 @@
                         /* background-color: yellow; */
                     }
                 }
-                @media (min-width: 767.98px) { 
+                @media screen and (max-width: 767.98px) { 
                     .teks {
+                        font-size: 15px;
+                        line-height: 100px;
                     } 
+                    .cstore{
+                        padding-top: 40px;
+                        margin-top: 40px;
+                        /* background-color: #000; */
+                    }.card_location{
+                        height: 100vh; 
+                    }
                 }
                 @media screen and (max-width: 800px) {
                     .teks{
                         margin-top: 80%;
                         padding-top: 4px;                        
                         font-size: 14px;
+                        line-height: 100px;
 
                     }
                     .location-crs{
@@ -101,9 +313,8 @@
                         height: 40vh;
                     }
                     .btn-mid{
-                        background-color: #000;
-                        width: 50px;
-                        height: 50px;
+                        width: 30%;
+                        height: 30%;
                     }
                     .cstore{
                         padding-top: 10%;
@@ -113,19 +324,26 @@
                 @media (max-width: 991.98px) { 
                     .teks {
                         margin-top: 80%;
+                        font-size: 15px;
+                        line-height: 100px;
+
                  }
                 }
                 @media (max-width: 1199.98px) { 
                     .teks {
                         margin-top: 10px;
                         font-size: 15px;
+                        line-height: 100px;
+
                  }
                  }
                 @media (max-width: 1399.98px) { 
                     .teks {
                         margin-top: 4px;
                         color: red;
-
+                        font-size: 15px;
+                        line-height: 100px;
+                        
                  }
                  }
                 /* new */
@@ -228,12 +446,12 @@
                 </div>
             </div>
             <div class="col-lg-6 teks" style="font-family: Montheavy; color: rgba(0, 0, 0, 0.8);">
-                <p class=" text-justify mb-4" >RATHEN merupakan sportwears brand yang berasal dari Bogor, Indonesia. Memulai industri sportwears pada tahun 2014 dengan berfokus pada pembuatan custom jersey sepakbola atau futsal. Berbagai jenis tim, baik dari level korporasi, akademisi, komunitas sepakbola, hingga tim liga futsal profesional telah menjadi bagian perjalanan manis rathen di dunia industri sportwear.</p>
-                <p class=" text-justify mb-4">Hingga akhirnya, Pada tahun 2016, RATHEN dipercaya menjadi penyedia jersey latihan tim nasional Futsal Indonesia. 
+                <p class=" text-justify mb-4 text-about">RATHEN merupakan sportwears brand yang berasal dari Bogor, Indonesia. Memulai industri sportwears pada tahun 2014 dengan berfokus pada pembuatan custom jersey sepakbola atau futsal. Berbagai jenis tim, baik dari level korporasi, akademisi, komunitas sepakbola, hingga tim liga futsal profesional telah menjadi bagian perjalanan manis rathen di dunia industri sportwear.</p>
+                <p class=" text-justify mb-4 text-about">Hingga akhirnya, Pada tahun 2016, RATHEN dipercaya menjadi penyedia jersey latihan tim nasional Futsal Indonesia. 
                 </p>
-                <p class=" text-justify mb-4">Tahun 2020 menjadi langkah awal RATHEN menembus pasar Internasional. Dimulai dari negara di kawasan Asia seperti Timor Leste, bergerak perlahan ke Malaysia, hingga akhirnya Korea Selatan.</p>
-                <p class=" text-justify mb-4">Tidak hanya puas di level Asia, Rathen melanjutkan langkah awal penetrasi ke pasar Eropa melalui negara Swiss hingga dapat memperluas jangkauan ke benua Amerika, tepatnya negara USA. </p>
-                <p class=" text-justify mb-4">Pasar internasional memiliki standar mutu produk yang tinggi.
+                <p class=" text-justify mb-4 text-about">Tahun 2020 menjadi langkah awal RATHEN menembus pasar Internasional. Dimulai dari negara di kawasan Asia seperti Timor Leste, bergerak perlahan ke Malaysia, hingga akhirnya Korea Selatan.</p>
+                <p class=" text-justify mb-4 text-about">Tidak hanya puas di level Asia, Rathen melanjutkan langkah awal penetrasi ke pasar Eropa melalui negara Swiss hingga dapat memperluas jangkauan ke benua Amerika, tepatnya negara USA. </p>
+                <p class=" text-justify mb-4 text-about">Pasar internasional memiliki standar mutu produk yang tinggi.
                     Kami, RATHEN Indonesia, dengan bangga dapat memenuhi persyaratan standar mutu tersebut.
                     </p>
             </div>
@@ -676,6 +894,10 @@
         .img_location{
             width: 100%;
             height: 100%;
+        }.l-carousel{
+            width: 100%;
+            height: 100%;
+
         }
     </style>
     <body>
@@ -684,32 +906,32 @@
             LOCATION
         </div>
     <div class="container text-center">
-        <div class="row ">
+        <div class="row">
             <div class="col-lg-6 card_location mt-4">
                 <div class="img_location ">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.4343833806684!2d106.77431907418564!3d-6.5928088934009095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c57a439b19c9%3A0x4a05cc1ee48848ba!2sRATHEN%20Store%20-%20Sportwears%20Outlet!5e0!3m2!1sid!2sid!4v1700127350226!5m2!1sid!2sid" allowfullscreen class="d-block img_location"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.4343833806684!2d106.77431907418564!3d-6.5928088934009095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c57a439b19c9%3A0x4a05cc1ee48848ba!2sRATHEN%20Store%20-%20Sportwears%20Outlet!5e0!3m2!1sid!2sid!4v1700127350226!5m2!1sid!2sid" allowfullscreen class="img_location" style="500px"></iframe>
                 </div>
             </div>
-            <div class="col-lg-6 card_location mt-4">
+            <div class="col-lg-6 mt-4">
         
-                <div id="carouselExample" class="img_location carousel slide"  data-ride="carousel">
+                <div id="carouselExample" class="carousel slide w-100 h-carousel slide"  data-ride="carousel">
                     <div class="carousel-inner ">
                         
-                        <div class="carousel-item active">
-                            <img src="{{asset('asset/images/location/f1.JPG')}}" class="d-block w-100 h-carousel" alt="swiss">
+                        <div class="carousel-item img-carousel active">
+                            <img src="{{asset('asset/images/location/f1.JPG')}}" class="-block  w-100 img-fluid" alt="swiss">
                         </div>
                         <div class="carousel-item">
                             <img src=" {{asset('asset/images/location/F2a.JPG')}}" class="d-block w-100" alt="top">
                         </div>
                         <div class="carousel-item">
-                            <img src="{{asset('asset/images/location/F5.JPG')}}" class="d-block w-100" alt="swiss">
+                            <img src="{{asset('asset/images/location/F5.JPG')}}" class="l-carousel" alt="swiss">
                         </div>
                         <div class="carousel-item" >
-                            <img src="{{asset('asset/images/location/F7.JPG')}}" class="d-block w-100" alt="swiss">
+                            <img src="{{asset('asset/images/location/F7.JPG')}}" class="l-carousel" alt="swiss">
                             </video>
                         </div>
                         <div class="carousel-item" >
-                            <img src="{{asset('asset/images/location/F8.JPG')}}" class="d-block w-100" alt="swiss">
+                            <img src="{{asset('asset/images/location/F8.JPG')}}" class="l-carousel" alt="swiss">
                             </video>
                         </div>
                     </div>
@@ -717,11 +939,8 @@
             </div>
         </div>
     </div>
-    
-    <br>
-    <div class="container cstore">
-         <div class="row">
-    
+    <div class="container text-center">
+        <div class="row mt-4">
             <div class="col-lg-12" >
                 <p class="store">RATHEN STORE </p>
                 <p class="addres"> Ruko Sentra Gunungbatu<br>Jl. Mayjen Ishak Djuarsa no. 167B<br>Bogor 16118 </p>
@@ -733,222 +952,31 @@
 
 </section>
 
-<section id="contact" class="wp">
-    <style>
-        /* body {
-            margin: 0;
-            padding: 0;
-            background: url('/asset/images/kontak.png') ;
-            background-repeat: no-repeat;
-            background-size:cover;
-            height: 100vh   ; 
-            display:grid;
-            align-items: center;
-            justify-content: center;
-            color: #fff; 
-            font-family: Montheavy;
-        } */
-        .wp {
-            background: url('asset/images/kontak.png') ;
-            background-repeat: no-repeat;
-            background-size: cover;
-            width: 100%;
-            height: 130vh; 
-
-        }
-        .content {
-            text-align: center;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.7); /* Warna latar belakang dengan opasitas */
-            border-radius: 10px;
-        }
-
-        h1 {
-            margin: 0;
-            font-size: 3em;
-            position: center;
-            text-align: center;
-            font-weight: bold;
-        }
-
-        p {
-            margin: 10px 0;
-        }
-        .contact {
-            width: 100px;
-            height: 100px;
-            border-radius: 12px;
-            padding-top: 50px;
-            /* background-color: white; */
-        }
-        .contact-title{
-            color: #fff;
-            font-family: Montheavy;
-            font-weight: bold;
-            font-size: 4.2rem;
-        }
-        .contact,.icon {
-            align-items: center;
-            margin: auto;
-            display: block;
-            padding-top: 20%;
-            padding-bottom: 10px;
-        }
-        .btn-mid{
-            width: 150px;
-            height: 150px;
-            background-color: #fff;
-            border-radius: 14px;
-            box-shadow:black 2px 2px 2px !important;
-            margin: auto;
-            display: block;
-            transition: all 0.5s ease-in-out;
-            cursor: pointer;
-            outline: none;
-
-        }
-        .btn-mid:hover{
-            width: 150px;
-            height: 150px;
-            background-color: #fff;
-            border: 0.2rem solid #1890fd;
-            /* border-radius: 6rem; */
-            padding: 0.4em;
-            box-shadow: 0 0 .2rem #fff,
-              0 0 .2rem #fff,
-              0 0 2rem #1890fd,
-              0 0 0.8rem #1890fd,
-              0 0 2.8rem #1890fd,
-              inset 0 0 1.3rem #1890fd;
-        }
-        .btn-mid:visited{
-           width: 150px;
-            height: 150px;
-            background-color: #fff;
-            border-radius: 14px;
-            box-shadow:black 2px 2px 2px !important;
-            margin: auto;
-            display: block;
-            transition: all 0.5s ease-in-out;
-            cursor: pointer;
-            outline: none;
-        }
-        .container-sosmed{
-            border-radius: 14px;
-            align-items: center;
-            /* display: flex; */
-            transition: all 0.5s ease-in-out;
-            /* transition: cubic-bezier(0.95, 0.05, 0.795, 0.035); */
-            cursor: pointer;
-            outline: none;
-        }
-        .btn-sosmed{
-            transition: all 0.5s ease-in;
-            width: 80px;
-
-        }
-        .btn-sosmed:hover{
-            transition: all 0.5s ease-in-out;
-            /* width: 100px; */
-            border-radius: 12px;
-            padding: 0.4em;
-            box-shadow: 0 0 .1rem #fff,
-              0 0 .2rem #fff,
-              0 0 1rem #1890fd,
-              0 0 0.4rem #1890fd,
-              0 0 1.2rem #1890fd,
-              inset 0 0 1.0rem #1890fd;
-        }
-        .frame{
-            padding: 10%;
-            width: 100%;
-            height: 90vh;
-
-        }
-        .sosmed{
-            padding-top: 50px;
-            align-content: center;
-            text-align: center;
-    
-        }
-        .footer{
-            font-family: Montheavy;
-            color:gray;
-            margin-top: 3rem;
-            padding-top: 4.2rem;
-        }
-    .kurir-img{
-        width: 80px;
-    }
-@media (max-width: 340px) {
-    .contact-title {
-        color: #fff;
-        font-size: 1.8rem;
-    }
-}
-/* @media (min-width: 300px) {
-    .contact-title {
-        color: #fff;
-        font-size: 1.8rem;
-    }
-} */
-        @media (max-width: 768px) {
-    .btn-mid {
-        width: 50%; /* Ubah lebar tombol menjadi 100% */
-        height: 50%;
-        padding: 5px 5px 5px 5px;
-        margin-top: 5px;
-    }
-    h5{
-        font-size: 18px;
-    }
-
-    .icon {
-        width: 40%; /* Ubah lebar ikon menjadi 50% */
-    }
-    .contact-title{
-        font-size: 2.2rem;
-    }
-    .kurir-img{
-        width: 50px;
-    }
-    .wp{
-        /* background: url('/asset/images/kontak.png') ; */
-            /* background-repeat: no-repeat; */
-            /* background-size:cover; */
-            height: 130vh; 
-    }
-    .footer{
-            font-size: 13px;
-        }
-}
-    </style>
-
-<div class="container frame mt-4">
-    <div class="row">
-        <div class="col-lg-12">
-            <h1 class="contact-title"> stay connected <br> with us </h1>
-        </div>
-    </div>
-
-        <div class="row sosmed">
-            <div class="col-lg-2"></div>
-                <a href="https://wa.me/6289611081988?text=halo%20RATHEN..%20Saya%20ingin%20membuat%20custom%20jersey" target="_blank" class="btn-mid"><img src="asset/images/wa.png" class="icon" width="50%" alt="wa"><h5>whatsapp</h5></a>
-                <a href="https://shopee.co.id/rathen.id" target="_blank" class="btn-mid"><img src="asset/images/SHOPEE.png" class="icon" width="50%" alt="wa"><h5>shopee</h5></a>
-                <a href="https://www.tokopedia.com/rathenid" target="_blank" class="btn-mid"><img src="asset/images/toko.png" class="icon" width="50%" alt="wa"><h5>tokopedia</h5></a>
-            <div class="col-lg-2"></div>
-        </div>
-        <div class="row sosmed">
-            <div class="container-sosmed">
-                <a href="https://www.instagram.com/rathen.apparel/" target="_blank" ><img src="asset/images/ig-biru.png" class="btn-sosmed" alt="wa"></a>
-                <a href="mailto:rathen.apparel@gmail.com" target="_blank" class="emai"><img src="asset/images/mail.png" class="btn-sosmed" alt="wa"></a>
-                <p class="footer">copyright &copy; rathen indonesia 2023</p>
-                {{-- <a href="https://wa.me/628123456789" --}}
+<section id="contact" >
+<footer class="wp">
+    <div class="container frame ">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="contact-title"> stay connected <br> with us </h1>
             </div>
-        </div>
-        
+          </div>
+            <div class="row sosmed">
+                <div class="col-lg-2"></div>
+                    <a href="https://wa.me/6289611081988?text=halo%20RATHEN..%20Saya%20ingin%20membuat%20custom%20jersey" target="_blank" class="btn-mid"><img src="asset/images/wa.png" class="icon" width="50%" alt="wa"><h5>whatsapp</h5></a>
+                    <a href="https://shopee.co.id/rathen.id" target="_blank" class="btn-mid"><img src="asset/images/SHOPEE.png" class="icon" width="50%" alt="wa"><h5>shopee</h5></a>
+                    <a href="https://www.tokopedia.com/rathenid" target="_blank" class="btn-mid"><img src="asset/images/toko.png" class="icon" width="50%" alt="wa"><h5>tokopedia</h5></a>
+                <div class="col-lg-2"></div>
+            </div>
+            <div class="row sosmed">
+                <div class="container-sosmed">
+                    <a href="https://www.instagram.com/rathen.apparel/" target="_blank" ><img src="asset/images/ig-biru.png" class="btn-sosmed" alt="wa"></a>
+                    <a href="mailto:rathen.apparel@gmail.com" target="_blank" class="emai"><img src="asset/images/mail.png" class="btn-sosmed" alt="wa"></a>
+                    <p class="footer">copyright &copy; rathen indonesia 2023</p>
+                </div>
+            </div>
     </div>
-</div>
+</footer>
+
 </section>
 
 @endsection

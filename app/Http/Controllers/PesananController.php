@@ -7,6 +7,10 @@ use Barryvdh\DomPDF\PDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
+// use Barryvdh\DomPDF\Facade as PDF;
+use Dompdf\Dompdf;
+use Dompdf\Options;
+use Illuminate\Support\Facades\View;
 
 
 class PesananController extends Controller
@@ -50,6 +54,8 @@ class PesananController extends Controller
     // ==========================quotation===================================
     public function quotation(Request $request)
     {
+        session(['nama' => $request->nama_pemesanan]);
+        session(['kontak' => $request->kontak]);
         $nama_pemesaanan = $request->nama_pemesanan;
         $kontak = $request->kontak;
         $tanggalSekarang = date("d F Y");
@@ -78,6 +84,47 @@ class PesananController extends Controller
 
         // Simpan atau tampilkan PDF
         // return $pdf->download('output.pdf');
+    }
+    public function generate(Request $request)
+    {
+        $nama = session('nama');
+        $kontak = session('kontak');
+        $tanggal = date("d F Y");
+
+        $data = DB::table('tbl_step1')
+            ->join('tbl_step2', 'tbl_step1.kd_step2', '=', 'tbl_step2.kd_step2')
+            ->join('tbl_step3', 'tbl_step1.kd_step3', '=', 'tbl_step3.kd_step3')
+            ->select('tbl_step1.*', 'tbl_step2.*', 'tbl_step3.*')
+            ->get();
+
+        foreach ($data as $pesanan) {
+            $d = [
+                'data' => $pesanan,
+                'nama' => $nama,
+                'kontak' => $kontak,
+                'tanggal' => $tanggal,
+            ];
+            $pdf = new Dompdf();
+            $options = new Options();
+            $options->set('isHtml5ParserEnabled', true);
+            $pdf->setOptions($options);
+
+            // Load Bootstrap CSS locally
+            $bootstrapCSS = file_get_contents(public_path('c.css')); // Ganti path sesuai dengan lokasi CSS Bootstrap Anda
+            $html = View::make('landing_page.quotation', compact('data', 'nama', 'kontak', 'tanggal'))->render();
+
+
+            // Combine Bootstrap CSS with your HTML
+            $combinedHtml = '<style> .print{
+                display:none}' . $bootstrapCSS . '<style>' . $html;
+
+            $pdf->loadHtml($combinedHtml);
+            $pdf->setPaper('A4', 'potrait');
+            $pdf->render();
+
+
+            return $pdf->stream('quotation.pdf');
+        }
     }
     // ================================ add ==================================
     public function addForm1(Request $request)
@@ -162,10 +209,10 @@ class PesananController extends Controller
     }
     // public function generatePDF()
     // {
-        
+
     //     $html = file_get_contents(storage_path('app/quotation.html'));
 
-      
+
     //     $pdf = PDF::loadHTML($html);
 
     //     return $pdf->download('output.pdf');

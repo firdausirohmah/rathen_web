@@ -91,6 +91,10 @@
     -webkit-transition: content 2s ease-out;
     content: url('/asset/extra/oneck/O-2Kuning.png');
   }
+  .hover:hover{
+    background-color: yellow;
+    border-color: solid #000 20px;
+  }
   .pbnormal:hover{
     /* opacity: 0.5; */
     -webkit-transition: content 2s ease-out;
@@ -100,6 +104,17 @@
     /* opacity: 0.5; */
     -webkit-transition: content 2s ease-out;
     content: url('/asset/extra/polabadan/melengkung.png');
+  }
+  .notes{
+    font-family: 'Montheavy';
+  }
+  @media screen and (max-width : 991.98px){
+    .notes{
+      font-size: 6px;
+      display: none;
+    }.title{
+      font-size:  12px;
+    }
   }
   @media screen and (max-width : 800px){
     .notes{
@@ -228,7 +243,10 @@
         <td class="harga extra-2 title" >(+15,000):</td>
         <td colspan="1" class="input-group extra-3">
           <input type="text" class="form-extra " placeholder="Input Jumlah"  aria-describedby="basic-addon1" name="bbm">
-          <span class="input-group-text fw-lighter title" id="basic-addon1">pcs </span><small style="font-size: 12px; color:grey;" class="input-group-text fw-lighter text-wrap notes">(utk stadium, free utk PRO dan PRO+)</small><tr>
+          <span class="input-group-text fw-lighter title" id="basic-addon1">pcs </span>
+          <small style="font-size: 12px; color:grey;" class="input-group-text text-wrap notes">(utk stadium, free utk PRO dan PRO+)</small>
+        </td>
+        <tr>
         <td class="extra-1"><span class="fw-semibold title "><i class='bx bx-circle' style="font-size: 10px"></i> Pola lengan reglan</span></td>
         <td class="harga extra-2 title" >(+15,000):</td>
         <td colspan="1" class="input-group extra-3">
@@ -420,10 +438,86 @@
     {{-- </div> --}}
   {{-- </div>  --}}
   <div class="row mb-4" style="text-align: left">
-    <div class="col-12" style="padding-left: 0; margin-left: 0;"><h5 style="color: #1890fd;   text-align:left;">MATERIAL (bahan) : </h5></div>
+    <div class="col-12" style="padding-left: 0; margin-left: 0;"><h5 style="color: #1890fd;   text-align:left;">MATERIAL (bahan) : </h5>
+    <hr>
+  </div>
   </div> 
-
   <div class="row mb-2">
+    <div class="col">
+      <div class="card hover" style="width: 18rem;"> 
+        <div class="card-body"> 
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-6"><span class="fw-semibold title">
+                Bahan PRO</span>
+              </div>
+              <div class="col-lg-6"><span class="fw-semibold title text-end">
+                <img src="{{asset('/asset/images/jenisbahan/BAHAN - PRO/VAporknit.jpg')}}" class="img-thumbnail w-100 align-right" alt="pro">
+                </span> 
+              </div> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card hover" style="width: 18rem;"> 
+        <div class="card-body"> 
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-6"><span class="fw-semibold title">
+                Bahan PRO <sup>+</sup> </span>
+              </div>
+              <div class="col-lg-6"><span class="fw-semibold title text-end">
+                <img src="{{asset('/asset/images/jenisbahan/BAHAN - PRO+/MOVING KNIT.jpg')}}" class="img-thumbnail w-100 align-right" alt="pro">
+                </span> 
+              </div> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card hover" style="width: 18rem;"> 
+        <div class="card-body"> 
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-6"><span class="fw-semibold title">
+                Bahan PRO</span>
+              </div>
+              <div class="col-lg-6"><span class="fw-semibold title text-end">
+                <img src="{{asset('/asset/images/jenisbahan/BAHAN - PRO/VAporknit.jpg')}}" class="img-thumbnail w-100 align-right" alt="pro">
+                </span> 
+              </div> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{-- copy --}}
+    <div class="col">
+      <div class="card hover" style="width: 18rem;"> 
+        <div class="card-body"> 
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-6"><span class="fw-semibold title">
+                Bahan PRO</span>
+              </div>
+              <div class="col-lg-6"><span class="fw-semibold title text-end">
+                <img src="{{asset('/asset/material/BAHAN - PROPLUS/MOVING KNIT.jpg')}}" class="img-thumbnail w-100 align-right" alt="pro"> 
+                </span> 
+              </div> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{-- end copy --}}
+
+    {{-- hapus klo dah selesai --}}
+    <div class="col">
+      <img src="{{asset('/asset/images/jenisbahan/BAHAN - PRO/VAporknit.jpg')}}" class="img-thumbnail w-25" alt="pro">
+    </div>
     <table style="width: 100%; border: 10px; font-size: 14px; color: black;">
       <tr>
         <td class="extra-1">

@@ -49,59 +49,99 @@
   border-radius: 5px;
   background-color: #979797;
 }
+@media screen and (max-width : 800px){
+    .notes{
+      font-size: 8px;
+
+    }.title{
+      font-size:  10px;
+    }
+  }
+    @media screen and (max-width : 500px){
+    .notes{
+      font-size: 8px;
+
+    }.title{
+      font-size:  10px;
+    }
+  }
+  @media screen and (max-width : 400px){
+    .notes{
+      font-size: 6px;
+
+    }.title{
+      font-size:  10px;
+    }
+  }
+  @media screen and (max-width : 300px){
+    .notes{
+      font-size: 4px;
+
+    }.title{
+      font-size:  8px;
+    }
+  }
+  @media screen and (max-width : 200px){
+    .notes{
+      font-size: 4px;
+
+    }.title{
+      font-size:  8px;
+    }
+  }
 </style>
 <div class="container">
   <div class="row">
       <p style="color: #1890fd;  font-family: Montheavy;  font-weight: bold; padding-left:0%;">Step 2. Design dan Logo</p>
       <table style="width: 100%; border:10px; font-size:14px; font-weight:100; color:black;">
           <tr>
-            <td class="col-1 fw-semibold">Design Jersey Pemain</td>
+            <td class="col-1 fw-semibold title">Design Jersey Pemain</td>
             <td class="col-2">:</td>
             <td colspan="1" class="col-3">
               <div style="display: flex; align-items: center;">
-                  <label for="fileInput" id="customLabel" style="margin-right: 10px;">Upload</label>
+                  <label for="fileInput" id="customLabel" class="title" style="margin-right: 10px;">Upload</label>
                   <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput" name="djp" class="form-control fw-lighter" placeholder="Upload File">
-                  <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter">(format file : .cdr./.ai/.pdf/.jpg)</small>
+                  <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes">(format file : .cdr./.ai/.pdf/.jpg)</small>
               </div> </td>
           </tr>
           <tr>
-            <td class="col-1 fw-semibold">Design jersey kiper</td>
+            <td class="col-1 fw-semibold title">Design jersey kiper</td>
             <td class="col-2">:</td>
             <td colspan="1" class="col-3">
               <div style="display: flex; align-items: center;">
                   <label for="fileInput" id="customLabel" style="margin-right: 10px;">Upload</label>
                   <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput" name="djk" class="form-control fw-lighter" placeholder="Upload File">
-                  <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter">(format file : .cdr./.ai/.pdf/.jpg)</small>
+                  <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes">(format file : .cdr./.ai/.pdf/.jpg)</small>
               </div> </td>
           </tr>
           <tr>
-            <td class="col-1 fw-semibold">Logo Tim</td>
+            <td class="col-1 fw-semibold title">Logo Tim</td>
             <td class="col-2">:</td>
             <td colspan="1" class="col-3">
               <div style="display: flex; align-items: center;">
                   <label for="fileInput" id="customLabel" style="margin-right: 10px;">Upload</label>
                   <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput" name="lt" class="form-control fw-lighter" placeholder="Upload File">
-                  <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter">(format file : .cdr./.ai/.pdf/.jpg)</small>
+                  <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes">(format file : .cdr./.ai/.pdf/.jpg)</small>
               </div> </td>
           </tr>
           <tr>
-            <td class="col-1 fw-semibold">Sponsor dada (tulisan 1 baris)</td>
+            <td class="col-1 fw-semibold title">Sponsor dada (tulisan 1 baris)</td>
             <td class="col-2">:</td>
             <td colspan="1" class="col-3">
               <div style="display: flex; align-items: center;">
                   <label for="fileInput" id="customLabel" style="margin-right: 10px;">Upload</label>
                   <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput" name="sdd" class="form-control fw-lighter" placeholder="Upload File">
-                  <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter">(format file : .cdr./.ai/.pdf/.jpg)</small> <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter"> Free utk semua kategori harga </small>
+                  <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes">(format file : .cdr./.ai/.pdf/.jpg)</small> <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes"> Free utk semua kategori harga </small>
               </div> </td>
           </tr>
           <tr>
-            <td class="col-1 fw-semibold">Sponsor dada (logo + tulisan)</td>
+            <td class="col-1 fw-semibold title">Sponsor dada (logo + tulisan)</td>
             <td class="col-2">:</td>
             <td colspan="1" class="col-3">
               <div style="display: flex; align-items: center;">
                   <label for="fileInput" id="customLabel" style="margin-right: 10px;">Upload</label>
                   <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput" name="sd" class="form-control fw-lighter" placeholder="Upload File">
-                  <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter">(format file : .cdr./.ai/.pdf/.jpg) </small>  <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter"> +30,000/pcs utk NON-PRINT ; free utk kategori HALF-PRINT dan FULL PRINT </small>
+                  <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes">(format file : .cdr./.ai/.pdf/.jpg) </small>  <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes"> +30,000/pcs utk NON-PRINT ; free utk kategori HALF-PRINT dan FULL PRINT </small>
               </div> </td>
           </tr>
       </table>
@@ -109,70 +149,70 @@
       <table style="width: 100%; font-size:14px;  color:black;">
           <tr>
             <td colspan="4">
-              <h4 style="color: #71BF72;">Extra :</h4>
+              <h5 style="color: #71BF72;">Extra :</h5>
             </td>
             <tr>
-              <td class="col-1 fw-semibold">Sponsor dada (tulisan 1 baris)</td>
+              <td class="col-1 fw-semibold title">Sponsor dada (tulisan 1 baris)</td>
               <td class="col-2">:</td>
               <td colspan="1" class="col-3">
                   <div style="display: flex; align-items: center;">
                       <label for="fileInput" id="customLabel" style="margin-right: 10px;">Upload</label>
                       <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput" name="t1b" class="form-control fw-lighter" placeholder="Upload File">
-                      <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter">(format file : .cdr./.ai/.pdf/.jpg)</small>  <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter">  +15,000/pcs utk NON-PRINT ; free utk kategori HALF-PRINT dan FULL PRINT </small>
+                      <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes">(format file : .cdr./.ai/.pdf/.jpg)</small>  <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes">  +15,000/pcs utk NON-PRINT ; free utk kategori HALF-PRINT dan FULL PRINT </small>
                   </div>
               </td>
           </tr>
           
             <tr>
-              <td class="col-1 fw-semibold">Sponsor dada (logo + tulisan)</td>
+              <td class="col-1 fw-semibold title">Sponsor dada (logo + tulisan)</td>
               <td class="col-2">:</td>
               <td colspan="1" class="col-3">
                   <div style="display: flex; align-items: center;">
                       <label for="fileInput" id="customLabel" style="margin-right: 10px;">Upload</label>
                       <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput" name="ltt" class="form-control fw-lighter" placeholder="Upload File">
-                      <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter">(format file : .cdr./.ai/.pdf/.jpg)</small> <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter">   +30,000/pcs utk NON-PRINT ; free utk kategori HALF-PRINT dan FULL PRINT </small>
+                      <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes">(format file : .cdr./.ai/.pdf/.jpg)</small> <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes">   +30,000/pcs utk NON-PRINT ; free utk kategori HALF-PRINT dan FULL PRINT </small>
                   </div>
               </td>
             </tr>
             <tr>
-              <td class="col-1 fw-semibold">Logo di lengan kanan</td>
+              <td class="col-1 fw-semibold title">Logo di lengan kanan</td>
               <td class="col-2">:</td>
               <td colspan="1" class="col-3">
                   <div style="display: flex; align-items: center;">
                       <label for="fileInput" id="customLabel" style="margin-right: 10px;">Upload</label>
                       <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput" name="lk" class="form-control fw-lighter" placeholder="Upload File">
-                      <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter">(format file : .cdr./.ai/.pdf/.jpg)</small> <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter">   15,000/pcs utk NON-PRINT dan HALF-PRINT ; free utk kategori FULL PRINT </small>
+                      <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes">(format file : .cdr./.ai/.pdf/.jpg)</small> <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes">   15,000/pcs utk NON-PRINT dan HALF-PRINT ; free utk kategori FULL PRINT </small>
                   </div> </td>
             </tr>
             <tr>
-              <td class="col-1 fw-semibold">Logo di lengan kanan kiri</td>
+              <td class="col-1 fw-semibold title">Logo di lengan kanan kiri</td>
               <td class="col-2">:</td>
               <td colspan="1" class="col-3">
                   <div style="display: flex; align-items: center;">
                       <label for="fileInput" id="customLabel" style="margin-right: 10px;">Upload</label>
                       <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput" name="llk" class="form-control fw-lighter" placeholder="Upload File">
-                      <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter">(format file : .cdr./.ai/.pdf/.jpg)</small> <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter">   +15,000/pcs utk NON-PRINT dan HALF-PRINT ; free utk kategori FULL PRINT </small>
+                      <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes">(format file : .cdr./.ai/.pdf/.jpg)</small> <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes">   +15,000/pcs utk NON-PRINT dan HALF-PRINT ; free utk kategori FULL PRINT </small>
                   </div> </td>
             </tr>
             <tr>
-              <td class="col-1 fw-semibold">Sponsor belakang (tulisan 1 baris)</td>
+              <td class="col-1 fw-semibold title">Sponsor belakang (tulisan 1 baris)</td>
               <td class="col-2">:</td>
               <td colspan="1" class="col-3">
                   <div style="display: flex; align-items: center;">
                       <label for="fileInput" id="customLabel" style="margin-right: 10px;">Upload</label>
                       <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput" name="sbt" class="form-control fw-lighter" placeholder="Upload File">
-                      <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter">(format file : .cdr./.ai/.pdf/.jpg)</small> <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter"> +15,000/pcs utk NON-PRINT dan HALF-PRINT ; free utk kategori FULL PRINT </small>
+                      <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes">(format file : .cdr./.ai/.pdf/.jpg)</small> <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes"> +15,000/pcs utk NON-PRINT dan HALF-PRINT ; free utk kategori FULL PRINT </small>
                   </div> </td>
               </td>
           </tr>
           <tr>
-              <td class="col-1 fw-semibold">Sponsor belakang (logo + tulisan)</td>
+              <td class="col-1 fw-semibold title">Sponsor belakang (logo + tulisan)</td>
               <td class="col-2">:</td>
               <td colspan="1" class="col-3">
                   <div style="display: flex; align-items: center;">
                       <label for="fileInput" id="customLabel" style="margin-right: 10px;">Upload</label>
                       <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput" name="sblt" class="form-control fw-lighter" placeholder="Upload File">
-                      <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter">(format file : .cdr./.ai/.pdf/.jpg)</small> <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter">  +30,000/pcs utk NON-PRINT dan HALF-PRINT ; free utk kategori  </small>
+                      <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes">(format file : .cdr./.ai/.pdf/.jpg)</small> <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes">  +30,000/pcs utk NON-PRINT dan HALF-PRINT ; free utk kategori  </small>
                   </div> </td>
           
               </tr>

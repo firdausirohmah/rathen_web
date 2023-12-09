@@ -51,6 +51,61 @@
             border-radius: 5px;
             background-color: #979797;
         }
+        @media screen and (max-width : 800px){
+    .notes{
+      font-size: 8px;
+
+    }.title{
+      font-size:  10px;
+    }
+    .imgg {
+       width: 150px; 
+    }
+  }
+    @media screen and (max-width : 500px){
+    .notes{
+      font-size: 8px;
+
+    }.title{
+      font-size:  10px;
+    }
+    .imgg {
+       width: 100px; 
+    }
+  }
+  @media screen and (max-width : 400px){
+    .notes{
+      font-size: 6px;
+
+    }.title{
+      font-size:  10px;
+    }
+    .imgg {
+       width: 50px; 
+    }
+  }
+  @media screen and (max-width : 300px){
+    .notes{
+      font-size: 4px;
+
+    }.title{
+      font-size:  8px;
+    }
+    .imgg {
+       width: 50px; 
+    }
+  }
+  @media screen and (max-width : 200px){
+    .notes{
+      font-size: 4px;
+
+    }.title{
+      font-size:  8px;
+    }
+    .imgg {
+       width: 150px; 
+    }
+  }
           </style>
         </div>
         <div class="container">
@@ -60,7 +115,7 @@
           
         <table style="width: 100%; border:10px; font-size:14px; font-weight:100; color:black;">
             <tr style="font-weight: bold; " >
-            <td class="col-1 fw-semibold">Kategori Harga</td>
+            <td class="col-1 fw-semibold title">Kategori Harga</td>
             <td class="col-2">:</td>
             <td class="col-3">
                 <input type="text" name="kh" class="form-control" placeholder="">
@@ -73,7 +128,7 @@
             </tr>
 
             <tr style="font-weight: bold; " >
-                <td class="col-1 fw-semibold">Kualitas</td>
+                <td class="col-1 fw-semibold title">Kualitas</td>
                 <td class="col-2">:</td>
                 <td class="col-3">
                     <input type="text" name="k" class="form-control" placeholder="">
@@ -91,7 +146,7 @@
                 </tr>
 
                 <tr>
-                    <td class="col-1 fw-semibold">Pola Lengan</td>
+                    <td class="col-1 fw-semibold title">Pola Lengan</td>
                     <td class="col-2">:</td>
                     <td class="col-3 input-group">
                          <select name="kategori" class="form-extra" id="">
@@ -103,7 +158,7 @@
                     </tr>
 
                 <tr>
-                    <td class="col-1 fw-semibold">Model Kerah</td>
+                    <td class="col-1 fw-semibold title">Model Kerah</td>
                     <td class="col-2">:</td>
                     <td class="col-3">
                         <input type="text" name="pl" class="form-control" placeholder="">
@@ -111,7 +166,7 @@
                     </tr>
 
                     <tr>
-                        <td class="col-1 fw-semibold">Bahan baju</td>
+                        <td class="col-1 fw-semibold title">Bahan baju</td>
                         <td class="col-2">:</td>
                         <td class="col-3">
                             <input type="text" name="bb" class="form-control" placeholder="">
@@ -119,7 +174,7 @@
                         </tr>
 
                         <tr>
-                            <td class="col-1 fw-semibold">Bahan celana</td>
+                            <td class="col-1 fw-semibold title">Bahan celana</td>
                             <td class="col-2">:</td>
                             <td class="col-3">
                                 <input type="text" name="bc" class="form-control" placeholder="">
@@ -135,46 +190,46 @@
         <table class="mb-4 mt-4" style="font-family:Montheavy; font-weight: bold;">
             <th>
                 <tr>
-                    <td colspan="3" style=" font-weight: bold;">
+                    <td colspan="3" style=" font-weight: bold;" class="title">
                         JENIS BAHAN
                     </td>
                     <td style="width: 10px"></td>
 
-                    <td>MODEL KERAH</td>
+                    <td class="title">MODEL KERAH</td>
                 </tr>
             </th>
             <tbody>
                 <tr>
-                    <td  style="background-color: #a0a0a0; color:white; widht:30px; margin-center:30%; height:25%">
+                    <td class="title" style="background-color: #a0a0a0; color:white; widht:30px; margin-center:30%; height:25%">
                         FANS
                     </td>
-                    <td  style=" background-color: #a0a0a0; color:white; text-align:center; widht:30px; margin-center:30%; height:25%">
+                    <td  class="title" style=" background-color: #a0a0a0; color:white; text-align:center; widht:30px; margin-center:30%; height:25%">
                         STADIUM
                     </td>
-                    <td  style="background-color: #a0a0a0; color:white;  text-align:center; widht:30px; margin-center:14%;  height:25%">
+                    <td class="title"  style="background-color: #a0a0a0; color:white;  text-align:center; widht:30px; margin-center:14%;  height:25%">
                         PRO
                     </td>
                     <td></td>
                     <td rowspan="9">
-                        <img style="width: 300px" src="{{ asset('asset/images/KERAH.jpg') }}" alt="">
+                        <img class="imgg" style="width: 300px" src="{{ asset('asset/images/KERAH.jpg') }}" alt="">
                     </td>
                 </tr>
                 <tr >
-                    <td class="fw-center">
+                    <td class="fw-center title">
                         MILANO
                     </td>
-                    <td class="fw-center">
+                    <td class="fw-center title">
                         RTNH-TECT
                     </td>
-                    <td class="fw-center">
+                    <td class="fw-center title">
                         MOVINGKNIT
                     </td>
                 </tr>
                     <tr>
-                        <td class="fw-center">
+                        <td class="fw-center title">
                             BINTIK
                         </td>
-                        <td class="fw-center">
+                        <td class="fw-center title">
                             EMBOS-TOPO
                         </td>
                     </tr>
@@ -182,7 +237,7 @@
                             <td class="fw-center">
 
                             </td>
-                            <td class="fw-center" >
+                            <td class="fw-center title" >
                                 EMBOS-STRAW
                             </td>
                         </tr>
@@ -190,7 +245,7 @@
                             <td class="fw-center">
                                 
                             </td>
-                            <td class="fw-center">
+                            <td class="fw-center title">
                                 DROPNIDLE
                             </td>
                         </tr>
@@ -198,7 +253,7 @@
                             <td>
                                 
                             </td>
-                            <td  class="fw-center">
+                            <td  class="fw-center title">
                                 AIRWALK
                             </td>
                         </tr>
@@ -206,7 +261,7 @@
                             <td>
                                 
                             </td>
-                            <td  class="fw-center">
+                            <td  class="fw-center title">
                                 SMASH
                             </td>
                         </tr>
@@ -214,7 +269,7 @@
                             <td>
                                 
                             </td>
-                            <td class="fw-center" >
+                            <td class="fw-center title" >
                                 RHABIT
                             </td>
                         </tr>

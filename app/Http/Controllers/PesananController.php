@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\ModelStep1;
+use Barryvdh\DomPDF\PDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
@@ -46,7 +47,38 @@ class PesananController extends Controller
             'pesanan' => $data,
         ]);
     }
+    // ==========================quotation===================================
+    public function quotation(Request $request)
+    {
+        $nama_pemesaanan = $request->nama_pemesanan;
+        $kontak = $request->kontak;
+        $tanggalSekarang = date("d F Y");
+        $data = DB::table('tbl_step1')
+            ->join('tbl_step2', 'tbl_step1.kd_step2', '=', 'tbl_step2.kd_step2')
+            ->join('tbl_step3', 'tbl_step1.kd_step3', '=', 'tbl_step3.kd_step3')
+            ->select('tbl_step1.*', 'tbl_step2.*', 'tbl_step3.*')
+            ->get();
+        // dd($tanggalSekarang);
+        // $html = view('welcome')->render();
+        foreach ($data as $pesanan) {
 
+            return view('landing_page.quotation', [
+                'data' => $pesanan,
+                'nama' => $nama_pemesaanan,
+                'kontak' => $kontak,
+                'tanggal' => $tanggalSekarang,
+            ]);
+        }
+        // $pdf = PDF::loadView('landing_page.quotation', [
+        //     'data' => $data,
+        //     'nama' => $nama_pemesaanan,
+        //     'kontak' => $kontak,
+        //     'tanggal' => $tanggalSekarang,
+        // ]);
+
+        // Simpan atau tampilkan PDF
+        // return $pdf->download('output.pdf');
+    }
     // ================================ add ==================================
     public function addForm1(Request $request)
     {
@@ -128,4 +160,14 @@ class PesananController extends Controller
 
         return redirect()->back();
     }
+    // public function generatePDF()
+    // {
+        
+    //     $html = file_get_contents(storage_path('app/quotation.html'));
+
+      
+    //     $pdf = PDF::loadHTML($html);
+
+    //     return $pdf->download('output.pdf');
+    // }
 }

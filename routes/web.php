@@ -67,7 +67,7 @@ Route::get('/price-list', function () {
 });
 // Route::post('/store-price-list', function (Request $request) {
 //     return view('landing_page.pricelist');
-// });
+// })
 Route::controller(PriceListController::class)->group(function () {
     Route::post('/store-price-list', 'store')->name('sotre');
 });
@@ -98,6 +98,8 @@ Route::controller(HomeController::class)->group(function () {
 
 Route::controller(PesananController::class)->group(function () {
     Route::get('/form-1', 'form_1')->name('form_1');
+    // Route::get('/form-1/generate', 'generate')->name('generate');
+    Route::post('/form-1/quotation', 'quotation')->name('quotation');
     Route::post('/form-1/action', 'addForm1')->name('addForm1');
     Route::get('/form-2', 'form_2')->name('form_2');
     Route::get('/form-3', 'form_3')->name('form_3');

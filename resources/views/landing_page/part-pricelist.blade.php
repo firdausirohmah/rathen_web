@@ -26,7 +26,7 @@
   </div>
 </nav> --}}
 
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500&display=swap');
@@ -250,14 +250,14 @@
             <div class="col-lg-6 " style="font-weight: 200; padding-left:10px;">
                 <div class="card">
                     <div class="card-body">
-                      <h5 class="card-title">DAFTAR HARGA JERSEY RATHEN</h5>
+                      <h5 class="card-title" style="position: relative">DAFTAR HARGA JERSEY RATHEN</h5>
                       <div class="container">
                         <div class="row">
                             <div class="col-lg-3">
                                 <div class="container">
                                     <div class="row">
-                                        <div class="col-lg-4" style="margin-top: auto; margin-bottom:auto; margin-left:0px; margin-right:0px;"><img src="{{ asset('asset/images/price-list/ceklis.png') }}" style="width:20px;" alt=""></div>
-                                        <div class="col-lg-8" style="font-size: 14px">Stok <br> Tersedia</div>
+                                        <div class="col" style="margin-top: auto; margin-bottom:auto; margin-left:0px; margin-right:0px;"><img src="{{ asset('asset/images/price-list/ceklis.png') }}" style="width:20px;" alt=""></div>
+                                        <div class="col" style="font-size: 13px">Stok <br> Tersedia</div>
                                     </div>
                                 </div>
                             </div>
@@ -265,7 +265,7 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-lg-4" style="margin-top: auto; margin-bottom:auto; margin-left:0px; margin-right:0px;"><img src="{{ asset('asset/images/price-list/broom.png') }}" width="20px" alt=""></div>
-                                        <div class="col-lg-8" style="font-size: 14px">Bebas Biaya <br> Pengiriman</div>
+                                        <div class="col-lg-8" style="font-size: 13px">Bebas Biaya <br> Pengiriman</div>
                                     </div>
                                 </div>
                             </div>
@@ -273,7 +273,7 @@
                                 <div class="container">
                                     <div class="row">
                                         {{-- <div class="col-lg-3" style="margin-top: auto; margin-bottom:auto; margin-left:0px; margin-right:0px;"><img src="{{ asset('asset/images/price-list/presen.png') }}" width="20px" alt=""></div> --}}
-                                        <div class="col-lg-8" style="font-size: 14px">Cicilan 0% Hingga <br>24 Bulan</div>
+                                        <div class="col-lg-8" style="font-size: 13px">Cicilan 0% Hingga <br>24 Bulan</div>
                                     </div>
                                 </div>
                                  
@@ -283,7 +283,7 @@
                           <span>Kualitas :</span>
                           <div class="col">
                                 <button class="btn btn-outline-secondary {{ $data->stadium }} w-25 mx-3 menu-button" id="buttonA" onclick="selectOption(1, 1)"><span class="fs-6">Stadium Version</span></button>
-                                <a href="{{ url('/price-list', ['kd_part' => 'pro']) }}"><button class="btn btn-outline-secondary {{ $data->pro }} w-25 mx-3 menu-button" id="buttonB" onclick="changeContent('data4'),selectOption(1, 2)">PRO Version</button></a>
+                                <a href="{{ url('/price-list', ['kd_part' => 'pro']) }}"><button class="btn btn-outline-secondary {{ $data->pro }} menu-button" id="buttonB" onclick="changeContent('data4'),selectOption(1, 2)">PRO Version</button></a>
                                 <a href="{{ url('/price-list', ['kd_part' => 'pro-plus']) }}"><button class="btn btn-outline-secondary {{ $data->pro_plus }} w-25 mx-3 menu-button" id="buttonC" onclick="changeContent('data5'),selectOption(1, 3)">PRO<sup>+</sup> Version</button></a>
                             </div>
                         </div>
@@ -298,7 +298,7 @@
                         </div>
                         <div class="row mt-4">
                           <div class="col">
-                            <p>{!! nl2br($jsonData['menu1'][$data->deskripsi]) !!}</p>
+                            <p><small>{!! nl2br($jsonData['menu1'][$data->deskripsi]) !!} </small></p>
                           </div>
                         </div>
                     </div>
@@ -469,12 +469,12 @@
 
 
       </style> 
-      <div class="container-xxl" id="kategori1">
+      <div class="container-xxl mt-4" id="kategori1">
         <div class="col">
           <div class="card card1">
             <div class="card-header">
               <div class="card-body">
-                <a class="mx-2 fw-bold clickable" onclick="showContent('content1'), changeLinkColor(this)">DETAIL</a>
+                <a class="mx-2 fw-bold  clickable" onclick="showContent('content1'), changeLinkColor(this)">DETAIL</a>
                 <a class="mx-4 fw-bold clickable" onclick="showContent('content2'), changeLinkColor(this)">KOMPARASI</a>
                 <hr>
                 <div class="card-title card1">
@@ -789,9 +789,9 @@
   
         /* Gaya dasar untuk tombol */
         .menu-button {
-          padding: 10px;
+          /* padding: 10px;
           font-size: 16px;
-          cursor: pointer;
+          cursor: pointer; */
         }
     
         /* Gaya untuk tombol yang dipilih */

@@ -95,7 +95,7 @@ src="https://www.facebook.com/tr?id=1058956608607048&amp;ev=PageView&amp;noscrip
 <nav class="wrapper">
     <div class="navbar-main-logo">
         <a href="/">
-            <img src="asset/images/LOGO.png" style="width:67px; height:67px; margin-top:10%;">
+            <img src="asset/images/LOGO.png" style="width:67px; margin-top:10%;">
             {{-- <link rel="icon" type="image/png" href="asset/images/logo.png" sizes="32x32"> --}}
 
         </a>

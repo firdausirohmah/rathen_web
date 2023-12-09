@@ -16,7 +16,11 @@
 
 
 <body>
-  
+  <style>
+    .active-nav{
+
+    }
+  </style>
     <br>
     <h3 style="font-family: Montheavy; color: #1890fd;  font-weight: bold; text-decoration: underline;
     margin-bottom: 20px; text-align: center;">FORM ORDER - CUSTOM RATHEN</h3>
@@ -29,19 +33,19 @@
                 <a href="{{ url('/form-1') }}">
                     <button
                     type="button"
-                    class="nav-link {{ request()->is('form-1') ? 'active' : '' }}"
+                    class="nav-link text {{ request()->is('form-1') ? 'active' : '' }}"
                     role="tab" 
                     data-bs-toggle="tab"
                     data-bs-target="#navs-top-home"
                     aria-controls="navs-top-home"
                     aria-selected="true"
                     
-                    >Step 1
+                    ><span ></span> Step 1
                   </button>
                 </a>
                 
               </li>
-
+              
               <li class="nav-item">
                 <a href="{{ url('/form-2') }}">
                     <button
@@ -114,14 +118,14 @@
     </div>
  
     @yield('content')
-    <footer>
+    {{-- <footer>
           <div  style="text-align: right; " class="mt-4">
             <button type="button" style="font-family: Montheavy; width:20%; font-size:12px; margin-left:10%" class="btn btn-secondary">Data MASUK ke CRM</button>
           </div>
           <div style="text-align: right;" class="">
           </div>
       
-    </footer>
+    </footer> --}}
               
     
     

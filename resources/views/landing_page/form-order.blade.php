@@ -193,7 +193,7 @@
         <tr>
           <td class="col-1 fw-semibold title"> Tipe Kualitas</td>
           <td class="col-2">:</td>
-          <td class="col-3"><span class="fw-lighter">{{ $data->deskripsi }}</span>
+          <td class="col-3"><span class="fw-lighter">{{ $data->deskripsi }} <input type="hidden" value="{{ $data->deskripsi }}" name="kualitas"></span>
             {{-- <select name="kualitas" class="form-control" id="">
               <option class="" value="Fans"><span class="fw-lighter"> Stadium</span></option>
               <option value="Stadium"><span class="fw-lighter"> PRO</span></option>
@@ -344,29 +344,8 @@
         </td>
       </tr> --}}
     </table>
-    <div class="container">
-      <div class="row-12">
-        <div class="col-lg-12 mt-4">
-          <h5  class="fw-bold title" style="color: red">TOTAL HARGA <span class="mx-5">:</span> IDR <input type="text" class="inpt-harga text-danger fw-bold title" name="total_harga" value="124.000" placeholder="124.000"></h5>
-        </div>
-      </div>
-    </div>
-
-    <a type="button"  data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="font-family: Montheavy;  font-size:12px; margin-left:30%; font-weight: bold; font-style: italic;"> Download QUOTATION (.pdf)</a>
-  
- 
-
-<div class="container">
-  <div class="row">
-    <button type="submit" style="font-family: Montheavy; width:15%" class="btn btn-black mx-4 title">ORDER </button>
-    </form>
-    <a href="/page-costum" style="font-family: Montheavy; width:15%" class="btn btn-black title">CANCEL </a>
-  </div>
-</div>
-
   </div>
 
-  
   <hr>
   <div class="row " style="text-align: left">
     <div class="col-12" style="padding-left: 0; margin-left: 0;"><h5 style="color: #71BF72; text-align:left;">Keterangan Extra:</h5></div>
@@ -1074,6 +1053,22 @@
      
     </table>
     </div>
+    <div class="container">
+      <div class="row-12">
+        <div class="col-lg-12 mt-4">
+          <h5  class="fw-bold title" style="color: red">TOTAL HARGA <span class="mx-5">:</span> IDR <input type="text" class="inpt-harga text-danger fw-bold title" name="total_harga" value="124.000" placeholder="124.000"></h5>
+        </div>
+      </div>
+    </div>
+
+<div class="container">
+  <div class="row">
+    <a type="button"  data-bs-toggle="modal" data-bs-target="#staticBackdrop"style="font-family: Montheavy; width:22%" class="btn bg-warning text-dark mx-4 title"> Download QUOTATION (.pdf)</a>
+    <button type="submit" style="font-family: Montheavy; width:15%" class="btn btn-black mx-4 title">ORDER </button>
+    </form>
+    <a href="/page-costum" style="font-family: Montheavy; width:15%" class="btn btn-black title">CANCEL </a>
+  </div>
+</div>
 
 
 {{-- ORDER --}}

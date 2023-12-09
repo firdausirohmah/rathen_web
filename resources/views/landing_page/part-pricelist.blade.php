@@ -26,7 +26,7 @@
   </div>
 </nav> --}}
 
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500&display=swap');
@@ -123,6 +123,7 @@
       .carousel-indicators{
         align-items: center;
       }
+      
       
     </style>
     <link rel="stylesheet" href="asset/css/styles.css">
@@ -255,8 +256,8 @@
                             <div class="col-lg-3">
                                 <div class="container">
                                     <div class="row">
-                                        <div class="col-lg-4" style="margin-top: auto; margin-bottom:auto; margin-left:0px; margin-right:0px;"><img src="{{ asset('asset/images/price-list/ceklis.png') }}" style="width:20px;" alt=""></div>
-                                        <div class="col-lg-8" style="font-size: 13px">Stok <br> Tersedia</div>
+                                        <div class="col" style="margin-top: auto; margin-bottom:auto; margin-left:0px; margin-right:0px;"><img src="{{ asset('asset/images/price-list/ceklis.png') }}" style="width:20px;" alt=""></div>
+                                        <div class="col" style="font-size: 13px">Stok <br> Tersedia</div>
                                     </div>
                                 </div>
                             </div>
@@ -282,7 +283,7 @@
                           <span>Kualitas :</span>
                           <div class="col">
                                 <button class="btn btn-outline-secondary {{ $data->stadium }} w-25 mx-3 menu-button" id="buttonA" onclick="selectOption(1, 1)"><span class="fs-6">Stadium Version</span></button>
-                                <a href="{{ url('/price-list', ['kd_part' => 'pro']) }}"><button class="btn btn-outline-secondary {{ $data->pro }} w-25 mx-3 menu-button" id="buttonB" onclick="changeContent('data4'),selectOption(1, 2)">PRO Version</button></a>
+                                <a href="{{ url('/price-list', ['kd_part' => 'pro']) }}"><button class="btn btn-outline-secondary {{ $data->pro }} menu-button" id="buttonB" onclick="changeContent('data4'),selectOption(1, 2)">PRO Version</button></a>
                                 <a href="{{ url('/price-list', ['kd_part' => 'pro-plus']) }}"><button class="btn btn-outline-secondary {{ $data->pro_plus }} w-25 mx-3 menu-button" id="buttonC" onclick="changeContent('data5'),selectOption(1, 3)">PRO<sup>+</sup> Version</button></a>
                             </div>
                         </div>
@@ -297,7 +298,7 @@
                         </div>
                         <div class="row mt-4">
                           <div class="col">
-                            <p>{!! nl2br($jsonData['menu1'][$data->deskripsi]) !!}</p>
+                            <p><small>{!! nl2br($jsonData['menu1'][$data->deskripsi]) !!} </small></p>
                           </div>
                         </div>
                     </div>
@@ -468,12 +469,12 @@
 
 
       </style> 
-      <div class="container-xxl" id="kategori1">
+      <div class="container-xxl mt-4" id="kategori1">
         <div class="col">
           <div class="card card1">
             <div class="card-header">
               <div class="card-body">
-                <a class="mx-2 fw-bold clickable" onclick="showContent('content1'), changeLinkColor(this)">DETAIL</a>
+                <a class="mx-2 fw-bold  clickable" onclick="showContent('content1'), changeLinkColor(this)">DETAIL</a>
                 <a class="mx-4 fw-bold clickable" onclick="showContent('content2'), changeLinkColor(this)">KOMPARASI</a>
                 <hr>
                 <div class="card-title card1">
@@ -509,9 +510,251 @@
                       </div>
                     </div>
                   </div>
-                  <div id="content2" class="card-text content">
-                    <h6 class="card-subtitle mb-2 text-body-secondary">KOMPARASI</h6>
-                    <p>Ini adalah konten untuk Judul 2.</p>
+                  <div id="content2" class="card-text content komparasi">
+                    <h6 class="card-subtitle mb-2 text-body-secondary text-center fw-bold fs-4 mb-2">Perbandingan type kualitas</h6>
+                    <div class="fabrics mb-5">
+                      <div class="d-flex overflow-hidden">
+                        <div class="overflow-hidden"><img class="object-fit-cover " src="{{asset('asset/images/price-list/detail/halfprint/Halfprint-2.jpg')}}" /></div>
+                        <div class="overflow-hidden"><img class="object-fit-cover " src="{{asset('asset/images/price-list/detail/halfprint/Halfprint-2.jpg')}}" /></div>
+                        <div class="overflow-hidden"><img class="object-fit-cover " src="{{asset('asset/images/price-list/detail/halfprint/Halfprint-2.jpg')}}" /></div>
+                      </div>
+                      <div class="d-flex flex-column align-items-center">
+                        <img class="object-fit-cover icon mx-auto" src="{{ asset('asset/images/price-list/komparasi/fabrics.jpg')}}" />
+                        <div class="text-center fw-bold">Fabrics</div>
+                      </div>
+                      <table class="mx-auto">
+                        <thead>
+                          <tr>
+                            <th width="400" class="text-center py-1 fw-bold">Stadium</th>
+                            <th width="400" class="text-center py-1 fw-bold">PRO</th>
+                            <th width="400" class="text-center py-1 fw-bold">PRO<sup>+</sup></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="text-center">RATHEN - TECH</td>
+                            <td class="text-center">VAPORKNIT</td>
+                            <td class="text-center">MOVINGKNIT</td>
+                          </tr>
+                          <tr>
+                            <td class="text-center">Dri-fit technology</td>
+                            <td class="text-center">Jacquard techonlogy</td>
+                            <td class="text-center">Single-Knit jacquardtechnology</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+
+                    <div class="logo-tim mb-5">
+                      <div class="d-flex overflow-hidden">
+                        <div class="overflow-hidden"><img class="object-fit-cover " src="{{asset('asset/images/price-list/detail/halfprint/Halfprint-2.jpg')}}" /></div>
+                        <div class="overflow-hidden"><img class="object-fit-cover " src="{{asset('asset/images/price-list/detail/halfprint/Halfprint-2.jpg')}}" /></div>
+                        <div class="overflow-hidden"><img class="object-fit-cover " src="{{asset('asset/images/price-list/detail/halfprint/Halfprint-2.jpg')}}" /></div>
+                      </div>
+                      <div class="d-flex flex-column align-items-center">
+                        <img class="object-fit-cover icon mx-auto" src="{{ asset('asset/images/price-list/komparasi/logo-tim.jpg')}}" />
+                        <div class="text-center fw-bold">LOGO TIM (CREST)</div>
+                      </div>
+                      <table class="mx-auto">
+                        <thead>
+                          <tr>
+                            <th width="400" class="text-center py-1 fw-bold">Stadium</th>
+                            <th width="400" class="text-center py-1 fw-bold">PRO</th>
+                            <th width="400" class="text-center py-1 fw-bold">PRO<sup>+</sup></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="text-center">DTF</td>
+                            <td class="text-center">3D TPU</td>
+                            <td class="text-center">3D RUBBER</td>
+                          </tr>
+                          <tr>
+                            <td class="text-center">Standard</td>
+                            <td class="text-center">Premium</td>
+                            <td class="text-center">Premium</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+
+                    <div class="logo-r mb-5">
+                      <div class="d-flex overflow-hidden">
+                        <div class="overflow-hidden"><img class="object-fit-cover " src="{{asset('asset/images/price-list/detail/halfprint/Halfprint-2.jpg')}}" /></div>
+                        <div class="overflow-hidden"><img class="object-fit-cover " src="{{asset('asset/images/price-list/detail/halfprint/Halfprint-2.jpg')}}" /></div>
+                        <div class="overflow-hidden"><img class="object-fit-cover " src="{{asset('asset/images/price-list/detail/halfprint/Halfprint-2.jpg')}}" /></div>
+                      </div>
+                      <div class="d-flex flex-column align-items-center">
+                        <img class="object-fit-cover icon mx-auto" src="{{ asset('asset/images/price-list/komparasi/logo-r.jpg')}}" />
+                        <div class="text-center fw-bold">LOGO - R</div>
+                      </div>
+                      <table class="mx-auto">
+                        <thead>
+                          <tr>
+                            <th width="400" class="text-center py-1 fw-bold">Stadium</th>
+                            <th width="400" class="text-center py-1 fw-bold">PRO</th>
+                            <th width="400" class="text-center py-1 fw-bold">PRO<sup>+</sup></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="text-center">Polyflex</td>
+                            <td class="text-center">3D</td>
+                            <td class="text-center">3D SHAPE</td>
+                          </tr>
+                          <tr>
+                            <td class="text-center">Standard</td>
+                            <td class="text-center">Premium</td>
+                            <td class="text-center">Premium</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+
+                    <div class="t-lock mb-5">
+                      <div class="d-flex overflow-hidden">
+                        <div class="overflow-hidden"><img class="object-fit-cover " src="{{asset('asset/images/price-list/detail/halfprint/Halfprint-2.jpg')}}" /></div>
+                        <div class="overflow-hidden"><img class="object-fit-cover " src="{{asset('asset/images/price-list/detail/halfprint/Halfprint-2.jpg')}}" /></div>
+                        <div class="overflow-hidden"><img class="object-fit-cover " src="{{asset('asset/images/price-list/detail/halfprint/Halfprint-2.jpg')}}" /></div>
+                      </div>
+                      <div class="d-flex flex-column align-items-center">
+                        <img class="object-fit-cover icon mx-auto" src="{{ asset('asset/images/price-list/komparasi/t-lock.jpg')}}" />
+                        <div class="text-center fw-bold">T - Lock</div>
+                      </div>
+                      <table class="mx-auto">
+                        <thead>
+                          <tr>
+                            <th width="400" class="text-center py-1 fw-bold">Stadium</th>
+                            <th width="400" class="text-center py-1 fw-bold">PRO</th>
+                            <th width="400" class="text-center py-1 fw-bold">PRO<sup>+</sup></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="text-center">✔️</td>
+                            <td class="text-center">✔️</td>
+                            <td class="text-center">✔️</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+
+                    <div class="laser-cut mb-5">
+                      <div class="d-flex overflow-hidden">
+                        <div class="overflow-hidden"><img class="object-fit-cover " src="{{asset('asset/images/price-list/detail/halfprint/Halfprint-2.jpg')}}" /></div>
+                        <div class="overflow-hidden"><img class="object-fit-cover " src="{{asset('asset/images/price-list/detail/halfprint/Halfprint-2.jpg')}}" /></div>
+                        <div class="overflow-hidden"><img class="object-fit-cover " src="{{asset('asset/images/price-list/detail/halfprint/Halfprint-2.jpg')}}" /></div>
+                      </div>
+                      <div class="d-flex flex-column align-items-center">
+                        <img class="object-fit-cover icon mx-auto" src="{{ asset('asset/images/price-list/komparasi-fabrics.jpg')}}" />
+                        <div class="text-center fw-bold">LASER CUT - Air circulation</div>
+                      </div>
+                      <table class="mx-auto">
+                        <thead>
+                          <tr>
+                            <th width="400" class="text-center py-1 fw-bold">Stadium</th>
+                            <th width="400" class="text-center py-1 fw-bold">PRO</th>
+                            <th width="400" class="text-center py-1 fw-bold">PRO<sup>+</sup></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="text-center">❌</td>
+                            <td class="text-center">❌</td>
+                            <td class="text-center">✔️</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+
+                    <div class="authentic-r mb-5">
+                      <div class="d-flex overflow-hidden">
+                        <div class="overflow-hidden"><img class="object-fit-cover " src="{{asset('asset/images/price-list/detail/halfprint/Halfprint-2.jpg')}}" /></div>
+                        <div class="overflow-hidden"><img class="object-fit-cover " src="{{asset('asset/images/price-list/detail/halfprint/Halfprint-2.jpg')}}" /></div>
+                        <div class="overflow-hidden"><img class="object-fit-cover " src="{{asset('asset/images/price-list/detail/halfprint/Halfprint-2.jpg')}}" /></div>
+                      </div>
+                      <div class="d-flex flex-column align-items-center">
+                        <img class="object-fit-cover icon mx-auto" src="{{ asset('asset/images/price-list/komparasi/authentic.jpg')}}" />
+                        <div class="text-center fw-bold">AUTHENTIC - R</div>
+                      </div>
+                      <table class="mx-auto">
+                        <thead>
+                          <tr>
+                            <th width="400" class="text-center py-1 fw-bold">Stadium</th>
+                            <th width="400" class="text-center py-1 fw-bold">PRO</th>
+                            <th width="400" class="text-center py-1 fw-bold">PRO<sup>+</sup></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="text-center">DTF</td>
+                            <td class="text-center">3D</td>
+                            <td class="text-center">RUBBER ON TATAMI</td>
+                          </tr>
+                          <tr>
+                            <td class="text-center">Standard</td>
+                            <td class="text-center">Premium</td>
+                            <td class="text-center">Exclusive</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+
+                    <div class="logo-celana mb-5">
+                      <div class="d-flex overflow-hidden">
+                        <div class="overflow-hidden"><img class="object-fit-cover " src="{{asset('asset/images/price-list/detail/halfprint/Halfprint-2.jpg')}}" /></div>
+                        <div class="overflow-hidden"><img class="object-fit-cover " src="{{asset('asset/images/price-list/detail/halfprint/Halfprint-2.jpg')}}" /></div>
+                        <div class="overflow-hidden"><img class="object-fit-cover " src="{{asset('asset/images/price-list/detail/halfprint/Halfprint-2.jpg')}}" /></div>
+                      </div>
+                      <div class="d-flex flex-column align-items-center">
+                        <img class="object-fit-cover icon mx-auto" src="{{ asset('asset/images/price-list/komparasi/logo-tim-celana.jpg')}}" />
+                        <div class="text-center fw-bold">LOGO TIM - CELANA</div>
+                      </div>
+                      <table class="mx-auto">
+                        <thead>
+                          <tr>
+                            <th width="400" class="text-center py-1 fw-bold">Stadium</th>
+                            <th width="400" class="text-center py-1 fw-bold">PRO</th>
+                            <th width="400" class="text-center py-1 fw-bold">PRO<sup>+</sup></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="text-center">❌</td>
+                            <td class="text-center">❌</td>
+                            <td class="text-center">✔️</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+
+                    <div class="nama-tim-celana mb-5">
+                      <div class="d-flex overflow-hidden">
+                        <div class="overflow-hidden"><img class="object-fit-cover " src="{{asset('asset/images/price-list/detail/halfprint/Halfprint-2.jpg')}}" /></div>
+                        <div class="overflow-hidden"><img class="object-fit-cover " src="{{asset('asset/images/price-list/detail/halfprint/Halfprint-2.jpg')}}" /></div>
+                        <div class="overflow-hidden"><img class="object-fit-cover " src="{{asset('asset/images/price-list/detail/halfprint/Halfprint-2.jpg')}}" /></div>
+                      </div>
+                      <div class="d-flex flex-column align-items-center">
+                        <img class="object-fit-cover icon mx-auto" src="{{ asset('asset/images/price-list/komparasi/nama-tim-celana.jpg')}}" />
+                        <div class="text-center fw-bold">NAMA TIM - CELANA</div>
+                      </div>
+                      <table class="mx-auto">
+                        <thead>
+                          <tr>
+                            <th width="400" class="text-center py-1 fw-bold">Stadium</th>
+                            <th width="400" class="text-center py-1 fw-bold">PRO</th>
+                            <th width="400" class="text-center py-1 fw-bold">PRO<sup>+</sup></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="text-center">✔️</td>
+                            <td class="text-center">✔️</td>
+                            <td class="text-center">✔️</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -536,11 +779,19 @@
       }
       </script>
       <style>
+          .komparasi .icon{
+    height: 100px;
+  }
+
+  .komparasi th {
+    background-color: #ABABAB;
+  }
+  
         /* Gaya dasar untuk tombol */
         .menu-button {
-          padding: 10px;
+          /* padding: 10px;
           font-size: 16px;
-          cursor: pointer;
+          cursor: pointer; */
         }
     
         /* Gaya untuk tombol yang dipilih */

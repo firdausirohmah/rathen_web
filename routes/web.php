@@ -67,7 +67,7 @@ Route::get('/price-list', function () {
 });
 // Route::post('/store-price-list', function (Request $request) {
 //     return view('landing_page.pricelist');
-// });
+// })
 Route::controller(PriceListController::class)->group(function () {
     Route::post('/store-price-list', 'store')->name('sotre');
 });

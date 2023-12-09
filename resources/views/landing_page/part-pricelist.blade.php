@@ -288,6 +288,17 @@
                 <div class="card">
                     <div class="card-body">
                       <h5 class="card-title" style="position: relative">DAFTAR HARGA JERSEY RATHEN</h5>
+                      <section class="visible-on-small">
+                        <div class="badge text-wrap text-dark" >
+                          <img src="{{ asset('asset/images/price-list/ceklis.png') }}" width="20px" alt=""> Stok Tersedia
+                        </div>
+                        <div class="badge text-wrap text-dark" >
+                          <img src="{{ asset('asset/images/price-list/broom.png') }}" width="20px" alt=""> Bebas Biaya Pengriman
+                        </div>
+                        <div class="badge text-wrap text-dark" >
+                          <img src="{{ asset('asset/images/price-list/presen.png') }}" width="20px" alt=""> Cicilan 0% Hingga 24 Bulan
+                        </div>
+                      </section>
                       <div class="container">
                         {{-- view-on-large --}}
                         <div class="row view-on-large">

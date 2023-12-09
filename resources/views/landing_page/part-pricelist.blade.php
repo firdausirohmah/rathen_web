@@ -42,7 +42,6 @@
                     padding: 0;
                     font-size: inherit;
                 }
-                <style>
         /* Gaya untuk tata letak dan tampilan */
         .quantity-container {
             display: flex;
@@ -123,7 +122,35 @@
       .carousel-indicators{
         align-items: center;
       }
+      .disable {
+      pointer-events: none;
+      /* Pilihan tambahan untuk tampilan non-aktif */
+      color: gray;
+      text-decoration: none;
+      cursor: not-allowed;
+    }
+    @media (max-width: 600px) {
+      .visible-on-small {
+        display: block;
+      }
+    }
+    @media (max-width:991px){
+    .view-on-sm{
+      display: block;
+    }
+      .view-on-large{
+        display: none;
+    }
+  }
+    .view-on-sm{
+        display:none;
+    }
+    .view-on-large{
+        display:run-in;
+    }
+    
       
+    
       
     </style>
     <link rel="stylesheet" href="asset/css/styles.css">
@@ -246,17 +273,39 @@
                 </div>
               </div>
             </div>
-
+            <style>
+              .visible-on-small {
+                display: none;
+              }
+          
+              @media (max-width: 991px) {
+                .visible-on-small {
+                  display: block;
+                }
+              }
+            </style>
             <div class="col-lg-6 " style="font-weight: 200; padding-left:10px;">
                 <div class="card">
                     <div class="card-body">
                       <h5 class="card-title" style="position: relative">DAFTAR HARGA JERSEY RATHEN</h5>
+                      <section class="visible-on-small">
+                        <div class="badge text-wrap text-dark" >
+                          <img src="{{ asset('asset/images/price-list/ceklis.png') }}" width="20px" alt=""> Stok Tersedia
+                        </div>
+                        <div class="badge text-wrap text-dark" >
+                          <img src="{{ asset('asset/images/price-list/broom.png') }}" width="20px" alt=""> Bebas Biaya Pengriman
+                        </div>
+                        <div class="badge text-wrap text-dark" >
+                          <img src="{{ asset('asset/images/price-list/presen.png') }}" width="20px" alt=""> Cicilan 0% Hingga 24 Bulan
+                        </div>
+                      </section>
                       <div class="container">
-                        <div class="row">
+                        {{-- view-on-large --}}
+                        <div class="row view-on-large">
                             <div class="col-lg-3">
                                 <div class="container">
                                     <div class="row">
-                                        <div class="col" style="margin-top: auto; margin-bottom:auto; margin-left:0px; margin-right:0px;"><img src="{{ asset('asset/images/price-list/ceklis.png') }}" style="width:20px;" alt=""></div>
+                                        <div class="col-lg-4" style="margin-top: auto; margin-bottom:auto; margin-left:0px; margin-right:0px;"><img src="{{ asset('asset/images/price-list/ceklis.png') }}" style="width:20px;" alt=""></div>
                                         <div class="col" style="font-size: 13px">Stok <br> Tersedia</div>
                                     </div>
                                 </div>
@@ -265,34 +314,63 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-lg-4" style="margin-top: auto; margin-bottom:auto; margin-left:0px; margin-right:0px;"><img src="{{ asset('asset/images/price-list/broom.png') }}" width="20px" alt=""></div>
-                                        <div class="col-lg-8" style="font-size: 13px">Bebas Biaya <br> Pengiriman</div>
+                                        <div class="col" style="font-size: 13px">Bebas Biaya <br> Pengiriman</div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-5">
                                 <div class="container">
                                     <div class="row">
-                                        {{-- <div class="col-lg-3" style="margin-top: auto; margin-bottom:auto; margin-left:0px; margin-right:0px;"><img src="{{ asset('asset/images/price-list/presen.png') }}" width="20px" alt=""></div> --}}
+                                        <div class="col-lg-3" style="margin-top: auto; margin-bottom:auto; margin-left:0px; margin-right:0px;"><img src="{{ asset('asset/images/price-list/presen.png') }}" width="20px" alt=""></div>
                                         <div class="col-lg-8" style="font-size: 13px">Cicilan 0% Hingga <br>24 Bulan</div>
                                     </div>
                                 </div>
                                  
                             </div>
                         </div>
+                        {{-- end view-on-large --}}
+                        {{-- view-on-sm --}}
+                        <div class="row view-on-sm">
+                          <style>
+                            .container-smt {
+                              display: flex; /* Menggunakan flexbox untuk tata letak */
+                              align-items: center; /* Memusatkan elemen secara vertikal */
+                            }
+                        
+                            .text-smt {
+                              flex: 1; /* Membuat teks memanfaatkan ruang yang tersedia */
+                              padding: 20px; /* Menambahkan ruang di sekitar teks */
+                            }
+                        
+                            .image-smt {
+                              width: 200px; /* Sesuaikan lebar gambar sesuai kebutuhan */
+                              height: auto; /* Biarkan tinggi gambar menyesuaikan agar tidak terdistorsi */
+                            }
+                          </style>
+                          <div class="col">
+                              <div class="container-smt">
+                                <div class="text-smt">
+                                  <h5>view-on-sm</h5>
+                                </div>
+                                <div class="image-smt"><img src="{{ asset('asset/images/price-list/presen.png') }}" width="20px" alt=""></div>
+                              </div>
+                          </div> 
+                        </div>
+                      {{-- end --}}
                         <div class="row mt-4 ">
                           <span>Kualitas :</span>
                           <div class="col">
-                                <button class="btn btn-outline-secondary {{ $data->stadium }} w-25 mx-3 menu-button" id="buttonA" onclick="selectOption(1, 1)"><span class="fs-6">Stadium Version</span></button>
-                                <a href="{{ url('/price-list', ['kd_part' => 'pro']) }}"><button class="btn btn-outline-secondary {{ $data->pro }} menu-button" id="buttonB" onclick="changeContent('data4'),selectOption(1, 2)">PRO Version</button></a>
-                                <a href="{{ url('/price-list', ['kd_part' => 'pro-plus']) }}"><button class="btn btn-outline-secondary {{ $data->pro_plus }} w-25 mx-3 menu-button" id="buttonC" onclick="changeContent('data5'),selectOption(1, 3)">PRO<sup>+</sup> Version</button></a>
+                                <a href="{{ url('/price-list', ['kd_part' => 'non-print']) }}"><button class="btn btn-outline-secondary {{ $data->stadium }} mt-2 menu-button" id="buttonA" onclick="selectOption(1, 1)"><span class="fs-6">Stadium Version</span></button>
+                                <a href="{{ url('/price-list', ['kd_part' => 'pro']) }}"><button class="btn btn-outline-secondary {{ $data->pro }} mt-2 menu-button" id="buttonB" onclick="changeContent('data4'),selectOption(1, 2)">PRO Version</button></a>
+                                <a href="{{ url('/price-list', ['kd_part' => 'pro-plus']) }}"><button class="btn btn-outline-secondary {{ $data->pro_plus }} mt-2 menu-button" id="buttonC" onclick="changeContent('data5'),selectOption(1, 3)">PRO<sup>+</sup> Version</button></a>
                             </div>
                         </div>
                         <div class="row mt-4 ">
                           <span>Kategori :</span>
                           <div class="col">
-                                <a href="{{ url('/price-list', ['kd_part' => 'non-print']) }}" ><button class="btn btn-outline-secondary {{ $data->non_print }} w-25 mx-3 menu-button" id="button1" onclick="changeContent('data1'),selectOption(2, 1)" @disabled(true)>Non - Print</button></a>
-                                <a href="{{ url('/price-list', ['kd_part' => 'half-print']) }}"><button class="btn btn-outline-secondary {{ $data->half_print }} w-25 mx-3 menu-button" id="button2" onclick="changeContent('data2'),selectOption(2, 2)">Half - Print</button></a>
-                                <a href="{{ url('/price-list', ['kd_part' => 'full-print']) }}"><button class="btn btn-outline-secondary {{ $data->full_print }} w-25 mx-3 menu-button" id="button3" onclick="changeContent('data3'),selectOption(2, 3)">Full Print</button></a>
+                                <a href="{{ url('/price-list', ['kd_part' => 'non-print']) }}" class="{{ $data->non_print }}" ><button class="btn btn-outline-secondary {{ $data->non_print }} mt-2 menu-button" id="button1" onclick="changeContent('data1'),selectOption(2, 1)">Non - Print</button></a>
+                                <a href="{{ url('/price-list', ['kd_part' => 'half-print']) }}" class="{{ $data->non_print }}"><button class="btn btn-outline-secondary {{ $data->half_print }} mt-2 menu-button" id="button2" onclick="changeContent('data2'),selectOption(2, 2)">Half - Print</button></a>
+                                <a href="{{ url('/price-list', ['kd_part' => 'full-print']) }}" class="{{ $data->non_print }}"><button class="btn btn-outline-secondary {{ $data->full_print }} mt-2 menu-button" id="button3" onclick="changeContent('data3'),selectOption(2, 3)">Full Print</button></a>
                           
                             </div>
                         </div>

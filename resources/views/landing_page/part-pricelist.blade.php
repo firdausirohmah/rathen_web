@@ -480,7 +480,7 @@
                     <div class="card-body">
                       <h5 class="card-title"></h5>
                       <h6 class="card-subtitle mb-2 text-body-secondary">Simulasi Harga</h6>
-                      <a href="/form-1"><button class="btn btn-outline-secondary w-100">Order Now</button></a>
+                      <a href="{{ url('/form-1', ['kd_part' => $data->kd_part]) }}"><button class="btn btn-outline-secondary w-100">Order Now</button></a>
                     </div>
                   </div>
             </div>

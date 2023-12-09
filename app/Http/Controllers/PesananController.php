@@ -15,14 +15,20 @@ use Illuminate\Support\Facades\View;
 
 class PesananController extends Controller
 {
-    public function form_1(Request $request)
+    public function form_1(Request $request, $kd_part)
     {
+        // dd($kd_part);
         $data = DB::table('tbl_step1')->get('*');
+        $ref = db::table('tbl_part')->where('kd_part', $kd_part)->get();
 
+        // dd($ref);
 
-        return view('landing_page.form-order', [
-            'pesanan' => $data,
-        ]);
+        foreach ($ref as $rev) {
+            return view('landing_page.form-order', [
+                'pesanan' => $data,
+                'data' => $rev,
+            ]);
+        }
     }
     public function form_2(Request $request)
     {

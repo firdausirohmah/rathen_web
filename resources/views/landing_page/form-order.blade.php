@@ -157,7 +157,7 @@
       <form action="{{ url('/form-1/action') }}" method="POST">
         @csrf
         <tr>
-          <td class="col-1 fw-semibold title">Nama Tim</td>
+          <td class="col-1 fw-semibold title">Nama Tim </td>
           <td class="col-2">:</td>
           <td class="col-3"><input type="text" name="nama_tim" class="form-control fw-lighter" placeholder="Masukkan Nama Tim"></td>
         </tr>
@@ -193,12 +193,12 @@
         <tr>
           <td class="col-1 fw-semibold title"> Tipe Kualitas</td>
           <td class="col-2">:</td>
-          <td class="col-3">
-            <select name="kualitas" class="form-control" id="">
+          <td class="col-3"><span class="fw-lighter">{{ $data->deskripsi }}</span>
+            {{-- <select name="kualitas" class="form-control" id="">
               <option class="" value="Fans"><span class="fw-lighter"> Stadium</span></option>
               <option value="Stadium"><span class="fw-lighter"> PRO</span></option>
               <option value="PRO"><span class="fw-lighter"> PRO+</span></option>
-            </select>
+            </select> --}}
           </td>
         </tr>
         <tr>

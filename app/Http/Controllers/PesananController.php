@@ -125,7 +125,7 @@ class PesananController extends Controller
                 display:none}' . $bootstrapCSS . '<style>' . $html;
 
             $pdf->loadHtml($combinedHtml);
-            $pdf->setPaper('A4', 'potrait');
+            $pdf->setPaper('A4', 'landscape');
             $pdf->render();
 
 

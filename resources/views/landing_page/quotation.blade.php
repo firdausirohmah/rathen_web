@@ -40,7 +40,7 @@
 			text-align: center;
 		}
 	</style>
-	<a href="{{ route('generate') }}" class="print"><button>
+	<a href="{{ route('generate') }}" class="btn btn-outline-primary print"><button>
 		Print PDF</button></a>
 <div class="container mt-3">
 		<div class="row justify-content-center">

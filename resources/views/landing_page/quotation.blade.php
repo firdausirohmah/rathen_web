@@ -40,7 +40,9 @@
 			text-align: center;
 		}
 	</style>
-	<div class="container mt-3">
+	<a href="{{ route('generate') }}" class="btn btn-outline-primary print"><button>
+		Print PDF</button></a>
+<div class="container mt-3">
 		<div class="row justify-content-center">
 			<div class="col-8">
 				<div class="card">
@@ -324,7 +326,7 @@
 
 									</tr>
 									<tr>
-										<td > Extra Tulisan poliflek >1 warna</td>
+										<td> Extra Tulisan poliflek >1 warna</td>
 										<td class="text-center">45,000</td>
 										<td class="text-center">-</td>
 									</tr>

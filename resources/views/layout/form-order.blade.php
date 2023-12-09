@@ -14,9 +14,13 @@
 <link rel="stylesheet" href="{{ asset('asset/css/core.css') }}" class="template-customizer-core-css" />
 <script src="asset/js\bootstrap.js"></script>
 
-
+<style>
+  .nav-link.active span {
+    color: white; /* Ganti warna sesuai kebutuhan */
+    /* Atau tambahkan gaya CSS lainnya untuk menyesuaikan tampilan */
+  }
+</style>
 <body>
-  
     <br>
     <h3 style="font-family: Montheavy; color: #1890fd;  font-weight: bold; text-decoration: underline;
     margin-bottom: 20px; text-align: center;">FORM ORDER - CUSTOM RATHEN</h3>
@@ -36,12 +40,12 @@
                     aria-controls="navs-top-home"
                     aria-selected="true"
                     
-                    >Step 1
+                    ><span>Step 1</span>
                   </button>
                 </a>
                 
               </li>
-
+              
               <li class="nav-item">
                 <a href="{{ url('/form-2') }}">
                     <button
@@ -53,7 +57,7 @@
                     aria-controls="navs-top-home"
                     aria-selected="true"
                   >
-                    Step 2
+                    <span>Step 2</span>
                   </button>
                 </a>
               </li>
@@ -70,7 +74,7 @@
                   aria-controls="navs-top-profile"
                   aria-selected="false"
                 >
-                  Step 3
+                  <span>Step 3</span>
                 </button>
                 </a>
               </li>
@@ -86,7 +90,7 @@
                   aria-controls="navs-top-profile"
                   aria-selected="false"
                 >
-                  Step 4
+                  <span>Step 4</span>
                 </button>
                 </a>
               </li>
@@ -102,7 +106,7 @@
                   aria-controls="navs-top-messages"
                   aria-selected="false"
                 >
-                  Step 5
+                  <span>Step 5</span>
                 </button>
                 </a>
               </li>
@@ -114,14 +118,14 @@
     </div>
  
     @yield('content')
-    <footer>
+    {{-- <footer>
           <div  style="text-align: right; " class="mt-4">
             <button type="button" style="font-family: Montheavy; width:20%; font-size:12px; margin-left:10%" class="btn btn-secondary">Data MASUK ke CRM</button>
           </div>
           <div style="text-align: right;" class="">
           </div>
       
-    </footer>
+    </footer> --}}
               
     
     

@@ -443,13 +443,15 @@
   </div>
   </div> 
   <div class="row mb-2">
+    <p class="fw-bolder">PRO</p>
+
     <div class="col">
       <div class="card hover" style="width: 18rem;"> 
         <div class="card-body"> 
           <div class="container">
             <div class="row">
-              <div class="col-lg-6"><span class="fw-semibold title">
-                Bahan PRO</span>
+              <div class="col-lg-6"><span class="fw-semibold title text-wrap">
+                PRO : VAporknit</span>
               </div>
               <div class="col-lg-6"><span class="fw-semibold title text-end">
                 <img src="{{asset('/asset/images/jenisbahan/BAHAN - PRO/VAporknit.jpg')}}" class="img-thumbnail w-100 align-right" alt="pro">
@@ -466,10 +468,85 @@
           <div class="container">
             <div class="row">
               <div class="col-lg-6"><span class="fw-semibold title">
-                Bahan PRO <sup>+</sup> </span>
+                 PRO<sup>+</sup> : MOVING KNIT  </span>
               </div>
               <div class="col-lg-6"><span class="fw-semibold title text-end">
-                <img src="{{asset('/asset/images/jenisbahan/BAHAN - PRO+/MOVING KNIT.jpg')}}" class="img-thumbnail w-100 align-right" alt="pro">
+                <img src="{{asset('/asset/material/BAHAN - PROPLUS/proplus.jpg')}}" class="img-thumbnail w-100 align-right" alt="pro"> 
+                </span> 
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+  <div class="row mb-2">
+    <p class="fw-bolder">STADIUM</p>
+    <div class="col">
+      <div class="card hover" style="width: 18rem;"> 
+        <div class="card-body"> 
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-6"><span class="fw-semibold title">
+              Stadium : Airwalk</span>
+              </div>
+              <div class="col-lg-6"><span class="fw-semibold title text-end">
+                <img src="{{asset('/asset/material/stadium/1.jpg')}}" class="img-thumbnail w-100 align-right" alt="STADIUM">
+                </span> 
+              </div> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card hover" style="width: 18rem;"> 
+        <div class="card-body"> 
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-6"><span class="fw-semibold title">
+                Stadium : EMBROSS STRAW</span>
+              </div>
+              <div class="col-lg-6"><span class="fw-semibold title text-end">
+                <img src="{{asset('/asset/material/stadium/2.jpg')}}" class="img-thumbnail w-100 align-right" alt="STADIUM">
+                </span> 
+              </div> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="col">
+      <div class="card hover" style="width: 18rem;"> 
+        <div class="card-body"> 
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-6"><span class="fw-semibold title">
+                Stadium : EMBROSS TOPO</span>
+              </div>
+              <div class="col-lg-6"><span class="fw-semibold title text-end">
+                <img src="{{asset('/asset/material/stadium/3.jpg')}}" class="img-thumbnail w-100 align-right" alt="STADIUM">
+                </span> 
+              </div> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col">
+      <div class="card hover" style="width: 18rem;"> 
+        <div class="card-body"> 
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-6"><span class="fw-semibold title">
+                Stadium : EMBROSS MIX</span>
+              </div>
+              <div class="col-lg-6"><span class="fw-semibold title text-end">
+                <img src="{{asset('/asset/material/stadium/4.jpg')}}" class="img-thumbnail w-100 align-right" alt="STADIUM">
                 </span> 
               </div> 
             </div>
@@ -483,10 +560,10 @@
           <div class="container">
             <div class="row">
               <div class="col-lg-6"><span class="fw-semibold title">
-                Bahan PRO</span>
+                Stadium : ERBINA</span>
               </div>
               <div class="col-lg-6"><span class="fw-semibold title text-end">
-                <img src="{{asset('/asset/images/jenisbahan/BAHAN - PRO/VAporknit.jpg')}}" class="img-thumbnail w-100 align-right" alt="pro">
+                <img src="{{asset('/asset/material/stadium/5.jpg')}}" class="img-thumbnail w-100 align-right" alt="STADIUM">
                 </span> 
               </div> 
             </div>
@@ -494,74 +571,139 @@
         </div>
       </div>
     </div>
+    
+    <div class="col">
+      <div class="card hover" style="width: 18rem;"> 
+        <div class="card-body"> 
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-6"><span class="fw-semibold title">
+                Stadium : MILANO</span>
+              </div>
+              <div class="col-lg-6"><span class="fw-semibold title text-end">
+                <img src="{{asset('/asset/material/stadium/6.jpg')}}" class="img-thumbnail w-100 align-right" alt="STADIUM">
+                </span> 
+              </div> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col">
+      <div class="card hover" style="width: 18rem;"> 
+        <div class="card-body"> 
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-6"><span class="fw-semibold title">
+                Stadium : PUMA</span>
+              </div>
+              <div class="col-lg-6"><span class="fw-semibold title text-end">
+                <img src="{{asset('/asset/material/stadium/7.jpg')}}" class="img-thumbnail w-100 align-right" alt="STADIUM">
+                </span> 
+              </div> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col">
+      <div class="card hover" style="width: 18rem;"> 
+        <div class="card-body"> 
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-6"><span class="fw-semibold title">
+                Stadium : RATHEN - TECH</span>
+              </div>
+              <div class="col-lg-6"><span class="fw-semibold title text-end">
+                <img src="{{asset('/asset/material/stadium/8.jpg')}}" class="img-thumbnail w-100 align-right" alt="STADIUM">
+                </span> 
+              </div> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col">
+      <div class="card hover" style="width: 18rem;"> 
+        <div class="card-body"> 
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-6"><span class="fw-semibold title">
+                Stadium : RHABIT</span>
+              </div>
+              <div class="col-lg-6"><span class="fw-semibold title text-end">
+                <img src="{{asset('/asset/material/stadium/9.jpg')}}" class="img-thumbnail w-100 align-right" alt="STADIUM">
+                </span> 
+              </div> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col">
+      <div class="card hover" style="width: 18rem;"> 
+        <div class="card-body"> 
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-6"><span class="fw-semibold title">
+                Stadium : SMASH</span>
+              </div>
+              <div class="col-lg-6"><span class="fw-semibold title text-end">
+                <img src="{{asset('/asset/material/stadium/10.jpg')}}" class="img-thumbnail w-100 align-right" alt="STADIUM">
+                </span> 
+              </div> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col">
+      <div class="card hover" style="width: 18rem;"> 
+        <div class="card-body"> 
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-6"><span class="fw-semibold title">
+                Stadium : SULKUL</span>
+              </div>
+              <div class="col-lg-6"><span class="fw-semibold title text-end">
+                <img src="{{asset('/asset/material/stadium/11.jpg')}}" class="img-thumbnail w-100 align-right" alt="STADIUM">
+                </span> 
+              </div> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col">
+      <div class="card hover" style="width: 18rem;"> 
+        <div class="card-body"> 
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-6"><span class="fw-semibold title">
+                Stadium : WAFE</span>
+              </div>
+              <div class="col-lg-6"><span class="fw-semibold title text-end">
+                <img src="{{asset('/asset/material/stadium/12.jpg')}}" class="img-thumbnail w-100 align-right" alt="STADIUM">
+                </span> 
+              </div> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
     {{-- copy --}}
-    <div class="col">
-      <div class="card hover" style="width: 18rem;"> 
-        <div class="card-body"> 
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-6"><span class="fw-semibold title">
-                Bahan PRO</span>
-              </div>
-              <div class="col-lg-6"><span class="fw-semibold title text-end">
-                <img src="{{asset('/asset/material/BAHAN - PROPLUS/MOVING KNIT.jpg')}}" class="img-thumbnail w-100 align-right" alt="pro"> 
-                </span> 
-              </div> 
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+   
     {{-- end copy --}}
 
     {{-- hapus klo dah selesai --}}
-    <div class="col">
-      <img src="{{asset('/asset/images/jenisbahan/BAHAN - PRO/VAporknit.jpg')}}" class="img-thumbnail w-25" alt="pro">
-    </div>
-    <table style="width: 100%; border: 10px; font-size: 14px; color: black;">
-      <tr>
-        <td class="extra-1">
-          <span class="fw-semibold title"><i class='bx bx-circle' style="font-size: 10px"></i> Bahan PRO</span>
-        </td>
-        <td class="extra-3">
-          <img src="{{asset('/asset/images/jenisbahan/BAHAN - PRO/VAporknit.jpg')}}" class="img-thumbnail w-25" alt="pro">
-        </td>
-      </tr>
-      <tr>
-        <td class="extra-1">
-          <span class="fw-semibold title"><i class='bx bx-circle' style="font-size: 10px"></i> Bahan PRO+</span>
-        </td>
-        <td colspan="1" class="input-group extra-3">
-          <img src="{{asset('/asset/images/jenisbahan/proplus/proplus.jpg')}}" class="img-thumbnail w-25" alt="pro+">
-        </td>
-      </tr>
-      <tr>
-        <td class="extra-1">
-          <span class="fw-semibold title"><i class='bx bx-circle' style="font-size: 10px"></i> Stadium</span>
-        </td>
-        <td colspan="1" class="input-group extra-3">
-          <div style="margin-bottom: 30px;"></div>
-
-          {{-- <div class="d-flex"> --}}
-
-          <img src="{{asset('/asset/images/jenisbahan/stadium/1.jpg')}}" class="img-thumbnail w-25" alt="">
-          <img src="{{asset('/asset/images/jenisbahan/stadium/2.jpg')}}" class="img-thumbnail w-25" alt="">
-          <img src="{{asset('/asset/images/jenisbahan/stadium/3.jpg')}}" class="img-thumbnail w-25" alt="">
-          <img src="{{asset('/asset/images/jenisbahan/stadium/4.jpg')}}" class="img-thumbnail w-25" alt="">
-          <img src="{{asset('/asset/images/jenisbahan/stadium/5.jpg')}}" class="img-thumbnail w-25" alt="">
-          <img src="{{asset('/asset/images/jenisbahan/stadium/6.jpg')}}" class="img-thumbnail w-25" alt="">
-          <img src="{{asset('/asset/images/jenisbahan/stadium/7.jpg')}}" class="img-thumbnail w-25" alt="">
-          <img src="{{asset('/asset/images/jenisbahan/stadium/8.jpg')}}" class="img-thumbnail w-25" alt="">
-          <img src="{{asset('/asset/images/jenisbahan/stadium/9.jpg')}}" class="img-thumbnail w-25" alt="">
-          <img src="{{asset('/asset/images/jenisbahan/stadium/10.jpg')}}" class="img-thumbnail w-25" alt="">
-          <img src="{{asset('/asset/images/jenisbahan/stadium/11.jpg')}}" class="img-thumbnail w-25" alt="">
-          <img src="{{asset('/asset/images/jenisbahan/stadium/12.jpg')}}" class="img-thumbnail w-25" alt="">
-
-        </td>
-      </tr>
-    </table>
-  </div>
-  
+    <hr>
   
 
 {{-- <div class="container text-center"> --}}

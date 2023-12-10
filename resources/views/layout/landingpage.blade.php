@@ -78,8 +78,10 @@ src="https://www.facebook.com/tr?id=1058956608607048&amp;ev=PageView&amp;noscrip
    .embeddedServiceHelpButton .helpButton .uiButton:focus {
        outline: 1px solid #005290;
    }
-
-  
+   .logo-nav{
+        width:52px;
+        /* margin-top:10%; */
+   }
 </style>
 </head>
 
@@ -95,7 +97,7 @@ src="https://www.facebook.com/tr?id=1058956608607048&amp;ev=PageView&amp;noscrip
 <nav class="wrapper">
     <div class="navbar-main-logo">
         <a href="/">
-            <img src="asset/images/LOGO.png" style="width:67px; margin-top:10%;">
+            <img src="asset/images/LOGO.png" class="logo-nav">
             {{-- <link rel="icon" type="image/png" href="asset/images/logo.png" sizes="32x32"> --}}
 
         </a>

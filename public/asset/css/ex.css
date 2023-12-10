@@ -55,6 +55,7 @@
     --bs-light-text-emphasis: #495057;
     --bs-dark-text-emphasis: #495057;
     --bs-primary-bg-subtle: #cfe2ff;
+    --bs-bg-black: #000000;
     --bs-secondary-bg-subtle: #e2e3e5;
     --bs-success-bg-subtle: #d1e7dd;
     --bs-info-bg-subtle: #cff4fc;
@@ -8808,7 +8809,9 @@ fieldset:disabled .btn {
 .bg-opacity-100 {
     --bs-bg-opacity: 1;
 }
-
+.bg-dark {
+    background-color: var(--bs-bg-black) !important;
+}
 .bg-primary-subtle {
     background-color: var(--bs-primary-bg-subtle) !important;
 }
@@ -8844,6 +8847,7 @@ fieldset:disabled .btn {
 .bg-gradient {
     background-image: var(--bs-gradient) !important;
 }
+
 
 .user-select-all {
     -webkit-user-select: all !important;

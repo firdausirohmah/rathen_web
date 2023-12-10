@@ -97,7 +97,9 @@ Route::controller(HomeController::class)->group(function () {
 
 
 Route::controller(PesananController::class)->group(function () {
-    Route::get('/form-1/{kd_part}', 'form_1')->name('form_1');
+    // Route::get('/form-1/{kd_part}', 'form_1')->name('form_1');
+    Route::post('/form-1/order', 'order')->name('order');
+    Route::post('/save-selected-text', 'saveSelectedText')->name('saveSelectedText');
     Route::get('/form-1/generate/t', 'generate')->name('generate');
     Route::post('/form-1/quotation', 'quotation')->name('quotation');
     Route::post('/form-1/action', 'addForm1')->name('addForm1');

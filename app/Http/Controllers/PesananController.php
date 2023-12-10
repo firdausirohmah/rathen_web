@@ -57,6 +57,22 @@ class PesananController extends Controller
             'pesanan' => $data,
         ]);
     }
+    // ===========================order=====================================
+    public  function order (Request $request){
+        $kd_part = $request->kd_part;
+        $qty = $request->qty;
+        $data = DB::table('tbl_step1')->get('*');
+        $ref = db::table('tbl_part')->where('kd_part', $kd_part)->get();
+
+        // dd($kd_part,$qty);
+        foreach ($ref as $rev) {
+            return view('landing_page.form-order', [
+                'pesanan' => $data,
+                'data' => $rev,
+                'qty' => $qty,
+            ]);
+        }
+    }
     // ==========================quotation===================================
     public function quotation(Request $request)
     {
@@ -147,6 +163,8 @@ class PesananController extends Controller
     // ================================ add ==================================
     public function addForm1(Request $request)
     {
+        $selectedText = $request->input('selectedText');
+        dd($selectedText);
         $nm = $request->nama_tim;
         $dm = $request->dom;
         $np = $request->np;
@@ -235,4 +253,16 @@ class PesananController extends Controller
 
     //     return $pdf->download('output.pdf');
     // }
+    public function saveSelectedText(Request $request)
+    {
+        // Ambil data yang dikirimkan dari frontend
+        $selectedText = $request->input('selectedText');
+
+        // Simpan data ke dalam database (contoh: menggunakan model)
+        // Replace 'YourModel' dengan model yang sesuai dengan tabel database Anda
+        // YourModel::create(['column_name' => $selectedText]);
+
+        // Beri respons jika perlu
+        return response()->json(['status' => 'success', 'message' => 'Data berhasil disimpan']);
+    }
 }

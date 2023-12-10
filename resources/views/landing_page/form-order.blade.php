@@ -224,7 +224,7 @@
           <td class="col-1 fw-semibold title">Kategori Harga</td>
           <td class="col-2">:</td>
           <td class="col-3">
-            <input type="text" value="{{ $data->deskripsi }}" name="kategori" readonly>
+            <input type="text" value="{{ $data->deskripsi }}" name="kategori" class="form-extra" readonly>
             {{-- <select name="kategori" class="form-control" id="">
               <option value="Non-Print"><span class="fw-lighter"> Non-Print</span></option>
               <option value="Half-Print"><span class="fw-lighter"> Half-Print</span></option>

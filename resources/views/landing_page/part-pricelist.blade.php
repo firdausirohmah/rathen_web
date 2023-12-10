@@ -148,13 +148,44 @@
     .view-on-large{
         display:run-in;
     }
-    
-      
-    
-      
+    .logo-nav{
+        width:52px;
+        margin-left:78px;
+   }
+   .text-nav{
+    color:#fff;
+    font-weight: bold;
+    font-size: 14px;
+    font-family: 'Montheavy';
+   }
+   @font-face {
+    font-family: Montheavy;
+    src: url("../../asset/fonts/Mont/Mont-Heavy.otf");
+    }
     </style>
     <link rel="stylesheet" href="asset/css/styles.css">
     <section id="home" style="overflow: hidden;">
+      <nav class="navbar navbar-expand-lg bg-black fw-bold" style="height: 80px">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><img src="/asset/images/LOGO.png" class="logo-nav" alt=""></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse d-flex justify-content-center" id="navbarNavAltMarkup">
+            <div class="navbar-nav" >
+              <a class="text-nav  nav-link" target="_blank" aria-current="page" href="/page-costum#home">HOME</a>
+              <a class="text-nav mx-2 nav-link" target="_blank" href="/page-costum#about">ABOUT US</a>
+              <a class="text-nav mx-2 nav-link" target="_blank" href="/page-costum#result">LATEST RESULT</a>
+              <a class="text-nav mx-2 nav-link" target="_blank" href="/page-costum#order">CARA PEMESANAN</a>
+              <a class="text-nav mx-2 nav-link" target="_blank" href="/price-list/non-print">PRICE LIST</a>
+              <a class="text-nav mx-2 nav-link" target="_blank" href="/page">FAQ</a>
+              <a class="text-nav mx-2 nav-link" target="_blank" href="/page-costum#location">LOCATION</a>
+              <a class="text-nav mx-2 nav-link" target="_blank" href="/page-costum#contact">CONTACT US</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      
     <div class="container mt-4 mb-4">
         <div class="row">
             {{-- <div class="col"><a href="/page-costum"><small class="text-muted">Home / Half-Print</small></a></div> --}}
@@ -461,17 +492,38 @@
             var mainMenu = "data1";
             changeContent(mainMenu);
           </script> --}}
-            <div class="col-lg-3" style="font-weight: 200;">
+          <script>
+            function formatHarga(harga) {
+              return harga.toLocaleString('id-ID'); // 'id-ID' untuk format angka Indonesia
+            }
+        
+            // Contoh penggunaan
+            var hargaDb = getElementById('hargaDb'); // Gantilah dengan nilai dari database
+            var formattedHarga = formatHarga(hargaDb);
+        
+            // Tampilkan hasilnya
+            document.getElementById("hargaDb").innerText = "Rp " + formattedHarga;
+          </script>            
+          <div class="col-lg-3" style="font-weight: 200;">
+            <form action="{{ route("order") }}" method="POST"> 
+              @csrf
                 <div class="card">
                     <div class="card-body">
-                      <h5 class="card-title">Rp {{ $data->harga }}</h5>
+                      <h5 class="card-title" id="hargaDb">Rp {{ $data->harga }}</h5>
                         <div class="container mt-4">
-                            <div class="row">
-                                <div class="col">
-                                    <div class="quantity-button" onclick="decrement()">-</div>
-                                </div>
-                                <div class="col"><input type="text" class="quantity-input" id="quantityInput" value="1" readonly></div>
-                                <div class="col"><div class="quantity-button" onclick="increment()">+</div></div>
+                            <div class="row"> 
+                              <div class="col">
+                                <div class="quantity-button" onclick="decrement()">-</div>
+                              </div>
+                              <div class="col"><input type="text" name="qty" class="quantity-input" id="quantityInput" value="{{ $data->min_order }}" readonly>
+                              </div>
+                              <div class="col"><div class="quantity-button" onclick="increment()">+</div>
+                              </div>
+                            </div>  
+                            <div class="row mt-4">
+                              <div class="col">
+                                <div>Total Harga: <span id="totalHarga">Rp {{ $data->harga }}</span></div> 
+                              </div>
                             </div>
                         </div>
                     </div>
@@ -480,9 +532,12 @@
                     <div class="card-body">
                       <h5 class="card-title"></h5>
                       <h6 class="card-subtitle mb-2 text-body-secondary">Simulasi Harga</h6>
-                      <a href="{{ url('/form-1', ['kd_part' => $data->kd_part]) }}"><button class="btn btn-outline-secondary w-100">Order Now</button></a>
+                      <input type="hidden" name="kd_part" value="{{ $data->kd_part }}">
+                      <button type="submit" class="btn btn-outline-secondary w-100">Order Now</button>
+                      {{-- <a href="{{ url('/form-1', ['kd_part' => $data->kd_part]) }}"><button class="btn btn-outline-secondary w-100">Order Now</button></a> --}}
                     </div>
                   </div>
+                </form>
             </div>
             
         </div>
@@ -990,24 +1045,39 @@
     </script>
     
     <script>
-        // Fungsi untuk mengurangi jumlah
-        function decrement() {
-            var quantityInput = document.getElementById('quantityInput');
-            var currentValue = parseInt(quantityInput.value, 10);
-            
-            if (currentValue > 1) {
-                quantityInput.value = currentValue - 1;
-            }
+      var jharga = {{ $data->harga }} * {{ $data->min_order }};
+      var formatHarga = "Rp " + jharga.toLocaleString();
+      document.getElementById("totalHarga").innerText =  formatHarga;
+      function increment() {
+        var quantityInput = document.getElementById("quantityInput");
+        var currentQuantity = parseInt(quantityInput.value);
+        quantityInput.value = currentQuantity + 1;
+  
+        updateTotalHarga();
+      }
+  
+      function decrement() {
+        var quantityInput = document.getElementById("quantityInput");
+        var currentQuantity = parseInt(quantityInput.value);
+        if (currentQuantity > 1) {
+          quantityInput.value = currentQuantity - 1;
+          updateTotalHarga();
         }
+      }
+  
+      function updateTotalHarga() {
+        var hargaDb = parseFloat(document.getElementById("hargaDb").innerText.replace('Rp ', '').replace(',', ''));
+        var quantityInput = parseInt(document.getElementById("quantityInput").value);
+        var totalHarga = hargaDb * quantityInput;
+  
+        // Format total harga jika diperlukan
+        var formattedTotalHarga = "Rp " + totalHarga.toLocaleString();
         
-        // Fungsi untuk menambah jumlah
-        function increment() {
-            var quantityInput = document.getElementById('quantityInput');
-            var currentValue = parseInt(quantityInput.value, 10);
-            
-            quantityInput.value = currentValue + 1;
-        }
+        // Tampilkan total harga di suatu tempat
+        document.getElementById("totalHarga").innerText = formattedTotalHarga;
+      }
     </script>
+
     <script>
       document.getElementById('kategori1').style.display = 'block';
       // Fungsi untuk menampilkan konten sesuai dengan judul yang diklik

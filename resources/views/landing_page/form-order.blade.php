@@ -193,7 +193,7 @@
         <tr>
           <td class="col-1 fw-semibold title"> Tipe Kualitas</td>
           <td class="col-2">:</td>
-          <td class="col-3"><span class="fw-lighter">{{ $data->deskripsi }} <input type="hidden" value="{{ $data->deskripsi }}" name="kualitas"></span>
+          <td class="col-3"><span class="fw-lighter">{{ $data->kualitas }} <input type="hidden" value="{{ $data->kualitas }}" name="kualitas"></span>
             {{-- <select name="kualitas" class="form-control" id="">
               <option class="" value="Fans"><span class="fw-lighter"> Stadium</span></option>
               <option value="Stadium"><span class="fw-lighter"> PRO</span></option>
@@ -205,7 +205,7 @@
           <td class="col-1 fw-semibold title">Harga</td>
           <td class="col-2">:</td>
           <td class="col-3">
-            <span class="mx-3 fw-bold title">IDR</span><input type="text" name="harga" class="inpt-harga"> <b>/</b><span class="fw-normal title">pcs</span>
+            <span class="mx-3 fw-bold title">IDR</span><input type="text" name="harga" class="inpt-harga" value="{{ $data->harga }}" readonly> <b>/</b><span class="fw-normal title">pcs</span>
           </td>
         </tr>
        
@@ -213,19 +213,23 @@
           <td class="col-1 fw-semibold title">Jumlah pesanan</td> 
           <td class="col-2">:</td>
           
-          <td class="col-3 input-group"><input type="text" name="jp" class="form-extra" placeholder="Input Jumlah Pesanan">
+          <td class="col-3 input-group"><input type="text" name="jp" class="form-extra" value="{{ $qty }}">
             <span class="input-group-text fw-lighter title " id="basic-addon1">pcs</span>
           </td>
         </tr>
         <tr>
+          <?php if ($data->kualitas == 'PRO') {
+            $data->deskripsi = '-';
+          } ?>
           <td class="col-1 fw-semibold title">Kategori Harga</td>
           <td class="col-2">:</td>
           <td class="col-3">
-            <select name="kategori" class="form-control" id="">
+            <input type="text" value="{{ $data->deskripsi }}" name="kategori" readonly>
+            {{-- <select name="kategori" class="form-control" id="">
               <option value="Non-Print"><span class="fw-lighter"> Non-Print</span></option>
               <option value="Half-Print"><span class="fw-lighter"> Half-Print</span></option>
               <option value="Full-Print"><span class="fw-lighter"> Full-Print</span></option>
-            </select>
+            </select> --}}
           </td>
         </tr>
        
@@ -347,9 +351,98 @@
   </div>
 
   <hr>
+  <script>
+    function selectImage(selectedText) {
+      var images = document.querySelectorAll('.clickable-image');
+      images.forEach(image => {
+        image.classList.remove('selected');
+      });
+  
+      event.target.classList.add('selected');
+  
+      // Mengirim data ke server menggunakan AJAX
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', '/form-1/action', true);
+      xhr.setRequestHeader('Content-Type', 'application/json');
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          console.log('Response dari server:', xhr.responseText);
+        }
+      };
+  
+      // Mengirim data JSON
+      var data = JSON.stringify({ selectedText: selectedText });
+      xhr.send(data);
+    }
+  </script>
+<script>
+  function simpanData() {
+    var selectedImage = document.querySelector('.selected');
+    var selectedText = selectedImage ? selectedImage.dataset.image : '';
+
+    if (selectedText) {
+      selectImage(selectedText);
+    } else {
+      console.log('Pilih gambar terlebih dahulu');
+    }
+  }
+</script>
+
   <div class="row " style="text-align: left">
     <div class="col-12" style="padding-left: 0; margin-left: 0;"><h5 style="color: #71BF72; text-align:left;">Keterangan Extra:</h5></div>
   </div>
+  
+  <style>
+    .image-container {
+      display: flex;
+      justify-content: center;
+    }
+
+    .image-wrapper {
+      margin: 10px;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .image-text {
+      text-align: center;
+      margin-top: 5px;
+    }
+
+    .clickable-image {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      filter: grayscale(100%); /* Gambar awal akan berwarna abu-abu (monochrome) */
+    }
+    .selected {
+      filter: grayscale(0%); /* Ketika dipilih, gambar akan berwarna normal */
+      transform: scale(0.5s);
+      /* width: 250px; */
+    }
+  </style> 
+  <button>ppp</button>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="image-container">
+          <div class="image-wrapper" data-position="1" onclick="selectImage('Non-Print')">
+            <img src="{{asset('/asset/polabadan/belakangNormal.png')}}" alt="Product 1" class="pbnormal clickable-image" data-image="Non-Print">
+            <p class="image-text">NON - PRINT </p>
+            <small>Free</small>
+          </div>
+          <div class="image-wrapper" data-position="2" onclick="selectImage('Full-Print')">
+            <img src="{{asset('/asset/polabadan/belakang.png')}}" alt="Product 2" class="bbm clickable-image" data-image="Full-Print">
+            <p class="image-text">FULL- PRINT </p>
+            <small>Rp 15.000</small>
+          </div>
+        </div>
+      </div> 
+      <div class="col-lg-8" class="mx-4"></div>
+    </div>
+  </div>
+  {{-- <script src="{{ asset('asset/js/inputgambar.js') }}"></script> --}}
+  <input type="text" value="">
   <div class="row " style="text-align: left">
     <div class="col-12" style="padding-left: 0; margin-left: 0;"><h5 style="color: #1890fd;   text-align:left;">POLA BADAN : </h5></div>
   </div> 
@@ -1069,8 +1162,6 @@
     <a href="/page-costum" style="font-family: Montheavy; width:15%" class="btn btn-black title">CANCEL </a>
   </div>
 </div>
-
-
 {{-- ORDER --}}
 
 
@@ -1089,6 +1180,8 @@
     inputJumlah.value = nilaiJumlah;
   }
 </script>
+<button onclick="simpanData()">Simpan ASD</button>
+
  <!-- Modal -->
  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">

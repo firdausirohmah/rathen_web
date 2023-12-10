@@ -9,6 +9,8 @@
 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 
 </head>
@@ -39,9 +41,31 @@
 		.text-center {
 			text-align: center;
 		}
+		.print-button {
+			text-decoration: none;
+			display: inline-block;
+			}
+
+			button {
+			margin-top: 30px;
+			margin-left: 40px;
+			font-size: 20px; 
+			border-radius: 2px;
+			cursor: pointer;
+			background-color: transparent;
+			transition: background-color 0.3s ease;
+			width: 60px;
+			border-radius: 14px;
+			height: 50px;
+			}
+
+			button:hover {
+			/* border: red; */
+			background-color: whitesmoke;
+			}
 	</style>
-	<a href="{{ route('generate') }}" class="btn btn-outline-primary print"><button>
-		Print PDF</button></a>
+	<a href="{{ route('generate') }}" class="print"><button>
+		<i class='bx bx-printer'></i></button></a>
 <div class="container mt-3">
 		<div class="row justify-content-center">
 			<div class="col-8">
@@ -63,6 +87,8 @@
 								<p class="mb-0 font-weight-bold text-primary">Kepada Yth:</p>
 								<p class="mb-0">{{ $nama }}</p>
 								<p class="mb-0">{{ $kontak }}</p>
+								<p class="mb-0">{{ $email }}</p>
+								<p class="mb-0">{{ $alamat }}</p>
 								{{-- <p>di tempat</p> --}}
 
 							</div>

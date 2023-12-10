@@ -214,7 +214,8 @@
           <td class="col-2">:</td>
           
           <td class="col-3 input-group"><input type="text" name="jp" class="form-extra" placeholder="Input Jumlah Pesanan">
-            <span class="input-group-text fw-lighter title " id="basic-addon1">pcs</span>
+            <span class="input-group-text fw-lighter title " id="basic-addon1">pcs</span> <small style="font-size: 12px; color:grey;" class="input-group-text fw-lighter text-wrap notes">Min Order 12 pcs utk STADIUM, 24 pcs utk yg PRO dan PRO+</small>
+       
           </td>
         </tr>
         <tr>
@@ -818,6 +819,7 @@
             background-color: transparent;
           }
         </style>
+        <button onclick="kurangSatu('jumlah1')" type="button" class="btn-hidden">-</button>
         <input type="number" id="jumlah1" value="12" class="mx-2 input-extra" min="12" readonly>
         <button onclick="tambahSatu('jumlah1')" type="button" class="btn-hidden">+</button>
         {{-- <img src="{{asset('/asset/logotim/logo - rubber on tatami.png')}}" class="img-thumbnail  w-25" alt=""> --}}
@@ -833,6 +835,8 @@
       <td class="extra-1"><span class="fw-semibold title"><i class='bx bx-circle' style="font-size: 10px"></i> 3D TPU</span></td>
       <td class="harga extra-2 title" >(+30,000)</td>
       <td colspan="1" class="input-group extra-3">
+        <button onclick="kurangSatu('jumlah2')" type="button" class="btn-hidden">-</button>
+
         <input type="number" id="jumlah2" value="24" class="mx-2 input-extra" min="24" readonly>
         <button onclick="tambahSatu('jumlah2')"  type="button" class="btn-hidden">+</button>
         {{-- <input type="text" class="form-extra" placeholder="Input Jumlah"  aria-describedby="basic-addon1" name="up3d"> --}}
@@ -847,6 +851,8 @@
       <td class="extra-1"><span class="fw-semibold title"> <i class='bx bx-circle' style="font-size: 10px"></i> 3D RUBBER</span></td>
       <td class="harga extra-2 title" >(+30,000)</td>
       <td class="input-group extra-3">
+        <button onclick="kurangSatu('jumlah3')" type="button" class="btn-hidden">-</button>
+
         <input type="number" id="jumlah3" value="50" class="mx-2 input-extra" min="50" readonly>
         <button onclick="tambahSatu('jumlah3')"  type="button" class="btn-hidden">+</button>
         {{-- <input type="text" class="form-extra" placeholder="Input Jumlah"  aria-describedby="basic-addon1" name="logo_celana"> --}}
@@ -858,6 +864,8 @@
       <td class="extra-1"><span class="fw-semibold title"><i class='bx bx-circle' style="font-size: 10px"></i>  Rubber on Tatammi</span></td>
       <td class="harga extra-2 title" >(+30,000)</td>
       <td class="input-group extra-3 ">
+        <button onclick="kurangSatu('jumlah4')" type="button" class="btn-hidden">-</button>
+
         <input type="number" id="jumlah4" value="100" class="mx-2 input-extra" min="100" readonly>
         <button onclick="tambahSatu('jumlah4')"  type="button" class="btn-hidden">+</button>
         {{-- <input type="text" class="form-extra" placeholder="Input Jumlah"   aria-describedby="basic-addon1" name="lengan_panjang"> --}}
@@ -871,6 +879,8 @@
       <td class="extra-1"><span class="fw-semibold title"><i class='bx bx-circle' style="font-size: 10px"></i> Silicon HD </span></td>
       <td class="harga extra-2 title" >(+30,000)</td>
       <td class="input-group extra-3 ">
+        <button onclick="kurangSatu('jumlah5')" type="button" class="btn-hidden">-</button>
+
         <input type="number" id="jumlah5" value="50" class="mx-2 input-extra" min="50" readonly>
         <button onclick="tambahSatu('jumlah5')"  type="button" class="btn-hidden">+</button>
         {{-- <input type="text" class="form-extra" placeholder="Input Jumlah"  aria-describedby="basic-addon1" name="xxl"> --}}
@@ -884,6 +894,8 @@
       <td class="extra-1"><span class="fw-semibold title"><i class='bx bx-circle' style="font-size: 10px"></i>  Woven HD</span></td>
       <td class="harga extra-2 title" >(+30,000)</td>
       <td class="input-group  extra-3">
+        <button onclick="kurangSatu('jumlah6')" type="button" class="btn-hidden">-</button>
+
         <input type="number" id="jumlah6" value="50" class="mx-2 input-extra" min="50" readonly>
         <button onclick="tambahSatu('jumlah6')"  type="button" class="btn-hidden">+</button>
         {{-- <input type="text" class="form-extra" placeholder="Input Jumlah"  aria-describedby="basic-addon1" name="xxxl"> --}}
@@ -897,6 +909,8 @@
       <td class="extra-1"><span class="fw-semibold title"> <i class='bx bx-circle' style="font-size: 10px"></i> Woven lokal</span></td>
       <td class="harga extra-2 title" >(+50,000)</td>
       <td class="input-group extra-3 ">
+        <button onclick="kurangSatu('jumlah7')" type="button" class="btn-hidden">-</button>
+
         <input type="number" id="jumlah7" value="12" class="mx-2 input-extra" min="12" readonly>
         <button onclick="tambahSatu('jumlah7')"  type="button" class="btn-hidden">+</button>
         {{-- <input type="text" class="form-extra" placeholder="Input Jumlah"  aria-describedby="basic-addon1" name="xxxxl"> --}}
@@ -1088,7 +1102,24 @@
     // Update nilai input jumlah
     inputJumlah.value = nilaiJumlah;
   }
+
+  function kurangSatu(idInput) {
+    var inputJumlah = document.getElementById(idInput);
+    var nilaiJumlah = parseInt(inputJumlah.value);
+    
+    // Kurangi 1 dari nilai jumlah
+    nilaiJumlah--;
+
+    // Pastikan nilai tidak kurang dari 0
+    if (nilaiJumlah < 0) {
+      nilaiJumlah = 0;
+    }
+
+    // Update nilai input jumlah
+    inputJumlah.value = nilaiJumlah;
+  }
 </script>
+
  <!-- Modal -->
  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -1104,6 +1135,10 @@
         <input type="text" class="form-control" name="nama_pemesanan">
         <label for="" class="subtitle">Kontak (Whatsapp)</label>
         <input type="text" class="form-control" name="kontak"> 
+        <label for="" class="subtitle">Email</label>
+        <input type="text" class="form-control" name="email"> 
+        <label for="" class="subtitle">Alamat</label>
+        <input type="text" class="form-control" name="alamat"> 
       </div>
       <div class="modal-footer">
         <button type="submit" class="btn btn-primary">Save changes</button>

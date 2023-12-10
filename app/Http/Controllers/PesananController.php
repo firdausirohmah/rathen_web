@@ -62,8 +62,13 @@ class PesananController extends Controller
     {
         session(['nama' => $request->nama_pemesanan]);
         session(['kontak' => $request->kontak]);
+        session(['email' => $request->email]);
+        session(['alamat' => $request->alamat]);
         $nama_pemesaanan = $request->nama_pemesanan;
         $kontak = $request->kontak;
+        $email = $request->email;
+        $alamat = $request->alamat;
+
         $tanggalSekarang = date("d F Y");
         $data = DB::table('tbl_step1')
             ->join('tbl_step2', 'tbl_step1.kd_step2', '=', 'tbl_step2.kd_step2')
@@ -78,6 +83,9 @@ class PesananController extends Controller
                 'data' => $pesanan,
                 'nama' => $nama_pemesaanan,
                 'kontak' => $kontak,
+                'email' => $email,
+                'alamat' => $alamat,
+
                 'tanggal' => $tanggalSekarang,
             ]);
         }
@@ -95,6 +103,8 @@ class PesananController extends Controller
     {
         $nama = session('nama');
         $kontak = session('kontak');
+        $email = session('email');
+        $alamat = session('alamat');
         $tanggal = date("d F Y");
 
         $data = DB::table('tbl_step1')
@@ -108,6 +118,8 @@ class PesananController extends Controller
                 'data' => $pesanan,
                 'nama' => $nama,
                 'kontak' => $kontak,
+                'email' => $email,
+                'alamat' => $alamat,
                 'tanggal' => $tanggal,
             ];
             $pdf = new Dompdf();
@@ -117,7 +129,7 @@ class PesananController extends Controller
 
             // Load Bootstrap CSS locally
             $bootstrapCSS = file_get_contents(public_path('c.css')); // Ganti path sesuai dengan lokasi CSS Bootstrap Anda
-            $html = View::make('landing_page.quotation', compact('data', 'nama', 'kontak', 'tanggal'))->render();
+            $html = View::make('landing_page.quotation', compact('data', 'nama', 'kontak', 'email', 'alamat', 'tanggal'))->render();
 
 
             // Combine Bootstrap CSS with your HTML

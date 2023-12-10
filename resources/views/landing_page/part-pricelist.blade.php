@@ -646,10 +646,8 @@
                   <div id="content2" class="card-text content komparasi">
                     <h6 class="card-subtitle mb-2 text-body-secondary text-center fw-bold fs-4 mb-2">Perbandingan type kualitas</h6>
                     <div class="fabrics mb-5">
-                      <div class="d-flex overflow-hidden">
-                        <div class="overflow-hidden"><img class="object-fit-cover " src="{{asset('asset/images/price-list/detail/halfprint/Halfprint-2.jpg')}}" /></div>
-                        <div class="overflow-hidden"><img class="object-fit-cover " src="{{asset('asset/images/price-list/detail/halfprint/Halfprint-2.jpg')}}" /></div>
-                        <div class="overflow-hidden"><img class="object-fit-cover " src="{{asset('asset/images/price-list/detail/halfprint/Halfprint-2.jpg')}}" /></div>
+                      <div class="overflow-hidden max-width-4xl mx-auto">
+                        <img class="h-100 w-100" src="{{ asset('asset/images/price-list/komparasi/preview-fabrics.jpg')}}" alt="">
                       </div>
                       <div class="d-flex flex-column align-items-center">
                         <img class="object-fit-cover icon mx-auto" src="{{ asset('asset/images/price-list/komparasi/fabrics.jpg')}}" />
@@ -672,17 +670,15 @@
                           <tr>
                             <td class="text-center">Dri-fit technology</td>
                             <td class="text-center">Jacquard techonlogy</td>
-                            <td class="text-center">Single-Knit jacquardtechnology</td>
+                            <td class="text-center">Single-Knit jacquard technology</td>
                           </tr>
                         </tbody>
                       </table>
                     </div>
 
                     <div class="logo-tim mb-5">
-                      <div class="d-flex overflow-hidden">
-                        <div class="overflow-hidden"><img class="object-fit-cover " src="{{asset('asset/images/price-list/detail/halfprint/Halfprint-2.jpg')}}" /></div>
-                        <div class="overflow-hidden"><img class="object-fit-cover " src="{{asset('asset/images/price-list/detail/halfprint/Halfprint-2.jpg')}}" /></div>
-                        <div class="overflow-hidden"><img class="object-fit-cover " src="{{asset('asset/images/price-list/detail/halfprint/Halfprint-2.jpg')}}" /></div>
+                      <div class="overflow-hidden max-width-4xl mx-auto">
+                        <img class="h-100 w-100" src="{{ asset('asset/images/price-list/komparasi/preview-logo-tim.jpg')}}" alt="">
                       </div>
                       <div class="d-flex flex-column align-items-center">
                         <img class="object-fit-cover icon mx-auto" src="{{ asset('asset/images/price-list/komparasi/logo-tim.jpg')}}" />
@@ -712,10 +708,8 @@
                     </div>
 
                     <div class="logo-r mb-5">
-                      <div class="d-flex overflow-hidden">
-                        <div class="overflow-hidden"><img class="object-fit-cover " src="{{asset('asset/images/price-list/detail/halfprint/Halfprint-2.jpg')}}" /></div>
-                        <div class="overflow-hidden"><img class="object-fit-cover " src="{{asset('asset/images/price-list/detail/halfprint/Halfprint-2.jpg')}}" /></div>
-                        <div class="overflow-hidden"><img class="object-fit-cover " src="{{asset('asset/images/price-list/detail/halfprint/Halfprint-2.jpg')}}" /></div>
+                      <div class="overflow-hidden max-width-4xl mx-auto">
+                        <img class="h-100 w-100" src="" alt="">
                       </div>
                       <div class="d-flex flex-column align-items-center">
                         <img class="object-fit-cover icon mx-auto" src="{{ asset('asset/images/price-list/komparasi/logo-r.jpg')}}" />
@@ -745,10 +739,8 @@
                     </div>
 
                     <div class="t-lock mb-5">
-                      <div class="d-flex overflow-hidden">
-                        <div class="overflow-hidden"><img class="object-fit-cover " src="{{asset('asset/images/price-list/detail/halfprint/Halfprint-2.jpg')}}" /></div>
-                        <div class="overflow-hidden"><img class="object-fit-cover " src="{{asset('asset/images/price-list/detail/halfprint/Halfprint-2.jpg')}}" /></div>
-                        <div class="overflow-hidden"><img class="object-fit-cover " src="{{asset('asset/images/price-list/detail/halfprint/Halfprint-2.jpg')}}" /></div>
+                      <div class="overflow-hidden max-width-4xl mx-auto">
+                        <img class="h-100 w-100" src="" alt="">
                       </div>
                       <div class="d-flex flex-column align-items-center">
                         <img class="object-fit-cover icon mx-auto" src="{{ asset('asset/images/price-list/komparasi/t-lock.jpg')}}" />
@@ -773,10 +765,8 @@
                     </div>
 
                     <div class="laser-cut mb-5">
-                      <div class="d-flex overflow-hidden">
-                        <div class="overflow-hidden"><img class="object-fit-cover " src="{{asset('asset/images/price-list/detail/halfprint/Halfprint-2.jpg')}}" /></div>
-                        <div class="overflow-hidden"><img class="object-fit-cover " src="{{asset('asset/images/price-list/detail/halfprint/Halfprint-2.jpg')}}" /></div>
-                        <div class="overflow-hidden"><img class="object-fit-cover " src="{{asset('asset/images/price-list/detail/halfprint/Halfprint-2.jpg')}}" /></div>
+                      <div class="overflow-hidden max-width-4xl mx-auto">
+                        <img class="h-100 w-100" src="" alt="">
                       </div>
                       <div class="d-flex flex-column align-items-center">
                         <img class="object-fit-cover icon mx-auto" src="{{ asset('asset/images/price-list/komparasi-fabrics.jpg')}}" />
@@ -801,10 +791,8 @@
                     </div>
 
                     <div class="authentic-r mb-5">
-                      <div class="d-flex overflow-hidden">
-                        <div class="overflow-hidden"><img class="object-fit-cover " src="{{asset('asset/images/price-list/detail/halfprint/Halfprint-2.jpg')}}" /></div>
-                        <div class="overflow-hidden"><img class="object-fit-cover " src="{{asset('asset/images/price-list/detail/halfprint/Halfprint-2.jpg')}}" /></div>
-                        <div class="overflow-hidden"><img class="object-fit-cover " src="{{asset('asset/images/price-list/detail/halfprint/Halfprint-2.jpg')}}" /></div>
+                      <div class="overflow-hidden max-width-4xl mx-auto">
+                        <img class="h-100 w-100" src="" alt="">
                       </div>
                       <div class="d-flex flex-column align-items-center">
                         <img class="object-fit-cover icon mx-auto" src="{{ asset('asset/images/price-list/komparasi/authentic.jpg')}}" />
@@ -834,10 +822,8 @@
                     </div>
 
                     <div class="logo-celana mb-5">
-                      <div class="d-flex overflow-hidden">
-                        <div class="overflow-hidden"><img class="object-fit-cover " src="{{asset('asset/images/price-list/detail/halfprint/Halfprint-2.jpg')}}" /></div>
-                        <div class="overflow-hidden"><img class="object-fit-cover " src="{{asset('asset/images/price-list/detail/halfprint/Halfprint-2.jpg')}}" /></div>
-                        <div class="overflow-hidden"><img class="object-fit-cover " src="{{asset('asset/images/price-list/detail/halfprint/Halfprint-2.jpg')}}" /></div>
+                      <div class="overflow-hidden max-width-4xl mx-auto">
+                        <img class="h-100 w-100" src="" alt="">
                       </div>
                       <div class="d-flex flex-column align-items-center">
                         <img class="object-fit-cover icon mx-auto" src="{{ asset('asset/images/price-list/komparasi/logo-tim-celana.jpg')}}" />
@@ -862,10 +848,8 @@
                     </div>
 
                     <div class="nama-tim-celana mb-5">
-                      <div class="d-flex overflow-hidden">
-                        <div class="overflow-hidden"><img class="object-fit-cover " src="{{asset('asset/images/price-list/detail/halfprint/Halfprint-2.jpg')}}" /></div>
-                        <div class="overflow-hidden"><img class="object-fit-cover " src="{{asset('asset/images/price-list/detail/halfprint/Halfprint-2.jpg')}}" /></div>
-                        <div class="overflow-hidden"><img class="object-fit-cover " src="{{asset('asset/images/price-list/detail/halfprint/Halfprint-2.jpg')}}" /></div>
+                      <div class="overflow-hidden max-width-4xl mx-auto">
+                        <img class="h-100 w-100" src="" alt="">
                       </div>
                       <div class="d-flex flex-column align-items-center">
                         <img class="object-fit-cover icon mx-auto" src="{{ asset('asset/images/price-list/komparasi/nama-tim-celana.jpg')}}" />
@@ -912,6 +896,9 @@
       }
       </script>
       <style>
+        .max-width-4xl{
+          max-width: 600px;
+        }
           .komparasi .icon{
     height: 100px;
   }

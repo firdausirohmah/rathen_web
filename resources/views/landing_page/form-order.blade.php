@@ -213,7 +213,7 @@
           <td class="col-1 fw-semibold title">Jumlah pesanan</td> 
           <td class="col-2">:</td>
           
-          <td class="col-3 input-group"><input type="text" name="jp" class="form-extra" value="{{ $qty }}">
+          <td class="col-3 input-group"><input type="text" name="jp" class="form-extra" value="{{ $qty }}" readonly>
             <span class="input-group-text fw-lighter title " id="basic-addon1">pcs</span>
           </td>
         </tr>

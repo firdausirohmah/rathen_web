@@ -145,7 +145,7 @@ class PesananController extends Controller
         }
         // ===========================
         $sblt = $request->file('sblt');
-        if ($djk == null) {
+        if ($sblt == null) {
             $file11Name = '-';
         } else {
             $file11Name = $time . '_Sponsor-Belakang-Logo' . '.' . $sblt->extension();

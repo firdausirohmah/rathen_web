@@ -56,6 +56,9 @@
                 <p style="color: #1890fd;  font-family: Montheavy;  font-weight: bold; padding-left:0%;">Step 4. Form Data Pesanan</p>
                 <hr>
                 <div class="col-lg-12 fw-center">
+                  <button type="button" class="btn btn-outline-warning">
+                    <i class='bx bx-library'></i> Format Ukuran
+                  </button>
                   <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#addModal">
                     <small class="bx bxs-edit"></small> Input Data
                   </button>
@@ -73,14 +76,14 @@
                             <td class="fw-center text-danger">NOMOR</td>
                             <td class="fw-center text-danger">UKURAN</td>
                         </tr>
-                        <tbody>
+                        <tbody> 
                           @foreach ($pesanan as $row)
                             <tr class="bg-light">
                               <td>{{ $row->namapunggung }}</td>
                               <td>{{ $row->nomor; }}</td>
                               <td>{{ $row->ukuran; }}</td>
                             </tr>
-                            @endforeach
+                            @endforeach 
                         </tbody>
                     </thead>
                 </table>
@@ -129,7 +132,7 @@
                           </div>
                           <div class="mb-3">
                               <label for="nomor" class="form-label">NOMOR:</label>
-                              <input type="text" class="form-control" id="nomor" name="nomor" required>
+                              <input type="number" class="form-control" id="nomor" name="nomor" required>
                           </div>
                           <div class="mb-3">
                               <label for="ukuran" class="form-label">UKURAN:</label>
@@ -154,7 +157,7 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-              <div class="label"><a href="{{ route('unduhFormatFile') }}" download> Download </a></div>
+              <div class="label"><a href="" download> Download </a></div>
           </div>
           <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

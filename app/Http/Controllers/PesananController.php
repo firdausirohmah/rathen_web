@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\ModelOrder;
 use App\Models\ModelStep1;
+use App\Models\ModelStep4;
 use App\Models\ModeStep2;
 use App\Models\ModeStep3;
 use Barryvdh\DomPDF\PDF;
@@ -37,17 +38,24 @@ class PesananController extends Controller
 
     public function form_2(Request $request)
     {
-        $data = DB::table('tbl_step2')->get('*');
-
-
-        return view('landing_page.form-2', [
-            'pesanan' => $data,
-        ]);
+        $kode = session('kode');
+        // dd($kode);
+        $data = DB::table('tbl_step2')
+            ->join('tbl_step1', 'tbl_step2.kd_step2', '=', 'tbl_step1.kd_step2') // Sesuaikan kondisi join
+            ->where('tbl_step2.kd_step2', $kode) // Sesuaikan kondisi WHERE
+            ->select('tbl_step1.*', 'tbl_step2.*') // Pilih kolom yang ingin Anda ambil
+            ->get();
+        // dd($data);
+        foreach ($data as $pesanan) { 
+            return view('landing_page.form-2', [
+                'data' => $pesanan,
+                'kode' => $kode, 
+            ]);
+        }
     }
     public function upload(Request $request)
     {
-        $now = Carbon::now();
-        $time = $now->format('dHmiys');
+        $kode = session('kode'); 
         // Validasi file
         // $request->validate([
         //     'djp' => 'required|mimes:cdr,ai,pdf,jpg',
@@ -68,7 +76,7 @@ class PesananController extends Controller
         if ($djp == null) {
             $file1Name = '-';
         } else {
-            $file1Name = $time . '_Design-Pemain' . '.' . $djp->extension();
+            $file1Name = $kode . '_Design-Pemain' . '.' . $djp->extension();
             $djp->storeAs('uploads', $file1Name);
         }
         // ===========================
@@ -76,7 +84,7 @@ class PesananController extends Controller
         if ($djk == null) {
             $file2Name = '-';
         } else {
-            $file2Name = $time . '_Design-Kiper' . '.' . $djk->extension();
+            $file2Name = $kode . '_Design-Kiper' . '.' . $djk->extension();
             $djk->storeAs('uploads', $file2Name);
         }
         // ===========================
@@ -84,7 +92,7 @@ class PesananController extends Controller
         if ($lt == null) {
             $file3Name = '-';
         } else {
-            $file3Name = $time . '_Logo-Tim' . '.' . $lt->extension();
+            $file3Name = $kode . '_Logo-Tim' . '.' . $lt->extension();
             $lt->storeAs('uploads', $file3Name);
         }
         // ===========================
@@ -92,7 +100,7 @@ class PesananController extends Controller
         if ($sdd == null) {
             $file4Name = '-';
         } else {
-            $file4Name = $time . '-Sponsor-Dada-1baris' . '.' . $sdd->extension();
+            $file4Name = $kode . '-Sponsor-Dada-1baris' . '.' . $sdd->extension();
             $sdd->storeAs('uploads', $file4Name);
         }
         // =========================== 
@@ -100,7 +108,7 @@ class PesananController extends Controller
         if ($sd == null) {
             $file5Name = '-';
         } else {
-            $file5Name = $time . '_Sponsor-Dada-Logo' . '.' . $sd->extension();
+            $file5Name = $kode . '_Sponsor-Dada-Logo' . '.' . $sd->extension();
             $sd->storeAs('uploads', $file5Name);
         }
         // =========================== 
@@ -108,7 +116,7 @@ class PesananController extends Controller
         if ($t1b == null) {
             $file6Name = '-';
         } else {
-            $file6Name = $time . '_Sponsor-Dada-t1b' . '.' . $t1b->extension();
+            $file6Name = $kode . '_Sponsor-Dada-t1b' . '.' . $t1b->extension();
             $t1b->storeAs('uploads', $file6Name);
         }
         // ===========================
@@ -116,7 +124,7 @@ class PesananController extends Controller
         if ($ltt == null) {
             $file7Name = '-';
         } else {
-            $file7Name = $time . '_Sponsor-Dada-Logo-Tulisan' . '.' . $ltt->extension();
+            $file7Name = $kode . '_Sponsor-Dada-Logo-Tulisan' . '.' . $ltt->extension();
             $ltt->storeAs('uploads', $file7Name);
         }
         // ===========================
@@ -124,7 +132,7 @@ class PesananController extends Controller
         if ($lk == null) {
             $file8Name = '-';
         } else {
-            $file8Name = $time . '_Logo-Lengan-R' . '.' . $lk->extension();
+            $file8Name = $kode . '_Logo-Lengan-R' . '.' . $lk->extension();
             $lk->storeAs('uploads', $file8Name);
         }
         // ===========================
@@ -132,7 +140,7 @@ class PesananController extends Controller
         if ($llk == null) {
             $file9Name = '-';
         } else {
-            $file9Name = $time . '-Logo-Lengan-LR' . '.' . $llk->extension();
+            $file9Name = $kode . '-Logo-Lengan-LR' . '.' . $llk->extension();
             $llk->storeAs('uploads', $file9Name);
         }
         // ===========================
@@ -140,7 +148,7 @@ class PesananController extends Controller
         if ($sbt == null) {
             $file10Name = '-';
         } else {
-            $file10Name = $time . '_Sponsor-Belakang-t1b' . '.' . $sbt->extension();
+            $file10Name = $kode . '_Sponsor-Belakang-t1b' . '.' . $sbt->extension();
             $sbt->storeAs('uploads', $file10Name);
         }
         // ===========================
@@ -148,7 +156,7 @@ class PesananController extends Controller
         if ($sblt == null) {
             $file11Name = '-';
         } else {
-            $file11Name = $time . '_Sponsor-Belakang-Logo' . '.' . $sblt->extension();
+            $file11Name = $kode . '_Sponsor-Belakang-Logo' . '.' . $sblt->extension();
             $sblt->storeAs('uploads', $file11Name);
         }
         // ===========================
@@ -156,18 +164,19 @@ class PesananController extends Controller
 
 
         // dd($file1Name,$file2Name); 
-        $data = ModeStep2::create([
-            'kd_step2' => $file1Name,
-            'design_jersey_pemain' => $file2Name,
-            'design_jersey_kiper' => $file3Name,
-            'logo_tim' => $file4Name,
-            'sponsor_dada_tulisan1baris' => $file5Name,
-            'sponsor_dada_logodantulisan' => $file6Name,
-            'extra_tulisan1baris' => $file7Name,
-            'extra_logodantulisan' => $file8Name,
-            'logo_dilengan_kanan' => $file9Name,
-            'logo_dilengan_kiri' => $file10Name,
-            'sponsor_belakang_tulisan1baris' => $file11Name,
+        $data = ModeStep2::where('kd_step2', $kode )
+        ->update([ 
+            'design_jersey_pemain' => $file1Name,
+            'design_jersey_kiper' => $file2Name,
+            'logo_tim' => $file3Name,
+            'sponsor_dada_tulisan1baris' => $file4Name,
+            'sponsor_dada_logodantulisan' => $file5Name,
+            'extra_tulisan1baris' => $file6Name,
+            'extra_logodantulisan' => $file7Name,
+            'logo_dilengan_kanan' => $file8Name,
+            'logo_dilengan_kiri' => $file9Name,
+            'sponsor_belakang_tulisan1baris' => $file10Name,
+            'sponsor_belakang_logodantulisan' => $file11Name,
         ]);
         // Lakukan operasi lain jika diperlukan
         // dd($file1,$file2);
@@ -175,21 +184,46 @@ class PesananController extends Controller
     }
     public function form_3(Request $request)
     {
-        $data = DB::table('tbl_step3')->get('*');
+        $kode = session('kode');
+        // dd($kode);
+        $data = DB::table('tbl_step3')
+            ->join('tbl_step1', 'tbl_step3.kd_step3', '=', 'tbl_step1.kd_step3') // Sesuaikan kondisi join 
+            ->where('tbl_step3.kd_step3', $kode) // Sesuaikan kondisi WHERE
+            ->select('tbl_step1.*', 'tbl_step3.*') // Pilih kolom yang ingin Anda ambil
+            ->get();
+        
+        foreach ($data as $step3){ 
+            return view('landing_page.form-3', [
+                'data' => $step3,
+            ]);
+        }
 
-
-        return view('landing_page.form-3', [
-            'pesanan' => $data,
-        ]);
     }
     public function form_4(Request $request)
     {
-        $data = DB::table('tbl_data_pesanan')->get('*');
+        $kode = session('kode');
+        $data = ModelStep4::where('kd_step1', $kode)->get();
 
 
         return view('landing_page.form-4', [
             'pesanan' => $data,
         ]);
+    }
+    public function tambahDataPesanan(Request $request)
+    {
+        $kode = session('kode');
+        $np = $request->namaPunggung;
+        $no = $request->nomor;
+        $uk = $request->ukuran;
+        // dd($np, $no, $uk, $kode);  
+        $insert =  ModelStep4::create([
+            'namapunggung' => $np,
+            'nomor' => $no,
+            'ukuran' => $uk,
+            'kd_step1' => $kode,
+        ]);
+
+        return redirect()->back();
     }
     // ===========================order=====================================
     public  function order(Request $request)
@@ -303,7 +337,8 @@ class PesananController extends Controller
     public function addForm1(Request $request)
     {
         $now = Carbon::now();
-        $formattedNow = $now->format('dHmiys');
+        $formattedNow = $now->format('dHmiys');  
+
         // dd($formattedNow);
         $selectedText = $request->input('selectedText');
         // dd($selectedText);
@@ -326,20 +361,19 @@ class PesananController extends Controller
         $xxxl = $request->xxxl;
         $xxxxl = $request->xxxxl;
         $cp = $request->celana_panjang;
-        $kk = $request->kaoskaki;
-        $cookie = $formattedNow;
-
-        $order = ModelOrder::create([
-            'kd_order' => $formattedNow,
-            'kd_step2' => $formattedNow,
-            'kd_step3' => $formattedNow,
-            'status_order' => 'proses',
+        $kk = $request->kaoskaki; 
+        // Simpan username ke dalam sesi
+        session([
+            'kode' => $formattedNow, 
         ]);
         $step2 = ModeStep2::create([
             'kd_step2' => $formattedNow,
         ]);
         $step3 = ModeStep3::create([
             'kd_step3' => $formattedNow,
+        ]);
+        $step4 = ModelStep4::create([
+            'kd_step1' => $formattedNow,
         ]);
         $str = Str::random(12);
         $data = ModelStep1::create([
@@ -366,9 +400,35 @@ class PesananController extends Controller
             'kaoskaki' => $kk,
             'kd_step2' => $formattedNow,
             'kd_step3' => $formattedNow,
+            'kd_step4' => $formattedNow,
 
         ]);
+        $order = ModelOrder::create([
+            'kd_order' => $formattedNow,
+            'kd_step2' => $formattedNow,
+            'kd_step3' => $formattedNow,
+            'status_order' => 'proses',
+        ]); 
+        // auth()->login($order);
+
         return redirect('/form-2');
+    }
+    public function addForm3(Request $request)
+    {
+        $kode = session('kode'); 
+        $pl = $request->pola_lengan;
+        $mk = $request->model_kerah;
+        $bb = $request->bb;
+        $bc = $request->bc;
+        // dd($kode, $pl, $mk, $bb, $bc);
+        $data = ModeStep3::where('kd_step3', $kode)->update([
+            'pola_lengan' => $pl ,
+            'model_kerah' => $mk ,
+            'bahan_baju' => $bb ,
+            'bahan_celana' => $bc , 
+        ]);   
+
+        return redirect('/form-4');
     }
     public function invoice(Request $request)
     {
@@ -384,22 +444,7 @@ class PesananController extends Controller
             ]);
         }
     }
-    public function tambahDataPesanan(Request $request)
-    {
-        $np = $request->namaPunggung;
-        $no = $request->nomor;
-        $uk = $request->ukuran;
-        $data = DB::table('tbl_data_pesanan')->get();
-        // dd($np, $no, $uk);
-
-        $insert =  DB::table('tbl_data_pesanan')->insert([
-            'namapunggung' => $np,
-            'nomor' => $no,
-            'ukuran' => $uk,
-        ]);
-
-        return redirect()->back();
-    }
+    
     // public function generatePDF()
     // {
 

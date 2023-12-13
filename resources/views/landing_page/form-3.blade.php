@@ -112,13 +112,13 @@
             <div class="row">
                 <p style="color: #1890fd;  font-family: Montheavy;  font-weight: bold; padding-left:0%;">Step 3. Spesifikasi</p>
     
-          
+        
         <table style="width: 100%; border:10px; font-size:14px; font-weight:100; color:black;">
             <tr style="font-weight: bold; " >
             <td class="col-1 fw-semibold title">Kategori Harga</td>
             <td class="col-2">:</td>
             <td class="col-3">
-                <input type="text" name="kh" class="form-control" placeholder="">
+                <input type="text" name="kh" class="form-control" placeholder="" value="{{ $data->kategori_harga }}" readonly>
                 {{-- <select name="kategori" class="form-control" id="">
                   <option class="" value="" style="font-weight: bold; "><span class="fw-lighter">Non-Print</span></option>
                   <option value="" style="font-weight: bold;" ><span class="fw-lighter"> Half-Print</span></option>
@@ -131,7 +131,7 @@
                 <td class="col-1 fw-semibold title">Kualitas</td>
                 <td class="col-2">:</td>
                 <td class="col-3">
-                    <input type="text" name="k" class="form-control" placeholder="">
+                    <input type="text" name="k" class="form-control" placeholder="" value="{{ $data->tipe_kualitas }}" readonly>
                     {{-- <select name="kategori" class="form-control" id="">
                       <option class="" value="" style="font-weight: bold; "><span class="fw-lighter">Fans</span></option>
                       <option value="" style="font-weight: bold; "><span class="fw-lighter"> Stadium</span></option>
@@ -144,14 +144,15 @@
                     <div style="margin-bottom: 20px;"></div>
                 </td>
                 </tr>
-
+                <form action="{{ route('addForm3') }}" method="POST">
+                  @csrf
                 <tr>
                     <td class="col-1 fw-semibold title">Pola Lengan</td>
                     <td class="col-2">:</td>
                     <td class="col-3 input-group">
-                         <select name="kategori" class="form-extra" id="">
-                      <option value="" style="font-weight: bold; "><span class="fw-lighter"> Normal</span></option>
-                      <option value=""style="font-weight: bold; "><span class="fw-lighter"> Ragian</span></option> 
+                    <select name="pola_lengan" class="form-extra" id="">
+                      <option value="Normal" style="font-weight: bold; "><span class="fw-lighter"> Normal</span></option>
+                      <option value="Raglan"style="font-weight: bold; "><span class="fw-lighter"> Raglan</span></option> 
                     </select>
                     <div class="input-group-text" style="font-size: 15px; font-weight: bold; color: grey;"><small>(+15,000 pola raglan)</small></div>
                       </td>
@@ -162,7 +163,7 @@
                     <td class="col-2">:</td>
                     <td class="col-3">
                         {{-- <input type="text" name="pl" class="form-control" placeholder=""> --}}
-                        <select name="p1" id="" class="form-control">
+                        <select name="model_kerah" id="" class="form-control">
                           <option value="K.R 01">K.R 01</option>
                           <option value="K.R 02">K.R 02</option>
                           <option value="K.R 03">K.R 03</option>
@@ -198,10 +199,12 @@
 
                             <tr>
                                 <td colspan="3" style="text-align: center; align-item:center;padding-top:3%;" >
-                                    <button type="button" style="font-family: Montheavy; width:15%" class="btn btn-black">NEXT</button>
+                                    <button type="submit" style="font-family: Montheavy; width:15%" class="btn btn-black">NEXT</button>
                                   </td>
                             </tr>
-        </table>
+          </table>
+          
+        </form>
         <table class="mb-4 mt-4" style="font-family:Montheavy; font-weight: bold;">
             <th>
                 <tr>

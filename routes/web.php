@@ -107,9 +107,10 @@ Route::controller(PesananController::class)->group(function () {
     Route::get('/form-2', 'form_2')->name('form_2');
     Route::post('/form-2', 'upload')->name('upload');
     Route::get('/form-3', 'form_3')->name('form_3');
+    Route::post('/form-3/add', 'addForm3')->name('addForm3');
     Route::get('/form-4', 'form_4')->name('form_4');
+    Route::post('/form-4/pemain', 'tambahDataPesanan')->name('tambahDataPesanan');
     Route::get('/invoice', 'invoice')->name('invoice');
-    Route::post('/tambah-data-pesanan', 'tambahDataPesanan')->name('tambahDataPesanan');
 });
 
 // contact us

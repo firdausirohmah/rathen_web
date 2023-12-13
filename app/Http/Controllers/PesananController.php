@@ -171,7 +171,7 @@ class PesananController extends Controller
         ]);
         // Lakukan operasi lain jika diperlukan
         // dd($file1,$file2);
-        return redirect('/form-2')->with('success', 'Files successfully uploaded.');
+        return redirect('/form-3')->with('success', 'Files successfully uploaded.');
     }
     public function form_3(Request $request)
     {

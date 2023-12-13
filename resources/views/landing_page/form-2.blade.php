@@ -122,7 +122,7 @@
             <td colspan="1" class="col-3">
               <div style="display: flex; align-items: center;">
                 <label for="fileInput1" id="customLabel1" class="customLabel" style="margin-right: 10px;">Upload</label>
-                  <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput1" name="djp" class="fileInput form-control fw-lighter" placeholder="Upload File">
+                  <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput1" name="djp" class="fileInput form-control fw-lighter" placeholder="Upload File" required>
                   <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes">(format file : .cdr./.ai/.pdf/.jpg)</small>  
               </div> 
             </td>
@@ -133,7 +133,7 @@
             <td colspan="1" class="col-3">
               <div style="display: flex; align-items: center;">
                   <label for="fileInput2" id="customLabel2" class="customLabel" style="margin-right: 10px;">Upload</label>
-                  <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput2" name="djk" class="fileInput form-control fw-lighter" placeholder="Upload File">
+                  <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput2" name="djk" class="fileInput form-control fw-lighter" placeholder="Upload File" required>
                   <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes">(format file : .cdr./.ai/.pdf/.jpg)</small>
               </div> </td>
           </tr>
@@ -143,7 +143,7 @@
             <td colspan="1" class="col-3">
               <div style="display: flex; align-items: center;">
                   <label for="fileInput3" id="customLabel3" class="customLabel" style="margin-right: 10px;">Upload</label>
-                  <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput3" name="lt" class="fileInput form-control fw-lighter" placeholder="Upload File">
+                  <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput3" name="lt" class="fileInput form-control fw-lighter" placeholder="Upload File" required>
                   <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes">(format file : .cdr./.ai/.pdf/.jpg)</small>
               </div> </td>
           </tr>

@@ -420,8 +420,7 @@
       transform: scale(0.5s);
       /* width: 250px; */
     }
-  </style> 
-  <button>ppp</button>
+  </style>  
   <div class="container">
     <div class="row">
       <div class="col-lg-4">
@@ -1162,7 +1161,8 @@
     <div class="container">
       <div class="row-12">
         <div class="col-lg-12 mt-4">
-          <h5  class="fw-bold title" style="color: red">TOTAL HARGA <span class="mx-5">:</span> IDR <input type="text" class="inpt-harga text-danger fw-bold title" name="total_harga" value="124.000" placeholder="124.000"></h5>
+          <input type="hidden" value="{{ $total }}" name="harga">
+          <h5  class="fw-bold title" style="color: red">TOTAL HARGA <span class="mx-5">:</span> IDR <span id="totalHarga">Rp {{ $total }}</span></h5>
         </div>
       </div>
     </div>
@@ -1209,7 +1209,7 @@
     inputJumlah.value = nilaiJumlah;
   }
 </script>
-<button onclick="simpanData()">Simpan ASD</button>
+{{-- <button onclick="simpanData()">Simpan ASD</button>  --}}
 
  <!-- Modal -->
  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -1238,5 +1238,10 @@
     </div>
   </div>
 </div>
+<script>
+  var totalHarga = {{ $total }};
+   var formattedTotalHarga = "Rp " + totalHarga.toLocaleString();
+   document.getElementById("totalHarga").innerText = formattedTotalHarga;
+</script>
 {{-- end modal --}} 
 @endsection

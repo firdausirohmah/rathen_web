@@ -34,7 +34,7 @@ class PesananController extends Controller
             ]);
         }
     }
-    
+
     public function form_2(Request $request)
     {
         $data = DB::table('tbl_step2')->get('*');
@@ -65,98 +65,98 @@ class PesananController extends Controller
 
         // Menyimpan file pertama
         $djp = $request->file('djp');
-        if ($djp==null) {
+        if ($djp == null) {
             $file1Name = '-';
-        }else{
-            $file1Name = $time.'_Design-Pemain'.'.'.$djp->extension();
+        } else {
+            $file1Name = $time . '_Design-Pemain' . '.' . $djp->extension();
             $djp->storeAs('uploads', $file1Name);
         }
         // ===========================
         $djk = $request->file('djk');
-        if ($djk==null) {
-            $file2Name ='-';
-        }else{
-            $file2Name = $time.'_Design-Kiper'.'.'.$djk->extension();
-            $djk->storeAs('uploads', $file2Name); 
+        if ($djk == null) {
+            $file2Name = '-';
+        } else {
+            $file2Name = $time . '_Design-Kiper' . '.' . $djk->extension();
+            $djk->storeAs('uploads', $file2Name);
         }
         // ===========================
         $lt = $request->file('lt');
-        if ($lt==null) {
-            $file3Name ='-';
-        }else{
-            $file3Name = $time.'_Logo-Tim'.'.'.$lt->extension();
+        if ($lt == null) {
+            $file3Name = '-';
+        } else {
+            $file3Name = $time . '_Logo-Tim' . '.' . $lt->extension();
             $lt->storeAs('uploads', $file3Name);
-        } 
+        }
         // ===========================
         $sdd = $request->file('sdd');
-        if ($sdd==null) {
-            $file4Name ='-';
-        }else{
-            $file4Name = $time.'-Sponsor-Dada-1baris'.'.'.$sdd->extension(); 
+        if ($sdd == null) {
+            $file4Name = '-';
+        } else {
+            $file4Name = $time . '-Sponsor-Dada-1baris' . '.' . $sdd->extension();
             $sdd->storeAs('uploads', $file4Name);
-        }        
+        }
         // =========================== 
         $sd = $request->file('sd');
-        if ($sd==null) {
-            $file5Name ='-';
-        }else{
-            $file5Name = $time.'_Sponsor-Dada-Logo'.'.'.$sd->extension();
+        if ($sd == null) {
+            $file5Name = '-';
+        } else {
+            $file5Name = $time . '_Sponsor-Dada-Logo' . '.' . $sd->extension();
             $sd->storeAs('uploads', $file5Name);
-        }        
+        }
         // =========================== 
         $t1b = $request->file('t1b');
-        if ($t1b==null) {
-            $file6Name ='-';
-        }else{
-            $file6Name = $time.'_Sponsor-Dada-t1b'.'.'.$t1b->extension(); 
+        if ($t1b == null) {
+            $file6Name = '-';
+        } else {
+            $file6Name = $time . '_Sponsor-Dada-t1b' . '.' . $t1b->extension();
             $t1b->storeAs('uploads', $file6Name);
         }
         // ===========================
         $ltt = $request->file('ltt');
-        if ($ltt==null) {
-            $file7Name ='-';
-        }else{
-            $file7Name = $time.'_Sponsor-Dada-Logo-Tulisan'.'.'.$ltt->extension();
+        if ($ltt == null) {
+            $file7Name = '-';
+        } else {
+            $file7Name = $time . '_Sponsor-Dada-Logo-Tulisan' . '.' . $ltt->extension();
             $ltt->storeAs('uploads', $file7Name);
         }
         // ===========================
         $lk = $request->file('lk');
-        if ($lk==null) {
-            $file8Name ='-';
-        }else{
-            $file8Name = $time.'_Logo-Lengan-R'.'.'.$lk->extension();
+        if ($lk == null) {
+            $file8Name = '-';
+        } else {
+            $file8Name = $time . '_Logo-Lengan-R' . '.' . $lk->extension();
             $lk->storeAs('uploads', $file8Name);
-        }        
+        }
         // ===========================
         $llk = $request->file('llk');
-        if ($llk==null) {
-            $file9Name ='-';
-        }else{
-            $file9Name = $time.'-Logo-Lengan-LR'.'.'.$llk->extension(); 
+        if ($llk == null) {
+            $file9Name = '-';
+        } else {
+            $file9Name = $time . '-Logo-Lengan-LR' . '.' . $llk->extension();
             $llk->storeAs('uploads', $file9Name);
         }
         // ===========================
         $sbt = $request->file('sbt');
-        if ($sbt==null) {
-            $file10Name ='-';
-        }else{
-            $file10Name = $time.'_Sponsor-Belakang-t1b'.'.'.$sbt->extension();
+        if ($sbt == null) {
+            $file10Name = '-';
+        } else {
+            $file10Name = $time . '_Sponsor-Belakang-t1b' . '.' . $sbt->extension();
             $sbt->storeAs('uploads', $file10Name);
         }
         // ===========================
         $sblt = $request->file('sblt');
-        if ($djk==null) {
-            $file11Name ='-';
-        }else{
-            $file11Name = $time.'_Sponsor-Belakang-Logo'.'.'.$sblt->extension();
-            $sblt->storeAs('uploads', $file11Name); 
-        }        
+        if ($djk == null) {
+            $file11Name = '-';
+        } else {
+            $file11Name = $time . '_Sponsor-Belakang-Logo' . '.' . $sblt->extension();
+            $sblt->storeAs('uploads', $file11Name);
+        }
         // ===========================
         // dd($file1Name,$file2Name,$file3Name,$file4Name,$file5Name,$file6Name,$file7Name,$file8Name,$file9Name,$file10Name,$file11Name);
 
 
         // dd($file1Name,$file2Name); 
-        $data = ModeStep2::create([ 
+        $data = ModeStep2::create([
             'kd_step2' => $file1Name,
             'design_jersey_pemain' => $file2Name,
             'design_jersey_kiper' => $file3Name,
@@ -192,18 +192,23 @@ class PesananController extends Controller
         ]);
     }
     // ===========================order=====================================
-    public  function order (Request $request){
+    public  function order(Request $request)
+    {
         $kd_part = $request->kd_part;
         $qty = $request->qty;
         $data = DB::table('tbl_step1')->get('*');
-        $ref = db::table('tbl_part')->where('kd_part', $kd_part)->get();
-
+        $ref = DB::table('tbl_part')->where('kd_part', $kd_part)->get();
+        // $totalHarga = $ref->harga;
+        // dd($ref->harga);
         // dd($kd_part,$qty);
         foreach ($ref as $rev) {
+            $totalHarga = $rev->harga * $qty;
+            // dd($totalHarga);
             return view('landing_page.form-order', [
                 'pesanan' => $data,
                 'data' => $rev,
                 'qty' => $qty,
+                'total' => $totalHarga,
             ]);
         }
     }
@@ -325,16 +330,16 @@ class PesananController extends Controller
         $cookie = $formattedNow;
 
         $order = ModelOrder::create([
-            'kd_order' => $formattedNow, 
+            'kd_order' => $formattedNow,
             'kd_step2' => $formattedNow,
             'kd_step3' => $formattedNow,
             'status_order' => 'proses',
         ]);
         $step2 = ModeStep2::create([
-            'kd_step2' => $formattedNow, 
+            'kd_step2' => $formattedNow,
         ]);
         $step3 = ModeStep3::create([
-            'kd_step3' => $formattedNow, 
+            'kd_step3' => $formattedNow,
         ]);
         $str = Str::random(12);
         $data = ModelStep1::create([
@@ -346,8 +351,8 @@ class PesananController extends Controller
             'alamat_pengirim' => $ap,
             'jumlah_pemesanan' => $jp,
             'kategori_harga' => $kt,
-            'kualitas' => $kl,
-            'kategori_harga' => $harga,
+            'tipe_kualitas' => $kl,
+            'harga' => $harga,
             'badan_bawah' => $bbm,
             'pola_lengan' => $plr,
             'upgrade_logo_3d' => $ud,
@@ -358,9 +363,9 @@ class PesananController extends Controller
             'size_3xl' => $xxxl,
             'size_4xl' => $xxxxl,
             'celana_panjang' => $cp,
-            'kaoskaki' => $kk, 
-            'kd_step2' => $formattedNow, 
-            'kd_step3' => $formattedNow,  
+            'kaoskaki' => $kk,
+            'kd_step2' => $formattedNow,
+            'kd_step3' => $formattedNow,
 
         ]);
         return redirect('/form-2');

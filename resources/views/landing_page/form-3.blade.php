@@ -161,7 +161,22 @@
                     <td class="col-1 fw-semibold title">Model Kerah</td>
                     <td class="col-2">:</td>
                     <td class="col-3">
-                        <input type="text" name="pl" class="form-control" placeholder="">
+                        {{-- <input type="text" name="pl" class="form-control" placeholder=""> --}}
+                        <select name="p1" id="" class="form-control">
+                          <option value="K.R 01">K.R 01</option>
+                          <option value="K.R 02">K.R 02</option>
+                          <option value="K.R 03">K.R 03</option>
+                          <option value="K.R 04">K.R 04</option>
+                          <option value="K.R 05">K.R 05</option>
+                          <option value="K.R 06">K.R 06</option>
+                          <option value="K.R 07">K.R 07</option>
+                          <option value="K.R 08">K.R 08</option>
+                          <option value="K.R 09">K.R 09</option>
+                          <option value="K.R 10">K.R 10</option>
+                          <option value="K.R 11">K.R 11</option>
+                          <option value="K.R 12">K.R 12</option>
+                          <option value="K.R 13">K.R 13</option> 
+                        </select>
                       </td>
                     </tr>
 

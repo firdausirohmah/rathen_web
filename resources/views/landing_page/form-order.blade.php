@@ -157,7 +157,7 @@
       <form action="{{ url('/form-1/action') }}" method="POST">
         @csrf
         <tr>
-          <td class="col-1 fw-semibold title">Nama Tim </td>
+          <td class="col-1 fw-semibold">Nama Tim </td>
           <td class="col-2">:</td>
           <td class="col-3"><input type="text" name="nama_tim" class="form-control fw-lighter" placeholder="Masukkan Nama Tim"></td>
         </tr>
@@ -1238,6 +1238,5 @@
     </div>
   </div>
 </div>
-{{-- end modal --}}
-
+{{-- end modal --}} 
 @endsection

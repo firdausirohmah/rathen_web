@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\adminController;
+use App\Http\Controllers\DeviceController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\loginController;
 use App\Http\Controllers\PesananController;
@@ -104,14 +105,12 @@ Route::controller(PesananController::class)->group(function () {
     Route::post('/form-1/quotation', 'quotation')->name('quotation');
     Route::post('/form-1/action', 'addForm1')->name('addForm1');
     Route::get('/form-2', 'form_2')->name('form_2');
+    Route::post('/form-2', 'upload')->name('upload');
     Route::get('/form-3', 'form_3')->name('form_3');
     Route::get('/form-4', 'form_4')->name('form_4');
     Route::get('/invoice', 'invoice')->name('invoice');
     Route::post('/tambah-data-pesanan', 'tambahDataPesanan')->name('tambahDataPesanan');
 });
-
-Route::get('/unduh-format-file', [FileController::class, 'unduhFormatFile'])->name('unduhFormatFile');
-
 
 // contact us
 Route::get('/contact', function () {

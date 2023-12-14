@@ -51,9 +51,20 @@
         }
           </style>
         </div>
-        <div class="container">
+       
+        <div class="container">  
             <div class="row">
                 <p style="color: #1890fd;  font-family: Montheavy;  font-weight: bold; padding-left:0%;">Step 4. Form Data Pesanan</p>
+                @if(session('error'))
+                    <div class="alert alert-danger" style="font-family: Montheavy;">
+                        {{ session('error') }}
+                    </div>
+                @endif
+                @if(session('success'))
+                    <div class="alert alert-success" style="font-family: Montheavy;">
+                        {{ session('success') }}
+                    </div>
+                @endif
                 <hr>
                 <div class="col-lg-12 fw-center">
                   <button type="button" class="btn btn-outline-warning">
@@ -65,6 +76,10 @@
                   <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#uploadModal">
                     <small class="bx bx-upload"></small> Upload File
                   </button>
+                  @if ($sukses == 'sukses')
+                    <a href="{{ route('invoice') }}"><button type="button" class="btn btn-outline-dark"> Next
+                    </button></a>
+                  @endif
                 </div>
             </div>
             <div class="row mt-4">

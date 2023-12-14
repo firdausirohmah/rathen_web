@@ -202,12 +202,22 @@ class PesananController extends Controller
     public function form_4(Request $request)
     {
         $kode = session('kode');
-        $data = ModelStep4::where('kd_step1', $kode)->get();
+        $order = ModelOrder::where('kd_order',$kode)->get();
+        // dd($order);
+        $data = ModelStep4::where('kd_step1', $kode) 
+        ->orderByRaw("FIELD(ukuran, 'S', 'M', 'L', 'XL', 'XXL', 'XXXL')") // Sesuaikan dengan ukuran yang sesuai 
+        ->get();  
+        foreach ($order as $field){
+            $status = $field->status_order; 
+        }
+        // dd($status);
 
-
-        return view('landing_page.form-4', [
-            'pesanan' => $data,
-        ]);
+            return view('landing_page.form-4', [
+                'pesanan' => $data, 
+                'kode' => $kode,
+                'sukses' => $status,
+            ]); 
+        
     }
     public function tambahDataPesanan(Request $request)
     {
@@ -216,14 +226,26 @@ class PesananController extends Controller
         $no = $request->nomor;
         $uk = $request->ukuran;
         // dd($np, $no, $uk, $kode);  
-        $insert =  ModelStep4::create([
-            'namapunggung' => $np,
-            'nomor' => $no,
-            'ukuran' => $uk,
-            'kd_step1' => $kode,
-        ]);
+        $countData = ModelStep4::where('kd_step1', $kode)->count();
+        $tbl_step1 = ModelStep1::where('kd_step4', $kode)->get();
+        foreach ($tbl_step1 as $qty){
+            $jmlQTY = $qty->jumlah_pemesanan;
+        }
+        // dd($jmlQTY);
+        if ($countData < 10) {
+            $insert =  ModelStep4::create([
+                'namapunggung' => $np,
+                'nomor' => $no,
+                'ukuran' => $uk,
+                'kd_step1' => $kode,
+            ]);
+            return redirect()->back()->with('success', 'Data Pemain Berhasil Di Tambahkan.');
+        } else {
+            $selesai = ModelOrder::where('kd_order', $kode)->update(['status_order'=> 'sukses']);
+            return redirect()->back()->with('error', 'Data Yang Di Inputkan Sudah Memenuhi Batas Pemesanan.');
+        }
+        
 
-        return redirect()->back();
     }
     // ===========================order=====================================
     public  function order(Request $request)

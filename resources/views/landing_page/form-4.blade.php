@@ -77,11 +77,11 @@
                     <small class="bx bx-upload"></small> Upload File
                   </button>
                   @if ($sukses == 'sukses')
-                    <a href="{{ route('invoice') }}"><button type="button" class="btn btn-outline-dark"> Next
+                    <a href="{{ route('invoice') }}"><button type="button"  style="font-family: Montheavy;" class="btn btn-dark title"> Next
                     </button></a>
                   @else
                   {{-- <button type="button" class="btn btn-outline-dark"> Next</button> --}}
-                  <a href="{{ route('invoice') }}"><button type="button" class="btn btn-outline-dark"> Next
+                  <a href="{{ route('invoice') }}"><button type="button" style="font-family: Montheavy;" class="btn btn-dark title"> Next
                   </button></a>
                   @endif
                 </div>

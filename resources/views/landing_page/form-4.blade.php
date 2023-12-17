@@ -79,21 +79,28 @@
                   @if ($sukses == 'sukses')
                     <a href="{{ route('invoice') }}"><button type="button" class="btn btn-outline-dark"> Next
                     </button></a>
+                  @else
+                  {{-- <button type="button" class="btn btn-outline-dark"> Next</button> --}}
+                  <a href="{{ route('invoice') }}"><button type="button" class="btn btn-outline-dark"> Next
+                  </button></a>
                   @endif
                 </div>
             </div>
             <div class="row mt-4">
                 <table class="table table-bordered border-secondary fw-center " style="text-align:left; width: 50%; border:10px; font-size:14px; font-weight:100; color:black;">
                     <thead>
-                        <tr class="bg-light"><td colspan="3" style=" text-align:center"><span class="text-danger fw-bold">NAMA TIM</span>(27 stel) <small style="font-size: 10px">diambil</small> <span class="text-primary">30 Okt 2023</span></td></tr>
+                        <tr class="bg-light"><td colspan="4" style=" text-align:center"><span class="text-danger fw-bold">NAMA TIM</span>(27 stel) <small style="font-size: 10px">diambil</small> <span class="text-primary">30 Okt 2023</span></td></tr>
                         <tr class="bg-secondary">
+                            <td class="fw-center text-danger">no</td>
                             <td class="fw-center text-danger">NAMA PUNGGUNG</td>
                             <td class="fw-center text-danger">NOMOR</td>
                             <td class="fw-center text-danger">UKURAN</td>
                         </tr>
                         <tbody> 
+                          <?php $i = 1; ?>
                           @foreach ($pesanan as $row)
                             <tr class="bg-light">
+                              <td>{{ $i++; }}</td>
                               <td>{{ $row->namapunggung }}</td>
                               <td>{{ $row->nomor; }}</td>
                               <td>{{ $row->ukuran; }}</td>

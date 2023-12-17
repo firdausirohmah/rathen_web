@@ -16,7 +16,7 @@ use Dompdf\Dompdf;
 use Dompdf\Options;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\View;
-
+use Maatwebsite\Excel\Excel;
 
 class PesananController extends Controller
 {
@@ -202,7 +202,7 @@ class PesananController extends Controller
     public function form_4(Request $request)
     {
         $kode = session('kode');
-        $order = ModelOrder::where('kd_order',$kode)->get();
+        $order = ModelStep1::where('kd_step4',$kode)->get();
         // dd($order);
         $data = ModelStep4::where('kd_step1', $kode) 
         ->orderByRaw("FIELD(ukuran, 'S', 'M', 'L', 'XL', 'XXL', 'XXXL')") // Sesuaikan dengan ukuran yang sesuai 
@@ -232,7 +232,7 @@ class PesananController extends Controller
             $jmlQTY = $qty->jumlah_pemesanan;
         }
         // dd($jmlQTY);
-        if ($countData < 10) {
+        if ($countData < $jmlQTY) {
             $insert =  ModelStep4::create([
                 'namapunggung' => $np,
                 'nomor' => $no,
@@ -341,6 +341,7 @@ class PesananController extends Controller
             // Load Bootstrap CSS locally
             $bootstrapCSS = file_get_contents(public_path('c.css')); // Ganti path sesuai dengan lokasi CSS Bootstrap Anda
             $html = View::make('landing_page.quotation', compact('data', 'nama', 'kontak', 'email', 'alamat', 'tanggal'))->render();
+            
 
 
             // Combine Bootstrap CSS with your HTML
@@ -393,9 +394,6 @@ class PesananController extends Controller
         ]);
         $step3 = ModeStep3::create([
             'kd_step3' => $formattedNow,
-        ]);
-        $step4 = ModelStep4::create([
-            'kd_step1' => $formattedNow,
         ]);
         $str = Str::random(12);
         $data = ModelStep1::create([
@@ -454,16 +452,71 @@ class PesananController extends Controller
     }
     public function invoice(Request $request)
     {
-        $data = DB::table('tbl_step1')
+        $kode = session('kode');
+        $data = ModelStep1::where('kd_step4', $kode)
             ->join('tbl_step2', 'tbl_step1.kd_step2', '=', 'tbl_step2.kd_step2')
             ->join('tbl_step3', 'tbl_step1.kd_step3', '=', 'tbl_step3.kd_step3')
-            ->select('tbl_step1.*', 'tbl_step2.*', 'tbl_step3.*')
+            ->join('tbl_part', 'tbl_step1.kategori_harga', '=', 'tbl_part.kd_part')
+            ->select('tbl_step1.*', 'tbl_step2.*', 'tbl_step3.*','tbl_part.harga')
             ->get();
+        $harga = DB::table('tbl_harga')
+            ->join('tbl_logo', 'tbl_harga.id', '=', 'tbl_logo.id_logo')
+            ->select('tbl_logo.*', 'tbl_harga.*')
+            ->get();
+        
+        foreach ($harga as $h){
+            $price = $h;
+        }
         foreach ($data as $pesanan) {
-
+            // dd($pesanan->tipe_kualitas);
+            $JarseyOrder = $pesanan->tipe_kualitas;
+            if($JarseyOrder == 'Stadium'){
+                $JarseyDefault = 'Jarsey'.' - '.$JarseyOrder.' '.$pesanan->kategori_harga;
+                $Jarsey = strtoupper($JarseyDefault);
+            }else{
+                $JarseyDefault = 'Jarsey'.'-'.$JarseyOrder.' VERSION';
+                $Jarsey = strtoupper($JarseyDefault);
+            } 
+            // dd($Jarsey);
+            
             return view('landing_page.invoice', [
                 'data' => $pesanan,
+                'price' => $price,
+                'Jarsey' => $Jarsey,
             ]);
+        }
+    }
+    public function export(){
+        $kode = session('kode');
+        $data = ModelStep1::where('kd_step4', $kode)
+            ->join('tbl_step2', 'tbl_step1.kd_step2', '=', 'tbl_step2.kd_step2')
+            ->join('tbl_step3', 'tbl_step1.kd_step3', '=', 'tbl_step3.kd_step3')
+            ->join('tbl_part', 'tbl_step1.kategori_harga', '=', 'tbl_part.kd_part')
+            ->select('tbl_step1.*', 'tbl_step2.*', 'tbl_step3.*','tbl_part.harga')
+            ->get();
+        $harga = DB::table('tbl_harga')
+            ->join('tbl_logo', 'tbl_harga.id', '=', 'tbl_logo.id_logo')
+            ->select('tbl_logo.*', 'tbl_harga.*')
+            ->get();
+        
+        foreach ($harga as $h){
+            $price = $h;
+        }
+        foreach ($data as $pesanan) {
+            // dd($pesanan->tipe_kualitas);
+            $JarseyOrder = $pesanan->tipe_kualitas;
+            if($JarseyOrder == 'Stadium'){
+                $JarseyDefault = 'Jarsey'.' - '.$JarseyOrder.' '.$pesanan->kategori_harga;
+                $Jarsey = strtoupper($JarseyDefault);
+            }else{
+                $JarseyDefault = 'Jarsey'.'-'.$JarseyOrder.' VERSION';
+                $Jarsey = strtoupper($JarseyDefault);
+            }  
+            $data = $pesanan;
+        // $pdf = new Dompdf();
+        $pdf = app('dompdf.wrapper');
+        $pdf -> loadView('landing_page.invoice', compact('Jarsey', 'price', 'data'));
+        return $pdf->stream();  
         }
     }
     
@@ -488,5 +541,15 @@ class PesananController extends Controller
 
         // Beri respons jika perlu
         return response()->json(['status' => 'success', 'message' => 'Data berhasil disimpan']);
+    }
+    public function exportToExcel()
+    {
+        $data = ModelStep4::all();
+
+        return Excel::create('data_export', function ($excel) use ($data) {
+            $excel->sheet('Sheet 1', function ($sheet) use ($data) {
+                $sheet->fromArray($data);
+            });
+        })->download('xlsx');
     }
 }

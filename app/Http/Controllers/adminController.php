@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ModelStep1;
 use App\Models\pemesananModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -10,8 +11,11 @@ class adminController extends Controller
 {
     public function dashboard()
     {
+        $data = DB::table('tbl_step1')->orderBy('created_at', 'asc')->take(30)->get();
         return view('auth.dashboard', [
-            'pages' => "Dashboard"
+            'pages' => "Dashboard",
+            'data' => $data,
+
         ]);
     }
     public function vieworder()

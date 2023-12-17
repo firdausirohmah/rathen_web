@@ -35,4 +35,20 @@ class adminController extends Controller
             'pages' => "Finance"
         ]);
     }
+    public function master()
+    {
+        $harga = DB::table('tbl_harga')
+        ->join('tbl_logo', 'tbl_harga.id', '=', 'tbl_logo.id_logo')
+        ->select('tbl_harga.*', 'tbl_logo.*')
+        ->get();
+        foreach($harga as $data){
+
+        
+        return view('auth.master',[
+            'pages' => "master",
+            'data' => $data,
+
+        ]);
+    }
+    }
 }

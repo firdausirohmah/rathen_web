@@ -111,6 +111,7 @@ Route::controller(PesananController::class)->group(function () {
     Route::get('/form-4', 'form_4')->name('form_4');
     Route::post('/form-4/pemain', 'tambahDataPesanan')->name('tambahDataPesanan');
     Route::get('/invoice', 'invoice')->name('invoice');
+    Route::get('/export', 'export')->name('export');
 });
 
 // contact us
@@ -136,6 +137,7 @@ Route::controller(adminController::class)->group(function () {
     Route::get('/dashboard', 'dashboard')->name('dashboard');
     Route::get('/view-order', 'vieworder')->name('vieworder');
     Route::get('/finance', 'finance')->name('finance');
+    Route::get('/master', 'master')->name('master');
 });
 // Auth::routes();
 

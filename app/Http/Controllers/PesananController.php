@@ -394,9 +394,7 @@ class PesananController extends Controller
         $step3 = ModeStep3::create([
             'kd_step3' => $formattedNow,
         ]);
-        $step4 = ModelStep4::create([
-            'kd_step1' => $formattedNow,
-        ]);
+        
         $str = Str::random(12);
         $data = ModelStep1::create([
             'kd_pembelian' => 'R' . $str,

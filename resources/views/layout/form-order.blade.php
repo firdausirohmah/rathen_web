@@ -11,7 +11,7 @@
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   </head>
-<link rel="stylesheet" href="{{ asset('asset/css/core.css') }}" class="template-customizer-core-css" />
+<link rel="stylesheet" href="{{ asset('asset/css/part.css') }}" class="template-customizer-core-css" />
 <script src="asset/js\bootstrap.js"></script>
 
 <style>

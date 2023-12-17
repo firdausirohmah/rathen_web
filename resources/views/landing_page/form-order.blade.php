@@ -1169,10 +1169,17 @@
 
 <div class="container">
   <div class="row">
-    <a type="button"  data-bs-toggle="modal" data-bs-target="#staticBackdrop"style="font-family: Montheavy; width:22%" class="btn bg-warning text-dark mx-4 title"> Download QUOTATION (.pdf)</a>
-    <button type="submit" style="font-family: Montheavy; width:15%" class="btn btn-black mx-4 title">ORDER </button>
-    </form>
-    <a href="/page-costum" style="font-family: Montheavy; width:15%" class="btn btn-black title">CANCEL </a>
+    <div class="col text-center">
+      
+    <button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="font-family: Montheavy;" class="btn btn-warning title btn-sm">Download QUOTATION (.pdf)</button>
+    {{-- <a type="button"  data-bs-toggle="modal" data-bs-target="#staticBackdrop"style="font-family: Montheavy; width:22%" class="btn bg-warning text-dark mx-4 title"> Download QUOTATION (.pdf)</a> --}}
+    {{-- <a type="button"  data-bs-toggle="modal" data-bs-target="#staticBackdrop"style="font-family: Montheavy; width:22%" class="btn bg-warning text-dark mx-4 title"> Download QUOTATION (.pdf)</a> --}}
+    {{-- <button type="submit" style="font-family: Montheavy; width:15%" class="btn btn-black mx-4 title">ORDER </button> --}}
+    <button type="submit" style="font-family: Montheavy;" class="btn btn-dark mx-4 title btn-sm">ORDER </button>
+    
+  </form>
+    <a href="/page-costum" style="font-family: Montheavy " class="btn btn-dark title btn-sm">CANCEL </a>
+    </div>
   </div>
 </div>
 {{-- ORDER --}}

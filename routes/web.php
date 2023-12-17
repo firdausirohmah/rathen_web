@@ -138,6 +138,9 @@ Route::controller(adminController::class)->group(function () {
     Route::get('/view-order', 'vieworder')->name('vieworder');
     Route::get('/finance', 'finance')->name('finance');
     Route::get('/master', 'master')->name('master');
+    Route::post('/master/updateHargaBahan', 'updateHargaBahan')->name('updateHargaBahan');
+    Route::post('/master/updateHargaLogo', 'updateHargaLogo')->name('updateHargaLogo');
+
 });
 // Auth::routes();
 

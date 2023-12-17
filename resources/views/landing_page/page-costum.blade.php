@@ -541,133 +541,148 @@
 
 <script async src="//www.instagram.com/embed.js"></script>
 </section>
+<style>
+    .section {
+      height: 100vh;
+      /* Style for each section */
+    }
 
-<section id="order">
-    <section class="py-5 py-xl-8">
-        <div class="container">
-          <div class="row justify-content-md-center">
-            <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
-              <h1 class="mb-4 display-5 text-center" style="font-family: Montheavy; color: black; font-size: 22px; font-weight: bold; margin-bottom: 20px; text-align: center;">CARA PEMESANAN</h1>
-            </div>
-          </div>
-        </div>
-        <div class="container overflow-hidden">
-          <div class="row mb-4 gy-5">
-            <div class="col-sm-6 col-lg-4">
-                <div class="text-center px-xl-2">
-                    <h1 class='bx bx-cart'></h1>
-                    <h6 class="m-2" style=" font-size: 18px; color: black; font-weight: bold; margin-bottom: 15px;   ">1. MINIMUM ORDER QUANTITY (MOQ)</h6>
-                    
-                    <p class="m-0 text-secondary text-justify" style=" font-size:12px;  color:rgba(0, 0, 0, 0.75);">- <strong> 
-                        STADIUM Version: MOQ 12 pcs
-                        </strong></p>
-                    <p class="m-0 text-secondary text-justify" style=" font-size:12px;  color:rgba(0, 0, 0, 0.75);">- <strong>
-                        PRO Version: MOQ 24 pcs</strong>:  </p>
-                    <p class="m-0 text-secondary text-justify" style=" font-size:12px;  color:rgba(0, 0, 0, 0.75);">- <strong> 
-                        PRO+ Version: MOQ 24 pcs</strong></p>  
-                        </p>
-                   
+    #progress-bar {
+        position: fixed;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background-color: #00f;
+      z-index: 999;
+    }
+</style>
+<div id="progress-container">
+    {{-- <div id="progress-bar"></div>  --}}
+    <section id="order">
+        <section class="py-5 py-xl-8">
+            <div class="container">
+              <div class="row justify-content-md-center">
+                <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
+                  <h1 class="mb-4 display-5 text-center" style="font-family: Montheavy; color: black; font-size: 22px; font-weight: bold; margin-bottom: 20px; text-align: center;">CARA PEMESANAN</h1>
                 </div>
-            </div>
-            <div class="col-sm-6 col-lg-4">
-              <div class="text-center px-xl-2">
-                <h1 class='bx bx-desktop'></h1>
-                <h6 class="m-2"style=" font-size: 18px; color: black; font-weight: bold;  margin-bottom: 20px;">2. DESIGN</h6>
-                <p class="m-0 text-secondary text-justify" style="  font-size:12px;  color:rgba(0, 0, 0, 0.75);">- Kirim design via whatsapp atau email</p>
-                <P class="m-0 text-secondary text-justify" style=" font-size:12px;  color:rgba(0, 0, 0, 0.75);"> <strong> - Belum punya design? </strong></P>
-                <P class="m-0 text-secondary text-justify" style="  font-size:12px;  color:rgba(0, 0, 0, 0.75);"> - Tim kami bisa bantu buatkan 3D design nya cukup dengan membayar <strong> Komitmen FEE </strong> sebesar Rp.  <strong>500,000 </strong>  <em>(biaya ini termasuk ke dalam total biaya produksi sehingga setara dengan free design) </em> 
-                </P>
-                <p class="m-0 text-secondary text-justify" style=" font-size:12px;  color:rgba(0, 0, 0, 0.75);">- Revisi minor design 3x
-                </p>
-                
-    
-            </div>
-            </div>
-            <div class="col-12 col-sm-6 col-lg-4">
-              <div class="text-center px-xl-2">
-                <h1 class='bx bx-wallet'></h1>
-                <h6 class="m-2" style=" font-size: 18px; color: black; font-weight: bold;  margin-bottom: 20px;">3. PEMBAYARAN DP</h6>
-                <p class="m-0 text-secondary text-justify" style=" font-size:12px;  color:rgba(0, 0, 0, 0.75);">- Pembayaran DP  <strong> PRODUKSI Min. 50%</strong> dari total biaya untuk masuk antrian produksi melalui Rekening resmi kami <span style="color:red;">BCA 0060435898 A.n R Esa Pangersa Gusti  </span> 
-                </p>
-                <p class="m-0 text-secondary text-justify" style=" font-size:12px;  color:rgba(0, 0, 0, 0.75);">- Pembayaran juga bisa dilakukan secara tunai di store.</p>
-    
               </div>
             </div>
-            <div class="col-12 col-sm-6 col-lg-4">
-              <div class="text-center px-xl-2">
-                <h1 class='bx bxs-t-shirt'></h1>
-                <h6 class="m-2" style=" font-size: 18px; color: black; font-weight: bold;  margin-bottom: 20px;">4. DATA PRODUKSI</h5>
-                <p class="m-0 text-secondary text-justify" style=" font-size:12px;  color:rgba(0, 0, 0, 0.75);">
-                    - Berisi: <strong> Nama/No Punggung/Ukuran  </strong>diisi berurutan mulai dari size paling kecil atau bisa menggunakan template FORM DATA kami, klik link :  <span style="color: #1890fd;     text-decoration: underline;
-                    ">form order </span> </p>
-                    {{-- <a href="https://shorturl.at/mpO36" style="color: #1890fd;">https://shorturl.at/mpO36</a></p> --}}
-                          </div>
-            </div>
-            <div class="col-12 col-sm-6 col-lg-4">
-              <div class="text-center px-xl-2">
-                {{-- <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-5-circle-fill text-primary mb-4" viewBox="0 0 16 16">
-                  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0Zm-8.006 4.158c1.74 0 2.924-1.119 2.924-2.806 0-1.641-1.178-2.584-2.56-2.584-.897 0-1.442.421-1.612.68h-.064l.193-2.344h3.621V4.002H5.791L5.445 8.63h1.149c.193-.358.668-.809 1.435-.809.85 0 1.582.604 1.582 1.57 0 1.085-.779 1.682-1.57 1.682-.697 0-1.389-.31-1.53-1.031H5.276c.065 1.213 1.149 2.115 2.72 2.115Z" />
-                </svg> --}}
-                <h1 class='bx bxs-time-five'></h1>
-                {{-- <i class='bx bxs-time-five'></i> --}}
-    
-                <h6 class="m-2" style=" font-size: 18px; color: black; font-weight: bold;  margin-bottom: 20px;">5. WAKTU PRODUKSI</h6>
-                <p class="m-0 text-secondary text-justify" style=" font-size:12px;  color:rgba(0, 0, 0, 0.75);">- <strong>  Non Printing</strong>: 2-3 Minggu </p>
-                <p class="m-0 text-secondary text-justify" style=" font-size:12px;  color:rgba(0, 0, 0, 0.75);">- <strong>  Printing</strong>: 3-4 Minggu </p>
-                <p class="m-0 text-secondary text-justify" style=" font-size:12px;  color:rgba(0, 0, 0, 0.75);">- <strong> PRO dan PRO+ Version</strong>: 3-4 Minggu </p> 
-                <P class="m-0 text-secondary text-justify" style=" font-size:12px;  color:rgba(0, 0, 0, 0.75);">Sejak pembayaran DP 50 <strong>%</strong> kami terimaApabila selesai lebih cepat, kami akan informasikan kepada Anda.</P>
-                        </div>
-                      </div>
-                      <div class="col-12 col-sm-6 col-lg-4">
-                        <div class="text-center px-xl-2">
-                          {{-- <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-5-circle-fill text-primary mb-4" viewBox="0 0 16 16">
-                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0Zm-8.006 4.158c1.74 0 2.924-1.119 2.924-2.806 0-1.641-1.178-2.584-2.56-2.584-.897 0-1.442.421-1.612.68h-.064l.193-2.344h3.621V4.002H5.791L5.445 8.63h1.149c.193-.358.668-.809 1.435-.809.85 0 1.582.604 1.582 1.57 0 1.085-.779 1.682-1.57 1.682-.697 0-1.389-.31-1.53-1.031H5.276c.065 1.213 1.149 2.115 2.72 2.115Z" />
-                          </svg> --}}
-                          <h1 class='bx bx-money-withdraw'></h1>
-                          <h6 class="m-2" style=" font-size: 18px; color: black; font-weight: bold;  margin-bottom: 20px;">6. PELUNASAN + PENGAMBILAN</h6>
-                          <p class="m-0 text-secondary text-justify" style=" font-size:12px;  color:rgba(0, 0, 0, 0.75);"> - Pelunasan dilakukan ketika jersey sudah selesai produksi. Pengiriman paling cepat 1-3 hari sejak pelunasan dibayarkan.
-                        </p>
-                          <p class="m-0 text-secondary text-justify" style=" font-size:12px;  color:rgba(0, 0, 0, 0.75);">- Mekanisme pengambilan jersey  <span style="font-weight: bold; text-decoration: underline;">self-pickup,</span> bisa langsung datang ke offline store kami.
-                        </p>
-                          <p class="m-0 text-secondary text-justify" style=" font-size:12px;  color:rgba(0, 0, 0, 0.75);">- Mekanisme pengiriman, bisa melalui: <strong>JNE/JNT/Driver online/jasa pengiriman lainnya</strong><em style="color: red; font-weight: bold;"> (Ongkos kirim di tanggung customer) </em>
-                        </p>
-                          
-                        </p>
-                                </div>
-                        </div>
-                        <div class="col-12 col-sm-6 col-lg-4">
-                          <div class="text-center px-xl-2">
-                              {{-- <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-5-circle-fill text-primary  mb-4" viewBox="0 0 16 16">
-                                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0Zm-8.006 4.158c1.74 0 2.924-1.119 2.924-2.806 0-1.641-1.178-2.584-2.56-2.584-.897 0-1.442.421-1.612.68h-.064l.193-2.344h3.621V4.002H5.791L5.445 8.63h1.149c.193-.358.668-.809 1.435-.809.85 0 1.582.604 1.582 1.57 0 1.085-.779 1.682-1.57 1.682-.697 0-1.389-.31-1.53-1.031H5.276c.065 1.213 1.149 2.115 2.72 2.115Z" />
-                              </svg> --}}
-                              <h1 class='bx bx-receipt'></h1>
-                              <h6 class="m-2 text-center" style=" font-size: 18px; color: black; font-weight: bold;  margin-bottom: 20px;">7. GARANSI PELUNASAN</h6>
-                              <p class="m-0 text-secondary text-justify align-left" style=" font-size:12px;  color:rgba(0, 0, 0, 0.75);"> Segala bentuk kesalahan produksi yang disebabkan oleh tim produksi, akan kami perbaiki sebagai bentuk komitmen kami untuk selalu memberikan pelayanan yang terbaik untuk customer. Hal ini tidak berlaku apabila kelalaian atau kerusakan disebabkan oleh customer.
+            <div class="container overflow-hidden">
+              <div class="row mb-4 gy-5">
+                <div class="col-sm-6 col-lg-4">
+                    <div class="text-center px-xl-2" id="section1">
+                        <h1 class='bx bx-cart'></h1>
+                        <h6 class="m-2" style=" font-size: 18px; color: black; font-weight: bold; margin-bottom: 15px;   ">1. MINIMUM ORDER QUANTITY (MOQ)</h6>
+                        
+                        <p class="m-0 text-secondary text-justify" style=" font-size:12px;  color:rgba(0, 0, 0, 0.75);">- <strong> 
+                            STADIUM Version: MOQ 12 pcs
+                            </strong></p>
+                        <p class="m-0 text-secondary text-justify" style=" font-size:12px;  color:rgba(0, 0, 0, 0.75);">- <strong>
+                            PRO Version: MOQ 24 pcs</strong>:  </p>
+                        <p class="m-0 text-secondary text-justify" style=" font-size:12px;  color:rgba(0, 0, 0, 0.75);">- <strong> 
+                            PRO+ Version: MOQ 24 pcs</strong></p>  
                             </p>
-                             
-                              
-                                    </div>
-                            </div>
-                            <div class="col-12 col-sm-6 col-lg-4">
-                                <div class="text-center px-xl-2">
-                                  {{-- <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-5-circle-fill text-primary mb-4" viewBox="0 0 16 16">
-                                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0Zm-8.006 4.158c1.74 0 2.924-1.119 2.924-2.806 0-1.641-1.178-2.584-2.56-2.584-.897 0-1.442.421-1.612.68h-.064l.193-2.344h3.621V4.002H5.791L5.445 8.63h1.149c.193-.358.668-.809 1.435-.809.85 0 1.582.604 1.582 1.57 0 1.085-.779 1.682-1.57 1.682-.697 0-1.389-.31-1.53-1.031H5.276c.065 1.213 1.149 2.115 2.72 2.115Z" />
-                                  </svg> --}}
-                                  <h1 class='bx bxs-star'></h1>
-    
-                                  <h6 class="m-2" style=" font-size: 18px; color: black; font-weight: bold;  margin-bottom: 20px;">8. PUAS & ORDER LAGI</h6>
-                                  <p class="m-0 text-secondary text-justify" style=" font-size:12px;  color:rgba(0, 0, 0, 0.75);">Menyebar kebaikan dengan berbagi informasi kepada rekan-rekan terdekat. Dapatkan berbagai merchandise unik sebagai refferal benefits.</p>
-                                  
-                                  
-                                        </div>
-                                </div>
+                       
                     </div>
+                </div>
+                <div class="col-sm-6 col-lg-4" id="section2">
+                  <div class="text-center px-xl-2">
+                    <h1 class='bx bx-desktop'></h1>
+                    <h6 class="m-2"style=" font-size: 18px; color: black; font-weight: bold;  margin-bottom: 20px;">2. DESIGN</h6>
+                    <p class="m-0 text-secondary text-justify" style="  font-size:12px;  color:rgba(0, 0, 0, 0.75);">- Kirim design via whatsapp atau email</p>
+                    <P class="m-0 text-secondary text-justify" style=" font-size:12px;  color:rgba(0, 0, 0, 0.75);"> <strong> - Belum punya design? </strong></P>
+                    <P class="m-0 text-secondary text-justify" style="  font-size:12px;  color:rgba(0, 0, 0, 0.75);"> - Tim kami bisa bantu buatkan 3D design nya cukup dengan membayar <strong> Komitmen FEE </strong> sebesar Rp.  <strong>500,000 </strong>  <em>(biaya ini termasuk ke dalam total biaya produksi sehingga setara dengan free design) </em> 
+                    </P>
+                    <p class="m-0 text-secondary text-justify" style=" font-size:12px;  color:rgba(0, 0, 0, 0.75);">- Revisi minor design 3x
+                    </p>
                     
-                          
-    
-                  </section>
+        
+                </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4" id="section3">
+                  <div class="text-center px-xl-2">
+                    <h1 class='bx bx-wallet'></h1>
+                    <h6 class="m-2" style=" font-size: 18px; color: black; font-weight: bold;  margin-bottom: 20px;">3. PEMBAYARAN DP</h6>
+                    <p class="m-0 text-secondary text-justify" style=" font-size:12px;  color:rgba(0, 0, 0, 0.75);">- Pembayaran DP  <strong> PRODUKSI Min. 50%</strong> dari total biaya untuk masuk antrian produksi melalui Rekening resmi kami <span style="color:red;">BCA 0060435898 A.n R Esa Pangersa Gusti  </span> 
+                    </p>
+                    <p class="m-0 text-secondary text-justify" style=" font-size:12px;  color:rgba(0, 0, 0, 0.75);">- Pembayaran juga bisa dilakukan secara tunai di store.</p>
+        
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4" id="section4">
+                  <div class="text-center px-xl-2">
+                    <h1 class='bx bxs-t-shirt'></h1>
+                    <h6 class="m-2" style=" font-size: 18px; color: black; font-weight: bold;  margin-bottom: 20px;">4. DATA PRODUKSI</h5>
+                    <p class="m-0 text-secondary text-justify" style=" font-size:12px;  color:rgba(0, 0, 0, 0.75);">
+                        - Berisi: <strong> Nama/No Punggung/Ukuran  </strong>diisi berurutan mulai dari size paling kecil atau bisa menggunakan template FORM DATA kami, klik link :  <span style="color: #1890fd;     text-decoration: underline;
+                        ">form order </span> </p>
+                        {{-- <a href="https://shorturl.at/mpO36" style="color: #1890fd;">https://shorturl.at/mpO36</a></p> --}}
+                              </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4" id="section5">
+                  <div class="text-center px-xl-2">
+                    {{-- <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-5-circle-fill text-primary mb-4" viewBox="0 0 16 16">
+                      <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0Zm-8.006 4.158c1.74 0 2.924-1.119 2.924-2.806 0-1.641-1.178-2.584-2.56-2.584-.897 0-1.442.421-1.612.68h-.064l.193-2.344h3.621V4.002H5.791L5.445 8.63h1.149c.193-.358.668-.809 1.435-.809.85 0 1.582.604 1.582 1.57 0 1.085-.779 1.682-1.57 1.682-.697 0-1.389-.31-1.53-1.031H5.276c.065 1.213 1.149 2.115 2.72 2.115Z" />
+                    </svg> --}}
+                    <h1 class='bx bxs-time-five'></h1>
+                    {{-- <i class='bx bxs-time-five'></i> --}}
+        
+                    <h6 class="m-2" style=" font-size: 18px; color: black; font-weight: bold;  margin-bottom: 20px;">5. WAKTU PRODUKSI</h6>
+                                <p class="m-0 text-secondary text-justify" style=" font-size:12px;  color:rgba(0, 0, 0, 0.75);">-           <strong>  Non Printing</strong>: 2-3 Minggu </p>
+                                <p class="m-0 text-secondary text-justify" style=" font-size:12px;  color:rgba(0, 0, 0, 0.75);">-           <strong>  Printing</strong>: 3-4 Minggu </p>
+                                <p class="m-0 text-secondary text-justify" style=" font-size:12px;  color:rgba(0, 0, 0, 0.75);">- <strong> PRO dan PRO+ Version</strong>: 3-4 Minggu </p> 
+                                <P class="m-0 text-secondary text-justify" style=" font-size:12px;  color:rgba(0, 0, 0, 0.75);">Sejak pembayaran DP 50 <strong>%</strong> kami terimaApabila selesai lebih cepat, kami akan informasikan kepada Anda.</P>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-4" id="section6">
+                            <div class="text-center px-xl-2"> 
+                                <h1 class='bx bx-money-withdraw'></h1>
+                                <h6 class="m-2" style=" font-size: 18px; color: black; font-weight: bold;  margin-bottom: 20px;">6. PELUNASAN + PENGAMBILAN</h6>
+                                <p class="m-0 text-secondary text-justify" style=" font-size:12px;  color:rgba(0, 0, 0, 0.75);"> - Pelunasan dilakukan ketika jersey sudah selesai produksi. Pengiriman paling cepat 1-3 hari sejak pelunasan dibayarkan.
+                                </p>
+                                <p class="m-0 text-secondary text-justify" style=" font-size:12px;  color:rgba(0, 0, 0, 0.75);">- Mekanisme pengambilan jersey  <span style="font-weight: bold; text-decoration: underline;">self-pickup,</span> bisa langsung datang ke offline store kami.
+                                </p>
+                                <p class="m-0 text-secondary text-justify" style=" font-size:12px;  color:rgba(0, 0, 0, 0.75);">- Mekanisme pengiriman, bisa melalui: <strong>JNE/JNT/Driver online/jasa pengiriman lainnya</strong><em style="color: red; font-weight: bold;"> (Ongkos kirim di tanggung customer) </em>
+                                </p> 
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-4" id="section7">
+                            <div class="text-center px-xl-2">
+                                <h1 class='bx bx-receipt'></h1>
+                                <h6 class="m-2 text-center" style=" font-size: 18px; color: black; font-weight: bold;  margin-bottom: 20px;">7. GARANSI PELUNASAN</h6>
+                                <p class="m-0 text-secondary text-justify align-left" style=" font-size:12px;  color:rgba(0, 0, 0, 0.75);"> Segala bentuk kesalahan produksi yang disebabkan oleh tim produksi, akan kami perbaiki sebagai bentuk komitmen kami untuk selalu memberikan pelayanan yang terbaik untuk customer. Hal ini tidak berlaku apabila kelalaian atau kerusakan disebabkan oleh customer.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-4" id="section8">
+                            <div class="text-center px-xl-2"> 
+                                <h1 class='bx bxs-star'></h1>
+                                <h6 class="m-2" style=" font-size: 18px; color: black; font-weight: bold;  margin-bottom: 20px;">8. PUAS & ORDER LAGI</h6>
+                                <p class="m-0 text-secondary text-justify" style=" font-size:12px;  color:rgba(0, 0, 0, 0.75);">Menyebar kebaikan dengan berbagi informasi kepada rekan-rekan terdekat. Dapatkan berbagai merchandise unik sebagai refferal benefits.</p>      
+                            </div>
+                        </div>
+                    </div>    
+                </section>
+            </section> 
+    </div>
+</div>
+<script>
+// script.js
+document.addEventListener('DOMContentLoaded', function () {
+    var progressBar = document.getElementById('progress-bar');
+    var sections = document.querySelectorAll('.section');
 
-</section>
+    window.addEventListener('scroll', function () {
+        var scrollPosition = window.scrollY;
+        var windowHeight = window.innerHeight;
+        var documentHeight = document.documentElement.scrollHeight;
+
+        var progress = (scrollPosition / (documentHeight - windowHeight)) * 100;
+        progressBar.style.height = progress + '%';
+    });
+});
+     </script>
 <style>
 .button {
     /* padding: 100px 100px 100px 100px; */

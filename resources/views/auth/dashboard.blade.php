@@ -1,6 +1,6 @@
 @extends('layout.admin')
 @section('content')
-   
+   <a href="{{ route('downloadPdf') }}"><button>PDF</button></a>
     <!-- End Navbar -->
     <div class="container-fluid py-4">
       <div class="row">

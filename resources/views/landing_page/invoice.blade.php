@@ -36,9 +36,9 @@
 <div class="container mt-3">
 	<div class="row justify-content-center">
 		<div class="col-8">
-			<div class="card">
+			<div class="card w-100">
 				<div class="card-body">
-					<h3 class="text-center font-weight-bold mb-1"><img src="{{ asset('asset/images/logo-dark.png') }}" width="15%" alt=""></h3>
+					<h3 class="text-center font-weight-bold mb-1"><img src="{{ asset('/asset/images/logo-dark.png') }}" width="15%" alt=""></h3>
 					<p class="text-center font-weight-bold mont mb-0" style="font-size: 12px;">Office: RATHEN INDONESIA, Jl. Mayjen Ishak Djuarsa no.167B Gunung Batu Bogor, Indonesia</p>
 					<p class="text-center font-weight-bold mont"><small class="font-weight-bold">Phone No: 0896-1108-1988 | 0878-1108-1988</small></p>
 					<div class="row pb-2 p-2">
@@ -50,16 +50,16 @@
 					<div class="row pb-2 p-2">
 						<div class="col-md-6 mx-4 px-4">
 							<p class="mb-0 font-weight-bold text-primary">Bill to:</p>
-							<p class="mb-0">{{ $data->nama_pemesanan }}</p>
-							<p class="mb-0">{{ $data->nama_tim }}</p>			 
-                         <p class="mb-0">{{ $data->domisili }}</p>			 
+							<p class="mb-0">{{ $pesanan->nama_pemesanan }}</p>
+							<p class="mb-0">{{ $pesanan->nama_tim }}</p>			 
+                         <p class="mb-0">{{ $pesanan->domisili }}</p>			 
                         </div>
                         <div class="col-lg-2"></div>
                         <div class="col-md-2">
                             <p class="mb-0 font-weight-bold text-primary">Ship to:</p>			 
-                            <p class="mb-0">{{ $data->nama_pemesanan }}</p>			 
-                            <p class="mb-0">{{ $data->nama_tim }}</p>			 
-                            <p class="mb-0">{{ $data->domisili }}</p>			 
+                            <p class="mb-0">{{ $pesanan->nama_pemesanan }}</p>			 
+                            <p class="mb-0">{{ $pesanan->nama_tim }}</p>			 
+                            <p class="mb-0">{{ $pesanan->domisili }}</p>			 
                            </div>
                     </div>
                     <div class="table-responsive">
@@ -75,8 +75,8 @@
 						</thead>
 						<?php 
 						$i = 1; 
-						$jqty = $data->jumlah_pemesanan;
-						$jharga = $data->harga;
+						$jqty = $pesanan->jumlah_pemesanan;
+						$jharga = $pesanan->harga;
 						$total = $jqty * $jharga;
 						?>
 						<tbody>
@@ -87,83 +87,83 @@
 								<td><span id="Harga">{{ $jharga }}</span></td>
 								<td id="totalHarga">{{ $total }}</td> 
 							</tr>
-						@if ($data->badan_bawah ==null)
+						@if ($pesanan->badan_bawah ==null)
 						@else 
 							<tr>
 								<td>{{ $i++ }}</td>
 								<td>Badan Bawah Melengkung</td>
-								<td>{{ $data->badan_bawah }}</td>
+								<td>{{ $pesanan->badan_bawah }}</td>
 								<td><span id="hargaBbm">{{ $price->p_badan_m }}</span></td>
 								<td id="totalBbm">{{ $total }}</td> 
 							</tr> 
 						@endif
-						@if ($data->pola_lengan ==null)
+						@if ($pesanan->pola_lengan ==null)
 						@else 
 							<tr>
 								<td>{{ $i++ }}</td>
 								<td>Pola Lengan Reglan</td>
-								<td>{{ $data->pola_lengan }}</td>
+								<td>{{ $pesanan->pola_lengan }}</td>
 								<td><span id="Harga">{{ $price->pola_lr }}</span></td>
 								<td id="totalLengan">{{ $total }}</td> 
 							</tr> 
 						@endif
-						@if ($data->upgrade_logo_3d ==null)
+						@if ($pesanan->upgrade_logo_3d ==null)
 						@else 
 							<tr>
 								<td>{{ $i++ }}</td>
 								<td>Upgrade Logo 3D</td>
-								<td>{{ $data->upgrade_logo_3d }}</td>
+								<td>{{ $pesanan->upgrade_logo_3d }}</td>
 								<td><span id="Harga">{{ $price->u_logo3d }}</span></td>
 								<td id="totalUpgrade">{{ $total }}</td> 
 							</tr> 
 						@endif
-						@if ($data->logo_tim_dicelana ==null)
+						@if ($pesanan->logo_tim_dicelana ==null)
 						@else 
 							<tr>
 								<td>{{ $i++ }}</td>
 								<td>Logo Tim Di Celana</td>
-								<td>{{ $data->logo_tim_dicelana }}</td>
+								<td>{{ $pesanan->logo_tim_dicelana }}</td>
 								<td><span id="Harga">{{ $price->l_timdicelana }}</span></td>
 								<td id="totalHarga">{{ $total }}</td> 
 							</tr> 
 						@endif
-						@if ($data->lengan_panjang ==null)
+						@if ($pesanan->lengan_panjang ==null)
 						@else 
 							<tr>
 								<td>{{ $i++ }}</td>
 								<td>Lengan Panjang</td>
-								<td>{{ $data->lengan_panjang }}</td>
+								<td>{{ $pesanan->lengan_panjang }}</td>
 								<td><span id="Harga">{{ $price->l_panjang }}</span></td>
 								<td id="totalHarga">{{ $total }}</td> 
 							</tr> 
 						@endif
 
-						@if ($data->size_2xl ==null)
+						@if ($pesanan->size_2xl ==null)
 						@else 
 							<tr>
 								<td>{{ $i++ }}</td>
 								<td>Ukuran Baju XXL</td>
-								<td>{{ $data->size_2xl }}</td>
+								<td>{{ $pesanan->size_2xl }}</td>
 								<td><span id="Harga">{{ $price->s_2xl }}</span></td>
 								<td id="totalHarga">{{ $total }}</td> 
 							</tr> 
 						@endif
-						@if ($data->size_3xl ==null)
+						@if ($pesanan->size_3xl ==null)
 						@else 
 							<tr>
 								<td>{{ $i++ }}</td>
 								<td>Ukuran Baju XXXL</td>
-								<td>{{ $data->size_3xl }}</td>
+								<td>{{ $pesanan->size_3xl }}</td>
 								<td><span id="Harga">{{ $price->s_3xl }}</span></td>
 								<td id="totalHarga">{{ $total }}</td> 
 							</tr> 
 						@endif
-						@if ($data->size_4xl ==null)
+						@if ($pesanan->size_4xl ==null)
 						@else 
 							<tr>
 								<td>{{ $i++ }}</td>
 								<td>Ukuran Baju XXXXL</td>
-								<td>{{ $data->size_4xl }}</td>
+								<td>{{ $pesanan->size_4xl }}</td>
 								<td><span id="Harga">{{ $price->s_4xl }}</span></td>
 								<td id="totalHarga">{{ $total }}</td> 
 							</tr> 

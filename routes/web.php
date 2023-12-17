@@ -109,6 +109,7 @@ Route::controller(PesananController::class)->group(function () {
     Route::get('/form-3', 'form_3')->name('form_3');
     Route::post('/form-3/add', 'addForm3')->name('addForm3');
     Route::get('/form-4', 'form_4')->name('form_4');
+    Route::get('/downloadPdf', 'downloadPdf')->name('downloadPdf');
     Route::post('/form-4/pemain', 'tambahDataPesanan')->name('tambahDataPesanan');
     Route::get('/invoice', 'invoice')->name('invoice');
     Route::get('/export', 'export')->name('export');

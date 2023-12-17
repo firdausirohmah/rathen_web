@@ -219,6 +219,12 @@ class PesananController extends Controller
             ]); 
         
     }
+    public function downloadPdf()
+{
+    $file = public_path('file\Format-Ukuran.pdf');
+
+    return response()->download($file, 'Format-Ukuran.pdf');
+}
     public function tambahDataPesanan(Request $request)
     {
         $kode = session('kode');
@@ -477,10 +483,15 @@ class PesananController extends Controller
                 $JarseyDefault = 'Jarsey'.'-'.$JarseyOrder.' VERSION';
                 $Jarsey = strtoupper($JarseyDefault);
             } 
+            $d = [
+                'Jarsey' => $Jarsey,
+                'pesanan' => $pesanan,
+                'price' => $price, 
+            ];
             // dd($Jarsey);
             
             return view('landing_page.invoice', [
-                'data' => $pesanan,
+                'pesanan' => $pesanan,
                 'price' => $price,
                 'Jarsey' => $Jarsey,
             ]);
@@ -498,12 +509,11 @@ class PesananController extends Controller
             ->join('tbl_logo', 'tbl_harga.id', '=', 'tbl_logo.id_logo')
             ->select('tbl_logo.*', 'tbl_harga.*')
             ->get();
-        
         foreach ($harga as $h){
             $price = $h;
         }
+       
         foreach ($data as $pesanan) {
-            // dd($pesanan->tipe_kualitas);
             $JarseyOrder = $pesanan->tipe_kualitas;
             if($JarseyOrder == 'Stadium'){
                 $JarseyDefault = 'Jarsey'.' - '.$JarseyOrder.' '.$pesanan->kategori_harga;
@@ -511,14 +521,36 @@ class PesananController extends Controller
             }else{
                 $JarseyDefault = 'Jarsey'.'-'.$JarseyOrder.' VERSION';
                 $Jarsey = strtoupper($JarseyDefault);
-            }  
-            $data = $pesanan;
-        // $pdf = new Dompdf();
-        $pdf = app('dompdf.wrapper');
-        $pdf -> loadView('landing_page.invoice', compact('Jarsey', 'price', 'data'));
-        return $pdf->stream();  
-        }
-    }
+            } 
+            $d = [
+                'pesanan' => $pesanan,
+                'price' => $price, 
+                'Jarsey' => $Jarsey,
+            ];
+            // dd ($data->nama_pemesanan);
+            $pdf = new Dompdf();
+            $options = new Options();
+            $options->set('isHtml5ParserEnabled', true);
+            $pdf->setOptions($options);
+
+            // Load Bootstrap CSS locally
+            $bootstrapCSS = file_get_contents(public_path('c.css')); // Ganti path sesuai dengan lokasi CSS Bootstrap Anda
+            $html = View::make('landing_page.invoice', compact('pesanan', 'price','Jarsey'))->render();
+            
+
+
+            // Combine Bootstrap CSS with your HTML
+            $combinedHtml = '<style> .print{
+                display:none}' . $bootstrapCSS . '<style>' . $html;
+
+            $pdf->loadHtml($combinedHtml);
+            $pdf->setPaper('A3', 'potrait');
+            $pdf->render();
+
+
+            return $pdf->stream('invoice.pdf');
+            } 
+        } 
     
     // public function generatePDF()
     // {

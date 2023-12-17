@@ -67,9 +67,11 @@
                 @endif
                 <hr>
                 <div class="col-lg-12 fw-center">
+                <a href="{{ route('downloadPdf') }}">
                   <button type="button" class="btn btn-outline-warning">
                     <i class='bx bx-library'></i> Format Ukuran
                   </button>
+                </a>
                   <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#addModal">
                     <small class="bx bxs-edit"></small> Input Data
                   </button>

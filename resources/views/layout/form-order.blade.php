@@ -24,7 +24,7 @@
     <br>
     <h3 style="font-family: Montheavy; color: #1890fd;  font-weight: bold; text-decoration: underline;
     margin-bottom: 20px; text-align: center;">FORM ORDER - CUSTOM RATHEN</h3>
-    <div class="container">
+    <div class="container justify-content-center">
     <div class="row ">
         <div class="col-xl-7">
           <div class="nav-align-top mb-4">

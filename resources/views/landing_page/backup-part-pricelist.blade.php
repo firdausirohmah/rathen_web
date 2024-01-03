@@ -230,7 +230,7 @@
     <section id="home" style="overflow: hidden;">
     <div class="container mt-4 mb-4">
         <div class="row">
-            <div class="col"><a href="/page-costum"><small class="text-muted">Home / Half-Print</small></a></div>
+            <div class="col"><a href="/page-custom"><small class="text-muted">Home / Half-Print</small></a></div>
         </div>
     </div>
     {{-- <div class="d-inline-flex gap-1">

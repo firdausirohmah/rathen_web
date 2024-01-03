@@ -1178,7 +1178,7 @@
     <button type="submit" style="font-family: Montheavy;" class="btn btn-dark mx-4 title btn-sm">ORDER </button>
     
   </form>
-    <a href="/page-costum" style="font-family: Montheavy " class="btn btn-dark title btn-sm">CANCEL </a>
+    <a href="/page-custom" style="font-family: Montheavy " class="btn btn-dark title btn-sm">CANCEL </a>
     </div>
   </div>
 </div>

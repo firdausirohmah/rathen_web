@@ -29,7 +29,7 @@ Route::get('/', function () {
 });
 
 // landing page
-Route::get('/page-costum', function () {
+Route::get('/page-custom', function () {
     return view('landing_page.page-costum');
 });
 

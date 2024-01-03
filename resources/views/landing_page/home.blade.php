@@ -100,7 +100,7 @@ src="https://www.facebook.com/tr?id=1058956608607048&amp;ev=PageView&amp;noscrip
       
         <div class="main-banner__cekresi">
             <div class="main-banner__cekresi--list cek-lacak">
-                <a class="form button-search"  href="{{ url('page-costum') }}" style="margin-left:66px; margin-top:15px">
+                <a class="form button-search"  href="{{ url('page-custom') }}" style="margin-left:66px; margin-top:15px">
                     <i><img src="{{asset('asset/images/icon baju - biru.png')}}" style="width : 100%;"></i>
                     <div class="input-box" >
                         <h5 class="item-center jersey">CUSTOM JERSEY</h5>

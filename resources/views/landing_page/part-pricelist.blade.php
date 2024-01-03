@@ -173,14 +173,14 @@
           </button>
           <div class="collapse navbar-collapse d-flex justify-content-center" id="navbarNavAltMarkup">
             <div class="navbar-nav" >
-              <a class="text-nav  nav-link" target="_blank" aria-current="page" href="/page-costum#home">HOME</a>
-              <a class="text-nav mx-2 nav-link" target="_blank" href="/page-costum#about">ABOUT US</a>
-              <a class="text-nav mx-2 nav-link" target="_blank" href="/page-costum#result">LATEST RESULT</a>
-              <a class="text-nav mx-2 nav-link" target="_blank" href="/page-costum#order">CARA PEMESANAN</a>
+              <a class="text-nav  nav-link" target="_blank" aria-current="page" href="/page-custom#home">HOME</a>
+              <a class="text-nav mx-2 nav-link" target="_blank" href="/page-custom#about">ABOUT US</a>
+              <a class="text-nav mx-2 nav-link" target="_blank" href="/page-custom#result">LATEST RESULT</a>
+              <a class="text-nav mx-2 nav-link" target="_blank" href="/page-custom#order">CARA PEMESANAN</a>
               <a class="text-nav mx-2 nav-link" target="_blank" href="/price-list/non-print">PRICE LIST</a>
               <a class="text-nav mx-2 nav-link" target="_blank" href="/page">FAQ</a>
-              <a class="text-nav mx-2 nav-link" target="_blank" href="/page-costum#location">LOCATION</a>
-              <a class="text-nav mx-2 nav-link" target="_blank" href="/page-costum#contact">CONTACT US</a>
+              <a class="text-nav mx-2 nav-link" target="_blank" href="/page-custom#location">LOCATION</a>
+              <a class="text-nav mx-2 nav-link" target="_blank" href="/page-custom#contact">CONTACT US</a>
             </div>
           </div>
         </div>

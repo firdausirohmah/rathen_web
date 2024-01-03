@@ -9,6 +9,28 @@
     font-family: Montheavy;
     src: url("../../asset/fonts/Mont/Mont-Heavy.otf");
 }
+@font-face {
+    font-family: Montheavy-light;
+    src: url("../../asset/fonts/Mont/Mont-ExtraLightDEMO.otf");
+}
+
+.font-light{
+    font-family: 'Montheavy-light';
+    font-weight: bolder;
+}
+
+.center-vertical{
+    margin: 0;
+    position: absolute!important;
+    top: 50%!important;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.center-hori{
+    justify-content: center;
+    align-items: center;
+}
 
 .navbar-main {
     /* background: #fff; */

@@ -6278,7 +6278,7 @@ fieldset:disabled .btn {
     object-fit: cover;
     /* atau contain, sesuai kebutuhan */
     width: 100%;
-    height: 100%;
+    height: 32rem;
 }
 
 .active.carousel-item-end,
@@ -6358,10 +6358,36 @@ fieldset:disabled .btn {
 
 .carousel-control-prev {
     left: 0;
+    background-color: gray;
+    border-radius: 50px;
+    width: 3.5rem;
+    margin-left: 0.5rem;
+    
+    
+}
+.carousel-control-prev:hover{
+    background-color: gray!important;
+    opacity: 0.8!important;
+}
+.carousel-control-prev:focus{
+    background-color: gray;
+    opacity: 0.5;
 }
 
 .carousel-control-next {
     right: 0;
+    background-color: gray;
+    border-radius: 50px;
+    width: 3.5rem;
+    margin-right: 0.5rem;
+}
+.carousel-control-next:hover{
+    background-color: gray!important;
+    opacity: 0.8!important;
+}
+.carousel-control-next:focus{
+    background-color: gray;
+    opacity: 0.5;
 }
 
 .carousel-control-next-icon,

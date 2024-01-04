@@ -666,14 +666,14 @@
                     </div>
                   </div>
                   <div id="content2" class="card-text content komparasi">
-                    <h6 class="card-subtitle mb-2 text-body-secondary text-center fw-bold fs-4 mb-2">Perbandingan type kualitas</h6>
+                    <h6 class="card-subtitle text-body-secondary text-center fw-bold fs-4 mt-3 mb-5">Perbandingan type kualitas</h6>
                     <div class="fabrics mb-5">
-                      <div class="overflow-hidden max-width-4xl mx-auto">
+                      <div class="overflow-hidden max-width-4xl mx-auto mb-2">
                         <img class="h-100 w-100" src="{{ asset('asset/images/price-list/komparasi/preview-fabrics.jpg')}}" alt="">
                       </div>
                       <div class="d-flex flex-column align-items-center">
                         <img class="object-fit-cover icon mx-auto" src="{{ asset('asset/images/price-list/komparasi/fabrics.jpg')}}" />
-                        <div class="text-center fw-bold">Fabrics</div>
+                        <div class="text-center fw-bold m-2">Fabrics</div>
                       </div>
                       <table class="mx-auto">
                         <thead>
@@ -699,12 +699,12 @@
                     </div>
 
                     <div class="logo-tim mb-5">
-                      <div class="overflow-hidden max-width-4xl mx-auto">
+                      <div class="overflow-hidden max-width-4xl mx-auto mb-2">
                         <img class="h-100 w-100" src="{{ asset('asset/images/price-list/komparasi/preview-logo-tim.jpg')}}" alt="">
                       </div>
                       <div class="d-flex flex-column align-items-center">
                         <img class="object-fit-cover icon mx-auto" src="{{ asset('asset/images/price-list/komparasi/logo-tim.jpg')}}" />
-                        <div class="text-center fw-bold">LOGO TIM (CREST)</div>
+                        <div class="text-center fw-bold m-2">LOGO TIM (CREST)</div>
                       </div>
                       <table class="mx-auto">
                         <thead>
@@ -730,12 +730,12 @@
                     </div>
 
                     <div class="logo-r mb-5">
-                      <div class="overflow-hidden max-width-4xl mx-auto">
-                        <img class="h-100 w-100" src="" alt="">
+                      <div class="overflow-hidden max-width-4xl mx-auto mb-2">
+                        <img class="h-100 w-100" src="{{ asset('asset/images/price-list/komparasi/LOGO_TBA.png')}}" alt="">
                       </div>
                       <div class="d-flex flex-column align-items-center">
                         <img class="object-fit-cover icon mx-auto" src="{{ asset('asset/images/price-list/komparasi/logo-r.jpg')}}" />
-                        <div class="text-center fw-bold">LOGO - R</div>
+                        <div class="text-center fw-bold m-2">LOGO - R</div>
                       </div>
                       <table class="mx-auto">
                         <thead>
@@ -761,12 +761,12 @@
                     </div>
 
                     <div class="t-lock mb-5">
-                      <div class="overflow-hidden max-width-4xl mx-auto">
-                        <img class="h-100 w-100" src="" alt="">
+                      <div class="overflow-hidden max-width-4xl mx-auto mb-2">
+                        <img class="h-100 w-100" src="{{ asset('asset/images/price-list/komparasi/LOGO_TBA.png')}}" alt="">
                       </div>
                       <div class="d-flex flex-column align-items-center">
                         <img class="object-fit-cover icon mx-auto" src="{{ asset('asset/images/price-list/komparasi/t-lock.jpg')}}" />
-                        <div class="text-center fw-bold">T - Lock</div>
+                        <div class="text-center fw-bold m-2">T - Lock</div>
                       </div>
                       <table class="mx-auto">
                         <thead>
@@ -787,12 +787,12 @@
                     </div>
 
                     <div class="laser-cut mb-5">
-                      <div class="overflow-hidden max-width-4xl mx-auto">
-                        <img class="h-100 w-100" src="" alt="">
+                      <div class="overflow-hidden max-width-4xl mx-auto mb-2">
+                        <img class="h-100 w-100" src="{{ asset('asset/images/price-list/komparasi/LOGO_TBA.png')}}" alt="">
                       </div>
                       <div class="d-flex flex-column align-items-center">
                         <img class="object-fit-cover icon mx-auto" src="{{ asset('asset/images/price-list/komparasi-fabrics.jpg')}}" />
-                        <div class="text-center fw-bold">LASER CUT - Air circulation</div>
+                        <div class="text-center fw-bold m-2">LASER CUT - Air circulation</div>
                       </div>
                       <table class="mx-auto">
                         <thead>
@@ -813,12 +813,12 @@
                     </div>
 
                     <div class="authentic-r mb-5">
-                      <div class="overflow-hidden max-width-4xl mx-auto">
-                        <img class="h-100 w-100" src="" alt="">
+                      <div class="overflow-hidden max-width-4xl mx-auto mb-2">
+                        <img class="h-100 w-100" src="{{ asset('asset/images/price-list/komparasi/LOGO_TBA.png')}}" alt="">
                       </div>
                       <div class="d-flex flex-column align-items-center">
                         <img class="object-fit-cover icon mx-auto" src="{{ asset('asset/images/price-list/komparasi/authentic.jpg')}}" />
-                        <div class="text-center fw-bold">AUTHENTIC - R</div>
+                        <div class="text-center fw-bold m-2">AUTHENTIC - R</div>
                       </div>
                       <table class="mx-auto">
                         <thead>
@@ -844,12 +844,12 @@
                     </div>
 
                     <div class="logo-celana mb-5">
-                      <div class="overflow-hidden max-width-4xl mx-auto">
-                        <img class="h-100 w-100" src="" alt="">
+                      <div class="overflow-hidden max-width-4xl mx-auto mb-2">
+                        <img class="h-100 w-100" src="{{ asset('asset/images/price-list/komparasi/LOGO_TBA.png')}}" alt="">
                       </div>
                       <div class="d-flex flex-column align-items-center">
                         <img class="object-fit-cover icon mx-auto" src="{{ asset('asset/images/price-list/komparasi/logo-tim-celana.jpg')}}" />
-                        <div class="text-center fw-bold">LOGO TIM - CELANA</div>
+                        <div class="text-center fw-bold m-2">LOGO TIM - CELANA</div>
                       </div>
                       <table class="mx-auto">
                         <thead>
@@ -870,12 +870,12 @@
                     </div>
 
                     <div class="nama-tim-celana mb-5">
-                      <div class="overflow-hidden max-width-4xl mx-auto">
-                        <img class="h-100 w-100" src="" alt="">
+                      <div class="overflow-hidden max-width-4xl mx-auto mb-2">
+                        <img class="h-100 w-100" src="{{ asset('asset/images/price-list/komparasi/LOGO_TBA.png')}}" alt="">
                       </div>
                       <div class="d-flex flex-column align-items-center">
                         <img class="object-fit-cover icon mx-auto" src="{{ asset('asset/images/price-list/komparasi/nama-tim-celana.jpg')}}" />
-                        <div class="text-center fw-bold">NAMA TIM - CELANA</div>
+                        <div class="text-center fw-bold m-2">NAMA TIM - CELANA</div>
                       </div>
                       <table class="mx-auto">
                         <thead>

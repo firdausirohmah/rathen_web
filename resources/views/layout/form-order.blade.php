@@ -22,7 +22,7 @@
 </style>
 <body>
     <br>
-    <h3 style="font-family: Montheavy; color: #1890fd;  font-weight: bold; text-decoration: underline;
+    <h3 style="font-family: Montheavy; color: black;  font-weight: bold; text-decoration: underline;
     margin-bottom: 20px; text-align: center;">FORM ORDER - CUSTOM RATHEN</h3>
     <div class="container justify-content-center">
     <div class="row ">

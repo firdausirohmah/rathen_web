@@ -162,6 +162,30 @@
     font-family: Montheavy;
     src: url("../../asset/fonts/Mont/Mont-Heavy.otf");
     }
+    /* update */
+    .nav-link:hover{
+      color:#cc141a!important;
+    }
+    .nav-link:focus, .nav-link:hover .nav-link:after{
+        color: #e11c22!important;
+    }
+    
+    .img-16{
+      width:16rem!important;
+      height:16rem!important;
+    }
+    .thumbnail-price {
+      width: 4rem;
+      height: 4rem;
+      margin-right: -16px;
+      cursor: pointer;
+    }
+
+    .center{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
     </style>
     <link rel="stylesheet" href="asset/css/styles.css">
     <section id="home" style="overflow: hidden;">
@@ -173,14 +197,14 @@
           </button>
           <div class="collapse navbar-collapse d-flex justify-content-center" id="navbarNavAltMarkup">
             <div class="navbar-nav" >
-              <a class="text-nav  nav-link" target="_blank" aria-current="page" href="/page-custom#home">HOME</a>
-              <a class="text-nav mx-2 nav-link" target="_blank" href="/page-custom#about">ABOUT US</a>
-              <a class="text-nav mx-2 nav-link" target="_blank" href="/page-custom#result">LATEST RESULT</a>
-              <a class="text-nav mx-2 nav-link" target="_blank" href="/page-custom#order">CARA PEMESANAN</a>
-              <a class="text-nav mx-2 nav-link" target="_blank" href="/price-list/non-print">PRICE LIST</a>
-              <a class="text-nav mx-2 nav-link" target="_blank" href="/page">FAQ</a>
-              <a class="text-nav mx-2 nav-link" target="_blank" href="/page-custom#location">LOCATION</a>
-              <a class="text-nav mx-2 nav-link" target="_blank" href="/page-custom#contact">CONTACT US</a>
+              <a class="text-nav  nav-link" aria-current="page" href="/page-custom#home">HOME</a>
+              <a class="text-nav mx-2 nav-link" href="/page-custom#about">ABOUT US</a>
+              <a class="text-nav mx-2 nav-link" href="/page-custom#result">LATEST RESULT</a>
+              <a class="text-nav mx-2 nav-link" href="/page-custom#order">CARA PEMESANAN</a>
+              <a class="text-nav mx-2 nav-link" href="/price-list/non-print">PRICE LIST</a>
+              <a class="text-nav mx-2 nav-link" href="/page">FAQ</a>
+              <a class="text-nav mx-2 nav-link" href="/page-custom#location">LOCATION</a>
+              <a class="text-nav mx-2 nav-link" href="/page-custom#contact">CONTACT US</a>
             </div>
           </div>
         </div>
@@ -204,34 +228,34 @@
     <div class="container-xxl">
         <div class="row">
             <div class="col-lg-3">
-              <div class="card">
-                <div class="card-body overflow-hidden">
+              <div class="card" style="border:0!important;">
+                <div class="card-body overflow-hidden" style="width:20.5rem;">
                 {{-- <img src="https://www.shutterstock.com/image-vector/adventure-offroad-4x4-badges-logo-260nw-2041894727.jpg" width="90%" class="img-fluid rounded-top mx-auto my-auto" alt=""> --}}
-                <div id="imageSlider" class="carousel slide mx-auto" data-bs-interval="false">
+                <div id="imageSlider" class="carousel slide mx-auto" style="width:86%!important;" data-bs-interval="false">
                   <div class="carousel-inner mb-3">
                     <div class="carousel-item active">
-                      <img src="{{ $data->g1}}" class="img-thumbnail" alt="Image 1">
+                      <img src="{{ $data->g1}}" class="img-thumbnail img-16" alt="Image 1">
                     </div>
                     <div class="carousel-item">
-                      <img src="{{ $data->g2}}" class="img-thumbnail" alt="Image 2">
+                      <img src="{{ $data->g2}}" class="img-thumbnail img-16" alt="Image 2">
                     </div>
                     <div class="carousel-item">
-                      <img src="{{ $data->g3}}" class="img-thumbnail" alt="Image 3">
+                      <img src="{{ $data->g3}}" class="img-thumbnail img-16" alt="Image 3">
                     </div>
                     <div class="carousel-item">
-                      <img src="{{ $data->g4}}" class="img-thumbnail" alt="Image 4">
+                      <img src="{{ $data->g4}}" class="img-thumbnail img-16" alt="Image 4">
                     </div>
                     <div class="carousel-item">
-                      <img src="{{ $data->g5}}" class="img-thumbnail" alt="Image 5">
+                      <img src="{{ $data->g5}}" class="img-thumbnail img-16" alt="Image 5">
                     </div>
                     <div class="carousel-item">
-                      <img src="{{ $data->g6}}" class="img-thumbnail" alt="Image 6">
+                      <img src="{{ $data->g6}}" class="img-thumbnail img-16" alt="Image 6">
                     </div>
                     <div class="carousel-item">
-                      <img src="{{ $data->g7}}" class="img-thumbnail" alt="Image 7">
+                      <img src="{{ $data->g7}}" class="img-thumbnail img-16" alt="Image 7">
                     </div>
                     <div class="carousel-item">
-                      <img src="{{ $data->g8}}" class="img-thumbnail" alt="Image 8">
+                      <img src="{{ $data->g8}}" class="img-thumbnail img-16" alt="Image 8">
                     </div>
                   </div>
 
@@ -259,43 +283,43 @@
                 </div>
                 <div class="container">
                   <div class="row flex-nowrap overflow-x-scroll">
-                    <div class="col" type="button" data-bs-target="#imageSlider" data-bs-slide-to="0" aria-label="Slide 0">
-                      <div class="thumbnail selected-thumbnail">
+                    <div class="col" style="padding-left:0!important;" type="button" data-bs-target="#imageSlider" data-bs-slide-to="0" aria-label="Slide 0">
+                      <div class="thumbnail thumbnail-price selected-thumbnail">
                         <img src="{{ $data->g1}}" alt="Thumbnail 1">
                       </div>
                     </div>
                     <div class="col" type="button" data-bs-target="#imageSlider" data-bs-slide-to="1" aria-label="Slide 1">
-                      <div class="thumbnail">
+                      <div class="thumbnail thumbnail-price">
                         <img src="{{ $data->g2}}" alt="Thumbnail 2">
                       </div>
                     </div>
                     <div class="col" type="button" data-bs-target="#imageSlider" data-bs-slide-to="2" aria-label="Slide 2">
-                      <div class="thumbnail">
+                      <div class="thumbnail thumbnail-price">
                         <img src="{{ $data->g3}}" alt="Thumbnail 3">
                       </div>
                     </div>
                     <div class="col" type="button" data-bs-target="#imageSlider" data-bs-slide-to="3" aria-label="Slide 3">
-                      <div class="thumbnail">
+                      <div class="thumbnail thumbnail-price">
                         <img src="{{ $data->g4}}" alt="Thumbnail 4">
                       </div>
                     </div>
                     <div class="col" type="button" data-bs-target="#imageSlider" data-bs-slide-to="4" aria-label="Slide 4">
-                      <div class="thumbnail">
+                      <div class="thumbnail thumbnail-price">
                         <img src="{{ $data->g5}}" alt="Thumbnail 4">
                       </div>
                     </div>
                     <div class="col" type="button" data-bs-target="#imageSlider" data-bs-slide-to="5" aria-label="Slide 5">
-                      <div class="thumbnail">
+                      <div class="thumbnail thumbnail-price">
                         <img src="{{ $data->g6}}" alt="Thumbnail 4">
                       </div>
                     </div>
                     <div class="col" type="button" data-bs-target="#imageSlider" data-bs-slide-to="6" aria-label="Slide 6">
-                      <div class="thumbnail">
+                      <div class="thumbnail thumbnail-price">
                         <img src="{{ $data->g7}}" alt="Thumbnail 4">
                       </div>
                     </div>
                     <div class="col" type="button" data-bs-target="#imageSlider" data-bs-slide-to="7" aria-label="Slide 7">
-                      <div class="thumbnail">
+                      <div class="thumbnail thumbnail-price">
                         <img src="{{ $data->g8}}" alt="Thumbnail 4">
                       </div>
                     </div>
@@ -352,7 +376,7 @@
                             <div class="col-lg-5">
                                 <div class="container">
                                     <div class="row">
-                                        <div class="col-lg-3" style="margin-top: auto; margin-bottom:auto; margin-left:0px; margin-right:0px;"><img src="{{ asset('asset/images/price-list/presen.png') }}" width="20px" alt=""></div>
+                                        <div class="col-lg-3" style="margin-top: auto; margin-bottom:auto; margin-left:0px; margin-right:0px;"><img src="{{ asset('asset/images/price-list/percent.png') }}" width="20px" alt=""></div>
                                         <div class="col-lg-8" style="font-size: 13px">Cicilan 0% Hingga <br>24 Bulan</div>
                                     </div>
                                 </div>
@@ -613,31 +637,29 @@
                 <div class="card-title card1">
                   <div id="content1" class="card-text content">
                     <div class="container-fluid">
-                      <div class="row">
-                       
-
-                        <div class="col-sm-6 mb-3 mb-sm-0  image-container">
+                      <div class="row center mt-5">
+                        <div class="col-sm-5 mb-4 image-container">
                           <img src="{{ $data->g1 }}" class="img-fluid w-100" alt="Image 1">
                         </div>
-                        <div class="col-sm-6 mb-3 mb-sm-0">
+                        <div class="col-sm-5 mb-4 ">
                           <img src="{{ $data->g2 }}" class="img-fluid w-100" alt="Image 2">
                         </div>
-                        <div class="col-sm-6 mb-3 mb-sm-0">
+                        <div class="col-sm-5 mb-4 ">
                           <img src="{{ $data->g3 }}" class="img-fluid w-100" alt="Image 3">
                         </div>
-                        <div class="col-sm-6 mb-3 mb-sm-0">
+                        <div class="col-sm-5 mb-4 ">
                           <img src="{{ $data->g4 }}" class="img-fluid w-100" alt="Image 4">
                         </div>
-                        <div class="col-sm-6 mb-3 mb-sm-0">
+                        <div class="col-sm-5 mb-4 ">
                           <img src="{{ $data->g5 }}" class="img-fluid w-100" alt="Image 5">
                         </div>
-                        <div class="col-sm-6 mb-3 mb-sm-0">
+                        <div class="col-sm-5 mb-4 ">
                           <img src="{{ $data->g6 }}" class="img-fluid w-100" alt="Image 6">
                         </div>
-                        <div class="col-sm-6 mb-3 mb-sm-0">
+                        <div class="col-sm-5 mb-4 ">
                           <img src="{{ $data->g7 }}" class="img-fluid w-100" alt="Image 7">
                         </div>
-                        <div class="col-sm-6 mb-3 mb-sm-0">
+                        <div class="col-sm-5 mb-4 ">
                           <img src="{{ $data->g8 }}" class="img-fluid w-100" alt="Image 8">
                         </div>
                       </div>
@@ -1032,6 +1054,10 @@
     </script>
     
     <script>
+      var jhargaDB = {{ $data->harga }} ;
+      var formatHargaDB = "Rp " + jhargaDB.toLocaleString();
+      document.getElementById("hargaDb").innerText =  formatHargaDB;
+
       var jharga = {{ $data->harga }} * {{ $data->min_order }};
       var formatHarga = "Rp " + jharga.toLocaleString();
       document.getElementById("totalHarga").innerText =  formatHarga;

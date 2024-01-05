@@ -190,7 +190,7 @@
         font-size: 1.8rem;
     }
 } */
-        @media  (max-width: 768px) {
+ @media  (max-width: 768px) {
     .btn-mid {
         width: 50%; /* Ubah lebar tombol menjadi 100% */
         height: 50%;
@@ -219,7 +219,21 @@
     .footer{
             font-size: 13px;
         }
+    .carousel-item{
+        height: 18rem!important;
     }
+    .carousel-item.active{
+        height: 18rem!important;
+    }
+    .py-5{
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+    .mb0-mobile{
+        margin-bottom: unset!important;
+    }
+    
+}
                 .store{
                     text-align: center; 
                     align-items: center; 
@@ -465,7 +479,7 @@
         <div class="container">
           <div class="row justify-content-md-center">
             <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
-              <h1 class="mb-2 display-5 text-center" style="font-family: Montheavy; color: black; font-size: 24px; font-weight: bold; margin-bottom: 20px; text-align: center;">ABOUT US</h1>
+              <h1 class="mb-2 mb0-mobile display-5 text-center" style="font-family: Montheavy; color: black; font-size: 24px; font-weight: bold; margin-bottom: 20px; text-align: center;">ABOUT US</h1>
             </div>
           </div>
         </div>

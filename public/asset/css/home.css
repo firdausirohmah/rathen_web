@@ -861,7 +861,7 @@ footer .footer-bottom .wrap-footer-bottom__right .nav-static a:hover {
     }
 
     .navbar-main-toggle .nav-toggler span {
-        background-color: #203475;
+        background-color: #fff;
         display: block;
         height: 3px;
         margin-bottom: 4px;
@@ -3567,6 +3567,18 @@ header.show {
         padding-left: 0;
         width: 100%;
     }
+
+    .floating-menu{
+        right: 0!important;
+        bottom: 3rem!important;
+        .kurir-bt{
+            padding: 0 1rem 0 0;
+            img{
+                height: 6rem;
+            }
+        }
+    }
+    
 }
 
 /*# sourceMappingURL=home.css.map*/

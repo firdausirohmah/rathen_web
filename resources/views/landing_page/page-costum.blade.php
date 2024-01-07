@@ -232,7 +232,50 @@
     .mb0-mobile{
         margin-bottom: unset!important;
     }
-    
+    .mb2-mobile{
+        margin: 0 0 2rem 0!important;
+    }
+    .pt0-mobile{
+        padding-top:unset!important;
+    }
+    .p0-mobile{
+        padding:unset!important;
+    }
+    .center-hori{
+        display: block;
+        margin-left: auto!important;
+        margin-right: auto!important;
+    }
+    .pb2-mobile{
+        padding-bottom:1rem!important;
+    }
+    .img_location{
+        width: 100%;
+        height: 340px!important;
+    }
+    .dis-icon{
+        display: -webkit-inline-box;
+    }
+    .icon-mobile{
+        width:27%!important;
+        height: 85px!important;
+        padding: 0.5rem 0 0.5rem 0;
+        
+    }
+    .icon-mobile h5{
+        font-size:0.875rem!important;
+        font-weight:500!important;
+        padding-top:0!important;
+    }
+    .icon-mobile img{
+        padding-top:0!important;
+    }
+    .footer-mobile{
+        height:500px;
+        .frame{
+            height:30rem;
+        }
+    }
 }
                 .store{
                     text-align: center; 
@@ -241,6 +284,7 @@
                     font-weight: bold;
                     margin-top:4px;
                 }
+                
                 @media screen and(max-width: 280.98px) { 
                     .teks {
                         font-size: 12px;
@@ -477,7 +521,7 @@
     </style>
     <section class="py-5 py-xl-8">
         <div class="container">
-          <div class="row justify-content-md-center">
+          <div class="row center-hori">
             <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
               <h1 class="mb-2 mb0-mobile display-5 text-center" style="font-family: Montheavy; color: black; font-size: 24px; font-weight: bold; margin-bottom: 20px; text-align: center;">ABOUT US</h1>
             </div>
@@ -485,8 +529,8 @@
         </div>
     </section>
     
-    <div class="container mb-4 pb-4 ">
-        <div class="row">
+    <div class="container pb2-mobile pb-3">
+        <div class="row center-hori">
             {{-- <div class="col-lg-3"></div> --}}
             <div class="col-lg-6">
 
@@ -587,32 +631,32 @@
     
     <section class="py-2 py-xl-4">
         <div class="container">
-          <div class="row justify-content-md-center">
+          <div class="row center-hori">
             <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
-              <h1 class="mb-4 display-5 text-center pt-4 fw-bold" style="font-family: Montheavy; font-size: 24px; text-align: center;">LATEST RESULT</h1>
+              <h1 class="mb-4 display-5 text-center pt-4 fw-bold pt0-mobile " style="font-family: Montheavy; font-size: 24px; text-align: center;">LATEST RESULT</h1>
             </div>
           </div>
         </div>
     </section>
     <div class="container">
         <div class="row center-hori">
-            <div class="col-lg-3 m-4">
+            <div class="col-lg-3 m-4 mb2-mobile">
                 <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CztGkRBv1m2/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#000; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
             </div> 
             
-            <div class="col-lg-3 m-4">
+            <div class="col-lg-3 m-4 mb2-mobile">
                 <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/Czse_c8vlLo/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#000; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
             </div> 
-            <div class="col-lg-3 m-4">
+            <div class="col-lg-3 m-4 mb2-mobile">
                 <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CzsEOnUvMs_/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#000; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
             </div> 
-            <div class="col-lg-3 m-4">
+            <div class="col-lg-3 m-4 mb2-mobile">
                 <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CzqmUt9P5Ks/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#000; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
             </div> 
-            <div class="col-lg-3 m-4">
+            <div class="col-lg-3 m-4 mb2-mobile">
                 <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CzoAeKzvian/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#000; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
             </div> 
-            <div class="col-lg-3 m-4">
+            <div class="col-lg-3 m-4 mb2-mobile">
                 <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CznTMlcP332/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#000; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
             </div> 
         </div>
@@ -639,16 +683,16 @@
 <div id="progress-container">
     {{-- <div id="progress-bar"></div>  --}}
     <section id="order">
-        <section class="py-5 py-xl-8">
+        <section class="py-5 py-xl-8 p0-mobile">
             <div class="container">
-              <div class="row justify-content-md-center">
+              <div class="row center-hori">
                 <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
                   <h1 class="mb-4 display-5 text-center" style="font-family: Montheavy; color: black; font-size: 22px; font-weight: bold; margin-bottom: 20px; text-align: center;">CARA PEMESANAN</h1>
                 </div>
               </div>
             </div>
             <div class="container overflow-hidden">
-                <div class="row mb-4 gy-5 section-pesan">
+                <div class="row mb-4 gy-5 section-pesan center-hori">
                     <div class="col-sm-6 col-lg-4 section-pesan2 hidden-section" id="section1">
                         <div class="text-center px-xl-2">
                             <h1 class='bx bx-cart'></h1>
@@ -1008,12 +1052,12 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
     <div class="container text-center">
         <div class="row center-hori">
-            <div class="col-lg-5 card_location m-4">
+            <div class="col-lg-5 card_location m-4 mb2-mobile">
                 <div class="img_location ">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.4343833806684!2d106.77431907418564!3d-6.5928088934009095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c57a439b19c9%3A0x4a05cc1ee48848ba!2sRATHEN%20Store%20-%20Sportwears%20Outlet!5e0!3m2!1sid!2sid!4v1700127350226!5m2!1sid!2sid" allowfullscreen class="img_location" style="500px"></iframe>
                 </div>
             </div>
-            <div class="col-lg-5 m-4">
+            <div class="col-lg-5 m-4 mb2-mobile">
         
                 <div id="carouselExample" class="carousel slide w-100 h-carousel slide"  data-ride="carousel">
                     <div class="carousel-inner ">
@@ -1041,7 +1085,7 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
     </div>
     <div class="container text-center">
-        <div class="row m-4">
+        <div class="row m-4 center-hori">
             <div class="col-lg-12" >
                 <p class="store">RATHEN STORE </p>
                 <p class="addres"> Ruko Sentra Gunungbatu<br>Jl. Mayjen Ishak Djuarsa no. 167B<br>Bogor 16118 </p>
@@ -1054,21 +1098,21 @@ document.addEventListener('DOMContentLoaded', function () {
 </section>
 
 <section id="contact" >
-<footer class="wp">
+<footer class="wp footer-mobile">
     <div class="container frame ">
-        <div class="row">
+        <div class="row center-hori">
             <div class="col-lg-12">
                 <h1 class="contact-title"> stay connected <br> with us </h1>
             </div>
           </div>
-            <div class="row sosmed">
+            <div class="row sosmed center-hori dis-icon">
                 <div class="col-lg-2"></div>
-                    <a href="https://wa.me/6289611081988?text=halo%20RATHEN..%20Saya%20ingin%20membuat%20custom%20jersey" target="_blank" class="btn-mid"><img src="asset/images/whatsapp_new.png" class="icon" width="50%" alt="wa"><h5>Whatsapp</h5></a>
-                    <a href="https://shopee.co.id/rathen.id" target="_blank" class="btn-mid"><img src="asset/images/SHOPEE.png" class="icon" width="50%" alt="wa"><h5>Shopee</h5></a>
-                    <a href="https://www.tokopedia.com/rathenid" target="_blank" class="btn-mid"><img src="asset/images/tokped_new.png" class="icon" width="50%" alt="wa"><h5>Tokopedia</h5></a>
+                    <a href="https://wa.me/6289611081988?text=halo%20RATHEN..%20Saya%20ingin%20membuat%20custom%20jersey" target="_blank" class="btn-mid icon-mobile"><img src="asset/images/whatsapp_new.png" class="icon" width="50%" alt="wa"><h5>Whatsapp</h5></a>
+                    <a href="https://shopee.co.id/rathen.id" target="_blank" class="btn-mid icon-mobile"><img src="asset/images/SHOPEE.png" width="50%" class="icon" alt="wa"><h5>Shopee</h5></a>
+                    <a href="https://www.tokopedia.com/rathenid" target="_blank" class="btn-mid icon-mobile"><img src="asset/images/tokped_new.png" width="50%" class="icon" alt="wa"><h5>Tokopedia</h5></a>
                 <div class="col-lg-2"></div>
             </div>
-            <div class="row sosmed">
+            <div class="row sosmed center-hori">
                 <div class="container-sosmed">
                     <a href="https://www.instagram.com/rathen.apparel/" target="_blank" ><img src="asset/images/ig-biru.png" class="btn-sosmed" alt="wa"></a>
                     <a href="mailto:rathen.apparel@gmail.com" target="_blank" class="emai"><img src="asset/images/mail.png" class="btn-sosmed" alt="wa"></a>

@@ -274,6 +274,27 @@ class PesananController extends Controller
             ]);
         }
     }
+
+    public  function orderNew(Request $request)
+    {
+        $kd_part = $request->kd_part;
+        $qty = $request->qty;
+        $data = DB::table('tbl_step1')->get('*');
+        $ref = DB::table('tbl_part')->where('kd_part', $kd_part)->get();
+        // $totalHarga = $ref->harga;
+        // dd($ref->harga);
+        // dd($kd_part,$qty);
+        foreach ($ref as $rev) {
+            $totalHarga = $rev->harga * $qty;
+            // dd($totalHarga);
+            return view('landing_page.form-orderStep', [
+                'pesanan' => $data,
+                'data' => $rev,
+                'qty' => $qty,
+                'total' => $totalHarga,
+            ]);
+        }
+    }
     // ==========================quotation===================================
     public function quotation(Request $request)
     {
@@ -490,7 +511,7 @@ class PesananController extends Controller
             ];
             // dd($Jarsey);
             
-            return view('landing_page.invoice', [
+            return view('landing_page.form-orderStep5', [
                 'pesanan' => $pesanan,
                 'price' => $price,
                 'Jarsey' => $Jarsey,

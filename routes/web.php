@@ -113,6 +113,22 @@ Route::controller(PesananController::class)->group(function () {
     Route::post('/form-4/pemain', 'tambahDataPesanan')->name('tambahDataPesanan');
     Route::get('/invoice', 'invoice')->name('invoice');
     Route::get('/export', 'export')->name('export');
+
+    Route::get('/form/orderStep5')->name('invoice');
+    // Route::get('/form-1/orderNew', 'orderNew')->name('orderNew');
+});
+
+Route::get('/form/orderStep1', function () {
+    return view('landing_page.form-orderStep1');
+});
+Route::get('/form/orderStep2', function () {
+    return view('landing_page.form-orderStep2');
+});
+Route::get('/form/orderStep3', function () {
+    return view('landing_page.form-orderStep3');
+});
+Route::get('/form/orderStep4', function () {
+    return view('landing_page.form-orderStep4');
 });
 
 // contact us

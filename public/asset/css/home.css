@@ -3571,14 +3571,14 @@ header.show {
     .floating-menu{
         right: 0!important;
         bottom: 3rem!important;
-        .kurir-bt{
-            padding: 0 1rem 0 0;
-            img{
+        
+    }
+    .kurir-bt{
+            padding: 0 1rem 4rem 0;    
+    }
+    .kurir-bt img{
                 height: 6rem;
             }
-        }
-    }
-    
 }
 
 /*# sourceMappingURL=home.css.map*/

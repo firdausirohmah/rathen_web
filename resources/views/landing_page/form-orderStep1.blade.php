@@ -613,8 +613,68 @@
           </div>
         </div>
 
+        <div class="paymen__shipping">
+          <div class="row">
+            <div class="field">
+              <div class="form-uploads">
+                <div class="form-upload payment__type--cc" id="QuotationBtn">
+                  <i class="icon icon-cloud-download"></i>Download Quotation</div>
+              </div>
+              <!-- <input type="text" class="input txt text-validated" value='Upload' /> -->
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+
+    <div id="QuotationModal" class="modal pt200">
+      <div class="modal-content mw-32">
+        <span class="close">&times;</span>
+        <div class="form-modal">
+          <h4>Silahkan masukkan data</h4>
+          <form action="{{ route('quotation') }}" method="POST" id="inputDataForm">
+          @csrf
+            <label for="" class="subtitle ">Nama Pelanggan</label>
+            <input type="text" class="form-control" name="nama_pemesanan">
+            <label for="" class="subtitle">Kontak (Whatsapp)</label>
+            <input type="text" class="form-control" name="kontak"> 
+            <label for="" class="subtitle">Email</label>
+            <input type="text" class="form-control" name="email"> 
+            <label for="" class="subtitle">Alamat</label>
+            <input type="text" class="form-control" name="alamat"> 
+
+            <button class="btn-modal" type="submit">Save</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var modal = document.getElementById('QuotationModal');
+    var btn = document.getElementById('QuotationBtn');
+    var span = document.getElementsByClassName('close')[0];
+
+    // Display the modal when the button is clicked
+    btn.onclick = function () {
+      modal.style.display = 'block';
+    };
+
+    // Close the modal when the close button is clicked
+    span.onclick = function () {
+      modal.style.display = 'none';
+    };
+
+    // Close the modal when clicking outside of it
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = 'none';
+      }
+    };
+
+  });
+</script>
+
     <div class="container">
       <div class="actions ">
         <a href="/form/orderStep2" class="btn action__submit">Order

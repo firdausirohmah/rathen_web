@@ -399,25 +399,38 @@
             </div>
             <span>Kerah custom elastic rib (+20,000)</span>
             <form>
-            <div class="form-note4">
+              <div class="form-note4">
                 <div class="row">
-                  <div class="field" style="padding:0;">
-                    <img src="{{asset('/asset/extra/casual/C-1.png')}}" class="img-note C1 w-25" alt="">
-                    <img src="{{asset('/asset/extra/casual/C-2.png')}}" class="img-note C2 w-25" alt="">
-                    <img src="{{asset('/asset/extra/casual/C-3.png')}}"class="img-note C3 w-25" alt=""> 
-                    <img src="{{asset('/asset/extra/casual/C-4.png')}}" class="img-note C4 w-25" alt="">
-                    <img src="{{asset('/asset/extra/casual/C-5.png')}}" class="img-note C5 w-25" alt=""> 
+                  <div class="fieldjk" style="padding: 0;">
+                    <input type="radio" id="kerah1" name="jenis_kerah" >
+                    <label for="kerah1" class="img-notejk C1 w-25" style="background-image: url('{{ asset('/asset/extra/casual/C-1.png') }}');"></label>
 
-                    <img src="{{asset('/asset/extra/oneck/O-1a.png')}}" class="img-note O1 w-25" alt="">
-                    <img src="{{asset('/asset/extra/oneck/O-2.png')}}" class="img-note O2 w-25" alt="">
+                    <input type="radio" id="kerah2" name="jenis_kerah">
+                    <label for="kerah2" class="img-notejk C2 w-25" style="background-image: url('{{ asset('/asset/extra/casual/C-2.png') }}');"></label>
+
+                    <input type="radio" id="kerah3" name="jenis_kerah" >
+                    <label for="kerah3" class="img-notejk C3 w-25" style="background-image: url('{{ asset('/asset/extra/casual/C-3.png') }}');"></label>
+                    
+                    <input type="radio" id="kerah4" name="jenis_kerah" >
+                    <label for="kerah4" class="img-notejk C4 w-25" style="background-image: url('{{ asset('/asset/extra/casual/C-4.png') }}');"></label>
+                    
+                    <input type="radio" id="kerah5" name="jenis_kerah" >
+                    <label for="kerah5" class="img-notejk C5 w-25" style="background-image: url('{{ asset('/asset/extra/casual/C-5.png') }}');"></label>
+
+                    <!-- Tambahkan inputan radio dan label untuk setiap gambar -->
+
+                    <input type="radio" id="kerah6" name="jenis_kerah">
+                    <label for="kerah6" class="img-notejk O1 w-25" style="background-image: url('{{ asset('/asset/extra/oneck/O-1a.png') }}');"></label>
+
+                    <input type="radio" id="kerah7" name="jenis_kerah">
+                    <label for="kerah7" class="img-notejk O2 w-25" style="background-image: url('{{ asset('/asset/extra/oneck/O-2.png') }}');"></label>
                   </div>
                 </div>
-                
               </div>
             </form>
           </div>
         </div>
-        
+
         <div class="payment__info">
           <div class="payment__cc">
             <div class="payment__title fw-6">
@@ -527,32 +540,47 @@
                   <div class="field" style="padding:0;">
                     <div class="row">
                       <div class="field small">
-                        <div class="title">Printing (Free)<br>
+                        <div class="title">
+                          <input type="radio" name="sponsorType" id="printingFree" value="printingFree">
+                          <label for="printingFree">Printing (Free)</label>
+                        <br>
                         <small>kategori Half - Print dan Full - Print</small>
                         </div>
                       </div>
                     </div>
                     <div class="row">
                       <div class="field small">
-                        <div class="title">Tulisan polifek 1 warna 1 baris (Free)
+                        <div class="title">
+                          <input type="radio" name="sponsorType" id="tulisanPolifek1" value="tulisanPolifek1">
+                          <label for="tulisanPolifek1">Tulisan polifek 1 warna 1 baris (Free)</label>
+                
                         </div>
                       </div>
                     </div>
                     <div class="row">
                       <div class="field small">
-                        <div class="title">Extra tulisan polifek 1 warna 1 baris (+10,000)
+                        <div class="title">
+                          <input type="radio" name="sponsorType" id="extraTulisanPolifek" value="extraTulisanPolifek">
+                          <label for="extraTulisanPolifek">Extra tulisan polifek 1 warna 1 baris (+10,000)</label>
+                
                         </div>
                       </div>
                     </div>
                     <div class="row">
                       <div class="field small">
-                        <div class="title">Logo + tulisan polifek 1 warna 1 baris (+35,000)
+                        <div class="title">
+                          <input type="radio" name="sponsorType" id="logoTulisanPolifek" value="logoTulisanPolifek">
+                          <label for="logoTulisanPolifek">Logo + tulisan polifek 1 warna 1 baris (+35,000)</label>
+                
                         </div>
                       </div>
                     </div>
                     <div class="row">
                       <div class="field small">
-                        <div class="title">Extra tulisan polifek 1 warna (+45,000)
+                        <div class="title">
+                          <input type="radio" name="sponsorType" id="extraTulisanPolifekWarna" value="extraTulisanPolifekWarna">
+                          <label for="extraTulisanPolifekWarna">Extra tulisan polifek 1 warna (+45,000)</label>
+                
                         </div>
                       </div>
                     </div>
@@ -574,13 +602,19 @@
                   <div class="field" style="padding:0;">
                     <div class="row">
                       <div class="field small">
-                        <div class="title">Extra logo DTF (+15,000)
+                        <div class="title">
+                          <input type="radio" name="lenganType" id="extraLogoDTF" value="extraLogoDTF">
+                          <label for="extraLogoDTF">Extra logo DTF (+15,000)</label>
+                
                         </div>
                       </div>
                     </div>
                     <div class="row">
                       <div class="field small">
-                        <div class="title">Extra tulisan 1 baris (+10,000)
+                        <div class="title">
+                          <input type="radio" name="lenganType" id="extraTulisan1Baris" value="extraTulisan1Baris">
+                          <label for="extraTulisan1Baris">Extra tulisan 1 baris (+10,000)</label>
+                
                         </div>
                       </div>
                     </div>
@@ -615,15 +649,14 @@
 
         <div class="paymen__shipping">
           <div class="row">
-            <div class="field">
-              <div class="form-uploads">
-                <div class="form-upload payment__type--cc" id="QuotationBtn">
-                  <i class="icon icon-cloud-download"></i>Download Quotation</div>
-              </div>
-              <!-- <input type="text" class="input txt text-validated" value='Upload' /> -->
+            <div class="actions" id="QuotationBtn">
+              <a class="btn action__submit">Download Quotation
+                <i class="icon icon-cloud-download"></i>
+              </a>
             </div>
           </div>
         </div>
+        
       </div>
     </div>
 

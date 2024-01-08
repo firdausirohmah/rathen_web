@@ -373,7 +373,7 @@ class PesananController extends Controller
 
             // Combine Bootstrap CSS with your HTML
             $combinedHtml = '<style> html *{margin:0;padding:0;}.print{
-                display:none;}.container{margin:0!important;} .card{width:650px;} '
+                display:none;}.container{margin:0!important;} .card{width:650px!important;} '
                 . $bootstrapCSS . '<style>' . $html;
 
             $pdf->loadHtml($combinedHtml);
@@ -552,18 +552,17 @@ class PesananController extends Controller
             // dd ($data->nama_pemesanan);
             $pdf = new Dompdf();
             $options = new Options();
-            $options->set('isHtml5ParserEnabled', true);
+            $options->set(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true])->setChroot('');
             $pdf->setOptions($options);
 
             // Load Bootstrap CSS locally
             $bootstrapCSS = file_get_contents(public_path('c.css')); // Ganti path sesuai dengan lokasi CSS Bootstrap Anda
             $html = View::make('landing_page.invoice', compact('pesanan', 'price','Jarsey'))->render();
             
-
-
             // Combine Bootstrap CSS with your HTML
             $combinedHtml = '<style> .print{
-                display:none}' . $bootstrapCSS . '<style>' . $html;
+                display:none;}.container{margin:0!important;} .row{width:900px!important;} .card{border:none!important} .card-body{width:900px!important;} '
+                . $bootstrapCSS . '<style>' . $html;
 
             $pdf->loadHtml($combinedHtml);
             $pdf->setPaper('A3', 'potrait');

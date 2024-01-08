@@ -41,7 +41,7 @@
 		<div class="col-8">
 			<div class="card w-100">
 				<div class="card-body">
-					<h3 class="text-center font-weight-bold mb-1"><img src="{{ asset('/asset/images/logo-dark.png') }}" width="15%" alt=""></h3>
+					<h3 class="text-center font-weight-bold mb-1"><img id="dynamicImage" src="{{ public_path('/asset/images/logo-dark.png') }}" width="15%" alt=""></h3>
 					<p class="text-center font-weight-bold mont mb-0" style="font-size: 12px;">Office: RATHEN INDONESIA, Jl. Mayjen Ishak Djuarsa no.167B Gunung Batu Bogor, Indonesia</p>
 					<p class="text-center font-weight-bold mont"><small class="font-weight-bold">Phone No: 0896-1108-1988 | 0878-1108-1988</small></p>
 					<div class="row pb-2 p-2">
@@ -241,7 +241,7 @@
 						  width: 62%;
 						}
 					  </style>
-					  <div class="container">
+					<div class="container">
 						<div class="row">
 						  <table style="width: 100%; border:10px; font-size:14px; font-weight: bold;  font-weight:100; color:black;">
 							  <tr style="font-weight: bold; ">
@@ -266,33 +266,28 @@
 							  </tr> 
 						  </table>
 						</div>
-					  </div>
-						
-						  <style>
-							.right-align {
-							  text-align: right;
-							  margin-top: 10px;  
-							}
-						  </style>
-						  <div class="container">
-							<div class="row">
-								<div class="col-lg-12">
-									<p class="right-align mb-4 pb-4">Best regard,</p>
-									<p class="right-align mt-4 pt-4"><u>R. Esa Pangersa Gusti</u></p>
-									<p class="right-align" style="line-height: 0px">RATHEN INDONESIA</p>
-								</div>
+					</div>
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-12">
+								<p class="right-align mb-4 pb-4">Best regard,</p>
+								<p class="right-align mt-4 pt-4"><u>R. Esa Pangersa Gusti</u></p>
+								<p class="right-align" style="line-height: 0px">RATHEN INDONESIA</p>
 							</div>
-						  </div>
-						  
-						  
-						  
-
-							
-               </div>
+						</div>
+					</div>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+<style>
+.right-align {
+	text-align: right;
+	margin-top: 10px;  
+}
+</style>
 {{-- Format IDR --}}
 <script> 
 	function formatHarga(total) {
@@ -316,6 +311,19 @@
 
 	document.getElementById("totalUpgrade").innerText = formatHarga(totalUpgrade);
 
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var dynamicImage = document.getElementById("dynamicImage");
+  
+    if (dynamicImage) {
+      console.log("Element dengan ID dynamicImage ditemukan.");
+      dynamicImage.src = "{{asset('/asset/images/logo-dark.png')}}";
+      console.log("Src gambar diubah menjadi: " + dynamicImage.src);
+    } else {
+      console.error("Element dengan ID dynamicImage tidak ditemukan!");
+    }
+  });
 </script>
 </body>
 </html>

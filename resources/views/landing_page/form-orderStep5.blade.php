@@ -307,17 +307,23 @@
                   
             </div>
           </div>
-          <div class="payment__shipping">
+          <div class="container">
+            <div class="actions pt135">
+              <a href="{{ route('export') }}" class="btn action__submit">Download
+                <i class="icon icon-cloud-download"></i>
+              </a>
+            </div>
+          </div>
+          <!-- <div class="payment__shipping">
             <div class="row">
               <div class="field">
                 <div class="form-uploads btn-download">
-                  <div class="form-upload payment__type--cc">
-                    <i class="icon icon-cloud-download"></i>Download File</div>
+                  <a href="{{ route('export') }}" class="btn action__submit">
+                    <i class="icon icon-cloud-download"></i>Download File</a>
                 </div>
-                <!-- <input type="text" class="input txt text-validated" value='Upload' /> -->
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -391,6 +397,7 @@
     });
   });
 </script>
+
 
 </body>
 </html>

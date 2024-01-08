@@ -288,6 +288,7 @@ input[type=text] {
 .btn:hover {
   transform: translateY(-1px);
   background: #323232;
+  color: #fff;
 }
 
 .btn.action__back {

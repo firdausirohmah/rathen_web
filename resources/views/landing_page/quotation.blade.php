@@ -64,6 +64,7 @@
 			background-color: whitesmoke;
 			}
 	</style>
+	
 	<a href="{{ route('generate') }}" class="print"><button>
 		<i class='bx bx-printer'></i></button></a>
 <div class="container mt-3">
@@ -71,8 +72,8 @@
 			<div class="col-8">
 				<div class="card">
 					<div class="card-body">
-						<h3 class="text-center font-weight-bold mb-1"><img
-								src="{{ asset('asset/images/logo-dark.png') }}" width="15%" alt=""></h3>
+						<h3 class="text-center font-weight-bold mb-1">
+							<img id="dynamicImage" src="{{public_path('/asset/images/logo-dark.png')}}" width="15%" ></h3>
 						<p class="text-center font-weight-bold mont mb-0" style="font-size: 12px;">Office: RATHEN
 							INDONESIA, Jl. Mayjen Ishak Djuarsa no.167B Gunung Batu Bogor, Indonesia</p>
 						<p class="text-center font-weight-bold mont"><small class="font-weight-bold">Phone No:
@@ -82,6 +83,7 @@
 								<h5 class="text-center font-weight-bold text-primary mt-2">QUOTATION</h5>
 							</div>
 						</div>
+
 						<div class="row pb-2 p-2">
 							<div class="col-md-6">
 								<p class="mb-0 font-weight-bold text-primary">Kepada Yth:</p>
@@ -474,9 +476,19 @@
 							</div>
 						</div>
 
-
-
-
+						<script>
+							document.addEventListener("DOMContentLoaded", function() {
+								var dynamicImage = document.getElementById("dynamicImage");
+							
+								if (dynamicImage) {
+									console.log("Element dengan ID dynamicImage ditemukan.");
+									dynamicImage.src = "{{asset('/asset/images/logo-dark.png')}}";
+									console.log("Src gambar diubah menjadi: " + dynamicImage.src);
+								} else {
+									console.error("Element dengan ID dynamicImage tidak ditemukan!");
+								}
+							});
+						</script>
 
 					</div>
 				</div>

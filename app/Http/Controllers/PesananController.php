@@ -362,24 +362,25 @@ class PesananController extends Controller
             ];
             $pdf = new Dompdf();
             $options = new Options();
-            $options->set('isHtml5ParserEnabled', true);
+            $options->set(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true])->setChroot('');
             $pdf->setOptions($options);
 
             // Load Bootstrap CSS locally
-            $bootstrapCSS = file_get_contents(public_path('c.css')); // Ganti path sesuai dengan lokasi CSS Bootstrap Anda
+            $bootstrapCSS = file_get_contents('https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css'); // Ganti path sesuai dengan lokasi CSS Bootstrap Anda
             $html = View::make('landing_page.quotation', compact('data', 'nama', 'kontak', 'email', 'alamat', 'tanggal'))->render();
-            
+            $srcImg= "{{public_path('/asset/images/logo-dark.png')}}";
 
 
             // Combine Bootstrap CSS with your HTML
-            $combinedHtml = '<style> .print{
-                display:none}' . $bootstrapCSS . '<style>' . $html;
+            $combinedHtml = '<style> html *{margin:0;padding:0;}.print{
+                display:none;}.container{margin:0!important;} .card{width:650px;} '
+                . $bootstrapCSS . '<style>' . $html;
 
             $pdf->loadHtml($combinedHtml);
-            $pdf->setPaper('A4', 'landscape');
+            $pdf->setPaper('A4', 'portrait');
             $pdf->render();
 
-
+            // return $pdf::setOptions(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true])->loadView('reports.invoiceSell')->stream();
             return $pdf->stream('quotation.pdf');
         }
     }

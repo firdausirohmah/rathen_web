@@ -536,66 +536,68 @@ input[type=text] {
   padding-bottom: 50px;
 }
 .img-note{
-  filter: grayscale(100%);
+  /* filter: grayscale(100%); */
   cursor: pointer;
 }
 .img-note:hover{
   filter: none;
-  transform: translateY(-1px);
+  transform: scale(1.03);
 }
-.lenganNormal:hover{
-  content: url('/asset/extra/kuning2.png');
-  -webkit-transition: content 2s ease-out;
+
+.field input[type="radio"] {
+  display: none; /* Hide the actual radio button */
 }
-.raglan:hover{
-  content: url('/asset/extra/kuning1.png');
-  -webkit-transition: content 2s ease-out;
+
+.field label {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  width: 100%; /* Set the width and height based on your image size */
+  height: 250px;
+  background-size: cover; /* Ensure the background image covers the entire label */
+  background-repeat: no-repeat;
+  border-radius: 8px;
 }
-.pbnormal:hover{
-  /* opacity: 0.5; */
-  -webkit-transition: content 2s ease-out;
-  content: url('/asset/extra/polabadan/normal.png');
+
+.field input[type="radio"]:checked + label {
+  /* transform: scale(1.05); */
+  border: 2px solid #000; /* Set a border for visual indication */
 }
-.bbm:hover{
-  /* opacity: 0.5; */
-  -webkit-transition: content 2s ease-out;
-  content: url('/asset/extra/polabadan/melengkung.png');
+
+/* Additional styling for hover effect */
+.field label:hover {
+  border: 2px solid #000; /* Change border color on hover */
 }
-.C1:hover{
-  /* opacity: 0.5; */
-  -webkit-transition: content 2s ease-out;
-  content: url('/asset/extra/casual/C-1Kuning.png');
+
+.field-p input[type="radio"] {
+  display: none; /* Hide the actual radio button */
 }
-.C2:hover{
-  /* opacity: 0.5; */
-  -webkit-transition: content 2s ease-out;
-  content: url('/asset/extra/casual/C-2kuning.png');
+
+.field-p label {
+  padding: 5px;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 8px;
 }
-.C3:hover{
-  /* opacity: 0.5; */
-  -webkit-transition: content 2s ease-out;
-  content: url('/asset/extra/casual/C-3kuning.png');
+
+.field-p input[type="radio"]:checked + label {
+  /* transform: scale(1.05); */
+  border: 2px solid #000; /* Set a border for visual indication */
 }
-.C4:hover{
-  /* opacity: 0.5; */
-  -webkit-transition: content 2s ease-out;
-  content: url('/asset/extra/casual/C-4kuning.png');
+
+/* Additional styling for hover effect */
+.field-p label:hover {
+  border: 2px solid #000; /* Change border color on hover */
 }
-.C5:hover{
-  /* opacity: 0.5; */
-  -webkit-transition: content 2s ease-out;
-  content: url('/asset/extra/casual/C-5kuning.png');
-}
-.O1:hover{
-  /* opacity: 0.5; */
-  -webkit-transition: content 2s ease-out;
-  content: url('/asset/extra/oneck/O-1akuning.png');
-}
-.O2:hover{
-  /* opacity: 0.5; */
-  -webkit-transition: content 2s ease-out;
-  content: url('/asset/extra/oneck/O-2kuning.png');
-}
+
+
+
+
 
 /* modal */
 
@@ -743,25 +745,22 @@ input[type=text] {
 
 .img-notejk {
   /* Set a default size for the image */
-  width: 100px;
-  height: 100px;
+  width: 110px;
+  height: 110px;
   /* border: 2px solid transparent; Border to indicate selection */
   cursor: pointer;
+  filter: grayscale();
 }
-
-.img-notejk:hover,
-.img-notejk:focus,
-.fieldjk input:active {
-  /* Style when hovered or focused */
-  border-color: #000;
-  transform: scale(1.1); 
-  /* Change border color when active or hovered */
+.img-notejk:hover {
+  filter: none!important;
 }
-
-.fieldjk input:checked {
-  /* Style when checked */
-  border-color: #000; 
-  /* Change border color when checked */
+/* .fieldjk input[type="radio"] {
+  display: none;
+} */
+.fieldjk input[type="radio"]:checked + label {
+  /* transform: scale(1.1); */
+  background-image: none!important;
+  filter: none!important;
 }
 
 .fieldjk label {
@@ -769,7 +768,148 @@ input[type=text] {
   background-size: cover;
   /* Adjust padding for better spacing */
   padding: 5px;
-  width:100px;
+  width:110px;
+}
+.fieldjk input[type="radio"]:checked + .C1{
+  /* opacity: 0.5; */
+  -webkit-transition: content 2s ease-out;
+  content: url('/asset/extra/casual/C-1Kuning.png');
+  transform: scale(1.2);
+}
+.fieldjk input[type="radio"]:checked +.C2{
+  /* opacity: 0.5; */
+  -webkit-transition: content 2s ease-out;
+  content: url('/asset/extra/casual/C-2kuning.png');
+  transform: scale(1.2);
+}
+.fieldjk input[type="radio"]:checked+.C3{
+  /* opacity: 0.5; */
+  -webkit-transition: content 2s ease-out;
+  content: url('/asset/extra/casual/C-3kuning.png');
+  transform: scale(1.2);
+}
+.fieldjk input[type="radio"]:checked+.C4{
+  /* opacity: 0.5; */
+  -webkit-transition: content 2s ease-out;
+  content: url('/asset/extra/casual/C-4kuning.png');
+  transform: scale(1.2);
+}
+.fieldjk input[type="radio"]:checked+.C5{
+  /* opacity: 0.5; */
+  -webkit-transition: content 2s ease-out;
+  content: url('/asset/extra/casual/C-5kuning.png');
+  transform: scale(1.2);
+}
+.fieldjk input[type="radio"]:checked+.O1{
+  /* opacity: 0.5; */
+  -webkit-transition: content 2s ease-out;
+  content: url('/asset/extra/oneck/O-1akuning.png');
+  transform: scale(1.2);
+}
+.fieldjk input[type="radio"]:checked+.O2{
+  /* opacity: 0.5; */
+  -webkit-transition: content 2s ease-out;
+  content: url('/asset/extra/oneck/O-2kuning.png');
+  transform: scale(1.2);
+}
+.fieldjk input[type="radio"]:checked+ .pbnormal{
+  /* opacity: 0.5; */
+  -webkit-transition: content 2s ease-out;
+  content: url('/asset/extra/polabadan/normal.png');
+  transform: scale(1.2);
+}
+.fieldjk input[type="radio"]:checked+ .bbm{
+  /* opacity: 0.5; */
+  -webkit-transition: content 2s ease-out;
+  content: url('/asset/extra/polabadan/melengkung.png');
+  transform: scale(1.2);
+}
+.fieldjk input[type="radio"]:checked+ .lenganNormal{
+  content: url('/asset/extra/kuning2.png');
+  -webkit-transition: content 2s ease-out;
+  transform: scale(1.2);
+}
+.fieldjk input[type="radio"]:checked+ .raglan{
+  content: url('/asset/extra/kuning1.png');
+  -webkit-transition: content 2s ease-out;
+  transform: scale(1.2);
+}
+
+
+.C1:hover{
+  /* opacity: 0.5; */
+  -webkit-transition: content 2s ease-out;
+  content: url('/asset/extra/casual/C-1Kuning.png');
+  background-image: none!important;
+  transform: scale(1.1);
+}
+.C2:hover{
+  /* opacity: 0.5; */
+  -webkit-transition: content 2s ease-out;
+  content: url('/asset/extra/casual/C-2kuning.png');
+  background-image: none!important;
+  transform: scale(1.1);
+}
+.C3:hover{
+  /* opacity: 0.5; */
+  -webkit-transition: content 2s ease-out;
+  content: url('/asset/extra/casual/C-3kuning.png');
+  background-image: none!important;
+  transform: scale(1.1);
+}
+.C4:hover{
+  /* opacity: 0.5; */
+  -webkit-transition: content 2s ease-out;
+  content: url('/asset/extra/casual/C-4kuning.png');
+  background-image: none!important;
+  transform: scale(1.1);
+}
+.C5:hover{
+  /* opacity: 0.5; */
+  -webkit-transition: content 2s ease-out;
+  content: url('/asset/extra/casual/C-5kuning.png');
+  background-image: none!important;
+  transform: scale(1.1);
+}
+.O1:hover{
+  /* opacity: 0.5; */
+  -webkit-transition: content 2s ease-out;
+  content: url('/asset/extra/oneck/O-1akuning.png');
+  background-image: none!important;
+  transform: scale(1.1);
+}
+.O2:hover{
+  /* opacity: 0.5; */
+  -webkit-transition: content 2s ease-out;
+  content: url('/asset/extra/oneck/O-2kuning.png');
+  background-image: none!important;
+  transform: scale(1.1);
+}
+.pbnormal:hover{
+  /* opacity: 0.5; */
+  -webkit-transition: content 2s ease-out;
+  content: url('/asset/extra/polabadan/normal.png');
+  background-image: none!important;
+  transform: scale(1.1);
+}
+.bbm:hover{
+  /* opacity: 0.5; */
+  -webkit-transition: content 2s ease-out;
+  content: url('/asset/extra/polabadan/melengkung.png');
+  background-image: none!important;
+  transform: scale(1.1);
+}
+.lenganNormal:hover{
+  content: url('/asset/extra/kuning2.png');
+  -webkit-transition: content 2s ease-out;
+  background-image: none!important;
+  transform: scale(1.1);
+}
+.raglan:hover{
+  content: url('/asset/extra/kuning1.png');
+  -webkit-transition: content 2s ease-out;
+  background-image: none!important;
+  transform: scale(1.1);
 }
 /* end radio btn */
 

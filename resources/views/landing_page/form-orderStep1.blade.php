@@ -229,18 +229,18 @@
             <form>
             <div class="form-note">
                 <div class="row">
-                  <div class="field">
-                    <div class="title-note">Normal (Free)
-                    </div>
-                    <img src="{{asset('/asset/polabadan/belakangNormal.png')}}" alt="Product 1" class="img-note pbnormal clickable-image" data-image="Non-Print">
+                  <div class="fieldjk" style="padding-top: 1rem;">
+                    <input type="radio" id="pb1" name="pola_badan" >
+                    <label for="pb1" class="img-notejk pbnormal w-25" style="background-image: url('{{ asset('/asset/polabadan/belakangNormal.png') }}');"></label>
+                    <label >Normal (Free)</label>
                   </div>
                 </div>
                 
                 <div class="row">
-                  <div class="field">
-                    <div class="title-note">Badan bawah melengkung (+15,000)
-                    </div>
-                    <img src="{{asset('/asset/polabadan/belakang.png')}}" alt="Product 2" class="img-note bbm clickable-image" data-image="Full-Print">
+                  <div class="fieldjk" style="padding-top: 1rem;">
+                    <input type="radio" id="pb2" name="pola_badan" >
+                    <label for="pb2" class="img-notejk bbm w-25" style="background-image: url('{{ asset('/asset/polabadan/belakang.png') }}');"></label>
+                    <label >Badan bawah melengkung (+15,000)</label>
                   </div>
                 </div>
               </div>
@@ -256,20 +256,20 @@
             <form>
             <div class="form-note">
                 <div class="row">
-                  <div class="field">
-                    <div class="title-note">Normal (Free)
-                    </div>
-                    <img src="{{asset('/asset/extra/putih2.png')}} "class="img-note w-25 lenganNormal" alt="putih1">
+                  <div class="fieldjk" style="padding-top: 1rem;">
+                    <input type="radio" id="pl1" name="pola_lengan" >
+                    <label for="pl1" class="img-notejk lenganNormal w-25" style="background-image: url('{{ asset('/asset/extra/putih2.png') }}');"></label>
+                    <label >Normal (Free)</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="fieldjk" style="padding-top: 1rem;">
+                    <input type="radio" id="pl2" name="pola_lengan" >
+                    <label for="pl2" class="img-notejk raglan w-25" style="background-image: url('{{ asset('/asset/extra/putih1.png') }}');"></label>
+                    <label >Raglan (+15,000)</label>
                   </div>
                 </div>
                 
-                <div class="row">
-                  <div class="field">
-                    <div class="title-note">Raglan (+15,000)
-                    </div>
-                    <img src="{{asset('/asset/extra/putih1.png')}}" class="img-note w-25 raglan" alt="putih2">
-                  </div>
-                </div>
               </div>
             </form>
           </div>
@@ -292,14 +292,21 @@
                 <div class="row">
                   <div class="field">
                     <div class="title-note">PRO : VAporknit</div>
-                    <img src="{{asset('/asset/images/jenisbahan/BAHAN - PRO/VAporknit.jpg')}}" class="img-note w-80 align-right" alt="pro">
+                    <input type="radio" id="pro" name="material_pro" >
+                    <label for="pro" class="img-note mp1" style="background-image: url('{{ asset('/asset/images/jenisbahan/BAHAN - PRO/VAporknit.jpg') }}');">
+                      <!-- <img src="{{asset('/asset/images/jenisbahan/BAHAN - PRO/VAporknit.jpg')}}" class="img-note w-80 align-right" alt="pro"> -->
+                    </label>
+                    
                   </div>
                 </div>
                 
                 <div class="row">
                   <div class="field">
                     <div class="title-note">PRO<sup>+</sup> : MOVING KNIT</div>
-                    <img src="{{asset('/asset/material/BAHAN - PROPLUS/proplus.jpg')}}" class="img-note w-80 align-right" alt="pro"> 
+                    <input type="radio" id="proplus" name="material_pro" >
+                    <label for="proplus" class="img-note mp2" style="background-image: url('{{ asset('/asset/material/BAHAN - PROPLUS/proplus.jpg') }}');">
+                      <!-- <img src="{{asset('/asset/material/BAHAN - PROPLUS/proplus.jpg')}}" class="img-note w-80 align-right" alt="pro">  -->
+                    </label>
                   </div>
                 </div>
               </div>
@@ -317,76 +324,101 @@
                 <div class="row">
                   <div class="field">
                     <div class="title-note">Stadium : Airwalk</div>
-                    <img src="{{asset('/asset/material/stadium/1.jpg')}}" class="img-note w-80 align-right" alt="STADIUM">
+                    <input type="radio" id="stadium1" name="material_stadium" >
+                    <label for="stadium1" class="img-note" style="background-image: url('{{ asset('/asset/material/stadium/1.jpg') }}');">
+                    </label>
                   </div>
                 </div>
-                
                 <div class="row">
                   <div class="field">
                     <div class="title-note">Stadium : EMBROSS STRAW</div>
-                    <img src="{{asset('/asset/material/stadium/2.jpg')}}" class="img-note w-80 align-right" alt="STADIUM">
+                    <input type="radio" id="stadium2" name="material_stadium" >
+                    <label for="stadium2" class="img-note" style="background-image: url('{{ asset('/asset/material/stadium/2.jpg') }}');">
+                    </label>
                   </div>
                 </div>
                 <div class="row">
                   <div class="field">
                     <div class="title-note">Stadium : EMBROSS TOPO</div>
-                    <img src="{{asset('/asset/material/stadium/3.jpg')}}" class="img-note w-80 align-right" alt="STADIUM">
+                    <input type="radio" id="stadium3" name="material_stadium" >
+                    <label for="stadium3" class="img-note" style="background-image: url('{{ asset('/asset/material/stadium/3.jpg') }}');">
+                    </label>
                   </div>
                 </div>
                 <div class="row">
                   <div class="field">
                     <div class="title-note">Stadium : EMBROSS MIX</div>
-                    <img src="{{asset('/asset/material/stadium/4.jpg')}}" class="img-note w-80 align-right" alt="STADIUM">
+                    <input type="radio" id="stadium4" name="material_stadium" >
+                    <label for="stadium4" class="img-note" style="background-image: url('{{ asset('/asset/material/stadium/4.jpg') }}');">
+                    </label>
                   </div>
                 </div>
                 <div class="row">
                   <div class="field">
                     <div class="title-note">Stadium : ERBINA</div>
-                    <img src="{{asset('/asset/material/stadium/5.jpg')}}" class="img-note w-80 align-right" alt="STADIUM">
+                    <input type="radio" id="stadium5" name="material_stadium" >
+                    <label for="stadium5" class="img-note" style="background-image: url('{{ asset('/asset/material/stadium/5.jpg') }}');">
+                    </label>
                   </div>
                 </div>
                 <div class="row">
                   <div class="field">
                     <div class="title-note">Stadium : MILANO</div>
-                    <img src="{{asset('/asset/material/stadium/6.jpg')}}" class="img-note w-80 align-right" alt="STADIUM">
+                    <input type="radio" id="stadium6" name="material_stadium" >
+                    <label for="stadium6" class="img-note" style="background-image: url('{{ asset('/asset/material/stadium/6.jpg') }}');">
+                    </label>
                   </div>
                 </div>
                 <div class="row">
                   <div class="field">
                     <div class="title-note">Stadium : PUMA</div>
-                    <img src="{{asset('/asset/material/stadium/7.jpg')}}" class="img-note w-80 align-right" alt="STADIUM">
+                    <input type="radio" id="stadium7" name="material_stadium" >
+                    <label for="stadium7" class="img-note" style="background-image: url('{{ asset('/asset/material/stadium/7.jpg') }}');">
+                    </label>
                   </div>
                 </div>
                 <div class="row">
                   <div class="field">
                     <div class="title-note">Stadium : RATHEN - TECH</div>
-                    <img src="{{asset('/asset/material/stadium/8.jpg')}}" class="img-note w-80 align-right" alt="STADIUM">
+                    <input type="radio" id="stadium8" name="material_stadium" >
+                    <label for="stadium8" class="img-note" style="background-image: url('{{ asset('/asset/material/stadium/8.jpg') }}');">
+                    </label>
                   </div>
                 </div>
                 <div class="row">
                   <div class="field">
                     <div class="title-note">Stadium : RHABIT</div>
-                    <img src="{{asset('/asset/material/stadium/9.jpg')}}" class="img-note w-80 align-right" alt="STADIUM">
+                    <input type="radio" id="stadium9" name="material_stadium" >
+                    <label for="stadium9" class="img-note" style="background-image: url('{{ asset('/asset/material/stadium/9.jpg') }}');">
+                    </label>
                   </div>
                 </div>
                 <div class="row">
                   <div class="field">
                     <div class="title-note">Stadium : SMASH</div>
-                    <img src="{{asset('/asset/material/stadium/10.jpg')}}" class="img-note w-80 align-right" alt="STADIUM">
+                    <input type="radio" id="stadium10" name="material_stadium" >
+                    <label for="stadium10" class="img-note" style="background-image: url('{{ asset('/asset/material/stadium/10.jpg') }}');">
+                    </label>
                   </div>
                 </div>
                 <div class="row">
                   <div class="field">
                     <div class="title-note">Stadium : SULKUL</div>
-                    <img src="{{asset('/asset/material/stadium/11.jpg')}}" class="img-note w-80 align-right" alt="STADIUM">
+                    <input type="radio" id="stadium11" name="material_stadium" >
+                    <label for="stadium11" class="img-note" style="background-image: url('{{ asset('/asset/material/stadium/11.jpg') }}');">
+                    </label>
                   </div>
                 </div>
                 <div class="row">
                   <div class="field">
                     <div class="title-note">Stadium : WAFE</div>
-                    <img src="{{asset('/asset/material/stadium/12.jpg')}}" class="img-note w-80 align-right" alt="STADIUM">
+                    <input type="radio" id="stadium12" name="material_stadium" >
+                    <label for="stadium12" class="img-note" style="background-image: url('{{ asset('/asset/material/stadium/12.jpg') }}');">
+                    </label>
                   </div>
                 </div>
+               
+               
               </div>
             </form>
           </div>
@@ -401,7 +433,7 @@
             <form>
               <div class="form-note4">
                 <div class="row">
-                  <div class="fieldjk" style="padding: 0;">
+                  <div class="fieldjk" style="padding-top: 1rem;">
                     <input type="radio" id="kerah1" name="jenis_kerah" >
                     <label for="kerah1" class="img-notejk C1 w-25" style="background-image: url('{{ asset('/asset/extra/casual/C-1.png') }}');"></label>
 
@@ -537,19 +569,20 @@
             <form>
               <div class="col2-order1" style="width:70rem;">
                 <div class="row">
-                  <div class="field" style="padding:0;">
+                  <div class="field-p" style="padding:0;">
                     <div class="row">
-                      <div class="field small">
+                      <div class="field-p small">
                         <div class="title">
                           <input type="radio" name="sponsorType" id="printingFree" value="printingFree">
-                          <label for="printingFree">Printing (Free)</label>
-                        <br>
-                        <small>kategori Half - Print dan Full - Print</small>
+                          <label for="printingFree">Printing (Free)
+                            <br>
+                            <small>kategori Half - Print dan Full - Print</small></label>
+                        
                         </div>
                       </div>
                     </div>
                     <div class="row">
-                      <div class="field small">
+                      <div class="field-p small">
                         <div class="title">
                           <input type="radio" name="sponsorType" id="tulisanPolifek1" value="tulisanPolifek1">
                           <label for="tulisanPolifek1">Tulisan polifek 1 warna 1 baris (Free)</label>
@@ -558,7 +591,7 @@
                       </div>
                     </div>
                     <div class="row">
-                      <div class="field small">
+                      <div class="field-p small">
                         <div class="title">
                           <input type="radio" name="sponsorType" id="extraTulisanPolifek" value="extraTulisanPolifek">
                           <label for="extraTulisanPolifek">Extra tulisan polifek 1 warna 1 baris (+10,000)</label>
@@ -567,7 +600,7 @@
                       </div>
                     </div>
                     <div class="row">
-                      <div class="field small">
+                      <div class="field-p small">
                         <div class="title">
                           <input type="radio" name="sponsorType" id="logoTulisanPolifek" value="logoTulisanPolifek">
                           <label for="logoTulisanPolifek">Logo + tulisan polifek 1 warna 1 baris (+35,000)</label>
@@ -576,7 +609,7 @@
                       </div>
                     </div>
                     <div class="row">
-                      <div class="field small">
+                      <div class="field-p small">
                         <div class="title">
                           <input type="radio" name="sponsorType" id="extraTulisanPolifekWarna" value="extraTulisanPolifekWarna">
                           <label for="extraTulisanPolifekWarna">Extra tulisan polifek 1 warna (+45,000)</label>
@@ -599,9 +632,9 @@
             <form>
               <div class="col2-order1" style="width:70rem;">
                 <div class="row">
-                  <div class="field" style="padding:0;">
+                  <div class="field-p" style="padding:0;">
                     <div class="row">
-                      <div class="field small">
+                      <div class="field-p small">
                         <div class="title">
                           <input type="radio" name="lenganType" id="extraLogoDTF" value="extraLogoDTF">
                           <label for="extraLogoDTF">Extra logo DTF (+15,000)</label>
@@ -610,7 +643,7 @@
                       </div>
                     </div>
                     <div class="row">
-                      <div class="field small">
+                      <div class="field-p small">
                         <div class="title">
                           <input type="radio" name="lenganType" id="extraTulisan1Baris" value="extraTulisan1Baris">
                           <label for="extraTulisan1Baris">Extra tulisan 1 baris (+10,000)</label>

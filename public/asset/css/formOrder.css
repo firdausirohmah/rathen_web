@@ -215,6 +215,11 @@ input[type=text] {
   padding-right: 30px;
   width: 50%;
 }
+.field-bahan {
+  padding-top: 15px;
+  padding-right: 30px;
+  width: 50%;
+}
 
 .field.small {
   width: auto;
@@ -544,11 +549,11 @@ input[type=text] {
   transform: scale(1.03);
 }
 
-.field input[type="radio"] {
+.field-bahan input[type="radio"] {
   display: none; /* Hide the actual radio button */
 }
 
-.field label {
+.field-bahan label {
   cursor: pointer;
   position: relative;
   display: inline-block;
@@ -559,13 +564,13 @@ input[type=text] {
   border-radius: 8px;
 }
 
-.field input[type="radio"]:checked + label {
-  /* transform: scale(1.05); */
+.field-bahan input[type="radio"]:checked + label {
+  transform: scale(1.05);
   border: 2px solid #000; /* Set a border for visual indication */
 }
 
 /* Additional styling for hover effect */
-.field label:hover {
+.field-bahan label:hover {
   border: 2px solid #000; /* Change border color on hover */
 }
 

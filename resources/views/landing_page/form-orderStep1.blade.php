@@ -290,7 +290,7 @@
             <form>
             <div class="form-note">
                 <div class="row">
-                  <div class="field">
+                  <div class="field-bahan">
                     <div class="title-note">PRO : VAporknit</div>
                     <input type="radio" id="pro" name="material_pro" >
                     <label for="pro" class="img-note mp1" style="background-image: url('{{ asset('/asset/images/jenisbahan/BAHAN - PRO/VAporknit.jpg') }}');">
@@ -301,7 +301,7 @@
                 </div>
                 
                 <div class="row">
-                  <div class="field">
+                  <div class="field-bahan">
                     <div class="title-note">PRO<sup>+</sup> : MOVING KNIT</div>
                     <input type="radio" id="proplus" name="material_pro" >
                     <label for="proplus" class="img-note mp2" style="background-image: url('{{ asset('/asset/material/BAHAN - PROPLUS/proplus.jpg') }}');">
@@ -322,7 +322,7 @@
             <form>
             <div class="form-note">
                 <div class="row">
-                  <div class="field">
+                  <div class="field-bahan">
                     <div class="title-note">Stadium : Airwalk</div>
                     <input type="radio" id="stadium1" name="material_stadium" >
                     <label for="stadium1" class="img-note" style="background-image: url('{{ asset('/asset/material/stadium/1.jpg') }}');">
@@ -330,7 +330,7 @@
                   </div>
                 </div>
                 <div class="row">
-                  <div class="field">
+                  <div class="field-bahan">
                     <div class="title-note">Stadium : EMBROSS STRAW</div>
                     <input type="radio" id="stadium2" name="material_stadium" >
                     <label for="stadium2" class="img-note" style="background-image: url('{{ asset('/asset/material/stadium/2.jpg') }}');">
@@ -338,7 +338,7 @@
                   </div>
                 </div>
                 <div class="row">
-                  <div class="field">
+                  <div class="field-bahan">
                     <div class="title-note">Stadium : EMBROSS TOPO</div>
                     <input type="radio" id="stadium3" name="material_stadium" >
                     <label for="stadium3" class="img-note" style="background-image: url('{{ asset('/asset/material/stadium/3.jpg') }}');">
@@ -346,7 +346,7 @@
                   </div>
                 </div>
                 <div class="row">
-                  <div class="field">
+                  <div class="field-bahan">
                     <div class="title-note">Stadium : EMBROSS MIX</div>
                     <input type="radio" id="stadium4" name="material_stadium" >
                     <label for="stadium4" class="img-note" style="background-image: url('{{ asset('/asset/material/stadium/4.jpg') }}');">
@@ -354,7 +354,7 @@
                   </div>
                 </div>
                 <div class="row">
-                  <div class="field">
+                  <div class="field-bahan">
                     <div class="title-note">Stadium : ERBINA</div>
                     <input type="radio" id="stadium5" name="material_stadium" >
                     <label for="stadium5" class="img-note" style="background-image: url('{{ asset('/asset/material/stadium/5.jpg') }}');">
@@ -362,7 +362,7 @@
                   </div>
                 </div>
                 <div class="row">
-                  <div class="field">
+                  <div class="field-bahan">
                     <div class="title-note">Stadium : MILANO</div>
                     <input type="radio" id="stadium6" name="material_stadium" >
                     <label for="stadium6" class="img-note" style="background-image: url('{{ asset('/asset/material/stadium/6.jpg') }}');">
@@ -370,7 +370,7 @@
                   </div>
                 </div>
                 <div class="row">
-                  <div class="field">
+                  <div class="field-bahan">
                     <div class="title-note">Stadium : PUMA</div>
                     <input type="radio" id="stadium7" name="material_stadium" >
                     <label for="stadium7" class="img-note" style="background-image: url('{{ asset('/asset/material/stadium/7.jpg') }}');">
@@ -378,7 +378,7 @@
                   </div>
                 </div>
                 <div class="row">
-                  <div class="field">
+                  <div class="field-bahan">
                     <div class="title-note">Stadium : RATHEN - TECH</div>
                     <input type="radio" id="stadium8" name="material_stadium" >
                     <label for="stadium8" class="img-note" style="background-image: url('{{ asset('/asset/material/stadium/8.jpg') }}');">
@@ -386,7 +386,7 @@
                   </div>
                 </div>
                 <div class="row">
-                  <div class="field">
+                  <div class="field-bahan">
                     <div class="title-note">Stadium : RHABIT</div>
                     <input type="radio" id="stadium9" name="material_stadium" >
                     <label for="stadium9" class="img-note" style="background-image: url('{{ asset('/asset/material/stadium/9.jpg') }}');">
@@ -394,7 +394,7 @@
                   </div>
                 </div>
                 <div class="row">
-                  <div class="field">
+                  <div class="field-bahan">
                     <div class="title-note">Stadium : SMASH</div>
                     <input type="radio" id="stadium10" name="material_stadium" >
                     <label for="stadium10" class="img-note" style="background-image: url('{{ asset('/asset/material/stadium/10.jpg') }}');">
@@ -402,7 +402,7 @@
                   </div>
                 </div>
                 <div class="row">
-                  <div class="field">
+                  <div class="field-bahan">
                     <div class="title-note">Stadium : SULKUL</div>
                     <input type="radio" id="stadium11" name="material_stadium" >
                     <label for="stadium11" class="img-note" style="background-image: url('{{ asset('/asset/material/stadium/11.jpg') }}');">
@@ -410,7 +410,7 @@
                   </div>
                 </div>
                 <div class="row">
-                  <div class="field">
+                  <div class="field-bahan">
                     <div class="title-note">Stadium : WAFE</div>
                     <input type="radio" id="stadium12" name="material_stadium" >
                     <label for="stadium12" class="img-note" style="background-image: url('{{ asset('/asset/material/stadium/12.jpg') }}');">

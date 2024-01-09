@@ -114,7 +114,7 @@ Route::controller(PesananController::class)->group(function () {
     Route::get('/invoice', 'invoice')->name('invoice');
     Route::get('/export', 'export')->name('export');
 
-    Route::get('/form/orderStep5')->name('invoice');
+    // Route::get('/invoice')->name('invoice');
     // Route::get('/form-1/orderNew', 'orderNew')->name('orderNew');
 });
 

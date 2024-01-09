@@ -36,13 +36,13 @@
           Step Order
         </div>
         <div class="payment__types">
-          <a class="payment__type payment__type--cc" href="/form/orderStep2">
+          <a class="payment__type payment__type--cc" href="{{ url('/form-2') }}">
             <i class="icon icon-picture"></i>Design</a>
-          <a class="payment__type payment__type--paypal" href="/form/orderStep3">
+          <a class="payment__type payment__type--paypal" href="{{ url('/form-3') }}">
             <i class="icon icon-pencil"></i>Spesifikasi</a>
-          <a class="payment__type payment__type--paypal" href="/form/orderStep4">
+          <a class="payment__type payment__type--paypal" href="{{ url('/form-4') }}">
             <i class="icon icon-docs"></i>Form Data</a>
-          <a class="payment__type payment__type--paypal active" href="/form/orderStep5">
+          <a class="payment__type payment__type--paypal active" href="{{ url('/invoice') }}">
             <i class="icon icon-note"></i>Invoice</a>
         </div>
 
@@ -312,6 +312,7 @@
               <a href="{{ route('export') }}" class="btn action__submit">Download
                 <i class="icon icon-cloud-download"></i>
               </a>
+              <a href="/page-custom" class="backBtn">Go Back to Rathen</a>
             </div>
           </div>
           <!-- <div class="payment__shipping">
@@ -333,7 +334,7 @@
         <a href="/form/orderStep5" class="btn action__submit hidden">Next
           <i class="icon icon-arrow-right-circle"></i>
         </a>
-        <a href="/form/orderStep3" class="backBtn">Go Back to Form Data</a>
+        <a href="{{ url('/form-4') }}" class="backBtn">Go Back to Form Data</a>
       </div>
   </section>
   </div>

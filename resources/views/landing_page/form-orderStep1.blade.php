@@ -76,28 +76,85 @@
                   <div class="field">
                     <div class="title">Tipe kualitas
                     </div>
-                    <input type="text" class="input txt" value="{{ $data->kualitas }}" name="kualitas" disabled/>
+                    <input type="text" class="input txt" value="{{ $data->kualitas }}" name="kualitas" readonly/>
                   </div>
                 </div>
                 <div class="row p-">
                   <div class="field">
                     <div class="title">Harga
                     </div>
-                    <input type="text" class="input txt" name="harga" value='Rp {{ number_format($data->harga, 0, ",", ",") }} /pcs' disabled/>
+                    <!-- Untuk menampilkan nilai yang diformat -->
+                    <div type="text" id="formattedValue" class="p-12 input txt">Rp {{ number_format($data->harga, 0, ",", ",") }} /pcs</div>
+
+                    <!-- Elemen input tersembunyi untuk menyimpan nilai yang tidak diformat -->
+                    <input type="hidden" name="harga" id="rawHarga" value='{{ $data->harga }}' readonly/>
+
+                    <!-- <input type="text" class="input txt" name="harga" value='{{ $data->harga}}' id="hargaInput" readonly/> -->
                   </div>
                 </div>
                 <div class="row">
                   <div class="field">
                     <div class="title">Jumlah pesanan
                     </div>
-                    <input type="text" class="input txt" name="jp" value='{{ $qty }} pcs' disabled/>
+                    <!-- Display the formatted value -->
+                    <div id="formattedQty" class="input txt p-12"> {{ $qty }} pcs</div>
+
+                    <!-- Hidden input to store the raw value -->
+                    <input type="hidden" name="jp" id="rawQty" value='{{ $qty }}' readonly/>
+
+                    <!-- <input type="text" class="input txt" name="jp" value='{{ $qty }}' readonly/> -->
                   </div>
                 </div>
+                
+                <script>
+                    // Mendapatkan elemen HTML
+                    var formattedValueElement = document.getElementById('formattedValue');
+                    var rawHargaInput = document.getElementById('rawHarga');
+
+                    // Mengaktifkan nilai awal
+                    formattedValueElement.innerText = 'Rp ' + numberFormat(rawHargaInput.value) + ' /pcs';
+
+                    // Fungsi untuk memformat nilai
+                    function numberFormat(value) {
+                        return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                    }
+
+                    // Menambahkan event listener untuk mengubah nilai saat diperlukan
+                    rawHargaInput.addEventListener('change', function () {
+                        formattedValueElement.innerText = 'Rp ' + numberFormat(rawHargaInput.value) + ' /pcs';
+                    });
+                </script>
+
+                <script>
+                  // Get HTML elements
+                  var formattedQtyElement = document.getElementById('formattedQty');
+                  var rawQtyInput = document.getElementById('rawQty');
+
+                  // Enable initial value
+                  formattedQtyElement.innerText = numberFormat(rawQtyInput.value) + ' pcs';
+
+                  // Function to format the value
+                  function numberFormat(value) {
+                      return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                  }
+
+                  // Add event listener to update the display value when needed
+                  rawQtyInput.addEventListener('change', function () {
+                      formattedQtyElement.innerText = numberFormat(rawQtyInput.value) + ' pcs';
+                  });
+              </script>
+
+
+
+                <?php if ($data->kualitas == 'PRO') {
+                  $data->deskripsi = '-';
+                } ?>
+                
                 <div class="row">
                   <div class="field">
                     <div class="title">Kategori harga
                     </div>
-                    <input type="text" class="input txt" value='{{ $data->deskripsi }}' name="kategori" disabled/>
+                    <input type="text" class="input txt" value='{{ $data->deskripsi }}' name="kategori" readonly/>
                   </div>
                 </div>
 

@@ -47,7 +47,7 @@ class PesananController extends Controller
             ->get();
         // dd($data);
         foreach ($data as $pesanan) { 
-            return view('landing_page.form-2', [
+            return view('landing_page.form-orderStep2', [
                 'data' => $pesanan,
                 'kode' => $kode, 
             ]);
@@ -193,7 +193,7 @@ class PesananController extends Controller
             ->get();
         
         foreach ($data as $step3){ 
-            return view('landing_page.form-3', [
+            return view('landing_page.form-orderStep3', [
                 'data' => $step3,
             ]);
         }
@@ -212,7 +212,7 @@ class PesananController extends Controller
         }
         // dd($status);
 
-            return view('landing_page.form-4', [
+            return view('landing_page.form-orderStep4', [
                 'pesanan' => $data, 
                 'kode' => $kode,
                 'sukses' => $status,
@@ -221,7 +221,7 @@ class PesananController extends Controller
     }
     public function downloadPdf()
 {
-    $file = public_path('file\Format-Ukuran.pdf');
+    $file = public_path('file/Format-Ukuran.pdf');
 
     return response()->download($file, 'Format-Ukuran.pdf');
 }

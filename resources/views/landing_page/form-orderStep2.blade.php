@@ -32,13 +32,13 @@
           Step Order
         </div>
         <div class="payment__types">
-          <a class="payment__type payment__type--cc active" href="/form/orderStep2">
+          <a class="payment__type payment__type--cc active" href="{{ url('/form-2') }}">
             <i class="icon icon-picture"></i>Design Logo</a>
-          <a class="payment__type payment__type--paypal" href="/form/orderStep3">
+          <a class="payment__type payment__type--paypal" href="{{ url('/form-3') }}">
             <i class="icon icon-pencil"></i>Spesifikasi</a>
-          <a class="payment__type payment__type--paypal" href="/form/orderStep4">
+          <a class="payment__type payment__type--paypal" href="{{ url('/form-4') }}">
             <i class="icon icon-docs"></i>Form Data</a>
-          <a class="payment__type payment__type--paypal" href="/form/orderStep5">
+          <a class="payment__type payment__type--paypal" href="{{ url('/invoice') }}">
             <i class="icon icon-note"></i>Invoice</a>
         </div>
 
@@ -47,19 +47,21 @@
             <div class="payment__title fw-6">
               <i class="icon icon-picture"></i>Design dan Logo
             </div>
-            <form>
+            <form action="{{ route('upload') }}" id="upload" method="post" enctype="multipart/form-data">
+              @csrf
               <div class="form__cc">
                 <div class="row">
                   <div class="field">
-                    <div class="title">Design jersey pemain
+                    <div class="title">Design jersey pemain*
                     </div>
                     <div class="form-uploads w-17">
-                      <div class="form-upload payment__type--cc">
-                        <label for="fileInput1" id="customLabel1" class="customLabel" style="margin-right: 10px;">
-                          <i class="icon icon-cloud-upload"></i>Upload
-                          <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput1" name="djp" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" required>
-                        </label>
-                      </div>
+                    <label for="fileInput1" id="customLabel1" class="customLabel" style="width:20rem;">
+                        <div class="form-upload payment__type--cc">
+                            <i class="icon icon-cloud-upload"></i>Upload
+                            <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput1" name="djp" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" required
+                                  onchange="updateFileName('fileInput1')">
+                        </div>
+                    </label>
                     </div>
                     <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes">(format file : .cdr./.ai/.pdf/.jpg)</small>
                     <!-- <input type="text" class="input txt text-validated" value='Upload' /> -->
@@ -67,15 +69,16 @@
                 </div>
                 <div class="row">
                   <div class="field">
-                    <div class="title">Design jersey kiper
+                    <div class="title">Design jersey kiper*
                     </div>
                     <div class="form-uploads w-17">
-                      <div class="form-upload payment__type--cc">
-                        <label for="fileInput2" id="customLabel2" class="customLabel" style="margin-right: 10px;">
-                          <i class="icon icon-cloud-upload"></i>Upload
-                          <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput2" name="djk" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" required>
-                        </label>
-                      </div>
+                    <label for="fileInput2" id="customLabel2" class="customLabel" style="width:20rem;">
+                        <div class="form-upload payment__type--cc">
+                            <i class="icon icon-cloud-upload"></i>Upload
+                            <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput2" name="djk" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" required
+                                  onchange="updateFileName('fileInput2')">
+                        </div>
+                    </label>
                     </div>
                     <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes">(format file : .cdr./.ai/.pdf/.jpg)</small>
                     <!-- <input type="text" class="input txt text-validated" value='Upload' /> -->
@@ -83,13 +86,14 @@
                 </div>
                 <div class="row">
                   <div class="field">
-                    <div class="title">Logo tim
+                    <div class="title">Logo tim*
                     </div>
                     <div class="form-uploads w-17">
-                      <div class="form-upload payment__type--cc">
-                        <label for="fileInput3" id="customLabel3" class="customLabel" style="margin-right: 10px;">
-                          <i class="icon icon-cloud-upload"></i>Upload</div>
-                          <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput3" name="lt" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" required>
+                        <label for="fileInput3" id="customLabel3" class="customLabel" style="width:20rem;">
+                          <div class="form-upload payment__type--cc">
+                            <i class="icon icon-cloud-upload"></i>Upload</div>
+                            <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput3" name="djk" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" required
+                                  onchange="updateFileName('fileInput3')">
                         </label>
                     </div>
                     <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes">(format file : .cdr./.ai/.pdf/.jpg)</small>
@@ -101,10 +105,13 @@
                     <div class="title">Sponsor dada (tulisan 1 baris)
                     </div>
                     <div class="form-uploads w-17">
-                      <div class="form-upload payment__type--cc">
-                        <label for="fileInput4" id="customLabel4" class="customLabel" style="margin-right: 10px;">
-                          <i class="icon icon-cloud-upload"></i>Upload</div>
-                          <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput4" name="sdd" class="fileInput form-control fw-lighter hidden" placeholder="Upload File">
+                        <label for="fileInput4" id="customLabel4" class="customLabel" style="width:20rem;">
+                          <div class="form-upload payment__type--cc">
+                            <i class="icon icon-cloud-upload"></i>Upload</div>
+                            <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput4" name="djk" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" 
+                                  onchange="updateFileName('fileInput4')">
+                            <!-- <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput4" name="sdd" class="fileInput form-control fw-lighter hidden" placeholder="Upload File"> -->
+                          
                         </label>
                     </div>
                     <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes">(format file : .cdr./.ai/.pdf/.jpg)</small><br>
@@ -117,10 +124,12 @@
                     <div class="title">Sponsor dada (logo + tulisan)
                     </div>
                     <div class="form-uploads w-17">
-                      <div class="form-upload payment__type--cc">
-                        <label for="fileInput5" id="customLabel5" class="customLabel" style="margin-right: 10px;">
-                          <i class="icon icon-cloud-upload"></i>Upload</div>
-                          <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput5" name="sd" class="fileInput form-control fw-lighter hidden" placeholder="Upload File">
+                        <label for="fileInput5" id="customLabel5" class="customLabel" style="width:20rem;">
+                          <div class="form-upload payment__type--cc">
+                              <i class="icon icon-cloud-upload"></i>Upload</div>
+                              <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput5" name="djk" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" 
+                                  onchange="updateFileName('fileInput5')">
+                              <!-- <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput5" name="sd" class="fileInput form-control fw-lighter hidden" placeholder="Upload File"> -->
                         </label>
                     </div>
                     <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes">(format file : .cdr./.ai/.pdf/.jpg) </small> <br>
@@ -130,7 +139,6 @@
                 </div>
 
               </div>
-            </form>
           </div>
           <div class="payment__order2">
             <div class="payment__title fw-6">
@@ -141,10 +149,12 @@
                 <div class="title">Sponsor dada (tulisan 1 baris)
                 </div>
                 <div class="form-uploads">
-                  <div class="form-upload payment__type--cc">
-                    <label for="fileInput6" id="customLabel6" class="customLabel" style="margin-right: 10px;">
+                    <label for="fileInput6" id="customLabel6" class="customLabel" style="width:20rem;">
+                      <div class="form-upload payment__type--cc">
                       <i class="icon icon-cloud-upload"></i>Upload</div>
-                      <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput6" name="t1b" class="fileInput form-control fw-lighter hidden" placeholder="Upload File">
+                      <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput6" name="djk" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" 
+                                  onchange="updateFileName('fileInput6')">
+                      <!-- <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput6" name="t1b" class="fileInput form-control fw-lighter hidden" placeholder="Upload File"> -->
                     </label>
                 </div>
                 <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes">(format file : .cdr./.ai/.pdf/.jpg)</small><br>
@@ -157,10 +167,12 @@
                 <div class="title">Sponsor dada (logo + tulisan)
                 </div>
                 <div class="form-uploads">
-                  <div class="form-upload payment__type--cc">
-                    <label for="fileInput7" id="customLabel7" class="customLabel" style="margin-right: 10px;">
+                    <label for="fileInput7" id="customLabel7" class="customLabel" style="width:20rem;">
+                    <div class="form-upload payment__type--cc">
                       <i class="icon icon-cloud-upload"></i>Upload</div>
-                      <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput7" name="ltt" class="fileInput form-control fw-lighter hidden" placeholder="Upload File">
+                      <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput7" name="djk" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" 
+                                  onchange="updateFileName('fileInput7')">
+                      <!-- <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput7" name="ltt" class="fileInput form-control fw-lighter hidden" placeholder="Upload File"> -->
                     </label>
                 </div>
                 <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes">(format file : .cdr./.ai/.pdf/.jpg)</small><br>
@@ -173,10 +185,12 @@
                 <div class="title">Logo di lengan kanan
                 </div>
                 <div class="form-uploads">
-                  <div class="form-upload payment__type--cc">
-                    <label for="fileInput8" id="customLabel8" class="customLabel" style="margin-right: 10px;">
+                    <label for="fileInput8" id="customLabel8" class="customLabel" style="width:20rem;">
+                    <div class="form-upload payment__type--cc">
                       <i class="icon icon-cloud-upload"></i>Upload</div>
-                      <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput8" name="lk" class="fileInput form-control fw-lighter hidden" placeholder="Upload File">
+                      <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput8" name="djk" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" 
+                                  onchange="updateFileName('fileInput8')">
+                      <!-- <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput8" name="lk" class="fileInput form-control fw-lighter hidden" placeholder="Upload File"> -->
                     </label>
                 </div>
                 <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes">(format file : .cdr./.ai/.pdf/.jpg)</small><br>
@@ -189,10 +203,12 @@
                 <div class="title">Logo di lengan kanan kiri
                 </div>
                 <div class="form-uploads">
-                  <div class="form-upload payment__type--cc">
-                    <label for="fileInput9" id="customLabel9" class="customLabel" style="margin-right: 10px;">
+                    <label for="fileInput9" id="customLabel9" class="customLabel" style="width:20rem;">
+                    <div class="form-upload payment__type--cc">
                       <i class="icon icon-cloud-upload"></i>Upload</div>
-                      <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput9" name="llk" class="fileInput form-control fw-lighter hidden" placeholder="Upload File">
+                      <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput9" name="djk" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" 
+                                  onchange="updateFileName('fileInput9')">
+                      <!-- <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput9" name="llk" class="fileInput form-control fw-lighter hidden" placeholder="Upload File"> -->
                     </label>
                 </div>
                 <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes">(format file : .cdr./.ai/.pdf/.jpg)</small><br>
@@ -205,10 +221,12 @@
                 <div class="title">Sponsor belakang (tulisan 1 baris)
                 </div>
                 <div class="form-uploads">
-                  <div class="form-upload payment__type--cc">
-                    <label for="fileInput10" id="customLabel0" class="customLabel" style="margin-right: 10px;">
+                    <label for="fileInput10" id="customLabel0" class="customLabel" style="width:20rem;">
+                    <div class="form-upload payment__type--cc">
                       <i class="icon icon-cloud-upload"></i>Upload</div>
-                      <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput10" name="sbt" class="fileInput form-control fw-lighter hidden" placeholder="Upload File">
+                      <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput10" name="djk" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" 
+                                  onchange="updateFileName('fileInput10')">
+                      <!-- <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput10" name="sbt" class="fileInput form-control fw-lighter hidden" placeholder="Upload File"> -->
                     </label>
                 </div>
                 <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes">(format file : .cdr./.ai/.pdf/.jpg)</small><br>
@@ -221,10 +239,12 @@
                 <div class="title">Sponsor belakang (logo + tulisan)
                 </div>
                 <div class="form-uploads">
-                  <div class="form-upload payment__type--cc">
-                    <label for="fileOrder1" id="OrderLabel1" class="customLabel" style="margin-right: 10px;">
+                    <label for="fileOrder1" id="OrderLabel1" class="customLabel" style="width:20rem;">
+                    <div class="form-upload payment__type--cc">
                       <i class="icon icon-cloud-upload"></i>Upload</div>
-                      <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileOrder1" name="sblt" class="fileInput form-control fw-lighter hidden" placeholder="Upload File">
+                      <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileOrder1" name="djk" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" 
+                                  onchange="updateFileName('fileOrder1')">
+                      <!-- <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileOrder1" name="sblt" class="fileInput form-control fw-lighter hidden" placeholder="Upload File"> -->
                     </label>
                 </div>
                 <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes">(format file : .cdr./.ai/.pdf/.jpg)</small> <br>
@@ -246,15 +266,30 @@
     <div class="container">
       <div class="actions pt250">
 
-        <a href="/form/orderStep3" class="btn action__submit">Next
+        <button type="submit" href="/form/orderStep3" class="btn action__submit">Next
           <i class="icon icon-arrow-right-circle"></i>
-        </a>
-        <a href="/form/orderStep1" class="backBtn">Go Back to Form Order</a>
+        </button>
+        <!-- <a href="/form/orderStep1" class="backBtn">Go Back to Form Order</a> -->
 
       </div>
+    </form>
   </section>
   </div>
 <!-- partial -->
+<script>
+    function updateFileName(inputId) {
+        const input = document.getElementById(inputId);
+        const label = input.closest('label');
+
+        if (input.files.length > 0) {
+            label.innerText = 'File Selected: ' + input.files[0].name;
+        } else {
+            label.innerText = 'Upload';
+        }
+    }
+</script>
+
+
   
 </body>
 </html>

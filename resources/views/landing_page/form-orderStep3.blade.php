@@ -32,13 +32,13 @@
           Step Order
         </div>
         <div class="payment__types">
-          <a class="payment__type payment__type--cc " href="/form/orderStep2">
+          <a class="payment__type payment__type--cc " href="{{ url('/form-2') }}">
             <i class="icon icon-picture"></i>Design Logo</a>
-          <a class="payment__type payment__type--paypal active" href="/form/orderStep3">
+          <a class="payment__type payment__type--paypal active" href="{{ url('/form-3') }}">
             <i class="icon icon-pencil"></i>Spesifikasi</a>
-          <a class="payment__type payment__type--paypal" href="/form/orderStep4">
+          <a class="payment__type payment__type--paypal" href="{{ url('/form-4') }}">
             <i class="icon icon-docs"></i>Form Data</a>
-          <a class="payment__type payment__type--paypal" href="/form/orderStep5">
+          <a class="payment__type payment__type--paypal" href="{{ url('/invoice') }}">
             <i class="icon icon-note"></i>Invoice</a>
         </div>
 
@@ -47,29 +47,30 @@
             <div class="payment__title fw-6">
               <i class="icon icon-pencil"></i>Spesifikasi
             </div>
-            <form>
+            <form action="{{ route('addForm3') }}" method="POST">
+              @csrf
               <div class="form__cc">
                 <div class="row">
                   <div class="field">
                     <div class="title">Kategori Harga
                     </div>
-                    <input type="text" class="input txt" value='Non Print' disabled/>
+                    <input type="text" class="input txt" value="{{ $data->kategori_harga }}" readonly/>
                   </div>
                 </div>
                 <div class="row">
                   <div class="field">
                     <div class="title">Kualitas
                     </div>
-                    <input type="text" class="input txt" value='Stadium' disabled/>
+                    <input type="text" class="input txt" value="{{ $data->tipe_kualitas }}" readonly/>
                   </div>
                 </div>
                 <div class="row">
                   <div class="field small">
                     <div class="title">Pola lengan
                     </div>
-                    <select class="input ddl">
-                      <option>Normal</option>
-                      <option>Reglan</option>
+                    <select name="pola_lengan" class="input ddl">
+                      <option value="Normal">Normal</option>
+                      <option value="Raglan">Reglan</option>
                     </select>
                     <span class="title">+15,000 pola raglan</span>
                     <!-- <input type="text" class="input ddl" value='(+15,000 pola raglan)' disabled/> -->
@@ -79,7 +80,7 @@
                   <div class="field">
                     <div class="title">Model Kerah
                     </div>
-                    <select class="input ddl w-100">
+                    <select name="model_kerah" class="input ddl w-100">
                       <option value="K.R 01">K.R 01</option>
                       <option value="K.R 02">K.R 02</option>
                       <option value="K.R 03">K.R 03</option>
@@ -100,19 +101,17 @@
                   <div class="field">
                     <div class="title">Bahan baju
                     </div>
-                    <input type="text" class="input txt" value='' />
+                    <input type="text"  name="bb" class="input txt" value='' />
                   </div>
                 </div>
                 <div class="row">
                   <div class="field">
                     <div class="title">Bahan celana
                     </div>
-                    <input type="text" class="input txt" value='' />
+                    <input type="text" name="bc" class="input txt" value='' />
                   </div>
                 </div>
-
               </div>
-            </form>
           </div>
           <div class="payment__shipping">
             <div class="payment__title fw-6">
@@ -201,11 +200,12 @@
 
     <div class="container">
       <div class="actions pt135">
-        <a href="/form/orderStep4" class="btn action__submit">Next
+        <button href="/form/orderStep4" class="btn action__submit">Next
           <i class="icon icon-arrow-right-circle"></i>
-        </a>
-        <a href="/form/orderStep2" class="backBtn">Go Back to Design</a>
+        </button>
+        <a href="{{ url('/form-2') }}" class="backBtn">Go Back to Design</a>
       </div>
+    </form>
   </section>
   </div>
 <!-- partial -->

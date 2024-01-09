@@ -338,6 +338,14 @@
   </section>
   </div>
 <!-- partial -->
+<style>
+  *,
+  *:after,
+  *:before {
+    /* box-sizing: border-box; */
+    overflow-x: visible;
+  }
+</style>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     var modal = document.getElementById('inputDataModal');

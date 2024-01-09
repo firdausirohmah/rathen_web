@@ -2,6 +2,7 @@
 *:after,
 *:before {
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .wp-table tr td ul {
@@ -169,7 +170,7 @@ header {
 }
 .txt2 {
   border-color: #e1e8ee;
-  width: 32%;
+  width: 82px;
 }
 
 .input {
@@ -208,6 +209,11 @@ input[type=text] {
 .title {
   font-size: 16px;
   padding-bottom: 8px;
+}
+.title-flex {
+  font-size: 16px;
+  padding-bottom: 8px;
+  display: flex;
 }
 
 .field {
@@ -543,6 +549,7 @@ input[type=text] {
 }
 .img-note{
   /* filter: grayscale(100%); */
+  margin-left: 20px;
   cursor: pointer;
 }
 .img-note:hover{
@@ -567,7 +574,7 @@ input[type=text] {
 
 .field-bahan input[type="radio"]:checked + label {
   transform: scale(1.05);
-  border: 2px solid #000; /* Set a border for visual indication */
+  border: 3px solid #000; /* Set a border for visual indication */
 }
 
 /* Additional styling for hover effect */
@@ -576,11 +583,13 @@ input[type=text] {
 }
 
 .field-p input[type="radio"] {
-  display: none; /* Hide the actual radio button */
+  display: none; 
 }
 
 .field-p label {
-  padding: 5px;
+  border: 1px solid #ccc;
+  margin-left: 5px;
+  padding: 8px;
   cursor: pointer;
   position: relative;
   display: inline-block;
@@ -716,7 +725,7 @@ input[type=text] {
   padding-top: 50px;
 }
 .form-note{
-  columns: 3;
+  columns: 2;
 }
 .form-note4{
   columns: 4;
@@ -751,14 +760,15 @@ input[type=text] {
 
 .img-notejk {
   /* Set a default size for the image */
-  width: 110px;
-  height: 110px;
+  width: 112px;
+  height: 112px;
   /* border: 2px solid transparent; Border to indicate selection */
   cursor: pointer;
   filter: grayscale();
 }
 .img-notejk:hover {
   filter: none!important;
+  /* width: 13%; */
 }
 /* .fieldjk input[type="radio"] {
   display: none;
@@ -774,7 +784,7 @@ input[type=text] {
   background-size: cover;
   /* Adjust padding for better spacing */
   padding: 5px;
-  width:110px;
+  width:112px;
 }
 .fieldjk input[type="radio"]:checked + .C1{
   /* opacity: 0.5; */
@@ -847,78 +857,127 @@ input[type=text] {
   -webkit-transition: content 2s ease-out;
   content: url('/asset/extra/casual/C-1Kuning.png');
   background-image: none!important;
-  transform: scale(1.1);
+  transform: scale(1.2);
 }
 .C2:hover{
   /* opacity: 0.5; */
   -webkit-transition: content 2s ease-out;
   content: url('/asset/extra/casual/C-2kuning.png');
   background-image: none!important;
-  transform: scale(1.1);
+  transform: scale(1.2);
 }
 .C3:hover{
   /* opacity: 0.5; */
   -webkit-transition: content 2s ease-out;
   content: url('/asset/extra/casual/C-3kuning.png');
   background-image: none!important;
-  transform: scale(1.1);
+  transform: scale(1.2);
 }
 .C4:hover{
   /* opacity: 0.5; */
   -webkit-transition: content 2s ease-out;
   content: url('/asset/extra/casual/C-4kuning.png');
   background-image: none!important;
-  transform: scale(1.1);
+  transform: scale(1.2);
 }
 .C5:hover{
   /* opacity: 0.5; */
   -webkit-transition: content 2s ease-out;
   content: url('/asset/extra/casual/C-5kuning.png');
   background-image: none!important;
-  transform: scale(1.1);
+  transform: scale(1.2);
 }
 .O1:hover{
   /* opacity: 0.5; */
   -webkit-transition: content 2s ease-out;
   content: url('/asset/extra/oneck/O-1akuning.png');
   background-image: none!important;
-  transform: scale(1.1);
+  transform: scale(1.2);
 }
 .O2:hover{
   /* opacity: 0.5; */
   -webkit-transition: content 2s ease-out;
   content: url('/asset/extra/oneck/O-2kuning.png');
   background-image: none!important;
-  transform: scale(1.1);
+  transform: scale(1.2);
 }
 .pbnormal:hover{
   /* opacity: 0.5; */
   -webkit-transition: content 2s ease-out;
   content: url('/asset/extra/polabadan/normal.png');
   background-image: none!important;
-  transform: scale(1.1);
+  transform: scale(1.2);
 }
 .bbm:hover{
   /* opacity: 0.5; */
   -webkit-transition: content 2s ease-out;
   content: url('/asset/extra/polabadan/melengkung.png');
   background-image: none!important;
-  transform: scale(1.1);
+  transform: scale(1.2);
 }
 .lenganNormal:hover{
   content: url('/asset/extra/kuning2.png');
   -webkit-transition: content 2s ease-out;
   background-image: none!important;
-  transform: scale(1.1);
+  transform: scale(1.2);
 }
 .raglan:hover{
   content: url('/asset/extra/kuning1.png');
   -webkit-transition: content 2s ease-out;
   background-image: none!important;
-  transform: scale(1.1);
+  transform: scale(1.2);
 }
 /* end radio btn */
 
+/* btn inc dec number*/
+
+.input-group {
+  border: 1px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  max-width: 130px;
+}
+
+.btn-indec,
+.input-indec {
+  outline: none;
+  border: none;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.input-indec {
+  width: 100%;
+  text-align: center;
+}
+
+.btn-indec {
+  cursor: pointer;
+  background-color: #ddd;
+}
+.btn-indec:nth-last-child(1) {
+  border-bottom-right-radius: 15px;
+  border-top-right-radius: 15px;
+}
+.btn-indec:nth-child(1) {
+  border-bottom-left-radius: 15px;
+  border-top-left-radius: 15px;
+}
+
+.btn-indec:hover {
+  background-color: #e6e6e6;
+}
+.btn-indec:nth-last-child(1):active {
+  box-shadow: inset -4px 5px 10px rgba(0, 0, 0, 0.5);
+}
+.btn-indec:nth-child(1):active {
+  box-shadow: inset 4px 5px 10px rgba(0, 0, 0, 0.5);
+}
+/* end inc dec number */
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {

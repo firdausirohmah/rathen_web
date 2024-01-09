@@ -263,10 +263,21 @@ class PesananController extends Controller
         // $totalHarga = $ref->harga;
         // dd($ref->harga);
         // dd($kd_part,$qty);
+        
+        // foreach ($ref as $rev) {
+        //     $totalHarga = $rev->harga * $qty;
+        //     // dd($totalHarga);
+        //     return view('landing_page.form-order', [
+        //         'pesanan' => $data,
+        //         'data' => $rev,
+        //         'qty' => $qty,
+        //         'total' => $totalHarga,
+        //     ]);
+        // }
         foreach ($ref as $rev) {
             $totalHarga = $rev->harga * $qty;
             // dd($totalHarga);
-            return view('landing_page.form-order', [
+            return view('landing_page.form-orderStep1', [
                 'pesanan' => $data,
                 'data' => $rev,
                 'qty' => $qty,
@@ -459,7 +470,7 @@ class PesananController extends Controller
         ]); 
         // auth()->login($order);
 
-        return redirect('/form-2');
+        return redirect('/form/orderStep2');
     }
     public function addForm3(Request $request)
     {

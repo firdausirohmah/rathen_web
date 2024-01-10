@@ -190,7 +190,7 @@
         font-size: 1.8rem;
     }
 } */
- @media  (max-width: 768px) {
+@media only screen and (max-width:600px) {
     .btn-mid {
         width: 50%; /* Ubah lebar tombol menjadi 100% */
         height: 50%;
@@ -275,6 +275,17 @@
         .frame{
             height:30rem;
         }
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .container{
+        width:36rem;
+    }
+    .kurir-bt{
+        padding: 0 1rem 7rem 0;
+    }
+    #contact .footer-mobile{
+        height:unset;
     }
 }
                 .store{

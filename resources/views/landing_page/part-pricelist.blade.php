@@ -224,6 +224,25 @@
         margin-top: 1.5rem!important;
     }
   }
+  @media screen and (min-width: 768px) and (max-width:1024px) {
+    .navbar-main-toggle{
+      display: contents;
+    }
+    .logo-nav{
+      margin-left:0;
+    }
+    .center-mobile{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .mt-4-mobile {
+        margin-top: 1.5rem!important;
+    }
+    .container-xxl{
+      width:90%
+    }
+  }
 </style>
     <link rel="stylesheet" href="asset/css/styles.css">
     <section id="home" style="overflow: hidden;">

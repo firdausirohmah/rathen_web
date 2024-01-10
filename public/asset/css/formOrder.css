@@ -486,14 +486,14 @@ input[type=text] {
     margin-right: auto;
 }
 .pt250{
-    padding-top: 250px!important;
+    padding-top: 250px;
 }
 .pt200{
   padding-top: 200px!important;
 }
 
 .mw-32{
-  max-width: 32%!important;
+  max-width: 32%;
   max-height: 100%!important;
   border-radius: 12px;
 }
@@ -529,7 +529,7 @@ input[type=text] {
 }
  
 .wp-table {
-    font-size: 16px!important;
+    font-size: 16px;
     border: 1px solid #ccc;
     border-collapse: collapse;
     border-spacing: 0;
@@ -756,6 +756,7 @@ input[type=text] {
 .fieldjk {
   display: flex;
   gap: 10px;
+  overflow-y: hidden;
 }
 
 .img-notejk {
@@ -982,8 +983,246 @@ input[type=text] {
 .p-12{
   padding: 12px;
 }
+.payment__cc .col2-order1{
+  width: 70rem;
+}
+.h-3{
+  height: 3rem;
+}
+.btn-black{
+  background-color: #000;
+  color: #fff;
+  border: #000;
+  text-decoration: none;
+}
+.btn-black:hover{
+  color: #fff;
+  background-color: #323232;
+  border: #323232;
+}
+.pt-5{
+  padding-top: 5px;
+}
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  
+@media only screen and (max-width: 600px) {
+  header{
+    min-height: 150px;
+  }
+  .container{
+    width: 330px;
+  }
+  .notification{
+    font-size: 16px;
+  }
+  .payment{
+    padding: 0;
+  }
+  .payment__info{
+    display: block;
+  }
+  .payment__title{
+    margin: 20px 0 20px 0;
+  }
+  .field {
+    padding-top: 15px;
+    /* padding-right: 30px; */
+    width: 100%;
+  }
+  .payment__shipping{
+    position: relative;
+  }
+  .col-unset-mobile{
+    column-count: unset!important;
+  }
+  .col2-order1{
+    column-count: 2;
+  }
+  .row:last-child {
+      /* padding-bottom: 20px; */
+  }
+  .pb50{
+    padding-bottom: 0;
+  }
+  .form-note{
+    columns: unset;
+  }
+  .field-bahan {
+    margin: auto;
+    width: 85%;
+  }
+  .img-note{
+    margin-left: 0.5rem;
+  }
+  .jeniskerah .row{
+    overflow-x: scroll;
+  }
+  .fieldjk input[type="radio"] {
+    display: none;
+  }
+  .fieldjk{
+    flex: none;
+  }
+  .title-flex .img-note{
+    display: none;
+  }
+  .payment__cc .w32-mobile{
+    column-count: 2;
+    width: 32rem!important;
+  }
+  .payment__cc .col2-order1{
+    width: unset;
+  }
+  .btn-quomobile{
+    width: 18rem;
+    padding: 20px 13px;
+  }
+  .block-mobile{
+    display: block;
+  }
+  .payment__types{
+    flex-direction: column;
+  }
+  .payment__types a{
+    margin-bottom: 10px;
+  }
+  .payment__type + .payment__type{
+    margin-left: unset;
+  }
+  .payment__type{
+    display: unset;
+  }
+  .form-upload{
+    display: block;
+    padding: 5px 50px;
+  }
+  .w-17{
+    width: unset;
+  }
+  .payment__order2{
+    position: unset;
+    width: 100%;
+  }
+  .pt250{
+    padding-top: unset;
+  }
+  .field.small{
+    overflow-y: hidden;
+  }
+  .image .form-upload{
+    width: unset;
+    display: contents;
+  }
+  .image .form-upload img{
+    width: 55%;
+  }
+  .table{
+    width: 73%;
+  }
+  .wp-table{
+    font-size: 14px;
+    width: unset;
+  }
+  .btn-black{
+    padding: 8px 30px;
+  }
+  .w-20{
+    width: 20rem;
+  }
+  .mw-32{
+    max-width: 100%;
+  }
+  .card-body-mobile{
+    width: 300px;
+  }
+  .text-center-mb{
+    text-align: center!important;
+  }
+  .table-responsive{
+    font-size: 12px!important;
+    width: unset!important;
+  }
+  .w-680{
+    width: unset!important;
+    font-size: 14px;
+  }
+  .col-1,.col-2,.col-3{
+    padding: 0;
+  }
+  .content{
+    overflow-x: hidden;
+  }
+  .w-unset{
+    width: unset!important;
+  }
+  .pt135{
+    padding: 1rem 0 0;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  /* Your tablet-specific styles go here */
+  .container{
+    width: 700px;
+  }
+  .col-unset-mobile{
+    position: relative;
+    column-count: 1;
+    width: 400px;
+    height: 800px;
+    overflow-x: scroll;
+  }
+  .field{
+    width: 100%;
+  }
+  .fieldjk input[type="radio"] {
+    display: none;
+  }
+  .fieldjk{
+    flex: none;
+  }
+  .jeniskerah .row{
+    overflow-x: scroll;
+  }
+  .payment__cc .col2-order1{
+    width: 40rem;
+  }
+  .icon{
+    line-height: normal;
+  }
+  .payment__type{
+    padding: 10px 0px;
+  }
+  .payment__order2 {
+    position: relative;
+    right: 0rem;
+    width: 21rem;
+  }
+  .pt250{
+    padding-top: 0;
+  }
+  .payment__shipping{
+    position: relative;
+  }
+  .field.small{
+    overflow-y: hidden;
+  }
+  .w-215-tab{
+    width: 215px;
+  }
+  .btn-black{
+    width: 200px;
+  }
+  .w-unset{
+    position: absolute;
+    left: 540px;
+    width: 230px;
+    top: 315px;
+  }
+  .w-unset .pt135 .btn{
+    padding: 10px 12px;
+  }
+  .backBtn{
+    margin-top: 10px;
+  }
 }

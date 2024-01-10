@@ -36,10 +36,10 @@ Route::get('/page-custom', function () {
 Route::get('/part-pricelist', function () {
     return view('landing_page.part-pricelist');
 });
-// pricelist
-Route::get('/price-list', function () {
-    return view('landing_page.part-pricelist');
-});
+// // pricelist
+// Route::get('/price-list', function () {
+//     return view('landing_page.part-pricelist');
+// });
 
 
 
@@ -63,9 +63,9 @@ Route::get('/price-list', function () {
 // });
 
 // pricelist
-Route::get('/price-list', function () {
-    return view('landing_page.part-pricelist');
-});
+// Route::get('/price-list', function () {
+//     return view('landing_page.part-pricelist');
+// });
 // Route::post('/store-price-list', function (Request $request) {
 //     return view('landing_page.pricelist');
 // })
@@ -118,18 +118,18 @@ Route::controller(PesananController::class)->group(function () {
     // Route::get('/form-1/orderNew', 'orderNew')->name('orderNew');
 });
 
-Route::get('/form/orderStep1', function () {
-    return view('landing_page.form-orderStep1');
-});
-Route::get('/form/orderStep2', function () {
-    return view('landing_page.form-orderStep2');
-});
-Route::get('/form/orderStep3', function () {
-    return view('landing_page.form-orderStep3');
-});
-Route::get('/form/orderStep4', function () {
-    return view('landing_page.form-orderStep4');
-});
+// Route::get('/form/orderStep1', function () {
+//     return view('landing_page.form-orderStep1');
+// });
+// Route::get('/form/orderStep2', function () {
+//     return view('landing_page.form-orderStep2');
+// });
+// Route::get('/form/orderStep3', function () {
+//     return view('landing_page.form-orderStep3');
+// });
+// Route::get('/form/orderStep4', function () {
+//     return view('landing_page.form-orderStep4');
+// });
 
 // contact us
 Route::get('/contact', function () {

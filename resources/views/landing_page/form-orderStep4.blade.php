@@ -2,6 +2,7 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rathen</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700|Open+Sans:400,600'>
@@ -79,30 +80,30 @@
               </div>
             </form>
           </div>
-          <div class="payment__shipping">
+          <div class="payment__shipping w-215-tab">
             <div class="row">
-              <div class="field">
+              <div class="field pt-5">
                 <div class="payment__title"></div>
-                <div class="form-uploads">
-                  <div class="form-upload payment__type--cc">
+                <div class="form-uploads h-3 w-20">
+                  <div class="form-upload payment__type--cc btn-black">
                     <i class="icon icon-cloud-upload"></i>Upload File</div>
                 </div>
                 <!-- <input type="text" class="input txt text-validated" value='Upload' /> -->
               </div>
             </div>
             <div class="row">
-              <div class="field">
-                <div class="form-uploads">
-                  <div class="form-upload payment__type--cc" id="inputDataBtn">
+              <div class="field pt-5">
+                <div class="form-uploads h-3 w-20">
+                  <div class="form-upload payment__type--cc btn-black" id="inputDataBtn">
                     <i class="icon icon-pencil"></i>Input Data</div>
                 </div>
                 <!-- <input type="text" class="input txt text-validated" value='Upload' /> -->
               </div>
             </div>
             <div class="row">
-              <div class="field">
-                <div class="form-uploads">
-                  <a href="{{ route('downloadPdf') }}" class="form-upload payment__type--cc">
+              <div class="field pt-5">
+                <div class="form-uploads h-3 w-20">
+                  <a href="{{ route('downloadPdf') }}" class="form-upload payment__type--cc btn-black">
                     <i class="icon icon-cloud-download"></i>Format Ukuran</a>
                 </div>
                 <!-- <input type="text" class="input txt text-validated" value='Upload' /> -->

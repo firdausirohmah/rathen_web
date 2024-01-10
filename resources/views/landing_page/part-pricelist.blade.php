@@ -187,28 +187,73 @@
       align-items: center;
     }
     </style>
+
+<style>
+  .navbar-main-toggle .nav-toggler {
+      background: none;
+      border: none;
+      margin: 0;
+      padding: 0;
+  }
+
+  .navbar-main-toggle .nav-toggler span {
+      background-color: #fff;
+      display: block;
+      height: 3px;
+      margin-bottom: 4px;
+      width: 20px;
+      z-index: 9999;
+  }
+
+  .navbar-main-toggle .nav-toggler span:last-child {
+      margin-bottom: 0;
+  }
+  @media screen and (max-width: 600px) {
+    .navbar-main-toggle{
+      display: contents;
+    }
+    .logo-nav{
+      margin-left:0;
+    }
+    .center-mobile{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .mt-4-mobile {
+        margin-top: 1.5rem!important;
+    }
+  }
+</style>
     <link rel="stylesheet" href="asset/css/styles.css">
     <section id="home" style="overflow: hidden;">
-      <nav class="navbar navbar-expand-lg bg-black fw-bold" style="height: 80px">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#"><img src="/asset/images/LOGO.png" class="logo-nav" alt=""></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse d-flex justify-content-center" id="navbarNavAltMarkup">
-            <div class="navbar-nav" >
-              <a class="text-nav  nav-link" aria-current="page" href="/page-custom#home">HOME</a>
-              <a class="text-nav mx-2 nav-link" href="/page-custom#about">ABOUT US</a>
-              <a class="text-nav mx-2 nav-link" href="/page-custom#result">LATEST RESULT</a>
-              <a class="text-nav mx-2 nav-link" href="/page-custom#order">CARA PEMESANAN</a>
-              <a class="text-nav mx-2 nav-link" href="/price-list/non-print">PRICE LIST</a>
-              <a class="text-nav mx-2 nav-link" href="/page">FAQ</a>
-              <a class="text-nav mx-2 nav-link" href="/page-custom#location">LOCATION</a>
-              <a class="text-nav mx-2 nav-link" href="/page-custom#contact">CONTACT US</a>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fw-bold">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img src="/asset/images/LOGO.png" class="logo-nav" alt=""></a>
+                <div class="navbar-main-toggle visually-hidden">
+                    <button class="nav-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+                <div class="collapse center navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav ml-auto">
+                        <a class="text-nav nav-link" href="/page-custom#home">HOME</a>
+                        <a class="text-nav nav-link" href="/page-custom#about">ABOUT US</a>
+                        <a class="text-nav nav-link" href="/page-custom#result">LATEST RESULT</a>
+                        <a class="text-nav nav-link" href="/page-custom#order">CARA PEMESANAN</a>
+                        <a class="text-nav nav-link" href="/price-list/non-print">PRICE LIST</a>
+                        <a class="text-nav nav-link" href="/page">FAQ</a>
+                        <a class="text-nav nav-link" href="/page-custom#location">LOCATION</a>
+                        <a class="text-nav nav-link" href="/page-custom#contact">CONTACT US</a>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </nav>
+        </nav>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
       
     <div class="container mt-4 mb-4">
         <div class="row">
@@ -227,9 +272,9 @@
     </p> --}}
     <div class="container-xxl">
         <div class="row">
-            <div class="col-lg-3">
+            <div class="col-lg-3 center-mobile">
               <div class="card" style="border:0!important;">
-                <div class="card-body overflow-hidden" style="width:20.5rem;">
+                <div class="card-body overflow-hidden pt-0" style="width:20.5rem;">
                 {{-- <img src="https://www.shutterstock.com/image-vector/adventure-offroad-4x4-badges-logo-260nw-2041894727.jpg" width="90%" class="img-fluid rounded-top mx-auto my-auto" alt=""> --}}
                 <div id="imageSlider" class="carousel slide mx-auto" style="width:86%!important;" data-bs-interval="false">
                   <div class="carousel-inner mb-3">
@@ -531,7 +576,7 @@
           <div class="col-lg-3" style="font-weight: 200;">
             <form action="{{ route("order") }}" method="POST"> 
               @csrf
-                <div class="card">
+                <div class="card mt-4-mobile">
                     <div class="card-body">
                       <h5 class="card-title" id="hargaDb">Rp {{ $data->harga }}</h5>
                         <div class="container mt-4">

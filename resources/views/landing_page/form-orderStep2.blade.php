@@ -2,6 +2,7 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rathen</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700|Open+Sans:400,600'>
@@ -266,7 +267,7 @@
     <div class="container">
       <div class="actions pt250">
 
-        <button type="submit" href="/form/orderStep3" class="btn action__submit">Next
+        <button type="submit" href="{{ url('/form-3') }}" class="btn action__submit">Next
           <i class="icon icon-arrow-right-circle"></i>
         </button>
         <!-- <a href="/form/orderStep1" class="backBtn">Go Back to Form Order</a> -->

@@ -2,6 +2,7 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rathen</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700|Open+Sans:400,600'>
@@ -160,7 +161,7 @@
 
               </div>
           </div>
-          <div class="payment__shipping col2-order1">
+          <div class="payment__shipping col2-order1 col-unset-mobile">
             <div class="payment__title fw-6">
               <i class="icon icon-plus"></i> Extra
             </div>
@@ -200,7 +201,7 @@
                 <small>+10,000</small><br><small>untuk stadium dan pro, free untuk pro+</small>
               </div>
             </div>
-            <div class="row">
+            <div class="row pt-88-mobile">
               <div class="field small">
                 <div class="title">Lengan panjang
                 </div>
@@ -491,7 +492,7 @@
               <i class="icon icon-pencil"></i>Jenis kerah
             </div>
             <span>Kerah custom elastic rib (+20,000)</span>
-              <div class="">
+              <div class="jeniskerah">
                 <div class="row">
                   <div class="fieldjk" style="padding-top: 1rem;">
                     <input type="radio" id="kerah1" name="jenis_kerah" >
@@ -669,7 +670,7 @@
             <div class="payment__title fw-6">
               <i class="icon icon-pencil"></i>Sponsor depan
             </div>
-              <div class="col2-order1" style="width:70rem;">
+              <div class="col2-order1 w32-mobile">
                 <div class="row">
                   <div class="field-p" style="padding:0;">
                     <div class="row">
@@ -778,9 +779,9 @@
         </div>
 
         <div class="paymen__shipping">
-          <div class="row">
+          <div class="row block-mobile">
             <div class="actions" id="QuotationBtn">
-              <a class="btn action__submit">Download Quotation
+              <a class="btn action__submit btn-quomobile">Download Quotation
                 <i class="icon icon-cloud-download"></i>
               </a>
             </div>
@@ -842,7 +843,7 @@
 
     <div class="container">
       <div class="actions ">
-        <button type="submit" href="/form/orderStep2" class="btn action__submit">Order
+        <button type="submit" href="{{ url('/form-2') }}" class="btn action__submit">Order
           <i class="icon icon-arrow-right-circle"></i>
         </button>
         <a href="/page-custom" class="backBtn">Go Back to Rathen</a>

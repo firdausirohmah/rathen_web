@@ -470,7 +470,7 @@ class PesananController extends Controller
         ]); 
         // auth()->login($order);
 
-        return redirect('/form/orderStep2');
+        return redirect('/form-2');
     }
     public function addForm3(Request $request)
     {

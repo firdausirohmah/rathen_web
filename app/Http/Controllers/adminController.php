@@ -23,10 +23,15 @@ class adminController extends Controller
         $data = DB::table('tbl_step1')
             ->select('*')
             ->get();
+
+        $dataQ = DB::table('tbl_quotation')
+            ->select('*')
+            ->get();
         // dd($data); 
         return view('auth.tables', [
             'pages' => "View Order",
             'order' => $data,
+            'quo' => $dataQ,
         ]);
     }
     public function finance()

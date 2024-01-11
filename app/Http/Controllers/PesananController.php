@@ -7,6 +7,9 @@ use App\Models\ModelStep1;
 use App\Models\ModelStep4;
 use App\Models\ModeStep2;
 use App\Models\ModeStep3;
+
+use App\Models\Quotation;
+
 use Barryvdh\DomPDF\PDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -313,11 +316,24 @@ class PesananController extends Controller
         session(['kontak' => $request->kontak]);
         session(['email' => $request->email]);
         session(['alamat' => $request->alamat]);
-        $nama_pemesaanan = $request->nama_pemesanan;
+        $nama_pemesanan = $request->nama_pemesanan;
         $kontak = $request->kontak;
         $email = $request->email;
         $alamat = $request->alamat;
 
+        $str = Str::random(12);
+
+        // Save data to tbl_quotation
+        Quotation::create([
+            'kd_quotation' => 'Q' . $str,
+            'nama_pelanggan' => $nama_pemesanan,
+            'no_hp' => $kontak,
+            'email' => $email,
+            'alamat' => $alamat,
+            // Add other columns as needed
+        ]);
+
+        // Rest of your existing code...
         $tanggalSekarang = date("d F Y");
         $data = DB::table('tbl_step1')
             ->join('tbl_step2', 'tbl_step1.kd_step2', '=', 'tbl_step2.kd_step2')
@@ -330,7 +346,7 @@ class PesananController extends Controller
 
             return view('landing_page.quotation', [
                 'data' => $pesanan,
-                'nama' => $nama_pemesaanan,
+                'nama' => $nama_pemesanan,
                 'kontak' => $kontak,
                 'email' => $email,
                 'alamat' => $alamat,
@@ -338,16 +354,8 @@ class PesananController extends Controller
                 'tanggal' => $tanggalSekarang,
             ]);
         }
-        // $pdf = PDF::loadView('landing_page.quotation', [
-        //     'data' => $data,
-        //     'nama' => $nama_pemesaanan,
-        //     'kontak' => $kontak,
-        //     'tanggal' => $tanggalSekarang,
-        // ]);
-
-        // Simpan atau tampilkan PDF
-        // return $pdf->download('output.pdf');
     }
+
     public function generate(Request $request)
     {
         $nama = session('nama');

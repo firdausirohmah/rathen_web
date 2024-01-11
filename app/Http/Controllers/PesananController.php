@@ -8,7 +8,7 @@ use App\Models\ModelStep4;
 use App\Models\ModeStep2;
 use App\Models\ModeStep3;
 
-use App\Models\Quotation;
+use App\Models\Quotation1;
 
 use Barryvdh\DomPDF\PDF;
 use Illuminate\Http\Request;
@@ -324,7 +324,7 @@ class PesananController extends Controller
         $str = Str::random(12);
 
         // Save data to tbl_quotation
-        Quotation::create([
+        Quotation1::create([
             'kd_quotation' => 'Q' . $str,
             'nama_pelanggan' => $nama_pemesanan,
             'no_hp' => $kontak,

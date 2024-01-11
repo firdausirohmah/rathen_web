@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Quotation1 extends Model
 {
+    // add into tabel DB
     use HasFactory;
     protected $quarded = [];
     protected $table = 'tbl_quotation'; // Set the table name

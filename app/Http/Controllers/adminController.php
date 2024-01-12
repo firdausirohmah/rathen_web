@@ -12,10 +12,30 @@ class adminController extends Controller
     public function dashboard()
     {
         $data = DB::table('tbl_step1')->orderBy('created_at', 'asc')->take(30)->get();
+
+        $uniqueCustomers = $data->groupBy(function ($item) {
+            return strtolower(str_replace(' ', '', $item->nama_pemesanan));
+        })->map(function ($group) {
+            return [
+                'nama_pemesanan' => $group->first()->nama_pemesanan,
+                // 'total_orders' => $group->sum('harga'),
+            ];
+        })->values();
+
+        $uniqueDom = $data->groupBy(function ($item) {
+            return strtolower(str_replace(' ', '', $item->domisili));
+        })->map(function ($group) {
+            return [
+                'domisili' => $group->first()->domisili,
+                // 'total_orders' => $group->sum('harga'),
+            ];
+        })->values();
+
         return view('auth.dashboard', [
             'pages' => "Dashboard",
             'data' => $data,
-
+            'uniqueCustomers' => $uniqueCustomers,
+            'uniqueDom' => $uniqueDom,
         ]);
     }
     public function vieworder()

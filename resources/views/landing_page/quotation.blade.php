@@ -64,10 +64,10 @@
 			background-color: whitesmoke;
 			}
 	</style>
-	
+	<button class="button back" onclick="goBack()"><i class='bx bx-arrow-back'></i></button>
 	<a href="{{ route('generate') }}" class="print"><button>
 		<i class='bx bx-printer'></i></button></a>
-<div class="container mt-3">
+	<div class="container mt-3">
 		<div class="row justify-content-center">
 			<div class="col-8">
 				<div class="card">
@@ -140,8 +140,6 @@
 										<td class="text-center">399,900</td>
 										<td class="text-center">24/pcs</td>
 
-									</tr>
-									<tr>
 									</tr>
 
 								</tbody>
@@ -225,7 +223,7 @@
 							<table class="table table-bordered mt-4 mb-0 ">
 								<thead class="text-center">
 									<tr class="text-center">
-										<th class="text-uppercase small font-weight-bold"  colspan="4">Keterangan untuk
+										<th class="text-uppercase small font-weight-bold"  colspan="3">Keterangan untuk
 											Extra</th>
 										</tr>
 											<tr class="text-center">
@@ -271,7 +269,7 @@
 							<table class="table table-bordered mt-4 mb-0 ">
 								<thead class="text-center">
 									<tr class="text-center">
-										<th class="text-uppercase small font-weight-bold"  colspan="4">EXTRA LOGO TIM</th>
+										<th class="text-uppercase small font-weight-bold"  colspan="3">EXTRA LOGO TIM</th>
 										</tr>
 											<tr class="text-center">
 										<th class="text-uppercase small font-weight-bold">Jenis</th>
@@ -324,7 +322,7 @@
 							<table class="table table-bordered mt-4 mb-0 ">
 								<thead class="text-center">
 									<tr class="text-center">
-										<th class="text-uppercase small font-weight-bold"  colspan="4">EXTRA SPONSOR DEPAN</th>
+										<th class="text-uppercase small font-weight-bold"  colspan="3">EXTRA SPONSOR DEPAN</th>
 										</tr>
 											<tr class="text-center">
 										<th class="text-uppercase small font-weight-bold">Jenis</th>
@@ -366,7 +364,7 @@
 							<table class="table table-bordered mt-4 mb-0 ">
 								<thead class="text-center">
 									<tr class="text-center">
-										<th class="text-uppercase small font-weight-bold"  colspan="4">EXTRA LENGAN</th>
+										<th class="text-uppercase small font-weight-bold"  colspan="2">EXTRA LENGAN</th>
 										</tr>
 											<tr class="text-center">
 										<th class="text-uppercase small font-weight-bold">Jenis</th>
@@ -477,6 +475,9 @@
 						</div>
 
 						<script>
+							function goBack() {
+								window.history.back();
+							}
 							document.addEventListener("DOMContentLoaded", function() {
 								var dynamicImage = document.getElementById("dynamicImage");
 							

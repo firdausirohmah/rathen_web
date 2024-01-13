@@ -391,8 +391,8 @@ class PesananController extends Controller
 
 
             // Combine Bootstrap CSS with your HTML
-            $combinedHtml = '<style> html *{margin:0;padding:0;}.print{
-                display:none;}.container{margin:0!important;} .card{width:650px!important;} '
+            $combinedHtml = '<style> html *{margin:0;padding:0;}.button.back{display:none;}.print{
+                display:none;}.container{margin:0!important;} .card{width:650px!important;border:none!important} '
                 . $bootstrapCSS . '<style>' . $html;
 
             $pdf->loadHtml($combinedHtml);

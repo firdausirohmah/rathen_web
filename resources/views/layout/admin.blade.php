@@ -160,6 +160,24 @@
         </div>
       </div>
     </nav>
+    <style>
+      #sidenav-main {
+          /* Your existing styles for the sidebar */
+          width: 250px;
+          transition: transform 0.3s ease-in-out;
+      }
+
+      #sidenav-main.show {
+          transform: translateX(0);
+          background-color:#fff;
+      }
+    </style>
+    <script>
+        // Add an event listener to toggle the sidebar
+        document.getElementById('iconNavbarSidenav').addEventListener('click', function () {
+            document.getElementById('sidenav-main').classList.toggle('show');
+        });
+    </script>
     <!-- End Navbar -->
     @yield('content')
   {{-- footer --}}

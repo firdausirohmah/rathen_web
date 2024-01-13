@@ -841,6 +841,28 @@
     });
 </script>
 
+<script>
+    function validateForm() {
+        var kontakInput = document.getElementById('kontakInput').value;
+        var kontakError = document.getElementById('kontakError');
+
+        // Memeriksa apakah input di kontak berupa angka
+        if (!(/^\d+$/.test(kontakInput))) {
+            kontakError.innerHTML = "Inputan harus berupa angka";
+            return false;
+        }
+
+        // Memeriksa panjang input di kontak (minimal 10, maksimal 13 karakter)
+        if (kontakInput.length < 10 || kontakInput.length > 13) {
+            kontakError.innerHTML = "Input harus terdiri 10 hingga 13 angka";
+            return false;
+        }
+
+        kontakError.innerHTML = ""; // Menghapus pesan kesalahan jika valid
+        return true;
+    }
+</script>
+
     <div class="container">
       <div class="actions ">
         <button type="submit" href="{{ url('/form-2') }}" class="btn action__submit">Order
@@ -859,6 +881,23 @@
     <div class="form-modal">
       <h4>Silahkan masukkan data</h4>
       <form action="{{ route('quotation') }}" method="POST" id="inputDataForm">
+          @csrf
+          <label for="" class="subtitle">Nama Pelanggan</label>
+          <input type="text" class="form-control" name="nama_pemesanan">
+
+          <label for="" class="subtitle">Kontak (Whatsapp)</label>
+          <input type="text" class="form-control" name="kontak" id="kontakInput">
+          <small id="kontakError" style="color: red;"></small>
+
+          <label for="" class="subtitle">Email</label>
+          <input type="text" class="form-control" name="email">
+
+          <label for="" class="subtitle">Alamat</label>
+          <input type="text" class="form-control" name="alamat">
+
+          <button class="btn-modal" type="submit" onclick="return validateForm()">Save</button>
+      </form>
+      {{--<form action="{{ route('quotation') }}" method="POST" id="inputDataForm">
       @csrf
         <label for="" class="subtitle ">Nama Pelanggan</label>
         <input type="text" class="form-control" name="nama_pemesanan">
@@ -870,7 +909,7 @@
         <input type="text" class="form-control" name="alamat"> 
 
         <button class="btn-modal" type="submit">Save</button>
-      </form>
+      </form>--}}
     </div>
   </div>
 </div>

@@ -40,37 +40,38 @@
               <div class="form__cc">
                 <div class="row">
                   <div class="field">
-                    <div class="title">Nama tim
+                    <div class="title">Nama tim *
                     </div>
-                    <input type="text" class="input txt" name="nama_tim" placeholder='Masukkan nama tim'/>
+                    <input type="text" class="input txt" name="nama_tim" placeholder='Masukkan nama tim' required/>
                   </div>
                 </div>
                 <div class="row">
                   <div class="field">
-                    <div class="title">Domisili
+                    <div class="title">Domisili *
                     </div>
-                    <input type="text" class="input txt" name="dom" placeholder="Masukkan Kota/Kabupaten"/>
+                    <input type="text" class="input txt" name="dom" placeholder="Masukkan Kota/Kabupaten" required/>
                   </div>
                 </div>
                 <div class="row">
                   <div class="field">
-                    <div class="title">Nama pemesanan
+                    <div class="title">Nama pemesanan *
                     </div>
-                    <input type="text" class="input txt" name="np" placeholder='Masukkan nama pemesanan' />
+                    <input type="text" class="input txt" name="np" placeholder='Masukkan nama pemesanan' required/>
                   </div>
                 </div>
                 <div class="row">
                   <div class="field">
-                    <div class="title">Kontak
+                    <div class="title">Kontak *
                     </div>
-                    <input type="text" class="input txt" name="nw" placeholder="Masukkan no. Whatsapp"/>
+                    <input type="text" class="input txt" id="kontakOrder" name="nw" placeholder="Masukkan no. Whatsapp" required/>
+                    <small id="kontakOrderError" style="color: red;"></small>
                   </div>
                 </div>
                 <div class="row">
                   <div class="field">
-                    <div class="title">Alamat Pengiriman
+                    <div class="title">Alamat Pengiriman *
                     </div>
-                    <input type="text" class="input txt" name="alamat_p" placeholder="Masukkan alamat pengiriman"/>
+                    <input type="text" class="input txt" name="alamat_p" placeholder="Masukkan alamat pengiriman" required/>
                   </div>
                 </div>
                 <div class="row">
@@ -863,9 +864,37 @@
     }
 </script>
 
+<script>
+    function validateFormOrder() {
+        var kontakOrder = document.getElementById('kontakOrder').value;
+        var kontakOrderError = document.getElementById('kontakOrderError');
+
+        if (!(/^\d+$/.test(kontakOrder))) {
+          kontakOrderError.innerHTML = "Inputan harus berupa angka";
+            scrollToTop();
+            return false;
+        }
+
+        // Memeriksa panjang input di kontak (minimal 10, maksimal 13 karakter)
+        if (kontakOrder.length < 10 || kontakOrder.length > 13) {
+          kontakOrderError.innerHTML = "Input harus terdiri 10 hingga 13 angka";
+            scrollToTop();
+            return false;
+        }
+
+        kontakOrderError.innerHTML = "";
+        return true;
+    }
+    function scrollToTop() {
+        // Scroll to the top of the page
+        window.scrollTo(0, 0);
+        // window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
+
     <div class="container">
       <div class="actions ">
-        <button type="submit" href="{{ url('/form-2') }}" class="btn action__submit">Order
+        <button type="submit" href="{{ url('/form-2') }}" class="btn action__submit" onclick="return validateFormOrder()">Order
           <i class="icon icon-arrow-right-circle"></i>
         </button>
         <a href="/page-custom" class="backBtn">Go Back to Rathen</a>
@@ -897,19 +926,6 @@
 
           <button class="btn-modal" type="submit" onclick="return validateForm()">Save</button>
       </form>
-      {{--<form action="{{ route('quotation') }}" method="POST" id="inputDataForm">
-      @csrf
-        <label for="" class="subtitle ">Nama Pelanggan</label>
-        <input type="text" class="form-control" name="nama_pemesanan">
-        <label for="" class="subtitle">Kontak (Whatsapp)</label>
-        <input type="text" class="form-control" name="kontak"> 
-        <label for="" class="subtitle">Email</label>
-        <input type="text" class="form-control" name="email"> 
-        <label for="" class="subtitle">Alamat</label>
-        <input type="text" class="form-control" name="alamat"> 
-
-        <button class="btn-modal" type="submit">Save</button>
-      </form>--}}
     </div>
   </div>
 </div>

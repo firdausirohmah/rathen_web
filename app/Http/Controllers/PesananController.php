@@ -392,7 +392,8 @@ class PesananController extends Controller
 
             // Combine Bootstrap CSS with your HTML
             $combinedHtml = '<style> html *{margin:0;padding:0;}.button.back{display:none;}.print{
-                display:none;}.container{margin:0!important;} .card{width:650px!important;border:none!important} '
+                display:none;}.container{margin:0!important;} .card{width:650px!important;border:none!important}
+                .table-responsive table thead tr th, .table-responsive table tbody tr td{border-color: #3c3f44;}'
                 . $bootstrapCSS . '<style>' . $html;
 
             $pdf->loadHtml($combinedHtml);
@@ -580,11 +581,13 @@ class PesananController extends Controller
             
             // Combine Bootstrap CSS with your HTML
             $combinedHtml = '<style> .print{
-                display:none;}.container{margin:0!important;} .row{width:900px!important;} .card{border:none!important} .card-body{width:900px!important;} '
+                display:none;}.container{margin:0!important;} .row{width:650px;} .card{border:none!important} .card-body{width:650px;}
+                .card-body .row .col-md-6{margin:1rem!important;padding:0!important} td, .col-md-6 p, .col-md-2 p, .text-primary, .text-center{color:#000!important}
+                .table-responsive table thead tr th, .table-responsive table tbody tr td, .table-responsive table tfoot tr td{border-color: #3c3f44;}'
                 . $bootstrapCSS . '<style>' . $html;
 
             $pdf->loadHtml($combinedHtml);
-            $pdf->setPaper('A3', 'potrait');
+            $pdf->setPaper('A4', 'potrait');
             $pdf->render();
 
 

@@ -114,12 +114,12 @@
 										<td rowspan="3">Stadium Version</td>
 										<td class="text-center">Non - Print</td>
 										<td class="text-center">149,900</td>
-										<td class="text-center">12/cs</td>
+										<td class="text-center">12/pcs</td>
 									</tr>
 									<tr>
 										<td class="text-center">Half - Print</td>
 										<td class="text-center"> 174,900</td>
-										<td class="text-center">12/cs</td>
+										<td class="text-center">12/pcs</td>
 									</tr>
 									<tr>
 										<td class="text-center">Full - Print</td>

@@ -1250,7 +1250,7 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
     </div>
     <div class="container text-center">
-        <div class="row m-4 center-hori">
+        <div class="row m-4 center-hori" style="display:unset;">
             <div class="col-lg-12" >
                 <p class="store">RATHEN STORE </p>
                 <p class="addres"> Ruko Sentra Gunungbatu<br>Jl. Mayjen Ishak Djuarsa no. 167B<br>Bogor 16118 </p>

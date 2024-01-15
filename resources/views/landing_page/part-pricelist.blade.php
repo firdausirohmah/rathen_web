@@ -248,7 +248,7 @@
     <section id="home" style="overflow: hidden;">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark fw-bold">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#"><img src="/asset/images/LOGO.png" class="logo-nav" alt=""></a>
+                <a class="navbar-brand" href="/page-custom"><img src="/asset/images/LOGO.png" class="logo-nav" alt=""></a>
                 <div class="navbar-main-toggle visually-hidden">
                     <button class="nav-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                         <span></span>
@@ -601,7 +601,7 @@
                         <div class="container mt-4">
                             <div class="row"> 
                               <div class="col">
-                                <div class="quantity-button" onclick="decrement()">-</div>
+                                <div class="quantity-button decrement" onclick="decrement()">-</div>
                               </div>
                               <div class="col"><input type="text" name="qty" class="quantity-input" id="quantityInput" value="{{ $data->min_order }}" readonly>
                               </div>
@@ -1136,10 +1136,14 @@
       function decrement() {
         var quantityInput = document.getElementById("quantityInput");
         var currentQuantity = parseInt(quantityInput.value);
-        if (currentQuantity > 1) {
-          quantityInput.value = currentQuantity - 1;
-          updateTotalHarga();
+        if (currentQuantity > {{ $data->min_order }}) {
+            quantityInput.value = currentQuantity - 1;
+            updateTotalHarga();
         }
+        // if (currentQuantity <= {{ $data->min_order }}) {
+        //   var decrementButton = document.querySelector('.quantity-button.decrement');
+        //   decrementButton.style.display = 'none';
+        // }
       }
   
       function updateTotalHarga() {

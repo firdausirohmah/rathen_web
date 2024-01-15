@@ -33,7 +33,7 @@
         <div class="payment__info">
           <div class="payment__cc">
             <div class="payment__title fw-6">
-              <i class="icon icon-pencil"></i>Form orderan
+              <i class="icon icon-pencil"></i>Data Order
             </div>
             <form action="{{ url('/form-1/action') }}" method="POST">
             @csrf
@@ -54,7 +54,7 @@
                 </div>
                 <div class="row">
                   <div class="field">
-                    <div class="title">Nama pemesanan *
+                    <div class="title">Nama pemesan *
                     </div>
                     <input type="text" class="input txt" name="np" placeholder='Masukkan nama pemesanan' required/>
                   </div>
@@ -531,6 +531,48 @@
             </div>
               <div class="col2-order1">
                 <div class="row">
+                  <div class="field-bahan" style="padding-top: 1rem;">
+                    <input type="radio" id="logo1" name="jenis_logo" >
+                    <label for="logo1" class="img-note w-25" style="background-image: url('{{asset('/asset/logotim/logo - DTF.png')}}');"></label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="field-bahan" style="padding-top: 1rem;">
+                    <input type="radio" id="logo2" name="jenis_logo">
+                    <label for="logo2" class="img-note w-25" style="background-image: url('{{asset('/asset/logotim/logo - tpu.png')}}');"></label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="field-bahan" style="padding-top: 1rem;">
+                    <input type="radio" id="logo3" name="jenis_logo" >
+                    <label for="logo3" class="img-note w-25" style="background-image: url('{{asset('/asset/logotim/logo - rubber.png')}}');"></label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="field-bahan" style="padding-top: 1rem;">
+                    <input type="radio" id="logo4" name="jenis_logo" >
+                    <label for="logo4" class="img-note w-25" style="background-image: url('{{asset('/asset/logotim/logo - rubber on tatami.png')}}');"></label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="field-bahan" style="padding-top: 1rem;">
+                    <input type="radio" id="logo5" name="jenis_logo" >
+                    <label for="logo5" class="img-note w-25" style="background-image: url('{{asset('/asset/logotim/logo - silicone HD.png')}}');"></label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="field-bahan" style="padding-top: 1rem;">
+                    <input type="radio" id="logo6" name="jenis_logo">
+                    <label for="logo6" class="img-note w-25" style="background-image: url('{{asset('/asset/logotim/logo - woven HD.png')}}');"></label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="field-bahan" style="padding-top: 1rem;">
+                    <input type="radio" id="logo7" name="jenis_logo">
+                    <label for="logo7" class="img-note w-25" style="background-image: url('{{asset('/asset/logotim/logo - woven.png')}}');"></label>
+                  </div>
+                </div>
+                <!-- <div class="row">
                   <div class="field" style="padding:0;">
                     <img src="{{asset('/asset/logotim/logo - DTF.png')}}" style="te" class="img-thumbnaill w-50 mr-2" alt="">
                   </div>
@@ -564,7 +606,7 @@
                   <div class="field" style="padding:0;">
                     <img src="{{asset('/asset/logotim/logo - woven.png')}}" class="img-thumbnaill w-50" alt="">
                   </div>
-                </div>
+                </div> -->
               </div>
             <div class="col2-order1" id="rowsContainer">
               <div class="row">

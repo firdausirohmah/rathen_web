@@ -63,7 +63,7 @@
     <div class="col-lg-6 mb-4">
       <div class="card z-index-2">
         <div class="card-header pb-0">
-          <h6>Grafik Pembayaran Customer</h6>
+          <h6>Grafik Geografi Customer</h6>
           <p class="text-sm">
             {{-- <i class="fa fa-arrow-up text-success"></i> --}}
             {{-- <span class="font-weight-bold">4% more</span> in 2021 --}}

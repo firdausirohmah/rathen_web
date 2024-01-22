@@ -170,9 +170,9 @@
         color: #e11c22!important;
     }
     
-    .img-16{
-      width:16rem!important;
-      height:16rem!important;
+    .img-25{
+      width:25rem!important;
+      height:25rem!important;
     }
     .thumbnail-price {
       width: 4rem;
@@ -223,6 +223,17 @@
     .mt-4-mobile {
         margin-top: 1.5rem!important;
     }
+    .floating-menu{
+      right: 0!important;
+      bottom: 1rem!important;
+        
+    }
+    .kurir-bt{
+      padding: 0 1rem 4rem 0;    
+    }
+    .kurir-bt img{
+      height: 6rem;
+    }
   }
   @media screen and (min-width: 768px) and (max-width:1024px) {
     .navbar-main-toggle{
@@ -245,6 +256,12 @@
   }
 </style>
     <link rel="stylesheet" href="asset/css/styles.css">
+
+    <div  id="floatingMenu" class="floating-menu" onClick="myFunction()" style="position: fixed; z-index: 10;margin: auto; right: 36px; bottom: 0px;">
+        <a href="https://wa.me/628123456789" class="kurir-bt" style="max-width:150px">
+            <img src="{{asset('asset/images/chat.png')}}"  height="160" />
+        </a>
+    </div>
     <section id="home" style="overflow: hidden;">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark fw-bold">
             <div class="container-fluid">
@@ -263,7 +280,7 @@
                         <a class="text-nav nav-link" href="/page-custom#result">LATEST RESULT</a>
                         <a class="text-nav nav-link" href="/page-custom#order">CARA PEMESANAN</a>
                         <a class="text-nav nav-link" href="/price-list/non-print">PRICE LIST</a>
-                        <a class="text-nav nav-link" href="/page">FAQ</a>
+                        <a class="text-nav nav-link" href="/page-custom#faq">FAQ</a>
                         <a class="text-nav nav-link" href="/page-custom#location">LOCATION</a>
                         <a class="text-nav nav-link" href="/page-custom#contact">CONTACT US</a>
                     </div>
@@ -290,6 +307,125 @@
       <a class="btn btn-primary disabled" aria-disabled="true" role="button" data-bs-toggle="button">Disabled toggle link</a>
     </p> --}}
     <div class="container-xxl">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="card">
+            <div class="card-body">
+
+              <div id="imageSlider" class="carousel slide mx-auto" style="width:66%!important;" data-bs-interval="false">
+                <div class="carousel-inner mb-3">
+                  <div class="carousel-item active">
+                    <img src="{{ $data->g1}}" class="img-thumbnail img-25" alt="Image 1">
+                  </div>
+                  
+                </div>
+
+                <button id="btnPrev" class="carousel-control-prev" type="button" data-bs-target="#imageSlider" data-bs-slide="prev" onclick="navigateToRelativePage(-1)">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button id="btnNext" class="carousel-control-next" type="button" data-bs-target="#imageSlider" data-bs-slide="next" onclick="navigateToRelativePage(1)">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+
+              <div class="row view-on-large">
+                <div class="col-lg-3">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-4" style="margin-top: auto; margin-bottom:auto; margin-left:0px; margin-right:0px;"><img src="{{ asset('asset/images/price-list/ceklis.png') }}" style="width:20px;" alt=""></div>
+                            <div class="col" style="font-size: 13px">Stok <br> Tersedia</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-4" style="margin-top: auto; margin-bottom:auto; margin-left:0px; margin-right:0px;"><img src="{{ asset('asset/images/price-list/broom.png') }}" width="20px" alt=""></div>
+                            <div class="col" style="font-size: 13px">Bebas Biaya <br> Pengiriman</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-3" style="margin-top: auto; margin-bottom:auto; margin-left:0px; margin-right:0px;"><img src="{{ asset('asset/images/price-list/percent.png') }}" width="30px" alt=""></div>
+                            <div class="col-lg-8" style="font-size: 13px">Cicilan 0% Hingga <br>24 Bulan</div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+
+              <div class="row mt-4">
+                <div class="col">
+                  <p><small>{!! nl2br($jsonData['menu1'][$data->deskripsi]) !!} </small></p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <form action="{{ route("order") }}" method="POST"> 
+            @csrf
+              <div class="card mt-4-mobile">
+                <div class="card-body">
+                  <h5 class="card-title">Harga: <span id="hargaDb">{{ $data->harga }}</span></h5>
+                    <div class="container mt-4">
+                        <div class="row"> 
+                          <div class="col">
+                            <div class="quantity-button decrement" onclick="decrement()">-</div>
+                          </div>
+                          <div class="col"><input type="text" name="qty" class="quantity-input" id="quantityInput" value="{{ $data->min_order }}" readonly>
+                          </div>
+                          <div class="col"><div class="quantity-button" onclick="increment()">+</div>
+                          </div>
+                        </div>  
+                        <div class="row mt-4">
+                          <div class="col">
+                            <div>Total Harga: <span id="totalHarga">Rp {{ $data->harga }}</span></div> 
+                          </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+              <div class="card mt-4">
+                <div class="card-body">
+                  <h5 class="card-title"></h5>
+                  <h6 class="card-subtitle mb-2 text-body-secondary">Simulasi Harga</h6>
+                  <input type="hidden" name="kd_part" value="{{ $data->kd_part }}">
+                  <button type="submit" class="btn btn-outline-secondary w-100">Order Now</button>
+                </div>
+              </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+    <script>
+      var pages = [
+        '{{ url('/price-list', ['kd_part' => 'non-print']) }}',
+        '{{ url('/price-list', ['kd_part' => 'half-print']) }}',
+        '{{ url('/price-list', ['kd_part' => 'full-print']) }}',
+        '{{ url('/price-list', ['kd_part' => 'pro']) }}',
+        '{{ url('/price-list', ['kd_part' => 'pro-plus']) }}'
+      ];
+
+      var currentPageIndex = pages.indexOf(window.location.href);
+
+      function navigateToRelativePage(offset) {
+        // Calculate the index of the next page
+        var nextPageIndex = (currentPageIndex + offset + pages.length) % pages.length;
+
+        // Change the URL to the next page
+        window.location.href = pages[nextPageIndex];
+      }
+    </script>
+
+
+    <div class="container-xxl visually-hidden">
         <div class="row">
             <div class="col-lg-3 center-mobile">
               <div class="card" style="border:0!important;">

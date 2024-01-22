@@ -235,6 +235,9 @@
     .mb2-mobile{
         margin: 0 0 2rem 0!important;
     }
+    .mb7-mobile{
+        margin: 0 0 7rem 0!important;
+    }
     .pt0-mobile{
         padding-top:unset!important;
     }
@@ -693,6 +696,7 @@
 </style>
 <div id="progress-container">
     {{-- <div id="progress-bar"></div>  --}}
+
     <section id="order">
         <section class="py-5 py-xl-8 p0-mobile">
             <div class="container">
@@ -960,6 +964,74 @@
         </section>
     </section> 
     <!-- </div> -->
+    <section id="faq">
+        <section class="py-5 py-xl-8 p0-mobile">
+            <div class="container">
+              <div class="row center-hori">
+                <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
+                  <h1 class="mb-5 display-5 text-center" style="font-family: Montheavy; color: black; font-size: 22px; font-weight: bold; margin-bottom: 20px; text-align: center;">FAQ</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="containerFlow">
+                <section class="accordion">
+                    <div class="tab-accordion">
+                        <input type="checkbox" name="accordion-1" id="cb1" checked>
+                        <label for="cb1" class="tab__label">Apa sih perbedaan STADIUM, PRO dan PRO+ version?</label>
+                        <div class="tab__content">
+                        <p>Untuk mengetahui perbedaan masing-masing jenis kualitas bisa dilihat secara lengkap, <a href="{{ url('/price-list', ['kd_part' => 'non-print']) }}" target="_blank"> Silahkan klik disini</a></p>
+                        </div>
+                    </div>
+                    <div class="tab-accordion">
+                        <input type="checkbox" name="accordion-1" id="cb2">
+                        <label for="cb2" class="tab__label">Ada Minimal order nya?</label>
+                        <div class="tab__content">
+                        <p>Untuk CUSTOMIZE JERSEY  ada minimal order quantity (MOQ) nya</p>
+                            <ul>
+                                <li>- Untuk STADIUM version MOQ 12 pcs</li>
+                                <li>- Untuk PRO dan PRO+ version MOQ 24 pcs</li>
+                            </ul>
+                        
+                        </div>
+                    </div>
+                    <div class="tab-accordion">
+                        <input type="checkbox" name="accordion-1" id="cb3">
+                        <label for="cb3" class="tab__label">Bisa pesan satuan?</label>
+                        <div class="tab__content">
+                        <p>Untuk pemesanan satuan kami menyediakan produk sportwears yang bisa kamu beli tanpa minimum order, baik satuan maupun dalam jumlah banyak. Klik 
+                            <a href="https://www.tokopedia.com/rathenid" target="_blank">disini</a> ya untuk info lebih lengkap</p>
+                        </div>
+                    </div>
+                    <div class="tab-accordion">
+                        <input type="checkbox" name="accordion-1" id="cb4">
+                        <label for="cb4" class="tab__label">Lokasi nya dimana?</label>
+                        <div class="tab__content">
+                        <p>Lokasi kita di Bogor Kota. Klik <a href="#location">disini</a> ya untuk info lebih lengkap.
+                        </p>
+                        </div>
+                    </div>
+                    <div class="tab-accordion">
+                        <input type="checkbox" name="accordion-1" id="cb5">
+                        <label for="cb5" class="tab__label">Bagaimana cara pemesanannya?</label>
+                        <div class="tab__content">
+                        <p>Untuk prosedur pemesanan di RATHEN sangat mudah sekali, klik <a href="#order">disini</a> ya untuk info lebih lengkap.
+                        </p>
+                        </div>
+                    </div>
+                    <div class="tab-accordion">
+                        <input type="checkbox" name="accordion-1" id="cb6">
+                        <label for="cb6" class="tab__label">Bisa lihat hasil yang sudah diproduksi?</label>
+                        <div class="tab__content">
+                        <p>Boleh sekali, explore semua hasil produksi kami <a href="https://instagram.com/rathen.apparel" target="_blank">disini</a> ya.
+                        </p>
+                        </div>
+                    </div>
+                </section>
+            </div>            
+        </section>
+    </section> 
+    <!-- </div> -->
 </div>
 <script>
 // script.js
@@ -1217,7 +1289,7 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
     <div class="container text-center">
         <div class="row center-hori">
-            <div class="col-lg-5 card_location m-4 mb2-mobile">
+            <div class="col-lg-5 card_location m-4 mb7-mobile">
                 <div class="img_location ">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.4343833806684!2d106.77431907418564!3d-6.5928088934009095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c57a439b19c9%3A0x4a05cc1ee48848ba!2sRATHEN%20Store%20-%20Sportwears%20Outlet!5e0!3m2!1sid!2sid!4v1700127350226!5m2!1sid!2sid" allowfullscreen class="img_location" style="500px"></iframe>
                 </div>

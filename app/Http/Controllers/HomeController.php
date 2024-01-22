@@ -71,7 +71,7 @@ class HomeController extends Controller
                 - Authentic R DTF
                 - Name + number polyflex
                 - Bahan Celana solid
-                - Nomor celana polyflex\n.",
+                - Nomor celana polyflex\n",
                 
                 'half-print' => "TYPE KUALITAS : STADIUM Version
                 Kategori : Half - Print

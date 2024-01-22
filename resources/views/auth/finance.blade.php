@@ -88,7 +88,7 @@
             </div>
           </div>
         </div> -->
-        <div class="col-lg-6 align-items-center">
+        <div hidden class="col-lg-6 align-items-center">
           <div class="card h-100">
             <div class="card-header pb-0 p-3">
               <div class="row">

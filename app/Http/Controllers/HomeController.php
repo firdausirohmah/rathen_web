@@ -57,105 +57,702 @@ class HomeController extends Controller
     public function priceList($kd_part){
         $jsonData = [
             'menu1' => [
-                'non-print' => "TYPE KUALITAS : STADIUM Version
-                Kategori : Non - Print
-                Harga : IDR 149,900 / pcs
-                Minimum Order : 12 pcs
+                'non-print' => "
+                <h5>STADIUM Version - Non Print
+                IDR 149,900 / pcs
+                Minimum Order 12 pcs</h5>
+                <h6 style='margin:0;color:#3884db;line-height:0'>Deksripsi:</h6>
+                - Bahan RATHEN-TECH warna solid non-printing (boleh kombinasi warna bahan)
+                - Logo brand RATHEN : polyflex- Logo tim : DTF
+                - Authentic R : DTF
+                - <span style='color:red;'>FREE</span> Sponsor dada 1 baris
+                - Nameset polyflex 1 layer warna
+                - Bahan Celana solid- Nomor celana : polyflex
+                - <span style='color:red;'>FREE</span> : nama tim di celana\n",
                 
-                Deksripsi:
-                - Bahan warna solid non-printing
-                  (bisa kombinasi warna)
-                - Logo R polyflex
-                - Logo tim Printable / DTF
-                - FREE tulisan dada 1 baris
-                - Authentic R DTF
-                - Name + number polyflex
-                - Bahan Celana solid
-                - Nomor celana polyflex\n",
-                
-                'half-print' => "TYPE KUALITAS : STADIUM Version
-                Kategori : Half - Print
-                Harga : IDR 174,900 / pcs
-                Minimum Order : 12 pcs
-                
-                Deksripsi:
+                'half-print' => "
+                <h5>STADIUM Version - Half Print
+                IDR 174,900 / pcs
+                Minimum Order 12 pcs</h5>
+                <h6 style='margin:0;color:#3884db;line-height:0'>Deksripsi:</h6>
+                - Bahan RATHEN-TECH
                 - Badan depan motif printing
-                - Lengan dan badan belakang bahan solid
-                - Logo dan sponsor depan printing
-                - Logo tim printing/ DTF
-                - Authentic R DTF
-                - Name + number polyflex
+                - Lengan dan badan belakang bahan solid non printing
+                - Logo brand RATHEN : printing
+                - Logo tim : DTF / printing
+                - Authentic R : DTF
+                - Sponsor dada : printing
+                - Nameset polyflex 1 layer warna
                 - Bahan Celana solid
-                - Nomor celana polyflex\n",
+                - Nomor celana : polyflex
+                - <span style='color:red;'>FREE</span> : nama tim di celana\n",
                
-                'full-print' => "TYPE KUALITAS : STADIUM Version
-                Kategori : Full - Print
-                Harga : IDR 199,900 / pcs
-                Minimum Order : 12 pcs
+                'full-print' => "
+                <h5>STADIUM Version - Full Print
+                IDR 199,900 / pcs
+                Minimum Order 12 pcs</h5>
+                <h6 style='margin:0;color:#3884db;line-height:0'>Deksripsi:</h6>
+                - Bahan RATHEN-TECH
+                - Badan depan, tangan, dan belakang motif printing
+                - Logo brand RATHEN : printing / polyflex
+                - Logo tim : DTF / printing
+                - Authentic R : DTF
+                - Sponsor set logo : printing
+                - Nameset : printing
+                - Bahan Celana solid
+                - Nomor celana : polyflex
+                - <span style='color:red;'>FREE</span> : nama tim di celana\n",
                 
-                Deksripsi:
+                'pro' =>  "
+                <h5>PRO Version
+                IDR 299,900 / pcs
+                Minimum Order 24 pcs</h5>
+                <h6 style='margin:0;color:#3884db;line-height:0'>Deksripsi:</h6>
+                - Bahan VAPORKNIT (jacquard technology)
                 - Badan depan, belakang, dan tangan motif printing
-                - Logo R printing / polyflex
-                - Logo tim printing / DTF
-                - Sponsor set printing
-                - Authentic R DTF
-                - Name + number printing
-                - Bahan Celana solid
-                - Nomor celana polyflex\n",
-                
-                'pro' =>  "TYPE KUALITAS : PRO Version
-                Harga : IDR 299,900 / pcs
-                Minimum Order : 24 pcs
-                
-                Deksripsi:
-                - Bahan : VAPORKNIT
-                  (jacquard fabric)
-                - Badan depan, belakang, dan
-                  tangan motif printing
-                - Logo R 3D Screen print
-                - Logo tim 3D TPU
-                  (>50 pcs 3D rubber)
-                - Authentic R 3D Screen print
+                - Logo brand RATHEN : 3D screen print
+                - Logo tim : 3D TPU (>50 pcs 3D rubber)
+                - Authentic R : 3D screen print
                 - Sponsor set depan printing
-                - Name + number bisa printing
+                - Name + number bisa printing / polyflex 1 layer warna
                 - Bahan Celana solid
-                - Nomor celana polyflex
-                - FREE nama tim di celana\n",
+                - Nomor celana : polyflex
+                - <span style='color:red;'>FREE</span> : nama tim di celana\n",
                 
-                'pro-plus' => "TYPE KUALITAS : PRO+ Version
-                Harga : IDR 399,900 / pcs
-                Minimum Order : 24 pcs
-                
-                Deksripsi:
-                - Bahan : MOVINGKNIT
-                  (single knit jacquard tech)
-                - Badan depan, belakang, dan
-                  tangan motif printing
-                - Logo R 3D Shape
-                - Logo tim 3D Rubber
-                  (>50 pcs 3D rubber on tatami)
-                - Premium authentic R
-                  (3D Rubber on tatami)
-                - Fitur LASER-CUT air circulation - Sponsor set depan printing
-                - Name + number bisa printing /
-                  polyflex 1 layer warna
+                'pro-plus' => "
+                <h5>PRO+ Version
+                IDR 399,900 / pcs
+                Minimum Order 24 pcs</h5>
+                <h6 style='margin:0;color:#3884db;line-height:0'>Deksripsi:</h6>
+                - Bahan MOVINGKNIT (single-knit jacquard technology)
+                - Badan depan, belakang, dan tangan motif printing
+                - Logo brand RATHEN : 3D Shape
+                - Logo tim : 3D Rubber (>50 pcs 3D rubber on tatami)
+                - Authentic R : 3D Rubber on tatami exclusive edition
+                - Fitur LASER-CUT air circulation
+                - Sponsor set depan printing
+                - Name + number bisa printing / polyflex 1 layer warna
                 - Bahan Celana solid
-                - Nomor celana polyflex
-                - FREE nama tim di celana
-                - FREE logo tim 3D di celana\n",
+                - Nomor celana : polyflex
+                - <span style='color:red;'>FREE</span> : nama tim di celana
+                - <span style='color:red;'>FREE</span> : logo tim 3D di celana\n",
                 
-                'jacket-anthem' => "Jacket Anthem Pro
-                Harga : IDR 249,900 / pcs
-                Minimum Order : 12 pcs
-                
-                Deksripsi:
-                - Bahan : RATHEN-STRETCH
-                  (80% polyester, 20% spandex)
+                'jacket-anthem' => "
+                <h5>Jacket Anthem Pro
+                IDR 249,900 / pcs
+                Minimum Order 12 pcs</h5>
+                <h6 style='margin:0;color:#3884db;line-height:0'>Deksripsi:</h6>
+                - Bahan : RATHEN-STRETCH (80% polyester, 20% spandex)
                 - Logo brand RATHEN : 3D screen print / polyflex
                 - Logo tim : 3D
                 - Authentic R : 3D screen print
                 - Tulisan : polyflex
                 - Exclusive waterproof zipper\n",
+            ],
+            'menu2' => [
+                'non-print' => 
+                "
+                <h6 class='card-subtitle text-primary-emphasis'>Add Cost</h6>
+                <div class='payment__shipping'>
+
+                  <div class='field small'>
+                    <div class='title'>Kerah pakai kancing</div>
+                    <div class='ms-auto'>
+                      <span>(+10,000)</span>
+                    </div>
+                  </div>
+                  <div class='field small'>
+                    <div class='title'>Badan bawah melengkung</div>
+                    <div class='ms-auto'>
+                      <span>(+15,000)</span>
+                    </div>
+                  </div>
+                  <div class='field small'>
+                    <div class='title'>Lengan pola raglan</div>
+                    <div class='ms-auto'>
+                      <span>(+15,000)</span>
+                    </div>
+                  </div>
+
+                  <div class='field small'>
+                    <div class='title'>Lengan Panjang</div>
+                    <div>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <span class='title'>PCS</span><br>
+                    </div>
+                    <span>(+30,000)</span>
+                  </div>
+
+                  <div class='title pt-3'>Big Size</div>
+                  <div class='field small pt-0'>
+                    <div class='title'>- Size 2XL</div>
+                    <div>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <span class='title'>PCS</span><br>
+                    </div>
+                    <span>(+20,000)</span>
+                  </div>
+                  <div class='field small'>
+                    <div class='title'>- Size 3XL</div>
+                    <div>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <span class='title'>PCS</span><br>
+                    </div>
+                    <span>(+35,000)</span>
+                  </div>
+                  <div class='field small'>
+                    <div class='title'>- Size >4XL</div>
+                    <div>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <span class='title'>PCS</span><br>
+                    </div>
+                    <span>(+50,000)</span>
+                  </div>
+
+                  <div class='field small'>
+                    <div class='title'>Celana printing</div>
+                    <div class='ms-auto'>
+                      <span>(+50,000)</span>
+                    </div>
+                  </div>
+
+                  <div class='field small'>
+                    <div class='title'>Celana panjang PRO</div>
+                    <div>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <span class='title'>PCS</span><br>
+                    </div>
+                    <span>(+150,000)</span>
+                  </div>
+                  <div class='field small'>
+                    <div class='title'>Kaoskaki</div>
+                    <div>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <span class='title'>PCS</span><br>
+                    </div>
+                    <span>(+50,000)</span>
+                  </div>
+                </div>
+                
+                <h6 class='card-subtitle text-primary-emphasis mt-4'>Upgrade Fitur</h6>
+                <div class='payment__shipping'>
+
+                  <div class='field small'>
+                    <div class='title'>Bahan embos</div>
+                    <div class='ms-auto'>
+                      <span>(+20,000)</span>
+                    </div>
+                  </div>
+                  <div class='field small'>
+                    <div class='title'>Logo 3D</div>
+                    <div class='ms-auto'>
+                      <span>(+30,000)</span>
+                    </div>
+                  </div>
+                  <div class='field small'>
+                    <div class='title'>Kerah elastic rib</div>
+                    <div class='ms-auto'>
+                      <span>(+20,000)</span>
+                    </div>
+                  </div>
+                  <div class='field small'>
+                    <div class='title'>Ujung tangan elastic rib</div>
+                    <div class='ms-auto'>
+                      <span>(+20,000)</span>
+                    </div>
+                  </div>
+                  
+                </div>
+                ",
+
+                
+                'half-print' => 
+                "
+                <h6 class='card-subtitle text-primary-emphasis'>Add Cost</h6>
+                <div class='payment__shipping'>
+
+                  <div class='field small'>
+                    <div class='title'>Kerah pakai kancing</div>
+                    <div class='ms-auto'>
+                      <span>(+10,000)</span>
+                    </div>
+                  </div>
+                  <div class='field small'>
+                    <div class='title'>Badan bawah melengkung</div>
+                    <div class='ms-auto'>
+                      <span>(+15,000)</span>
+                    </div>
+                  </div>
+                  <div class='field small'>
+                    <div class='title'>Lengan pola raglan</div>
+                    <div class='ms-auto'>
+                      <span>(+15,000)</span>
+                    </div>
+                  </div>
+
+                  <div class='field small'>
+                    <div class='title'>Lengan Panjang</div>
+                    <div>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <span class='title'>PCS</span><br>
+                    </div>
+                    <span>(+30,000)</span>
+                  </div>
+
+                  <div class='title pt-3'>Big Size</div>
+                  <div class='field small pt-0'>
+                    <div class='title'>- Size 2XL</div>
+                    <div>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <span class='title'>PCS</span><br>
+                    </div>
+                    <span>(+20,000)</span>
+                  </div>
+                  <div class='field small'>
+                    <div class='title'>- Size 3XL</div>
+                    <div>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <span class='title'>PCS</span><br>
+                    </div>
+                    <span>(+35,000)</span>
+                  </div>
+                  <div class='field small'>
+                    <div class='title'>- Size >4XL</div>
+                    <div>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <span class='title'>PCS</span><br>
+                    </div>
+                    <span>(+50,000)</span>
+                  </div>
+
+                  <div class='field small'>
+                    <div class='title'>Celana printing</div>
+                    <div class='ms-auto'>
+                      <span>(+50,000)</span>
+                    </div>
+                  </div>
+
+                  <div class='field small'>
+                    <div class='title'>Celana panjang PRO</div>
+                    <div>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <span class='title'>PCS</span><br>
+                    </div>
+                    <span>(+150,000)</span>
+                  </div>
+                  <div class='field small'>
+                    <div class='title'>Kaoskaki</div>
+                    <div>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <span class='title'>PCS</span><br>
+                    </div>
+                    <span>(+50,000)</span>
+                  </div>
+                </div>
+                
+                <h6 class='card-subtitle text-primary-emphasis mt-4'>Upgrade Fitur</h6>
+                <div class='payment__shipping'>
+
+                  <div class='field small'>
+                    <div class='title'>Bahan embos</div>
+                    <div class='ms-auto'>
+                      <span>(+20,000)</span>
+                    </div>
+                  </div>
+                  <div class='field small'>
+                    <div class='title'>Logo 3D</div>
+                    <div class='ms-auto'>
+                      <span>(+30,000)</span>
+                    </div>
+                  </div>
+                  <div class='field small'>
+                    <div class='title'>Kerah elastic rib</div>
+                    <div class='ms-auto'>
+                      <span>(+20,000)</span>
+                    </div>
+                  </div>
+                  <div class='field small'>
+                    <div class='title'>Ujung tangan elastic rib</div>
+                    <div class='ms-auto'>
+                      <span>(+20,000)</span>
+                    </div>
+                  </div>
+                  
+                </div>
+                ",
+
+               
+                'full-print' => 
+                "
+                <h6 class='card-subtitle text-primary-emphasis'>Add Cost</h6>
+                <div class='payment__shipping'>
+
+                  <div class='field small'>
+                    <div class='title'>Kerah pakai kancing</div>
+                    <div class='ms-auto'>
+                      <span>(+10,000)</span>
+                    </div>
+                  </div>
+                  <div class='field small'>
+                    <div class='title'>Badan bawah melengkung</div>
+                    <div class='ms-auto'>
+                      <span>(+15,000)</span>
+                    </div>
+                  </div>
+                  <div class='field small'>
+                    <div class='title'>Lengan pola raglan</div>
+                    <div class='ms-auto'>
+                      <span>(+15,000)</span>
+                    </div>
+                  </div>
+
+                  <div class='field small'>
+                    <div class='title'>Lengan Panjang</div>
+                    <div>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <span class='title'>PCS</span><br>
+                    </div>
+                    <span>(+30,000)</span>
+                  </div>
+
+                  <div class='title pt-3'>Big Size</div>
+                  <div class='field small pt-0'>
+                    <div class='title'>- Size 2XL</div>
+                    <div>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <span class='title'>PCS</span><br>
+                    </div>
+                    <span>(+20,000)</span>
+                  </div>
+                  <div class='field small'>
+                    <div class='title'>- Size 3XL</div>
+                    <div>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <span class='title'>PCS</span><br>
+                    </div>
+                    <span>(+35,000)</span>
+                  </div>
+                  <div class='field small'>
+                    <div class='title'>- Size >4XL</div>
+                    <div>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <span class='title'>PCS</span><br>
+                    </div>
+                    <span>(+50,000)</span>
+                  </div>
+
+                  <div class='field small'>
+                    <div class='title'>Celana printing</div>
+                    <div class='ms-auto'>
+                      <span>(+50,000)</span>
+                    </div>
+                  </div>
+
+                  <div class='field small'>
+                    <div class='title'>Celana panjang PRO</div>
+                    <div>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <span class='title'>PCS</span><br>
+                    </div>
+                    <span>(+150,000)</span>
+                  </div>
+                  <div class='field small'>
+                    <div class='title'>Kaoskaki</div>
+                    <div>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <span class='title'>PCS</span><br>
+                    </div>
+                    <span>(+50,000)</span>
+                  </div>
+                </div>
+                
+                <h6 class='card-subtitle text-primary-emphasis mt-4'>Upgrade Fitur</h6>
+                <div class='payment__shipping'>
+
+                  <div class='field small'>
+                    <div class='title'>Bahan embos</div>
+                    <div class='ms-auto'>
+                      <span>(+20,000)</span>
+                    </div>
+                  </div>
+                  <div class='field small'>
+                    <div class='title'>Logo 3D</div>
+                    <div class='ms-auto'>
+                      <span>(+30,000)</span>
+                    </div>
+                  </div>
+                  <div class='field small'>
+                    <div class='title'>Kerah elastic rib</div>
+                    <div class='ms-auto'>
+                      <span>(+20,000)</span>
+                    </div>
+                  </div>
+                  <div class='field small'>
+                    <div class='title'>Ujung tangan elastic rib</div>
+                    <div class='ms-auto'>
+                      <span>(+20,000)</span>
+                    </div>
+                  </div>
+                  
+                </div>
+                ",
+                
+
+                'pro' =>  
+                "
+                <h6 class='card-subtitle text-primary-emphasis'>Add Cost</h6>
+                <div class='payment__shipping'>
+
+                  <div class='field small'>
+                    <div class='title'>Kerah pakai kancing</div>
+                    <div class='ms-auto'>
+                      <span>(Free)</span>
+                    </div>
+                  </div>
+                  <div class='field small'>
+                    <div class='title'>Badan bawah melengkung</div>
+                    <div class='ms-auto'>
+                      <span>(Free)</span>
+                    </div>
+                  </div>
+                  <div class='field small'>
+                    <div class='title'>Lengan pola raglan</div>
+                    <div class='ms-auto'>
+                      <span>(Free)</span>
+                    </div>
+                  </div>
+
+                  <div class='field small'>
+                    <div class='title'>Lengan Panjang</div>
+                    <div>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <span class='title'>PCS</span><br>
+                    </div>
+                    <span>(+30,000)</span>
+                  </div>
+
+                  <div class='title pt-3'>Big Size</div>
+                  <div class='field small pt-0'>
+                    <div class='title'>- Size 2XL</div>
+                    <div>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <span class='title'>PCS</span><br>
+                    </div>
+                    <span>(+20,000)</span>
+                  </div>
+                  <div class='field small'>
+                    <div class='title'>- Size 3XL</div>
+                    <div>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <span class='title'>PCS</span><br>
+                    </div>
+                    <span>(+35,000)</span>
+                  </div>
+                  <div class='field small'>
+                    <div class='title'>- Size >4XL</div>
+                    <div>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <span class='title'>PCS</span><br>
+                    </div>
+                    <span>(+50,000)</span>
+                  </div>
+
+                  <div class='field small'>
+                    <div class='title'>Celana printing</div>
+                    <div class='ms-auto'>
+                      <span>(+50,000)</span>
+                    </div>
+                  </div>
+
+                  <div class='field small'>
+                    <div class='title'>Celana panjang PRO</div>
+                    <div>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <span class='title'>PCS</span><br>
+                    </div>
+                    <span>(+150,000)</span>
+                  </div>
+                  <div class='field small'>
+                    <div class='title'>Kaoskaki</div>
+                    <div>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <span class='title'>PCS</span><br>
+                    </div>
+                    <span>(+50,000)</span>
+                  </div>
+                </div>
+                
+                <h6 class='card-subtitle text-primary-emphasis mt-4'>Upgrade Fitur</h6>
+                <div class='payment__shipping'>
+
+                  <div class='field small'>
+                    <div class='title'>Kerah elastic rib</div>
+                    <div class='ms-auto'>
+                      <span>(+20,000)</span>
+                    </div>
+                  </div>
+                  <div class='field small'>
+                    <div class='title'>Ujung tangan elastic rib</div>
+                    <div class='ms-auto'>
+                      <span>(+20,000)</span>
+                    </div>
+                  </div>
+                  
+                </div>
+                ",
+                
+                'pro-plus' => 
+                "
+                <h6 class='card-subtitle text-primary-emphasis'>Add Cost</h6>
+                <div class='payment__shipping'>
+
+                  <div class='field small'>
+                    <div class='title'>Kerah pakai kancing</div>
+                    <div class='ms-auto'>
+                      <span>(Free)</span>
+                    </div>
+                  </div>
+                  <div class='field small'>
+                    <div class='title'>Badan bawah melengkung</div>
+                    <div class='ms-auto'>
+                      <span>(Free)</span>
+                    </div>
+                  </div>
+                  <div class='field small'>
+                    <div class='title'>Lengan pola raglan</div>
+                    <div class='ms-auto'>
+                      <span>(Free)</span>
+                    </div>
+                  </div>
+
+                  <div class='field small'>
+                    <div class='title'>Lengan Panjang</div>
+                    <div>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <span class='title'>PCS</span><br>
+                    </div>
+                    <span>(+30,000)</span>
+                  </div>
+
+                  <div class='title pt-3'>Big Size</div>
+                  <div class='field small pt-0'>
+                    <div class='title'>- Size 2XL</div>
+                    <div>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <span class='title'>PCS</span><br>
+                    </div>
+                    <span>(+20,000)</span>
+                  </div>
+                  <div class='field small'>
+                    <div class='title'>- Size 3XL</div>
+                    <div>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <span class='title'>PCS</span><br>
+                    </div>
+                    <span>(+35,000)</span>
+                  </div>
+                  <div class='field small'>
+                    <div class='title'>- Size >4XL</div>
+                    <div>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <span class='title'>PCS</span><br>
+                    </div>
+                    <span>(+50,000)</span>
+                  </div>
+
+                  <div class='field small'>
+                    <div class='title'>Celana printing</div>
+                    <div class='ms-auto'>
+                      <span>(+50,000)</span>
+                    </div>
+                  </div>
+
+                  <div class='field small'>
+                    <div class='title'>Celana panjang PRO</div>
+                    <div>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <span class='title'>PCS</span><br>
+                    </div>
+                    <span>(+150,000)</span>
+                  </div>
+                  <div class='field small'>
+                    <div class='title'>Kaoskaki</div>
+                    <div>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <span class='title'>PCS</span><br>
+                    </div>
+                    <span>(+50,000)</span>
+                  </div>
+                </div>
+                
+                <h6 class='card-subtitle text-primary-emphasis mt-4'>Upgrade Fitur</h6>
+                <div class='payment__shipping'>
+
+                  <div class='field small'>
+                    <div class='title'>Kerah elastic rib</div>
+                    <div class='ms-auto'>
+                      <span>(+20,000)</span>
+                    </div>
+                  </div>
+                  <div class='field small'>
+                    <div class='title'>Ujung tangan elastic rib</div>
+                    <div class='ms-auto'>
+                      <span>(+20,000)</span>
+                    </div>
+                  </div>
+                  
+                </div>
+                ",
+                
+                'jacket-anthem' => 
+                "
+                <h6 class='card-subtitle text-primary-emphasis'>Add Cost</h6>
+                <div class='payment__shipping'>
+
+                  <div class='title pt-3'>Big Size</div>
+                  <div class='field small pt-0'>
+                    <div class='title'>- Size 2XL</div>
+                    <div>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <span class='title'>PCS</span><br>
+                    </div>
+                    <span>(+20,000)</span>
+                  </div>
+                  <div class='field small'>
+                    <div class='title'>- Size 3XL</div>
+                    <div>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <span class='title'>PCS</span><br>
+                    </div>
+                    <span>(+35,000)</span>
+                  </div>
+                  <div class='field small'>
+                    <div class='title'>- Size >4XL</div>
+                    <div>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <span class='title'>PCS</span><br>
+                    </div>
+                    <span>(+50,000)</span>
+                  </div>
+
+                  <div class='field small'>
+                    <div class='title'>Celana panjang PRO</div>
+                    <div>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <span class='title'>PCS</span><br>
+                    </div>
+                    <span>(+150,000)</span>
+                  </div>
+                  <div class='field small'>
+                    <div class='title'>Kaoskaki</div>
+                    <div>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <span class='title'>PCS</span><br>
+                    </div>
+                    <span>(+50,000)</span>
+                  </div>
+                </div>
+                ",
             ],
             // Tambahkan data untuk menu lainnya
         ];

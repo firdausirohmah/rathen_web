@@ -363,9 +363,9 @@
                 </div>
               </div>
 
-              <div class="row mt-5">
+              <div class="row">
                 <div class="col">
-                  <p><small>{!! nl2br($jsonData['menu1'][$data->deskripsi]) !!} </small></p>
+                  <p><small style="line-height:1.5;">{!! nl2br($jsonData['menu1'][$data->deskripsi]) !!} </small></p>
                 </div>
               </div>
 
@@ -399,103 +399,13 @@
               </div>
               <div class="card mt-4">
                 <div class="card-body">
-                  <h5 class="card-title"><i class="icon icon-plus"></i>Extra</h5>
-                  <div class="payment__shipping col2-order1 col-unset-mobile mb-5">
-                    <div class="row-x">
-                      <div class="field small">
-                        <div class="title">Badan bawah melengkung
-                        </div>
-                        <input type="text" class="input txt2" placeholder='Jumlah' name="bbm"/>
-                        <span class="title">PCS</span><br>
-                        <small>+15,000</small><br><small>untuk stadium, free untuk pro dan pro+</small>
-                      </div>
-                    </div>
-                    <div class="row-x">
-                      <div class="field small">
-                        <div class="title">Pola lengan reglan
-                        </div>
-                        <input type="text" class="input txt2" placeholder='Jumlah' name="plr"/>
-                        <span class="title">PCS</span><br>
-                        <small>+15,000</small><br><small>untuk stadium, free untuk pro dan pro+</small>
-                      </div>
-                    </div>
-                    <div class="row-x">
-                      <div class="field small">
-                        <div class="title">Upgrade pola 3D
-                        </div>
-                        <input type="text" class="input txt2" placeholder='Jumlah' name="up3d"/>
-                        <span class="title">PCS</span><br>
-                        <small>+30,000</small><br><small>untuk stadium, free untuk pro dan pro+</small>
-                      </div>
-                    </div>
-                    <div class="row-x">
-                      <div class="field small">
-                        <div class="title">Logo tim di celana
-                        </div>
-                        <input type="text" class="input txt2" placeholder='Jumlah' name="logo_celana"/>
-                        <span class="title">PCS</span><br>
-                        <small>+10,000</small><br><small>untuk stadium dan pro, free untuk pro+</small>
-                      </div>
-                    </div>
-                    <div class="row-x pt-88-mobile">
-                      <div class="field small">
-                        <div class="title">Lengan panjang
-                        </div>
-                        <input type="text" class="input txt2" placeholder='Jumlah' name="lengan_panjang"/>
-                        <span class="title">PCS</span><br>
-                        <small>+30,000</small>
-                      </div>
-                    </div>
-                    <div class="row-x">
-                      <div class="field small pt100">
-                        <div class="title">Size 2XL
-                        </div>
-                        <input type="text" class="input txt2" placeholder='Jumlah' name="xxl"/>
-                        <span class="title">PCS</span><br>
-                        <small>+20,000</small>
-                      </div>
-                    </div>
-                    <div class="row-x">
-                      <div class="field small">
-                        <div class="title">Size 3XL
-                        </div>
-                        <input type="text" class="input txt2" placeholder='Jumlah' name="xxxl"/>
-                        <span class="title">PCS</span><br>
-                        <small>+35,000</small>
-                      </div>
-                    </div>
-                    <div class="row-x">
-                      <div class="field small">
-                        <div class="title">Size 4XL
-                        </div>
-                        <input type="text" class="input txt2" placeholder='Jumlah' name="xxxxl"/>
-                        <span class="title">PCS</span><br>
-                        <small>+50,000</small>
-                      </div>
-                    </div>
-                    <div class="row-x">
-                      <div class="field small">
-                        <div class="title">Celana panjang
-                        </div>
-                        <input type="text" class="input txt2" placeholder='Jumlah' name="celana_panjang"/>
-                        <span class="title">PCS</span><br>
-                        <small>+150,000</small>
-                      </div>
-                    </div>
-                    <div class="row-x">
-                      <div class="field small pb50">
-                        <div class="title">Kaos kaki
-                        </div>
-                        <input type="text" class="input txt2" placeholder='Jumlah' name="kaoskaki"/>
-                        <span class="title">PCS</span><br>
-                        <small>+50,000</small>
-                      </div>
-                    </div>
-
+                  <h5 class="card-title mb-4">Simulasi Harga</h5>
+                  <div>
+                    {!! ($jsonData['menu2'][$data->deskripsi]) !!}
                   </div>
                   <!-- <h6 class="card-subtitle mb-2 text-body-secondary">Simulasi Harga</h6> -->
                   <input type="hidden" name="kd_part" value="{{ $data->kd_part }}">
-                  <button type="submit" class="btn btn-outline-secondary w-100">Order Now</button>
+                  <button type="submit" class="btn btn-outline-secondary w-100 mt-5">Order Now</button>
                 </div>
               </div>
           </form>

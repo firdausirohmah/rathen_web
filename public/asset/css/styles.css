@@ -4,11 +4,7 @@
 
 .image-container {
     max-width: 1400px;
-    /* Mengatur lebar maksimum container */
-    margin: 0 auto;
-    /* Pusatkan container di tengah halaman */
-    padding: 20px;
-    background-color: #fff;
+    padding: 10px 20px;
     display: flex;
 }
 
@@ -418,5 +414,79 @@ button:hover {
   }
   75% {
     transform: rotate(90deg) translate(-.25rem);
+  }
+}
+
+.payment__shipping {
+  /* flex: 60%; */
+  position: relative;
+  right: 0;
+  width: 600px;
+}
+.col2-order1{
+  column-count: 2;
+}
+.row-x {
+  display: flex;
+}
+.row-x:last-child{
+  padding-bottom: 20px;
+}
+.field {
+  padding-top: 15px;
+  padding-right: 30px;
+  width: 50%;
+}
+.field.small {
+  width: auto;
+}
+.title {
+  font-size: 16px;
+  padding-bottom: 8px;
+}
+.input {
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 2px;
+  height: 48px;
+  padding-left: 15px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #5e6977;
+}
+.txt2 {
+  border-color: #e1e8ee;
+  width: 82px;
+}
+.mt-10{
+  margin-top: 5rem;
+}
+
+#btnPrev:hover, #btnNext:hover{
+  background-color: #000;
+}
+#btnPrev, #btnNext{
+  background-color: #000;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+}
+.center-vertical{
+  margin-left: 2rem;
+  margin-right: 2rem;
+  position: absolute!important;
+  top: 50%!important;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+@media only screen and (max-width: 600px) {
+  .payment__shipping{
+    position: relative;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .payment__shipping{
+    position: relative;
   }
 }

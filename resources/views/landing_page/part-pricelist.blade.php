@@ -170,9 +170,10 @@
         color: #e11c22!important;
     }
     
-    .img-25{
-      width:25rem!important;
-      height:25rem!important;
+    .img-carousel{
+      width:38rem!important;
+      height:21.5rem!important;
+      object-fit:contain;
     }
     .thumbnail-price {
       width: 4rem;
@@ -209,6 +210,11 @@
       margin-bottom: 0;
   }
   @media screen and (max-width: 600px) {
+    .img-carousel{
+      width: 38rem!important;
+      height: 13rem!important;
+      object-fit: contain;
+    }
     .navbar-main-toggle{
       display: contents;
     }
@@ -255,7 +261,7 @@
     }
   }
 </style>
-    <link rel="stylesheet" href="asset/css/styles.css">
+    <link rel="stylesheet" href="{{asset('asset/css/styles.css')}}">
 
     <div  id="floatingMenu" class="floating-menu" onClick="myFunction()" style="position: fixed; z-index: 10;margin: auto; right: 36px; bottom: 0px;">
         <a href="https://wa.me/628123456789" class="kurir-bt" style="max-width:150px">
@@ -312,25 +318,25 @@
           <div class="card">
             <div class="card-body">
 
-              <div id="imageSlider" class="carousel slide mx-auto" style="width:66%!important;" data-bs-interval="false">
+              <div id="imageSlider" class="carousel slide mx-auto" style="width:100%!important;height:21.5rem" data-bs-interval="false">
                 <div class="carousel-inner mb-3">
                   <div class="carousel-item active">
-                    <img src="{{ $data->g1}}" class="img-thumbnail img-25" alt="Image 1">
+                    <img src="{{ $data->cover}}" class="img-thumbnail img-carousel" alt="Image 1">
                   </div>
                   
                 </div>
 
-                <button id="btnPrev" class="carousel-control-prev" type="button" data-bs-target="#imageSlider" data-bs-slide="prev" onclick="navigateToRelativePage(-1)">
+                <button id="btnPrev" class="carousel-control-prev center-vertical" type="button" data-bs-target="#imageSlider" data-bs-slide="prev" onclick="navigateToRelativePage(-1)">
                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                   <span class="visually-hidden">Previous</span>
                 </button>
-                <button id="btnNext" class="carousel-control-next" type="button" data-bs-target="#imageSlider" data-bs-slide="next" onclick="navigateToRelativePage(1)">
+                <button id="btnNext" class="carousel-control-next center-vertical" type="button" data-bs-target="#imageSlider" data-bs-slide="next" onclick="navigateToRelativePage(1)">
                   <span class="carousel-control-next-icon" aria-hidden="true"></span>
                   <span class="visually-hidden">Next</span>
                 </button>
               </div>
 
-              <div class="row view-on-large">
+              <div class="row view-on-large mt-5">
                 <div class="col-lg-3">
                     <div class="container">
                         <div class="row">
@@ -357,7 +363,7 @@
                 </div>
               </div>
 
-              <div class="row mt-4">
+              <div class="row mt-5">
                 <div class="col">
                   <p><small>{!! nl2br($jsonData['menu1'][$data->deskripsi]) !!} </small></p>
                 </div>
@@ -393,8 +399,101 @@
               </div>
               <div class="card mt-4">
                 <div class="card-body">
-                  <h5 class="card-title"></h5>
-                  <h6 class="card-subtitle mb-2 text-body-secondary">Simulasi Harga</h6>
+                  <h5 class="card-title"><i class="icon icon-plus"></i>Extra</h5>
+                  <div class="payment__shipping col2-order1 col-unset-mobile mb-5">
+                    <div class="row-x">
+                      <div class="field small">
+                        <div class="title">Badan bawah melengkung
+                        </div>
+                        <input type="text" class="input txt2" placeholder='Jumlah' name="bbm"/>
+                        <span class="title">PCS</span><br>
+                        <small>+15,000</small><br><small>untuk stadium, free untuk pro dan pro+</small>
+                      </div>
+                    </div>
+                    <div class="row-x">
+                      <div class="field small">
+                        <div class="title">Pola lengan reglan
+                        </div>
+                        <input type="text" class="input txt2" placeholder='Jumlah' name="plr"/>
+                        <span class="title">PCS</span><br>
+                        <small>+15,000</small><br><small>untuk stadium, free untuk pro dan pro+</small>
+                      </div>
+                    </div>
+                    <div class="row-x">
+                      <div class="field small">
+                        <div class="title">Upgrade pola 3D
+                        </div>
+                        <input type="text" class="input txt2" placeholder='Jumlah' name="up3d"/>
+                        <span class="title">PCS</span><br>
+                        <small>+30,000</small><br><small>untuk stadium, free untuk pro dan pro+</small>
+                      </div>
+                    </div>
+                    <div class="row-x">
+                      <div class="field small">
+                        <div class="title">Logo tim di celana
+                        </div>
+                        <input type="text" class="input txt2" placeholder='Jumlah' name="logo_celana"/>
+                        <span class="title">PCS</span><br>
+                        <small>+10,000</small><br><small>untuk stadium dan pro, free untuk pro+</small>
+                      </div>
+                    </div>
+                    <div class="row-x pt-88-mobile">
+                      <div class="field small">
+                        <div class="title">Lengan panjang
+                        </div>
+                        <input type="text" class="input txt2" placeholder='Jumlah' name="lengan_panjang"/>
+                        <span class="title">PCS</span><br>
+                        <small>+30,000</small>
+                      </div>
+                    </div>
+                    <div class="row-x">
+                      <div class="field small pt100">
+                        <div class="title">Size 2XL
+                        </div>
+                        <input type="text" class="input txt2" placeholder='Jumlah' name="xxl"/>
+                        <span class="title">PCS</span><br>
+                        <small>+20,000</small>
+                      </div>
+                    </div>
+                    <div class="row-x">
+                      <div class="field small">
+                        <div class="title">Size 3XL
+                        </div>
+                        <input type="text" class="input txt2" placeholder='Jumlah' name="xxxl"/>
+                        <span class="title">PCS</span><br>
+                        <small>+35,000</small>
+                      </div>
+                    </div>
+                    <div class="row-x">
+                      <div class="field small">
+                        <div class="title">Size 4XL
+                        </div>
+                        <input type="text" class="input txt2" placeholder='Jumlah' name="xxxxl"/>
+                        <span class="title">PCS</span><br>
+                        <small>+50,000</small>
+                      </div>
+                    </div>
+                    <div class="row-x">
+                      <div class="field small">
+                        <div class="title">Celana panjang
+                        </div>
+                        <input type="text" class="input txt2" placeholder='Jumlah' name="celana_panjang"/>
+                        <span class="title">PCS</span><br>
+                        <small>+150,000</small>
+                      </div>
+                    </div>
+                    <div class="row-x">
+                      <div class="field small pb50">
+                        <div class="title">Kaos kaki
+                        </div>
+                        <input type="text" class="input txt2" placeholder='Jumlah' name="kaoskaki"/>
+                        <span class="title">PCS</span><br>
+                        <small>+50,000</small>
+                      </div>
+                    </div>
+
+                  </div>
+                  <!-- <h6 class="card-subtitle mb-2 text-body-secondary">Simulasi Harga</h6> -->
                   <input type="hidden" name="kd_part" value="{{ $data->kd_part }}">
                   <button type="submit" class="btn btn-outline-secondary w-100">Order Now</button>
                 </div>
@@ -410,7 +509,8 @@
         '{{ url('/price-list', ['kd_part' => 'half-print']) }}',
         '{{ url('/price-list', ['kd_part' => 'full-print']) }}',
         '{{ url('/price-list', ['kd_part' => 'pro']) }}',
-        '{{ url('/price-list', ['kd_part' => 'pro-plus']) }}'
+        '{{ url('/price-list', ['kd_part' => 'pro-plus']) }}',
+        '{{ url('/price-list', ['kd_part' => 'jacket-anthem']) }}'
       ];
 
       var currentPageIndex = pages.indexOf(window.location.href);
@@ -838,30 +938,17 @@
                   <div id="content1" class="card-text content">
                     <div class="container-fluid">
                       <div class="row center mt-5">
-                        <div class="col-sm-5 mb-4 image-container">
-                          <img src="{{ $data->g1 }}" class="img-fluid w-100" alt="Image 1">
-                        </div>
-                        <div class="col-sm-5 mb-4 ">
-                          <img src="{{ $data->g2 }}" class="img-fluid w-100" alt="Image 2">
-                        </div>
-                        <div class="col-sm-5 mb-4 ">
-                          <img src="{{ $data->g3 }}" class="img-fluid w-100" alt="Image 3">
-                        </div>
-                        <div class="col-sm-5 mb-4 ">
-                          <img src="{{ $data->g4 }}" class="img-fluid w-100" alt="Image 4">
-                        </div>
-                        <div class="col-sm-5 mb-4 ">
-                          <img src="{{ $data->g5 }}" class="img-fluid w-100" alt="Image 5">
-                        </div>
-                        <div class="col-sm-5 mb-4 ">
-                          <img src="{{ $data->g6 }}" class="img-fluid w-100" alt="Image 6">
-                        </div>
-                        <div class="col-sm-5 mb-4 ">
-                          <img src="{{ $data->g7 }}" class="img-fluid w-100" alt="Image 7">
-                        </div>
-                        <div class="col-sm-5 mb-4 ">
-                          <img src="{{ $data->g8 }}" class="img-fluid w-100" alt="Image 8">
-                        </div>
+                      @for($i = 1; $i <= 10; $i++)
+                          @php
+                              $imageKey = "g" . $i;
+                          @endphp
+
+                          @if($data->$imageKey)
+                              <div class="col-sm-5 mb-4 image-container">
+                                  <img src="{{ $data->$imageKey }}" class="img-fluid w-100" alt="Image {{ $i }}">
+                              </div>
+                          @endif
+                      @endfor
                       </div>
                     </div>
                   </div>
@@ -869,11 +956,11 @@
                     <h6 class="card-subtitle text-body-secondary text-center fw-bold fs-4 mt-3 mb-5">Perbandingan type kualitas</h6>
                     <div class="fabrics mb-5">
                       <div class="overflow-hidden max-width-4xl mx-auto mb-2">
-                        <img class="h-100 w-100" src="{{ asset('asset/images/price-list/komparasi/preview-fabrics.jpg')}}" alt="">
+                        <img class="h-100 w-100" src="{{ asset('asset/images/price-list/komparasi/preview-BAHAN.jpg')}}" alt="">
                       </div>
                       <div class="d-flex flex-column align-items-center">
                         <img class="object-fit-cover icon mx-auto" src="{{ asset('asset/images/price-list/komparasi/fabrics.jpg')}}" />
-                        <div class="text-center fw-bold m-2">Fabrics</div>
+                        <div class="text-center fw-bold m-2">Bahan</div>
                       </div>
                       <table class="mx-auto">
                         <thead>
@@ -900,7 +987,7 @@
 
                     <div class="logo-tim mb-5">
                       <div class="overflow-hidden max-width-4xl mx-auto mb-2">
-                        <img class="h-100 w-100" src="{{ asset('asset/images/price-list/komparasi/preview-logo-tim.jpg')}}" alt="">
+                        <img class="h-100 w-100" src="{{ asset('asset/images/price-list/komparasi/preview-LOGO-TIM-v2.jpg')}}" alt="">
                       </div>
                       <div class="d-flex flex-column align-items-center">
                         <img class="object-fit-cover icon mx-auto" src="{{ asset('asset/images/price-list/komparasi/logo-tim.jpg')}}" />
@@ -931,7 +1018,7 @@
 
                     <div class="logo-r mb-5">
                       <div class="overflow-hidden max-width-4xl mx-auto mb-2">
-                        <img class="h-100 w-100" src="{{ asset('asset/images/price-list/komparasi/LOGO_TBA.png')}}" alt="">
+                        <img class="h-100 w-100" src="{{ asset('asset/images/price-list/komparasi/preview-LOGO-R.jpg')}}" alt="">
                       </div>
                       <div class="d-flex flex-column align-items-center">
                         <img class="object-fit-cover icon mx-auto" src="{{ asset('asset/images/price-list/komparasi/logo-r.jpg')}}" />
@@ -988,7 +1075,7 @@
 
                     <div class="laser-cut mb-5">
                       <div class="overflow-hidden max-width-4xl mx-auto mb-2">
-                        <img class="h-100 w-100" src="{{ asset('asset/images/price-list/komparasi/LOGO_TBA.png')}}" alt="">
+                        <img class="h-100 w-100" src="{{ asset('asset/images/price-list/komparasi/preview-LASER-CUT.jpg')}}" alt="">
                       </div>
                       <div class="d-flex flex-column align-items-center">
                         <img class="object-fit-cover icon mx-auto" src="{{ asset('asset/images/price-list/komparasi-fabrics.jpg')}}" />
@@ -1014,7 +1101,7 @@
 
                     <div class="authentic-r mb-5">
                       <div class="overflow-hidden max-width-4xl mx-auto mb-2">
-                        <img class="h-100 w-100" src="{{ asset('asset/images/price-list/komparasi/LOGO_TBA.png')}}" alt="">
+                        <img class="h-100 w-100" src="{{ asset('asset/images/price-list/komparasi/preview-AUTHENTIC.jpg')}}" alt="">
                       </div>
                       <div class="d-flex flex-column align-items-center">
                         <img class="object-fit-cover icon mx-auto" src="{{ asset('asset/images/price-list/komparasi/authentic.jpg')}}" />
@@ -1217,6 +1304,7 @@
     </footer> --}}
   
     {{-- end of title page --}}
+
     <script>
       // Mendapatkan elemen tombol A dan B dari DOM
       var buttonA = document.getElementById('buttonA');

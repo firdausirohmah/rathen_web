@@ -143,6 +143,19 @@ class HomeController extends Controller
                 - Nomor celana polyflex
                 - FREE nama tim di celana
                 - FREE logo tim 3D di celana\n",
+                
+                'jacket-anthem' => "Jacket Anthem Pro
+                Harga : IDR 249,900 / pcs
+                Minimum Order : 12 pcs
+                
+                Deksripsi:
+                - Bahan : RATHEN-STRETCH
+                  (80% polyester, 20% spandex)
+                - Logo brand RATHEN : 3D screen print / polyflex
+                - Logo tim : 3D
+                - Authentic R : 3D screen print
+                - Tulisan : polyflex
+                - Exclusive waterproof zipper\n",
             ],
             // Tambahkan data untuk menu lainnya
         ];

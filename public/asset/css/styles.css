@@ -578,7 +578,7 @@ input:checked + .label_harga {
 }
 /* end modal */
 .img-academy{
-  height: 4rem!important;
+  height: 5rem!important;
 }
 .img-client{
   object-fit:contain;
@@ -606,7 +606,7 @@ input:checked + .label_harga {
     filter: unset;
   }
   .img-academy{
-    height: 7rem!important;
+    height: 6rem!important;
   }
   .company-slider{
     width: 5rem;

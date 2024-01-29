@@ -974,55 +974,52 @@
             <div class="container">
               <div class="row center-hori">
                 <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
-                  <h1 class="mb-5 display-5 text-center" style="font-family: Montheavy; color: black; font-size: 22px; font-weight: bold; margin-bottom: 20px; text-align: center;">PRICE LIST</h1>
+                  <h1 class="display-5 text-center" style="font-family: Montheavy; color: black; font-size: 22px; font-weight: bold; margin-bottom: 20px; text-align: center;">PRICE LIST</h1>
                 </div>
               </div>
             </div>
 
             <div class="row center-hori">
                 <div class="col-lg-8">
-                    <div id="carouselExample2" class="carousel slide w-100 h-carousel slider" data-ride="carousel">
-                        <div class="carousel-inner"> 
-                            <div class="carousel-item img-carousel active">
-                                <a href="{{ url('/price-list', ['kd_part' => 'non-print']) }}" target="_blank" class="d-block h-100 mx-auto">
-                                    <img src="{{asset('asset/images/price-list/detail/nonprint/cover.png')}}" class="d-block h-100 mx-auto"  alt="nonprint"> 
-                                </a>
+                    <div class="container pb-5">
+                        <div class="pricelist-slider swiper-container pt-3 pb-5">
+                            <div class="swiper-wrapper align-items-center">
+                                <div class="swiper-slide">
+                                    <a href="{{ url('/price-list', ['kd_part' => 'non-print']) }}" target="_blank">
+                                        <img src="{{asset('asset/images/price-list/detail/nonprint/cover.png')}}" class="img-pricelist" alt="nonprint"> 
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="{{ url('/price-list', ['kd_part' => 'half-print']) }}" target="_blank">
+                                        <img src=" {{asset('asset/images/price-list/detail/halfprint/cover.png')}}" class="img-pricelist" alt="halfprint"> 
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="{{ url('/price-list', ['kd_part' => 'full-print']) }}" target="_blank">
+                                        <img src="{{asset('asset/images/price-list/detail/fullprint/cover.png')}}" class="img-pricelist" alt="fullpint"> 
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="{{ url('/price-list', ['kd_part' => 'pro']) }}" target="_blank">
+                                        <img src=" {{asset('asset/images/price-list/detail/pro/cover.png')}}" class="img-pricelist" alt="pro">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="{{ url('/price-list', ['kd_part' => 'pro-plus']) }}" target="_blank">
+                                        <img src=" {{asset('asset/images/price-list/detail/proplus/cover.png')}}" class="img-pricelist" alt="proplus">
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="{{ url('/price-list', ['kd_part' => 'jacket-anthem']) }}" target="_blank">
+                                        <img src=" {{asset('asset/images/price-list/detail/jacket-anthem/cover.png')}}" class="img-pricelist" alt="jacket-anthem">
+                                    </a>
+                                </div>
                             </div>
-                            <div class="carousel-item">
-                                <a href="{{ url('/price-list', ['kd_part' => 'half-print']) }}" target="_blank" class="d-block h-100 mx-auto">
-                                    <img src=" {{asset('asset/images/price-list/detail/halfprint/cover.png')}}" class="d-block h-100 mx-auto" alt="halfprint"> 
-                                </a>
-                            </div>
-                            <div class="carousel-item"> 
-                                <a href="{{ url('/price-list', ['kd_part' => 'full-print']) }}" target="_blank" class="d-block h-100 mx-auto">
-                                    <img src=" {{asset('asset/images/price-list/detail/fullprint/cover.png')}}" class="d-block h-100 mx-auto" alt="fullprint">
-                                </a>
-                            </div>
-                            <div class="carousel-item" >
-                                <a href="{{ url('/price-list', ['kd_part' => 'pro']) }}" target="_blank" class="d-block h-100 mx-auto">
-                                    <img src=" {{asset('asset/images/price-list/detail/pro/cover.png')}}" class="d-block h-100 mx-auto" alt="pro">
-                                </a>
-                            </div>
-                            <div class="carousel-item" >
-                                <a href="{{ url('/price-list', ['kd_part' => 'pro-plus']) }}" target="_blank" class="d-block h-100 mx-auto">
-                                    <img src=" {{asset('asset/images/price-list/detail/proplus/cover.png')}}" class="d-block h-100 mx-auto" alt="proplus">
-                                </a>
-                            </div>
-                            <div class="carousel-item" >
-                                <a href="{{ url('/price-list', ['kd_part' => 'jacket-anthem']) }}" target="_blank" class="d-block h-100 mx-auto">
-                                    <img src=" {{asset('asset/images/price-list/detail/jacket-anthem/cover.png')}}" class="d-block h-100 mx-auto" alt="jacket-anthem">
-                                </a>
-                            </div>
-                            <button class="carousel-control-prev center-vertical w-9" type="button" data-bs-target="#carouselExample2" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next center-vertical w-9" type="button" data-bs-target="#carouselExample2" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
                         </div>
                     </div>
+                    
                 </div>
             </div>
 
@@ -1030,7 +1027,7 @@
     </section> 
     <!-- </div> -->
     <section id="faq">
-        <section class="py-5 py-xl-8">
+        <section class="py-5 py-xl-8 mt-5">
             <div class="container">
               <div class="row center-hori">
                 <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
@@ -1158,7 +1155,7 @@
             return new Swiper(selector, {
                 direction: 'horizontal',
                 loop: true,
-                slidesPerView: 5,
+                slidesPerView: getSlidesPerView(),
                 spaceBetween: 100,
                 navigation: {
                     nextEl: '.swiper-button-next',
@@ -1173,7 +1170,62 @@
 
         initializeSwiper('.company-slider');
         initializeSwiper('.academy-slider');
+
+        window.addEventListener('resize', function(){
+            swiper.params.slidesPerView = getSlidesPerView();
+            swiper.update();
+        });
+        function getSlidesPerView() {
+            // Check device width and return appropriate slidesPerView
+            if (window.innerWidth <= 768) { // For mobile and tablet devices
+                return 3;
+            } else { // For larger devices
+                return 5;
+            }
+        }
     });
+    document.addEventListener('DOMContentLoaded', function(){
+        var swiper = new Swiper(".pricelist-slider", {
+            // direction: 'horizontal',
+            effect:'coverflow',
+            grabCursor:true,
+            centeredSlides:true,
+            loop: true,
+            slidesPerView: getSlidesPerView(),
+            coverflowEffect:{
+                rotate:0,
+                stretch:0,
+                depth:50,
+                modifier:15,
+                slideShadows:false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            autoplay:{
+                delay:3000,
+                disableOnInteraction: false,
+            },
+        });
+        window.addEventListener('resize', function(){
+            swiper.params.slidesPerView = getSlidesPerView();
+            swiper.update();
+        });
+        function getSlidesPerView() {
+            // Check device width and return appropriate slidesPerView
+            if (window.innerWidth <= 768) { // For mobile and tablet devices
+                return 1;
+            } else { // For larger devices
+                return 2;
+            }
+        }
+    })
+    
 </script>
 
 <script>

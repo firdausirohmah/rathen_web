@@ -70,8 +70,9 @@
           color: #fff;
         }
         #imageSlider {
-      width: 70%;
-      margin: auto;
+          width:100%!important;
+          height:21.5rem;
+          margin: auto;
     }
 
     /* Gaya untuk pilihan gambar di bawah slider */
@@ -212,8 +213,11 @@
   @media screen and (max-width: 600px) {
     .img-carousel{
       width: 38rem!important;
-      height: 13rem!important;
+      height: 11.5rem!important;
       object-fit: contain;
+    }
+    #imageSlider {
+      height:11.5rem;
     }
     .navbar-main-toggle{
       display: contents;
@@ -319,7 +323,7 @@
           <div class="card">
             <div class="card-body">
 
-              <div id="imageSlider" class="carousel slide mx-auto" style="width:100%!important;height:21.5rem" data-bs-interval="false">
+              <div id="imageSlider" class="carousel slide mx-auto" data-bs-interval="false">
                 <div class="carousel-inner mb-3">
                   <div class="carousel-item active">
                     <img src="{{ $data->cover}}" class="img-thumbnail img-carousel" alt="Image 1">

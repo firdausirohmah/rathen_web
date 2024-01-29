@@ -4,6 +4,7 @@
 {{-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> --}}
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <link rel="stylesheet" href="asset/css/styles.css">
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 <!-- <link id="pagestyle" href="asset/admin/css/soft-ui-dashboard.  css?v=1.0.3" rel="stylesheet" /> -->
 <section id="home" class="section-home" style="overflow: hidden;">
  
@@ -964,8 +965,68 @@
         </section>
     </section> 
     <!-- </div> -->
-    <section id="faq">
+    <section id="price-list">
         <section class="py-5 py-xl-8 p0-mobile">
+            <div class="container">
+              <div class="row center-hori">
+                <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
+                  <h1 class="mb-5 display-5 text-center" style="font-family: Montheavy; color: black; font-size: 22px; font-weight: bold; margin-bottom: 20px; text-align: center;">PRICE LIST</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="row center-hori">
+                <div class="col-lg-8">
+                    <div id="carouselExample2" class="carousel slide w-100 h-carousel slider" data-ride="carousel">
+                        <div class="carousel-inner"> 
+                            <div class="carousel-item img-carousel active">
+                                <a href="{{ url('/price-list', ['kd_part' => 'non-print']) }}" target="_blank" class="d-block h-100 mx-auto">
+                                    <img src="{{asset('asset/images/price-list/detail/nonprint/cover.png')}}" class="d-block h-100 mx-auto"  alt="nonprint"> 
+                                </a>
+                            </div>
+                            <div class="carousel-item">
+                                <a href="{{ url('/price-list', ['kd_part' => 'half-print']) }}" target="_blank" class="d-block h-100 mx-auto">
+                                    <img src=" {{asset('asset/images/price-list/detail/halfprint/cover.png')}}" class="d-block h-100 mx-auto" alt="halfprint"> 
+                                </a>
+                            </div>
+                            <div class="carousel-item"> 
+                                <a href="{{ url('/price-list', ['kd_part' => 'full-print']) }}" target="_blank" class="d-block h-100 mx-auto">
+                                    <img src=" {{asset('asset/images/price-list/detail/fullprint/cover.png')}}" class="d-block h-100 mx-auto" alt="fullprint">
+                                </a>
+                            </div>
+                            <div class="carousel-item" >
+                                <a href="{{ url('/price-list', ['kd_part' => 'pro']) }}" target="_blank" class="d-block h-100 mx-auto">
+                                    <img src=" {{asset('asset/images/price-list/detail/pro/cover.png')}}" class="d-block h-100 mx-auto" alt="pro">
+                                </a>
+                            </div>
+                            <div class="carousel-item" >
+                                <a href="{{ url('/price-list', ['kd_part' => 'pro-plus']) }}" target="_blank" class="d-block h-100 mx-auto">
+                                    <img src=" {{asset('asset/images/price-list/detail/proplus/cover.png')}}" class="d-block h-100 mx-auto" alt="proplus">
+                                </a>
+                            </div>
+                            <div class="carousel-item" >
+                                <a href="{{ url('/price-list', ['kd_part' => 'jacket-anthem']) }}" target="_blank" class="d-block h-100 mx-auto">
+                                    <img src=" {{asset('asset/images/price-list/detail/jacket-anthem/cover.png')}}" class="d-block h-100 mx-auto" alt="jacket-anthem">
+                                </a>
+                            </div>
+                            <button class="carousel-control-prev center-vertical w-9" type="button" data-bs-target="#carouselExample2" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next center-vertical w-9" type="button" data-bs-target="#carouselExample2" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </section> 
+    <!-- </div> -->
+    <section id="faq">
+        <section class="py-5 py-xl-8">
             <div class="container">
               <div class="row center-hori">
                 <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
@@ -1032,7 +1093,85 @@
         </section>
     </section> 
     <!-- </div> -->
+    <section id="clients" class="clients" >
+        <div class="container">
+            <div class="row center-hori">
+            <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
+                <h1 class="mb-5 display-5 text-center" style="font-family: Montheavy; color: black; font-size: 22px; font-weight: bold; margin-bottom: 20px; text-align: center;">CLIENTS</h1>
+            </div>
+            </div>
+        </div>
+        <div class="container">
+            
+            <div class="company-slider swiper-container pt-3 pb-3">
+                <div class="swiper-wrapper align-items-center">
+                    
+                <?php
+                $imagePath = public_path('asset/images/clients/company');
+                $images = glob($imagePath . '/*.png');
+                foreach ($images as $image) {
+                    $imageName = basename($image);
+                    $imageNumber = (int) pathinfo($imageName, PATHINFO_FILENAME);
+                ?>
+                    <div class="swiper-slide">
+                        <img src="{{ asset('asset/images/clients/company/' . $imageName) }}" class="img-client" alt="">
+                    </div>
+                <?php } ?>
+
+                </div>
+            </div>
+
+            <div class="academy-slider swiper-container pt-5">
+                <div class="swiper-wrapper align-items-center">
+                    
+                <?php
+                $imagePath = public_path('asset/images/clients/academy');
+                $images = glob($imagePath . '/*.png');
+                foreach ($images as $image) {
+                    $imageName = basename($image);
+                    $imageNumber = (int) pathinfo($imageName, PATHINFO_FILENAME);
+                ?>
+                    <div class="swiper-slide">
+                        <img src="{{ asset('asset/images/clients/academy/' . $imageName) }}" class="img-client img-academy" alt="">
+                    </div>
+                <?php } ?>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+    
+    <!-- End Clients Section -->
 </div>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        function initializeSwiper(selector) {
+            return new Swiper(selector, {
+                direction: 'horizontal',
+                loop: true,
+                slidesPerView: 5,
+                spaceBetween: 100,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                autoplay:{
+                    delay:2500,
+                    disableOnInteraction: false,
+                },
+            });
+        }
+
+        initializeSwiper('.company-slider');
+        initializeSwiper('.academy-slider');
+    });
+</script>
+
 <script>
 // script.js
 document.addEventListener('DOMContentLoaded', function () {
@@ -1048,8 +1187,10 @@ document.addEventListener('DOMContentLoaded', function () {
         progressBar.style.height = progress + '%';
     });
 });
-     </script>
+</script>
+
 <style>
+
 .button {
     /* padding: 100px 100px 100px 100px; */
     position: relative;
@@ -1284,7 +1425,7 @@ document.addEventListener('DOMContentLoaded', function () {
     </style>
     <body>
         <br>
-        <div style="font-family: Montheavy; color: black; font-size: 24px; font-weight: bold; margin-bottom: 20px; text-align: center; ">
+        <div style="font-family: Montheavy; color: black; font-size: 24px; font-weight: bold; margin-bottom: 20px; text-align: center; margin-top:3rem">
             LOCATION
         </div>
     <div class="container text-center">
@@ -1357,6 +1498,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 </div>
             </div>
     </div>
+
 </footer>
 
 </section>

@@ -287,6 +287,7 @@
                         <a class="text-nav nav-link" href="/page-custom#order">CARA PEMESANAN</a>
                         <a class="text-nav nav-link" href="/price-list/non-print">PRICE LIST</a>
                         <a class="text-nav nav-link" href="/page-custom#faq">FAQ</a>
+                        <a class="text-nav nav-link" href="/page-custom#clients">CLIENT</a>
                         <a class="text-nav nav-link" href="/page-custom#location">LOCATION</a>
                         <a class="text-nav nav-link" href="/page-custom#contact">CONTACT US</a>
                     </div>
@@ -381,12 +382,12 @@
                   <h5 class="card-title">Harga: <span id="hargaDb">{{ $data->harga }}</span></h5>
                     <div class="container mt-4">
                         <div class="row"> 
-                          <div class="col">
+                          <div class="col col-content">
                             <div class="quantity-button decrement" onclick="decrement()">-</div>
                           </div>
-                          <div class="col"><input type="text" name="qty" class="quantity-input" id="quantityInput" value="{{ $data->min_order }}" readonly>
+                          <div class="col col-content"><input type="text" name="qty" class="quantity-input" id="quantityInput" value="{{ $data->min_order }}" readonly>
                           </div>
-                          <div class="col"><div class="quantity-button" onclick="increment()">+</div>
+                          <div class="col col-content"><div class="quantity-button" onclick="increment()">+</div>
                           </div>
                         </div>  
                         <div class="row mt-4">
@@ -405,10 +406,11 @@
                   </div>
                   <!-- <h6 class="card-subtitle mb-2 text-body-secondary">Simulasi Harga</h6> -->
                   <input type="hidden" name="kd_part" value="{{ $data->kd_part }}">
-                  <button type="submit" class="btn btn-outline-secondary w-100 mt-5">Order Now</button>
+                  <!-- <button type="submit" class="btn btn-outline-secondary w-100 mt-5" id="QuotationBtn">Order Now</button> -->
                 </div>
               </div>
           </form>
+          <button type="submit" class="btn btn-outline-secondary w-100 mt-5" id="QuotationBtn">Order Now</button>
         </div>
 
       </div>
@@ -737,42 +739,7 @@
         
             // Tampilkan hasilnya
             document.getElementById("hargaDb").innerText = "Rp " + formattedHarga;
-          </script>            
-          <div class="col-lg-3" style="font-weight: 200;">
-            <form action="{{ route("order") }}" method="POST"> 
-              @csrf
-                <div class="card mt-4-mobile">
-                    <div class="card-body">
-                      <h5 class="card-title" id="hargaDb">Rp {{ $data->harga }}</h5>
-                        <div class="container mt-4">
-                            <div class="row"> 
-                              <div class="col">
-                                <div class="quantity-button decrement" onclick="decrement()">-</div>
-                              </div>
-                              <div class="col"><input type="text" name="qty" class="quantity-input" id="quantityInput" value="{{ $data->min_order }}" readonly>
-                              </div>
-                              <div class="col"><div class="quantity-button" onclick="increment()">+</div>
-                              </div>
-                            </div>  
-                            <div class="row mt-4">
-                              <div class="col">
-                                <div>Total Harga: <span id="totalHarga">Rp {{ $data->harga }}</span></div> 
-                              </div>
-                            </div>
-                        </div>
-                    </div>
-                  </div>
-                  <div class="card mt-4">
-                    <div class="card-body">
-                      <h5 class="card-title"></h5>
-                      <h6 class="card-subtitle mb-2 text-body-secondary">Simulasi Harga</h6>
-                      <input type="hidden" name="kd_part" value="{{ $data->kd_part }}">
-                      <button type="submit" class="btn btn-outline-secondary w-100">Order Now</button>
-                      {{-- <a href="{{ url('/form-1', ['kd_part' => $data->kd_part]) }}"><button class="btn btn-outline-secondary w-100">Order Now</button></a> --}}
-                    </div>
-                  </div>
-                </form>
-            </div>
+          </script>   
             
         </div>
 
@@ -1102,6 +1069,60 @@
       <div class="container-xxl" id="kategori2">
        
       </div>
+
+      <!-- modal quotation -->
+<div id="QuotationModal" class="modal pt200">
+  <div class="modal-content mw-32">
+    <span class="close">&times;</span>
+    <div class="form-modal">
+      <h4>Silahkan masukkan data</h4>
+      <form action="{{ route('quotation') }}" method="POST" id="inputDataForm">
+          @csrf
+          <label for="" class="subtitle">Nama Pelanggan</label>
+          <input type="text" class="form-control" name="nama_pemesanan">
+
+          <label for="" class="subtitle">Kontak (Whatsapp)</label>
+          <input type="text" class="form-control" name="kontak" id="kontakInput">
+          <small id="kontakError" style="color: red;"></small>
+
+          <label for="" class="subtitle">Email</label>
+          <input type="text" class="form-control" name="email">
+
+          <label for="" class="subtitle">Alamat</label>
+          <input type="text" class="form-control" name="alamat">
+
+          <button class="btn-modal" type="submit" onclick="return validateForm()">Save</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var modal = document.getElementById('QuotationModal');
+    var btn = document.getElementById('QuotationBtn');
+    var span = document.getElementsByClassName('close')[0];
+
+    // Display the modal when the button is clicked
+    btn.onclick = function () {
+      modal.style.display = 'block';
+    };
+
+    // Close the modal when the close button is clicked
+    span.onclick = function () {
+      modal.style.display = 'none';
+    };
+
+    // Close the modal when clicking outside of it
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = 'none';
+      }
+    };
+
+  });
+</script>
+
       <script>
         // Fungsi untuk mengubah warna tautan setelah diklik
       function changeLinkColor(clickedLink) {

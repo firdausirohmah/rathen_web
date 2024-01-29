@@ -344,7 +344,7 @@ class PesananController extends Controller
         // $html = view('welcome')->render();
         foreach ($data as $pesanan) {
 
-            return view('landing_page.quotation', [
+            return view('landing_page.quotation-order', [
                 'data' => $pesanan,
                 'nama' => $nama_pemesanan,
                 'kontak' => $kontak,

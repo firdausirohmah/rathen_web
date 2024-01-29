@@ -1004,6 +1004,27 @@ input[type=text] {
   padding-top: 5px;
 }
 
+
+.ttd-quo{
+  position: relative;
+  right: 18rem;
+}
+#myDIV {
+  height: 50rem;
+  width: 250px;
+  overflow: auto;
+}
+
+#content {
+  height: auto;
+  width: auto;
+  padding: 10px;
+}
+.w-unset-quo{
+  width: unset;
+}
+
+
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
 @media only screen and (max-width: 600px) {
   header{
@@ -1157,6 +1178,16 @@ input[type=text] {
   }
   .pt135{
     padding: 1rem 0 0;
+  }
+  #myDIV {
+    margin: 20px;
+    height: 30rem;
+    width: 250px;
+    overflow: auto;
+  }
+  .button.back{
+    width: 40px!important;
+    height: 40px!important;
   }
 }
 

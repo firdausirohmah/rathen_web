@@ -152,32 +152,35 @@ class HomeController extends Controller
             'menu2' => [
                 'non-print' => 
                 "
-                <h6 class='card-subtitle text-primary-emphasis'>Add Cost</h6>
+                <h6 class='card-subtitle text-black-50'>Add Cost</h6>
                 <div class='payment__shipping'>
 
                   <div class='field small'>
                     <div class='title'>Kerah pakai kancing</div>
                     <div class='ms-auto'>
-                      <span>(+10,000)</span>
+                      <input type='checkbox' id='kerah_kancing' name='kerah_kancing' value='10000'>
+                      <label class='label_harga' class='label_harga' for='kerah_kancing'>(+10,000)</label>
                     </div>
                   </div>
                   <div class='field small'>
                     <div class='title'>Badan bawah melengkung</div>
                     <div class='ms-auto'>
-                      <span>(+15,000)</span>
+                      <input type='checkbox' id='bb_melengkung' name='bb_melengkung' value='15000'>
+                      <label class='label_harga' for='bb_lengkung'>(+15,000)</label>
                     </div>
                   </div>
                   <div class='field small'>
                     <div class='title'>Lengan pola raglan</div>
                     <div class='ms-auto'>
-                      <span>(+15,000)</span>
+                      <input type='checkbox' id='lengan_raglan' name='lengan_raglan' value='15000'>
+                      <label class='label_harga' for='lengan_raglan'>(+15,000)</label>
                     </div>
                   </div>
 
                   <div class='field small'>
                     <div class='title'>Lengan Panjang</div>
                     <div>
-                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='lengan_panjang'/>
                       <span class='title'>PCS</span><br>
                     </div>
                     <span>(+30,000)</span>
@@ -187,7 +190,7 @@ class HomeController extends Controller
                   <div class='field small pt-0'>
                     <div class='title'>- Size 2XL</div>
                     <div>
-                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='2xl'/>
                       <span class='title'>PCS</span><br>
                     </div>
                     <span>(+20,000)</span>
@@ -195,7 +198,7 @@ class HomeController extends Controller
                   <div class='field small'>
                     <div class='title'>- Size 3XL</div>
                     <div>
-                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='3xl'/>
                       <span class='title'>PCS</span><br>
                     </div>
                     <span>(+35,000)</span>
@@ -203,7 +206,7 @@ class HomeController extends Controller
                   <div class='field small'>
                     <div class='title'>- Size >4XL</div>
                     <div>
-                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='4xl'/>
                       <span class='title'>PCS</span><br>
                     </div>
                     <span>(+50,000)</span>
@@ -212,14 +215,15 @@ class HomeController extends Controller
                   <div class='field small'>
                     <div class='title'>Celana printing</div>
                     <div class='ms-auto'>
-                      <span>(+50,000)</span>
+                      <input type='checkbox' id='celana_printing' name='celana_printing' value='50000'>
+                      <label class='label_harga' for='celana_printing'>(+50,000)</label>
                     </div>
                   </div>
 
                   <div class='field small'>
                     <div class='title'>Celana panjang PRO</div>
                     <div>
-                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='celana_pro'/>
                       <span class='title'>PCS</span><br>
                     </div>
                     <span>(+150,000)</span>
@@ -227,38 +231,42 @@ class HomeController extends Controller
                   <div class='field small'>
                     <div class='title'>Kaoskaki</div>
                     <div>
-                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='kaoskaki'/>
                       <span class='title'>PCS</span><br>
                     </div>
                     <span>(+50,000)</span>
                   </div>
                 </div>
                 
-                <h6 class='card-subtitle text-primary-emphasis mt-4'>Upgrade Fitur</h6>
+                <h6 class='card-subtitle text-black-50 mt-4'>Upgrade Fitur</h6>
                 <div class='payment__shipping'>
 
                   <div class='field small'>
                     <div class='title'>Bahan embos</div>
                     <div class='ms-auto'>
-                      <span>(+20,000)</span>
+                      <input type='checkbox' id='bahan_embos' name='upgrade' value='20000'>
+                      <label class='label_harga' for='bahan_embos'>(+20,000)</label>
                     </div>
                   </div>
                   <div class='field small'>
                     <div class='title'>Logo 3D</div>
                     <div class='ms-auto'>
-                      <span>(+30,000)</span>
+                      <input type='checkbox' id='logo_3d' name='upgrade' value='30000'>
+                      <label class='label_harga' for='logo_3d'>(+30,000)</label>
                     </div>
                   </div>
                   <div class='field small'>
                     <div class='title'>Kerah elastic rib</div>
                     <div class='ms-auto'>
-                      <span>(+20,000)</span>
+                      <input type='checkbox' id='kerah_rib' name='kerah_rib' value='20000'>
+                      <label class='label_harga' for='kerah_rib'>(+20,000)</label>
                     </div>
                   </div>
                   <div class='field small'>
                     <div class='title'>Ujung tangan elastic rib</div>
                     <div class='ms-auto'>
-                      <span>(+20,000)</span>
+                      <input type='checkbox' id='tangan_rib' name='tangan_rib' value='20000'>
+                      <label class='label_harga' for='tangan_rib'>(+20,000)</label>
                     </div>
                   </div>
                   
@@ -268,32 +276,35 @@ class HomeController extends Controller
                 
                 'half-print' => 
                 "
-                <h6 class='card-subtitle text-primary-emphasis'>Add Cost</h6>
+                <h6 class='card-subtitle text-black-50'>Add Cost</h6>
                 <div class='payment__shipping'>
 
                   <div class='field small'>
                     <div class='title'>Kerah pakai kancing</div>
                     <div class='ms-auto'>
-                      <span>(+10,000)</span>
+                      <input type='checkbox' id='kerah_kancing' name='kerah_kancing' value='10000'>
+                      <label class='label_harga' for='kerah_kancing'>(+10,000)</label>
                     </div>
                   </div>
                   <div class='field small'>
                     <div class='title'>Badan bawah melengkung</div>
                     <div class='ms-auto'>
-                      <span>(+15,000)</span>
+                      <input type='checkbox' id='bb_melengkung' name='bb_melengkung' value='15000'>
+                      <label class='label_harga' for='bb_lengkung'>(+15,000)</label>
                     </div>
                   </div>
                   <div class='field small'>
                     <div class='title'>Lengan pola raglan</div>
                     <div class='ms-auto'>
-                      <span>(+15,000)</span>
+                      <input type='checkbox' id='lengan_raglan' name='lengan_raglan' value='15000'>
+                      <label class='label_harga' for='lengan_raglan'>(+15,000)</label>
                     </div>
                   </div>
 
                   <div class='field small'>
                     <div class='title'>Lengan Panjang</div>
                     <div>
-                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='lengan_panjang'/>
                       <span class='title'>PCS</span><br>
                     </div>
                     <span>(+30,000)</span>
@@ -303,7 +314,7 @@ class HomeController extends Controller
                   <div class='field small pt-0'>
                     <div class='title'>- Size 2XL</div>
                     <div>
-                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='2xl'/>
                       <span class='title'>PCS</span><br>
                     </div>
                     <span>(+20,000)</span>
@@ -311,7 +322,7 @@ class HomeController extends Controller
                   <div class='field small'>
                     <div class='title'>- Size 3XL</div>
                     <div>
-                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='3xl'/>
                       <span class='title'>PCS</span><br>
                     </div>
                     <span>(+35,000)</span>
@@ -319,7 +330,7 @@ class HomeController extends Controller
                   <div class='field small'>
                     <div class='title'>- Size >4XL</div>
                     <div>
-                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='4xl'/>
                       <span class='title'>PCS</span><br>
                     </div>
                     <span>(+50,000)</span>
@@ -328,14 +339,15 @@ class HomeController extends Controller
                   <div class='field small'>
                     <div class='title'>Celana printing</div>
                     <div class='ms-auto'>
-                      <span>(+50,000)</span>
+                      <input type='checkbox' id='celana_printing' name='celana_printing' value='50000'>
+                      <label class='label_harga' for='celana_printing'>(+50,000)</label>
                     </div>
                   </div>
 
                   <div class='field small'>
                     <div class='title'>Celana panjang PRO</div>
                     <div>
-                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='celana_pro'/>
                       <span class='title'>PCS</span><br>
                     </div>
                     <span>(+150,000)</span>
@@ -343,38 +355,42 @@ class HomeController extends Controller
                   <div class='field small'>
                     <div class='title'>Kaoskaki</div>
                     <div>
-                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='kaoskaki'/>
                       <span class='title'>PCS</span><br>
                     </div>
                     <span>(+50,000)</span>
                   </div>
                 </div>
                 
-                <h6 class='card-subtitle text-primary-emphasis mt-4'>Upgrade Fitur</h6>
+                <h6 class='card-subtitle text-black-50 mt-4'>Upgrade Fitur</h6>
                 <div class='payment__shipping'>
 
                   <div class='field small'>
                     <div class='title'>Bahan embos</div>
                     <div class='ms-auto'>
-                      <span>(+20,000)</span>
+                      <input type='checkbox' id='bahan_embos' name='upgrade' value='20000'>
+                      <label class='label_harga' for='bahan_embos'>(+20,000)</label>
                     </div>
                   </div>
                   <div class='field small'>
                     <div class='title'>Logo 3D</div>
                     <div class='ms-auto'>
-                      <span>(+30,000)</span>
+                      <input type='checkbox' id='logo_3d' name='upgrade' value='30000'>
+                      <label class='label_harga' for='logo_3d'>(+30,000)</label>
                     </div>
                   </div>
                   <div class='field small'>
                     <div class='title'>Kerah elastic rib</div>
                     <div class='ms-auto'>
-                      <span>(+20,000)</span>
+                      <input type='checkbox' id='kerah_rib' name='kerah_rib' value='20000'>
+                      <label class='label_harga' for='kerah_rib'>(+20,000)</label>
                     </div>
                   </div>
                   <div class='field small'>
                     <div class='title'>Ujung tangan elastic rib</div>
                     <div class='ms-auto'>
-                      <span>(+20,000)</span>
+                      <input type='checkbox' id='tangan_rib' name='tangan_rib' value='20000'>
+                      <label class='label_harga' for='tangan_rib'>(+20,000)</label>
                     </div>
                   </div>
                   
@@ -384,32 +400,35 @@ class HomeController extends Controller
                
                 'full-print' => 
                 "
-                <h6 class='card-subtitle text-primary-emphasis'>Add Cost</h6>
+                <h6 class='card-subtitle text-black-50'>Add Cost</h6>
                 <div class='payment__shipping'>
 
                   <div class='field small'>
                     <div class='title'>Kerah pakai kancing</div>
                     <div class='ms-auto'>
-                      <span>(+10,000)</span>
+                      <input type='checkbox' id='kerah_kancing' name='kerah_kancing' value='10000'>
+                      <label class='label_harga' for='kerah_kancing'>(+10,000)</label>
                     </div>
                   </div>
                   <div class='field small'>
                     <div class='title'>Badan bawah melengkung</div>
                     <div class='ms-auto'>
-                      <span>(+15,000)</span>
+                      <input type='checkbox' id='bb_melengkung' name='bb_melengkung' value='15000'>
+                      <label class='label_harga' for='bb_lengkung'>(+15,000)</label>
                     </div>
                   </div>
                   <div class='field small'>
                     <div class='title'>Lengan pola raglan</div>
                     <div class='ms-auto'>
-                      <span>(+15,000)</span>
+                      <input type='checkbox' id='lengan_raglan' name='lengan_raglan' value='15000'>
+                      <label class='label_harga' for='lengan_raglan'>(+15,000)</label>
                     </div>
                   </div>
 
                   <div class='field small'>
                     <div class='title'>Lengan Panjang</div>
                     <div>
-                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='lengan_panjang'/>
                       <span class='title'>PCS</span><br>
                     </div>
                     <span>(+30,000)</span>
@@ -419,7 +438,7 @@ class HomeController extends Controller
                   <div class='field small pt-0'>
                     <div class='title'>- Size 2XL</div>
                     <div>
-                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='2xl'/>
                       <span class='title'>PCS</span><br>
                     </div>
                     <span>(+20,000)</span>
@@ -427,7 +446,7 @@ class HomeController extends Controller
                   <div class='field small'>
                     <div class='title'>- Size 3XL</div>
                     <div>
-                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='3xl'/>
                       <span class='title'>PCS</span><br>
                     </div>
                     <span>(+35,000)</span>
@@ -435,7 +454,7 @@ class HomeController extends Controller
                   <div class='field small'>
                     <div class='title'>- Size >4XL</div>
                     <div>
-                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='4xl'/>
                       <span class='title'>PCS</span><br>
                     </div>
                     <span>(+50,000)</span>
@@ -444,14 +463,15 @@ class HomeController extends Controller
                   <div class='field small'>
                     <div class='title'>Celana printing</div>
                     <div class='ms-auto'>
-                      <span>(+50,000)</span>
+                      <input type='checkbox' id='celana_printing' name='celana_printing' value='50000'>
+                      <label class='label_harga' for='celana_printing'>(+50,000)</label>
                     </div>
                   </div>
 
                   <div class='field small'>
                     <div class='title'>Celana panjang PRO</div>
                     <div>
-                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='celana_pro'/>
                       <span class='title'>PCS</span><br>
                     </div>
                     <span>(+150,000)</span>
@@ -459,38 +479,42 @@ class HomeController extends Controller
                   <div class='field small'>
                     <div class='title'>Kaoskaki</div>
                     <div>
-                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='kaoskaki'/>
                       <span class='title'>PCS</span><br>
                     </div>
                     <span>(+50,000)</span>
                   </div>
                 </div>
                 
-                <h6 class='card-subtitle text-primary-emphasis mt-4'>Upgrade Fitur</h6>
+                <h6 class='card-subtitle text-black-50 mt-4'>Upgrade Fitur</h6>
                 <div class='payment__shipping'>
 
                   <div class='field small'>
                     <div class='title'>Bahan embos</div>
                     <div class='ms-auto'>
-                      <span>(+20,000)</span>
+                      <input type='checkbox' id='bahan_embos' name='upgrade' value='20000'>
+                      <label class='label_harga' for='bahan_embos'>(+20,000)</label>
                     </div>
                   </div>
                   <div class='field small'>
                     <div class='title'>Logo 3D</div>
                     <div class='ms-auto'>
-                      <span>(+30,000)</span>
+                      <input type='checkbox' id='logo_3d' name='upgrade' value='30000'>
+                      <label class='label_harga' for='logo_3d'>(+30,000)</label>
                     </div>
                   </div>
                   <div class='field small'>
                     <div class='title'>Kerah elastic rib</div>
                     <div class='ms-auto'>
-                      <span>(+20,000)</span>
+                      <input type='checkbox' id='kerah_rib' name='kerah_rib' value='20000'>
+                      <label class='label_harga' for='kerah_rib'>(+20,000)</label>
                     </div>
                   </div>
                   <div class='field small'>
                     <div class='title'>Ujung tangan elastic rib</div>
                     <div class='ms-auto'>
-                      <span>(+20,000)</span>
+                      <input type='checkbox' id='tangan_rib' name='tangan_rib' value='20000'>
+                      <label class='label_harga' for='tangan_rib'>(+20,000)</label>
                     </div>
                   </div>
                   
@@ -500,7 +524,7 @@ class HomeController extends Controller
 
                 'pro' =>  
                 "
-                <h6 class='card-subtitle text-primary-emphasis'>Add Cost</h6>
+                <h6 class='card-subtitle text-black-50'>Add Cost</h6>
                 <div class='payment__shipping'>
 
                   <div class='field small'>
@@ -525,7 +549,7 @@ class HomeController extends Controller
                   <div class='field small'>
                     <div class='title'>Lengan Panjang</div>
                     <div>
-                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='lengan_panjang'/>
                       <span class='title'>PCS</span><br>
                     </div>
                     <span>(+30,000)</span>
@@ -535,7 +559,7 @@ class HomeController extends Controller
                   <div class='field small pt-0'>
                     <div class='title'>- Size 2XL</div>
                     <div>
-                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='2xl'/>
                       <span class='title'>PCS</span><br>
                     </div>
                     <span>(+20,000)</span>
@@ -543,7 +567,7 @@ class HomeController extends Controller
                   <div class='field small'>
                     <div class='title'>- Size 3XL</div>
                     <div>
-                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='3xl'/>
                       <span class='title'>PCS</span><br>
                     </div>
                     <span>(+35,000)</span>
@@ -551,7 +575,7 @@ class HomeController extends Controller
                   <div class='field small'>
                     <div class='title'>- Size >4XL</div>
                     <div>
-                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='4xl'/>
                       <span class='title'>PCS</span><br>
                     </div>
                     <span>(+50,000)</span>
@@ -560,14 +584,15 @@ class HomeController extends Controller
                   <div class='field small'>
                     <div class='title'>Celana printing</div>
                     <div class='ms-auto'>
-                      <span>(+50,000)</span>
+                      <input type='checkbox' id='celana_printing' name='celana_printing' value='50000'>
+                      <label class='label_harga' for='celana_printing'>(+50,000)</label>
                     </div>
                   </div>
 
                   <div class='field small'>
                     <div class='title'>Celana panjang PRO</div>
                     <div>
-                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='celana_pro'/>
                       <span class='title'>PCS</span><br>
                     </div>
                     <span>(+150,000)</span>
@@ -575,26 +600,28 @@ class HomeController extends Controller
                   <div class='field small'>
                     <div class='title'>Kaoskaki</div>
                     <div>
-                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='kaoskaki'/>
                       <span class='title'>PCS</span><br>
                     </div>
                     <span>(+50,000)</span>
                   </div>
                 </div>
                 
-                <h6 class='card-subtitle text-primary-emphasis mt-4'>Upgrade Fitur</h6>
+                <h6 class='card-subtitle text-black-50 mt-4'>Upgrade Fitur</h6>
                 <div class='payment__shipping'>
 
                   <div class='field small'>
                     <div class='title'>Kerah elastic rib</div>
                     <div class='ms-auto'>
-                      <span>(+20,000)</span>
+                      <input type='checkbox' id='kerah_rib' name='kerah_rib' value='20000'>
+                      <label class='label_harga' for='kerah_rib'>(+20,000)</label>
                     </div>
                   </div>
                   <div class='field small'>
                     <div class='title'>Ujung tangan elastic rib</div>
                     <div class='ms-auto'>
-                      <span>(+20,000)</span>
+                      <input type='checkbox' id='tangan_rib' name='tangan_rib' value='20000'>
+                      <label class='label_harga' for='tangan_rib'>(+20,000)</label>
                     </div>
                   </div>
                   
@@ -603,7 +630,7 @@ class HomeController extends Controller
                 
                 'pro-plus' => 
                 "
-                <h6 class='card-subtitle text-primary-emphasis'>Add Cost</h6>
+                <h6 class='card-subtitle text-black-50'>Add Cost</h6>
                 <div class='payment__shipping'>
 
                   <div class='field small'>
@@ -628,7 +655,7 @@ class HomeController extends Controller
                   <div class='field small'>
                     <div class='title'>Lengan Panjang</div>
                     <div>
-                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='lengan_panjang'/>
                       <span class='title'>PCS</span><br>
                     </div>
                     <span>(+30,000)</span>
@@ -638,7 +665,7 @@ class HomeController extends Controller
                   <div class='field small pt-0'>
                     <div class='title'>- Size 2XL</div>
                     <div>
-                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='2xl'/>
                       <span class='title'>PCS</span><br>
                     </div>
                     <span>(+20,000)</span>
@@ -646,7 +673,7 @@ class HomeController extends Controller
                   <div class='field small'>
                     <div class='title'>- Size 3XL</div>
                     <div>
-                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='3xl'/>
                       <span class='title'>PCS</span><br>
                     </div>
                     <span>(+35,000)</span>
@@ -654,7 +681,7 @@ class HomeController extends Controller
                   <div class='field small'>
                     <div class='title'>- Size >4XL</div>
                     <div>
-                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='4xl'/>
                       <span class='title'>PCS</span><br>
                     </div>
                     <span>(+50,000)</span>
@@ -663,14 +690,15 @@ class HomeController extends Controller
                   <div class='field small'>
                     <div class='title'>Celana printing</div>
                     <div class='ms-auto'>
-                      <span>(+50,000)</span>
+                      <input type='checkbox' id='celana_printing' name='celana_printing' value='50000'>
+                      <label class='label_harga' for='celana_printing'>(+50,000)</label>
                     </div>
                   </div>
 
                   <div class='field small'>
                     <div class='title'>Celana panjang PRO</div>
                     <div>
-                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='celana_pro'/>
                       <span class='title'>PCS</span><br>
                     </div>
                     <span>(+150,000)</span>
@@ -678,26 +706,28 @@ class HomeController extends Controller
                   <div class='field small'>
                     <div class='title'>Kaoskaki</div>
                     <div>
-                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='kaoskaki'/>
                       <span class='title'>PCS</span><br>
                     </div>
                     <span>(+50,000)</span>
                   </div>
                 </div>
                 
-                <h6 class='card-subtitle text-primary-emphasis mt-4'>Upgrade Fitur</h6>
+                <h6 class='card-subtitle text-black-50 mt-4'>Upgrade Fitur</h6>
                 <div class='payment__shipping'>
 
                   <div class='field small'>
                     <div class='title'>Kerah elastic rib</div>
                     <div class='ms-auto'>
-                      <span>(+20,000)</span>
+                      <input type='checkbox' id='kerah_rib' name='kerah_rib' value='20000'>
+                      <label class='label_harga' for='kerah_rib'>(+20,000)</label>
                     </div>
                   </div>
                   <div class='field small'>
                     <div class='title'>Ujung tangan elastic rib</div>
                     <div class='ms-auto'>
-                      <span>(+20,000)</span>
+                      <input type='checkbox' id='tangan_rib' name='tangan_rib' value='20000'>
+                      <label class='label_harga' for='tangan_rib'>(+20,000)</label>
                     </div>
                   </div>
                   
@@ -706,14 +736,14 @@ class HomeController extends Controller
                 
                 'jacket-anthem' => 
                 "
-                <h6 class='card-subtitle text-primary-emphasis'>Add Cost</h6>
+                <h6 class='card-subtitle text-black-50'>Add Cost</h6>
                 <div class='payment__shipping'>
 
                   <div class='title pt-3'>Big Size</div>
                   <div class='field small pt-0'>
                     <div class='title'>- Size 2XL</div>
                     <div>
-                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='2xl'/>
                       <span class='title'>PCS</span><br>
                     </div>
                     <span>(+20,000)</span>
@@ -721,7 +751,7 @@ class HomeController extends Controller
                   <div class='field small'>
                     <div class='title'>- Size 3XL</div>
                     <div>
-                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='3xl'/>
                       <span class='title'>PCS</span><br>
                     </div>
                     <span>(+35,000)</span>
@@ -729,7 +759,7 @@ class HomeController extends Controller
                   <div class='field small'>
                     <div class='title'>- Size >4XL</div>
                     <div>
-                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='4xl'/>
                       <span class='title'>PCS</span><br>
                     </div>
                     <span>(+50,000)</span>
@@ -738,7 +768,7 @@ class HomeController extends Controller
                   <div class='field small'>
                     <div class='title'>Celana panjang PRO</div>
                     <div>
-                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='celana_pro'/>
                       <span class='title'>PCS</span><br>
                     </div>
                     <span>(+150,000)</span>
@@ -746,7 +776,7 @@ class HomeController extends Controller
                   <div class='field small'>
                     <div class='title'>Kaoskaki</div>
                     <div>
-                      <input type='text' class='input txt2' placeholder='Jumlah' name='bbm'/>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='kaoskaki'/>
                       <span class='title'>PCS</span><br>
                     </div>
                     <span>(+50,000)</span>

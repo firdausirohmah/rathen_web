@@ -590,6 +590,43 @@ input:checked + .label_harga {
   filter:unset;
 }
 
+/* pop up search */
+.result-box ul{
+  position: absolute;
+  bottom: 7rem;
+  width: 28rem;
+  border-radius: 6px;
+  background: hsla(0, 0%, 100%, 0.8);
+}
+.result-box ul{
+  display: flex;
+  flex-wrap: wrap;
+  padding: unset;
+  max-height: 400px;
+  overflow-y: scroll;
+}
+.result-box ul li{
+  margin: unset;
+  display: grid;
+  list-style: none;
+  border-radius: 3px;
+  padding: 15px 10px;
+  cursor: pointer;
+}
+.result-box ul li:hover{
+  background: #e9f3ff;
+}
+.result-box ul li a{
+  height: 8rem;
+  padding: unset;
+}
+.result-box ul li a img{
+  margin: auto;
+  height: 8rem;
+  width: auto;
+}
+
+
 @media only screen and (max-width: 600px) {
   .payment__shipping{
     position: relative;

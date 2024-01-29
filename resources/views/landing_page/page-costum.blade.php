@@ -499,19 +499,23 @@
                 </form>
             </div>
             <div class="main-banner__cekresi--list cek-tarif">
-               
+                <div class="result-box result-harga">
+                    
+                </div>
                 <form class="form">
                     <i><img src="{{asset('asset/images/material/ico-cek.svg')}}"></i>
                     {{-- <i><img src="{{asset('asset/images/material/ico-cek.svg')}}"></i> --}}
                     
                     <div class="input-box">
                         <label>Cek Harga</label>
-                        <input class="input-bar" type="text" placeholder="Masukan data pesanan">
+                        <input class="input-bar" id="input-harga" autocomplete="off" type="text" placeholder="Masukan data pesanan">
                         <a class="button-search button-search-resi"></a>
                     </div>
                 </form>
             </div>
+            
         </div>
+        
         <div class="main-banner__video vid ">
             <video muted="muted" loop="loop" id="videohome" autoplay="autoplay" playsinline>
                 <source src="{{asset('asset/cfind/source/files/video.mp4')}}" type="video/mp4">
@@ -1502,5 +1506,6 @@ document.addEventListener('DOMContentLoaded', function () {
 </footer>
 
 </section>
+<script src="{{ asset('asset/js/autocomplete.js') }}"></script>
 
 @endsection

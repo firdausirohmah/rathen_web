@@ -364,21 +364,6 @@ class PesananController extends Controller
             ->select('tbl_step1.*', 'tbl_step2.*', 'tbl_step3.*')
             ->get();
 
-        // dd($tanggalSekarang);
-        // $html = view('welcome')->render();
-        // foreach ($data as $pesanan) {
-
-        //     return view('landing_page.quotation-order', [
-        //         // 'data' => $pesanan->kd_part,
-        //         'nama' => $nama_pemesanan,
-        //         'kontak' => $kontak,
-        //         'email' => $email,
-        //         'alamat' => $alamat,
-
-        //         'tanggal' => $tanggalSekarang,
-        //     ]);
-        // }
-
         $harga = DB::table('tbl_harga')
             ->join('tbl_logo', 'tbl_harga.id', '=', 'tbl_logo.id_logo')
             ->select('tbl_logo.*', 'tbl_harga.*')
@@ -399,7 +384,7 @@ class PesananController extends Controller
                 'product' => $product, 
             ];
 
-            return view('landing_page.quotation', [
+            return view('landing_page.quotation-order', [
                 'nama' => $nama_pemesanan,
                 'kontak' => $kontak,
                 'email' => $email,

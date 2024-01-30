@@ -291,7 +291,7 @@
                             @endif
 
                         </tbody>
-                        <tfoot class="font-weight-bold small">
+                        <tfoot class="font-weight-bold">
                             <?php
                                 $total += $subTotal;
                             ?>
@@ -303,7 +303,7 @@
                             <tr>
                                 <td colspan="3"></td>
                                 <td>Sub-Total</td>
-                                <td>{{$subTotal}}</td> 
+                                <td>{{formatRupiah($subTotal)}}</td> 
                             </tr>
                             <tr>
                                 <td colspan="2" class="text-center">TOTAL</td>

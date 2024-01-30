@@ -189,8 +189,20 @@
       align-items: center;
     }
     </style>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+      const toggleButton = document.querySelector('.nav-toggler');
+      const overlay = document.querySelector('.overlay');
 
+      toggleButton.addEventListener('click', function () {
+          this.classList.toggle('active'); // Toggle the 'active' class for styling
+          overlay.classList.toggle('active'); // Toggle the 'active' class for showing/hiding the overlay
+      });
+  });
+
+</script>
 <style>
+
   .navbar-main-toggle .nav-toggler {
       background: none;
       border: none;
@@ -211,6 +223,56 @@
       margin-bottom: 0;
   }
   @media screen and (max-width: 600px) {
+    .text-nav{
+      color:#000;
+      font-size:16px;
+      line-height:1;
+    }
+    .navbar{
+      z-index: 9;
+      width: 100%;
+      position: fixed;
+      top: 0px;
+    }
+    #home .container.mt-4.mb-4{
+      margin-top:3rem!important;
+      margin-bottom:3rem!important;
+    }
+    .navbar-collapse, .navbar-collapse.show {
+      display: block;
+      position: absolute;
+      width: 75%;
+      right: 0px;
+      top: 65px;
+      background: #fff;
+      z-index: 9999;
+      transform:translateX(10px);
+      transition: transform 0.5s ease;
+      padding:1rem 0 2rem 3rem;
+    }
+    .navbar-collapse.collapsing{
+      height:unset!important;
+      transition: transform 0s ease;
+    }
+    .overlay.active {
+      position: fixed;
+      top: 65px;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
+      z-index: 1; /* Ensure it's above the navbar */
+    }
+    .nav-toggler.active span:first-child{
+      transform-origin: 50% 50%; transform: translate(0px, 8px) rotate(45deg);
+    }
+    .nav-toggler.active span:nth-of-type(2){
+      opacity: 0;
+    }
+    .nav-toggler.active span:last-child{
+      transform-origin: -50% 50%; transform: translate(6px, 8px) rotate(-45deg);
+    }
+
     .img-carousel{
       width: 38rem!important;
       height: 11.5rem!important;
@@ -267,13 +329,13 @@
 </style>
     <link rel="stylesheet" href="{{asset('asset/css/styles.css')}}">
 
-    <div  id="floatingMenu" class="floating-menu" onClick="myFunction()" style="position: fixed; z-index: 10;margin: auto; right: 36px; bottom: 0px;">
+    <div  id="floatingMenu" class="floating-menu" onClick="myFunction()" style="position: fixed; z-index: 1;margin: auto; right: 36px; bottom: 0px;">
         <a href="https://wa.me/628123456789" class="kurir-bt" style="max-width:150px">
             <img src="{{asset('asset/images/chat.png')}}"  height="160" />
         </a>
     </div>
     <section id="home" style="overflow: hidden;">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fw-bold">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-black fw-bold">
             <div class="container-fluid">
                 <a class="navbar-brand" href="/page-custom"><img src="/asset/images/LOGO.png" class="logo-nav" alt=""></a>
                 <div class="navbar-main-toggle visually-hidden">
@@ -298,6 +360,7 @@
                 </div>
             </div>
         </nav>
+        <div class="overlay"></div>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -1280,7 +1343,8 @@
       var jhargaDB = {{ $data->harga }} ;
       var formatHargaDB = "Rp " + jhargaDB.toLocaleString();
       document.getElementById("hargaDb").innerText =  formatHargaDB;
-
+      
+      var additionalCost = 0;
       var jharga = {{ $data->harga }} * {{ $data->min_order }};
       var formatHarga = "Rp " + jharga.toLocaleString();
       document.getElementById("totalHarga").innerText =  formatHarga;
@@ -1304,18 +1368,7 @@
         //   decrementButton.style.display = 'none';
         // }
       }
-  
-      function updateTotalHarga() {
-        var hargaDb = parseFloat(document.getElementById("hargaDb").innerText.replace('Rp ', '').replace(',', ''));
-        var quantityInput = parseInt(document.getElementById("quantityInput").value);
-        var totalHarga = hargaDb * quantityInput;
-  
-        // Format total harga jika diperlukan
-        var formattedTotalHarga = "Rp " + totalHarga.toLocaleString();
-        
-        // Tampilkan total harga di suatu tempat
-        document.getElementById("totalHarga").innerText = formattedTotalHarga;
-      }
+
     </script>
 
     <script>
@@ -1348,5 +1401,5 @@
     </script>
     
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-
+  <script src="{{asset('asset/js/part-pricelist.js')}}"></script>
 {{-- @endsection --}}

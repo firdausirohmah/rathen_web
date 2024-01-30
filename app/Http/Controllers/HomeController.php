@@ -190,7 +190,7 @@ class HomeController extends Controller
                   <div class='field small pt-0'>
                     <div class='title'>- Size 2XL</div>
                     <div>
-                      <input type='text' class='input txt2' placeholder='Jumlah' name='2xl'/>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='s2xl'/>
                       <span class='title'>PCS</span><br>
                     </div>
                     <span>(+20,000)</span>
@@ -198,7 +198,7 @@ class HomeController extends Controller
                   <div class='field small'>
                     <div class='title'>- Size 3XL</div>
                     <div>
-                      <input type='text' class='input txt2' placeholder='Jumlah' name='3xl'/>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='s3xl'/>
                       <span class='title'>PCS</span><br>
                     </div>
                     <span>(+35,000)</span>
@@ -206,7 +206,7 @@ class HomeController extends Controller
                   <div class='field small'>
                     <div class='title'>- Size >4XL</div>
                     <div>
-                      <input type='text' class='input txt2' placeholder='Jumlah' name='4xl'/>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='s4xl'/>
                       <span class='title'>PCS</span><br>
                     </div>
                     <span>(+50,000)</span>
@@ -244,14 +244,14 @@ class HomeController extends Controller
                   <div class='field small'>
                     <div class='title'>Bahan embos</div>
                     <div class='ms-auto'>
-                      <input type='checkbox' id='bahan_embos' name='upgrade' value='20000'>
+                      <input type='checkbox' id='bahan_embos' name='bahan_embos' value='20000'>
                       <label class='label_harga' for='bahan_embos'>(+20,000)</label>
                     </div>
                   </div>
                   <div class='field small'>
                     <div class='title'>Logo 3D</div>
                     <div class='ms-auto'>
-                      <input type='checkbox' id='logo_3d' name='upgrade' value='30000'>
+                      <input type='checkbox' id='logo_3d' name='logo_3d' value='30000'>
                       <label class='label_harga' for='logo_3d'>(+30,000)</label>
                     </div>
                   </div>

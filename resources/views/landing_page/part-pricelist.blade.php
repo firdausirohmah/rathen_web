@@ -442,7 +442,8 @@
         </div>
 
         <div class="col-lg-6">
-          <form action="{{ route("order") }}" method="POST"> 
+          <!-- <form action="{{ route('order') }}" method="POST">  -->
+          <form action="{{ route('quotation') }}" method="POST" >
             @csrf
               <div class="card mt-4-mobile">
                 <div class="card-body">
@@ -473,11 +474,12 @@
                   </div>
                   <!-- <h6 class="card-subtitle mb-2 text-body-secondary">Simulasi Harga</h6> -->
                   <input type="hidden" name="kd_part" value="{{ $data->kd_part }}">
+                  <div class="btn btn-outline-secondary w-100 mt-5" id="QuotationBtn">Order Now</div>
                   <!-- <button type="submit" class="btn btn-outline-secondary w-100 mt-5" id="QuotationBtn">Order Now</button> -->
                 </div>
               </div>
-          </form>
-          <button type="submit" class="btn btn-outline-secondary w-100 mt-5" id="QuotationBtn">Order Now</button>
+          <!-- </form> -->
+          <!-- <button type="submit" class="btn btn-outline-secondary w-100 mt-5" id="QuotationBtn">Order Now</button> -->
         </div>
 
       </div>
@@ -1141,10 +1143,10 @@
 <div id="QuotationModal" class="modal pt200">
   <div class="modal-content mw-32">
     <span class="close">&times;</span>
-    <div class="form-modal">
+    <div class="form-modal" id="inputDataForm">
       <h4>Silahkan masukkan data</h4>
-      <form action="{{ route('quotation') }}" method="POST" id="inputDataForm">
-          @csrf
+      <!-- <form action="{{ route('quotation') }}" method="POST" id="inputDataForm"> -->
+          <!-- @csrf -->
           <label for="" class="subtitle">Nama Pelanggan</label>
           <input type="text" class="form-control" name="nama_pemesanan">
 

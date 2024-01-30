@@ -316,10 +316,32 @@ class PesananController extends Controller
         session(['kontak' => $request->kontak]);
         session(['email' => $request->email]);
         session(['alamat' => $request->alamat]);
+
         $nama_pemesanan = $request->nama_pemesanan;
         $kontak = $request->kontak;
         $email = $request->email;
         $alamat = $request->alamat;
+
+        $kk = $request->kerah_kancing;
+        $bbm = $request->bb_melengkung;
+        $pl = $request->lengan_raglan;
+        $lp = $request->lengan_panjang;
+        $s2xl = $request->s2xl;
+        $s3xl = $request->s3xl;
+        $s4xl = $request->s4xl;
+        $cp = $request->celana_printing;
+        $cpro = $request->celana_pro;
+        $kki = $request->kaoskaki;
+        $be = $request->bahan_embos;
+        $l3d = $request->logo_3d;
+        $kr = $request->kerah_rib;
+        $tr = $request->tangan_rib;
+        // dd($lp);
+
+        $kd_part = $request->kd_part;
+        $qty = $request->qty;
+        // $data = DB::table('tbl_step1')->get('*');
+        $ref = DB::table('tbl_part')->where('kd_part', $kd_part)->get();
 
         $str = Str::random(12);
 
@@ -335,23 +357,94 @@ class PesananController extends Controller
 
         // Rest of your existing code...
         $tanggalSekarang = date("d F Y");
+
         $data = DB::table('tbl_step1')
             ->join('tbl_step2', 'tbl_step1.kd_step2', '=', 'tbl_step2.kd_step2')
             ->join('tbl_step3', 'tbl_step1.kd_step3', '=', 'tbl_step3.kd_step3')
             ->select('tbl_step1.*', 'tbl_step2.*', 'tbl_step3.*')
             ->get();
+
         // dd($tanggalSekarang);
         // $html = view('welcome')->render();
-        foreach ($data as $pesanan) {
+        // foreach ($data as $pesanan) {
 
-            return view('landing_page.quotation-order', [
-                'data' => $pesanan,
+        //     return view('landing_page.quotation-order', [
+        //         // 'data' => $pesanan->kd_part,
+        //         'nama' => $nama_pemesanan,
+        //         'kontak' => $kontak,
+        //         'email' => $email,
+        //         'alamat' => $alamat,
+
+        //         'tanggal' => $tanggalSekarang,
+        //     ]);
+        // }
+
+        $harga = DB::table('tbl_harga')
+            ->join('tbl_logo', 'tbl_harga.id', '=', 'tbl_logo.id_logo')
+            ->select('tbl_logo.*', 'tbl_harga.*')
+            ->get();
+        
+        foreach ($harga as $h){
+            $price = $h;
+        }
+        foreach ($ref as $rev) {
+            $product = $rev->product;
+            $hargaproduct = $rev->harga;
+        }
+        foreach ($data as $pesanan) {
+            
+            $d = [
+                'pesanan' => $pesanan->kd_pembelian,
+                'price' => $price, 
+                'product' => $product, 
+            ];
+
+            return view('landing_page.quotation', [
                 'nama' => $nama_pemesanan,
                 'kontak' => $kontak,
                 'email' => $email,
                 'alamat' => $alamat,
 
                 'tanggal' => $tanggalSekarang,
+
+                'pesanan' => $pesanan,
+                'price' => $price,
+                session(['price' => $price]),
+                'product' => $product,
+                session(['product' => $product]),
+                'harga' => $hargaproduct,
+                session(['harga' => $hargaproduct]),
+                'qty' => $qty,
+                session(['qty' => $qty]),
+
+                'kerah_kancing' => $kk ,
+                session(['kerah_kancing' => $kk]),
+                'badan_bawah' => $bbm , 
+                session(['badan_bawah' => $bbm]),
+                'pola_lengan' => $pl ,
+                session(['pola_lengan' => $pl]),
+                'lengan_panjang' => $lp ,
+                session(['lengan_panjang' => $lp]),
+                's2xl' => $s2xl,
+                session(['s2xl' => $s2xl]),
+                's3xl' => $s3xl,
+                session(['s3xl' => $s3xl]),
+                's4xl' => $s4xl,
+                session(['s4xl' => $s4xl]),
+                'celana_printing' => $cp,
+                session(['celana_printing' => $cp]),
+                'celana_pro' => $cpro,
+                session(['celana_pro' => $cpro]),
+                'kaoskaki' => $kki,
+                session(['kaoskaki' => $kki]),
+                'bahan_embos' => $be,
+                session(['bahan_embos' => $be]),
+                'logo_3d' => $l3d,
+                session(['logo_3d' => $l3d]),
+                'kerah_rib' => $kr,
+                session(['kerah_rib' => $kr]),
+                'tangan_rib' => $tr,
+                session(['tangan_rib' => $tr]),
             ]);
         }
     }
@@ -363,6 +456,25 @@ class PesananController extends Controller
         $email = session('email');
         $alamat = session('alamat');
         $tanggal = date("d F Y");
+
+        $price = session('price');
+        $product = session('product');
+        $harga = session('harga');
+        $qty = session('qty');
+        $kerah_kancing = session('kerah_kancing');
+        $badan_bawah = session('badan_bawah');
+        $pola_lengan = session('pola_lengan');
+        $lengan_panjang = session('lengan_panjang');
+        $s2xl = session('s2xl');
+        $s3xl = session('s3xl');
+        $s4xl =  session('s4xl');
+        $celana_printing =  session('celana_printing');
+        $celana_pro = session('celana_pro');
+        $kaoskaki = session('kaoskaki');
+        $bahan_embos = session('bahan_embos');
+        $logo_3d = session('logo_3d');
+        $kerah_rib = session('kerah_rib');
+        $tangan_rib = session('tangan_rib');
 
         $data = DB::table('tbl_step1')
             ->join('tbl_step2', 'tbl_step1.kd_step2', '=', 'tbl_step2.kd_step2')
@@ -378,6 +490,26 @@ class PesananController extends Controller
                 'email' => $email,
                 'alamat' => $alamat,
                 'tanggal' => $tanggal,
+
+                'price' => $price,
+                'product' => $product,
+                'harga' => $harga,
+                'qty' => $qty,
+
+                'kerah_kancing' => $kerah_kancing , 
+                'badan_bawah' => $badan_bawah , 
+                'pola_lengan' => $pola_lengan ,
+                'lengan_panjang' => $lengan_panjang ,
+                's2xl' => $s2xl,
+                's3xl' => $s3xl,
+                's4xl' => $s4xl,
+                'celana_printing' => $celana_printing,
+                'celana_pro' => $celana_pro,
+                'kaoskaki' => $kaoskaki,
+                'bahan_embos' => $bahan_embos,
+                'logo_3d' => $logo_3d,
+                'kerah_rib' => $kerah_rib,
+                'tangan_rib' => $tangan_rib,
             ];
             $pdf = new Dompdf();
             $options = new Options();
@@ -386,14 +518,16 @@ class PesananController extends Controller
 
             // Load Bootstrap CSS locally
             $bootstrapCSS = file_get_contents('https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css'); // Ganti path sesuai dengan lokasi CSS Bootstrap Anda
-            $html = View::make('landing_page.quotation', compact('data', 'nama', 'kontak', 'email', 'alamat', 'tanggal'))->render();
+            $html = View::make('landing_page.quotation', compact('data', 'nama', 'kontak', 'email', 
+            'alamat', 'tanggal','qty','harga','product','kerah_kancing','badan_bawah','pola_lengan', 'price', 'logo_3d',
+            'lengan_panjang','s2xl','s3xl','s4xl','celana_printing','celana_pro','kaoskaki','bahan_embos','kerah_rib','tangan_rib'))->render();
             $srcImg= "{{public_path('/asset/images/logo-dark.png')}}";
 
 
             // Combine Bootstrap CSS with your HTML
             $combinedHtml = '<style> html *{margin:0;padding:0;}.button.back{display:none;}.print{
                 display:none;}.container{margin:0!important;} .card{width:650px!important;border:none!important}
-                .table-responsive table thead tr th, .table-responsive table tbody tr td{border-color: #3c3f44;}'
+                .table-responsive table thead tr th, .table-responsive table tbody tr td, .table-responsive table tfoot tr td{border-color: #3c3f44;}'
                 . $bootstrapCSS . '<style>' . $html;
 
             $pdf->loadHtml($combinedHtml);

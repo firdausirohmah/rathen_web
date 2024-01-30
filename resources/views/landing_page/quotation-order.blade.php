@@ -69,289 +69,258 @@
                     <table class="table table-bordered mt-4 mb-0 ">
                         <thead class="text-center">
                             <tr class="text-center">
-                                <th class="text-uppercase small font-weight-bold">Kualitas</th>
-                                <th class="text-uppercase small font-weight-bold">Kategori</th>
+                                <th class="text-uppercase small font-weight-bold">Nama Produk</th>
+                                <th class="text-uppercase small font-weight-bold">Qty(pcs)</th>
                                 <th class="text-uppercase small font-weight-bold">Harga</th>
-                                <th class="text-uppercase small font-weight-bold">Min. Order</th>
+                                <th class="text-uppercase small font-weight-bold">Total</th>
                             </tr>
                         </thead>
+                        <?php 
+                            $i = 1; 
+                            $total = $qty * $harga;
+                        ?>
                         <tbody>
-                            <tr class="text-center">
-                                <td rowspan="3">Stadium Version</td>
-                                <td class="text-center">Non - Print</td>
-                                <td class="text-center">149,900</td>
-                                <td class="text-center">12/pcs</td>
-                            </tr>
                             <tr>
-                                <td class="text-center">Half - Print</td>
-                                <td class="text-center"> 174,900</td>
-                                <td class="text-center">12/pcs</td>
-                            </tr>
-                            <tr>
-                                <td class="text-center">Full - Print</td>
-                                <td class="text-center">199,900</td>
-                                <td class="text-center">12/pcs</td>
-
-                            </tr>
-                            <tr>
-                                <td>Pro</td>
-                                <td class="text-center">-</td>
-                                <td class="text-center">299,900</td>
-                                <td class="text-center">24/pcs</td>
-
-                            </tr>
-                            <tr>
-                                <td>Pro Version</td>
-                                <td class="text-center">-</td>
-                                <td class="text-center">399,900</td>
-                                <td class="text-center">24/pcs</td>
-
+                                <td>{{ $product }}</td>
+                                <td>{{ $qty }}</td>
+                                <td><span id="Harga">{{ formatRupiah($harga) }}</span></td>
+                                <td id="totalHarga">{{ formatRupiah($total) }}</td> 
                             </tr>
 
                         </tbody>
                     </table>
                 </div><!--table responsive end-->
-
-                {{-- EXTRA --}}
-                {{-- <h6 class="text-left font-weight-bold  mt-2">EXTRA</h6> --}}
+                
                 <div class="table-responsive">
                     <table class="table table-bordered mt-4 mb-0 ">
                         <thead class="text-center">
                             <tr class="text-center">
+                                <th class="text-uppercase small font-weight-bold">No.</th>
                                 <th class="text-uppercase small font-weight-bold">Extra</th>
-                                <th class="text-uppercase small font-weight-bold">Tambah Harga</th>
-                                <th class="text-uppercase small font-weight-bold">Keterangan</th>
-
-                                {{-- <th class="text-uppercase small font-weight-bold">Min. Order</th> --}}
+                                <th class="text-uppercase small font-weight-bold">Qty(pcs)</th>
+                                <th class="text-uppercase small font-weight-bold">Retail Price</th>
+                                <th class="text-uppercase small font-weight-bold">Total</th>
                             </tr>
                         </thead>
+                        <?php 
+                            $i = 1;
+                            $subTotal = 0;
+                        ?>
                         <tbody>
-                            <tr>
-                                <td>Badan bawah melengkung</td>
-                                <td class="text-center">15,000/pcs</td>
-                                <td class="text-center">untuk stadium, free utk PRO dan PRO+</td>
-                            <tr>
-                                <td>Pola lengan raglan</td>
-                                <td class="text-center">15,000/pcs</td>
-                                <td class="text-center">untuk stadium, free utk PRO dan PRO+</td>
-
-                            </tr>
-                            <tr>
-                                <td>Upgrade logo 3D</td>
-                                <td class="text-center">30,000/pcs</td>
-                                <td class="text-center">untuk stadium, free utk PRO dan PRO+</td>
-
-                            </tr>
-                            <tr>
-                                <td>Logo tim di celana</td>
-                                <td class="text-center">10,000/pcs</td>
-                                <td class="text-center"> untuk stadium dan PRO, free utk PRO+</td>
-
-
-                            </tr>
-                            <tr>
-                                <td>Lengan panjang</td>
-                                <td class="text-center">30,000/pcs</td>
-                                <td class="text-center">-</td>
-                            </tr>
-
-                            <tr>
+                            @if ($kerah_kancing ==null)
+                            @else 
+                              <tr>
+                                <td>{{ $i++ }}</td>
+                                <td>Kerah Pakai Kancing</td>
+                                <td>-</td>
+                                <td><span id="Harga">{{ formatRupiah($kerah_kancing) }}</span></td>
+                                <td id="totalHarga">{{ formatRupiah($kerah_kancing) }}</td> 
+                              </tr>
+                              <?php $subTotal += $kerah_kancing; ?>
+                            @endif
+                            @if ($badan_bawah ==null)
+                            @else 
+                              <tr>
+                                <td>{{ $i++ }}</td>
+                                <td>Badan Bawah Melengkung</td>
+                                <td>-</td>
+                                <td><span id="Harga">{{ formatRupiah($badan_bawah) }}</span></td>
+                                <td id="totalHarga">{{ formatRupiah($badan_bawah) }}</td> 
+                              </tr>
+                              <?php $subTotal += $badan_bawah; ?>
+                            @endif
+                            @if ($pola_lengan ==null)
+                            @else 
+                              <tr>
+                                <td>{{ $i++ }}</td>
+                                <td>Lengan Pola Raglan</td>
+                                <td>-</td>
+                                <td><span id="Harga">{{ formatRupiah($pola_lengan) }}</span></td>
+                                <td id="totalHarga">{{ formatRupiah($pola_lengan) }}</td> 
+                              </tr> 
+                              <?php $subTotal += $pola_lengan; ?>
+                            @endif
+                            @if ($lengan_panjang ==null)
+                            @else
+                            <?php 
+                                $totallp = $lengan_panjang * $price->l_panjang;
+                                $subTotal += $totallp;
+                            ?>
+                              <tr>
+                                <td>{{ $i++ }}</td>
+                                <td>Lengan Panjang</td>
+                                <td>{{ $lengan_panjang }}</td>
+                                <td><span id="Harga">{{ formatRupiah($price->l_panjang) }}</span></td>
+                                <td id="totalHarga">{{ formatRupiah($totallp) }}</td> 
+                              </tr> 
+                            @endif
+                            @if ($s2xl ==null)
+                            @else 
+                            <?php 
+                                $total2xl = $s2xl * $price->s_2xl;
+                                $subTotal += $total2xl;
+                            ?>
+                              <tr>
+                                <td>{{ $i++ }}</td>
                                 <td>Size 2XL</td>
-                                <td class="text-center">20,000/pcs</td>
-                                <td class="text-center">-</td>
-                            </tr>
-
-                            <tr>
+                                <td>{{ $s2xl }}</td>
+                                <td><span id="Harga">{{ formatRupiah($price->s_2xl) }}</span></td>
+                                <td id="totalHarga">{{ formatRupiah($total2xl) }}</td> 
+                              </tr> 
+                            @endif
+                            @if ($s3xl ==null)
+                            @else 
+                            <?php 
+                                $total3xl = $s3xl * $price->s_3xl;
+                                $subTotal += $total3xl;
+                            ?>
+                              <tr>
+                                <td>{{ $i++ }}</td>
                                 <td>Size 3XL</td>
-                                <td class="text-center">35,000/pcs</td>
-                                <td class="text-center">-</td>
-                            </tr>
-                            <tr>
-                                <td>Size >4XL</td>
-                                <td class="text-center">50,000/pcs</td>
-                                <td class="text-center">-</td>
-                            </tr>
-                            <tr>
-                                <td>Celana Panjang</td>
-                                <td class="text-center">150,000/pcs</td>
-                                <td class="text-center">-</td>
-                            </tr>
-                            <tr>
+                                <td>{{ $s3xl }}</td>
+                                <td><span id="Harga">{{ formatRupiah($price->s_3xl) }}</span></td>
+                                <td id="totalHarga">{{ formatRupiah($total3xl) }}</td> 
+                              </tr> 
+                            @endif
+                            @if ($s4xl ==null)
+                            @else 
+                            <?php 
+                                $total4xl = $s4xl * $price->s_4xl;
+                                $subTotal += $total4xl;
+                            ?>
+                              <tr>
+                                <td>{{ $i++ }}</td>
+                                <td>Size > 4XL</td>
+                                <td>{{ $s4xl }}</td>
+                                <td><span id="Harga">{{ formatRupiah($price->s_4xl) }}</span></td>
+                                <td id="totalHarga">{{ formatRupiah($total4xl) }}</td> 
+                              </tr> 
+                            @endif
+                            @if ($celana_printing ==null)
+                            @else 
+                              <tr>
+                                <td>{{ $i++ }}</td>
+                                <td>Celana Printing</td>
+                                <td>-</td>
+                                <td><span id="Harga">{{ formatRupiah($celana_printing) }}</span></td>
+                                <td id="totalHarga">{{ formatRupiah($celana_printing) }}</td> 
+                              </tr> 
+                              <?php 
+                                $subTotal += $celana_printing;
+                              ?>
+                            @endif
+                            @if ($celana_pro ==null)
+                            @else 
+                            <?php 
+                                $totalcpro = $celana_pro * $price->c_panjang;
+                                $subTotal += $totalcpro;
+                            ?>
+                              <tr>
+                                <td>{{ $i++ }}</td>
+                                <td>Celana Panjang PRO</td>
+                                <td>{{ $celana_pro }}</td>
+                                <td><span id="Harga">{{ formatRupiah($price->c_panjang) }}</span></td>
+                                <td id="totalHarga">{{ formatRupiah($totalcpro) }}</td> 
+                              </tr> 
+                            @endif
+                            @if ($kaoskaki ==null)
+                            @else 
+                            <?php 
+                                $totalkki = $kaoskaki * $price->kaoskaki;
+                                $subTotal += $totalkki;
+                            ?>
+                              <tr>
+                                <td>{{ $i++ }}</td>
                                 <td>Kaoskaki</td>
-                                <td class="text-center">50,000/pcs</td>
-                                <td class="text-center">-</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                {{-- <h6 class="text-left font-weight-bold  mt-2"></h6> --}}
-                <div class="table-responsive">
-                    <table class="table table-bordered mt-4 mb-0 ">
-                        <thead class="text-center">
-                            <tr class="text-center">
-                                <th class="text-uppercase small font-weight-bold"  colspan="3">Keterangan untuk
-                                    Extra</th>
-                                </tr>
-                                    <tr class="text-center">
-                                <th class="text-uppercase small font-weight-bold">Extra</th>
-                                <th class="text-uppercase small font-weight-bold">Jenis</th>
-                                {{-- <th class="text-uppercase small font-weight-bold">Keterangan</th> --}}
-                                <th class="text-uppercase small font-weight-bold">Harga</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td rowspan="2">Pola Badan</td>
-                                <td class="text-center">Normal</td>
-                                <td class="text-center">Free</td>
-                            <tr>
-                                <td class="text-center">Badan bawah melengkung</td>
-                                <td class="text-center">15,000</td>
-                            </tr>
-                            <tr>
-                                <td rowspan="2">Pola Lengan</td>
-                                <td class="text-center">Normal</td>
-                                <td class="text-center">Free</td>
-                            <tr>
-                                <td class="text-center">Raglan</td>
-                                <td class="text-center">15,000</td>
-                            </tr>
-                            <tr>
-                                <td >Material (Bahan)</td>
-                                <td class="text-center">-</td>
-                                <td class="text-center">-</td>
-                            </tr>
-                            <tr>
-                                <td>Kerah</td>
-                                <td class="text-center">custom elastic rib</td>
-                                <td class="text-center">20,000</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                                <td>{{ $kaoskaki }}</td>
+                                <td><span id="Harga">{{ formatRupiah($price->kaoskaki) }}</span></td>
+                                <td id="totalHarga">{{ formatRupiah($totalkki) }}</td> 
+                              </tr> 
+                            @endif
+                            @if ($bahan_embos ==null)
+                            @else 
+                              <tr>
+                                <td>{{ $i++ }}</td>
+                                <td>Bahan Embos</td>
+                                <td>-</td>
+                                <td><span id="Harga">{{ formatRupiah($bahan_embos) }}</span></td>
+                                <td id="totalHarga">{{ formatRupiah($bahan_embos) }}</td> 
+                              </tr> 
+                              <?php
+                                $subTotal += $bahan_embos;
+                              ?>
+                            @endif
+                            @if ($logo_3d ==null)
+                            @else 
+                              <tr>
+                                <td>{{ $i++ }}</td>
+                                <td>Logo 3D</td>
+                                <td>-</td>
+                                <td><span id="Harga">{{ formatRupiah($logo_3d) }}</span></td>
+                                <td id="totalHarga">{{ formatRupiah($logo_3d) }}</td> 
+                              </tr> 
+                              <?php
+                                $subTotal += $logo_3d;
+                              ?>
+                            @endif
+                            @if ($kerah_rib ==null)
+                            @else 
+                              <tr>
+                                <td>{{ $i++ }}</td>
+                                <td>Kerah Elastic Rib</td>
+                                <td>-</td>
+                                <td><span id="Harga">{{ formatRupiah($kerah_rib) }}</span></td>
+                                <td id="totalHarga">{{ formatRupiah($kerah_rib) }}</td> 
+                              </tr> 
+                              <?php
+                                $subTotal += $kerah_rib;
+                              ?>
+                            @endif
+                            @if ($tangan_rib ==null)
+                            @else 
+                              <tr>
+                                <td>{{ $i++ }}</td>
+                                <td>Ujung Tangan Elastic Rib</td>
+                                <td>-</td>
+                                <td><span id="Harga">{{ formatRupiah($tangan_rib) }}</span></td>
+                                <td id="totalHarga">{{ formatRupiah($tangan_rib) }}</td> 
+                              </tr> 
+                              <?php
+                                $subTotal += $tangan_rib;
+                              ?>
+                            @endif
 
-                {{-- LOGO TIM --}}
-                <div class="table-responsive">
-                    <table class="table table-bordered mt-4 mb-0 ">
-                        <thead class="text-center">
-                            <tr class="text-center">
-                                <th class="text-uppercase small font-weight-bold"  colspan="3">EXTRA LOGO TIM</th>
-                                </tr>
-                                    <tr class="text-center">
-                                <th class="text-uppercase small font-weight-bold">Jenis</th>
-                                <th class="text-uppercase small font-weight-bold">Harga</th>
-                                {{-- <th class="text-uppercase small font-weight-bold">Keterangan</th> --}}
-                                <th class="text-uppercase small font-weight-bold">Keterangan</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td >DTF</td>
-                                <td class="text-center">Free</td>
-                                <td class="text-center">-</td>
-                            <tr>
-                                <td >Extra logo tim (DTF)</td>
-                                <td class="text-center">15,000</td>
-                                <td class="text-center">Min order 12 pcs dan untuk stadium, free utk PRO dan PRO+</td>
-                            </tr>
-                            <tr>
-                                <td >3D TPU</td>
-                                <td class="text-center">30,000</td>
-                                <td class="text-center">Min order 24 pcs dan untuk stadium, free utk PRO dan PRO+</td>
-                            <tr>
-                                <td >Rubber on Tatami</td>
-                                <td class="text-center">30,000</td>
-                                <td class="text-center">Min order 50 pcs dan untuk stadium, free utk PRO dan PRO+</td>
-
-                            </tr>
-                            <tr>
-
-                                <td >Silicone HD</td>
-                                <td class="text-center">30,000</td>
-                                <td class="text-center">Min order 100 pcs dan untuk stadium, free utk PRO dan PRO+</td>
-                            </tr>
-                            <tr>
-                                <td >Woven HD</td>
-                                <td class="text-center">30,000</td>
-                                <td class="text-center">Min order 50 pcs dan untuk stadium, free utk PRO dan PRO+</td>
-                            </tr>
-                            <tr>
-                                <td >Woven Lokal</td>
-                                <td class="text-center">30,000</td>
-                                <td class="text-center">Min order 12 pcs dan untuk stadium, free utk PRO dan PRO+</td>
-                            </tr>
                         </tbody>
+                        <tfoot class="font-weight-bold small">
+                            <?php
+                                $total += $subTotal;
+                            ?>
+                            <tr>
+                                <td colspan="3"></td>
+                                <td></td>
+                                <td></td> 
+                            </tr>  
+                            <tr>
+                                <td colspan="3"></td>
+                                <td>Sub-Total</td>
+                                <td>{{$subTotal}}</td> 
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="text-center">TOTAL</td>
+                                <td class="text-center">{{ $qty }}</td>
+                                <td>{{ formatRupiah($harga) }}</td>
+                                <td>{{formatRupiah($total)}}</td> 
+                            </tr>
+                        </tfoot>
                     </table>
-                </div>
-                {{-- SPONSOR DEPAN --}}
-                <div class="table-responsive">
-                    <table class="table table-bordered mt-4 mb-0 ">
-                        <thead class="text-center">
-                            <tr class="text-center">
-                                <th class="text-uppercase small font-weight-bold"  colspan="3">EXTRA SPONSOR DEPAN</th>
-                                </tr>
-                                    <tr class="text-center">
-                                <th class="text-uppercase small font-weight-bold">Jenis</th>
-                                <th class="text-uppercase small font-weight-bold">Harga</th>
-                                {{-- <th class="text-uppercase small font-weight-bold">Keterangan</th> --}}
-                                <th class="text-uppercase small font-weight-bold">Keterangan</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td > Printing</td>
-                                <td class="text-center">Free</td>
-                                <td class="text-center">untuk kategori HALF - PRINT dan FULL - PRINT</td>
-                            <tr>
-                                <td >Tulisan poliflek 1 warna 1 baris</td>
-                                <td class="text-center">Free</td>
-                                <td class="text-center">-</td>
-                            </tr>
-                            <tr>
-                                <td > Extra Tulisan poliflek 1 warna 1 baris</td>
-                                <td class="text-center">10,000</td>
-                                <td class="text-center">-</td>
-                            <tr>
-                                <td >Logo + Tulisan poliflek 1 warnaa</td>
-                                <td class="text-center">35,000</td>
-                                <td class="text-center">-</td>
-
-                            </tr>
-                            <tr>
-                                <td> Extra Tulisan poliflek >1 warna</td>
-                                <td class="text-center">45,000</td>
-                                <td class="text-center">-</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                {{-- LENGAN --}}
-                <div class="table-responsive">
-                    <table class="table table-bordered mt-4 mb-0 ">
-                        <thead class="text-center">
-                            <tr class="text-center">
-                                <th class="text-uppercase small font-weight-bold"  colspan="2">EXTRA LENGAN</th>
-                                </tr>
-                                    <tr class="text-center">
-                                <th class="text-uppercase small font-weight-bold">Jenis</th>
-                                <th class="text-uppercase small font-weight-bold">Harga</th>
-                                {{-- <th class="text-uppercase small font-weight-bold">Keterangan</th> --}}
-                                {{-- <th class="text-uppercase small font-weight-bold">Keterangan</th> --}}
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td >Extra logo DTF</td>
-                                <td class="text-center">15,000</td>
-                            <tr>
-                                <td >Extra Tulisan 1 baris</td>
-                                <td class="text-center">10,000</td>
-                            </tr>
-                            
-                        </tbody>
-                    </table>
-                </div>
-
+                </div><!--table responsive end-->
+                <?php
+                // Fungsi untuk mengonversi harga menjadi format rupiah
+                function formatRupiah($harga)
+                {
+                    return "Rp " . number_format($harga, 0, ',');
+                }
+                ?>
 
                 <br>
                 {{-- <p style="font-style: italic;">Note: All payment should be direct bank in into our official bank

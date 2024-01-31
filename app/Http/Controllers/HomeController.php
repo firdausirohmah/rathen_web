@@ -314,7 +314,7 @@ class HomeController extends Controller
                   <div class='field small pt-0'>
                     <div class='title'>- Size 2XL</div>
                     <div>
-                      <input type='text' class='input txt2' placeholder='Jumlah' name='2xl'/>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='s2xl'/>
                       <span class='title'>PCS</span><br>
                     </div>
                     <span>(+20,000)</span>
@@ -322,7 +322,7 @@ class HomeController extends Controller
                   <div class='field small'>
                     <div class='title'>- Size 3XL</div>
                     <div>
-                      <input type='text' class='input txt2' placeholder='Jumlah' name='3xl'/>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='s3xl'/>
                       <span class='title'>PCS</span><br>
                     </div>
                     <span>(+35,000)</span>
@@ -330,7 +330,7 @@ class HomeController extends Controller
                   <div class='field small'>
                     <div class='title'>- Size >4XL</div>
                     <div>
-                      <input type='text' class='input txt2' placeholder='Jumlah' name='4xl'/>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='s4xl'/>
                       <span class='title'>PCS</span><br>
                     </div>
                     <span>(+50,000)</span>
@@ -438,7 +438,7 @@ class HomeController extends Controller
                   <div class='field small pt-0'>
                     <div class='title'>- Size 2XL</div>
                     <div>
-                      <input type='text' class='input txt2' placeholder='Jumlah' name='2xl'/>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='s2xl'/>
                       <span class='title'>PCS</span><br>
                     </div>
                     <span>(+20,000)</span>
@@ -446,7 +446,7 @@ class HomeController extends Controller
                   <div class='field small'>
                     <div class='title'>- Size 3XL</div>
                     <div>
-                      <input type='text' class='input txt2' placeholder='Jumlah' name='3xl'/>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='s3xl'/>
                       <span class='title'>PCS</span><br>
                     </div>
                     <span>(+35,000)</span>
@@ -454,7 +454,7 @@ class HomeController extends Controller
                   <div class='field small'>
                     <div class='title'>- Size >4XL</div>
                     <div>
-                      <input type='text' class='input txt2' placeholder='Jumlah' name='4xl'/>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='s4xl'/>
                       <span class='title'>PCS</span><br>
                     </div>
                     <span>(+50,000)</span>
@@ -530,19 +530,22 @@ class HomeController extends Controller
                   <div class='field small'>
                     <div class='title'>Kerah pakai kancing</div>
                     <div class='ms-auto'>
-                      <span>(Free)</span>
+                      <input class='visually-hidden' type='checkbox' id='kerah_kancing' name='kerah_kancing' value='10000'>
+                      <label class='label_harga' for='kerah_kancing'>(Free)</label>
                     </div>
                   </div>
                   <div class='field small'>
                     <div class='title'>Badan bawah melengkung</div>
                     <div class='ms-auto'>
-                      <span>(Free)</span>
+                      <input class='visually-hidden' type='checkbox' id='bb_melengkung' name='bb_melengkung' value='15000'>
+                      <label class='label_harga' for='bb_lengkung'>(Free)</label>
                     </div>
                   </div>
                   <div class='field small'>
                     <div class='title'>Lengan pola raglan</div>
                     <div class='ms-auto'>
-                      <span>(Free)</span>
+                      <input class='visually-hidden' type='checkbox' id='lengan_raglan' name='lengan_raglan' value='15000'>
+                      <label class='label_harga' for='lengan_raglan'>(Free)</label>
                     </div>
                   </div>
 
@@ -559,7 +562,7 @@ class HomeController extends Controller
                   <div class='field small pt-0'>
                     <div class='title'>- Size 2XL</div>
                     <div>
-                      <input type='text' class='input txt2' placeholder='Jumlah' name='2xl'/>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='s2xl'/>
                       <span class='title'>PCS</span><br>
                     </div>
                     <span>(+20,000)</span>
@@ -567,7 +570,7 @@ class HomeController extends Controller
                   <div class='field small'>
                     <div class='title'>- Size 3XL</div>
                     <div>
-                      <input type='text' class='input txt2' placeholder='Jumlah' name='3xl'/>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='s3xl'/>
                       <span class='title'>PCS</span><br>
                     </div>
                     <span>(+35,000)</span>
@@ -575,7 +578,7 @@ class HomeController extends Controller
                   <div class='field small'>
                     <div class='title'>- Size >4XL</div>
                     <div>
-                      <input type='text' class='input txt2' placeholder='Jumlah' name='4xl'/>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='s4xl'/>
                       <span class='title'>PCS</span><br>
                     </div>
                     <span>(+50,000)</span>
@@ -610,6 +613,20 @@ class HomeController extends Controller
                 <h6 class='card-subtitle text-black-50 mt-4'>Upgrade Fitur</h6>
                 <div class='payment__shipping'>
 
+                  <div class='field small visually-hidden'>
+                    <div class='title'>Bahan embos</div>
+                    <div class='ms-auto'>
+                      <input type='checkbox' id='bahan_embos' name='upgrade' value='20000'>
+                      <label class='label_harga' for='bahan_embos'>(+20,000)</label>
+                    </div>
+                  </div>
+                  <div class='field small visually-hidden'>
+                    <div class='title'>Logo 3D</div>
+                    <div class='ms-auto'>
+                      <input type='checkbox' id='logo_3d' name='upgrade' value='30000'>
+                      <label class='label_harga' for='logo_3d'>(+30,000)</label>
+                    </div>
+                  </div>
                   <div class='field small'>
                     <div class='title'>Kerah elastic rib</div>
                     <div class='ms-auto'>
@@ -636,19 +653,22 @@ class HomeController extends Controller
                   <div class='field small'>
                     <div class='title'>Kerah pakai kancing</div>
                     <div class='ms-auto'>
-                      <span>(Free)</span>
+                      <input class='visually-hidden' type='checkbox' id='kerah_kancing' name='kerah_kancing' value='10000'>
+                      <label class='label_harga' for='kerah_kancing'>(Free)</label>
                     </div>
                   </div>
                   <div class='field small'>
                     <div class='title'>Badan bawah melengkung</div>
                     <div class='ms-auto'>
-                      <span>(Free)</span>
+                      <input class='visually-hidden' type='checkbox' id='bb_melengkung' name='bb_melengkung' value='15000'>
+                      <label class='label_harga' for='bb_lengkung'>(Free)</label>
                     </div>
                   </div>
                   <div class='field small'>
                     <div class='title'>Lengan pola raglan</div>
                     <div class='ms-auto'>
-                      <span>(Free)</span>
+                      <input class='visually-hidden' type='checkbox' id='lengan_raglan' name='lengan_raglan' value='15000'>
+                      <label class='label_harga' for='lengan_raglan'>(Free)</label>
                     </div>
                   </div>
 
@@ -665,7 +685,7 @@ class HomeController extends Controller
                   <div class='field small pt-0'>
                     <div class='title'>- Size 2XL</div>
                     <div>
-                      <input type='text' class='input txt2' placeholder='Jumlah' name='2xl'/>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='s2xl'/>
                       <span class='title'>PCS</span><br>
                     </div>
                     <span>(+20,000)</span>
@@ -673,7 +693,7 @@ class HomeController extends Controller
                   <div class='field small'>
                     <div class='title'>- Size 3XL</div>
                     <div>
-                      <input type='text' class='input txt2' placeholder='Jumlah' name='3xl'/>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='s3xl'/>
                       <span class='title'>PCS</span><br>
                     </div>
                     <span>(+35,000)</span>
@@ -681,7 +701,7 @@ class HomeController extends Controller
                   <div class='field small'>
                     <div class='title'>- Size >4XL</div>
                     <div>
-                      <input type='text' class='input txt2' placeholder='Jumlah' name='4xl'/>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='s4xl'/>
                       <span class='title'>PCS</span><br>
                     </div>
                     <span>(+50,000)</span>
@@ -716,6 +736,20 @@ class HomeController extends Controller
                 <h6 class='card-subtitle text-black-50 mt-4'>Upgrade Fitur</h6>
                 <div class='payment__shipping'>
 
+                  <div class='field small visually-hidden'>
+                    <div class='title'>Bahan embos</div>
+                    <div class='ms-auto'>
+                      <input type='checkbox' id='bahan_embos' name='upgrade' value='20000'>
+                      <label class='label_harga' for='bahan_embos'>(+20,000)</label>
+                    </div>
+                  </div>
+                  <div class='field small visually-hidden'>
+                    <div class='title'>Logo 3D</div>
+                    <div class='ms-auto'>
+                      <input type='checkbox' id='logo_3d' name='upgrade' value='30000'>
+                      <label class='label_harga' for='logo_3d'>(+30,000)</label>
+                    </div>
+                  </div>
                   <div class='field small'>
                     <div class='title'>Kerah elastic rib</div>
                     <div class='ms-auto'>
@@ -739,11 +773,42 @@ class HomeController extends Controller
                 <h6 class='card-subtitle text-black-50'>Add Cost</h6>
                 <div class='payment__shipping'>
 
+                  <div class='field small visually-hidden'>
+                    <div class='title'>Kerah pakai kancing</div>
+                    <div class='ms-auto'>
+                      <input class='visually-hidden' type='checkbox' id='kerah_kancing' name='kerah_kancing' value='10000'>
+                      <label class='label_harga' for='kerah_kancing'>(Free)</label>
+                    </div>
+                  </div>
+                  <div class='field small visually-hidden'>
+                    <div class='title'>Badan bawah melengkung</div>
+                    <div class='ms-auto'>
+                      <input class='visually-hidden' type='checkbox' id='bb_melengkung' name='bb_melengkung' value='15000'>
+                      <label class='label_harga' for='bb_lengkung'>(Free)</label>
+                    </div>
+                  </div>
+                  <div class='field small visually-hidden'>
+                    <div class='title'>Lengan pola raglan</div>
+                    <div class='ms-auto'>
+                      <input class='visually-hidden' type='checkbox' id='lengan_raglan' name='lengan_raglan' value='15000'>
+                      <label class='label_harga' for='lengan_raglan'>(Free)</label>
+                    </div>
+                  </div>
+
+                  <div class='field small visually-hidden'>
+                    <div class='title'>Lengan Panjang</div>
+                    <div>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='lengan_panjang'/>
+                      <span class='title'>PCS</span><br>
+                    </div>
+                    <span>(+30,000)</span>
+                  </div>
+
                   <div class='title pt-3'>Big Size</div>
                   <div class='field small pt-0'>
                     <div class='title'>- Size 2XL</div>
                     <div>
-                      <input type='text' class='input txt2' placeholder='Jumlah' name='2xl'/>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='s2xl'/>
                       <span class='title'>PCS</span><br>
                     </div>
                     <span>(+20,000)</span>
@@ -751,7 +816,7 @@ class HomeController extends Controller
                   <div class='field small'>
                     <div class='title'>- Size 3XL</div>
                     <div>
-                      <input type='text' class='input txt2' placeholder='Jumlah' name='3xl'/>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='s3xl'/>
                       <span class='title'>PCS</span><br>
                     </div>
                     <span>(+35,000)</span>
@@ -759,10 +824,18 @@ class HomeController extends Controller
                   <div class='field small'>
                     <div class='title'>- Size >4XL</div>
                     <div>
-                      <input type='text' class='input txt2' placeholder='Jumlah' name='4xl'/>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='s4xl'/>
                       <span class='title'>PCS</span><br>
                     </div>
                     <span>(+50,000)</span>
+                  </div>
+
+                  <div class='field small visually-hidden'>
+                    <div class='title'>Celana printing</div>
+                    <div class='ms-auto'>
+                      <input type='checkbox' id='celana_printing' name='celana_printing' value='50000'>
+                      <label class='label_harga' for='celana_printing'>(+50,000)</label>
+                    </div>
                   </div>
 
                   <div class='field small'>
@@ -776,12 +849,47 @@ class HomeController extends Controller
                   <div class='field small'>
                     <div class='title'>Kaoskaki</div>
                     <div>
-                      <input type='text' class='input txt2' placeholder='Jumlah' name='kaoskaki'/>
+                      <input type='text' class='input txt2' placeholder='Jumlah' name='kaoskaki' pattern='\d+' title='Inputan harus berupa angka'/>
                       <span class='title'>PCS</span><br>
                     </div>
                     <span>(+50,000)</span>
                   </div>
                 </div>
+                
+                <h6 class='card-subtitle text-black-50 mt-4 visually-hidden'>Upgrade Fitur</h6>
+                <div class='payment__shipping visually-hidden'>
+
+                  <div class='field small visually-hidden'>
+                    <div class='title'>Bahan embos</div>
+                    <div class='ms-auto'>
+                      <input type='checkbox' id='bahan_embos' name='upgrade' value='20000'>
+                      <label class='label_harga' for='bahan_embos'>(+20,000)</label>
+                    </div>
+                  </div>
+                  <div class='field small visually-hidden'>
+                    <div class='title'>Logo 3D</div>
+                    <div class='ms-auto'>
+                      <input type='checkbox' id='logo_3d' name='upgrade' value='30000'>
+                      <label class='label_harga' for='logo_3d'>(+30,000)</label>
+                    </div>
+                  </div>
+                  <div class='field small'>
+                    <div class='title'>Kerah elastic rib</div>
+                    <div class='ms-auto'>
+                      <input type='checkbox' id='kerah_rib' name='kerah_rib' value='20000'>
+                      <label class='label_harga' for='kerah_rib'>(+20,000)</label>
+                    </div>
+                  </div>
+                  <div class='field small'>
+                    <div class='title'>Ujung tangan elastic rib</div>
+                    <div class='ms-auto'>
+                      <input type='checkbox' id='tangan_rib' name='tangan_rib' value='20000'>
+                      <label class='label_harga' for='tangan_rib'>(+20,000)</label>
+                    </div>
+                  </div>
+                  
+                </div>
+                
                 ",
             ],
             // Tambahkan data untuk menu lainnya

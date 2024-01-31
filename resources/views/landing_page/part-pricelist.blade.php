@@ -242,17 +242,20 @@
       display: block;
       position: absolute;
       width: 75%;
+      left: 6rem;
       right: 0px;
       top: 65px;
       background: #fff;
       z-index: 9999;
-      transform:translateX(10px);
-      transition: transform 0.5s ease;
       padding:1rem 0 2rem 3rem;
+    }
+    .navbar-collapse.show{
+      transform:translateX(-3px);
+      transition: transform 0.5s ease;
     }
     .navbar-collapse.collapsing{
       height:unset!important;
-      transition: transform 0s ease;
+      transition: unset;
     }
     .overlay.active {
       position: fixed;
@@ -443,7 +446,7 @@
 
         <div class="col-lg-6">
           <!-- <form action="{{ route('order') }}" method="POST">  -->
-          <form action="{{ route('quotation') }}" method="POST" >
+          <form action="{{ route('quotation') }}" id="quotationForm" method="POST" >
             @csrf
               <div class="card mt-4-mobile">
                 <div class="card-body">
@@ -1160,13 +1163,26 @@
           <label for="" class="subtitle">Alamat</label>
           <input type="text" class="form-control" name="alamat">
 
-          <button class="btn-modal" type="submit" onclick="return validateForm()">Save</button>
+          <button type="submit" class="btn-modal" onclick="return validateForm()">Save</button>
       </form>
     </div>
   </div>
 </div>
 
 <script>
+  function preventFormSubmitOnEnter(formId) {
+    document.getElementById(formId).addEventListener("keypress", function(e) {
+        // Mencegah pengiriman formulir saat tombol "Enter" ditekan
+        if (e.key === "Enter") {
+            e.preventDefault();
+        }
+    });
+  }
+
+  preventFormSubmitOnEnter("quotationForm");
+  preventFormSubmitOnEnter("inputDataForm");
+
+
   document.addEventListener('DOMContentLoaded', function () {
     var modal = document.getElementById('QuotationModal');
     var btn = document.getElementById('QuotationBtn');

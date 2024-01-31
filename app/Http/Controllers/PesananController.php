@@ -9,6 +9,7 @@ use App\Models\ModeStep2;
 use App\Models\ModeStep3;
 
 use App\Models\Quotation1;
+use App\Models\Quotation2;
 
 use Barryvdh\DomPDF\PDF;
 use Illuminate\Http\Request;
@@ -376,6 +377,27 @@ class PesananController extends Controller
             $product = $rev->product;
             $hargaproduct = $rev->harga;
         }
+
+        Quotation2::create([
+            'kd_quotation' => 'Q' . $str,
+            'product' => $product,
+            'qty' => $qty,
+            'kerah_kancing' => $kk !== null ? 1 : null,
+            'bb_melengkung' => $bbm !== null ? 1 : null,
+            'lengan_raglan' => $pl !== null ? 1 : null,
+            'lengan_panjang' => $lp,
+            's2xl'=>$s2xl,
+            's3xl'=>$s3xl,
+            's4xl'=>$s4xl,
+            'celana_printing'=>$cp !== null ? 1 : null,
+            'celana_pro'=>$cpro,
+            'kaoskaki'=>$kki,
+            'bahan_embos'=>$be !== null ? 1 : null,
+            'logo_3d'=>$l3d !== null ? 1 : null,
+            'kerah_rib'=>$kr !== null ? 1 : null,
+            'tangan_rib'=>$tr !== null ? 1 : null,
+        ]);
+
         foreach ($data as $pesanan) {
             
             $d = [
@@ -391,6 +413,7 @@ class PesananController extends Controller
                 'alamat' => $alamat,
 
                 'tanggal' => $tanggalSekarang,
+                'kd_part'=>$kd_part,
 
                 'pesanan' => $pesanan,
                 'price' => $price,

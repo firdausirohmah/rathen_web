@@ -75,7 +75,7 @@
                         Rp. {{ $item->harga }}
 
                       </td>
-                      <td class="align-middle text-center text-sm"> {{$item->created_at}}
+                      <td class="align-middle text-center text-sm"> {{date("d-m-Y", strtotime($item->created_at))}}
                         {{-- <span class="badge badge-sm bg-gradient-warning">{{ $item->status }}</span> --}}
                       </td>
                     </tr>
@@ -103,10 +103,9 @@
                       </th>
                       <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">No. Whatsapp
                       </th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Email
-                        WhatsApp</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Email</th>
                       <th class="text-uppercase text-center text-secondary text-xxs font-weight-bolder opacity-7">Alamat</th>
-                      <th class="text-uppercase text-center text-secondary text-xxs font-weight-bolder opacity-7">Tanggal dibuat</th>
+                      <th class="text-uppercase text-center text-secondary text-xxs font-weight-bolder opacity-7">Tanggal Pemesanan</th>
                       <!-- u. kategori dan kualitas -->
 
                       <!-- <th class="text-secondary opacity-7"></th> -->
@@ -127,8 +126,8 @@
                       <td>
                         {{ $item->alamat }}
                       </td>
-                      <td>
-                        {{$item->created_at}}
+                      <td class="text-center">
+                        {{ date("d-m-Y", strtotime($item->created_at))}}
                       </td>
                     </tr>
                     @endforeach

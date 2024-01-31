@@ -1,80 +1,42 @@
-// Event listener for checkbox change
-document.getElementById("kerah_kancing").addEventListener('change', function() {
-    additionalCost = this.checked ? additionalCost + 10000 : additionalCost - 10000; // Update additional cost based on checkbox state
-    updateTotalHarga();
-});
+// Fungsi untuk menangani perubahan pada checkbox
+function handleCheckboxChange(id, cost) {
+    document.getElementById(id).addEventListener('change', function() {
+        var costChange = this.checked ? cost : -cost;
+        additionalCost += costChange;
+        updateTotalHarga();
+    });
+}
 
-document.getElementById("bb_melengkung").addEventListener('change', function() {
-    additionalCost = this.checked ? additionalCost + 15000 : additionalCost - 15000; // Update additional cost based on checkbox state
-    updateTotalHarga();
-});
+// Fungsi untuk menangani perubahan pada input field
+function handleInputChange(name, costPerUnit) {
+    document.querySelector(`input[name="${name}"]`).addEventListener('input', function() {
+        var quantity = parseInt(this.value) || 0;
+        var prevQuantity = parseInt(this.dataset.prevValue) || 0;
+        var prevCost = prevQuantity !== 0 ? prevQuantity * costPerUnit : 0;
+        var newCost = quantity !== 0 ? quantity * costPerUnit : 0;
+        additionalCost += newCost - prevCost;
+        this.dataset.prevValue = quantity;
+        updateTotalHarga();
+    });
+}
 
-document.getElementById("lengan_raglan").addEventListener('change', function() {
-    additionalCost = this.checked ? additionalCost + 15000 : additionalCost - 15000; // Update additional cost based on checkbox state
-    updateTotalHarga();
-});
+// Daftar perubahan biaya berdasarkan checkbox
+handleCheckboxChange("kerah_kancing", 10000);
+handleCheckboxChange("bb_melengkung", 15000);
+handleCheckboxChange("lengan_raglan", 15000);
+handleCheckboxChange("celana_printing", 50000);
+handleCheckboxChange("bahan_embos", 20000);
+handleCheckboxChange("logo_3d", 30000);
+handleCheckboxChange("kerah_rib", 20000);
+handleCheckboxChange("tangan_rib", 20000);
 
-document.getElementById("celana_printing").addEventListener('change', function() {
-    additionalCost = this.checked ? additionalCost + 50000 : additionalCost - 50000; // Update additional cost based on checkbox state
-    updateTotalHarga();
-});
-
-document.getElementById("bahan_embos").addEventListener('change', function() {
-    additionalCost = this.checked ? additionalCost + 20000 : additionalCost - 20000; // Update additional cost based on checkbox state
-    updateTotalHarga();
-});
-
-document.getElementById("logo_3d").addEventListener('change', function() {
-    additionalCost = this.checked ? additionalCost + 30000 : additionalCost - 30000; // Update additional cost based on checkbox state
-    updateTotalHarga();
-});
-
-document.getElementById("kerah_rib").addEventListener('change', function() {
-    additionalCost = this.checked ? additionalCost + 20000 : additionalCost - 20000; // Update additional cost based on checkbox state
-    updateTotalHarga();
-});
-
-document.getElementById("tangan_rib").addEventListener('change', function() {
-    additionalCost = this.checked ? additionalCost + 20000 : additionalCost - 20000; // Update additional cost based on checkbox state
-    updateTotalHarga();
-});
-
-// Event listener for input field change
-document.querySelector('input[name="lengan_panjang"]').addEventListener('input', function() {
-    var quantity = parseInt(this.value) || 0;
-    additionalCost = quantity * 30000; // Update additional cost based on input value
-    updateTotalHarga();
-});
-
-document.querySelector('input[name="s2xl"]').addEventListener('input', function() {
-    var quantity = parseInt(this.value) || 0;
-    additionalCost = quantity * 20000; // Update additional cost based on input value
-    updateTotalHarga();
-});
-
-document.querySelector('input[name="s3xl"]').addEventListener('input', function() {
-    var quantity = parseInt(this.value) || 0;
-    additionalCost = quantity * 35000; // Update additional cost based on input value
-    updateTotalHarga();
-});
-
-document.querySelector('input[name="s4xl"]').addEventListener('input', function() {
-    var quantity = parseInt(this.value) || 0;
-    additionalCost = quantity * 50000; // Update additional cost based on input value
-    updateTotalHarga();
-});
-
-document.querySelector('input[name="celana_pro"]').addEventListener('input', function() {
-  var quantity = parseInt(this.value) || 0; // Get the value of kaoskaki input field, default to 0 if not a number
-  additionalCost = quantity * 150000;
-  updateTotalHarga();
-});
-
-document.querySelector('input[name="kaoskaki"]').addEventListener('input', function() {
-  var quantity = parseInt(this.value) || 0; // Get the value of kaoskaki input field, default to 0 if not a number
-  additionalCost = quantity * 50000;
-  updateTotalHarga();
-});
+// Daftar perubahan biaya berdasarkan input field
+handleInputChange("lengan_panjang", 30000);
+handleInputChange("s2xl", 20000);
+handleInputChange("s3xl", 35000);
+handleInputChange("s4xl", 50000);
+handleInputChange("celana_pro", 150000);
+handleInputChange("kaoskaki", 50000);
 
 function updateTotalHarga() {
   var hargaDb = parseFloat(document.getElementById("hargaDb").innerText.replace('Rp ', '').replace(',', ''));
@@ -93,15 +55,19 @@ function validateForm() {
     var kontakInput = document.getElementById('kontakInput').value;
     var kontakError = document.getElementById('kontakError');
 
+    if (kontakInput.startsWith('0')) {
+        kontakInput = '+62' + kontakInput.slice(1); // Mengganti "0" dengan "62"
+        document.getElementById('kontakInput').value = kontakInput;
+    }
     // Memeriksa apakah input di kontak berupa angka
-    if (!(/^\d+$/.test(kontakInput))) {
+    if (!(/^\+?\d+$/.test(kontakInput))) {
         kontakError.innerHTML = "Inputan harus berupa angka";
         return false;
     }
 
     // Memeriksa panjang input di kontak (minimal 10, maksimal 13 karakter)
-    if (kontakInput.length < 10 || kontakInput.length > 13) {
-        kontakError.innerHTML = "Input harus terdiri 10 hingga 13 angka";
+    if (kontakInput.length < 10 || kontakInput.length > 14) {
+        kontakError.innerHTML = "Input harus terdiri 10 hingga 14 angka";
         return false;
     }
 

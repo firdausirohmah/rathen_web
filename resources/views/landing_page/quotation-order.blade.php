@@ -411,7 +411,7 @@
 
                 <script>
                     function goBack() {
-                        window.history.back();
+                        window.location.href = "/price-list/{{$kd_part}}";
                     }
                     document.addEventListener("DOMContentLoaded", function() {
                         var dynamicImage = document.getElementById("dynamicImage");
@@ -548,24 +548,6 @@
     });
   });
 </script>
-
-<script>
-    function goBack() {
-        window.history.back();
-    }
-    document.addEventListener("DOMContentLoaded", function() {
-        var dynamicImage = document.getElementById("dynamicImage");
-    
-        if (dynamicImage) {
-            console.log("Element dengan ID dynamicImage ditemukan.");
-            dynamicImage.src = "{{asset('/asset/images/logo-dark.png')}}";
-            console.log("Src gambar diubah menjadi: " + dynamicImage.src);
-        } else {
-            console.error("Element dengan ID dynamicImage tidak ditemukan!");
-        }
-    });
-</script>
-
 
 </body>
 </html>

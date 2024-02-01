@@ -83,8 +83,8 @@
                             <tr>
                                 <td>{{ $product }}</td>
                                 <td>{{ $qty }}</td>
-                                <td><span id="Harga">{{ formatRupiah($harga) }}</span></td>
-                                <td id="totalHarga">{{ formatRupiah($total) }}</td> 
+                                <td><span id="Harga">Rp <?= number_format($harga , 0, ','); ?></span></td>
+                                <td id="totalHarga">Rp <?= number_format($total , 0, ','); ?></td> 
                             </tr>
 
                         </tbody>
@@ -113,8 +113,8 @@
                                 <td>{{ $i++ }}</td>
                                 <td>Kerah Pakai Kancing</td>
                                 <td>-</td>
-                                <td><span id="Harga">{{ formatRupiah($kerah_kancing) }}</span></td>
-                                <td id="totalHarga">{{ formatRupiah($kerah_kancing) }}</td> 
+                                <td><span id="Harga">Rp <?=number_format($kerah_kancing, 0, ',')?></span></td>
+                                <td id="totalHarga">Rp <?=number_format($kerah_kancing, 0, ',')?></td> 
                               </tr>
                               <?php $subTotal += $kerah_kancing; ?>
                             @endif
@@ -124,8 +124,8 @@
                                 <td>{{ $i++ }}</td>
                                 <td>Badan Bawah Melengkung</td>
                                 <td>-</td>
-                                <td><span id="Harga">{{ formatRupiah($badan_bawah) }}</span></td>
-                                <td id="totalHarga">{{ formatRupiah($badan_bawah) }}</td> 
+                                <td><span id="Harga">Rp <?=number_format($badan_bawah, 0, ',')?></span></td>
+                                <td id="totalHarga">Rp <?=number_format($badan_bawah, 0, ',')?></td> 
                               </tr>
                               <?php $subTotal += $badan_bawah; ?>
                             @endif
@@ -135,8 +135,8 @@
                                 <td>{{ $i++ }}</td>
                                 <td>Lengan Pola Raglan</td>
                                 <td>-</td>
-                                <td><span id="Harga">{{ formatRupiah($pola_lengan) }}</span></td>
-                                <td id="totalHarga">{{ formatRupiah($pola_lengan) }}</td> 
+                                <td><span id="Harga">Rp <?=number_format($pola_lengan, 0, ',')?></span></td>
+                                <td id="totalHarga">Rp <?=number_format($pola_lengan, 0, ',')?></td> 
                               </tr> 
                               <?php $subTotal += $pola_lengan; ?>
                             @endif
@@ -150,8 +150,8 @@
                                 <td>{{ $i++ }}</td>
                                 <td>Lengan Panjang</td>
                                 <td>{{ $lengan_panjang }}</td>
-                                <td><span id="Harga">{{ formatRupiah($price->l_panjang) }}</span></td>
-                                <td id="totalHarga">{{ formatRupiah($totallp) }}</td> 
+                                <td><span id="Harga">Rp <?=number_format($price->l_panjang, 0, ',')?></span></td>
+                                <td id="totalHarga">Rp <?=number_format($totallp, 0, ',')?></td> 
                               </tr> 
                             @endif
                             @if ($s2xl ==null)
@@ -164,8 +164,8 @@
                                 <td>{{ $i++ }}</td>
                                 <td>Size 2XL</td>
                                 <td>{{ $s2xl }}</td>
-                                <td><span id="Harga">{{ formatRupiah($price->s_2xl) }}</span></td>
-                                <td id="totalHarga">{{ formatRupiah($total2xl) }}</td> 
+                                <td><span id="Harga">Rp <?=number_format($price->s_2xl , 0, ',')?></span></td>
+                                <td id="totalHarga">Rp <?=number_format($total2xl , 0, ',')?></td> 
                               </tr> 
                             @endif
                             @if ($s3xl ==null)
@@ -178,8 +178,8 @@
                                 <td>{{ $i++ }}</td>
                                 <td>Size 3XL</td>
                                 <td>{{ $s3xl }}</td>
-                                <td><span id="Harga">{{ formatRupiah($price->s_3xl) }}</span></td>
-                                <td id="totalHarga">{{ formatRupiah($total3xl) }}</td> 
+                                <td><span id="Harga">Rp <?=number_format($price->s_3xl , 0, ',')?></span></td>
+                                <td id="totalHarga">Rp <?=number_format( $total3xl , 0, ',')?></td> 
                               </tr> 
                             @endif
                             @if ($s4xl ==null)
@@ -192,8 +192,8 @@
                                 <td>{{ $i++ }}</td>
                                 <td>Size > 4XL</td>
                                 <td>{{ $s4xl }}</td>
-                                <td><span id="Harga">{{ formatRupiah($price->s_4xl) }}</span></td>
-                                <td id="totalHarga">{{ formatRupiah($total4xl) }}</td> 
+                                <td><span id="Harga">Rp <?=number_format( $price->s_4xl , 0, ',')?></span></td>
+                                <td id="totalHarga">Rp <?=number_format( $total4xl , 0, ',')?></td> 
                               </tr> 
                             @endif
                             @if ($celana_printing ==null)
@@ -202,8 +202,8 @@
                                 <td>{{ $i++ }}</td>
                                 <td>Celana Printing</td>
                                 <td>-</td>
-                                <td><span id="Harga">{{ formatRupiah($celana_printing) }}</span></td>
-                                <td id="totalHarga">{{ formatRupiah($celana_printing) }}</td> 
+                                <td><span id="Harga">Rp <?=number_format( $celana_printing , 0, ',')?></span></td>
+                                <td id="totalHarga">Rp <?=number_format( $celana_printing , 0, ',')?></td> 
                               </tr> 
                               <?php 
                                 $subTotal += $celana_printing;
@@ -219,8 +219,8 @@
                                 <td>{{ $i++ }}</td>
                                 <td>Celana Panjang PRO</td>
                                 <td>{{ $celana_pro }}</td>
-                                <td><span id="Harga">{{ formatRupiah($price->c_panjang) }}</span></td>
-                                <td id="totalHarga">{{ formatRupiah($totalcpro) }}</td> 
+                                <td><span id="Harga">Rp <?=number_format( $price->c_panjang , 0, ',')?></span></td>
+                                <td id="totalHarga">Rp <?=number_format( $totalcpro , 0, ',')?></td> 
                               </tr> 
                             @endif
                             @if ($kaoskaki ==null)
@@ -233,8 +233,8 @@
                                 <td>{{ $i++ }}</td>
                                 <td>Kaoskaki</td>
                                 <td>{{ $kaoskaki }}</td>
-                                <td><span id="Harga">{{ formatRupiah($price->kaoskaki) }}</span></td>
-                                <td id="totalHarga">{{ formatRupiah($totalkki) }}</td> 
+                                <td><span id="Harga">Rp <?= number_format( $price->kaoskaki , 0, ',')?></span></td>
+                                <td id="totalHarga">Rp <?=number_format( $totalkki , 0, ',')?></td> 
                               </tr> 
                             @endif
                             @if ($bahan_embos ==null)
@@ -243,8 +243,8 @@
                                 <td>{{ $i++ }}</td>
                                 <td>Bahan Embos</td>
                                 <td>-</td>
-                                <td><span id="Harga">{{ formatRupiah($bahan_embos) }}</span></td>
-                                <td id="totalHarga">{{ formatRupiah($bahan_embos) }}</td> 
+                                <td><span id="Harga">Rp <?=number_format($bahan_embos , 0, ',')?></span></td>
+                                <td id="totalHarga">Rp <?=number_format($bahan_embos , 0, ',')?></td> 
                               </tr> 
                               <?php
                                 $subTotal += $bahan_embos;
@@ -256,8 +256,8 @@
                                 <td>{{ $i++ }}</td>
                                 <td>Logo 3D</td>
                                 <td>-</td>
-                                <td><span id="Harga">{{ formatRupiah($logo_3d) }}</span></td>
-                                <td id="totalHarga">{{ formatRupiah($logo_3d) }}</td> 
+                                <td><span id="Harga">Rp <?=number_format($logo_3d , 0, ',')?></span></td>
+                                <td id="totalHarga">Rp <?=number_format($logo_3d , 0, ',')?></td> 
                               </tr> 
                               <?php
                                 $subTotal += $logo_3d;
@@ -269,8 +269,8 @@
                                 <td>{{ $i++ }}</td>
                                 <td>Kerah Elastic Rib</td>
                                 <td>-</td>
-                                <td><span id="Harga">{{ formatRupiah($kerah_rib) }}</span></td>
-                                <td id="totalHarga">{{ formatRupiah($kerah_rib) }}</td> 
+                                <td><span id="Harga">Rp <?=number_format($kerah_rib , 0, ',')?></span></td>
+                                <td id="totalHarga">Rp <?=number_format($kerah_rib , 0, ',')?></td> 
                               </tr> 
                               <?php
                                 $subTotal += $kerah_rib;
@@ -282,8 +282,8 @@
                                 <td>{{ $i++ }}</td>
                                 <td>Ujung Tangan Elastic Rib</td>
                                 <td>-</td>
-                                <td><span id="Harga">{{ formatRupiah($tangan_rib) }}</span></td>
-                                <td id="totalHarga">{{ formatRupiah($tangan_rib) }}</td> 
+                                <td><span id="Harga">Rp <?=number_format($tangan_rib , 0, ',')?></span></td>
+                                <td id="totalHarga">Rp <?=number_format($subTotal , 0, ',')?></td> 
                               </tr> 
                               <?php
                                 $subTotal += $tangan_rib;
@@ -303,24 +303,24 @@
                             <tr>
                                 <td colspan="3"></td>
                                 <td>Sub-Total</td>
-                                <td>{{formatRupiah($subTotal)}}</td> 
+                                <td>Rp <?=number_format($subTotal , 0, ',')?></td> 
                             </tr>
                             <tr>
                                 <td colspan="2" class="text-center">TOTAL</td>
                                 <td class="text-center">{{ $qty }}</td>
-                                <td>{{ formatRupiah($harga) }}</td>
-                                <td>{{formatRupiah($total)}}</td> 
+                                <td>Rp <?=number_format($harga , 0, ',')?></td>
+                                <td>Rp <?=number_format($total , 0, ',')?></td> 
                             </tr>
                         </tfoot>
                     </table>
                 </div><!--table responsive end-->
-                <?php
+                {{--<?php
                 // Fungsi untuk mengonversi harga menjadi format rupiah
                 function formatRupiah($harga)
                 {
                     return "Rp " . number_format($harga, 0, ',');
                 }
-                ?>
+                ?>--}}
 
                 <br>
                 {{-- <p style="font-style: italic;">Note: All payment should be direct bank in into our official bank
@@ -435,6 +435,13 @@
             </div>
           </div>
           <div class="container w-unset">
+            <?php if (isset($kode)) {?>
+            <div class="mb-4">
+                <a href="/form-2/{{$kode}}" target="_blank" class="btn">Isi Data
+                    <i class="icon icon-doc"></i>
+                </a>
+            </div>
+            <?php }?>
             <div>
               <a href="{{ route('generate') }}" class="btn action__submit">Download
                 <i class="icon icon-cloud-download"></i>

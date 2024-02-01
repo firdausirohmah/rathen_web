@@ -103,12 +103,13 @@ Route::controller(PesananController::class)->group(function () {
     Route::post('/save-selected-text', 'saveSelectedText')->name('saveSelectedText');
     Route::get('/form-1/generate/t', 'generate')->name('generate');
     Route::post('/form-1/quotation', 'quotation')->name('quotation');
+    Route::get('/form-1/quotation/{id}', 'quotation_view')->name('quotation_view');
     Route::post('/form-1/action', 'addForm1')->name('addForm1');
-    Route::get('/form-2', 'form_2')->name('form_2');
+    Route::get('/form-2/{id}', 'form_2')->name('form_2');
     Route::post('/form-2', 'upload')->name('upload');
-    Route::get('/form-3', 'form_3')->name('form_3');
+    Route::get('/form-3/{id}', 'form_3')->name('form_3');
     Route::post('/form-3/add', 'addForm3')->name('addForm3');
-    Route::get('/form-4', 'form_4')->name('form_4');
+    Route::get('/form-4/{id}', 'form_4')->name('form_4');
     Route::get('/downloadPdf', 'downloadPdf')->name('downloadPdf');
     Route::post('/form-4/pemain', 'tambahDataPesanan')->name('tambahDataPesanan');
     Route::get('/invoice', 'invoice')->name('invoice');

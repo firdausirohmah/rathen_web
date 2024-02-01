@@ -106,6 +106,7 @@
                       <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Email</th>
                       <th class="text-uppercase text-center text-secondary text-xxs font-weight-bolder opacity-7">Alamat</th>
                       <th class="text-uppercase text-center text-secondary text-xxs font-weight-bolder opacity-7">Tanggal Pemesanan</th>
+                      <th class="text-uppercase text-center text-secondary text-xxs font-weight-bolder opacity-7">Link Quotation</th>
                       <!-- u. kategori dan kualitas -->
 
                       <!-- <th class="text-secondary opacity-7"></th> -->
@@ -118,7 +119,13 @@
                         {{ $item->nama_pelanggan }}
                       </td>
                       <td>
-                        {{ $item->no_hp }}
+                      @php
+                        $phoneNumber = $item->no_hp;
+                        // Remove leading '+' and '62' from the phone number
+                        $cleanedPhoneNumber = ltrim($phoneNumber, '+');
+                      @endphp
+                        <a href="https://wa.me/{{ $cleanedPhoneNumber }}" target="_blank">{{ $phoneNumber }}</a>
+                        
                       </td>
                       <td>
                         {{ $item->email }}
@@ -128,6 +135,15 @@
                       </td>
                       <td class="text-center">
                         {{ date("d-m-Y", strtotime($item->created_at))}}
+                      </td>
+                      <td >
+                      @php
+                          $link = 'form-1/quotation';
+                          $kode = $item->kd_step;
+                          $link_kode = $link . '/' . $kode;
+                          $baseUrl = URL::to('/');
+                      @endphp
+                        <a href="{{ $baseUrl }}/{{ $link_kode }}" target="_blank">{{ $baseUrl }}/{{ $link_kode }}</a>
                       </td>
                     </tr>
                     @endforeach

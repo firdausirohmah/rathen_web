@@ -40,14 +40,16 @@ class PesananController extends Controller
         }
     }
 
-    public function form_2(Request $request)
+    public function form_2($request)
     {
-        $kode = session('kode');
+        
+        $kode = $request;
+        
         // dd($kode);
         $data = DB::table('tbl_step2')
-            ->join('tbl_step1', 'tbl_step2.kd_step2', '=', 'tbl_step1.kd_step2') // Sesuaikan kondisi join
+            ->join('tbl_quotation_order', 'tbl_step2.kd_step2', '=', 'tbl_quotation_order.kd_step') // Sesuaikan kondisi join
             ->where('tbl_step2.kd_step2', $kode) // Sesuaikan kondisi WHERE
-            ->select('tbl_step1.*', 'tbl_step2.*') // Pilih kolom yang ingin Anda ambil
+            ->select('tbl_quotation_order.*', 'tbl_step2.*') // Pilih kolom yang ingin Anda ambil
             ->get();
         // dd($data);
         foreach ($data as $pesanan) { 
@@ -186,27 +188,28 @@ class PesananController extends Controller
         // dd($file1,$file2);
         return redirect('/form-3')->with('success', 'Files successfully uploaded.');
     }
-    public function form_3(Request $request)
+    public function form_3($request)
     {
-        $kode = session('kode');
+        $kode = $request;
         // dd($kode);
         $data = DB::table('tbl_step3')
-            ->join('tbl_step1', 'tbl_step3.kd_step3', '=', 'tbl_step1.kd_step3') // Sesuaikan kondisi join 
+            ->join('tbl_quotation_order', 'tbl_step3.kd_step3', '=', 'tbl_quotation_order.kd_step') // Sesuaikan kondisi join 
             ->where('tbl_step3.kd_step3', $kode) // Sesuaikan kondisi WHERE
-            ->select('tbl_step1.*', 'tbl_step3.*') // Pilih kolom yang ingin Anda ambil
+            ->select('tbl_quotation_order.*', 'tbl_step3.*') // Pilih kolom yang ingin Anda ambil
             ->get();
         
         foreach ($data as $step3){ 
             return view('landing_page.form-orderStep3', [
                 'data' => $step3,
+                'kode' => $kode,
             ]);
         }
 
     }
-    public function form_4(Request $request)
+    public function form_4($request)
     {
-        $kode = session('kode');
-        $order = ModelStep1::where('kd_step4',$kode)->get();
+        $kode = $request;
+        $order = Quotation2::where('kd_step',$kode)->get();
         // dd($order);
         $data = ModelStep4::where('kd_step1', $kode) 
         ->orderByRaw("FIELD(ukuran, 'S', 'M', 'L', 'XL', 'XXL', 'XXXL')") // Sesuaikan dengan ukuran yang sesuai 
@@ -231,15 +234,16 @@ class PesananController extends Controller
 }
     public function tambahDataPesanan(Request $request)
     {
-        $kode = session('kode');
+        $kode = $request->segment(2);
         $np = $request->namaPunggung;
         $no = $request->nomor;
         $uk = $request->ukuran;
         // dd($np, $no, $uk, $kode);  
         $countData = ModelStep4::where('kd_step1', $kode)->count();
-        $tbl_step1 = ModelStep1::where('kd_step4', $kode)->get();
-        foreach ($tbl_step1 as $qty){
-            $jmlQTY = $qty->jumlah_pemesanan;
+        // $tbl_step1 = ModelStep1::where('kd_step4', $kode)->get();
+        $tbl_quotation_order = Quotation2::where('kd_step', $kode)->get();
+        foreach ($tbl_quotation_order as $qty){
+            $jmlQTY = $qty->qty;
         }
         // dd($jmlQTY);
         if ($countData < $jmlQTY) {
@@ -313,6 +317,18 @@ class PesananController extends Controller
     // ==========================quotation===================================
     public function quotation(Request $request)
     {
+        $now = Carbon::now();
+        $formattedNow = $now->format('dHmiys'); 
+        session([
+            'kode' => $formattedNow, 
+        ]);
+        $step2 = ModeStep2::create([
+            'kd_step2' => $formattedNow,
+        ]);
+        $step3 = ModeStep3::create([
+            'kd_step3' => $formattedNow,
+        ]);
+
         session(['nama' => $request->nama_pemesanan]);
         session(['kontak' => $request->kontak]);
         session(['email' => $request->email]);
@@ -359,10 +375,10 @@ class PesananController extends Controller
         // Rest of your existing code...
         $tanggalSekarang = date("d F Y");
 
-        $data = DB::table('tbl_step1')
-            ->join('tbl_step2', 'tbl_step1.kd_step2', '=', 'tbl_step2.kd_step2')
-            ->join('tbl_step3', 'tbl_step1.kd_step3', '=', 'tbl_step3.kd_step3')
-            ->select('tbl_step1.*', 'tbl_step2.*', 'tbl_step3.*')
+        $data = DB::table('tbl_quotation_order')
+            ->join('tbl_step2', 'tbl_quotation_order.kd_step', '=', 'tbl_step2.kd_step2')
+            ->join('tbl_step3', 'tbl_quotation_order.kd_step', '=', 'tbl_step3.kd_step3')
+            ->select('tbl_quotation_order.*', 'tbl_step2.*', 'tbl_step3.*')
             ->get();
 
         $harga = DB::table('tbl_harga')
@@ -376,32 +392,36 @@ class PesananController extends Controller
         foreach ($ref as $rev) {
             $product = $rev->product;
             $hargaproduct = $rev->harga;
+            $kualitas = $rev->kualitas;
         }
 
         Quotation2::create([
+            'kd_step' => $formattedNow,
             'kd_quotation' => 'Q' . $str,
             'product' => $product,
             'qty' => $qty,
-            'kerah_kancing' => $kk !== null ? 1 : null,
-            'bb_melengkung' => $bbm !== null ? 1 : null,
-            'lengan_raglan' => $pl !== null ? 1 : null,
+            'kerah_kancing' => $kk ,
+            'bb_melengkung' => $bbm ,
+            'lengan_raglan' => $pl ,
             'lengan_panjang' => $lp,
             's2xl'=>$s2xl,
             's3xl'=>$s3xl,
             's4xl'=>$s4xl,
-            'celana_printing'=>$cp !== null ? 1 : null,
+            'celana_printing'=>$cp ,
             'celana_pro'=>$cpro,
             'kaoskaki'=>$kki,
-            'bahan_embos'=>$be !== null ? 1 : null,
-            'logo_3d'=>$l3d !== null ? 1 : null,
-            'kerah_rib'=>$kr !== null ? 1 : null,
-            'tangan_rib'=>$tr !== null ? 1 : null,
+            'bahan_embos'=>$be ,
+            'logo_3d'=>$l3d ,
+            'kerah_rib'=>$kr ,
+            'tangan_rib'=>$tr ,
+            'kategori_harga'=>$kd_part,
+            'tipe_kualitas'=>$kualitas,
         ]);
 
         foreach ($data as $pesanan) {
             
             $d = [
-                'pesanan' => $pesanan->kd_pembelian,
+                'pesanan' => $pesanan->kd_step,
                 'price' => $price, 
                 'product' => $product, 
             ];
@@ -453,6 +473,87 @@ class PesananController extends Controller
                 session(['kerah_rib' => $kr]),
                 'tangan_rib' => $tr,
                 session(['tangan_rib' => $tr]),
+            ]);
+        }
+    }
+    
+    public function quotation_view($request)
+    {
+        $formattedNow = $request; 
+        // $data = DB::table('tbl_step1')->get('*');
+        
+        $str = Str::random(12);
+
+        $data = DB::table('tbl_quotation_order')
+            ->join('tbl_quotation', 'tbl_quotation_order.kd_quotation', '=', 'tbl_quotation.kd_quotation')
+            ->select('tbl_quotation_order.*','tbl_quotation.*')
+            ->where('kd_step', $formattedNow)->get();
+
+        $harga = DB::table('tbl_harga')
+            ->join('tbl_logo', 'tbl_harga.id', '=', 'tbl_logo.id_logo')
+            ->select('tbl_logo.*', 'tbl_harga.*')
+            ->get();
+        
+        foreach ($harga as $h){
+            $price = $h;
+        }
+        foreach ($data as $pesanan){
+            $kd_part = $pesanan->kategori_harga;
+        }
+        $ref = DB::table('tbl_part')->where('kd_part', $kd_part)->get();
+
+        foreach ($ref as $rev) {
+            $product = $rev->product;
+            $hargaproduct = $rev->harga;
+            $kualitas = $rev->kualitas;
+        }
+
+        foreach ($data as $pesanan) {
+            
+            $d = [
+                
+                'price' => $price, 
+                'product' => $product,
+
+            ];
+
+            return view('landing_page.quotation-order', [
+                
+                'nama' => $pesanan->nama_pelanggan,
+                'kontak' => $pesanan->no_hp,
+                'email' => $pesanan->email,
+                'alamat' => $pesanan->alamat,
+
+                'tanggal' => Carbon::parse($pesanan->created_at)->format('d F Y'),
+                'kd_part' => $pesanan->kategori_harga,
+
+                'pesanan' => $pesanan,
+                'price' => $price,
+                'product' => $product,
+                'qty' => $pesanan->qty,
+                'harga' => $hargaproduct,
+
+                // dd($pesanan),
+                'kerah_kancing' => $pesanan->kerah_kancing,
+                'badan_bawah' => $pesanan->bb_melengkung,
+                'pola_lengan' => $pesanan->lengan_raglan,
+                'lengan_panjang' => $pesanan->lengan_panjang,
+                's2xl' => $pesanan->s2xl,
+                's3xl' => $pesanan->s3xl,
+                's4xl' => $pesanan->s4xl,
+                'celana_printing' => $pesanan->celana_printing,
+                'celana_pro' => $pesanan->celana_pro,
+                'kaoskaki' => $pesanan->kaoskaki,
+                'bahan_embos' => $pesanan->bahan_embos,
+                'logo_3d' => $pesanan->logo_3d,
+                'kerah_rib' => $pesanan->kerah_rib,
+                'tangan_rib' => $pesanan->tangan_rib,
+
+                'kode'=>$formattedNow,
+                // dd($pesanan),
+                // dd($price),
+
+                
             ]);
         }
     }

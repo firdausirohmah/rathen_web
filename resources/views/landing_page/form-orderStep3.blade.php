@@ -33,14 +33,14 @@
           Step Order
         </div>
         <div class="payment__types">
-          <a class="payment__type payment__type--cc " href="{{ url('/form-2') }}">
+          <a class="payment__type payment__type--cc " href="/form-2/{{$kode}}">
             <i class="icon icon-picture"></i>Design Logo</a>
-          <a class="payment__type payment__type--paypal active" href="{{ url('/form-3') }}">
+          <a class="payment__type payment__type--paypal active" href="/form-3/{{$kode}}">
             <i class="icon icon-pencil"></i>Spesifikasi</a>
-          <a class="payment__type payment__type--paypal" href="{{ url('/form-4') }}">
+          <a class="payment__type payment__type--paypal" href="/form-4/{{$kode}}">
             <i class="icon icon-docs"></i>Form Data</a>
-          <a class="payment__type payment__type--paypal" href="{{ url('/invoice') }}">
-            <i class="icon icon-note"></i>Invoice</a>
+          {{--<a class="payment__type payment__type--paypal" href="{{ url('/invoice') }}">
+            <i class="icon icon-note"></i>Invoice</a>--}}
         </div>
 
         <div class="payment__info">

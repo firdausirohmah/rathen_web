@@ -44,8 +44,9 @@ class adminController extends Controller
             ->select('*')
             ->get();
 
-        $dataQ = DB::table('tbl_quotation')
-            ->select('*')
+        $dataQ = DB::table('tbl_quotation_order')
+            ->join('tbl_quotation', 'tbl_quotation_order.kd_quotation', '=', 'tbl_quotation.kd_quotation')
+            ->select('tbl_quotation_order.*','tbl_quotation.*')
             ->get();
         // dd($data); 
         return view('auth.tables', [

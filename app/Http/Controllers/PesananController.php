@@ -433,6 +433,7 @@ class PesananController extends Controller
                 'alamat' => $alamat,
 
                 'tanggal' => $tanggalSekarang,
+                session(['tanggal' => $tanggalSekarang]),
                 'kd_part'=>$kd_part,
 
                 'pesanan' => $pesanan,
@@ -520,18 +521,27 @@ class PesananController extends Controller
             return view('landing_page.quotation-order', [
                 
                 'nama' => $pesanan->nama_pelanggan,
+                session(['nama' => $pesanan->nama_pelanggan]),
                 'kontak' => $pesanan->no_hp,
+                session(['kontak' => $pesanan->no_hp]),
                 'email' => $pesanan->email,
+                session(['email' => $pesanan->email]),
                 'alamat' => $pesanan->alamat,
+                session(['alamat' => $pesanan->alamat]),
 
                 'tanggal' => Carbon::parse($pesanan->created_at)->format('d F Y'),
+                session(['tanggal' => Carbon::parse($pesanan->created_at)->format('d F Y')]),
                 'kd_part' => $pesanan->kategori_harga,
 
                 'pesanan' => $pesanan,
                 'price' => $price,
+                session(['price' => $price]),
                 'product' => $product,
+                session(['product' => $product]),
                 'qty' => $pesanan->qty,
+                session(['qty' => $pesanan->qty]),
                 'harga' => $hargaproduct,
+                session(['harga' => $hargaproduct]),
 
                 // dd($pesanan),
                 'kerah_kancing' => $pesanan->kerah_kancing,
@@ -548,6 +558,20 @@ class PesananController extends Controller
                 'logo_3d' => $pesanan->logo_3d,
                 'kerah_rib' => $pesanan->kerah_rib,
                 'tangan_rib' => $pesanan->tangan_rib,
+                session(['kerah_kancing' => $pesanan->kerah_kancing]),
+                session(['badan_bawah' => $pesanan->bb_melengkung]),
+                session(['pola_lengan' => $pesanan->lengan_raglan]),
+                session(['lengan_panjang' => $pesanan->lengan_panjang]),
+                session(['s2xl' => $pesanan->s2xl]),
+                session(['s3xl' => $pesanan->s3xl]),
+                session(['s4xl' => $pesanan->s4xl]),
+                session(['celana_printing' => $pesanan->celana_printing]),
+                session(['celana_pro' => $pesanan->celana_pro]),
+                session(['kaoskaki' => $pesanan->kaoskaki]),
+                session(['bahan_embos' => $pesanan->bahan_embos]),
+                session(['logo_3d' => $pesanan->logo_3d]),
+                session(['kerah_rib' => $pesanan->kerah_rib]),
+                session(['tangan_rib' => $pesanan->tangan_rib]),
 
                 'kode'=>$formattedNow,
                 // dd($pesanan),
@@ -564,7 +588,7 @@ class PesananController extends Controller
         $kontak = session('kontak');
         $email = session('email');
         $alamat = session('alamat');
-        $tanggal = date("d F Y");
+        $tanggal = session('tanggal');
 
         $price = session('price');
         $product = session('product');

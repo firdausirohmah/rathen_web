@@ -31,7 +31,7 @@
   </header>
   <section class="content" style="overflow-x:hidden;">
 
-    <button class="button back" onclick="goBack()"><i class='icon icon-arrow-left'></i></button>
+    <button class="m-3 button back" onclick="goBack()"><i class='icon icon-arrow-left'></i></button>
     
     <div class="container">
       <div class="payment">
@@ -436,7 +436,7 @@
           </div>
           <div class="container w-unset">
             <?php if (isset($kode)) {?>
-            <div class="mb-4">
+            <div class="mb-4 ml-3">
                 <a href="/form-2/{{$kode}}" target="_blank" class="btn">Isi Data
                     <i class="icon icon-doc"></i>
                 </a>

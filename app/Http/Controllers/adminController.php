@@ -158,4 +158,14 @@ class adminController extends Controller
 
         return redirect()->back()->with('success', 'Price Logo updated successfully');
     }
+    public function destroyInvoice($id)
+    {
+        DB::table('tbl_step1')->where('kd_step2', $id)->delete();
+        DB::table('tbl_step2')->where('kd_step2', $id)->delete();
+        DB::table('tbl_step3')->where('kd_step3', $id)->delete();
+        DB::table('tbl_step4')->where('kd_step1', $id)->delete();
+        DB::table('user_order')->where('kd_step2', $id)->delete();
+
+        return redirect()->back()->with('success', 'Data has been deleted successfully');
+    }
 }

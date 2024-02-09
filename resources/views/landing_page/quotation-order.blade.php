@@ -24,9 +24,15 @@
           <img class="icon icon-basket" src="{{asset('asset/cfind/source/images/rathen.png')}}" width="12%"></div>
         
       </div>
+      @if (isset($kode))
+      <div class="notification">
+        Rathen - Invoice
+      </div>
+      @else
       <div class="notification">
         Rathen - Quotation
       </div>
+      @endif
     </div>
   </header>
   <section class="content" style="overflow-x:hidden;">
@@ -46,7 +52,11 @@
                         0896-1108-1988 | 0878-1108-1988</small></p>
                 <div class="row pb-2 p-2">
                     <div class="col-md-12">
+                        @if (isset($kode))
+                        <h5 class="text-center font-weight-bold mt-2">INVOICE</h5>
+                        @else
                         <h5 class="text-center font-weight-bold mt-2">QUOTATION</h5>
+                        @endif
                     </div>
                 </div>
 
@@ -435,13 +445,13 @@
             </div>
           </div>
           <div class="container w-unset">
-            <?php if (isset($kode)) {?>
+            @if (isset($kode))
             <div class="mb-4 ml-3">
                 <a href="/form-2/{{$kode}}" target="_blank" class="btn">Isi Data
                     <i class="icon icon-doc"></i>
                 </a>
             </div>
-            <?php }?>
+            @endif
             <div>
               <a href="{{ route('generate') }}" class="btn action__submit">Download
                 <i class="icon icon-cloud-download"></i>

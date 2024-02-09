@@ -448,37 +448,41 @@
           <!-- <form action="{{ route('order') }}" method="POST">  -->
           <form action="{{ route('quotation') }}" id="quotationForm" method="POST" >
             @csrf
+              
               <div class="card mt-4-mobile">
                 <div class="card-body">
-                  <h5 class="card-title">Harga: <span id="hargaDb">{{ $data->harga }}</span></h5>
-                    <div class="container mt-4">
-                        <div class="row"> 
-                          <div class="col col-content">
-                            <div class="quantity-button decrement" onclick="decrement()">-</div>
-                          </div>
-                          <div class="col col-content"><input type="text" name="qty" class="quantity-input" id="quantityInput" value="{{ $data->min_order }}" readonly>
-                          </div>
-                          <div class="col col-content"><div class="quantity-button" onclick="increment()">+</div>
-                          </div>
-                        </div>  
-                        <div class="row mt-4">
-                          <div class="col">
-                            <div>Total Harga: <span id="totalHarga">Rp {{ $data->harga }}</span></div> 
-                          </div>
-                        </div>
-                    </div>
-                </div>
-              </div>
-              <div class="card mt-4">
-                <div class="card-body">
-                  <h5 class="card-title mb-4">Simulasi Harga</h5>
+                  <h5 class="card-title mb-4">Extra</h5>
                   <div>
                     {!! ($jsonData['menu2'][$data->deskripsi]) !!}
                   </div>
                   <!-- <h6 class="card-subtitle mb-2 text-body-secondary">Simulasi Harga</h6> -->
+                  
+                  <!-- <button type="submit" class="btn btn-outline-secondary w-100 mt-5" id="QuotationBtn">Order Now</button> -->
+                </div>
+              </div>
+              <div class="card mt-4">
+                <div class="card-body">
+                  <h5 class="card-title">Harga: <span id="hargaDb">{{ $data->harga }}</span></h5>
+                  <div class="container mt-4">
+                      <div class="row"> 
+                        <div class="col col-content">
+                          <div class="quantity-button decrement" onclick="decrement()">-</div>
+                        </div>
+                        <div class="col col-content"><input type="text" name="qty" class="quantity-input" id="quantityInput" value="{{ $data->min_order }}" readonly>
+                        </div>
+                        <div class="col col-content"><div class="quantity-button" onclick="increment()">+</div>
+                        </div>
+                      </div>  
+                      <div class="row mt-4">
+                        <div class="col">
+                          <div>Total Harga: <span id="totalHarga">Rp {{ $data->harga }}</span></div> 
+                        </div>
+                      </div>
+                  </div>
+                  <input type="hidden" name="hargaDb" value="{{ $data->harga }}">
+                  <input type="hidden" id="totalHargaInput" name="totalHarga" value="{{ $data->harga }}">
                   <input type="hidden" name="kd_part" value="{{ $data->kd_part }}">
                   <div class="btn btn-outline-secondary w-100 mt-5" id="QuotationBtn">Order Now</div>
-                  <!-- <button type="submit" class="btn btn-outline-secondary w-100 mt-5" id="QuotationBtn">Order Now</button> -->
                 </div>
               </div>
           <!-- </form> -->
@@ -1365,6 +1369,7 @@
       var additionalCost = 0;
       var jharga = {{ $data->harga }} * {{ $data->min_order }};
       var formatHarga = "Rp " + jharga.toLocaleString();
+      document.getElementById("totalHargaInput").value = jharga;
       document.getElementById("totalHarga").innerText =  formatHarga;
       function increment() {
         var quantityInput = document.getElementById("quantityInput");

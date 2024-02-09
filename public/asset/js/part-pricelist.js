@@ -42,6 +42,8 @@ function updateTotalHarga() {
   var hargaDb = parseFloat(document.getElementById("hargaDb").innerText.replace('Rp ', '').replace(',', ''));
   var quantityInput = parseInt(document.getElementById("quantityInput").value);
   var totalHarga = hargaDb * quantityInput + additionalCost;
+  
+  document.getElementById("totalHargaInput").value = totalHarga;
   // var totalHarga = hargaDb * quantityInput;
 
   // Format total harga jika diperlukan

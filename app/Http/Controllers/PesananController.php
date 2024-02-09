@@ -322,12 +322,12 @@ class PesananController extends Controller
         session([
             'kode' => $formattedNow, 
         ]);
-        $step2 = ModeStep2::create([
-            'kd_step2' => $formattedNow,
-        ]);
-        $step3 = ModeStep3::create([
-            'kd_step3' => $formattedNow,
-        ]);
+        // $step2 = ModeStep2::create([
+        //     'kd_step2' => $formattedNow,
+        // ]);
+        // $step3 = ModeStep3::create([
+        //     'kd_step3' => $formattedNow,
+        // ]);
 
         session(['nama' => $request->nama_pemesanan]);
         session(['kontak' => $request->kontak]);
@@ -356,6 +356,10 @@ class PesananController extends Controller
         // dd($lp);
 
         $kd_part = $request->kd_part;
+        $hargaPart = $request->hargaDb;
+        
+        $total_harga = $request->totalHarga;
+        // dd($request->totalHarga);
         $qty = $request->qty;
         // $data = DB::table('tbl_step1')->get('*');
         $ref = DB::table('tbl_part')->where('kd_part', $kd_part)->get();
@@ -376,9 +380,7 @@ class PesananController extends Controller
         $tanggalSekarang = date("d F Y");
 
         $data = DB::table('tbl_quotation_order')
-            ->join('tbl_step2', 'tbl_quotation_order.kd_step', '=', 'tbl_step2.kd_step2')
-            ->join('tbl_step3', 'tbl_quotation_order.kd_step', '=', 'tbl_step3.kd_step3')
-            ->select('tbl_quotation_order.*', 'tbl_step2.*', 'tbl_step3.*')
+            ->select('tbl_quotation_order.*')
             ->get();
 
         $harga = DB::table('tbl_harga')
@@ -415,6 +417,8 @@ class PesananController extends Controller
             'kerah_rib'=>$kr ,
             'tangan_rib'=>$tr ,
             'kategori_harga'=>$kd_part,
+            'harga'=>$hargaPart,
+            'total_harga'=>$total_harga,
             'tipe_kualitas'=>$kualitas,
         ]);
 
@@ -441,8 +445,10 @@ class PesananController extends Controller
                 session(['price' => $price]),
                 'product' => $product,
                 session(['product' => $product]),
-                'harga' => $hargaproduct,
-                session(['harga' => $hargaproduct]),
+                'harga' => $hargaPart,
+                session(['harga' => $hargaPart]),
+                'total_harga' => $total_harga,
+                session(['total_harga' => $total_harga]),
                 'qty' => $qty,
                 session(['qty' => $qty]),
 
@@ -675,7 +681,8 @@ class PesananController extends Controller
     public function addForm1(Request $request)
     {
         $now = Carbon::now();
-        $formattedNow = $now->format('dHmiys');  
+        $formattedNow = $request->kd_step; 
+        // $formattedNow = session('kode'); 
 
         // dd($formattedNow);
         $selectedText = $request->input('selectedText');
@@ -746,7 +753,7 @@ class PesananController extends Controller
         ]); 
         // auth()->login($order);
 
-        return redirect('/form-2');
+        return back();
     }
     public function addForm3(Request $request)
     {

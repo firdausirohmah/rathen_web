@@ -32,6 +32,8 @@ class Quotation2 extends Model
         'kerah_rib',
         'tangan_rib',
         'kategori_harga',
+        'harga',
+        'total_harga',
         'tipe_kualitas',
         // Add other columns as needed
     ];

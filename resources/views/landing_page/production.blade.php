@@ -24,15 +24,11 @@
           <img class="icon icon-basket" src="{{asset('asset/cfind/source/images/rathen.png')}}" width="12%"></div>
         
       </div>
-      @if (isset($pesanan->kd_pembelian))
+      
       <div class="notification">
-        Rathen - Invoice
+        Rathen - Production
       </div>
-      @else
-      <div class="notification">
-        Rathen - Quotation
-      </div>
-      @endif
+      
     </div>
   </header>
   <section class="content" style="overflow-x:hidden;">
@@ -43,7 +39,7 @@
       <div class="payment">
         <div class="payment__info" style="width:100rem">
           <div class="payment__cc" id="myDIV">
-            @if (isset($pesanan->kd_pembelian))
+            
             <div class="card-body card-body-mobile" id="content">
               <h3 class="text-center font-weight-bold mb-1"><img src="{{ asset('/asset/images/logo-dark.png') }}" width="15%" alt=""></h3>
               <p class="text-center font-weight-bold mont mb-0" style="font-size: 12px;">Office: RATHEN INDONESIA, Jl. Mayjen Ishak Djuarsa no.167B Gunung Batu Bogor, Indonesia</p>
@@ -476,7 +472,7 @@
                   
                     <script>
                         function goBack() {
-                            window.location.href = "/price-list/{{$pesanan->kategori_harga}}";
+                            window.location.href = "/production";
                         }
                         document.addEventListener("DOMContentLoaded", function() {
                             var dynamicImage = document.getElementById("dynamicImage");
@@ -519,435 +515,20 @@
             @endif
             
             
-
-
-            
-            @else
-            <div class="card-body card-body-mobile" id="content">
-                <h3 class="text-center font-weight-bold mb-1">
-                    <img id="dynamicImage" src="{{public_path('/asset/images/logo-dark.png')}}" width="15%" ></h3>
-                <p class="text-center font-weight-bold mont mb-0" style="font-size: 12px;">Office: RATHEN
-                    INDONESIA, Jl. Mayjen Ishak Djuarsa no.167B Gunung Batu Bogor, Indonesia</p>
-                <p class="text-center font-weight-bold mont"><small class="font-weight-bold">Phone No:
-                        0896-1108-1988 | 0878-1108-1988</small></p>
-                <div class="row pb-2 p-2">
-                    <div class="col-md-12">
-                        <h5 class="text-center font-weight-bold mt-2">QUOTATION</h5>
-                    </div>
-                </div>
-
-                <div class="row pb-2 p-2">
-                    <div class="col-md-6" style="text-align:justify">
-                        <p class="mb-0 font-weight-bold">Kepada Yth:</p>
-                        <p class="mb-0">{{ $nama }}</p>
-                        <p class="mb-0">{{ $kontak }}</p>
-                        <p class="mb-0">{{ $email }}</p>
-                        <p class="mb-0">{{ $alamat }}</p>
-                        {{-- <p>di tempat</p> --}}
-
-                    </div>
-                    <div class="col-md-6">
-                        <p class="mb-0 text-right">{{ $tanggal }}</p>
-                    </div>
-
-                </div>
-                <div class="table-responsive">
-                    <table class="table table-bordered mt-4 mb-0 ">
-                        <thead class="text-center">
-                            <tr class="text-center">
-                                <th class="text-uppercase small font-weight-bold">Nama Produk</th>
-                                <th class="text-uppercase small font-weight-bold">Qty(pcs)</th>
-                                <th class="text-uppercase small font-weight-bold">Harga</th>
-                                <th class="text-uppercase small font-weight-bold">Total</th>
-                            </tr>
-                        </thead>
-                        <?php 
-                            $i = 1; 
-                            $total = $qty * $harga;
-                        ?>
-                        <tbody>
-                            <tr>
-                                <td>{{ $product }}</td>
-                                <td>{{ $qty }}</td>
-                                <td><span id="Harga">Rp <?= number_format($harga , 0, ','); ?></span></td>
-                                <td id="totalHarga">Rp <?= number_format($total , 0, ','); ?></td> 
-                            </tr>
-
-                        </tbody>
-                    </table>
-                </div><!--table responsive end-->
-                
-                <div class="table-responsive">
-                    <table class="table table-bordered mt-4 mb-0 ">
-                        <thead class="text-center">
-                            <tr class="text-center">
-                                <th class="text-uppercase small font-weight-bold">No.</th>
-                                <th class="text-uppercase small font-weight-bold">Extra</th>
-                                <th class="text-uppercase small font-weight-bold">Qty(pcs)</th>
-                                <th class="text-uppercase small font-weight-bold">Retail Price</th>
-                                <th class="text-uppercase small font-weight-bold">Total</th>
-                            </tr>
-                        </thead>
-                        <?php 
-                            $i = 1;
-                            $subTotal = 0;
-                        ?>
-                        <tbody>
-                            @if ($kerah_kancing ==null)
-                            @else 
-                            <?php 
-                                $totalkancing = $qty * $kerah_kancing;
-                                $subTotal += $totalkancing;
-                            ?>
-                              <tr>
-                                <td>{{ $i++ }}</td>
-                                <td>Kerah Pakai Kancing</td>
-                                <td>{{$qty}}</td>
-                                <td><span id="Harga">Rp <?=number_format($kerah_kancing, 0, ',')?></span></td>
-                                <td id="totalHarga">Rp <?=number_format($totalkancing, 0, ',')?></td> 
-                              </tr>
-                            @endif
-                            @if ($badan_bawah ==null)
-                            @else 
-                            <?php 
-                                $totalbbm = $qty * $badan_bawah;
-                                $subTotal += $totalbbm;
-                            ?>
-                              <tr>
-                                <td>{{ $i++ }}</td>
-                                <td>Badan Bawah Melengkung</td>
-                                <td>{{ $qty }}</td>
-                                <td><span id="Harga">Rp <?=number_format($badan_bawah, 0, ',')?></span></td>
-                                <td id="totalHarga">Rp <?=number_format($totalbbm, 0, ',')?></td> 
-                              </tr>
-                            @endif
-                            @if ($pola_lengan ==null)
-                            @else 
-                            <?php 
-                                $totallpr = $qty * $pola_lengan;
-                                $subTotal += $totallpr;
-                            ?>
-                              <tr>
-                                <td>{{ $i++ }}</td>
-                                <td>Lengan Pola Raglan</td>
-                                <td>{{ $qty }}</td>
-                                <td><span id="Harga">Rp <?=number_format($pola_lengan, 0, ',')?></span></td>
-                                <td id="totalHarga">Rp <?=number_format($totallpr, 0, ',')?></td> 
-                              </tr> 
-                            @endif
-                            @if ($lengan_panjang ==null)
-                            @else
-                            <?php 
-                                $totallp = $lengan_panjang * $price->l_panjang;
-                                $subTotal += $totallp;
-                            ?>
-                              <tr>
-                                <td>{{ $i++ }}</td>
-                                <td>Lengan Panjang</td>
-                                <td>{{ $lengan_panjang }}</td>
-                                <td><span id="Harga">Rp <?=number_format($price->l_panjang, 0, ',')?></span></td>
-                                <td id="totalHarga">Rp <?=number_format($totallp, 0, ',')?></td> 
-                              </tr> 
-                            @endif
-                            @if ($s2xl ==null)
-                            @else 
-                            <?php 
-                                $total2xl = $s2xl * $price->s_2xl;
-                                $subTotal += $total2xl;
-                            ?>
-                              <tr>
-                                <td>{{ $i++ }}</td>
-                                <td>Size 2XL</td>
-                                <td>{{ $s2xl }}</td>
-                                <td><span id="Harga">Rp <?=number_format($price->s_2xl , 0, ',')?></span></td>
-                                <td id="totalHarga">Rp <?=number_format($total2xl , 0, ',')?></td> 
-                              </tr> 
-                            @endif
-                            @if ($s3xl ==null)
-                            @else 
-                            <?php 
-                                $total3xl = $s3xl * $price->s_3xl;
-                                $subTotal += $total3xl;
-                            ?>
-                              <tr>
-                                <td>{{ $i++ }}</td>
-                                <td>Size 3XL</td>
-                                <td>{{ $s3xl }}</td>
-                                <td><span id="Harga">Rp <?=number_format($price->s_3xl , 0, ',')?></span></td>
-                                <td id="totalHarga">Rp <?=number_format( $total3xl , 0, ',')?></td> 
-                              </tr> 
-                            @endif
-                            @if ($s4xl ==null)
-                            @else 
-                            <?php 
-                                $total4xl = $s4xl * $price->s_4xl;
-                                $subTotal += $total4xl;
-                            ?>
-                              <tr>
-                                <td>{{ $i++ }}</td>
-                                <td>Size > 4XL</td>
-                                <td>{{ $s4xl }}</td>
-                                <td><span id="Harga">Rp <?=number_format( $price->s_4xl , 0, ',')?></span></td>
-                                <td id="totalHarga">Rp <?=number_format( $total4xl , 0, ',')?></td> 
-                              </tr> 
-                            @endif
-                            @if ($celana_printing ==null)
-                            @else 
-                            <?php 
-                                $totalcprint = $qty * $celana_printing;
-                                $subTotal += $totalcprint;
-                            ?>
-                              <tr>
-                                <td>{{ $i++ }}</td>
-                                <td>Celana Printing</td>
-                                <td>{{$qty}}</td>
-                                <td><span id="Harga">Rp <?=number_format( $celana_printing , 0, ',')?></span></td>
-                                <td id="totalHarga">Rp <?=number_format( $totalcprint , 0, ',')?></td> 
-                              </tr> 
-                            @endif
-                            @if ($celana_pro ==null)
-                            @else 
-                            <?php 
-                                $totalcpro = $celana_pro * $price->c_panjang;
-                                $subTotal += $totalcpro;
-                            ?>
-                              <tr>
-                                <td>{{ $i++ }}</td>
-                                <td>Celana Panjang PRO</td>
-                                <td>{{ $celana_pro }}</td>
-                                <td><span id="Harga">Rp <?=number_format( $price->c_panjang , 0, ',')?></span></td>
-                                <td id="totalHarga">Rp <?=number_format( $totalcpro , 0, ',')?></td> 
-                              </tr> 
-                            @endif
-                            @if ($kaoskaki ==null)
-                            @else 
-                            <?php 
-                                $totalkki = $kaoskaki * $price->kaoskaki;
-                                $subTotal += $totalkki;
-                            ?>
-                              <tr>
-                                <td>{{ $i++ }}</td>
-                                <td>Kaoskaki</td>
-                                <td>{{ $kaoskaki }}</td>
-                                <td><span id="Harga">Rp <?= number_format( $price->kaoskaki , 0, ',')?></span></td>
-                                <td id="totalHarga">Rp <?=number_format( $totalkki , 0, ',')?></td> 
-                              </tr> 
-                            @endif
-                            @if ($bahan_embos ==null)
-                            @else 
-                            <?php 
-                                $totalbe = $qty * $bahan_embos;
-                                $subTotal += $totalbe;
-                            ?>
-                              <tr>
-                                <td>{{ $i++ }}</td>
-                                <td>Bahan Embos</td>
-                                <td>{{$qty}}</td>
-                                <td><span id="Harga">Rp <?=number_format($bahan_embos , 0, ',')?></span></td>
-                                <td id="totalHarga">Rp <?=number_format($totalbe , 0, ',')?></td> 
-                              </tr> 
-                            @endif
-                            @if ($logo_3d ==null)
-                            @else 
-                            <?php 
-                                $total3d = $qty * $logo_3d;
-                                $subTotal += $total3d;
-                            ?>
-                              <tr>
-                                <td>{{ $i++ }}</td>
-                                <td>Logo 3D</td>
-                                <td>{{$qty}}</td>
-                                <td><span id="Harga">Rp <?=number_format($logo_3d , 0, ',')?></span></td>
-                                <td id="totalHarga">Rp <?=number_format($total3d , 0, ',')?></td> 
-                              </tr> 
-                            @endif
-                            @if ($kerah_rib ==null)
-                            @else 
-                            <?php 
-                                $totalkrib = $qty * $kerah_rib;
-                                $subTotal += $totalkrib;
-                            ?>
-                              <tr>
-                                <td>{{ $i++ }}</td>
-                                <td>Kerah Elastic Rib</td>
-                                <td>{{$qty}}</td>
-                                <td><span id="Harga">Rp <?=number_format($kerah_rib , 0, ',')?></span></td>
-                                <td id="totalHarga">Rp <?=number_format($totalkrib , 0, ',')?></td> 
-                              </tr> 
-                            @endif
-                            @if ($tangan_rib ==null)
-                            @else 
-                            <?php 
-                                $totaltrib = $qty * $tangan_rib;
-                                $subTotal += $totaltrib;
-                            ?>
-                              <tr>
-                                <td>{{ $i++ }}</td>
-                                <td>Ujung Tangan Elastic Rib</td>
-                                <td>{{$qty}}</td>
-                                <td><span id="Harga">Rp <?=number_format($tangan_rib , 0, ',')?></span></td>
-                                <td id="totalHarga">Rp <?=number_format($totaltrib , 0, ',')?></td> 
-                              </tr> 
-                            @endif
-
-                        </tbody>
-                        <tfoot class="font-weight-bold">
-                            <?php
-                                $total += $subTotal;
-                            ?>
-                            <tr>
-                                <td colspan="3"></td>
-                                <td></td>
-                                <td></td> 
-                            </tr>  
-                            <tr>
-                                <td colspan="3"></td>
-                                <td>Sub-Total</td>
-                                <td>Rp <?=number_format($subTotal , 0, ',')?></td> 
-                            </tr>
-                            <tr>
-                                <td colspan="2" class="text-center">TOTAL</td>
-                                <td class="text-center">{{ $qty }}</td>
-                                <td>Rp <?=number_format($harga , 0, ',')?></td>
-                                <td>Rp <?=number_format($total , 0, ',')?></td> 
-                            </tr>
-                        </tfoot>
-                    </table>
-                </div><!--table responsive end-->
-                {{--<?php
-                // Fungsi untuk mengonversi harga menjadi format rupiah
-                function formatRupiah($harga)
-                {
-                    return "Rp " . number_format($harga, 0, ',');
-                }
-                ?>--}}
-
-                <br>
-                {{-- <p style="font-style: italic;">Note: All payment should be direct bank in into our official bank
-                    account as following bank:</p> --}}
-                <style>
-                    table {
-                        width: 80%;
-                        align-content: center;
-                        text-align: left;
-                        border-spacing: 100px;
-                        /* Mengatur jarak antar sel menjadi 0 */
-                        border-collapse: collapse;
-                        /* Menggabungkan batas sel */
-                    }
-
-                    tr {
-                        margin-top: -10px;
-                        padding-top: -10px;
-                    }
-
-                    tr,
-                    td {
-                        padding: 0px;
-                        /* Menambahkan padding untuk ruang di dalam sel */
-                        text-align: left;
-                        /* Penataan teks di dalam sel */
-                    }
-
-                    .col-1 {
-                        margin-top: auto;
-                        width: 10%;
-                    }
-
-                    .col-2 {
-                        margin-top: auto;
-                        width: 1%;
-                        font-weight: bold;
-                    }
-
-                    .col-3 {
-                        margin-top: auto;
-                        width: 62%;
-                    }
-                </style>
-                {{-- <div class="container">
-                    <div class="row">
-                        <table
-                            style="width: 100%; border:10px; font-size:14px; font-weight: bold;  font-weight:100; color:black;">
-                            <tr style="font-weight: bold; ">
-                                <td class="col-1 fw-bold">Account Name</td>
-                                <td class="col-2">:</td>
-                                <td class="col-3 fw-semibold">R. Esa Pangersa Gusti</td>
-                            </tr>
-                            <tr style="font-weight: bold; ">
-                                <td class="col-1 fw-semibold">Account Number</td>
-                                <td class="col-2">:</td>
-                                <td class="col-3 fw-semibold">0060435898</td>
-                            </tr>
-                            <tr style="font-weight: bold; ">
-                                <td class="col-1 fw-semibold">Bank</td>
-                                <td class="col-2">:</td>
-                                <td class="col-3 fw-semibold">BCA</td>
-                            </tr>
-                            <tr style="font-weight: bold; ">
-                                <td class="col-1 fw-semibold">Branch</td>
-                                <td class="col-2">:</td>
-                                <td class="col-3 fw-semibold">Bogor</td>
-                            </tr>
-                        </table>
-                    </div>
-                </div> --}}
-
-                <style>
-                    .right-align {
-                        text-align: right;
-                        margin-top: 10px;
-                    }
-                </style>
-                <div class="container w-unset-quo w-unset">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <p class="right-align mb-4 pb-4">Best regard,</p>
-                            <p class="right-align mt-4 pt-4"><u>R. Esa Pangersa Gusti</u></p>
-                            <p class="right-align" style="line-height: 0px">RATHEN INDONESIA</p>
-                        </div>
-                    </div>
-                </div>
-
-                <script>
-                    function goBack() {
-                        window.location.href = "/price-list/{{$kd_part}}";
-                    }
-                    document.addEventListener("DOMContentLoaded", function() {
-                        var dynamicImage = document.getElementById("dynamicImage");
-                    
-                        if (dynamicImage) {
-                            console.log("Element dengan ID dynamicImage ditemukan.");
-                            dynamicImage.src = "{{asset('/asset/images/logo-dark.png')}}";
-                            console.log("Src gambar diubah menjadi: " + dynamicImage.src);
-                        } else {
-                            console.error("Element dengan ID dynamicImage tidak ditemukan!");
-                        }
-                    });
-                </script>
-                <script>
-                const element = document.getElementById("content");
-                let y = element.scrollHeight;
-                let x = element.scrollWidth;
-                document.getElementById ("demo").innerHTML = "Height: " + y + " Width: " + x;
-                </script>
-
-            </div>
-            @endif
           </div>
           <div class="container w-unset">
             @if (isset($pesanan->kd_pembelian))
             <div class="mb-4 ml-3">
-                <a href="/form-2/{{$kode}}" target="_blank" class="btn">Isi Data
+                <a href="/production/design/{{$kode}}" target="_blank" class="btn">Edit Desain
                     <i class="icon icon-doc"></i>
                 </a>
             </div>
             @endif
-            <div>
+            <!-- <div>
               <a href="{{ route('generate') }}" class="btn action__submit">Download
                 <i class="icon icon-cloud-download"></i>
               </a>
-            </div>
+            </div> -->
           </div>
           <!-- <div class="payment__shipping">
             <div class="row">

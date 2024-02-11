@@ -283,7 +283,7 @@ class HomeController extends Controller
                     <div class='title'>Kerah pakai kancing</div>
                     <div class='ms-auto'>
                       <input type='checkbox' id='kerah_kancing' name='kerah_kancing' value='10000'>
-                      <label class='label_harga' for='kerah_kancing'>(+10,000)</label>
+                      <label class='label_harga' class='label_harga' for='kerah_kancing'>(+10,000)</label>
                     </div>
                   </div>
                   <div class='field small'>
@@ -368,14 +368,14 @@ class HomeController extends Controller
                   <div class='field small'>
                     <div class='title'>Bahan embos</div>
                     <div class='ms-auto'>
-                      <input type='checkbox' id='bahan_embos' name='upgrade' value='20000'>
+                      <input type='checkbox' id='bahan_embos' name='bahan_embos' value='20000'>
                       <label class='label_harga' for='bahan_embos'>(+20,000)</label>
                     </div>
                   </div>
                   <div class='field small'>
                     <div class='title'>Logo 3D</div>
                     <div class='ms-auto'>
-                      <input type='checkbox' id='logo_3d' name='upgrade' value='30000'>
+                      <input type='checkbox' id='logo_3d' name='logo_3d' value='30000'>
                       <label class='label_harga' for='logo_3d'>(+30,000)</label>
                     </div>
                   </div>
@@ -407,7 +407,7 @@ class HomeController extends Controller
                     <div class='title'>Kerah pakai kancing</div>
                     <div class='ms-auto'>
                       <input type='checkbox' id='kerah_kancing' name='kerah_kancing' value='10000'>
-                      <label class='label_harga' for='kerah_kancing'>(+10,000)</label>
+                      <label class='label_harga' class='label_harga' for='kerah_kancing'>(+10,000)</label>
                     </div>
                   </div>
                   <div class='field small'>
@@ -492,14 +492,14 @@ class HomeController extends Controller
                   <div class='field small'>
                     <div class='title'>Bahan embos</div>
                     <div class='ms-auto'>
-                      <input type='checkbox' id='bahan_embos' name='upgrade' value='20000'>
+                      <input type='checkbox' id='bahan_embos' name='bahan_embos' value='20000'>
                       <label class='label_harga' for='bahan_embos'>(+20,000)</label>
                     </div>
                   </div>
                   <div class='field small'>
                     <div class='title'>Logo 3D</div>
                     <div class='ms-auto'>
-                      <input type='checkbox' id='logo_3d' name='upgrade' value='30000'>
+                      <input type='checkbox' id='logo_3d' name='logo_3d' value='30000'>
                       <label class='label_harga' for='logo_3d'>(+30,000)</label>
                     </div>
                   </div>

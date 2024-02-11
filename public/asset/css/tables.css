@@ -5,3 +5,7 @@
 .card-tab{
     border-radius: 0 0 1rem 1rem;
 }
+
+.btn-action{
+    padding: 2px 7px;
+}

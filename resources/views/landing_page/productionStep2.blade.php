@@ -21,12 +21,12 @@
         
       </div>
       <div class="notification">
-        Custom Rathen - Form Order
+        Rathen - Edit Desain
       </div>
     </div>
   </header>
   <section class="content" style="padding-top:3rem;">
-    <a class="btn" style="padding:1rem;margin-left:2rem" href="/invoice/{{$kode}}">
+    <a class="btn" style="padding:1rem;margin-left:2rem" href="/production/{{$kode}}">
       <i class="icon icon-arrow-left"></i>
       Back
     </a>
@@ -34,7 +34,7 @@
       
       <div class="payment">
         
-        <div class="payment__title fw-6">
+        <!-- <div class="payment__title fw-6">
           Step Order
         </div>
         <div class="payment__types">
@@ -45,7 +45,7 @@
           <a class="payment__type payment__type--paypal" href="/form-4/{{$kode}}">
             <i class="icon icon-docs"></i>Form Data</a>
           
-        </div>
+        </div> -->
 
         <div class="payment__info">
           <div class="payment__cc">

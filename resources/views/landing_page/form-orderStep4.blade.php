@@ -25,8 +25,11 @@
       </div>
     </div>
   </header>
-  <section class="content">
-
+  <section class="content" style="padding-top:3rem;">
+    <a class="btn" style="padding:1rem;margin-left:2rem" href="/invoice/{{$kode}}">
+      <i class="icon icon-arrow-left"></i>
+      Back
+    </a>
     <div class="container">
       <div class="payment">
         <div class="payment__title fw-6">
@@ -39,8 +42,7 @@
             <i class="icon icon-pencil"></i>Spesifikasi</a>
           <a class="payment__type payment__type--paypal active" href="/form-4/{{$kode}}">
             <i class="icon icon-docs"></i>Form Data</a>
-          {{--<a class="payment__type payment__type--paypal" href="{{ url('/invoice') }}">
-            <i class="icon icon-note"></i>Invoice</a>--}}
+          
         </div>
 
         <div class="payment__info">
@@ -141,10 +143,10 @@
     <div class="container">
       <div class="actions pt135">
         @if ($sukses == 'sukses')
-          <a href="{{ route('invoice') }}" type="button"  style="font-family: 'Montserrat';" class="btn action__submit"> Next
+          <a href="{{ url('invoice', ['kode' => $kode]) }}" type="button"  style="font-family: 'Montserrat';" class="btn action__submit"> Save & Next
           <i class="icon icon-arrow-right-circle"></i></a>
         @else
-          <a href="{{ route('invoice') }}"type="button" style="font-family: 'Montserrat';" class="btn action__submit"> Next
+          <a href="{{ url('invoice', ['kode' => $kode]) }}"type="button" style="font-family: 'Montserrat';" class="btn action__submit"> Save & Next
           <i class="icon icon-arrow-right-circle"></i></a>
         @endif
         <a href="{{ url('/form-3') }}" class="backBtn">Go Back to Specification</a>

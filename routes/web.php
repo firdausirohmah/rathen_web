@@ -103,8 +103,8 @@ Route::controller(PesananController::class)->group(function () {
     Route::post('/save-selected-text', 'saveSelectedText')->name('saveSelectedText');
     Route::get('/form-1/generate/t', 'generate')->name('generate');
     Route::post('/form-1/quotation', 'quotation')->name('quotation');
-    // Route::get('/form-1/quotation', 'quotation')->name('quotation');
-    Route::get('/form-1/invoice/{id}', 'quotation_view')->name('quotation_view');
+    Route::get('/form-1/quotation/{id}', 'quotation_view')->name('quotation_view');
+    Route::get('/form-1/invoice/{id}', 'invoice')->name('invoice');
     Route::post('/form-1/action', 'addForm1')->name('addForm1');
     Route::get('/form-2/{id}', 'form_2')->name('form_2');
     Route::post('/form-2', 'upload')->name('upload');
@@ -113,7 +113,7 @@ Route::controller(PesananController::class)->group(function () {
     Route::get('/form-4/{id}', 'form_4')->name('form_4');
     Route::get('/downloadPdf', 'downloadPdf')->name('downloadPdf');
     Route::post('/form-4/pemain', 'tambahDataPesanan')->name('tambahDataPesanan');
-    Route::get('/invoice', 'invoice')->name('invoice');
+    Route::get('/invoice/{id}', 'invoice')->name('invoice');
     Route::get('/export', 'export')->name('export');
 
     // Route::get('/invoice')->name('invoice');
@@ -155,11 +155,16 @@ Route::controller(registerController::class)->group(function () {
 Route::controller(adminController::class)->group(function () {
     Route::get('/dashboard', 'dashboard')->name('dashboard');
     Route::get('/view-order', 'vieworder')->name('vieworder');
+    Route::get('/production', 'production')->name('production');
+    Route::get('/production/{id}', 'production_edit')->name('production_edit');
+    Route::get('/production/design/{id}', 'production_design')->name('production_design');
     Route::get('/finance', 'finance')->name('finance');
     Route::get('/master', 'master')->name('master');
     Route::post('/master/updateHargaBahan', 'updateHargaBahan')->name('updateHargaBahan');
     Route::post('/master/updateHargaLogo', 'updateHargaLogo')->name('updateHargaLogo');
-    Route::delete('/data/{id}', 'destroyInvoice')->name('data.destroy');
+    Route::delete('/data/invoice/{id}', 'destroyInvoice')->name('data.destroyInv');
+    Route::delete('/data/quotation/{id}', 'destroyQuo')->name('data.destroyQuo');
+
 
 
 });

@@ -17,19 +17,20 @@
     <div class="container-fluid py-4">
       <ul class="nav nav-tabs" id="myTabs" role="tablist">
         <li class="nav-item" role="presentation">
-          <a class="nav-link active" id="quotation-tab" data-bs-toggle="tab" href="#quotation" role="tab" aria-controls="quotation" aria-selected="true">Quotation</a>
+          <a class="nav-link active" id="invoice-tab" data-bs-toggle="tab" href="#invoice" role="tab" aria-controls="invoice" aria-selected="false">Production</a>
         </li>
         <li class="nav-item" role="presentation">
-          <a class="nav-link" id="invoice-tab" data-bs-toggle="tab" href="#invoice" role="tab" aria-controls="invoice" aria-selected="false">Invoice</a>
+          <a class="nav-link" id="production-tab" data-bs-toggle="tab" href="#production" role="tab" aria-controls="production" aria-selected="true">Approval</a>
         </li>
+        
       </ul>
       
       <div class="tab-content">
         <!-- Invoice Tab -->
-        <div class="tab-pane fade" id="invoice" role="tabpanel" aria-labelledby="invoice-tab">
+        <div class="tab-pane fade show active" id="invoice" role="tabpanel" aria-labelledby="invoice-tab">
           <div class="card card-tab mb-4">
             <div class="card-header pb-0">
-              <h6>Invoice</h6>
+              <h6>Production</h6>
             </div>
             <div class="card-body px-0 pt-0 pb-2">
               <div class="table-responsive p-0">
@@ -43,11 +44,9 @@
                       <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">WhatsApp Number</th>
                       <th class="text-uppercase text-center text-secondary text-xxs font-weight-bolder opacity-7">Order</th>
                       <!-- u. kategori dan kualitas -->
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Total
-                        Price</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Invoice Link
-                      </th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Created at
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Final
+                        Payment</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Progress
                       </th>
                       <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Action
                       </th>
@@ -79,28 +78,26 @@
 
                       </td>
                       <td>
-                        Rp. <?= number_format($item->total_harga , 0, ','); ?>
+                        Rp. <?= number_format($item->biaya_pelunasan , 0, ','); ?>
 
                       </td>
                       
-                      <td>
-                        @php
-                            $link = 'invoice';
-                            $kode = $item->kd_step2;
-                            $link_kode = $link . '/' . $kode;
-                            $baseUrl = URL::to('/');
-                        @endphp
-                          <a href="{{ $baseUrl }}/{{ $link_kode }}" target="_blank">{{ $baseUrl }}/{{ $link_kode }}</a>
-                      </td>
-                      <td class="align-middle text-center text-sm"> {{date("d-m-Y", strtotime($item->created_at))}}
-                        {{-- <span class="badge badge-sm bg-gradient-warning">{{ $item->status }}</span> --}}
+                      <td class="align-middle text-center text-sm">
+                        <div class="progress">
+                          <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
                       </td>
                       <td class="align-middle text-center text-sm">
-                        <form action="{{ route('data.destroyInv', $item->kd_step2) }}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger m-0"><i class="fa fa-trash" aria-hidden="true"></i></button>
-                        </form>
+                        <div class="d-flex">
+                          @php
+                              $link = 'production';
+                              $kode = $item->kd_step2;
+                              $link_kode = $link . '/' . $kode;
+                              $baseUrl = URL::to('/');
+                          @endphp
+                          <a href="{{ $baseUrl }}/{{ $link_kode }}" target="_blank" class="btn btn-primary btn-action me-1"><i class="fas fa-eye" aria-hidden="true"></i></a>
+                          
+                        </div>
                       </td>
                     </tr>
                     @endforeach
@@ -113,10 +110,10 @@
         </div>
 
         <!-- Quotation Tab -->
-        <div class="tab-pane fade show active" id="quotation" role="tabpanel" aria-labelledby="quotation-tab">
+        <div class="tab-pane fade" id="production" role="tabpanel" aria-labelledby="production-tab">
           <div class="card card-tab mb-4">
             <div class="card-header pb-0">
-              <h6>Quotation</h6>
+              <h6>Approval</h6>
             </div>
             <div class="card-body px-0 pt-0 pb-2">
               <div class="table-responsive p-0">
@@ -157,7 +154,7 @@
                         $processed = $order->contains('kd_step2', $item->kd_step);
                         @endphp
                         @if($processed)
-                        <span class="text-success">Clicked</span>
+                        <span class="text-success">Approved</span>
                         @else
                         <form action="{{ url('/form-1/action') }}" method="POST" id="submit_biaya">
                             @csrf
@@ -190,7 +187,7 @@
                             <input type="hidden" class="input txt" value="{{ $item->kerah_rib }}" name="kerah_rib" readonly/>
                             <input type="hidden" class="input txt" value="{{ $item->tangan_rib }}" name="tangan_rib" readonly/>
 
-                            <a data-bs-toggle="modal" data-bs-target="#invoiceModal" data-kode="{{ $item->kd_step }}" class="btn btn-success btn-sm m-0">Invoice <i class="ps-1 fa fa-sign-out" aria-hidden="true"></i></a>
+                            <a data-bs-toggle="modal" data-bs-target="#invoiceModal" data-kode="{{ $item->kd_step }}" class="btn btn-success btn-sm m-0">Approve <i class="ps-1 fa fa-sign-out" aria-hidden="true"></i></a>
                             
                             <!-- Modal -->
                             <div class="modal fade" id="invoiceModal" tabindex="-1" aria-labelledby="invoiceModalLabel" aria-hidden="true">
@@ -204,9 +201,9 @@
                                     
                                       <div class="mb-3">
                                         <label for="design" class="form-label">Design Payment:</label>
-                                        <input type="text" class="form-control" id="design" oninput="formatRupiah(this);calculatePelunasan();" name="biaya_desain" placeholder="Enter Design Payment">
+                                        <input type="text" class="form-control" id="design" oninput="formatRupiah(this);calculatePelunasan();" name="biaya_desain" placeholder="Enter invoice number">
                                         <label for="dp" class="form-label">Initial Payment (DP):</label>
-                                        <input type="text" class="form-control" id="dp" oninput="formatRupiah(this);calculatePelunasan();" name="biaya_dp" placeholder="Enter Initial Payment">
+                                        <input type="text" class="form-control" id="dp" oninput="formatRupiah(this);calculatePelunasan();" name="biaya_dp" placeholder="Enter invoice number">
                                         <label for="pelunasan" class="form-label">Final Payment:</label>
                                         <input type="text" class="form-control" id="pelunasan" oninput="formatRupiah(this)" name="biaya_pelunasan" readonly>
                                       </div>

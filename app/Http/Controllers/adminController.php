@@ -55,6 +55,87 @@ class adminController extends Controller
             'quo' => $dataQ,
         ]);
     }
+    public function production()
+    {
+        $data = DB::table('tbl_step1')
+            ->select('*')
+            ->get();
+
+        $dataQ = DB::table('tbl_quotation_order')
+            ->join('tbl_quotation', 'tbl_quotation_order.kd_quotation', '=', 'tbl_quotation.kd_quotation')
+            ->select('tbl_quotation_order.*','tbl_quotation.*')
+            ->get();
+        // dd($data); 
+        return view('auth.production', [
+            'pages' => "Production",
+            'order' => $data,
+            'quo' => $dataQ,
+        ]);
+    }
+    public function production_edit($request)
+    {
+        $kode = $request;
+        // dd($request);
+        $data = ModelStep1::where('kd_step4', $kode)
+            ->join('tbl_step2', 'tbl_step1.kd_step2', '=', 'tbl_step2.kd_step2')
+            ->join('tbl_step3', 'tbl_step1.kd_step3', '=', 'tbl_step3.kd_step3')
+            ->join('tbl_part', 'tbl_step1.kategori_harga', '=', 'tbl_part.kd_part')
+            ->select('tbl_step1.*', 'tbl_step2.*', 'tbl_step3.*','tbl_part.harga')
+            ->get();
+        $harga = DB::table('tbl_harga')
+            ->join('tbl_logo', 'tbl_harga.id', '=', 'tbl_logo.id_logo')
+            ->select('tbl_logo.*', 'tbl_harga.*')
+            ->get();
+        
+        foreach ($harga as $h){
+            $price = $h;
+        }
+        foreach ($data as $pesanan) {
+            // dd($pesanan->tipe_kualitas);
+            $JarseyOrder = $pesanan->tipe_kualitas;
+            if($JarseyOrder == 'Stadium'){
+                $JarseyDefault = 'Jarsey'.' - '.$JarseyOrder.' '.$pesanan->kategori_harga;
+                $Jarsey = strtoupper($JarseyDefault);
+            }else{
+                $JarseyDefault = 'Jarsey'.'-'.$JarseyOrder.' VERSION';
+                $Jarsey = strtoupper($JarseyDefault);
+            } 
+            $d = [
+                'Jarsey' => $Jarsey,
+                'pesanan' => $pesanan,
+                'price' => $price, 
+            ];
+            // dd($Jarsey);
+            
+            return view('landing_page.production', [
+                'pesanan' => $pesanan,
+                'price' => $price,
+                'Jarsey' => $Jarsey,
+                'kode' => $kode, 
+            ]);
+        }
+    }
+
+    public function production_design($request)
+    {
+        
+        $kode = $request;
+        
+        // dd($kode);
+        $data = DB::table('tbl_step2')
+            ->join('tbl_quotation_order', 'tbl_step2.kd_step2', '=', 'tbl_quotation_order.kd_step') // Sesuaikan kondisi join
+            ->where('tbl_step2.kd_step2', $kode) // Sesuaikan kondisi WHERE
+            ->select('tbl_quotation_order.*', 'tbl_step2.*') // Pilih kolom yang ingin Anda ambil
+            ->get();
+        // dd($data);
+        foreach ($data as $pesanan) { 
+            return view('landing_page.productionStep2', [
+                'data' => $pesanan,
+                'kode' => $kode, 
+            ]);
+        }
+    }
+
     public function finance()
     {
         $data = DB::table('tbl_step1')
@@ -165,6 +246,13 @@ class adminController extends Controller
         DB::table('tbl_step3')->where('kd_step3', $id)->delete();
         DB::table('tbl_step4')->where('kd_step1', $id)->delete();
         DB::table('user_order')->where('kd_step2', $id)->delete();
+
+        return redirect()->back()->with('success', 'Data has been deleted successfully');
+    }
+    public function destroyQuo($id)
+    {
+        DB::table('tbl_quotation_order')->where('kd_quotation', $id)->delete();
+        DB::table('tbl_quotation')->where('kd_quotation', $id)->delete();
 
         return redirect()->back()->with('success', 'Data has been deleted successfully');
     }

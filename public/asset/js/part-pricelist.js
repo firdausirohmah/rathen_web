@@ -1,7 +1,8 @@
 // Fungsi untuk menangani perubahan pada checkbox
 function handleCheckboxChange(id, cost) {
     document.getElementById(id).addEventListener('change', function() {
-        var costChange = this.checked ? cost : -cost;
+        var quantity = parseInt(document.getElementById("quantityInput").value);
+        var costChange = this.checked ? cost * quantity : -cost * quantity;
         additionalCost += costChange;
         updateTotalHarga();
     });

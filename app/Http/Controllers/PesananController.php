@@ -687,8 +687,8 @@ class PesananController extends Controller
         // dd($formattedNow);
         $selectedText = $request->input('selectedText');
         // dd($selectedText);
-        $nm = $request->nama_tim;
-        $dm = $request->dom;
+        $nm = $request->nama_tim;//modal pop up
+        $dm = $request->dom; //modal pop up
         $np = $request->np;
         $nw = $request->nw;
         $ap = $request->alamat_p;
@@ -698,6 +698,7 @@ class PesananController extends Controller
         $harga = $request->harga;
         $bbm = $request->bbm;
         $plr = $request->plr;
+        // dd($plr);
         $ud = $request->up3d;
         $lc = $request->logo_celana;
         $lp = $request->lengan_panjang;
@@ -707,6 +708,19 @@ class PesananController extends Controller
         $xxxxl = $request->xxxxl;
         $cp = $request->celana_panjang;
         $kk = $request->kaoskaki; 
+
+        $product = $request->product; 
+        $kerah_kancing = $request->kerah_kancing; 
+        $celana_printing = $request->celana_printing; 
+        $bahan_embos = $request->bahan_embos; 
+        $kerah_rib = $request->kerah_rib; 
+        $tangan_rib = $request->tangan_rib; 
+
+        $biaya_desain = intval(preg_replace('/[^0-9]/', '', $request->biaya_desain));
+        $biaya_dp = intval(preg_replace('/[^0-9]/', '', $request->biaya_dp));
+        $biaya_pelunasan = intval(preg_replace('/[^0-9]/', '', $request->biaya_pelunasan));
+        $biaya_pengiriman = intval(preg_replace('/[^0-9]/', '', $request->biaya_pengiriman));
+        // dd($biaya_pelunasan);
         // Simpan username ke dalam sesi
         session([
             'kode' => $formattedNow, 
@@ -716,10 +730,12 @@ class PesananController extends Controller
         ]);
         $step3 = ModeStep3::create([
             'kd_step3' => $formattedNow,
+            'pola_lengan' => $plr,
         ]);
         $str = Str::random(12);
         $data = ModelStep1::create([
             'kd_pembelian' => 'R' . $str,
+            'product' => $product,
             'nama_tim' => $nm,
             'domisili' => $dm,
             'nama_pemesanan' => $np,
@@ -729,6 +745,8 @@ class PesananController extends Controller
             'kategori_harga' => $kt,
             'tipe_kualitas' => $kl,
             'harga' => $harga,
+            'kerah_kancing' => $kerah_kancing,
+            'celana_printing' => $celana_printing,
             'badan_bawah' => $bbm,
             'pola_lengan' => $plr,
             'upgrade_logo_3d' => $ud,
@@ -740,9 +758,16 @@ class PesananController extends Controller
             'size_4xl' => $xxxxl,
             'celana_panjang' => $cp,
             'kaoskaki' => $kk,
+            'bahan_embos' => $bahan_embos,
+            'kerah_rib' => $kerah_rib,
+            'tangan_rib' => $tangan_rib,
             'kd_step2' => $formattedNow,
             'kd_step3' => $formattedNow,
             'kd_step4' => $formattedNow,
+            'biaya_desain' => $biaya_desain,
+            'biaya_dp' => $biaya_dp,
+            'biaya_pelunasan' => $biaya_pelunasan,
+            'biaya_pengiriman' => $biaya_pengiriman,
 
         ]);
         $order = ModelOrder::create([
@@ -753,7 +778,9 @@ class PesananController extends Controller
         ]); 
         // auth()->login($order);
 
-        return back();
+        return redirect()->back()->with([
+            'kode' => $formattedNow,
+        ]);
     }
     public function addForm3(Request $request)
     {
@@ -772,9 +799,10 @@ class PesananController extends Controller
 
         return redirect('/form-4');
     }
-    public function invoice(Request $request)
+    public function invoice($request)
     {
-        $kode = session('kode');
+        $kode = $request;
+        // dd($request);
         $data = ModelStep1::where('kd_step4', $kode)
             ->join('tbl_step2', 'tbl_step1.kd_step2', '=', 'tbl_step2.kd_step2')
             ->join('tbl_step3', 'tbl_step1.kd_step3', '=', 'tbl_step3.kd_step3')
@@ -806,10 +834,11 @@ class PesananController extends Controller
             ];
             // dd($Jarsey);
             
-            return view('landing_page.form-orderStep5', [
+            return view('landing_page.quotation-order', [
                 'pesanan' => $pesanan,
                 'price' => $price,
                 'Jarsey' => $Jarsey,
+                'kode' => $kode, 
             ]);
         }
     }

@@ -96,11 +96,14 @@
                         {{-- <span class="badge badge-sm bg-gradient-warning">{{ $item->status }}</span> --}}
                       </td>
                       <td class="align-middle text-center text-sm">
-                        <form action="{{ route('data.destroyInv', $item->kd_step2) }}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger m-0"><i class="fa fa-trash" aria-hidden="true"></i></button>
-                        </form>
+                        <div class="d-flex">
+                          <a href="{{ $baseUrl }}/{{ $link_kode }}" target="_blank" class="btn btn-primary btn-action me-1"><i class="fas fa-pen" aria-hidden="true"></i></a>
+                          <form action="{{ route('data.destroyInv', $item->kd_step2) }}" method="POST">
+                              @csrf
+                              @method('DELETE')
+                              <button type="submit" class="btn btn-danger m-0 btn-action"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                          </form>
+                        </div>
                       </td>
                     </tr>
                     @endforeach

@@ -17,17 +17,16 @@
     <div class="container-fluid py-4">
       <ul class="nav nav-tabs" id="myTabs" role="tablist">
         <li class="nav-item" role="presentation">
-          <a class="nav-link active" id="invoice-tab" data-bs-toggle="tab" href="#invoice" role="tab" aria-controls="invoice" aria-selected="false">Production</a>
+          <a class="nav-link active" id="approval-tab" data-bs-toggle="tab" href="#approval" role="tab" aria-controls="approval" aria-selected="true">Approval</a>
         </li>
         <li class="nav-item" role="presentation">
-          <a class="nav-link" id="production-tab" data-bs-toggle="tab" href="#production" role="tab" aria-controls="production" aria-selected="true">Approval</a>
+          <a class="nav-link " id="production-tab" data-bs-toggle="tab" href="#production" role="tab" aria-controls="production" aria-selected="false">Production</a>
         </li>
-        
       </ul>
       
       <div class="tab-content">
         <!-- Invoice Tab -->
-        <div class="tab-pane fade show active" id="invoice" role="tabpanel" aria-labelledby="invoice-tab">
+        <div class="tab-pane fade " id="production" role="tabpanel" aria-labelledby="production-tab">
           <div class="card card-tab mb-4">
             <div class="card-header pb-0">
               <h6>Production</h6>
@@ -55,8 +54,12 @@
                       <!-- <th class="text-secondary opacity-7"></th> -->
                     </tr>
                   </thead>
+                  
+                  
                   <tbody>
                     @foreach ($order as $item)
+                    
+                    @if($item->status_order == 'produksi')
                     <tr>
                       <td>
                         {{ $item->nama_pemesanan }}
@@ -100,9 +103,11 @@
                         </div>
                       </td>
                     </tr>
+                    @endif
                     @endforeach
                     
                   </tbody>
+                  
                 </table>
               </div>
             </div>
@@ -110,7 +115,7 @@
         </div>
 
         <!-- Quotation Tab -->
-        <div class="tab-pane fade" id="production" role="tabpanel" aria-labelledby="production-tab">
+        <div class="tab-pane fade show active" id="approval" role="tabpanel" aria-labelledby="approval-tab">
           <div class="card card-tab mb-4">
             <div class="card-header pb-0">
               <h6>Approval</h6>
@@ -125,7 +130,6 @@
                       <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Whatsapp Number
                       </th>
                       <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Process</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Email</th>
                       <th class="text-uppercase text-center text-secondary text-xxs font-weight-bolder opacity-7">Address</th>
                       <th class="text-uppercase text-center text-secondary text-xxs font-weight-bolder opacity-7">Order Date</th>
                       <th class="text-uppercase text-center text-secondary text-xxs font-weight-bolder opacity-7">Action</th>
@@ -135,14 +139,14 @@
                     </tr>
                   </thead>
                   <tbody>
-                    @foreach ($quo as $item)
+                    @foreach ($order as $item)
                     <tr>
                       <td>
-                        {{ $item->nama_pelanggan }}
+                        {{ $item->nama_pemesanan }}
                       </td>
                       <td>
                       @php
-                        $phoneNumber = $item->no_hp;
+                        $phoneNumber = $item->kontak;
                         // Remove leading '+' and '62' from the phone number
                         $cleanedPhoneNumber = ltrim($phoneNumber, '+');
                       @endphp
@@ -151,80 +155,22 @@
                       </td>
                       <td>
                         @php
-                        $processed = $order->contains('kd_step2', $item->kd_step);
+                        $processed = $order->contains('status_order', 'produksi');
                         @endphp
                         @if($processed)
                         <span class="text-success">Approved</span>
                         @else
-                        <form action="{{ url('/form-1/action') }}" method="POST" id="submit_biaya">
+                        <form action="{{ url('/approval/action') }}" method="POST" >
                             @csrf
-                            <input type="hidden" class="input txt" value="{{ $item->kd_step }}" name="kd_step" readonly/>
-                            <input type="hidden" class="input txt" value="{{ $item->nama_pelanggan }}" name="np" readonly/>
-                            <input type="hidden" class="input txt" value="{{ $item->alamat }}" name="dom" readonly/>
-                            <input type="hidden" class="input txt" value="{{ $item->no_hp }}" name="nw" readonly/>
+                            <input type="hidden" class="input txt" value="{{ $item->kd_step2 }}" name="kd_step" readonly/>
 
-                            <input type="hidden" class="input txt" value="{{ $item->product }}" name="product" readonly/>
-                            <input type="hidden" class="input txt" value="{{ $item->tipe_kualitas }}" name="kualitas" readonly/>
-                            <input type="hidden" class="input txt" value="{{ $item->kategori_harga }}" name="kategori" readonly/>
-                            <input type="hidden" class="input txt" value="{{ $item->harga }}" name="harga" readonly/>
-                            <input type="hidden" class="input txt" value="{{ $item->total_harga }}" name="total_harga" readonly/>
-                            <input type="hidden" class="input txt" value="{{ $item->qty }}" name="jp" readonly/>
+                            <button class="btn btn-success btn-sm m-0">Approve <i class="ps-1 fa fa-sign-out" aria-hidden="true"></i></button>
                             
-                            <input type="hidden" class="input txt" value="{{ $item->kerah_kancing }}" name="kerah_kancing" readonly/>
-                            <input type="hidden" class="input txt" value="{{ $item->bb_melengkung }}" name="bbm" readonly/>
-                            <input type="hidden" class="input txt" value="{{ $item->lengan_raglan }}" name="plr" readonly/>
-                            <input type="hidden" class="input txt" value="{{ $item->logo_3d }}" name="up3d" readonly/>
-                            <!-- <input type="hidden" class="input txt" value="{{ $item->qty }}" name="logo_celana" readonly/> -->
-                            <input type="hidden" class="input txt" value="{{ $item->lengan_panjang }}" name="lengan_panjang" readonly/>
-                            <input type="hidden" class="input txt" value="{{ $item->s2xl }}" name="xxl" readonly/>
-                            <input type="hidden" class="input txt" value="{{ $item->s3xl }}" name="xxxl" readonly/>
-                            <input type="hidden" class="input txt" value="{{ $item->s4xl }}" name="xxxxl" readonly/>
-                            <input type="hidden" class="input txt" value="{{ $item->celana_pro }}" name="celana_panjang" readonly/>
-                            <input type="hidden" class="input txt" value="{{ $item->celana_printing }}" name="celana_printing" readonly/>
-                            <input type="hidden" class="input txt" value="{{ $item->kaoskaki }}" name="kaoskaki" readonly/>
-                            
-                            <input type="hidden" class="input txt" value="{{ $item->bahan_embos }}" name="bahan_embos" readonly/>
-                            <input type="hidden" class="input txt" value="{{ $item->kerah_rib }}" name="kerah_rib" readonly/>
-                            <input type="hidden" class="input txt" value="{{ $item->tangan_rib }}" name="tangan_rib" readonly/>
-
-                            <a data-bs-toggle="modal" data-bs-target="#invoiceModal" data-kode="{{ $item->kd_step }}" class="btn btn-success btn-sm m-0">Approve <i class="ps-1 fa fa-sign-out" aria-hidden="true"></i></a>
-                            
-                            <!-- Modal -->
-                            <div class="modal fade" id="invoiceModal" tabindex="-1" aria-labelledby="invoiceModalLabel" aria-hidden="true">
-                              <div class="modal-dialog">
-                                <div class="modal-content">
-                                  <div class="modal-header">
-                                    <h5 class="modal-title" id="invoiceModalLabel">Invoice Input</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                  </div>
-                                  <div class="modal-body">
-                                    
-                                      <div class="mb-3">
-                                        <label for="design" class="form-label">Design Payment:</label>
-                                        <input type="text" class="form-control" id="design" oninput="formatRupiah(this);calculatePelunasan();" name="biaya_desain" placeholder="Enter invoice number">
-                                        <label for="dp" class="form-label">Initial Payment (DP):</label>
-                                        <input type="text" class="form-control" id="dp" oninput="formatRupiah(this);calculatePelunasan();" name="biaya_dp" placeholder="Enter invoice number">
-                                        <label for="pelunasan" class="form-label">Final Payment:</label>
-                                        <input type="text" class="form-control" id="pelunasan" oninput="formatRupiah(this)" name="biaya_pelunasan" readonly>
-                                      </div>
-
-                                  </div>
-                                  <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-success" value="Submit" id="submit_biaya_btn">Submit</button>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-
                         </form>
                         @endif
                       </td>
                       <td>
-                        {{ $item->email }}
-                      </td>
-                      <td>
-                        {{ $item->alamat }}
+                        {{ $item->domisili }}
                       </td>
                       <td class="text-center">
                         {{ date("d-m-Y", strtotime($item->created_at))}}
@@ -232,17 +178,13 @@
                       <td class="text-center">
                         <div class="d-flex">
                           @php
-                              $link = 'form-1/quotation';
-                              $kode = $item->kd_step;
+                              $link = 'production';
+                              $kode = $item->kd_step2;
                               $link_kode = $link . '/' . $kode;
                               $baseUrl = URL::to('/');
                           @endphp
-                          <a href="{{ $baseUrl }}/{{ $link_kode }}" target="_blank" class="btn btn-primary btn-action me-1"><i class="fas fa-eye" aria-hidden="true"></i></a>
-                          <form action="{{ route('data.destroyQuo', $item->kd_quotation) }}" method="POST">
-                              @csrf
-                              @method('DELETE')
-                              <button type="submit" class="btn btn-danger btn-action m-0"><i class="fa fa-trash" aria-hidden="true"></i></button>
-                          </form>
+                          <a href="{{ $baseUrl }}/{{ $link_kode }}" target="_blank" class="btn btn-primary btn-action me-1"><i class="fas fa-pen" aria-hidden="true"></i></a>
+                          
                         </div>
                       </td>
                       

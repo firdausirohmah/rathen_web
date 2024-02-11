@@ -162,6 +162,7 @@ Route::controller(adminController::class)->group(function () {
     Route::get('/master', 'master')->name('master');
     Route::post('/master/updateHargaBahan', 'updateHargaBahan')->name('updateHargaBahan');
     Route::post('/master/updateHargaLogo', 'updateHargaLogo')->name('updateHargaLogo');
+    Route::post('/approval/action', 'approval_action')->name('approval_action');
     Route::delete('/data/invoice/{id}', 'destroyInvoice')->name('data.destroyInv');
     Route::delete('/data/quotation/{id}', 'destroyQuo')->name('data.destroyQuo');
 

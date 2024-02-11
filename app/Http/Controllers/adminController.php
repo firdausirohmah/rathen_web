@@ -58,7 +58,8 @@ class adminController extends Controller
     public function production()
     {
         $data = DB::table('tbl_step1')
-            ->select('*')
+            ->join('user_order', 'tbl_step1.kd_step2', '=', 'user_order.kd_order')
+            ->select('tbl_step1.*','user_order.*')
             ->get();
 
         $dataQ = DB::table('tbl_quotation_order')
@@ -134,6 +135,19 @@ class adminController extends Controller
                 'kode' => $kode, 
             ]);
         }
+    }
+
+    public function approval_action(Request $request)
+    {
+        $kode = $request->kd_step;
+        
+        // Update the records in the database
+        DB::table('user_order')
+            ->where('kd_order', $kode)
+            ->update(['status_order' => 'produksi']);
+
+        // Redirect back to the same route
+        return redirect()->back();
     }
 
     public function finance()

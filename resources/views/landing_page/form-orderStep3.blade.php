@@ -67,7 +67,7 @@
                     <input type="text" class="input txt" value="{{ $data->tipe_kualitas }}" readonly/>
                   </div>
                 </div>
-                <div class="row">
+                <!-- <div class="row">
                   <div class="field small">
                     <div class="title">Pola lengan
                     </div>
@@ -76,9 +76,8 @@
                       <option value="Raglan">Reglan</option>
                     </select>
                     <span class="title">+15,000 pola raglan</span>
-                    <!-- <input type="text" class="input ddl" value='(+15,000 pola raglan)' disabled/> -->
                   </div>
-                </div>
+                </div> -->
                 <div class="row">
                   <div class="field">
                     <div class="title">Model Kerah

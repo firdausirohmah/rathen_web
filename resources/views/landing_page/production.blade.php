@@ -69,38 +69,39 @@
                                     <td>
                                       <div class="img-tableView">
                                         <b class="title">Design - Pemain</b>
-                                        <img src="{{ asset('asset/images/content/rathenDesign.jpg') }}">
+                                        <img src="{{ asset('asset/images/content/rathenDesignPutih.jpg') }}">
                                         <span><b>Size</b>: S-3, M-11, L-14, XL-5, 2XL-1</span>
                                       </div>
                                     </td>
-                                    <td class="d-flex" style="flex-wrap:wrap;">
+                                    <td class="d-flex text-center" style="flex-wrap:wrap;">
                                       <div class="img-tableDetail">
                                         <img src="{{ asset('asset/images/price-list/komparasi/fabrics.jpg') }}">
                                         <span class="font-weight-bold">Pola Badan:</span>
                                         <span>Slimfit</span>
                                       </div>
                                       <div class="img-tableDetail">
-                                        <img src="{{ asset('asset/images/price-list/komparasi/fabrics.jpg') }}">
+                                        <img src="{{ asset('asset/extra/putih2.png') }}">
                                         <span class="font-weight-bold">Pola Lengan:</span>
                                         <span>Normal</span>
                                       </div>
                                       <div class="img-tableDetail">
-                                        <img src="{{ asset('asset/images/price-list/komparasi/fabrics.jpg') }}">
+                                        <img src="{{ asset('asset/extra/casual/C-3.png') }}">
                                         <span class="font-weight-bold">Jenis Kerah:</span>
-                                        <span>V3 (Putih/Dongker - Gold)</span>
+                                        <span>V3</span>
+                                        <span>(Putih/Dongker - Gold)</span>
                                       </div>
                                       <div class="img-tableDetail">
-                                        <img src="{{ asset('asset/images/price-list/komparasi/fabrics.jpg') }}">
+                                        <img src="{{ asset('asset/polabadan/belakangNormal.png') }}">
                                         <span class="font-weight-bold">Bawah Baju:</span>
                                         <span>Normal</span>
                                       </div>
                                       <div class="img-tableDetail">
-                                        <img src="{{ asset('asset/images/price-list/komparasi/fabrics.jpg') }}">
+                                        <img src="{{ asset('asset/images/price-list/komparasi/lasercut.jpg') }}">
                                         <span class="font-weight-bold">Lasercut:</span>
                                         <span>Tidak</span>
                                       </div>
                                       <div class="img-tableDetail">
-                                        <img src="{{ asset('asset/images/price-list/komparasi/fabrics.jpg') }}">
+                                        <img src="{{ asset('asset/images/price-list/komparasi/logo-tim.jpg') }}">
                                         <span class="font-weight-bold">Jenis Logo:</span>
                                         <span>Print</span>
                                       </div>
@@ -110,7 +111,7 @@
                                         <span>Adidas</span>
                                       </div>
                                       <div class="img-tableDetail">
-                                        <img src="{{ asset('asset/images/price-list/komparasi/fabrics.jpg') }}">
+                                        <img src="{{ asset('asset/images/kaoskaki.jpeg') }}">
                                         <span class="font-weight-bold">Kaoskaki:</span>
                                         <span>tidak</span>
                                       </div>

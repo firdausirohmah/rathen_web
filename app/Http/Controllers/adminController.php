@@ -81,7 +81,8 @@ class adminController extends Controller
             ->join('tbl_step2', 'tbl_step1.kd_step2', '=', 'tbl_step2.kd_step2')
             ->join('tbl_step3', 'tbl_step1.kd_step3', '=', 'tbl_step3.kd_step3')
             ->join('tbl_part', 'tbl_step1.kategori_harga', '=', 'tbl_part.kd_part')
-            ->select('tbl_step1.*', 'tbl_step2.*', 'tbl_step3.*','tbl_part.harga')
+            ->join('user_order', 'user_order.kd_order', '=', 'tbl_step1.kd_step2')
+            ->select('tbl_step1.*', 'tbl_step2.*', 'tbl_step3.*','tbl_part.harga','user_order.*')
             ->get();
         $harga = DB::table('tbl_harga')
             ->join('tbl_logo', 'tbl_harga.id', '=', 'tbl_logo.id_logo')
@@ -92,7 +93,7 @@ class adminController extends Controller
             $price = $h;
         }
         foreach ($data as $pesanan) {
-            // dd($pesanan->tipe_kualitas);
+            // dd($pesanan->status_order);
             $JarseyOrder = $pesanan->tipe_kualitas;
             if($JarseyOrder == 'Stadium'){
                 $JarseyDefault = 'Jarsey'.' - '.$JarseyOrder.' '.$pesanan->kategori_harga;

@@ -49,12 +49,12 @@
                           <input type="text" class="form-control" id="product" name="product" placeholder="Enter Order">
                           <label for="total_harga" class="form-label">Total Harga:</label>
                           <input type="text" class="form-control" id="total_harga" oninput="formatRupiah(this)" name="total_harga" readonly>
-                          <label for="design" class="form-label">Design Payment:</label>
-                          <input type="text" class="form-control" id="design" oninput="formatRupiah(this);calculatePelunasan();" name="biaya_desain" placeholder="Enter Design Payment">
-                          <label for="dp" class="form-label">Initial Payment (DP):</label>
-                          <input type="text" class="form-control" id="dp" oninput="formatRupiah(this);calculatePelunasan();" name="biaya_dp" placeholder="Enter Initial Payment">
-                          <label for="pelunasan" class="form-label">Final Payment:</label>
-                          <input type="text" class="form-control" id="pelunasan" oninput="formatRupiah(this)" name="biaya_pelunasan" readonly>
+                          <label for="design_create" class="form-label">Design Payment:</label>
+                          <input type="text" class="form-control" id="design_create" oninput="formatRupiah(this);" name="biaya_desain_create" placeholder="Enter Design Payment">
+                          <label for="dp_create" class="form-label">Initial Payment (DP):</label>
+                          <input type="text" class="form-control" id="dp_create" oninput="formatRupiah(this);" name="biaya_dp_create" placeholder="Enter Initial Payment">
+                          <label for="pelunasan_create" class="form-label">Final Payment:</label>
+                          <input type="text" class="form-control" id="pelunasan_create" oninput="formatRupiah(this)" name="biaya_pelunasan_create" readonly>
                         </div>
 
                     </div>

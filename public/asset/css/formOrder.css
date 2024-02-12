@@ -1046,6 +1046,40 @@ input[type=text] {
   color: #b70f0f;
 }
 
+.img-tableView{
+  width: auto;
+  height: 15rem;
+}
+.img-tableView img{
+  height: 12rem;
+  width: 16rem;
+  object-fit: cover;
+}
+.img-tableView .title{
+  display: block;
+}
+.img-tableView span{
+  display: block;
+  margin-top: 0.2rem;
+}
+
+.img-tableDetail{
+  padding: 0 1rem;
+    width: 12rem;
+    height: 11rem;
+}
+.img-tableDetail img{
+  height: 6rem;
+  width: 6rem;
+  object-fit: cover;
+}
+.img-tableDetail span{
+  display: block;
+  font-size: 14px;
+  margin-top: 0.2rem;
+}
+
+
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
 @media only screen and (max-width: 600px) {
   .img-upload{

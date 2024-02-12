@@ -689,6 +689,9 @@
                   .w-680{
                     width: 680px ;;
                   }
+                  .container{
+                    width:100rem;
+                  }
                   </style>
                   <div class="container w-680">
                     <div class="row">

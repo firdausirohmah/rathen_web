@@ -17,7 +17,7 @@
 <body>
 <!-- partial:index.partial.html -->
 <header>
-    <div class="container">
+    <div class="container container-logo">
       <div class="navigation center-content">
 
         <div class="logo">
@@ -233,6 +233,9 @@
                   }
                   .container{
                     margin:unset;
+                  }
+                  .container.container-logo{
+                    margin:0 auto;
                   }
                   </style>
                   <div class="container w-680">

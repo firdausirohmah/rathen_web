@@ -276,7 +276,7 @@
               <p class="text-center font-weight-bold mont"><small class="font-weight-bold">Phone No: 0896-1108-1988 | 0878-1108-1988</small></p>
               <div class="row content-center">
                 <div class="col-md-12">
-                  <h3 class="text-center font-weight-bold text-primary mt-2">INVOICE {{$pesanan->status_order}}</h3>
+                  <h3 class="text-center font-weight-bold text-primary mt-2">INVOICE</h3>
                   <p class="text-center"><small >No. 00178/inv-10/2023</small></p>
                 </div>
               </div>

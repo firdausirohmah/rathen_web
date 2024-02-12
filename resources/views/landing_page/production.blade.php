@@ -519,7 +519,7 @@
           <div class="container w-unset">
             @if (isset($pesanan->kd_pembelian))
             <div class="mb-4 ml-3">
-                <a href="/production/design/{{$kode}}" target="_blank" class="btn">Edit Desain
+                <a href="/production/design/{{$kode}}" target="_blank" class="btn">Edit Data
                     <i class="icon icon-doc"></i>
                 </a>
             </div>

@@ -121,17 +121,28 @@ class adminController extends Controller
     {
         
         $kode = $request;
-        
-        // dd($kode);
-        $data = DB::table('tbl_step2')
-            ->join('tbl_quotation_order', 'tbl_step2.kd_step2', '=', 'tbl_quotation_order.kd_step') // Sesuaikan kondisi join
-            ->where('tbl_step2.kd_step2', $kode) // Sesuaikan kondisi WHERE
-            ->select('tbl_quotation_order.*', 'tbl_step2.*') // Pilih kolom yang ingin Anda ambil
+
+        $data = DB::table('tbl_step1')
+            ->join('tbl_step2', 'tbl_step2.kd_step2', '=', 'tbl_step1.kd_step2')
+            ->join('tbl_step3', 'tbl_step3.kd_step3', '=', 'tbl_step1.kd_step2')
+            ->join('user_order', 'user_order.kd_order', '=', 'tbl_step1.kd_step2')
+            ->where('tbl_step1.kd_step2', $kode)
+            ->select('tbl_step1.*', 'tbl_step2.*','tbl_step3.*','user_order.*')
             ->get();
-        // dd($data);
-        foreach ($data as $pesanan) { 
+
+            // Loop through each item in $pesanan to get kategori_harga
+            foreach ($data as $item) {
+                // Assign kategori_harga from each item to $kd_part
+                $kd_part = $item->kategori_harga;
+            }
+
+        
+        $part = DB::table('tbl_part')->where('kd_part', $kd_part)->get();
+
+        foreach ($data as $key) { 
             return view('landing_page.productionStep2', [
-                'data' => $pesanan,
+                'data' =>$key,
+                'pesanan' => $part,
                 'kode' => $kode, 
             ]);
         }

@@ -28,8 +28,45 @@
         <!-- Invoice Tab -->
         <div class="tab-pane fade" id="invoice" role="tabpanel" aria-labelledby="invoice-tab">
           <div class="card card-tab mb-4">
-            <div class="card-header pb-0">
+            <div class="card-header pb-0 d-flex">
               <h6>Invoice</h6>
+              <a data-bs-toggle="modal" data-bs-target="#invoiceCreate" class="btn btn-primary ms-auto">Create <i class="ms-1 fa fa-plus-circle"></i></a>
+                            
+              <!-- Modal -->
+              <div class="modal fade" id="invoiceCreate" tabindex="-1" aria-labelledby="invoiceCreateLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="invoiceCreateLabel">Invoice Input</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      
+                        <div class="mb-3">
+                          <label for="name" class="form-label">Nama Pemesan:</label>
+                          <input type="text" class="form-control" id="name" name="np" placeholder="Enter Name">
+                          <label for="product" class="form-label">Order Product:</label>
+                          <input type="text" class="form-control" id="product" name="product" placeholder="Enter Order">
+                          <label for="total_harga" class="form-label">Total Harga:</label>
+                          <input type="text" class="form-control" id="total_harga" oninput="formatRupiah(this)" name="total_harga" readonly>
+                          <label for="design" class="form-label">Design Payment:</label>
+                          <input type="text" class="form-control" id="design" oninput="formatRupiah(this);calculatePelunasan();" name="biaya_desain" placeholder="Enter Design Payment">
+                          <label for="dp" class="form-label">Initial Payment (DP):</label>
+                          <input type="text" class="form-control" id="dp" oninput="formatRupiah(this);calculatePelunasan();" name="biaya_dp" placeholder="Enter Initial Payment">
+                          <label for="pelunasan" class="form-label">Final Payment:</label>
+                          <input type="text" class="form-control" id="pelunasan" oninput="formatRupiah(this)" name="biaya_pelunasan" readonly>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="submit" class="btn btn-primary" value="Submit" id="submit_create_btn">Submit</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- end modal -->
+
             </div>
             <div class="card-body px-0 pt-0 pb-2">
               <div class="table-responsive p-0">
@@ -97,6 +134,12 @@
                       </td>
                       <td class="align-middle text-center text-sm">
                         <div class="d-flex">
+                          @php
+                              $link = 'production';
+                              $kode = $item->kd_step2;
+                              $link_kode = $link . '/' . $kode;
+                              $baseUrl = URL::to('/');
+                          @endphp
                           <a href="{{ $baseUrl }}/{{ $link_kode }}" target="_blank" class="btn btn-primary btn-action me-1"><i class="fas fa-pen" aria-hidden="true"></i></a>
                           <form action="{{ route('data.destroyInv', $item->kd_step2) }}" method="POST">
                               @csrf
@@ -160,7 +203,7 @@
                         $processed = $order->contains('kd_step2', $item->kd_step);
                         @endphp
                         @if($processed)
-                        <span class="text-success">Clicked</span>
+                        <span class="text-dark">Clicked</span>
                         @else
                         <form action="{{ url('/form-1/action') }}" method="POST" id="submit_biaya">
                             @csrf
@@ -193,7 +236,7 @@
                             <input type="hidden" class="input txt" value="{{ $item->kerah_rib }}" name="kerah_rib" readonly/>
                             <input type="hidden" class="input txt" value="{{ $item->tangan_rib }}" name="tangan_rib" readonly/>
 
-                            <a data-bs-toggle="modal" data-bs-target="#invoiceModal" data-kode="{{ $item->kd_step }}" class="btn btn-success btn-sm m-0">Invoice <i class="ps-1 fa fa-sign-out" aria-hidden="true"></i></a>
+                            <a data-bs-toggle="modal" data-bs-target="#invoiceModal" data-kode="{{ $item->kd_step }}" class="btn btn-primary btn-sm m-0">Invoice <i class="ps-1 fa fa-sign-out" aria-hidden="true"></i></a>
                             
                             <!-- Modal -->
                             <div class="modal fade" id="invoiceModal" tabindex="-1" aria-labelledby="invoiceModalLabel" aria-hidden="true">
@@ -217,7 +260,7 @@
                                   </div>
                                   <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-success" value="Submit" id="submit_biaya_btn">Submit</button>
+                                    <button type="submit" class="btn btn-primary" value="Submit" id="submit_biaya_btn">Submit</button>
                                   </div>
                                 </div>
                               </div>

@@ -25,10 +25,9 @@
       </div>
     </div>
   </header>
-  <section class="content" style="padding-top:3rem;">
-    <a class="btn" style="padding:1rem;margin-left:2rem" href="/invoice/{{$kode}}">
-      <i class="icon icon-arrow-left"></i>
-      Back
+  <section class="content content-back">
+    <a class="btn btn-back" href="/invoice/{{$kode}}">
+      <i class="icon-arrow-left"></i>
     </a>
     <div class="container">
       <div class="payment">
@@ -55,29 +54,12 @@
               <div class="form__cc">
                 <div class="row">
                   <div class="field">
-                    <div class="title">Kategori Harga
+                    <div class="title">Product
                     </div>
-                    <input type="text" class="input txt" value="{{ $data->kategori_harga }}" readonly/>
+                    <input type="text" class="input txt" value="{{ $data->product }}" readonly/>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="field">
-                    <div class="title">Kualitas
-                    </div>
-                    <input type="text" class="input txt" value="{{ $data->tipe_kualitas }}" readonly/>
-                  </div>
-                </div>
-                <!-- <div class="row">
-                  <div class="field small">
-                    <div class="title">Pola lengan
-                    </div>
-                    <select name="pola_lengan" class="input ddl">
-                      <option value="Normal">Normal</option>
-                      <option value="Raglan">Reglan</option>
-                    </select>
-                    <span class="title">+15,000 pola raglan</span>
-                  </div>
-                </div> -->
+                
                 <div class="row">
                   <div class="field">
                     <div class="title">Model Kerah
@@ -201,7 +183,7 @@
 
 
     <div class="container">
-      <div class="actions pt135">
+      <div class="actions pt275">
         <button href="/form/orderStep4" class="btn action__submit">Save & Next
           <i class="icon icon-arrow-right-circle"></i>
         </button>

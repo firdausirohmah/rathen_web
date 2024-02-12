@@ -25,10 +25,9 @@
       </div>
     </div>
   </header>
-  <section class="content" style="padding-top:3rem;">
-    <a class="btn" style="padding:1rem;margin-left:2rem" href="/invoice/{{$kode}}">
-      <i class="icon icon-arrow-left"></i>
-      Back
+  <section class="content content-back">
+    <a class="btn btn-back" href="/invoice/{{$kode}}">
+      <i class="icon-arrow-left"></i>
     </a>
     <div class="container">
       
@@ -61,8 +60,11 @@
                     </div>
                     <div class="form-uploads w-17">
                     <label for="fileInput1" id="customLabel1" class="customLabel" style="width:20rem;">
+                        <div class="img-upload" id="cutomerDesign">
+                          <img src="{{ asset('asset/images/content/customerDesign.png') }}" alt="">
+                        </div>
                         <div class="form-upload payment__type--cc">
-                            <i class="icon icon-cloud-upload"></i>Upload
+                            <i class="icon icon-cloud-upload"></i>ReUpload
                             <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput1" name="djp" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" required
                                   onchange="updateFileName('fileInput1')">
                         </div>
@@ -78,8 +80,11 @@
                     </div>
                     <div class="form-uploads w-17">
                     <label for="fileInput2" id="customLabel2" class="customLabel" style="width:20rem;">
+                        <div class="img-upload" id="cutomerDesign">
+                          <img src="{{ asset('asset/images/content/customerDesign.png') }}" alt="">
+                        </div>
                         <div class="form-upload payment__type--cc">
-                            <i class="icon icon-cloud-upload"></i>Upload
+                            <i class="icon icon-cloud-upload"></i>ReUpload
                             <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput2" name="djk" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" required
                                   onchange="updateFileName('fileInput2')">
                         </div>
@@ -155,8 +160,12 @@
                 </div>
                 <div class="form-uploads">
                     <label for="fileInput6" id="customLabel6" class="customLabel" style="width:20rem;">
+                      <div class="img-upload" id="extraDesign">
+                        <img src="{{ asset('asset/images/content/customerDesign.png') }}" alt="">
+                        <span class="extraDesign">+15.000/pcs</span>
+                      </div>
                       <div class="form-upload payment__type--cc">
-                      <i class="icon icon-cloud-upload"></i>Upload</div>
+                      <i class="icon icon-cloud-upload"></i>ReUpload</div>
                       <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput6" name="djk" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" 
                                   onchange="updateFileName('fileInput6')">
                       <!-- <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput6" name="t1b" class="fileInput form-control fw-lighter hidden" placeholder="Upload File"> -->
@@ -173,7 +182,11 @@
                 </div>
                 <div class="form-uploads">
                     <label for="fileInput7" id="customLabel7" class="customLabel" style="width:20rem;">
-                    <div class="form-upload payment__type--cc">
+                      <div class="img-upload" id="extraDesign">
+                        <img src="{{ asset('asset/images/content/customerDesign.png') }}" alt="">
+                        <span class="extraDesign">+30.000/pcs</span>
+                      </div>
+                      <div class="form-upload payment__type--cc">
                       <i class="icon icon-cloud-upload"></i>Upload</div>
                       <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput7" name="djk" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" 
                                   onchange="updateFileName('fileInput7')">

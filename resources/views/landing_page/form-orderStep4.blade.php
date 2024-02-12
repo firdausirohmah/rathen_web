@@ -25,10 +25,9 @@
       </div>
     </div>
   </header>
-  <section class="content" style="padding-top:3rem;">
-    <a class="btn" style="padding:1rem;margin-left:2rem" href="/invoice/{{$kode}}">
-      <i class="icon icon-arrow-left"></i>
-      Back
+  <section class="content content-back">
+    <a class="btn btn-back" href="/invoice/{{$kode}}">
+      <i class="icon-arrow-left"></i>
     </a>
     <div class="container">
       <div class="payment">

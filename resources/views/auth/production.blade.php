@@ -158,13 +158,13 @@
                         $processed = $order->contains('status_order', 'produksi');
                         @endphp
                         @if($processed)
-                        <span class="text-success">Approved</span>
+                        <span class="text-dark">Approved</span>
                         @else
                         <form action="{{ url('/approval/action') }}" method="POST" >
                             @csrf
                             <input type="hidden" class="input txt" value="{{ $item->kd_step2 }}" name="kd_step" readonly/>
 
-                            <button class="btn btn-success btn-sm m-0">Approve <i class="ps-1 fa fa-sign-out" aria-hidden="true"></i></button>
+                            <button class="btn btn-primary btn-sm m-0">Approve <i class="ps-1 fa fa-sign-out" aria-hidden="true"></i></button>
                             
                         </form>
                         @endif

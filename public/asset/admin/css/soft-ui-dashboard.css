@@ -3561,21 +3561,21 @@ fieldset:disabled .btn {
 
 .btn-primary {
   color: #fff;
-  background-color: #cb0c9f;
-  border-color: #cb0c9f;
+  background-color: #000!important;
+  border-color: #000;
 }
 
 .btn-primary:hover {
   color: #fff;
-  background-color: #ad0a87;
-  border-color: #a20a7f;
+  background-color: #383636;
+  border-color: #383636;
 }
 
 .btn-check:focus+.btn-primary,
 .btn-primary:focus {
   color: #fff;
-  background-color: #ad0a87;
-  border-color: #a20a7f;
+  background-color: #383636;
+  border-color: #383636;
   box-shadow: 0 0 0 0.2rem rgba(211, 48, 173, 0.5);
 }
 
@@ -18919,8 +18919,8 @@ fieldset:disabled .btn {
 
 .btn-primary:hover,
 .btn.bg-gradient-primary:hover {
-  background-color: #cb0c9f;
-  border-color: #cb0c9f;
+  background-color: #383636;
+  border-color: #383636;
 }
 
 .btn-primary .btn.bg-outline-primary,

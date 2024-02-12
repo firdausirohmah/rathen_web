@@ -317,7 +317,7 @@ input[type=text] {
 }
 .form-uploads {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
 }
 
@@ -488,6 +488,9 @@ input[type=text] {
 .pt250{
     padding-top: 250px;
 }
+.pt275{
+    padding-top: 275px;
+}
 .pt200{
   padding-top: 200px!important;
 }
@@ -609,10 +612,6 @@ input[type=text] {
 .field-p label:hover {
   border: 2px solid #000; /* Change border color on hover */
 }
-
-
-
-
 
 /* modal */
 
@@ -1023,10 +1022,44 @@ input[type=text] {
 .w-unset-quo{
   width: unset;
 }
+.btn-back{
+  padding: 1rem 2rem;
+  margin-left: 2rem;
+}
+.content-back{
+  padding-top: 3rem;
+}
 
+.img-upload{
+  width: auto;
+  height: 11rem;
+}
+.img-upload img{
+  height: 10rem;
+  width: 16rem;
+  object-fit: cover;
+}
+.img-upload span{
+  line-height: normal;
+  font-size: 14px;
+  display: block;
+  color: #b70f0f;
+}
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
 @media only screen and (max-width: 600px) {
+  .img-upload{
+    width: auto;
+    height: 8rem;
+  }
+  .img-upload img{
+    width: 10rem;
+    height:7rem;
+  }
+
+  .content-back{
+    padding-top: 1rem;
+  }
   header{
     min-height: 150px;
   }
@@ -1101,11 +1134,22 @@ input[type=text] {
   .block-mobile{
     display: block;
   }
-  .payment__types{
+  /* .payment__types{
     flex-direction: column;
+  } */
+  .btn-back{
+    padding: 0.5rem 1rem;
+    margin-left: 0.5rem;
   }
   .payment__types a{
+    font-size: 10px;
+    padding: 0.5rem 0.5rem;
     margin-bottom: 10px;
+    margin-right: 1px;
+  }
+  .payment__type .icon {
+    font-size: 16px;
+    margin-right: 8px;
   }
   .payment__type + .payment__type{
     margin-left: unset;
@@ -1125,6 +1169,9 @@ input[type=text] {
     width: 100%;
   }
   .pt250{
+    padding-top: unset;
+  }
+  .pt275{
     padding-top: unset;
   }
   .field.small{
@@ -1230,6 +1277,9 @@ input[type=text] {
     width: 21rem;
   }
   .pt250{
+    padding-top: 0;
+  }
+  .pt275{
     padding-top: 0;
   }
   .payment__shipping{

@@ -165,9 +165,6 @@ Route::controller(adminController::class)->group(function () {
     Route::post('/approval/action', 'approval_action')->name('approval_action');
     Route::delete('/data/invoice/{id}', 'destroyInvoice')->name('data.destroyInv');
     Route::delete('/data/quotation/{id}', 'destroyQuo')->name('data.destroyQuo');
-
-
-
 });
 // Auth::routes();
 

@@ -74,7 +74,7 @@ Route::controller(PriceListController::class)->group(function () {
 });
 Route::controller(HomeController::class)->group(function () {
     Route::get('/price-list', 'priceList')->name('priceList');
-    Route::get('/price-list/{id}', 'priceList')->name('priceList');
+    // Route::get('/price-list/{id}', 'priceList')->name('priceList');
     Route::post('/daftar/actiondaftar', 'actionregister')->name('actionregister');
 });
 // location
@@ -104,10 +104,10 @@ Route::controller(PesananController::class)->group(function () {
     Route::get('/form-1/generate/t', 'generate')->name('generate');
     Route::post('/form-1/quotation', 'quotation')->name('quotation');
     Route::get('/form-1/quotation/{id}', 'quotation_view')->name('quotation_view');
-    Route::get('/form-1/invoice/{id}', 'invoice')->name('invoice');
+    // Route::get('/form-1/invoice/{id}', 'invoice')->name('invoice');
     Route::post('/form-1/action', 'addForm1')->name('addForm1');
     Route::get('/form-2/{id}', 'form_2')->name('form_2');
-    Route::post('/form-2', 'upload')->name('upload');
+    Route::post('/form-2/add', 'addForm2')->name('addForm2');
     Route::get('/form-3/{id}', 'form_3')->name('form_3');
     Route::post('/form-3/add', 'addForm3')->name('addForm3');
     Route::get('/form-4/{id}', 'form_4')->name('form_4');

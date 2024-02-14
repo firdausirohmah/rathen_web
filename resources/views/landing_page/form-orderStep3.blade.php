@@ -1,24 +1,28 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rathen</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700|Open+Sans:400,600'>
-<!-- <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700|Open+Sans:400,600'> -->
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css'><link rel="stylesheet" href="{{ asset('asset/css/formOrder.css') }}">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700|Open+Sans:400,600'>
+  <!-- <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700|Open+Sans:400,600'> -->
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css'>
+  <link rel="stylesheet" href="{{ asset('asset/css/formOrder.css') }}">
 
 </head>
+
 <body>
-<!-- partial:index.partial.html -->
-<header>
+  <!-- partial:index.partial.html -->
+  <header>
     <div class="container">
       <div class="navigation center-content">
 
         <div class="logo">
-          <img class="icon icon-basket" src="{{asset('asset/cfind/source/images/rathen.png')}}" width="12%"></div>
-        
+          <img class="icon icon-basket" src="{{asset('asset/cfind/source/images/rathen.png')}}" width="12%">
+        </div>
+
       </div>
       <div class="notification">
         Custom Rathen - Form Order
@@ -41,7 +45,7 @@
             <i class="icon icon-pencil"></i>Spesifikasi</a>
           <a class="payment__type payment__type--paypal" href="/form-4/{{$kode}}">
             <i class="icon icon-docs"></i>Form Data</a>
-          
+
         </div>
 
         <div class="payment__info">
@@ -51,15 +55,16 @@
             </div>
             <form action="{{ route('addForm3') }}" method="POST">
               @csrf
+              <input type="hidden" name="idForm3" value="{{$kode}}" />
               <div class="form__cc">
                 <div class="row">
                   <div class="field">
                     <div class="title">Product
                     </div>
-                    <input type="text" class="input txt" value="{{ $data->product }}" readonly/>
+                    <input type="text" class="input txt" value="{{ $data->product }}" readonly />
                   </div>
                 </div>
-                
+
                 <div class="row">
                   <div class="field">
                     <div class="title">Model Kerah
@@ -77,7 +82,7 @@
                       <option value="K.R 10">K.R 10</option>
                       <option value="K.R 11">K.R 11</option>
                       <option value="K.R 12">K.R 12</option>
-                      <option value="K.R 13">K.R 13</option> 
+                      <option value="K.R 13">K.R 13</option>
                     </select>
                   </div>
                 </div>
@@ -85,7 +90,7 @@
                   <div class="field">
                     <div class="title">Bahan baju
                     </div>
-                    <input type="text"  name="bb" class="input txt" value='' />
+                    <input type="text" name="bb" class="input txt" value='' />
                   </div>
                 </div>
                 <div class="row">
@@ -102,9 +107,9 @@
               <i class="icon icon-info"></i> Model Kerah
             </div>
             <div class="row">
-                <div class="image">
-                  <div class="form-upload payment__type--cc">
-                    <img src="{{ asset('asset/images/KERAH.jpg')}}" alt="">
+              <div class="image">
+                <div class="form-upload payment__type--cc">
+                  <img src="{{ asset('asset/images/KERAH.jpg')}}" alt="">
                 </div>
                 <div class="table">
                   <div class="payment__title fw-6">
@@ -141,58 +146,58 @@
                       </td>
                     </tr>
                   </table>
-                </div>    
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div id="myModal" class="modal">
-      <span class="close">&times;</span>
-      <img class="modal-content" id="zoomed-in-image">
-    </div>
-
-    <script>
-      // Get the modal
-      var modal = document.getElementById("myModal");
-
-      // Get the image and insert it inside the modal
-      var img = document.querySelector(".form-upload img");
-      var modalImg = document.getElementById("zoomed-in-image");
-      img.onclick = function() {
-        modal.style.display = "block";
-        modalImg.src = this.src;
-      };
-
-      // Get the <span> element that closes the modal
-      var span = document.getElementsByClassName("close")[0];
-
-      // When the user clicks on <span> (x), close the modal
-      span.onclick = function() {
-        modal.style.display = "none";
-      };
-
-      // When the user clicks anywhere outside of the modal, close it
-      window.onclick = function(event) {
-        if (event.target == modal) {
-          modal.style.display = "none";
-        }
-      };
-    </script>
-
-
-    <div class="container">
-      <div class="actions pt275">
-        <button href="/form/orderStep4" class="btn action__submit">Save & Next
-          <i class="icon icon-arrow-right-circle"></i>
-        </button>
-        <a href="{{ url('/form-2') }}" class="backBtn">Go Back to Design</a>
+      <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="zoomed-in-image">
       </div>
-    </form>
+
+      <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the image and insert it inside the modal
+        var img = document.querySelector(".form-upload img");
+        var modalImg = document.getElementById("zoomed-in-image");
+        img.onclick = function() {
+          modal.style.display = "block";
+          modalImg.src = this.src;
+        };
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+          modal.style.display = "none";
+        };
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        };
+      </script>
+
+
+      <div class="container">
+        <div class="actions pt275">
+          <button type="submit" class="btn action__submit">Save & Next
+            <i class="icon icon-arrow-right-circle"></i>
+          </button>
+          <a href="{{ url('/form-2/'.$kode) }}" class="backBtn">Go Back to Design</a>
+        </div>
+        </form>
   </section>
   </div>
-<!-- partial -->
-  
+  <!-- partial -->
 </body>
+
 </html>

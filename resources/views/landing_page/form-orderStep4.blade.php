@@ -1,24 +1,28 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rathen</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700|Open+Sans:400,600'>
-<!-- <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700|Open+Sans:400,600'> -->
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css'><link rel="stylesheet" href="{{ asset('asset/css/formOrder.css') }}">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700|Open+Sans:400,600'>
+  <!-- <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700|Open+Sans:400,600'> -->
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css'>
+  <link rel="stylesheet" href="{{ asset('asset/css/formOrder.css') }}">
 
 </head>
+
 <body>
-<!-- partial:index.partial.html -->
-<header>
+  <!-- partial:index.partial.html -->
+  <header>
     <div class="container">
       <div class="navigation center-content">
 
         <div class="logo">
-          <img class="icon icon-basket" src="{{asset('asset/cfind/source/images/rathen.png')}}" width="12%"></div>
-        
+          <img class="icon icon-basket" src="{{asset('asset/cfind/source/images/rathen.png')}}" width="12%">
+        </div>
+
       </div>
       <div class="notification">
         Custom Rathen - Form Order
@@ -41,7 +45,7 @@
             <i class="icon icon-pencil"></i>Spesifikasi</a>
           <a class="payment__type payment__type--paypal active" href="/form-4/{{$kode}}">
             <i class="icon icon-docs"></i>Form Data</a>
-          
+
         </div>
 
         <div class="payment__info">
@@ -63,9 +67,9 @@
                         <th>Nomor</th>
                         <th>Ukuran</th>
                       </tr>
-                      
+
                       <?php $i = 1; ?>
-                      
+
                       @foreach ($pesanan as $row)
                       <tr>
                         <td>{{ $i++; }}</td>
@@ -73,8 +77,8 @@
                         <td>{{ $row->nomor; }}</td>
                         <td>{{ $row->ukuran; }}</td>
                       </tr>
-                      @endforeach 
-                      
+                      @endforeach
+
                     </table>
                   </div>
                 </div>
@@ -87,7 +91,8 @@
                 <div class="payment__title"></div>
                 <div class="form-uploads h-3 w-20">
                   <div class="form-upload payment__type--cc btn-black">
-                    <i class="icon icon-cloud-upload"></i>Upload File</div>
+                    <i class="icon icon-cloud-upload"></i>Upload File
+                  </div>
                 </div>
                 <!-- <input type="text" class="input txt text-validated" value='Upload' /> -->
               </div>
@@ -96,7 +101,8 @@
               <div class="field pt-5">
                 <div class="form-uploads h-3 w-20">
                   <div class="form-upload payment__type--cc btn-black" id="inputDataBtn">
-                    <i class="icon icon-pencil"></i>Input Data</div>
+                    <i class="icon icon-pencil"></i>Input Data
+                  </div>
                 </div>
                 <!-- <input type="text" class="input txt text-validated" value='Upload' /> -->
               </div>
@@ -123,6 +129,7 @@
           <h4>Silahkan inputkan data</h4>
           <form action="{{ route('tambahDataPesanan') }}" id="inputDataForm" method="post">
             @csrf
+            <input type="hidden" name="idDataPesanan" value="{{$kode}}" />
             <label for="namaPunggung">Nama Punggung:</label>
             <input class="input-modal" type="text" id="namaPunggung" name="namaPunggung" required>
 
@@ -137,81 +144,82 @@
         </div>
       </div>
     </div>
-    
+
 
     <div class="container">
       <div class="actions pt135">
         @if ($sukses == 'sukses')
-          <a href="{{ url('invoice', ['kode' => $kode]) }}" type="button"  style="font-family: 'Montserrat';" class="btn action__submit"> Save & Next
+        <a href="{{ url('invoice', ['kode' => $kode]) }}" type="button" style="font-family: 'Montserrat';" class="btn action__submit"> Save & Next
           <i class="icon icon-arrow-right-circle"></i></a>
         @else
-          <a href="{{ url('invoice', ['kode' => $kode]) }}"type="button" style="font-family: 'Montserrat';" class="btn action__submit"> Save & Next
+        <a href="{{ url('invoice', ['kode' => $kode]) }}" type="button" style="font-family: 'Montserrat';" class="btn action__submit"> Save & Next
           <i class="icon icon-arrow-right-circle"></i></a>
         @endif
         <a href="{{ url('/form-3') }}" class="backBtn">Go Back to Specification</a>
       </div>
   </section>
   </div>
-<!-- partial -->
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    var modal = document.getElementById('inputDataModal');
-    var btn = document.getElementById('inputDataBtn');
-    var span = document.getElementsByClassName('close')[0];
-    var form = document.getElementById('inputDataForm');
-    var tableBody = document.querySelector('.wp-table tbody');
+  <!-- partial -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var modal = document.getElementById('inputDataModal');
+      var btn = document.getElementById('inputDataBtn');
+      var span = document.getElementsByClassName('close')[0];
+      var form = document.getElementById('inputDataForm');
+      var tableBody = document.querySelector('.wp-table tbody');
 
-    // Counter for row index
-    var rowIndex = 1;
+      // Counter for row index
+      var rowIndex = 1;
 
-    // Display the modal when the button is clicked
-    btn.onclick = function () {
-      modal.style.display = 'block';
-    };
+      // Display the modal when the button is clicked
+      btn.onclick = function() {
+        modal.style.display = 'block';
+      };
 
-    // Close the modal when the close button is clicked
-    span.onclick = function () {
-      modal.style.display = 'none';
-    };
-
-    // Close the modal when clicking outside of it
-    window.onclick = function (event) {
-      if (event.target == modal) {
+      // Close the modal when the close button is clicked
+      span.onclick = function() {
         modal.style.display = 'none';
-      }
-    };
+      };
 
-    // // Handle form submission
-    // form.addEventListener('submit', function (e) {
-    //   e.preventDefault();
+      // Close the modal when clicking outside of it
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = 'none';
+        }
+      };
 
-    //   // Get input values
-    //   var name = document.getElementById('name').value;
-    //   var number = document.getElementById('number').value;
-    //   var size = document.getElementById('size').value;
+      // // Handle form submission
+      // form.addEventListener('submit', function (e) {
+      //   e.preventDefault();
 
-    //   // Check if any input is provided
-    //   if (name || number || size) {
-    //     // Create a new table row with the input values
-    //     var newRow = tableBody.insertRow();
-    //     var cell1 = newRow.insertCell(0);
-    //     var cell2 = newRow.insertCell(1);
-    //     var cell3 = newRow.insertCell(2);
-    //     var cell4 = newRow.insertCell(3);
-    //     cell1.innerHTML = rowIndex++; // Increment the counter
-    //     cell2.innerHTML = name || '-';
-    //     cell3.innerHTML = number || '-';
-    //     cell4.innerHTML = size || '-';
-    //   }
+      //   // Get input values
+      //   var name = document.getElementById('name').value;
+      //   var number = document.getElementById('number').value;
+      //   var size = document.getElementById('size').value;
 
-    //   // Close the modal
-    //   modal.style.display = 'none';
+      //   // Check if any input is provided
+      //   if (name || number || size) {
+      //     // Create a new table row with the input values
+      //     var newRow = tableBody.insertRow();
+      //     var cell1 = newRow.insertCell(0);
+      //     var cell2 = newRow.insertCell(1);
+      //     var cell3 = newRow.insertCell(2);
+      //     var cell4 = newRow.insertCell(3);
+      //     cell1.innerHTML = rowIndex++; // Increment the counter
+      //     cell2.innerHTML = name || '-';
+      //     cell3.innerHTML = number || '-';
+      //     cell4.innerHTML = size || '-';
+      //   }
 
-    //   // Clear the form fields for the next input
-    //   form.reset();
-    // });
-  });
-</script>
+      //   // Close the modal
+      //   modal.style.display = 'none';
+
+      //   // Clear the form fields for the next input
+      //   form.reset();
+      // });
+    });
+  </script>
 
 </body>
+
 </html>

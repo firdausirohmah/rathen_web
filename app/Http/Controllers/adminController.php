@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use App\Models\ModelStep1;
 use App\Models\pemesananModel;
 use Illuminate\Http\Request;

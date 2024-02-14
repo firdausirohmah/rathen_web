@@ -165,6 +165,40 @@
             </div>
             <div class="row">
               <div class="field">
+                <div class="title">Extra Tulisan 1 Baris
+                </div>
+                <div class="form-uploads">
+                  <label for="fileInput6" id="customLabel6" class="customLabel" style="width:20rem;">
+                    <div class="title" id="statusUpload6">*</div>
+                    <div class="form-upload payment__type--cc">
+                      <i class="icon icon-cloud-upload"></i>Upload
+                    </div>
+                    <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput6" name="t1b" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" onchange="updateFileName('fileInput6', 'statusUpload6')">
+                    <!-- <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput8" name="lk" class="fileInput form-control fw-lighter hidden" placeholder="Upload File"> -->
+                  </label>
+                </div>
+                <!-- <input type="text" class="input txt text-validated" value='Upload' /> -->
+              </div>
+            </div>
+            <div class="row">
+              <div class="field">
+                <div class="title">Extra Logo dan Tulisan
+                </div>
+                <div class="form-uploads">
+                  <label for="fileInput7" id="customLabel7" class="customLabel" style="width:20rem;">
+                    <div class="title" id="statusUpload7">*</div>
+                    <div class="form-upload payment__type--cc">
+                      <i class="icon icon-cloud-upload"></i>Upload
+                    </div>
+                    <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput7" name="ldt" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" onchange="updateFileName('fileInput7', 'statusUpload7')">
+                    <!-- <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput8" name="lk" class="fileInput form-control fw-lighter hidden" placeholder="Upload File"> -->
+                  </label>
+                </div>
+                <!-- <input type="text" class="input txt text-validated" value='Upload' /> -->
+              </div>
+            </div>
+            <div class="row">
+              <div class="field">
                 <div class="title">Logo di lengan kanan
                 </div>
                 <div class="form-uploads">
@@ -275,4 +309,5 @@
     }
   </script>
 </body>
+
 </html>

@@ -125,15 +125,15 @@ class PesananController extends Controller
             $file7Name = '-';
         } else {
             $file7Name = $kode . '_Sponsor-Dada-Logo-Tulisan' . '.' . $ldt->extension();
-            $ldt->move(public_path($storagePath), $file1Name);
+            $ldt->move(public_path($storagePath), $file7Name);
         }
-
+        
         $lk = $request->file('lk');
         if ($lk == null) {
             $file8Name = '-';
         } else {
             $file8Name = $kode . '_Logo-Lengan-R' . '.' . $lk->extension();
-            $lk->move(public_path($storagePath), $file1Name);
+            $lk->move(public_path($storagePath), $file8Name);
         }
 
         $llk = $request->file('llk');
@@ -141,15 +141,15 @@ class PesananController extends Controller
             $file9Name = '-';
         } else {
             $file9Name = $kode . '-Logo-Lengan-LR' . '.' . $llk->extension();
-            $llk->move(public_path($storagePath), $file1Name);
+            $llk->move(public_path($storagePath), $file9Name);
         }
 
         $sbt = $request->file('sbt');
         if ($sbt == null) {
             $file10Name = '-';
         } else {
-            $file10Name = $kode . '_Sponsor-Belakang-t1b' . '.' . $sbt->extension();
-            $sbt->move(public_path($storagePath), $file1Name);
+            $file10Name = $kode . '_Sponsor-Belakang-sbt' . '.' . $sbt->extension();
+            $sbt->move(public_path($storagePath), $file10Name);
         }
 
         $sbl = $request->file('sbl');
@@ -157,7 +157,7 @@ class PesananController extends Controller
             $file11Name = '-';
         } else {
             $file11Name = $kode . '_Sponsor-Belakang-Logo' . '.' . $sbl->extension();
-            $sbl->move(public_path($storagePath), $file1Name);
+            $sbl->move(public_path($storagePath), $file11Name);
         }
 
         ModeStep2::where('kd_step2', $kode)->update([

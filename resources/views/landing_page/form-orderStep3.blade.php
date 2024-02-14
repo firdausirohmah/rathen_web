@@ -66,6 +66,18 @@
                 </div>
 
                 <div class="row">
+                  <div class="field small">
+                    <div class="title">Pola lengan
+                    </div>
+                    <select name="pola_lengan" class="input ddl">
+                      <option value="Normal">Normal</option>
+                      <option value="Raglan">Raglan</option>
+                    </select>
+                    <span class="title">+15,000 pola raglan</span>
+                  </div>
+                </div>
+
+                <div class="row">
                   <div class="field">
                     <div class="title">Model Kerah
                     </div>

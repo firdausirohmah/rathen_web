@@ -56,6 +56,7 @@
             </div>
 
             <div class="form__cc">
+
               <div class="row">
                 <div class="field">
                   <div class="title">Product
@@ -101,6 +102,179 @@
               </div>
             </div>
 
+          </div>
+
+          <div class="payment__order2">
+            <div class="payment__title fw-6">
+              <i class="icon icon-plus"></i> Extra
+            </div>
+            <div class="row">
+              <div class="field">
+                <div class="title">Note for Form
+                </div>
+                <textarea rows="5" type="text" class="input txt" value="{{ $data->product }}"> </textarea>
+                <!-- JUUN Text areanya  -->
+              </div>
+            </div>
+          </div>
+          
+        </div>
+
+        <div class="payment__info">
+          <div class="payment__cc">
+            <div class="payment__title fw-6">
+              <i class="icon icon-pencil"></i>Extra Data Order
+            </div>
+
+            <div class="form__cc">
+              
+              <div class="row">
+                <div class="field">
+                  <div class="title">Kerah pakai kancing
+                  </div>
+                  <input type='checkbox' id='kerah_kancing' name='kerah_kancing' value='10000'>
+                  <label class='label_harga' class='label_harga' for='kerah_kancing'>(+10,000)</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="field">
+                  <div class="title">Badan bawah melengkung
+                  </div>
+                  <input type='checkbox' id='bb_melengkung' name='bb_melengkung' value='15000'>
+                          <label class='label_harga' for='bb_lengkung'>(+15,000)</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="field">
+                  <div class="title">Lengan pola raglan
+                  </div>
+                  <input type='checkbox' id='lengan_raglan' name='lengan_raglan' value='15000'>
+                          <label class='label_harga' for='lengan_raglan'>(+15,000)</label>
+                </div>
+              </div>
+              <div></div>
+              <div class="row">
+                <div class="field">
+                  <div class="title">Lengan Panjang
+                  </div>
+                  <div>
+                    <input type='text' class='input txt2' placeholder='Jumlah' name='lengan_panjang'/>
+                    <span class='title'>PCS</span><br>
+                  </div>
+                  <span>(+30,000)</span>
+                </div>
+              </div>
+              
+
+              {{--<div class="card mt-4-mobile">
+                <div class="card-body">
+                  <h5 class="card-title mb-4">Extra</h5>
+                  <div>
+                    <h6 class='card-subtitle text-black-50'>Add Cost</h6>
+                    <div class='payment__shipping'>
+
+                      <div class='field small'>
+                        <div class='title'>Lengan Panjang</div>
+                        <div>
+                          <input type='text' class='input txt2' placeholder='Jumlah' name='lengan_panjang'/>
+                          <span class='title'>PCS</span><br>
+                        </div>
+                        <span>(+30,000)</span>
+                      </div>
+
+                      <div class='title pt-3'>Big Size</div>
+                      <div class='field small pt-0'>
+                        <div class='title'>- Size 2XL</div>
+                        <div>
+                          <input type='text' class='input txt2' placeholder='Jumlah' name='s2xl'/>
+                          <span class='title'>PCS</span><br>
+                        </div>
+                        <span>(+20,000)</span>
+                      </div>
+                      <div class='field small'>
+                        <div class='title'>- Size 3XL</div>
+                        <div>
+                          <input type='text' class='input txt2' placeholder='Jumlah' name='s3xl'/>
+                          <span class='title'>PCS</span><br>
+                        </div>
+                        <span>(+35,000)</span>
+                      </div>
+                      <div class='field small'>
+                        <div class='title'>- Size >4XL</div>
+                        <div>
+                          <input type='text' class='input txt2' placeholder='Jumlah' name='s4xl'/>
+                          <span class='title'>PCS</span><br>
+                        </div>
+                        <span>(+50,000)</span>
+                      </div>
+
+                      <div class='field small'>
+                        <div class='title'>Celana printing</div>
+                        <div class='ms-auto'>
+                          <input type='checkbox' id='celana_printing' name='celana_printing' value='50000'>
+                          <label class='label_harga' for='celana_printing'>(+50,000)</label>
+                        </div>
+                      </div>
+
+                      <div class='field small'>
+                        <div class='title'>Celana panjang PRO</div>
+                        <div>
+                          <input type='text' class='input txt2' placeholder='Jumlah' name='celana_pro'/>
+                          <span class='title'>PCS</span><br>
+                        </div>
+                        <span>(+150,000)</span>
+                      </div>
+                      <div class='field small'>
+                        <div class='title'>Kaoskaki</div>
+                        <div>
+                          <input type='text' class='input txt2' placeholder='Jumlah' name='kaoskaki'/>
+                          <span class='title'>PCS</span><br>
+                        </div>
+                        <span>(+50,000)</span>
+                      </div>
+                    </div>
+                    
+                    <h6 class='card-subtitle text-black-50 mt-4'>Upgrade Fitur</h6>
+                    <div class='payment__shipping'>
+
+                      <div class='field small'>
+                        <div class='title'>Bahan embos</div>
+                        <div class='ms-auto'>
+                          <input type='checkbox' id='bahan_embos' name='bahan_embos' value='20000'>
+                          <label class='label_harga' for='bahan_embos'>(+20,000)</label>
+                        </div>
+                      </div>
+                      <div class='field small'>
+                        <div class='title'>Logo 3D</div>
+                        <div class='ms-auto'>
+                          <input type='checkbox' id='logo_3d' name='logo_3d' value='30000'>
+                          <label class='label_harga' for='logo_3d'>(+30,000)</label>
+                        </div>
+                      </div>
+                      <div class='field small'>
+                        <div class='title'>Kerah elastic rib</div>
+                        <div class='ms-auto'>
+                          <input type='checkbox' id='kerah_rib' name='kerah_rib' value='20000'>
+                          <label class='label_harga' for='kerah_rib'>(+20,000)</label>
+                        </div>
+                      </div>
+                      <div class='field small'>
+                        <div class='title'>Ujung tangan elastic rib</div>
+                        <div class='ms-auto'>
+                          <input type='checkbox' id='tangan_rib' name='tangan_rib' value='20000'>
+                          <label class='label_harga' for='tangan_rib'>(+20,000)</label>
+                        </div>
+                      </div>
+                      
+                    </div>
+                  </div>
+                  <!-- <h6 class="card-subtitle mb-2 text-body-secondary">Simulasi Harga</h6> -->
+
+                  <!-- <button type="submit" class="btn btn-outline-secondary w-100 mt-5" id="QuotationBtn">Order Now</button> -->
+                </div>
+              </div>--}}
+
+            </div>
           </div>
         </div>
 

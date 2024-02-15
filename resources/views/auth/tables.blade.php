@@ -110,7 +110,6 @@
                   </td>
                   <td>
                     {{ $item->tipe_kualitas }} : {{ $item->kategori_harga }}
-
                   </td>
                   <td>
                     Rp. <?= number_format($item->total_harga, 0, ','); ?>
@@ -303,6 +302,4 @@
     </div>
   </div>
 </div>
-
-
 @endsection

@@ -67,13 +67,14 @@
                   $jharga = $pesanan->harga;
                   $total = $jqty * $jharga;
                   $subtotal = 0;
+                  $pathDataClient = "asset/dataClient/";
                   ?>
                   <tbody>
                     <tr>
                       <td>
                         <div class="img-tableView">
                           <b class="title">Design - Pemain</b>
-                          <img src="{{ asset('asset/images/content/rathenDesignPutih.jpg') }}">
+                          <img src="{{ asset(asset($pathDataClient.$pesanan->design_jersey_pemain)) }}">
                           <span><b>Size</b>: S-3, M-11, L-14, XL-5, 2XL-1</span>
                         </div>
                       </td>
@@ -81,18 +82,17 @@
                         <div class="img-tableDetail">
                           <img src="{{ asset('asset/images/price-list/komparasi/fabrics.jpg') }}">
                           <span class="font-weight-bold">Pola Badan:</span>
-                          <span>Slimfit</span>
+                          <span>{{ $pesanan->badan_bawah }}</span>
                         </div>
                         <div class="img-tableDetail">
                           <img src="{{ asset('asset/extra/putih2.png') }}">
                           <span class="font-weight-bold">Pola Lengan:</span>
-                          <span>Normal</span>
+                          <span>{{ $pesanan->pola_lengan }}</span>
                         </div>
                         <div class="img-tableDetail">
                           <img src="{{ asset('asset/extra/casual/C-3.png') }}">
                           <span class="font-weight-bold">Jenis Kerah:</span>
-                          <span>V3</span>
-                          <span>(Putih/Dongker - Gold)</span>
+                          <span>{{ $pesanan->model_kerah }}</span>
                         </div>
                         <div class="img-tableDetail">
                           <img src="{{ asset('asset/polabadan/belakangNormal.png') }}">
@@ -117,17 +117,15 @@
                         <div class="img-tableDetail">
                           <img src="{{ asset('asset/images/kaoskaki.jpeg') }}">
                           <span class="font-weight-bold">Kaoskaki:</span>
-                          <span>tidak</span>
+                          <span>{{ $pesanan->kaoskaki }}</span>
                         </div>
-
                       </td>
-
                     </tr>
                     <tr>
                       <td rowspan="2">
                         <div class="img-tableView">
                           <b class="title">Design - Kiper</b>
-                          <img src="{{ asset('asset/images/content/rathenDesign.jpg') }}">
+                          <img src="{{ asset(asset($pathDataClient.$pesanan->design_jersey_kiper)) }}">
                           <span><b>Size</b>: M-2, L-2</span>
                         </div>
                       </td>

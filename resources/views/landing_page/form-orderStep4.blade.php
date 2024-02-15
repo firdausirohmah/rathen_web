@@ -132,13 +132,10 @@
             <input type="hidden" name="idDataPesanan" value="{{$kode}}" />
             <label for="namaPunggung">Nama Punggung:</label>
             <input class="input-modal" type="text" id="namaPunggung" name="namaPunggung" required>
-
             <label for="nomor">Nomor:</label>
             <input class="input-modal" type="text" id="nomor" name="nomor" required>
-
             <label for="ukuran">Ukuran:</label>
             <input class="input-modal" type="text" id="ukuran" name="ukuran" required>
-
             <button class="btn-modal" type="submit">Save</button>
           </form>
         </div>

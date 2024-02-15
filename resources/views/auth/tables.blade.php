@@ -165,17 +165,14 @@
             <table class="table align-items-center mb-0 display" id="view-quotation" style="width:100%">
               <thead>
                 <tr>
-                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Name
-                  </th>
-                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Whatsapp Number
-                  </th>
+                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Name</th>
+                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Whatsapp Number</th>
                   <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Process</th>
                   <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Email</th>
                   <th class="text-uppercase text-center text-secondary text-xxs font-weight-bolder opacity-7">Address</th>
                   <th class="text-uppercase text-center text-secondary text-xxs font-weight-bolder opacity-7">Order Date</th>
                   <th class="text-uppercase text-center text-secondary text-xxs font-weight-bolder opacity-7">Action</th>
                   <!-- u. kategori dan kualitas -->
-
                   <!-- <th class="text-secondary opacity-7"></th> -->
                 </tr>
               </thead>

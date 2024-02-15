@@ -73,8 +73,8 @@ Route::controller(PriceListController::class)->group(function () {
     Route::post('/store-price-list', 'store')->name('sotre');
 });
 Route::controller(HomeController::class)->group(function () {
-    Route::get('/price-list', 'priceList')->name('priceList');
-    // Route::get('/price-list/{id}', 'priceList')->name('priceList');
+    // Route::get('/price-list', 'priceList')->name('priceList');
+    Route::get('/price-list/{id}', 'priceList')->name('priceList');
     Route::post('/daftar/actiondaftar', 'actionregister')->name('actionregister');
 });
 // location

@@ -47,7 +47,7 @@ class adminController extends Controller
 
         $dataQ = DB::table('tbl_quotation_order')
             ->join('tbl_quotation', 'tbl_quotation_order.kd_quotation', '=', 'tbl_quotation.kd_quotation')
-            ->select('tbl_quotation_order.*','tbl_quotation.*')
+            ->select('tbl_quotation_order.*', 'tbl_quotation.*')
             ->get();
         // dd($data); 
         return view('auth.tables', [
@@ -60,12 +60,12 @@ class adminController extends Controller
     {
         $data = DB::table('tbl_step1')
             ->join('user_order', 'tbl_step1.kd_step2', '=', 'user_order.kd_order')
-            ->select('tbl_step1.*','user_order.*')
+            ->select('tbl_step1.*', 'user_order.*')
             ->get();
 
         $dataQ = DB::table('tbl_quotation_order')
             ->join('tbl_quotation', 'tbl_quotation_order.kd_quotation', '=', 'tbl_quotation.kd_quotation')
-            ->select('tbl_quotation_order.*','tbl_quotation.*')
+            ->select('tbl_quotation_order.*', 'tbl_quotation.*')
             ->get();
         // dd($data); 
         return view('auth.production', [
@@ -74,54 +74,55 @@ class adminController extends Controller
             'quo' => $dataQ,
         ]);
     }
-    public function production_edit($request)
+    public function production_edit(Request $request)
     {
-        $kode = $request;
-        // dd($request);
+        $kode = $request->segment(2);
+
         $data = ModelStep1::where('kd_step4', $kode)
             ->join('tbl_step2', 'tbl_step1.kd_step2', '=', 'tbl_step2.kd_step2')
             ->join('tbl_step3', 'tbl_step1.kd_step3', '=', 'tbl_step3.kd_step3')
             ->join('tbl_part', 'tbl_step1.kategori_harga', '=', 'tbl_part.kd_part')
             ->join('user_order', 'user_order.kd_order', '=', 'tbl_step1.kd_step2')
-            ->select('tbl_step1.*', 'tbl_step2.*', 'tbl_step3.*','tbl_part.harga','user_order.*')
+            ->select('tbl_step1.*', 'tbl_step2.*', 'tbl_step3.*', 'tbl_part.harga', 'user_order.*')
             ->get();
+
         $harga = DB::table('tbl_harga')
             ->join('tbl_logo', 'tbl_harga.id', '=', 'tbl_logo.id_logo')
             ->select('tbl_logo.*', 'tbl_harga.*')
             ->get();
-        
-        foreach ($harga as $h){
+
+        foreach ($harga as $h) {
             $price = $h;
         }
+
         foreach ($data as $pesanan) {
             // dd($pesanan->status_order);
             $JarseyOrder = $pesanan->tipe_kualitas;
-            if($JarseyOrder == 'Stadium'){
-                $JarseyDefault = 'Jarsey'.' - '.$JarseyOrder.' '.$pesanan->kategori_harga;
+            if ($JarseyOrder == 'Stadium') {
+                $JarseyDefault = 'Jarsey' . ' - ' . $JarseyOrder . ' ' . $pesanan->kategori_harga;
                 $Jarsey = strtoupper($JarseyDefault);
-            }else{
-                $JarseyDefault = 'Jarsey'.'-'.$JarseyOrder.' VERSION';
+            } else {
+                $JarseyDefault = 'Jarsey' . '-' . $JarseyOrder . ' VERSION';
                 $Jarsey = strtoupper($JarseyDefault);
-            } 
-            $d = [
-                'Jarsey' => $Jarsey,
-                'pesanan' => $pesanan,
-                'price' => $price, 
-            ];
-            // dd($Jarsey);
-            
+            }
+            // $d = [
+            //     'Jarsey' => $Jarsey,
+            //     'pesanan' => $pesanan,
+            //     'price' => $price,
+            // ];
+
             return view('landing_page.production', [
                 'pesanan' => $pesanan,
                 'price' => $price,
                 'Jarsey' => $Jarsey,
-                'kode' => $kode, 
+                'kode' => $kode,
             ]);
         }
     }
 
     public function production_design($request)
     {
-        
+
         $kode = $request;
 
         $data = DB::table('tbl_step1')
@@ -129,23 +130,23 @@ class adminController extends Controller
             ->join('tbl_step3', 'tbl_step3.kd_step3', '=', 'tbl_step1.kd_step2')
             ->join('user_order', 'user_order.kd_order', '=', 'tbl_step1.kd_step2')
             ->where('tbl_step1.kd_step2', $kode)
-            ->select('tbl_step1.*', 'tbl_step2.*','tbl_step3.*','user_order.*')
+            ->select('tbl_step1.*', 'tbl_step2.*', 'tbl_step3.*', 'user_order.*')
             ->get();
 
-            // Loop through each item in $pesanan to get kategori_harga
-            foreach ($data as $item) {
-                // Assign kategori_harga from each item to $kd_part
-                $kd_part = $item->kategori_harga;
-            }
+        // Loop through each item in $pesanan to get kategori_harga
+        foreach ($data as $item) {
+            // Assign kategori_harga from each item to $kd_part
+            $kd_part = $item->kategori_harga;
+        }
 
-        
+
         $part = DB::table('tbl_part')->where('kd_part', $kd_part)->get();
 
-        foreach ($data as $key) { 
+        foreach ($data as $key) {
             return view('landing_page.productionStep2', [
-                'data' =>$key,
+                'data' => $key,
                 'pesanan' => $part,
-                'kode' => $kode, 
+                'kode' => $kode,
             ]);
         }
     }
@@ -153,7 +154,7 @@ class adminController extends Controller
     public function approval_action(Request $request)
     {
         $kode = $request->kd_step;
-        
+
         // Update the records in the database
         DB::table('user_order')
             ->where('kd_order', $kode)

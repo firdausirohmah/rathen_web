@@ -805,6 +805,22 @@ class PesananController extends Controller
 
         return redirect('/form-4/'.$kode);
     }
+
+    public function editProduction(Request $request)
+    {
+        $kode = $request->idForm3;
+        $pl = $request->pola_lengan;
+        $mk = $request->model_kerah;
+        $bb = $request->bb;
+        $bc = $request->bc;
+        
+        ModeStep3::where('kd_step3', $kode)->update([
+            'pola_lengan' => $pl,
+            'model_kerah' => $mk,
+            'bahan_baju' => $bb,
+            'bahan_celana' => $bc,
+        ]);
+    }
     public function invoice($request)
     {
         $kode = $request;
@@ -899,7 +915,6 @@ class PesananController extends Controller
             $pdf->loadHtml($combinedHtml);
             $pdf->setPaper('A4', 'potrait');
             $pdf->render();
-
 
             return $pdf->stream('invoice.pdf');
         }

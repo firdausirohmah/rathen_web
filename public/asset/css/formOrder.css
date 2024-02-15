@@ -1078,6 +1078,9 @@ input[type=text] {
   font-size: 14px;
   margin-top: 0.2rem;
 }
+textarea {
+  height: 10rem!important;
+}
 
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */

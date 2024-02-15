@@ -120,10 +120,9 @@ class adminController extends Controller
         }
     }
 
-    public function production_design($request)
+    public function production_design(Request $request)
     {
-
-        $kode = $request;
+        $kode = $request->segment(3);
 
         $data = DB::table('tbl_step1')
             ->join('tbl_step2', 'tbl_step2.kd_step2', '=', 'tbl_step1.kd_step2')

@@ -28,7 +28,6 @@
         </div>
 
       </div>
-
       <div class="notification">
         Rathen - Production
       </div>

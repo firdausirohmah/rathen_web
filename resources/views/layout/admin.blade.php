@@ -17,7 +17,10 @@
   <link href="asset/admin/css/nucleo-svg.css" rel="stylesheet" />
   <!-- Font Awesome Icons -->
   <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-sHpExw6Czr5eqxj3VCO3+3IhxGsNSrOHXMrOmrXJ7g6msmzk5tfB+Bk0zE9GKnblm8ggk14az3tmEkp7Z/VSwQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <link href="asset/admin/css/nucleo-svg.css" rel="stylesheet" />
+  <link href="asset/admin/css/admin.css" rel="stylesheet" />
   <!-- CSS Files -->
   <link id="pagestyle" href="asset/admin/css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet" />
 

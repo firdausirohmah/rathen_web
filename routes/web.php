@@ -1,15 +1,13 @@
 <?php
 
 use App\Http\Controllers\adminController;
-use App\Http\Controllers\DeviceController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\loginController;
 use App\Http\Controllers\PesananController;
 use App\Http\Controllers\PriceListController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\registerController;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use PHPUnit\TextUI\XmlConfiguration\Group;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,13 +15,12 @@ use PHPUnit\TextUI\XmlConfiguration\Group;
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
+| routes are loaded by the RouteServiceProvider and all of them will
+| be assigned to the "web" middleware group. Make something great!
 |
 */
-// Route::get('/buat-deskripsi/{kategori}/{kualitas}', [DeskripsiController::class, 'buatDeskripsi']);
 
-// home
+
 Route::get('/', function () {
     return view('landing_page.home');
 });
@@ -143,7 +140,7 @@ Route::get('/part-pricelist', function () {
 Route::controller(loginController::class)->group(function () {
     Route::get('/login', 'login')->name('login');
     Route::post('/login', 'login')->name('loginprocess');
-    Route::post('/login/actionlogin', 'actionlogin')->name('actionlogin');
+    Route::post('login/actionlogin', 'actionlogin')->name('actionlogin');
     Route::get('actionlogout', 'actionlogout')->name('actionlogout');
 });
 Route::controller(registerController::class)->group(function () {
@@ -169,6 +166,19 @@ Route::controller(adminController::class)->group(function () {
         Route::delete('/data/quotation/{id}', 'destroyQuo')->name('data.destroyQuo');
     });
 });
-// Auth::routes();
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth'])->name('dashboard');
+
+// Route::middleware('auth')->group(function () {
+//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+// });
+
+// require __DIR__.'/auth.php';

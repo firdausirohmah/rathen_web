@@ -281,7 +281,7 @@
                   </td>
                   <td>
                     @php
-                    $processed = $order->contains('status_order', 'produksi');
+                    $processed = $item->status_order == 'produksi';
                     @endphp
                     @if($processed)
                     <span class="text-dark">Approved</span>

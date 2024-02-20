@@ -29,9 +29,7 @@ Route::get('/', function () {
 });
 
 // landing page
-Route::get('/page-custom', function () {
-    return view('landing_page.page-costum');
-});
+Route::get('/page-custom', [HomeController::class, 'custom_page'])->name('custom_page');
 
 Route::get('/part-pricelist', function () {
     return view('landing_page.part-pricelist');
@@ -144,6 +142,7 @@ Route::get('/part-pricelist', function () {
 
 Route::controller(loginController::class)->group(function () {
     Route::get('/login', 'login')->name('login');
+    Route::post('/login', 'login')->name('loginprocess');
     Route::post('/login/actionlogin', 'actionlogin')->name('actionlogin');
     Route::get('actionlogout', 'actionlogout')->name('actionlogout');
 });
@@ -153,18 +152,22 @@ Route::controller(registerController::class)->group(function () {
 });
 
 Route::controller(adminController::class)->group(function () {
-    Route::get('/dashboard', 'dashboard')->name('dashboard');
-    Route::get('/view-order', 'vieworder')->name('vieworder');
-    Route::get('/production', 'production')->name('production');
-    Route::get('/production/{id}', 'production_edit')->name('production_edit');
-    Route::get('/production/design/{id}', 'production_design')->name('production_design');
-    Route::get('/finance', 'finance')->name('finance');
-    Route::get('/master', 'master')->name('master');
-    Route::post('/master/updateHargaBahan', 'updateHargaBahan')->name('updateHargaBahan');
-    Route::post('/master/updateHargaLogo', 'updateHargaLogo')->name('updateHargaLogo');
-    Route::post('/approval/action', 'approval_action')->name('approval_action');
-    Route::delete('/data/invoice/{id}', 'destroyInvoice')->name('data.destroyInv');
-    Route::delete('/data/quotation/{id}', 'destroyQuo')->name('data.destroyQuo');
+    Route::middleware('web','auth')->group(function () {
+        Route::get('/dashboard', 'dashboard')->name('dashboard');
+        Route::get('/admin_landingpage', 'landingpage')->name('admin.landingpage');
+        Route::post('/admin_landingpage', 'landingpage_about_us')->name('admin.landingpage.about_us');
+        Route::get('/view-order', 'vieworder')->name('vieworder');
+        Route::get('/production', 'production')->name('production');
+        Route::get('/production/{id}', 'production_edit')->name('production_edit');
+        Route::get('/production/design/{id}', 'production_design')->name('production_design');
+        Route::get('/finance', 'finance')->name('finance');
+        Route::get('/master', 'master')->name('master');
+        Route::post('/master/updateHargaBahan', 'updateHargaBahan')->name('updateHargaBahan');
+        Route::post('/master/updateHargaLogo', 'updateHargaLogo')->name('updateHargaLogo');
+        Route::post('/approval/action', 'approval_action')->name('approval_action');
+        Route::delete('/data/invoice/{id}', 'destroyInvoice')->name('data.destroyInv');
+        Route::delete('/data/quotation/{id}', 'destroyQuo')->name('data.destroyQuo');
+    });
 });
 // Auth::routes();
 

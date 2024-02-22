@@ -10,7 +10,7 @@
  
     <section class="main-banner">
         <div class="main-banner__logo">
-            <img src="{{asset('asset/images/LOGO.png')}}" class="rounded mx-auto d-block" alt="">
+            <img src="{{asset('uploads').'/'.$logo->filename}}" class="rounded mx-auto d-block" alt="">
             </div>
 
             <style>
@@ -518,8 +518,7 @@
         
         <div class="main-banner__video vid ">
             <video muted="muted" loop="loop" id="videohome" autoplay="autoplay" playsinline>
-                <source src="{{asset('asset/cfind/source/files/video.mp4')}}" type="video/mp4">
-                <source src="{{asset('asset/cfind/source/files/video.mp4')}}" type="video/mp4">
+                <source src="{{asset('uploads').'/'.$header_banner->filename}}" type="video/mp4">
              </video>
         </div>
     </section>
@@ -555,6 +554,23 @@
 
                 <div id="carouselExample" class="carousel slide w-100 h-carousel slider" data-ride="carousel">
                     <div class="carousel-inner"> 
+                        @foreach($about_us_media as $index => $data)
+                            @if($data['type'] == 'video')
+                            <div class="carousel-item {{ $index === 0 ? ' active' : '' }}"> 
+                            <video id="video1" class="d-block w-100 csabout" controls autoplay muted> 
+                                    <source src="{{asset('/uploads').'/' .$data['filename']}}" type="video/mp4"> 
+                                    Your browser does not support the video tag.
+                            </video>
+                            </div>
+                            @else
+                        
+                            <div class="carousel-item img-carousel {{ $index === 0 ? ' active' : '' }}">
+                                <img src="{{asset('/uploads').'/' .$data['filename']}}" class="d-block w-100 img-fluid"  alt="swiss"> 
+                            </div>
+                            @endif
+                        @endforeach
+                        
+<!--                         
                         <div class="carousel-item img-carousel active">
                             <img src="{{asset('asset/images/swiss.jpg')}}" class="d-block w-100 img-fluid"  alt="swiss"> 
                         </div>
@@ -568,14 +584,14 @@
                             </video>
                         </div>
                         <div class="carousel-item" >
-                            <!-- Gunakan tag video untuk video -->
-                            <video id="video2" class="d-block w-100 csabout" controls autoplay muted>
-                                <!-- Sediakan sumber video -->
+                            Gunakan tag video untuk video -->
+                            <!-- <video id="video2" class="d-block w-100 csabout" controls autoplay muted>
+                                 Sediakan sumber video
                                 <source src="{{asset('asset/images/video2.mp4')}}" type="video/mp4">
                                 
                                 Your browser does not support the video tag.
                             </video>
-                        </div>
+                        </div> -->
                         <button class="carousel-control-prev center-vertical w-9" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Previous</span>
@@ -589,14 +605,7 @@
                 </div>
             </div>
             <div class="col-lg-6 teks" style="font-family: Montheavy; color: rgba(0, 0, 0, 0.8);">
-                <p class=" text-justify mb-4 text-about">RATHEN merupakan sportwears brand yang berasal dari Bogor, Indonesia. Memulai industri sportwears pada tahun 2014 dengan berfokus pada pembuatan custom jersey sepakbola atau futsal. Berbagai jenis tim, baik dari level korporasi, akademisi, komunitas sepakbola, hingga tim liga futsal profesional telah menjadi bagian perjalanan manis rathen di dunia industri sportwear.</p>
-                <p class=" text-justify mb-4 text-about font-light">Hingga akhirnya, Pada tahun 2016, RATHEN dipercaya menjadi penyedia jersey latihan tim nasional Futsal Indonesia. 
-                </p>
-                <p class=" text-justify mb-4 text-about font-light">Tahun 2020 menjadi langkah awal RATHEN menembus pasar Internasional. Dimulai dari negara di kawasan Asia seperti Timor Leste, bergerak perlahan ke Malaysia, hingga akhirnya Korea Selatan.</p>
-                <p class=" text-justify mb-4 text-about font-light">Tidak hanya puas di level Asia, Rathen melanjutkan langkah awal penetrasi ke pasar Eropa melalui negara Swiss hingga dapat memperluas jangkauan ke benua Amerika, tepatnya negara USA. </p>
-                <p class=" text-justify mb-4 text-about font-light">Pasar internasional memiliki standar mutu produk yang tinggi.
-                    Kami, RATHEN Indonesia, dengan bangga dapat memenuhi persyaratan standar mutu tersebut.
-                    </p>
+                {!!$about_us->description!!}
             </div>
         </div>
     </div>
@@ -721,20 +730,24 @@
                     </div>
                     
                     <div class="ag-timeline_list">
+                        @foreach($order_step as $index => $data)
+                        @if(($index + 1)%2 == 0)
                     
                         <!-- Left Batman Box -->
+
                     <div class="js-timeline_item ag-timeline_item">
                         <div class="ag-timeline-card_box">
                                 <!-- Number Code-->
                         <div class="js-timeline-card_point-box ag-timeline-card_point-box">
                             <div class="ag-timeline-card_point">
-                            <h2 class='bx bx-cart'></h2>
+                            <h2 class="bx bx-shop"></h2>
+                            <!-- <h2 class="bx {{$data['icon']}}"></h2> -->
                             </div>
                         </div>
                         
                                 <!-- Name Code-->
                         <div class="ag-timeline-card_meta-box">
-                            <div class="ag-timeline-card_meta">01 MINIMUM ORDER QUANTITY (MOQ)</div>
+                            <div class="ag-timeline-card_meta">{{($index + 1).' '.$data['name']}}</div>
                         </div>
                         </div>
                         
@@ -742,29 +755,26 @@
                         <div class="ag-timeline-card_item">
                         <div class="ag-timeline-card_inner">
                             <div class="ag-timeline-card_img-box">
-                            <ul class="pesan">
-                                <li class="m-0 text-justify pesan" style=" font-size:16px;  color:#fff;">STADIUM Version: MOQ 12 pcs</li>
-                                <li class="m-0 text-justify pesan" style=" font-size:16px;  color:#fff;">PRO Version: MOQ 24 pcs</li>
-                                <li class="m-0 text-justify pesan" style=" font-size:16px;  color:#fff;">PRO+ Version: MOQ 24 pcs</li>
-                            </ul>
+                            {!!$data['description']!!}
                             </div>
                         </div>
                         <div class="ag-timeline-card_arrow"></div>
                         </div>
                     </div>
+                    @else
 
                         <!-- Right Deathstroke Box -->
                     <div class="js-timeline_item ag-timeline_item">
                         <div class="ag-timeline-card_box">
                         <!-- Name Code-->
                         <div class="ag-timeline-card_meta-box">
-                            <div class="ag-timeline-card_meta">2. DESIGN</div>
+                            <div class="ag-timeline-card_meta">{{($index + 1).' '.$data['name']}}</div>
                         </div>
                         
                                 <!-- Number Code-->
                         <div class="js-timeline-card_point-box ag-timeline-card_point-box">
                             <div class="ag-timeline-card_point">
-                            <h2 class='bx bx-desktop'></h2>
+                            <h2 class="bx {{$data['icon']}}"></h2>
                             </div>
                         </div>
                         </div>
@@ -773,195 +783,17 @@
                         <div class="ag-timeline-card_item">
                         <div class="ag-timeline-card_inner">
                             <div class="ag-timeline-card_img-box">
-                            <ul class="pesan">
-                                <li class="m-0 text-justify pesan" style=" font-size:16px;  color:#fff;">Kirim design via whatsapp atau email</li>
-                                <li class="m-0 text-justify pesan" style=" font-size:16px;  color:#fff;">Belum punya design?</li>
-                                <li class="m-0 text-justify pesan" style=" font-size:16px;  color:#fff;">Tim kami bisa bantu buatkan 3D design nya cukup dengan membayar<strong> Komitmen FEE </strong> sebesar Rp.  <strong>500,000 </strong>  <em>(biaya ini termasuk ke dalam total biaya produksi sehingga setara dengan free design) </em></li>
-                                <li class="m-0 text-justify pesan" style=" font-size:16px;  color:#fff;">Revisi minor design 3x</li>
-                            </ul>
+                            {!!$data['description']!!}
                             </div>
                         </div>
                         <div class="ag-timeline-card_arrow"></div>
                         </div>
                     </div>
-
-                        <!-- Left Iron Man Box -->
-                    <div class="js-timeline_item ag-timeline_item">
-                        <div class="ag-timeline-card_box">
-                                <!-- Number Code-->
-                        <div class="js-timeline-card_point-box ag-timeline-card_point-box">
-                            <div class="ag-timeline-card_point">
-                            <h2 class='bx bx-wallet'></h2>
-                            </div>
-                        </div>
-
-                                <!-- Name Code-->
-                        <div class="ag-timeline-card_meta-box">
-                            <div class="ag-timeline-card_meta">3. PEMBAYARAN DP</div>
-                        </div>
-                        </div>
-                        
-                            <!-- Image Code-->
-                        <div class="ag-timeline-card_item">
-                        <div class="ag-timeline-card_inner">
-                            <div class="ag-timeline-card_img-box">
-                            <ul class="pesan">
-                                <li class="m-0 text-justify pesan" style=" font-size:16px;  color:#fff;">Pembayaran DP  <strong> PRODUKSI Min. 50%</strong> dari total biaya untuk masuk antrian produksi melalui Rekening resmi kami <span style="color:red;">BCA 0060435898 A.n R Esa Pangersa Gusti</span></li>
-                                <li class="m-0 text-justify pesan" style=" font-size:16px;  color:#fff;">Pembayaran juga bisa dilakukan secara tunai di store.</li>
-                            </ul>
-                            </div>
-                        </div>
-                        <div class="ag-timeline-card_arrow"></div>
-                        </div>
-                    </div>
-
-                        <!-- Right Green Lantern Box -->
-                    <div class="js-timeline_item ag-timeline_item">
-                        <div class="ag-timeline-card_box">
-                                <!-- Name Code-->
-                        <div class="ag-timeline-card_meta-box">
-                            <div class="ag-timeline-card_meta">4. DATA PRODUKSI</div>
-                        </div>
-                        
-                        <!-- Number Code-->
-                        <div class="js-timeline-card_point-box ag-timeline-card_point-box">
-                            <div class="ag-timeline-card_point">
-                            <h2 class='bx bxs-t-shirt'></h2>
-                            </div>
-                        </div>
-                        </div>
-                        
-                        <!-- Image Code-->
-                        <div class="ag-timeline-card_item">
-                        <div class="ag-timeline-card_inner">
-                            <div class="ag-timeline-card_img-box">
-                            <ul class="pesan">
-                                <li class="m-0 text-justify pesan" style=" font-size:16px;  color:#fff;">Berisi: <strong> Nama/No Punggung/Ukuran  </strong>diisi berurutan mulai dari size paling kecil atau bisa menggunakan template FORM DATA kami, klik link :  <span style="color: #1890fd; text-decoration: underline;
-                                ">form order </span></li>
-                            </ul>
-                            </div>
-                        </div>
-                        <div class="ag-timeline-card_arrow"></div>
-                        </div>
-                    </div>
-
-                        <!-- Left Nightwing Box -->
-                    <div class="js-timeline_item ag-timeline_item">
-                        <div class="ag-timeline-card_box">
-                                <!-- Number Code-->
-                        <div class="js-timeline-card_point-box ag-timeline-card_point-box">
-                            <div class="ag-timeline-card_point">
-                            <h2 class='bx bxs-time-five'></h2>
-                            </div>
-                        </div>
-                        
-                        <!-- Name Code-->
-                        <div class="ag-timeline-card_meta-box">
-                            <div class="ag-timeline-card_meta">5. WAKTU PRODUKSI</div>
-                        </div>
-                        </div>
-                        
-                            <!-- Image Code-->
-                        <div class="ag-timeline-card_item">
-                        <div class="ag-timeline-card_inner">
-                            <div class="ag-timeline-card_img-box">
-                            <ul class="pesan">
-                                <li class="m-0 text-justify pesan" style=" font-size:16px;  color:#fff;"><strong>Non Printing</strong>: 2-3 Minggu</li>
-                                <li class="m-0 text-justify pesan" style=" font-size:16px;  color:#fff;"><strong>Printing</strong>: 3-4 Minggu</li>
-                                <li class="m-0 text-justify pesan" style=" font-size:16px;  color:#fff;"><strong>PRO dan PRO+ Version</strong>: 3-4 Minggu</li>
-                                <li class="m-0 text-justify pesan" style=" font-size:16px;  color:#fff;">Sejak pembayaran DP 50 <strong>%</strong> kami terimaApabila selesai lebih cepat, kami akan informasikan kepada Anda.</li>
-                            </ul>
-                            </div>
-                        </div>
-                        <div class="ag-timeline-card_arrow"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="js-timeline_item ag-timeline_item">
-                        <div class="ag-timeline-card_box">
-                            <!-- Name Code-->
-                        <div class="ag-timeline-card_meta-box">
-                            <div class="ag-timeline-card_meta">6. PELUNASAN + PENGAMBILAN</div>
-                        </div>
-                        <!-- Number Code-->
-                        <div class="js-timeline-card_point-box ag-timeline-card_point-box">
-                            <div class="ag-timeline-card_point">
-                            <h2 class='bx bx-money-withdraw'></h2>
-                            </div>
-                        </div>
+                    @endif
+                    @endforeach
                         
                         
-                        </div>
-                        
-                            <!-- Image Code-->
-                        <div class="ag-timeline-card_item">
-                        <div class="ag-timeline-card_inner">
-                            <div class="ag-timeline-card_img-box">
-                            <ul class="pesan">
-                                <li class="m-0 text-justify pesan" style=" font-size:16px;  color:#fff;">Pelunasan dilakukan ketika jersey sudah selesai produksi. Pengiriman paling cepat 1-3 hari sejak pelunasan dibayarkan.</li>
-                                <li class="m-0 text-justify pesan" style=" font-size:16px;  color:#fff;">Mekanisme pengambilan jersey  <span style="font-weight: bold; text-decoration: underline;">self-pickup,</span> bisa langsung datang ke offline store kami.</li>
-                                <li class="m-0 text-justify pesan" style=" font-size:16px;  color:#fff;">Mekanisme pengiriman, bisa melalui: <strong>JNE/JNT/Driver online/jasa pengiriman lainnya</strong><em style="color: red; font-weight: bold;"> (Ongkos kirim di tanggung customer) </em></li>
-                            </ul>
-                            </div>
-                        </div>
-                        <div class="ag-timeline-card_arrow"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="js-timeline_item ag-timeline_item">
-                        <div class="ag-timeline-card_box">
-                                <!-- Number Code-->
-                        <div class="js-timeline-card_point-box ag-timeline-card_point-box">
-                            <div class="ag-timeline-card_point">
-                            <h2 class='bx bx-receipt'></h2>
-                            </div>
-                        </div>
-                        
-                        <!-- Name Code-->
-                        <div class="ag-timeline-card_meta-box">
-                            <div class="ag-timeline-card_meta">7. GARANSI PELUNASAN</div>
-                        </div>
-                        </div>
-                        
-                            <!-- Image Code-->
-                        <div class="ag-timeline-card_item">
-                        <div class="ag-timeline-card_inner">
-                            <div class="ag-timeline-card_img-box">
-                            <ul class="pesan">
-                                <li class="m-0 text-justify " style=" font-size:16px;  color:#fff;">Segala bentuk kesalahan produksi yang disebabkan oleh tim produksi, akan kami perbaiki sebagai bentuk komitmen kami untuk selalu memberikan pelayanan yang terbaik untuk customer. Hal ini tidak berlaku apabila kelalaian atau kerusakan disebabkan oleh customer.</li>
-                            </ul>
-                            </div>
-                        </div>
-                        <div class="ag-timeline-card_arrow"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="js-timeline_item ag-timeline_item">
-                        <div class="ag-timeline-card_box">
-                        <!-- Name Code-->
-                        <div class="ag-timeline-card_meta-box">
-                            <div class="ag-timeline-card_meta">8. PUAS & ORDER LAGI</div>
-                        </div>
-                        <!-- Number Code-->
-                        <div class="js-timeline-card_point-box ag-timeline-card_point-box">
-                            <div class="ag-timeline-card_point">
-                            <h2 class='bx bxs-star'></h2>
-                            </div>
-                        </div>
-                        </div>
-                        
-                            <!-- Image Code-->
-                        <div class="ag-timeline-card_item">
-                        <div class="ag-timeline-card_inner">
-                            <div class="ag-timeline-card_img-box">
-                            <ul class="pesan">
-                                <li class="m-0 text-justify " style=" font-size:16px;  color:#fff;">Menyebar kebaikan dengan berbagi informasi kepada rekan-rekan terdekat. Dapatkan berbagai merchandise unik sebagai refferal benefits.</li>
-                            </ul>
-                            </div>
-                        </div>
-                        <div class="ag-timeline-card_arrow"></div>
-                        </div>
-                    </div>
+                   
 
                     </div>
                 </div>
@@ -1026,73 +858,7 @@
         </section>
     </section> 
     <!-- </div> -->
-    <section id="faq">
-        <section class="py-5 py-xl-8 mt-5">
-            <div class="container">
-              <div class="row center-hori">
-                <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
-                  <h1 class="mb-5 display-5 text-center" style="font-family: Montheavy; color: black; font-size: 22px; font-weight: bold; margin-bottom: 20px; text-align: center;">FAQ</h1>
-                </div>
-              </div>
-            </div>
-
-            <div class="containerFlow">
-                <section class="accordion">
-                    <div class="tab-accordion">
-                        <input type="checkbox" name="accordion-1" id="cb1" checked>
-                        <label for="cb1" class="tab__label">Apa sih perbedaan STADIUM, PRO dan PRO+ version?</label>
-                        <div class="tab__content">
-                        <p>Untuk mengetahui perbedaan masing-masing jenis kualitas bisa dilihat secara lengkap, <a href="{{ url('/price-list', ['kd_part' => 'non-print']) }}" target="_blank"> Silahkan klik disini</a></p>
-                        </div>
-                    </div>
-                    <div class="tab-accordion">
-                        <input type="checkbox" name="accordion-1" id="cb2">
-                        <label for="cb2" class="tab__label">Ada Minimal order nya?</label>
-                        <div class="tab__content">
-                        <p>Untuk CUSTOMIZE JERSEY  ada minimal order quantity (MOQ) nya</p>
-                            <ul>
-                                <li>- Untuk STADIUM version MOQ 12 pcs</li>
-                                <li>- Untuk PRO dan PRO+ version MOQ 24 pcs</li>
-                            </ul>
-                        
-                        </div>
-                    </div>
-                    <div class="tab-accordion">
-                        <input type="checkbox" name="accordion-1" id="cb3">
-                        <label for="cb3" class="tab__label">Bisa pesan satuan?</label>
-                        <div class="tab__content">
-                        <p>Untuk pemesanan satuan kami menyediakan produk sportwears yang bisa kamu beli tanpa minimum order, baik satuan maupun dalam jumlah banyak. Klik 
-                            <a href="https://www.tokopedia.com/rathenid" target="_blank">disini</a> ya untuk info lebih lengkap</p>
-                        </div>
-                    </div>
-                    <div class="tab-accordion">
-                        <input type="checkbox" name="accordion-1" id="cb4">
-                        <label for="cb4" class="tab__label">Lokasi nya dimana?</label>
-                        <div class="tab__content">
-                        <p>Lokasi kita di Bogor Kota. Klik <a href="#location">disini</a> ya untuk info lebih lengkap.
-                        </p>
-                        </div>
-                    </div>
-                    <div class="tab-accordion">
-                        <input type="checkbox" name="accordion-1" id="cb5">
-                        <label for="cb5" class="tab__label">Bagaimana cara pemesanannya?</label>
-                        <div class="tab__content">
-                        <p>Untuk prosedur pemesanan di RATHEN sangat mudah sekali, klik <a href="#order">disini</a> ya untuk info lebih lengkap.
-                        </p>
-                        </div>
-                    </div>
-                    <div class="tab-accordion">
-                        <input type="checkbox" name="accordion-1" id="cb6">
-                        <label for="cb6" class="tab__label">Bisa lihat hasil yang sudah diproduksi?</label>
-                        <div class="tab__content">
-                        <p>Boleh sekali, explore semua hasil produksi kami <a href="https://instagram.com/rathen.apparel" target="_blank">disini</a> ya.
-                        </p>
-                        </div>
-                    </div>
-                </section>
-            </div>            
-        </section>
-    </section> 
+     
     <!-- </div> -->
     <section id="clients" class="clients" >
         <div class="container">
@@ -1536,7 +1302,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="container frame ">
         <div class="row center-hori">
             <div class="col-lg-12">
-                <h1 class="contact-title"> stay connected <br> with us </h1>
+                <h1 class="contact-title"> {{$about_us->tagline}} </h1>
             </div>
           </div>
             <div class="row sosmed center-hori dis-icon">

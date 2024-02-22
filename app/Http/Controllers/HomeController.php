@@ -2,62 +2,82 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AboutUs;
+use App\Models\Media;
+use App\Models\OrderStep;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
-  /**
-   * Create a new controller instance.
-   *
-   * @return void
-   */
-  // public function __construct()
-  // {
-  //     $this->middleware('auth');
-  // }
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
 
-  /**
-   * Show the application dashboard.
-   *
-   * @return \Illuminate\Contracts\Support\Renderable
-   */
-  public function index()
-  {
-    return view('home');
-  }
-  public function a()
-  {
-    $jsonData = [
-      'menu1' => [
-        'g1' => 'asset/images/price-list/detail/Nonprint-1.jpg',
-        'g2' => 'asset/images/price-list/detail/Nonprint-2.jpg',
-        'g3' => 'asset/images/price-list/detail/Nonprint-3.jpg',
-        'g4' => 'asset/images/price-list/detail/Nonprint-4.jpg',
-        'g5' => 'asset/images/price-list/detail/Nonprint-5.jpg',
-        'g6' => 'asset/images/price-list/detail/Nonprint-6.jpg',
-        'g7' => 'asset/images/price-list/detail/Nonprint-7.jpg',
-        'g8' => 'asset/images/price-list/detail/Nonprint-8.jpg',
-        'content' => 'Ini adalah konten untuk Menu 1.'
-      ],
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function index()
+    {
+        return view('home');
+    }
+    public function custom_page() {
+      $about_us = new AboutUs();
+      $media = new Media();
+      $row = $about_us->get()->first();
+      $about_us_media = $media->where('media_type_of', 'carousel_about_us')->get();
+      $header_banner = $media->where('media_type_of', 'header_banner')->first(); 
+      $logo_media = $media->where('media_type_of', 'logo')->first(); 
+      $order_step = OrderStep::get();
+      return view('landing_page.page-costum', 
+      [
+        'about_us' => $row,
+        'about_us_media' => $about_us_media,
+        'header_banner' => $header_banner,
+        'logo' => $logo_media,
+        'order_step' => $order_step,
+      ]);
+    }
+    public function a()
+    {
+        $jsonData = [
+            'menu1' => [
+                'g1' => 'asset/images/price-list/detail/Nonprint-1.jpg',
+                'g2' => 'asset/images/price-list/detail/Nonprint-2.jpg',
+                'g3' => 'asset/images/price-list/detail/Nonprint-3.jpg',
+                'g4' => 'asset/images/price-list/detail/Nonprint-4.jpg',
+                'g5' => 'asset/images/price-list/detail/Nonprint-5.jpg',
+                'g6' => 'asset/images/price-list/detail/Nonprint-6.jpg',
+                'g7' => 'asset/images/price-list/detail/Nonprint-7.jpg',
+                'g8' => 'asset/images/price-list/detail/Nonprint-8.jpg',
+                'content' => 'Ini adalah konten untuk Menu 1.'
+            ],
+            
+            'menu2' => [
+                'g1' => 'Menu 1',
+                'content' => 'Ini adalah konten untuk Menu 1.'
+            ],
+            // Tambahkan data untuk menu lainnya
+        ];
 
-      'menu2' => [
-        'g1' => 'Menu 1',
-        'content' => 'Ini adalah konten untuk Menu 1.'
-      ],
-      // Tambahkan data untuk menu lainnya
-    ];
+        // Mengembalikan view dan meneruskan data JSON
 
-    // Mengembalikan view dan meneruskan data JSON
+        // return view('data-view', compact('jsonData'));
+        return view('landing_page.part-pricelist', compact('jsonData'));
 
-    // return view('data-view', compact('jsonData'));
-    return view('landing_page.part-pricelist', compact('jsonData'));
-  }
-  public function priceList($kd_part)
-  {
-    $jsonData = [
-      'menu1' => [
-        'non-print' => "
+    }
+    public function priceList($kd_part){
+        $jsonData = [
+            'menu1' => [
+                'non-print' => "
                 <h5>STADIUM Version - Non Print
                 IDR 149,900 / pcs
                 Minimum Order 12 pcs</h5>
@@ -69,8 +89,8 @@ class HomeController extends Controller
                 - Nameset polyflex 1 layer warna
                 - Bahan Celana solid- Nomor celana : polyflex
                 - <span style='color:red;'>FREE</span> : nama tim di celana\n",
-
-        'half-print' => "
+                
+                'half-print' => "
                 <h5>STADIUM Version - Half Print
                 IDR 174,900 / pcs
                 Minimum Order 12 pcs</h5>
@@ -86,8 +106,8 @@ class HomeController extends Controller
                 - Bahan Celana solid
                 - Nomor celana : polyflex
                 - <span style='color:red;'>FREE</span> : nama tim di celana\n",
-
-        'full-print' => "
+               
+                'full-print' => "
                 <h5>STADIUM Version - Full Print
                 IDR 199,900 / pcs
                 Minimum Order 12 pcs</h5>
@@ -102,8 +122,8 @@ class HomeController extends Controller
                 - Bahan Celana solid
                 - Nomor celana : polyflex
                 - <span style='color:red;'>FREE</span> : nama tim di celana\n",
-
-        'pro' =>  "
+                
+                'pro' =>  "
                 <h5>PRO Version
                 IDR 299,900 / pcs
                 Minimum Order 24 pcs</h5>
@@ -118,8 +138,8 @@ class HomeController extends Controller
                 - Bahan Celana solid
                 - Nomor celana : polyflex
                 - <span style='color:red;'>FREE</span> : nama tim di celana\n",
-
-        'pro-plus' => "
+                
+                'pro-plus' => "
                 <h5>PRO+ Version
                 IDR 399,900 / pcs
                 Minimum Order 24 pcs</h5>
@@ -136,8 +156,8 @@ class HomeController extends Controller
                 - Nomor celana : polyflex
                 - <span style='color:red;'>FREE</span> : nama tim di celana
                 - <span style='color:red;'>FREE</span> : logo tim 3D di celana\n",
-
-        'jacket-anthem' => "
+                
+                'jacket-anthem' => "
                 <h5>Jacket Anthem Pro
                 IDR 249,900 / pcs
                 Minimum Order 12 pcs</h5>
@@ -148,10 +168,10 @@ class HomeController extends Controller
                 - Authentic R : 3D screen print
                 - Tulisan : polyflex
                 - Exclusive waterproof zipper\n",
-      ],
-      'menu2' => [
-        'non-print' =>
-        "
+            ],
+            'menu2' => [
+                'non-print' => 
+                "
                 <h6 class='card-subtitle text-black-50'>Add Cost</h6>
                 <div class='payment__shipping'>
 
@@ -273,9 +293,9 @@ class HomeController extends Controller
                 </div>
                 ",
 
-
-        'half-print' =>
-        "
+                
+                'half-print' => 
+                "
                 <h6 class='card-subtitle text-black-50'>Add Cost</h6>
                 <div class='payment__shipping'>
 
@@ -397,9 +417,9 @@ class HomeController extends Controller
                 </div>
                 ",
 
-
-        'full-print' =>
-        "
+               
+                'full-print' => 
+                "
                 <h6 class='card-subtitle text-black-50'>Add Cost</h6>
                 <div class='payment__shipping'>
 
@@ -520,10 +540,10 @@ class HomeController extends Controller
                   
                 </div>
                 ",
+                
 
-
-        'pro' =>
-        "
+                'pro' =>  
+                "
                 <h6 class='card-subtitle text-black-50'>Add Cost</h6>
                 <div class='payment__shipping'>
 
@@ -644,9 +664,9 @@ class HomeController extends Controller
                   
                 </div>
                 ",
-
-        'pro-plus' =>
-        "
+                
+                'pro-plus' => 
+                "
                 <h6 class='card-subtitle text-black-50'>Add Cost</h6>
                 <div class='payment__shipping'>
 
@@ -767,9 +787,9 @@ class HomeController extends Controller
                   
                 </div>
                 ",
-
-        'jacket-anthem' =>
-        "
+                
+                'jacket-anthem' => 
+                "
                 <h6 class='card-subtitle text-black-50'>Add Cost</h6>
                 <div class='payment__shipping'>
 
@@ -891,18 +911,20 @@ class HomeController extends Controller
                 </div>
                 
                 ",
-      ],
-      // Tambahkan data untuk menu lainnya
-    ];
-    // dd($jsonData);
-    // dd($jsonData['menu1']['desc-1']);
-    $data = DB::table('tbl_part')->where('kd_part', $kd_part)->get();
-    // dd($data);
-    foreach ($data as $key) {
-      return view('landing_page.part-pricelist', [
-        'data' => $key,
-        'jsonData' => $jsonData,
-      ]);
+            ],
+            // Tambahkan data untuk menu lainnya
+        ];
+        // dd($jsonData);
+        // dd($jsonData['menu1']['desc-1']);
+        $data = DB::table('tbl_part')->where('kd_part', $kd_part)->get();
+        // dd($data);
+        foreach ($data as $key) {
+            return view ('landing_page.part-pricelist',[
+                'data' =>$key,
+                'jsonData' => $jsonData,
+            ]);
+
+        }
+
     }
-  }
 }

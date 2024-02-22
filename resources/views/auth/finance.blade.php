@@ -1,14 +1,71 @@
 @extends('layout.admin')
 @section('content')
 
+
+
 <div class="container p-4">
   <div class="row mt-2">
+    <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary m-2S" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Add
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <form action="{{route('finance.add')}}" method="post">
+      @csrf
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+         <div class="form-group">
+          <label for="date">Date</label>
+          <input type="date" name="date" id="date" class="form-control">
+         </div>
+         <div class="form-group">
+          <label for="type">Type</label>
+          <select name="type" id="type" class="form-control">
+            <option value="">Select Here</option>
+            <option value="debit">Debit</option>
+            <option value="credit">Credit</option>
+          </select>
+         </div>
+         <div class="form-group">
+          <label for="status">Status</label>
+          <select name="status" id="status" class="form-control">
+            <option value="">Select Here</option>
+            <option value="order">Order</option>
+            <option value="belanja">Belanja</option>
+            <option value="hr">HR</option>
+            <option value="ads">Ads</option>
+          </select>
+         </div>
+         <div class="form-group">
+          <label for="note">Details</label>
+          <textarea name="note" id="note" class="form-control"></textarea>
+         </div>
+         <div class="form-group">
+          <label for="nominal">Nominal</label>
+          <input type="number" name="nominal" id="nominal" class="form-control">
+         </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
     <div class="col-lg-6">
       <div class="mb-4 w-50 mx-auto">
         <div class="rounded-4 bg-dark py-2 text-center text-light">
           <!-- Omset berjalan -->
           <h3 class="m-0">Omset</h3>
-          <h2 class="m-0">Rp 10.000.000</h1>
+          <h2 class="m-0">Rp {{number_format($omset,0,',','.')}}</h1>
         </div>
 
       </div>
@@ -31,35 +88,37 @@
     
     
     <div class="col-lg-12 mb-3 d-flex">
-      <div class="">
-        <label for="DateFinance" class="me-3 form-label">Monthly:</label>
-        <input type="date" id="DateFinance" class="form-control-sm">
-
-      </div>
-      <div class="ms-auto">
-        <a href="" class="form-label text-dark text-center me-3 w-100 flex-wrap">
-          Edit Data<i class="ms-2 fas fa-edit"></i>
-        </a>
-
-      </div>
+      <form action="{{route('finance.update.chart')}}" method="post">
+        @csrf
+        <div class="ms-auto">
+          <label for="DateFinance" class="me-3 form-label">Monthly:</label>
+          <input type="month" id="DateFinance" name="date" class="form-control-sm">
+        </div>
+        <div class="ms-auto">
+          <button type="submit" class="form-label text-dark text-center me-3 w-100 flex-wrap" style="border: none; background: none;">
+            Update Chart<i class="ms-2 fas fa-edit"></i>
+          </button>
+  
+        </div>
+      </form>
     </div>
     
     <div class="col-lg-12 mb-4">
       <div class="card z-index-2">
         <div class="card-header d-flex">
           <div class="text-center">
-            <p>12 Order<i class="ms-2 fa fa-shopping-bag"></i></p>
-            <span>Rp 18.000.000</span>
+            <p>{{$order}} Order<i class="ms-2 fa fa-shopping-bag"></i></p>
+            <span>Rp {{number_format($omset,0,',','.')}}</span>
           </div>
           <div class="ms-auto d-flex w-25">
             <a href="" class="text-dark text-decoration-none text-center me-3 w-100 flex-wrap">
               <p>Income<i class="ms-2 fas fa-hand-holding-usd"></i></p>
-              <span>Rp 18.000.000</span>
+              <span>Rp {{number_format($omset,0,',','.')}}</span>
             </a>
             
             <a href="" class="text-dark text-decoration-none text-center w-100 flex-wrap">
               <p>Expenses<i class="ms-2 fas fa-sign-out-alt"></i></p>
-              <span>Rp 8.000.000</span>
+              <span>Rp {{number_format($expense,0,',','.')}}</span>
             </a>
             <!-- <input type="text" placeholder="INCOME" class="form-control-sm"> -->
             <!-- <input type="text" placeholder="EXPENSE" class="form-control-sm"> -->
@@ -71,17 +130,17 @@
           <div class="ms-auto d-flex w-100">
             <a href="" class="text-dark text-decoration-none text-center me-3 w-100 flex-wrap">
               <p>Saldo<i class="ms-2 fas fa-wallet"></i></p>
-              <span>Rp 18.000.000</span>
+              <span>Rp {{number_format($saldo,0,',','.')}}</span>
             </a>
             
             <a href="" class="text-dark text-decoration-none text-center w-100 flex-wrap">
               <p>Gross Profit<i class="ms-2 fas fa-sign-out-alt"></i></p>
-              <span>55%</span>
+              <span>{{$gross_profit}}%</span>
             </a>
             
             <a href="" class="text-dark text-decoration-none text-center w-100 flex-wrap">
               <p>Net Profit<i class="ms-2 fas fa-sign-out-alt"></i></p>
-              <span>55%</span>
+              <span>{{$net_profit}}%</span>
             </a>
           </div>
         </div>
@@ -108,7 +167,7 @@
         </div>
         <div class="card-body p-3">
           <div class="text-center">
-            <h1>0.65</h1>
+            <h1>{{$current_ratio}}</h1>
           </div>
         </div>
       </div>
@@ -121,7 +180,7 @@
 <script src="asset/admin/js/plugins/chartjs.min.js"></script>
 
 <script>
-  const xValues = [100,200,300,400,500,600,700,800,900,1000];
+  const xValues = <?php echo json_encode($data_bulan); ?>;
   var ctx1 = document.getElementById("chart-line").getContext("2d");
   var chart1;
 
@@ -138,7 +197,7 @@
         borderWidth: 3,
         backgroundColor: '#495057',
         fill: true,
-        data: [860,1140,1060,1060,1070,1110,1330,2210,7830,2478],
+        data: <?php echo json_encode($data); ?>,
         maxBarThickness: 6
       }
     ],

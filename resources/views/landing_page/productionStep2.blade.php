@@ -501,20 +501,88 @@
                 <!-- <input type="text" class="input txt text-validated" value='Upload' /> -->
               </div>
             </div>
-            <!-- <div class="details__user">
-              <div class="user__name">John Doe
-                <br> 13/03/1980</div>
-              <div class="user__address">Shipping Address: 22 Street, Address
-                <br>Country</div>
-            </div> -->
+            
 
           </div>
         </div>
+
+        <div class="payment__info">
+          <div class="payment__cc">
+            <div class="payment__title fw-6">
+              <i class="icon icon-docs"></i>Form Data Pesanan
+            </div>
+            <form>
+              <div class="form__cc">
+                <div class="row">
+                  <div class="table-pesan">
+                    <div class="title">
+                      <i class="icon icon-info" style="display:contents;"></i> Nama Tim (27 stel) diambil 15 Jan 2024
+                    </div>
+                    <table class="wp-table">
+                      <tr>
+                        <th>No</th>
+                        <th>Nama Punggung</th>
+                        <th>Nomor</th>
+                        <th>Ukuran</th>
+                      </tr>
+
+                      <?php $i = 1; ?>
+
+                      @foreach ($dataStep4 as $row)
+                      <tr>
+                        <td>{{ $i++; }}</td>
+                        <td>{{ $row->namapunggung }}</td>
+                        <td>{{ $row->nomor; }}</td>
+                        <td>{{ $row->ukuran; }}</td>
+                      </tr>
+                      @endforeach
+
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="payment__shipping w-215-tab">
+            <div class="row">
+              <div class="field pt-5">
+                <div class="payment__title"></div>
+                <div class="form-uploads h-3 w-20">
+                  <div class="form-upload payment__type--cc btn-black">
+                    <i class="icon icon-cloud-upload"></i>Upload File
+                  </div>
+                </div>
+                <!-- <input type="text" class="input txt text-validated" value='Upload' /> -->
+              </div>
+            </div>
+            <div class="row">
+              <div class="field pt-5">
+                <div class="form-uploads h-3 w-20">
+                  <div class="form-upload payment__type--cc btn-black" id="inputDataBtn">
+                    <i class="icon icon-pencil"></i>Input Data
+                  </div>
+                </div>
+                <!-- <input type="text" class="input txt text-validated" value='Upload' /> -->
+              </div>
+            </div>
+            <div class="row">
+              <div class="field pt-5">
+                <div class="form-uploads h-3 w-20">
+                  <a href="{{ route('downloadPdf') }}" class="form-upload payment__type--cc btn-black">
+                    <i class="icon icon-cloud-download"></i>Format Ukuran</a>
+                </div>
+                <!-- <input type="text" class="input txt text-validated" value='Upload' /> -->
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
+    
     <div class="container">
       <div class="actions pt250">
-        <button type="submit" class="btn action__submit">Save & Next
+        <button type="submit" class="btn action__submit">Save
           <i class="icon icon-arrow-right-circle"></i>
         </button>
         <!-- <a href="/form/orderStep1" class="backBtn">Go Back to Form Order</a> -->

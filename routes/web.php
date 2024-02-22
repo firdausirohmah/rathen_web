@@ -153,11 +153,16 @@ Route::controller(adminController::class)->group(function () {
         Route::get('/dashboard', 'dashboard')->name('dashboard');
         Route::get('/admin_landingpage', 'landingpage')->name('admin.landingpage');
         Route::post('/admin_landingpage', 'landingpage_about_us')->name('admin.landingpage.about_us');
+        Route::post('/admin_landingpage/how_to_order/add', 'landingpage_how_to_order_add')->name('admin.landingpage.how_to_order.add');
+        Route::post('/admin_landingpage/about_us/upload', 'landingpage_media_upload')->name('admin.landingpage.media_upload');
+        Route::get('/admin_landingpage/about_us/media/delete/{id}', 'landingpage_file_delete')->name('admin.landingpage.media.delete');
         Route::get('/view-order', 'vieworder')->name('vieworder');
         Route::get('/production', 'production')->name('production');
         Route::get('/production/{id}', 'production_edit')->name('production_edit');
         Route::get('/production/design/{id}', 'production_design')->name('production_design');
         Route::get('/finance', 'finance')->name('finance');
+        Route::post('/finance/add', 'financeAdd')->name('finance.add');
+        Route::post('/finance', 'finance')->name('finance.update.chart');
         Route::get('/master', 'master')->name('master');
         Route::post('/master/updateHargaBahan', 'updateHargaBahan')->name('updateHargaBahan');
         Route::post('/master/updateHargaLogo', 'updateHargaLogo')->name('updateHargaLogo');

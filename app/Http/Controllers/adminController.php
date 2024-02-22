@@ -6,7 +6,6 @@ use App\Models\AboutUs;
 use App\Models\Finance;
 use App\Models\Media;
 use App\Models\ModelStep1;
-use App\Models\ModelStep4;
 use App\Models\OrderStep;
 use App\Models\pemesananModel;
 use DateTime;
@@ -145,16 +144,12 @@ class adminController extends Controller
                 // Assign kategori_harga from each item to $kd_part
                 $kd_part = $item->kategori_harga;
             }
-            
-        $Step4 = ModelStep4::where('kd_step1', $kode)
-            ->orderByRaw("FIELD(ukuran, 'S', 'M', 'L', 'XL', 'XXL', 'XXXL')") // Sesuaikan dengan ukuran yang sesuai 
-            ->get();
+
         
         $part = DB::table('tbl_part')->where('kd_part', $kd_part)->get();
 
         foreach ($data as $key) { 
             return view('landing_page.productionStep2', [
-                'dataStep4' => $Step4,
                 'data' =>$key,
                 'pesanan' => $part,
                 'kode' => $kode, 
@@ -183,24 +178,23 @@ class adminController extends Controller
         $row =  $finance->select('transaction_date', DB::raw('sum(nominal) as nominal'))->groupBy('transaction_date')->where('type', 'debit')->get();
         $omset = $finance->select(DB::raw('SUM(nominal) as omset'))->where('type', 'debit')->get()->value('omset');
         
-        $expense = $finance->select(DB::raw('SUM(nominal) as expense'))->where('type', 'debit')->get()->value('expense');
+        $expense = $finance->select(DB::raw('SUM(nominal) as expense'))->where('type', 'credit')->get()->value('expense');
         $order = $finance->select(DB::raw('count(id) as order_total'))->where('status', 'order')->get()->value('order_total');
         $saldo = $omset - $expense;
         $grossProfit = $omset - $finance->select(DB::raw('SUM(nominal) as expense'))
             ->where('type', 'credit')
             ->where('status', 'belanja')
             ->get()->value('expense');
-
         $netProfit = $saldo;
             // Gross Profit Margin
             
-        $grossProfitMargin = ($grossProfit / ($omset == null)?1:$omset) * 100;
+            $grossProfitMargin = ($grossProfit / (($omset == null || $omset == 0)?1:$omset)) * 100;
 
             // Net Profit Margin
-        $netProfitMargin = ($netProfit / ($omset == null)?1:$omset) * 100;
-      
+            $netProfitMargin = ($netProfit / (($omset == null || $omset == 0)?1:$omset)) * 100;
+        
 
-        $current_ratio = (($omset == null)?0:$omset) / (($expense == null)?1:$expense);
+            $current_ratio = (($omset == null || $omset == 0)?0:$omset) / (($expense == null || $expense == 0)?1:$expense);
        
 
         if($request->date != null){
@@ -226,13 +220,13 @@ class adminController extends Controller
 
             $netProfit = $saldo;
             // Gross Profit Margin
-            $grossProfitMargin = ($grossProfit / ($omset == null)?1:$omset) * 100;
+            $grossProfitMargin = ($grossProfit / (($omset == null || $omset == 0)?1:$omset)) * 100;
 
             // Net Profit Margin
-            $netProfitMargin = ($netProfit / ($omset == null)?1:$omset) * 100;
+            $netProfitMargin = ($netProfit / (($omset == null || $omset == 0)?1:$omset)) * 100;
         
 
-            $current_ratio = (($omset == null)?0:$omset) / (($expense == null)?1:$expense);
+            $current_ratio = (($omset == null || $omset == 0)?0:$omset) / (($expense == null || $expense == 0)?1:$expense);
             
         }
         if($order== null){
@@ -257,7 +251,7 @@ class adminController extends Controller
             'data_bulan' => $data_bulan,
             'omset' => $omset,
             'saldo' => $saldo,
-            'expense' => $saldo,
+            'expense' => $expense,
             'order' => $order,
             'gross_profit' => $grossProfitMargin,
             'net_profit' => $netProfitMargin,
@@ -440,9 +434,6 @@ class adminController extends Controller
             // File bukan gambar atau video
             return redirect()->back()->with('error', 'File harus berupa gambar atau video.');
         }
-    
-
-
 
         $about_us = new Media();
         $about_us->filename = $filename;
@@ -450,7 +441,7 @@ class adminController extends Controller
         $about_us->type = $type;
         $about_us->media_type_of = $media_type;
         $about_us->save();
-        $path = $input->file('file')->move('uploads', $filename);
+        $input->file('file')->move('uploads', $filename);
 
 
 

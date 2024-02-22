@@ -73,10 +73,12 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-function calculatePelunasan() {
-    var designInput = document.getElementById('design').value.replace(/\D/g, '');
+function calculatePelunasan(id) {
+    console.log("ini adalah id ke "+id);
+     var designInput = document.getElementById('design').value.replace(/\D/g, '');
     var dpInput = document.getElementById('dp').value.replace(/\D/g, '');
-    var totalHarga = document.querySelector('input.input.txt[name="total_harga"]').value;
+    var totalHarga = document.querySelector($`input.input.txt[name="total_harga"][data="{id}"]`).value;
+    console.log(totalHarga, 'total harga');
 
     // Parse input values to integers
     designInput = designInput === '' ? 0 : parseInt(designInput);
@@ -91,4 +93,5 @@ function calculatePelunasan() {
     // Update the biaya_pelunasan field with the formatted value for display
     document.getElementById('pelunasan').value = formattedPelunasan;
     document.getElementById('pelunasan').dataset.prevValue = formattedPelunasan;
+   
 }

@@ -209,7 +209,7 @@
                       <input type="hidden" class="input txt" value="{{ $item->tipe_kualitas }}" name="kualitas" readonly />
                       <input type="hidden" class="input txt" value="{{ $item->kategori_harga }}" name="kategori" readonly />
                       <input type="hidden" class="input txt" value="{{ $item->harga }}" name="harga" readonly />
-                      <input type="hidden" class="input txt" value="{{ $item->total_harga }}" name="total_harga" readonly />
+                      <input type="text" class="input txt" value="{{ $item->total_harga }}" name="total_harga" data="{{$item->id}}" readonly />
                       <input type="hidden" class="input txt" value="{{ $item->qty }}" name="jp" readonly />
 
                       <input type="hidden" class="input txt" value="{{ $item->kerah_kancing }}" name="kerah_kancing" readonly />

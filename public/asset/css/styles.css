@@ -689,3 +689,8 @@ input:checked + .label_harga {
     padding: 0;
   }
 }
+
+.ag-timeline-card_img-box a{
+  color: #fff;
+  text-decoration: underline;
+}

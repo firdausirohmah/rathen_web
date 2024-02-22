@@ -415,7 +415,7 @@
                 @media (max-width: 1399.98px) { 
                     .teks {
                         margin-top: 4px;
-                        color: red;
+                        color: #000;
                         font-size: 15px;
                         line-height: 100px;
                         
@@ -604,7 +604,7 @@
                     
                 </div>
             </div>
-            <div class="col-lg-6 teks" style="font-family: Montheavy; color: rgba(0, 0, 0, 0.8);">
+            <div class="col-lg-6 teks" style="text-align:justify">
                 {!!$about_us->description!!}
             </div>
         </div>
@@ -734,36 +734,6 @@
                         @if(($index + 1)%2 == 0)
                     
                         <!-- Left Batman Box -->
-
-                    <div class="js-timeline_item ag-timeline_item">
-                        <div class="ag-timeline-card_box">
-                                <!-- Number Code-->
-                        <div class="js-timeline-card_point-box ag-timeline-card_point-box">
-                            <div class="ag-timeline-card_point">
-                            <h2 class="bx bx-shop"></h2>
-                            <!-- <h2 class="bx {{$data['icon']}}"></h2> -->
-                            </div>
-                        </div>
-                        
-                                <!-- Name Code-->
-                        <div class="ag-timeline-card_meta-box">
-                            <div class="ag-timeline-card_meta">{{($index + 1).' '.$data['name']}}</div>
-                        </div>
-                        </div>
-                        
-                            <!-- Image Code-->
-                        <div class="ag-timeline-card_item">
-                        <div class="ag-timeline-card_inner">
-                            <div class="ag-timeline-card_img-box">
-                            {!!$data['description']!!}
-                            </div>
-                        </div>
-                        <div class="ag-timeline-card_arrow"></div>
-                        </div>
-                    </div>
-                    @else
-
-                        <!-- Right Deathstroke Box -->
                     <div class="js-timeline_item ag-timeline_item">
                         <div class="ag-timeline-card_box">
                         <!-- Name Code-->
@@ -782,7 +752,38 @@
                             <!-- Image Code-->
                         <div class="ag-timeline-card_item">
                         <div class="ag-timeline-card_inner">
-                            <div class="ag-timeline-card_img-box">
+                            <div class="ag-timeline-card_img-box text-white text-justify">
+                            {!!$data['description']!!}
+                            </div>
+                        </div>
+                        <div class="ag-timeline-card_arrow"></div>
+                        </div>
+                    </div>
+
+                    
+                    @else
+
+                        <!-- Right Deathstroke Box -->
+                        <div class="js-timeline_item ag-timeline_item">
+                        <div class="ag-timeline-card_box">
+                                <!-- Number Code-->
+                        <div class="js-timeline-card_point-box ag-timeline-card_point-box">
+                            <div class="ag-timeline-card_point">
+                            <!-- <h2 class="bx bx-shop"></h2> -->
+                            <h2 class="bx {{$data['icon']}}"></h2>
+                            </div>
+                        </div>
+                        
+                                <!-- Name Code-->
+                        <div class="ag-timeline-card_meta-box">
+                            <div class="ag-timeline-card_meta">{{($index + 1).' '.$data['name']}}</div>
+                        </div>
+                        </div>
+                        
+                            <!-- Image Code-->
+                        <div class="ag-timeline-card_item">
+                        <div class="ag-timeline-card_inner">
+                            <div class="ag-timeline-card_img-box text-white text-justify">
                             {!!$data['description']!!}
                             </div>
                         </div>
@@ -801,8 +802,8 @@
         </section>
     </section> 
     <!-- </div> -->
-    <section id="price-list">
-        <section class="py-5 py-xl-8 p0-mobile">
+    <section id="price-list" class="pb-5 py-xl-8 p0-mobile">
+        
             <div class="container">
               <div class="row center-hori">
                 <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
@@ -811,7 +812,7 @@
               </div>
             </div>
 
-            <div class="row center-hori">
+            <div class="row center-hori pb-5">
                 <div class="col-lg-8">
                     <div class="container pb-5">
                         <div class="pricelist-slider swiper-container pt-3 pb-5">
@@ -855,12 +856,77 @@
                 </div>
             </div>
 
-        </section>
     </section> 
     <!-- </div> -->
+
+    <section id="faq" class="py-5 py-xl-8 mt-5">
+        <div class="container">
+            <div class="row center-hori">
+            <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
+                <h1 class="mb-5 display-5 text-center" style="font-family: Montheavy; color: black; font-size: 22px; font-weight: bold; margin-bottom: 20px; text-align: center;">FAQ</h1>
+            </div>
+            </div>
+        </div>
+
+        <div class="containerFlow">
+            <section class="accordion">
+                <div class="tab-accordion">
+                    <input type="checkbox" name="accordion-1" id="cb1" checked>
+                    <label for="cb1" class="tab__label">Apa sih perbedaan STADIUM, PRO dan PRO+ version?</label>
+                    <div class="tab__content">
+                    <p>Untuk mengetahui perbedaan masing-masing jenis kualitas bisa dilihat secara lengkap, <a href="{{ url('/price-list', ['kd_part' => 'non-print']) }}" target="_blank"> Silahkan klik disini</a></p>
+                    </div>
+                </div>
+                <div class="tab-accordion">
+                    <input type="checkbox" name="accordion-1" id="cb2">
+                    <label for="cb2" class="tab__label">Ada Minimal order nya?</label>
+                    <div class="tab__content">
+                    <p>Untuk CUSTOMIZE JERSEY  ada minimal order quantity (MOQ) nya</p>
+                        <ul>
+                            <li>- Untuk STADIUM version MOQ 12 pcs</li>
+                            <li>- Untuk PRO dan PRO+ version MOQ 24 pcs</li>
+                        </ul>
+                    
+                    </div>
+                </div>
+                <div class="tab-accordion">
+                    <input type="checkbox" name="accordion-1" id="cb3">
+                    <label for="cb3" class="tab__label">Bisa pesan satuan?</label>
+                    <div class="tab__content">
+                    <p>Untuk pemesanan satuan kami menyediakan produk sportwears yang bisa kamu beli tanpa minimum order, baik satuan maupun dalam jumlah banyak. Klik 
+                        <a href="https://www.tokopedia.com/rathenid" target="_blank">disini</a> ya untuk info lebih lengkap</p>
+                    </div>
+                </div>
+                <div class="tab-accordion">
+                    <input type="checkbox" name="accordion-1" id="cb4">
+                    <label for="cb4" class="tab__label">Lokasi nya dimana?</label>
+                    <div class="tab__content">
+                    <p>Lokasi kita di Bogor Kota. Klik <a href="#location">disini</a> ya untuk info lebih lengkap.
+                    </p>
+                    </div>
+                </div>
+                <div class="tab-accordion">
+                    <input type="checkbox" name="accordion-1" id="cb5">
+                    <label for="cb5" class="tab__label">Bagaimana cara pemesanannya?</label>
+                    <div class="tab__content">
+                    <p>Untuk prosedur pemesanan di RATHEN sangat mudah sekali, klik <a href="#order">disini</a> ya untuk info lebih lengkap.
+                    </p>
+                    </div>
+                </div>
+                <div class="tab-accordion">
+                    <input type="checkbox" name="accordion-1" id="cb6">
+                    <label for="cb6" class="tab__label">Bisa lihat hasil yang sudah diproduksi?</label>
+                    <div class="tab__content">
+                    <p>Boleh sekali, explore semua hasil produksi kami <a href="https://instagram.com/rathen.apparel" target="_blank">disini</a> ya.
+                    </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
      
     <!-- </div> -->
-    <section id="clients" class="clients" >
+    <section id="clients" class="clients pt-5">
         <div class="container">
             <div class="row center-hori">
             <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">

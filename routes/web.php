@@ -100,7 +100,7 @@ Route::controller(PesananController::class)->group(function () {
     Route::post('/form-1/quotation', 'quotation')->name('quotation');
     Route::get('/form-1/quotation/{id}', 'quotation_view')->name('quotation_view');
     // Route::get('/form-1/invoice/{id}', 'invoice')->name('invoice');
-    Route::post('/form-1/action', 'addForm1')->name('addForm1');
+    Route::post('/form-1/action/{kd_step}', 'addForm1')->name('addForm1');
     Route::get('/form-2/{id}', 'form_2')->name('form_2');
     Route::post('/form-2/add', 'addForm2')->name('addForm2');
     Route::get('/form-3/{id}', 'form_3')->name('form_3');
@@ -153,9 +153,13 @@ Route::controller(adminController::class)->group(function () {
         Route::get('/dashboard', 'dashboard')->name('dashboard');
         Route::get('/admin_landingpage', 'landingpage')->name('admin.landingpage');
         Route::post('/admin_landingpage', 'landingpage_about_us')->name('admin.landingpage.about_us');
+        Route::post('/admin_landingpage/location/add', 'landingpage_location_add')->name('admin.landingpage.location.add');
+        Route::post('/admin_landingpage/linkweb/add', 'landingpage_linkweb_add')->name('admin.landingpage.linkweb.add');
         Route::post('/admin_landingpage/how_to_order/add', 'landingpage_how_to_order_add')->name('admin.landingpage.how_to_order.add');
+        Route::post('/admin_landingpage/faq/add', 'landingpage_faq_add')->name('admin.landingpage.faq.add');
         Route::post('/admin_landingpage/about_us/upload', 'landingpage_media_upload')->name('admin.landingpage.media_upload');
         Route::get('/admin_landingpage/about_us/media/delete/{id}', 'landingpage_file_delete')->name('admin.landingpage.media.delete');
+        Route::get('/admin_landingpage/linkweb/delete/{id}', 'landingpage_linkweb_delete')->name('admin.landingpage.linkweb.delete');
         Route::get('/view-order', 'vieworder')->name('vieworder');
         Route::get('/production', 'production')->name('production');
         Route::get('/production/{id}', 'production_edit')->name('production_edit');

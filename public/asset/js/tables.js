@@ -14,6 +14,7 @@ $(document).ready(function() {
         ]
     } );
 } );
+var id_invoice = 1;
 
 $(document).ready(function() {
     // new DataTable('#view-order', {
@@ -46,38 +47,17 @@ function formatRupiah(input) {
     input.value = value;
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Get the form element
-    const form = document.getElementById('submit_biaya');
 
-    // Add event listener for form submission
-    form.addEventListener('submit', function(event) {
-        event.preventDefault();
-        // Get the input elements
-        const designInput = document.getElementById('design');
-        const dpInput = document.getElementById('dp');
-        const pelunasanInput = document.getElementById('pelunasan');
+function test(id){
+    console.log(id, 'test');
+    id_invoice = id; // Atur id_invoice dengan nilai yang diterima dari fungsi test
+}
 
-        // Remove currency symbol and thousands separator
-        const designValue = parseInt(designInput.value.replace(/\D/g, ''));
-        const dpValue = parseInt(dpInput.value.replace(/\D/g, ''));
-        const pelunasanValue = parseInt(pelunasanInput.value.replace(/\D/g, ''));
-
-        // Set the numeric values as input values for submission
-        designInput.value = designValue || 0; // Set to 0 if NaN
-        dpInput.value = dpValue || 0; // Set to 0 if NaN
-        pelunasanInput.value = pelunasanValue || 0; // Set to 0 if NaN
-
-        // Continue with the form submission
-        return true;
-    });
-});
-
-function calculatePelunasan(id) {
-    console.log("ini adalah id ke "+id);
-     var designInput = document.getElementById('design').value.replace(/\D/g, '');
-    var dpInput = document.getElementById('dp').value.replace(/\D/g, '');
-    var totalHarga = document.querySelector($`input.input.txt[name="total_harga"][data="{id}"]`).value;
+function calculatePelunasan() {
+    console.log("ini adalah id ke "+id_invoice);
+    var designInput = document.getElementById(('design_'+id_invoice)).value.replace(/\D/g, '');
+    var dpInput = document.getElementById(('dp_'+id_invoice)).value.replace(/\D/g, '');
+    var totalHarga = document.querySelector('input.input.txt[name="total_harga"][data="'+id_invoice+'"]').value;
     console.log(totalHarga, 'total harga');
 
     // Parse input values to integers
@@ -91,7 +71,37 @@ function calculatePelunasan(id) {
     var formattedPelunasan = 'Rp ' + new Intl.NumberFormat('id-ID').format(pelunasan);
 
     // Update the biaya_pelunasan field with the formatted value for display
-    document.getElementById('pelunasan').value = formattedPelunasan;
-    document.getElementById('pelunasan').dataset.prevValue = formattedPelunasan;
-   
+    document.getElementById(('pelunasan_'+id_invoice)).value = formattedPelunasan;
+    document.getElementById(('pelunasan_'+id_invoice)).dataset.prevValue = formattedPelunasan;
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Get the form element
+    const form = document.getElementById(('submit_biaya_'+id_invoice)); // Menggunakan id_invoice saat ini
+    console.log(form);
+    // Add event listener for form submission
+    form.addEventListener('submit', function(event) {
+        console.log(id_invoice);
+        event.preventDefault();
+        // Get the input elements
+        const designInput = document.getElementById(('design_'+id_invoice));
+        const dpInput = document.getElementById(('dp_'+id_invoice));
+        const pelunasanInput = document.getElementById(('pelunasan_'+id_invoice));
+
+        // Remove currency symbol and thousands separator
+        const designValue = parseInt(designInput.value.replace(/\D/g, ''));
+        const dpValue = parseInt(dpInput.value.replace(/\D/g, ''));
+        const pelunasanValue = parseInt(pelunasanInput.value.replace(/\D/g, ''));
+
+        // Set the numeric values as input values for submission
+        designInput.value = designValue || 0; // Set to 0 if NaN
+        dpInput.value = dpValue || 0; // Set to 0 if NaN
+        pelunasanInput.value = pelunasanValue || 0; // Set to 0 if NaN
+
+        // Continue with the form submission
+        console.log(designInput.value);
+        console.log(dpInput.value);
+        console.log(pelunasanInput.value);
+        form.submit();
+    });
+});

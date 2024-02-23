@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\AboutUs;
+use App\Models\Faq;
+use App\Models\LinkWeb;
+use App\Models\Location;
 use App\Models\Media;
 use App\Models\OrderStep;
 use Illuminate\Http\Request;
@@ -30,12 +33,27 @@ class HomeController extends Controller
         return view('home');
     }
     public function custom_page() {
+      $link_web_1 = LinkWeb::whereHas('media', function ($query) {
+        $query->where('media_type_of', 'icon_link_section_1');
+    })->get();
+    $link_web_2 = LinkWeb::whereHas('media', function ($query) {
+        $query->where('media_type_of', 'icon_link_section_2');
+    })->get();
       $about_us = new AboutUs();
       $media = new Media();
+      $faq = Faq::get();
       $row = $about_us->get()->first();
+      $count = $media->where('media_type_of', 'client')->count();
+      $top = ceil(($count / 2));
+
+      $topImage = $media->take($top)->where('media_type_of', 'client')->get();
+      $buttomImage = $media->skip($top)->take($count)->where('media_type_of', 'client')->get();
+      $location = Location::get()->first();
       $about_us_media = $media->where('media_type_of', 'carousel_about_us')->get();
       $header_banner = $media->where('media_type_of', 'header_banner')->first(); 
       $logo_media = $media->where('media_type_of', 'logo')->first(); 
+      $location_carousel = $media->where('media_type_of', 'location_carousel')->get(); 
+      $footer_image = $media->where('media_type_of', 'footer_image')->first(); 
       $order_step = OrderStep::get();
       return view('landing_page.page-costum', 
       [
@@ -44,6 +62,14 @@ class HomeController extends Controller
         'header_banner' => $header_banner,
         'logo' => $logo_media,
         'order_step' => $order_step,
+        'faq'=> $faq,
+        'location_carousel' => $location_carousel,
+        'location' => $location,
+        'link_web_section_1' => $link_web_1,
+        'link_web_section_2' => $link_web_2,
+        'top_image' => $topImage,
+        'buttom_image' => $buttomImage,
+        'footer_image' => $footer_image,
       ]);
     }
     public function a()

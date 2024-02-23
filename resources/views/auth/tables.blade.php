@@ -198,7 +198,7 @@
                     @if($processed)
                     <span class="text-dark">Clicked</span>
                     @else
-                    <form action="{{ url('/form-1/action') }}" method="POST" id="submit_biaya">
+                    <form action="{{ url('/form-1/action/'.$item->kd_step) }}" method="POST" id="submit_biaya_{{ $item->id  }}">
                       @csrf
                       <input type="hidden" class="input txt" value="{{ $item->kd_step }}" name="kd_step" readonly />
                       <input type="hidden" class="input txt" value="{{ $item->nama_pelanggan }}" name="np" readonly />
@@ -209,7 +209,7 @@
                       <input type="hidden" class="input txt" value="{{ $item->tipe_kualitas }}" name="kualitas" readonly />
                       <input type="hidden" class="input txt" value="{{ $item->kategori_harga }}" name="kategori" readonly />
                       <input type="hidden" class="input txt" value="{{ $item->harga }}" name="harga" readonly />
-                      <input type="text" class="input txt" value="{{ $item->total_harga }}" name="total_harga" data="{{$item->id}}" readonly />
+                      <input type="hidden" class="input txt" value="{{ $item->total_harga }}" name="total_harga" data="{{$item->id}}" readonly />
                       <input type="hidden" class="input txt" value="{{ $item->qty }}" name="jp" readonly />
 
                       <input type="hidden" class="input txt" value="{{ $item->kerah_kancing }}" name="kerah_kancing" readonly />
@@ -229,10 +229,10 @@
                       <input type="hidden" class="input txt" value="{{ $item->kerah_rib }}" name="kerah_rib" readonly />
                       <input type="hidden" class="input txt" value="{{ $item->tangan_rib }}" name="tangan_rib" readonly />
 
-                      <a data-bs-toggle="modal" data-bs-target="#invoiceModal" data-kode="{{ $item->kd_step }}" class="btn btn-primary btn-sm m-0">Invoice <i class="ps-1 fa fa-sign-out" aria-hidden="true"></i></a>
+                      <a data-bs-toggle="modal" data-bs-target="#invoiceModal_{{$item->kd_step}}" data-kode="{{ $item->id }}" onclick="test({{ $item->id  }})" class="btn btn-primary btn-sm m-0">Invoice <i class="ps-1 fa fa-sign-out" aria-hidden="true"></i></a>
 
                       <!-- Modal -->
-                      <div class="modal fade" id="invoiceModal" tabindex="-1" aria-labelledby="invoiceModalLabel" aria-hidden="true">
+                      <div class="modal fade" id="invoiceModal_{{$item->kd_step}}" tabindex="-1" aria-labelledby="invoiceModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                           <div class="modal-content">
                             <div class="modal-header">
@@ -243,11 +243,11 @@
 
                               <div class="mb-3">
                                 <label for="design" class="form-label">Design Payment:</label>
-                                <input type="text" class="form-control" id="design" oninput="formatRupiah(this);calculatePelunasan();" name="biaya_desain" placeholder="Enter Design Payment">
+                                <input type="text" class="form-control" id="design_{{$item->id}}" oninput="formatRupiah(this);calculatePelunasan();" name="biaya_desain" data="{{$item->id}}" placeholder="Enter Design Payment">
                                 <label for="dp" class="form-label">Initial Payment (DP):</label>
-                                <input type="text" class="form-control" id="dp" oninput="formatRupiah(this);calculatePelunasan();" name="biaya_dp" placeholder="Enter Initial Payment">
+                                <input type="text" class="form-control" id="dp_{{$item->id}}" oninput="formatRupiah(this);calculatePelunasan();" name="biaya_dp" data="{{$item->id}}" placeholder="Enter Initial Payment">
                                 <label for="pelunasan" class="form-label">Final Payment:</label>
-                                <input type="text" class="form-control" id="pelunasan" oninput="formatRupiah(this)" name="biaya_pelunasan" readonly>
+                                <input type="text" class="form-control" id="pelunasan_{{$item->id}}" oninput="formatRupiah(this)" name="biaya_pelunasan" readonly>
                               </div>
 
                             </div>

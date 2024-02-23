@@ -10,7 +10,7 @@
  
     <section class="main-banner">
         <div class="main-banner__logo">
-            <img src="{{asset('uploads').'/'.$logo->filename}}" class="rounded mx-auto d-block" alt="">
+            <img src="{{asset('uploads').'/'.(isset($logo->filename)?$logo->filename:'')}}" class="rounded mx-auto d-block" alt="">
             </div>
 
             <style>
@@ -46,13 +46,14 @@
             font-family: Montheavy;
         } */
         .wp {
-            background-image: url('asset/images/kontak.png');
+            background-image: url("{{asset('uploads/'.(isset($footer_image->filename)?$footer_image->filename: ''))}}");
             height: 800px;
             background-size: cover;
             -o-object-position: center;
             object-position: center;
             /* transform: scale(1.5); */
             width: 100%;
+            background-color: black;
 
         }
         .content {
@@ -518,7 +519,7 @@
         
         <div class="main-banner__video vid ">
             <video muted="muted" loop="loop" id="videohome" autoplay="autoplay" playsinline>
-                <source src="{{asset('uploads').'/'.$header_banner->filename}}" type="video/mp4">
+                <source src="{{asset('uploads').'/'.(isset($header_banner->filename)?$header_banner->filename:'')}}" type="video/mp4">
              </video>
         </div>
     </section>
@@ -870,57 +871,16 @@
 
         <div class="containerFlow">
             <section class="accordion">
+                @foreach($faq as $index => $data)
                 <div class="tab-accordion">
-                    <input type="checkbox" name="accordion-1" id="cb1" checked>
-                    <label for="cb1" class="tab__label">Apa sih perbedaan STADIUM, PRO dan PRO+ version?</label>
+                    <input type="checkbox" name="accordion-1" id="cb_{{($index+1)}}">
+                    <label for="cb_{{($index+1)}}" class="tab__label">{{$data->question}}</label>
                     <div class="tab__content">
-                    <p>Untuk mengetahui perbedaan masing-masing jenis kualitas bisa dilihat secara lengkap, <a href="{{ url('/price-list', ['kd_part' => 'non-print']) }}" target="_blank"> Silahkan klik disini</a></p>
+                    {!!$data->answer!!}
                     </div>
                 </div>
-                <div class="tab-accordion">
-                    <input type="checkbox" name="accordion-1" id="cb2">
-                    <label for="cb2" class="tab__label">Ada Minimal order nya?</label>
-                    <div class="tab__content">
-                    <p>Untuk CUSTOMIZE JERSEY  ada minimal order quantity (MOQ) nya</p>
-                        <ul>
-                            <li>- Untuk STADIUM version MOQ 12 pcs</li>
-                            <li>- Untuk PRO dan PRO+ version MOQ 24 pcs</li>
-                        </ul>
-                    
-                    </div>
-                </div>
-                <div class="tab-accordion">
-                    <input type="checkbox" name="accordion-1" id="cb3">
-                    <label for="cb3" class="tab__label">Bisa pesan satuan?</label>
-                    <div class="tab__content">
-                    <p>Untuk pemesanan satuan kami menyediakan produk sportwears yang bisa kamu beli tanpa minimum order, baik satuan maupun dalam jumlah banyak. Klik 
-                        <a href="https://www.tokopedia.com/rathenid" target="_blank">disini</a> ya untuk info lebih lengkap</p>
-                    </div>
-                </div>
-                <div class="tab-accordion">
-                    <input type="checkbox" name="accordion-1" id="cb4">
-                    <label for="cb4" class="tab__label">Lokasi nya dimana?</label>
-                    <div class="tab__content">
-                    <p>Lokasi kita di Bogor Kota. Klik <a href="#location">disini</a> ya untuk info lebih lengkap.
-                    </p>
-                    </div>
-                </div>
-                <div class="tab-accordion">
-                    <input type="checkbox" name="accordion-1" id="cb5">
-                    <label for="cb5" class="tab__label">Bagaimana cara pemesanannya?</label>
-                    <div class="tab__content">
-                    <p>Untuk prosedur pemesanan di RATHEN sangat mudah sekali, klik <a href="#order">disini</a> ya untuk info lebih lengkap.
-                    </p>
-                    </div>
-                </div>
-                <div class="tab-accordion">
-                    <input type="checkbox" name="accordion-1" id="cb6">
-                    <label for="cb6" class="tab__label">Bisa lihat hasil yang sudah diproduksi?</label>
-                    <div class="tab__content">
-                    <p>Boleh sekali, explore semua hasil produksi kami <a href="https://instagram.com/rathen.apparel" target="_blank">disini</a> ya.
-                    </p>
-                    </div>
-                </div>
+                @endforeach
+                
             </section>
         </div>
     </section>
@@ -939,17 +899,12 @@
             <div class="company-slider swiper-container pt-3 pb-3">
                 <div class="swiper-wrapper align-items-center">
                     
-                <?php
-                $imagePath = public_path('asset/images/clients/company');
-                $images = glob($imagePath . '/*.png');
-                foreach ($images as $image) {
-                    $imageName = basename($image);
-                    $imageNumber = (int) pathinfo($imageName, PATHINFO_FILENAME);
-                ?>
+        
+                @foreach ($top_image as $data) 
                     <div class="swiper-slide">
-                        <img src="{{ asset('asset/images/clients/company/' . $imageName) }}" class="img-client" alt="">
+                        <img src="{{asset('uploads/'.$data->filename)}}" class="img-client" alt="">
                     </div>
-                <?php } ?>
+                @endforeach
 
                 </div>
             </div>
@@ -957,17 +912,11 @@
             <div class="academy-slider swiper-container pt-5">
                 <div class="swiper-wrapper align-items-center">
                     
-                <?php
-                $imagePath = public_path('asset/images/clients/academy');
-                $images = glob($imagePath . '/*.png');
-                foreach ($images as $image) {
-                    $imageName = basename($image);
-                    $imageNumber = (int) pathinfo($imageName, PATHINFO_FILENAME);
-                ?>
+                @foreach ($buttom_image as $data) 
                     <div class="swiper-slide">
-                        <img src="{{ asset('asset/images/clients/academy/' . $imageName) }}" class="img-client img-academy" alt="">
+                        <img src="{{asset('uploads/'.$data->filename)}}" class="img-client" alt="">
                     </div>
-                <?php } ?>
+                @endforeach
 
                 </div>
             </div>
@@ -1320,15 +1269,29 @@ document.addEventListener('DOMContentLoaded', function () {
         <div class="row center-hori">
             <div class="col-lg-5 card_location m-4 mb7-mobile">
                 <div class="img_location ">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.4343833806684!2d106.77431907418564!3d-6.5928088934009095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c57a439b19c9%3A0x4a05cc1ee48848ba!2sRATHEN%20Store%20-%20Sportwears%20Outlet!5e0!3m2!1sid!2sid!4v1700127350226!5m2!1sid!2sid" allowfullscreen class="img_location" style="500px"></iframe>
+                {!!(isset($location->iframe_maps)?$location->iframe_maps:'')!!}
                 </div>
             </div>
             <div class="col-lg-5 m-4 mb2-mobile">
         
                 <div id="carouselExample" class="carousel slide w-100 h-carousel slide"  data-ride="carousel">
                     <div class="carousel-inner ">
+                    @foreach($location_carousel as $index => $data)
+                            @if($data['type'] == 'video')
+                            <div class="carousel-item {{ $index === 0 ? ' active' : '' }}"> 
+                            <video id="video1" class="d-block w-100 l-carousel" controls autoplay muted> 
+                                    <source src="{{asset('/uploads').'/' .$data['filename']}}" type="video/mp4"> 
+                                    Your browser does not support the video tag.
+                            </video>
+                            </div>
+                            @else
                         
-                        <div class="carousel-item img-carousel active">
+                            <div class="carousel-item img-carousel {{ $index === 0 ? ' active' : '' }}">
+                                <img src="{{asset('/uploads').'/' .$data['filename']}}" class="d-block w-100 img-fluid"  alt="swiss"> 
+                            </div>
+                            @endif
+                        @endforeach
+                        <!-- <div class="carousel-item img-carousel active">
                             <img src="{{asset('asset/images/location/f1.JPG')}}" class="-block  w-100 img-fluid" alt="swiss">
                         </div>
                         <div class="carousel-item">
@@ -1344,7 +1307,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         <div class="carousel-item" >
                             <img src="{{asset('asset/images/location/F8.JPG')}}" class="l-carousel" alt="swiss">
                             </video>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -1353,8 +1316,8 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="container text-center">
         <div class="row m-4 center-hori" style="display:unset;">
             <div class="col-lg-12" >
-                <p class="store">RATHEN STORE </p>
-                <p class="addres"> Ruko Sentra Gunungbatu<br>Jl. Mayjen Ishak Djuarsa no. 167B<br>Bogor 16118 </p>
+                <p class="store">{{(isset($location->name)?$location->name:'')}} </p>
+                <p class="addres">{{(isset($location->address)?$location->address:'')}}</p>
             </div>
         </div>
     </div>
@@ -1373,16 +1336,30 @@ document.addEventListener('DOMContentLoaded', function () {
           </div>
             <div class="row sosmed center-hori dis-icon">
                 <div class="col-lg-2"></div>
-                    <a href="https://wa.me/6289611081988?text=halo%20RATHEN..%20Saya%20ingin%20membuat%20custom%20jersey" target="_blank" class="btn-mid icon-mobile"><img src="asset/images/whatsapp_new.png" class="icon" width="50%" alt="wa"><h5>Whatsapp</h5></a>
+                    @foreach($link_web_section_1 as $data)
+                    <a href="{{$data->link}}" target="_blank" class="btn-mid icon-mobile">
+                        <img src="{{asset('uploads/'.$data->media->filename)}}" class="icon" width="50%" alt="wa">
+                        <h5>{{$data->name}}</h5>
+                    </a>
+                    @endforeach
+                    <!-- <a href="https://wa.me/6289611081988?text=halo%20RATHEN..%20Saya%20ingin%20membuat%20custom%20jersey" target="_blank" class="btn-mid icon-mobile">
+                        <img src="asset/images/whatsapp_new.png" class="icon" width="50%" alt="wa">
+                        <h5>Whatsapp</h5>
+                    </a>
                     <a href="https://shopee.co.id/rathen.id" target="_blank" class="btn-mid icon-mobile"><img src="asset/images/SHOPEE.png" width="50%" class="icon" alt="wa"><h5>Shopee</h5></a>
-                    <a href="https://www.tokopedia.com/rathenid" target="_blank" class="btn-mid icon-mobile"><img src="asset/images/tokped_new.png" width="50%" class="icon" alt="wa"><h5>Tokopedia</h5></a>
+                    <a href="https://www.tokopedia.com/rathenid" target="_blank" class="btn-mid icon-mobile"><img src="asset/images/tokped_new.png" width="50%" class="icon" alt="wa"><h5>Tokopedia</h5></a> -->
                 <div class="col-lg-2"></div>
             </div>
             <div class="row sosmed center-hori">
                 <div class="container-sosmed">
-                    <a href="https://www.instagram.com/rathen.apparel/" target="_blank" ><img src="asset/images/ig-biru.png" class="btn-sosmed" alt="wa"></a>
-                    <a href="mailto:rathen.apparel@gmail.com" target="_blank" class="emai"><img src="asset/images/mail.png" class="btn-sosmed" alt="wa"></a>
-                    <p class="footer">copyright &copy; rathen indonesia 2024</p>
+                @foreach($link_web_section_2 as $data)
+                    <a href="{{$data->link}}" target="_blank" >
+                        <img src="{{asset('uploads/'.$data->media->filename)}}" class="btn-sosmed" alt="{{$data->name}}">
+                    </a>
+                @endforeach
+                    <!-- <a href="https://www.instagram.com/rathen.apparel/" target="_blank" ><img src="asset/images/ig-biru.png" class="btn-sosmed" alt="wa"></a>
+                    <a href="mailto:rathen.apparel@gmail.com" target="_blank" class="emai"><img src="asset/images/mail.png" class="btn-sosmed" alt="wa"></a> -->
+                    <p class="footer">copyright &copy; {{$about_us->name}} 2024</p>
                 </div>
             </div>
     </div>

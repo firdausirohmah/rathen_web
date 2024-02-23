@@ -3,9 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\AboutUs;
+use App\Models\Faq;
 use App\Models\Finance;
+use App\Models\LinkWeb;
+use App\Models\Location;
 use App\Models\Media;
 use App\Models\ModelStep1;
+use App\Models\ModelStep4;
 use App\Models\OrderStep;
 use App\Models\pemesananModel;
 use DateTime;
@@ -146,10 +150,15 @@ class adminController extends Controller
             }
 
         
+            $Step4 = ModelStep4::where('kd_step1', $kode)
+            ->orderByRaw("FIELD(ukuran, 'S', 'M', 'L', 'XL', 'XXL', 'XXXL')") // Sesuaikan dengan ukuran yang sesuai 
+            ->get();
+        
         $part = DB::table('tbl_part')->where('kd_part', $kd_part)->get();
 
         foreach ($data as $key) { 
             return view('landing_page.productionStep2', [
+                'dataStep4' => $Step4,
                 'data' =>$key,
                 'pesanan' => $part,
                 'kode' => $kode, 
@@ -388,13 +397,24 @@ class adminController extends Controller
 
 
     public function landingpage(){
+        $link_web_1 = LinkWeb::whereHas('media', function ($query) {
+            $query->where('media_type_of', 'icon_link_section_1');
+        })->get();
+        $link_web_2 = LinkWeb::whereHas('media', function ($query) {
+            $query->where('media_type_of', 'icon_link_section_2');
+        })->get();
         $about_us = new AboutUs();
         $media = new Media();
+        $faq = Faq::get();
         $row = $about_us->get()->first();
+        $location = Location::get()->first();
         $about_us_media = $media->where('media_type_of', 'carousel_about_us')->get(); 
         $header_banner_media = $media->where('media_type_of', 'header_banner')->get(); 
         $logo_media = $media->where('media_type_of', 'logo')->get(); 
         $order_step = OrderStep::get();
+        $location_carousel = $media->where('media_type_of', 'location_carousel')->get(); 
+        $client_carousel = $media->where('media_type_of', 'client')->get(); 
+        $footer_image = $media->where('media_type_of', 'footer_image')->get(); 
         return View('admin.landingpage', [
             'pages' => 'Landing Page', 
             'about_us' => $row,
@@ -402,6 +422,13 @@ class adminController extends Controller
             'header_banner_media' => $header_banner_media,
             'logo' => $logo_media,
             'order_step' => $order_step,
+            'faq'=> $faq,
+            'location_carousel' => $location_carousel,
+            'client_carousel' => $client_carousel,
+            'location' => $location,
+            'link_web_section_1' => $link_web_1,
+            'link_web_section_2' => $link_web_2,
+            'footer_image' => $footer_image,
         ]);
     }
     public function landingpage_about_us(Request $input){
@@ -416,9 +443,56 @@ class adminController extends Controller
         $row->description = $description;
         $row->save();
 
-        return redirect()->back();
+        return redirect()->back()->with('success', 'berhasil add data');
+    }
+    public function landingpage_location_add(Request $input){
+        $name = $input->name;
+        $address = $input->address;
+        $maps = $input->iframe;
+
+        $location = new Location();
+        $row = $location->get()->first();
+        if($row == null){
+            $location->name = $name;
+            $location->address = $address;
+            $location->iframe_maps = $maps;
+            $location->save();
+        }else{
+
+            $row->name = $name;
+            $row->address = $address;
+            $row->iframe_maps = $maps;
+            $row->save();
+        }
+
+        return redirect()->back()->with('success', 'berhasil add data');
     }
     public function landingpage_media_upload(Request $input){
+        $filename = time().'.'.$input->file('file')->getClientOriginalExtension();
+        $type = null;
+        $media_type = $input->media_type_of;
+        if (str_starts_with($input->file('file')->getMimeType(), 'image')) {
+            // File adalah gambar
+            // Proses gambar di sini
+            $type = 'image';
+        } else {
+            // File bukan gambar atau video
+            return redirect()->back()->with('error', 'File harus berupa gambar');
+        }
+
+        $about_us = new Media();
+        $about_us->filename = $filename;
+        $about_us->alt = $filename;
+        $about_us->type = $type;
+        $about_us->media_type_of = $media_type;
+        $about_us->save();
+        $input->file('file')->move('uploads', $filename);
+
+
+
+        return redirect()->back()->with('success', 'berhasil upload data');
+    }
+    public function landingpage_linkweb_add(Request $input){
         $filename = time().'.'.$input->file('file')->getClientOriginalExtension();
         $type = null;
         $media_type = $input->media_type_of;
@@ -435,17 +509,41 @@ class adminController extends Controller
             return redirect()->back()->with('error', 'File harus berupa gambar atau video.');
         }
 
-        $about_us = new Media();
-        $about_us->filename = $filename;
-        $about_us->alt = $filename;
-        $about_us->type = $type;
-        $about_us->media_type_of = $media_type;
-        $about_us->save();
+        $media = new Media();
+        $media->filename = $filename;
+        $media->alt = $filename;
+        $media->type = $type;
+        $media->media_type_of = $media_type;
+        $media->save();
         $input->file('file')->move('uploads', $filename);
 
+        $linkWeb = new LinkWeb();
+        $linkWeb->link = $input->link;
+        $linkWeb->name = $input->name;
+        $linkWeb->id_media = $media->id; 
+        $linkWeb->save();
 
 
-        return redirect()->back()->with('success', 'berhasil upload data');
+
+        return redirect()->back()->with('success', 'berhasil add data');
+    }
+    
+    public function landingpage_linkweb_delete($id){
+        $linkWeb = LinkWeb::find($id);
+        if(!$linkWeb){
+            return redirect()->back()->with('error', 'data tidak ditemukan.');
+        }
+            $linkWeb->delete();
+            $media = Media::find($linkWeb->id_media);
+
+            if (File::exists(public_path("/uploads/$media->filename"))) {
+                // Hapus file dari direktori public
+                File::delete(public_path("/uploads/$media->filename"));
+                $media->delete();
+                return redirect()->back()->with('success', 'berhasil delete data');
+            } else {
+                return redirect()->back()->with('error', 'gagal delete data');
+        }
     }
     public function landingpage_file_delete($id){
         $media = Media::find($id);
@@ -467,6 +565,13 @@ class adminController extends Controller
         $order_step->icon = $input->icon;
         $order_step->description = $input->description;
         $order_step->save();
+        return redirect()->back()->with('success', 'berhasil add data');
+    }
+    public function landingpage_faq_add(Request $input){
+        $faq = new Faq();
+        $faq->question = $input->question;
+        $faq->answer = $input->answer;
+        $faq->save();
         return redirect()->back()->with('success', 'berhasil add data');
     }
 

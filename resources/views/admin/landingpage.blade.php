@@ -225,9 +225,9 @@
         <div class="card m-2">
             <div class="card-body">
                 <h5  class="card-title">
-                    How To Order
+                    Faq
                 </h5>
-                <form action="" method="post" class="row">
+                <form action="{{route('admin.landingpage.faq.add')}}" method="post" class="row">
                     @csrf
                     <div class="form-group">
                         <label for="question">Question</label>
@@ -241,16 +241,318 @@
                         <button type="submit" class="form-control btn btn-primary">add</button>
                     </div>
                 </form>
+                @foreach($faq as $index => $data)
                 <p class="d-inline-flex gap-1">
-                <a class="text-dark" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                    Link with href
+                <a class="text-dark" data-bs-toggle="collapse" href="#faq_{{$index}}" role="button" aria-expanded="false" aria-controls="collapseExample">
+                    {{$data->question}}
                 </a>
                 </p>
-                <div class="collapse" id="collapseExample">
+                <div class="collapse" id="faq_{{$index}}">
                 <div class="card card-body">
-                    Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                {!!$data->answer!!}
                 </div>
-                </div>v
+                </div>
+                @endforeach
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="card m-2">
+            <div class="card-body">
+                <h5  class="card-title">
+                    Location Form
+                </h5>
+                <form action="{{route('admin.landingpage.location.add')}}" method="post" class="row">
+                    @csrf
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" id="name" class="form-control" required value="{{(isset($location->name)?$location->name:'')}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <textarea name="address" id="address" class="form-control" >{{(isset($location->address)?$location->address:'')}}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="iframe">Embed Google Maps</label>
+                        <textarea name="iframe" id="iframe" class="form-control" >{{(isset($location->iframe_maps)?$location->iframe_maps:'')}}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="form-control btn btn-primary">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+    <div class="card m-2">
+            <div class="card-body">
+                <h5  class="card-title">
+                    Location Carousel
+                </h5>
+                <form action="{{route('admin.landingpage.media_upload')}}" method="post" class="row" enctype="multipart/form-data">
+                    @csrf
+                    <div class="form-group col">
+                        <label for="file">File</label>
+                        <input type="file" name="file" id="file" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="form-control btn btn-primary">upload</button>
+                    </div>
+                    <input type="hidden" name="media_type_of" value="location_carousel">
+                </form>
+                <table class="table">
+                    <tr>
+                        <th>Thumnail</th>
+                        <th>Name</th>
+                        <th>Action</th>
+                    </tr>
+                    @foreach($location_carousel as $index => $data)
+                    <tr>
+                        <td class="w-auto ratio ratio-1x1">
+                        @if($data['type'] == 'video')
+
+                            <video id="video1" class="d-block w-100 csabout" controls autoplay muted> 
+                                    <source src="{{asset('/uploads').'/' .$data['filename']}}" type="video/mp4"> 
+                                    Your browser does not support the video tag.
+                            </video>
+                       
+                            @else
+                        
+                            
+                                <img src="{{asset('/uploads').'/' .$data['filename']}}" class="d-block w-100 img-fluid"  alt="swiss"> 
+                           
+                            @endif
+                        </td>
+                        <td>{{$data['filename']}}</td>
+                        <td>
+                            @php
+                            $id = $data['id'];
+                            @endphp
+                            <a href="{{route('admin.landingpage.media.delete', ['id' => $id])}}" class="badge bg-danger">hapus</a>
+                        </td>
+                    </tr>
+                    @endforeach
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+    <div class="card m-2">
+            <div class="card-body">
+                <h5  class="card-title">
+                    Client Carousel
+                </h5>
+                <form action="{{route('admin.landingpage.media_upload')}}" method="post" class="row" enctype="multipart/form-data">
+                    @csrf
+                    <div class="form-group col">
+                        <label for="file">File</label>
+                        <input type="file" name="file" id="file" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="form-control btn btn-primary">upload</button>
+                    </div>
+                    <input type="hidden" name="media_type_of" value="client">
+                </form>
+                <table class="table">
+                    <tr>
+                        <th>Thumnail</th>
+                        <th>Name</th>
+                        <th>Action</th>
+                    </tr>
+                    @foreach($client_carousel as $index => $data)
+                    <tr>
+                        <td class="w-auto ratio ratio-1x1">
+                        @if($data['type'] == 'video')
+
+                            <video id="video1" class="d-block w-100 csabout" controls autoplay muted> 
+                                    <source src="{{asset('/uploads').'/' .$data['filename']}}" type="video/mp4"> 
+                                    Your browser does not support the video tag.
+                            </video>
+                       
+                            @else
+                        
+                            
+                                <img src="{{asset('/uploads').'/' .$data['filename']}}" class="d-block w-100 img-fluid"  alt="swiss"> 
+                           
+                            @endif
+                        </td>
+                        <td>{{$data['filename']}}</td>
+                        <td>
+                            @php
+                            $id = $data['id'];
+                            @endphp
+                            <a href="{{route('admin.landingpage.media.delete', ['id' => $id])}}" class="badge bg-danger">hapus</a>
+                        </td>
+                    </tr>
+                    @endforeach
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+    <div class="card m-2">
+            <div class="card-body">
+                <h5  class="card-title">
+                    Footer Image
+                </h5>
+                <form action="{{route('admin.landingpage.media_upload')}}" method="post" class="row" enctype="multipart/form-data">
+                    @csrf
+                    <div class="form-group col">
+                        <label for="file">File</label>
+                        <input type="file" name="file" id="file" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="form-control btn btn-primary">upload</button>
+                    </div>
+                    <input type="hidden" name="media_type_of" value="footer_image">
+                </form>
+                <table class="table">
+                    <tr>
+                        <th>Thumnail</th>
+                        <th>Name</th>
+                        <th>Action</th>
+                    </tr>
+                    @foreach($footer_image as $index => $data)
+                    <tr>
+                        <td class="w-auto ratio ratio-1x1">
+                        @if($data['type'] == 'video')
+
+                            <video id="video1" class="d-block w-100 csabout" controls autoplay muted> 
+                                    <source src="{{asset('/uploads').'/' .$data['filename']}}" type="video/mp4"> 
+                                    Your browser does not support the video tag.
+                            </video>
+                       
+                            @else
+                        
+                            
+                                <img src="{{asset('/uploads').'/' .$data['filename']}}" class="d-block w-100 img-fluid"  alt="swiss"> 
+                           
+                            @endif
+                        </td>
+                        <td>{{$data['filename']}}</td>
+                        <td>
+                            @php
+                            $id = $data['id'];
+                            @endphp
+                            <a href="{{route('admin.landingpage.media.delete', ['id' => $id])}}" class="badge bg-danger">hapus</a>
+                        </td>
+                    </tr>
+                    @endforeach
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+    <div class="card m-2">
+            <div class="card-body">
+                <h5  class="card-title">
+                    Link Web Section 1
+                </h5>
+                <form action="{{route('admin.landingpage.linkweb.add')}}" method="post" class="row" enctype="multipart/form-data">
+                    @csrf
+                    <div class="form-group col-md-6">
+                        <label for="file">Icon</label>
+                        <input type="file" name="file" id="file" class="form-control" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" id="name" class="form-control">
+                    </div>
+                    <div class="form-group col-12">
+                        <label for="Link">Link</label>
+                        <input type="text" name="link" id="link" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="form-control btn btn-primary">Submit</button>
+                    </div>
+                    <input type="hidden" name="media_type_of" value="icon_link_section_1">
+                </form>
+                <table class="table">
+                    <tr>
+                        <th>Icon</th>
+                        <th>Name</th>
+                        <th>Link</th>
+                        <th>Action</th>
+
+                    </tr>
+                    @foreach($link_web_section_1 as $data)
+                    <tr>
+                        <td class="w-auto ratio ratio-1x1">
+                        
+                        
+                            
+                        <img src="{{asset('/uploads').'/' .$data->media['filename']}}" class="d-block w-100 img-fluid"  alt="swiss"> 
+                           
+                           
+                        </td>
+                        <td>{{$data['name']}}</td>
+                        <td>{{$data['link']}}</td>
+                        <td>
+                            @php
+                            $id = $data['id'];
+                            @endphp
+                            <a href="{{route('admin.landingpage.linkweb.delete', ['id' => $id])}}" class="badge bg-danger">hapus</a>
+                        </td>
+                    </tr>
+                    @endforeach
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+    <div class="card m-2">
+            <div class="card-body">
+                <h5  class="card-title">
+                    Link Web Section 2
+                </h5>
+                <form action="{{route('admin.landingpage.linkweb.add')}}" method="post" class="row" enctype="multipart/form-data">
+                    @csrf
+                    <div class="form-group col-md-6">
+                        <label for="file">Icon</label>
+                        <input type="file" name="file" id="file" class="form-control" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" id="name" class="form-control">
+                    </div>
+                    <div class="form-group col-12">
+                        <label for="Link">Link</label>
+                        <input type="text" name="link" id="link" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="form-control btn btn-primary">Submit</button>
+                    </div>
+                    <input type="hidden" name="media_type_of" value="icon_link_section_2">
+                </form>
+                <table class="table">
+                    <tr>
+                        <th>Icon</th>
+                        <th>Name</th>
+                        <th>Link</th>
+                        <th>Action</th>
+
+                    </tr>
+                    @foreach($link_web_section_2 as $data)
+                    <tr>
+                        <td class="w-auto ratio ratio-1x1">
+                        
+                        
+                            
+                        <img src="{{asset('/uploads').'/' .$data->media['filename']}}" class="d-block w-100 img-fluid"  alt="swiss"> 
+                           
+                           
+                        </td>
+                        <td>{{$data['name']}}</td>
+                        <td>{{$data['link']}}</td>
+                        <td>
+                            @php
+                            $id = $data['id'];
+                            @endphp
+                            <a href="{{route('admin.landingpage.linkweb.delete', ['id' => $id])}}" class="badge bg-danger">hapus</a>
+                        </td>
+                    </tr>
+                    @endforeach
+                </table>
             </div>
         </div>
     </div>

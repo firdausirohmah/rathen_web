@@ -1,178 +1,269 @@
 @extends('layout.admin')
 @section('content')
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css">
+<link rel="stylesheet" href="{{asset('asset/css/tables.css')}}">
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
 
-
+<script src="{{asset('asset/js/tables.js')}}"></script>
 
 <div class="container p-4">
-  <div class="row mt-2">
-    <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary m-2S" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Add
-</button>
+  <ul class="nav nav-tabs" id="myTabs" role="tablist">
+    <li class="nav-item" role="presentation">
+      <a class="nav-link active" id="dashboard-tab" data-bs-toggle="tab" href="#dashboard" role="tab" aria-controls="dashboard" aria-selected="true">Dashboard</a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" id="dataFinance-tab" data-bs-toggle="tab" href="#dataFinance" role="tab" aria-controls="dataFinance" aria-selected="false">Data</a>
+    </li>
+  </ul>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <form action="{{route('finance.add')}}" method="post">
-      @csrf
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-         <div class="form-group">
-          <label for="date">Date</label>
-          <input type="date" name="date" id="date" class="form-control">
-         </div>
-         <div class="form-group">
-          <label for="type">Type</label>
-          <select name="type" id="type" class="form-control">
-            <option value="">Select Here</option>
-            <option value="debit">Debit</option>
-            <option value="credit">Credit</option>
-          </select>
-         </div>
-         <div class="form-group">
-          <label for="status">Status</label>
-          <select name="status" id="status" class="form-control">
-            <option value="">Select Here</option>
-            <option value="order">Order</option>
-            <option value="belanja">Belanja</option>
-            <option value="hr">HR</option>
-            <option value="ads">Ads</option>
-          </select>
-         </div>
-         <div class="form-group">
-          <label for="note">Details</label>
-          <textarea name="note" id="note" class="form-control"></textarea>
-         </div>
-         <div class="form-group">
-          <label for="nominal">Nominal</label>
-          <input type="number" name="nominal" id="nominal" class="form-control">
-         </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
-    </form>
-  </div>
-</div>
-    <div class="col-lg-6">
-      <div class="mb-4 w-50 mx-auto">
-        <div class="rounded-4 bg-dark py-2 text-center text-light">
-          <!-- Omset berjalan -->
-          <h3 class="m-0">Omset</h3>
-          <h2 class="m-0">Rp {{number_format($omset,0,',','.')}}</h1>
-        </div>
+  <!-- <div class="row mt-2"> -->
 
-      </div>
-    </div>
-    <div class="col-lg-6">
-      <div class="mb-5 w-50 mx-auto">
-        <a href="" class="text-decoration-none">
-          <div class="rounded-4 bg-dark py-2 text-center text-light">
-            <!-- Target OMSET -->
-            <!-- ADMIN BISA INPUT-->
-            <h3 class="m-0">Target</h3>
-            <h2 class="m-0">Rp 20.000.000</h1>
-            <input type="hidden">
+
+  <div class="tab-content">
+    <!-- dashboard Tab -->
+    <div class="tab-pane fade show active" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
+
+      <div class="row mt-2">
+        <div class="col-lg-6">
+          <div class="mb-4 w-50 mx-auto">
+            <div class="rounded-4 bg-dark py-2 text-center text-light">
+              <!-- Omset berjalan -->
+              <h3 class="m-0">Omset</h3>
+              <h2 class="m-0">Rp {{number_format($omset,0,',','.')}}</h1>
+            </div>
 
           </div>
-        </a>
+        </div>
+        <div class="col-lg-6">
+          <div class="mb-5 w-50 mx-auto">
+            <a href="" class="text-decoration-none">
+              <div class="rounded-4 bg-dark py-2 text-center text-light">
+                <!-- Target OMSET -->
+                <!-- ADMIN BISA INPUT-->
+                <h3 class="m-0">Target</h3>
+                <h2 class="m-0">Rp 20.000.000</h1>
+                <input type="hidden">
 
+              </div>
+            </a>
+
+          </div>
+        </div>
+        
+        
+        <div class="col-lg-12 mb-3 d-flex">
+          <form action="{{route('finance.update.chart')}}" method="post">
+            @csrf
+            <div class="ms-auto">
+              <label for="DateFinance" class="me-3 form-label">Monthly:</label>
+              <input type="month" id="DateFinance" name="date" class="form-control-sm">
+            </div>
+            <div class="ms-auto">
+              <button type="submit" class="form-label text-dark text-center me-3 w-100 flex-wrap" style="border: none; background: none;">
+                Update Chart<i class="ms-2 fas fa-edit"></i>
+              </button>
+      
+            </div>
+          </form>
+        </div>
+        
+        <div class="col-lg-12 mb-4">
+          <div class="card z-index-2">
+            <div class="card-header d-flex">
+              <div class="text-center">
+                <p>{{$order}} Order<i class="ms-2 fa fa-shopping-bag"></i></p>
+                <span>Rp {{number_format($omset,0,',','.')}}</span>
+              </div>
+              <div class="ms-auto d-flex w-25">
+                <a href="" class="text-dark text-decoration-none text-center me-3 w-100 flex-wrap">
+                  <p>Income<i class="ms-2 fas fa-hand-holding-usd"></i></p>
+                  <span>Rp {{number_format($omset,0,',','.')}}</span>
+                </a>
+                
+                <a href="" class="text-dark text-decoration-none text-center w-100 flex-wrap">
+                  <p>Expenses<i class="ms-2 fas fa-sign-out-alt"></i></p>
+                  <span>Rp {{number_format($expense,0,',','.')}}</span>
+                </a>
+                <!-- <input type="text" placeholder="INCOME" class="form-control-sm"> -->
+                <!-- <input type="text" placeholder="EXPENSE" class="form-control-sm"> -->
+              </div>
+              
+              
+            </div>
+            <div class="card-body p-3">
+              <div class="ms-auto d-flex w-100">
+                <a href="" class="text-dark text-decoration-none text-center me-3 w-100 flex-wrap">
+                  <p>Saldo<i class="ms-2 fas fa-wallet"></i></p>
+                  <span>Rp {{number_format($saldo,0,',','.')}}</span>
+                </a>
+                
+                <a href="" class="text-dark text-decoration-none text-center w-100 flex-wrap">
+                  <p>Gross Profit<i class="ms-2 fas fa-sign-out-alt"></i></p>
+                  <span>{{$gross_profit}}%</span>
+                </a>
+                
+                <a href="" class="text-dark text-decoration-none text-center w-100 flex-wrap">
+                  <p>Net Profit<i class="ms-2 fas fa-sign-out-alt"></i></p>
+                  <span>{{$net_profit}}%</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-12 mb-4">
+          <div class="card z-index-2">
+            <div class="card-header pb-0">
+              <h6>Grafik Income</h6>
+              
+            </div>
+            <div class="card-body p-3">
+              <div class="chart">
+                <canvas id="chart-line" class="chart-canvas" height="300"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-12 mb-4">
+          <div class="card z-index-2">
+            <div class="card-header pb-0 text-center">
+              <h6>Current Ratio</h6>
+              
+            </div>
+            <div class="card-body p-3">
+              <div class="text-center">
+                <h1>{{$current_ratio}}</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+        
       </div>
     </div>
-    
-    
-    <div class="col-lg-12 mb-3 d-flex">
-      <form action="{{route('finance.update.chart')}}" method="post">
-        @csrf
-        <div class="ms-auto">
-          <label for="DateFinance" class="me-3 form-label">Monthly:</label>
-          <input type="month" id="DateFinance" name="date" class="form-control-sm">
-        </div>
-        <div class="ms-auto">
-          <button type="submit" class="form-label text-dark text-center me-3 w-100 flex-wrap" style="border: none; background: none;">
-            Update Chart<i class="ms-2 fas fa-edit"></i>
+    <!-- dataFinance Tab -->
+    <div class="tab-pane fade" id="dataFinance" role="tabpanel" aria-labelledby="dataFinance-tab">
+      <div class="card card-tab mb-4">
+        <div class="card-header pb-0 d-flex">
+          <h6>Data Finance</h6>
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-primary ms-auto m-2S" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Input Data
           </button>
-  
-        </div>
-      </form>
-    </div>
-    
-    <div class="col-lg-12 mb-4">
-      <div class="card z-index-2">
-        <div class="card-header d-flex">
-          <div class="text-center">
-            <p>{{$order}} Order<i class="ms-2 fa fa-shopping-bag"></i></p>
-            <span>Rp {{number_format($omset,0,',','.')}}</span>
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <form action="{{route('finance.add')}}" method="post">
+                @csrf
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                  <div class="form-group">
+                    <label for="date">Date</label>
+                    <input type="date" name="date" id="date" class="form-control">
+                  </div>
+                  <div class="form-group">
+                    <label for="type">Type</label>
+                    <select name="type" id="type" class="form-control">
+                      <option value="">Select Here</option>
+                      <option value="debit">Debit</option>
+                      <option value="credit">Credit</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="status">Status</label>
+                    <select name="status" id="status" class="form-control">
+                      <option value="">Select Here</option>
+                      <option value="order">Order</option>
+                      <option value="belanja">Belanja</option>
+                      <option value="hr">HR</option>
+                      <option value="ads">Ads</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="note">Details</label>
+                    <textarea name="note" id="note" class="form-control"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label for="nominal">Nominal</label>
+                    <input type="number" name="nominal" id="nominal" class="form-control">
+                  </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                  </div>
+                </div>
+              </form>
+            </div>
           </div>
-          <div class="ms-auto d-flex w-25">
-            <a href="" class="text-dark text-decoration-none text-center me-3 w-100 flex-wrap">
-              <p>Income<i class="ms-2 fas fa-hand-holding-usd"></i></p>
-              <span>Rp {{number_format($omset,0,',','.')}}</span>
-            </a>
-            
-            <a href="" class="text-dark text-decoration-none text-center w-100 flex-wrap">
-              <p>Expenses<i class="ms-2 fas fa-sign-out-alt"></i></p>
-              <span>Rp {{number_format($expense,0,',','.')}}</span>
-            </a>
-            <!-- <input type="text" placeholder="INCOME" class="form-control-sm"> -->
-            <!-- <input type="text" placeholder="EXPENSE" class="form-control-sm"> -->
-          </div>
-          
-          
         </div>
-        <div class="card-body p-3">
-          <div class="ms-auto d-flex w-100">
-            <a href="" class="text-dark text-decoration-none text-center me-3 w-100 flex-wrap">
-              <p>Saldo<i class="ms-2 fas fa-wallet"></i></p>
-              <span>Rp {{number_format($saldo,0,',','.')}}</span>
-            </a>
-            
-            <a href="" class="text-dark text-decoration-none text-center w-100 flex-wrap">
-              <p>Gross Profit<i class="ms-2 fas fa-sign-out-alt"></i></p>
-              <span>{{$gross_profit}}%</span>
-            </a>
-            
-            <a href="" class="text-dark text-decoration-none text-center w-100 flex-wrap">
-              <p>Net Profit<i class="ms-2 fas fa-sign-out-alt"></i></p>
-              <span>{{$net_profit}}%</span>
-            </a>
+
+        <div class="card-body px-0 pt-0 pb-2">
+          <div class="table-responsive p-0">
+            <table class="table align-items-center mb-0 display" id="view-finance" style="width:100%">
+              <thead>
+                <tr>
+                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">No
+                  </th>
+                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Status
+                  </th>
+                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Type
+                  </th>
+                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nominal</th>
+                  <th class="text-uppercase text-center text-secondary text-xxs font-weight-bolder opacity-7">Note</th>
+                  <!-- u. kategori dan kualitas -->
+                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Created at
+                  </th>
+                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Action
+                  </th>
+                  <!-- <th class="text-secondary opacity-7"></th> -->
+                </tr>
+              </thead>
+              <tbody>
+                @php $index = 1 @endphp
+                @foreach ($financeData as $item)
+                <tr class="text-center">
+                  <td>
+                    {{ $index++ }}
+                  </td>
+                  <td>
+                    {{ $item->status }}
+                  </td>
+                  <td>
+                    {{ $item->type }}
+                  </td>
+                  <td>
+                    Rp {{number_format($item->nominal,0,',','.')}}
+                  </td>
+                  <td>
+                    {{ $item->note }}
+                  </td>
+                  <td class="text-center text-sm"> {{date("d-m-Y", strtotime($item->created_at))}}
+                    
+                  </td>
+                  <td class="text-center text-sm">
+                    
+                  </td>
+                </tr>
+                @endforeach
+
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
+      
     </div>
-    <div class="col-lg-12 mb-4">
-      <div class="card z-index-2">
-        <div class="card-header pb-0">
-          <h6>Grafik Income</h6>
-          
-        </div>
-        <div class="card-body p-3">
-          <div class="chart">
-            <canvas id="chart-line" class="chart-canvas" height="300"></canvas>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-12 mb-4">
-      <div class="card z-index-2">
-        <div class="card-header pb-0 text-center">
-          <h6>Current Ratio</h6>
-          
-        </div>
-        <div class="card-body p-3">
-          <div class="text-center">
-            <h1>{{$current_ratio}}</h1>
-          </div>
-        </div>
-      </div>
-    </div>
-    
+
   </div>
 </div>       
 

@@ -183,6 +183,7 @@ class adminController extends Controller
 
     {
         $finance = new Finance();
+        $financeData = $finance->all();
         
         $row =  $finance->select('transaction_date', DB::raw('sum(nominal) as nominal'))->groupBy('transaction_date')->where('type', 'debit')->get();
         $omset = $finance->select(DB::raw('SUM(nominal) as omset'))->where('type', 'debit')->get()->value('omset');
@@ -266,6 +267,7 @@ class adminController extends Controller
             'net_profit' => $netProfitMargin,
             'order' => $order,
             'current_ratio' => $current_ratio,
+            'financeData' => $financeData,
 
 
         ]);
@@ -396,7 +398,7 @@ class adminController extends Controller
 
 
 
-    public function landingpage(){
+    public function landingpage(Request $request){
         $link_web_1 = LinkWeb::whereHas('media', function ($query) {
             $query->where('media_type_of', 'icon_link_section_1');
         })->get();
@@ -406,6 +408,37 @@ class adminController extends Controller
         $about_us = new AboutUs();
         $media = new Media();
         $faq = Faq::get();
+        $faq_edit = null;
+        $step_edit = null;
+        if(isset($request->faq_edit)){
+
+            $faq_edit = Faq::find($request->id);
+            //return $faq_edit;
+            
+            
+        }
+        if(isset($request->step_edit)){
+
+            $step_edit = OrderStep::find($request->id);
+            //return $faq_edit;
+            
+            
+        }
+        if(isset($request->save_faq)){
+            $faq_edit = Faq::find($request->id);
+            $faq_edit->question = $request->question;
+            $faq_edit->answer = $request->answer;
+            $faq_edit->save();
+            return redirect()->route('admin.landingpage')->with('success', 'berhasil edit data');
+        }
+        if(isset($request->save_step)){
+            $step_edit = OrderStep::find($request->id);
+            $step_edit->name = $request->name;
+            $step_edit->icon = $request->icon;
+            $step_edit->description = $request->description;
+            $step_edit->save();
+            return redirect()->route('admin.landingpage')->with('success', 'berhasil edit data');
+        }
         $row = $about_us->get()->first();
         $location = Location::get()->first();
         $about_us_media = $media->where('media_type_of', 'carousel_about_us')->get(); 
@@ -429,6 +462,8 @@ class adminController extends Controller
             'link_web_section_1' => $link_web_1,
             'link_web_section_2' => $link_web_2,
             'footer_image' => $footer_image,
+            'faq_edit' => $faq_edit,
+            'step_edit' => $step_edit,
         ]);
     }
     public function landingpage_about_us(Request $input){

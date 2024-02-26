@@ -152,7 +152,8 @@ Route::controller(adminController::class)->group(function () {
     Route::middleware('web','auth')->group(function () {
         Route::get('/dashboard', 'dashboard')->name('dashboard');
         Route::get('/admin_landingpage', 'landingpage')->name('admin.landingpage');
-        Route::post('/admin_landingpage', 'landingpage_about_us')->name('admin.landingpage.about_us');
+        Route::post('/admin_landingpage', 'landingpage')->name('admin.landingpage.edit');
+        Route::post('/admin_landingpage/about_us', 'landingpage_about_us')->name('admin.landingpage.about_us');
         Route::post('/admin_landingpage/location/add', 'landingpage_location_add')->name('admin.landingpage.location.add');
         Route::post('/admin_landingpage/linkweb/add', 'landingpage_linkweb_add')->name('admin.landingpage.linkweb.add');
         Route::post('/admin_landingpage/how_to_order/add', 'landingpage_how_to_order_add')->name('admin.landingpage.how_to_order.add');

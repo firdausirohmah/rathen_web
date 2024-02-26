@@ -186,23 +186,38 @@
                 <h5  class="card-title">
                     How To Order
                 </h5>
+                @if(isset($step_edit))
+                <form action="{{route('admin.landingpage.edit')}}" method="post" class="row">
+                <input type="hidden" name="id" value="{{$step_edit->id}}">
+                @else
                 <form action="{{route('admin.landingpage.how_to_order.add')}}" method="post" class="row">
+                @endif
                     @csrf
                     <div class="form-group col-md-6">
                         <label for="name">Step</label>
-                        <input type="text" name="name" id="name" class="form-control" required>
+                        <input type="text" name="name" id="name" class="form-control" required value="{{(isset($step_edit->name)?$step_edit->name:'')}}">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="type">icon</label>
-                        <input type="text" name="icon" id="icon" class="form-control">
+                        <input type="text" name="icon" id="icon" class="form-control" value="{{(isset($step_edit->icon)?$step_edit->icon:'')}}">
                     </div>
                     <div class="form-group">
                         <label for="description2">Description</label>
-                        <textarea name="description" id="description2" class="form-control" ></textarea>
+                        <textarea name="description" id="description2" class="form-control" >{!!(isset($step_edit->description)?$step_edit->description:'')!!}</textarea>
                     </div>
-                    <div class="form-group">
+                    @if(isset($step_edit))
+                    <div class="form-group col-6">
+                        <a href="{{route('admin.landingpage')}}" class="form-control btn btn-primary">batal</a>
+                    </div>
+                    <div class="form-group col-6">
+                        <input type="hidden" name="save_step" value="true">
+                        <button type="submit" class="form-control btn btn-primary">simpan</button>
+                    </div>
+                    @else
+                    <div class="form-group col-12">
                         <button type="submit" class="form-control btn btn-primary">add</button>
                     </div>
+                    @endif
                 </form>
                 <table class="table">
                     <tr>
@@ -214,7 +229,14 @@
                     <tr>
                         <td>{{$data['name']}}</td>
                         <td>{{$data['icon']}}</td>
-                        <td></td>
+                        <td>
+                        <form action="{{route('admin.landingpage.edit')}}" method="post">
+                            @csrf
+                            <input type="hidden" name="id" value="{{$data->id}}">
+                            <input type="hidden" name="step_edit" value="true">
+                            <button type="submit"  class="btn btn-warning">edit</button>
+                        </form>
+                        </td>
                     </tr>
                     @endforeach
                 </table>
@@ -227,25 +249,46 @@
                 <h5  class="card-title">
                     Faq
                 </h5>
+                @if(isset($faq_edit))
+                <form action="{{route('admin.landingpage.edit')}}" method="post" class="row">
+                <input type="hidden" name="id" value="{{$faq_edit->id}}">
+                @else
                 <form action="{{route('admin.landingpage.faq.add')}}" method="post" class="row">
+                @endif
                     @csrf
                     <div class="form-group">
                         <label for="question">Question</label>
-                        <textarea name="question" id="question" class="form-control" ></textarea>
+                        <textarea name="question" id="question" class="form-control" >{{(isset($faq_edit->question)?$faq_edit->question:'')}}</textarea>
                     </div>
                     <div class="form-group">
                         <label for="answer">Answer</label>
-                        <textarea name="answer" id="answer" class="form-control" ></textarea>
+                        <textarea name="answer" id="answer" class="form-control" >{!!(isset($faq_edit->answer)?$faq_edit->answer:'')!!}</textarea>
                     </div>
-                    <div class="form-group">
+                    @if(isset($faq_edit))
+                    <div class="form-group col-6">
+                        <a href="{{route('admin.landingpage')}}" class="form-control btn btn-primary">batal</a>
+                    </div>
+                    <div class="form-group col-6">
+                        <input type="hidden" name="save_faq" value="true">
+                        <button type="submit" class="form-control btn btn-primary">simpan</button>
+                    </div>
+                    @else
+                    <div class="form-group col-12">
                         <button type="submit" class="form-control btn btn-primary">add</button>
                     </div>
+                    @endif
                 </form>
                 @foreach($faq as $index => $data)
                 <p class="d-inline-flex gap-1">
                 <a class="text-dark" data-bs-toggle="collapse" href="#faq_{{$index}}" role="button" aria-expanded="false" aria-controls="collapseExample">
                     {{$data->question}}
                 </a>
+                <form action="{{route('admin.landingpage.edit')}}" method="post">
+                    @csrf
+                    <input type="hidden" name="id" value="{{$data->id}}">
+                    <input type="hidden" name="faq_edit" value="true">
+                    <button type="submit"  class="btn btn-warning">edit</button>
+                </form>
                 </p>
                 <div class="collapse" id="faq_{{$index}}">
                 <div class="card card-body">

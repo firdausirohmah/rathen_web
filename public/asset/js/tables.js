@@ -13,6 +13,15 @@ $(document).ready(function() {
             'pdfHtml5'
         ]
     } );
+    $('#view-finance').DataTable( {
+        dom: '<"top"Bfi>rt<"bottom"lp>',
+        buttons: [
+            'copyHtml5',
+            'excelHtml5',
+            'csvHtml5',
+            'pdfHtml5'
+        ]
+    } );
 } );
 var id_invoice = 1;
 

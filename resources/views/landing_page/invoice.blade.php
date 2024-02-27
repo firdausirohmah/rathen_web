@@ -38,8 +38,8 @@
 			font-size: 14px;
 		}
 	</style>
-	<a href="{{ route('export') }}" class="print"><button>
-			<i class='bx bx-printer'></i></button></a>
+	{{--<a href="{{ route('export') }}" class="print"><button>
+			<i class='bx bx-printer'></i></button></a>--}}
 
 	<div class="container mt-3">
 		<div class="row justify-content-center">

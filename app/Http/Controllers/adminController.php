@@ -12,6 +12,7 @@ use App\Models\ModelStep1;
 use App\Models\ModelStep4;
 use App\Models\OrderStep;
 use App\Models\pemesananModel;
+use App\Models\ProgressProduction;
 use DateTime;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -71,7 +72,8 @@ class adminController extends Controller
     {
         $data = DB::table('tbl_step1')
             ->join('user_order', 'tbl_step1.kd_step2', '=', 'user_order.kd_order')
-            ->select('tbl_step1.*','user_order.*')
+            ->join('progress_productions', 'progress_productions.kd_step', '=', 'tbl_step1.kd_step2')
+            ->select('tbl_step1.*','user_order.*', 'progress_productions.*')
             ->get();
 
         $dataQ = DB::table('tbl_quotation_order')
@@ -165,7 +167,35 @@ class adminController extends Controller
             ]);
         }
     }
+    public function update_progress(Request $request){
+        $kd_step = $request->kd_step;
+        $is_shipping_payment = $request->has('is_shipping_payment') ? true : false;
+        $is_final_concept = $request->has('is_final_concept') ? true : false;
+        $is_order_quantity = $request->has('is_order_quantity') ? true : false;
+        $is_production_data = $request->has('is_production_data') ? true : false;
+        $is_polifek_quality = $request->has('is_polifek_quality') ? true : false;
+        $is_stitching_neatness = $request->has('is_stitching_neatness') ? true : false;
+        $is_logo = $request->has('is_logo') ? true : false;
+        $is_packaging = $request->has('is_packaging') ? true : false;
+        $is_delivery = $request->has('is_delivery') ? true : false;
 
+        // Menyimpan nilai-nilai ke dalam database
+        DB::table('progress_productions')
+        ->where('kd_step', $kd_step)
+        ->update([
+            'is_shipping_payment' => $is_shipping_payment,
+            'is_final_concept' => $is_final_concept,
+            'is_order_quantity' => $is_order_quantity,
+            'is_production_data' => $is_production_data,
+            'is_polifek_quality' => $is_polifek_quality,
+            'is_stitching_neatness' => $is_stitching_neatness,
+            'is_logo' => $is_logo,
+            'is_packaging' => $is_packaging,
+            'is_delivery' => $is_delivery,
+        ]);
+        return redirect()->back();
+
+    }
     public function approval_action(Request $request)
     {
         $kode = $request->kd_step;
@@ -174,6 +204,7 @@ class adminController extends Controller
         DB::table('user_order')
             ->where('kd_order', $kode)
             ->update(['status_order' => 'produksi']);
+        
 
         // Redirect back to the same route
         return redirect()->back();

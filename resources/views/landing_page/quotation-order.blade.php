@@ -942,23 +942,20 @@
                     <i class="icon icon-doc"></i>
                 </a>
             </div>
-            @endif
+            <div>
+                <a href="{{ $kode ? route('export', ['id' => $kode]) : '#' }}" class="btn action__submit">Download
+                    <i class="icon icon-cloud-download"></i>
+                </a>
+            </div>
+            @else
             <div>
               <a href="{{ route('generate') }}" class="btn action__submit">Download
                 <i class="icon icon-cloud-download"></i>
               </a>
             </div>
+            @endif
           </div>
-          <!-- <div class="payment__shipping">
-            <div class="row">
-              <div class="field">
-                <div class="form-uploads btn-download">
-                  <a href="{{ route('export') }}" class="btn action__submit">
-                    <i class="icon icon-cloud-download"></i>Download File</a>
-                </div>
-              </div>
-            </div>
-          </div> -->
+          
         </div>
       </div>
     </div>

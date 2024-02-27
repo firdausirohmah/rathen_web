@@ -73,7 +73,7 @@
                       <td>
                         <div class="img-tableView">
                           <b class="title">Design - Pemain</b>
-                          <img src="{{ asset(asset($pathDataClient.$pesanan->design_jersey_pemain)) }}">
+                          <img src="{{asset('uploads'.'/'.$pesanan->design_jersey_pemain)}}" alt="">
                           <span><b>Size</b>: S-3, M-11, L-14, XL-5, 2XL-1</span>
                         </div>
                       </td>
@@ -124,7 +124,7 @@
                       <td rowspan="2">
                         <div class="img-tableView">
                           <b class="title">Design - Kiper</b>
-                          <img src="{{ asset(asset($pathDataClient.$pesanan->design_jersey_kiper)) }}">
+                          <img src="{{asset('uploads'.'/'.$pesanan->design_jersey_pemain)}}" alt="">
                           <span><b>Size</b>: M-2, L-2</span>
                         </div>
                       </td>

@@ -162,40 +162,85 @@
                 @csrf
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">FINANCIAL - RATHEN</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body">
-                  <div class="form-group">
-                    <label for="date">Date</label>
-                    <input type="date" name="date" id="date" class="form-control">
-                  </div>
-                  <div class="form-group">
-                    <label for="type">Type</label>
-                    <select name="type" id="type" class="form-control">
-                      <option value="">Select Here</option>
-                      <option value="debit">Debit</option>
-                      <option value="credit">Credit</option>
-                    </select>
-                  </div>
-                  <div class="form-group">
-                    <label for="status">Status</label>
-                    <select name="status" id="status" class="form-control">
-                      <option value="">Select Here</option>
-                      <option value="order">Order</option>
-                      <option value="belanja">Belanja</option>
-                      <option value="hr">HR</option>
-                      <option value="ads">Ads</option>
-                    </select>
-                  </div>
-                  <div class="form-group">
-                    <label for="note">Details</label>
-                    <textarea name="note" id="note" class="form-control"></textarea>
-                  </div>
-                  <div class="form-group">
-                    <label for="nominal">Nominal</label>
-                    <input type="number" name="nominal" id="nominal" class="form-control">
-                  </div>
+                      <div class="form-group">
+                        <label for="date">Date</label>
+                        <input type="date" name="date" id="date" class="form-control">
+                      </div>
+                      <!--new-->
+                      <div class="form-group">
+                        <label for="nominal">Transaksi</label>
+                        <input type="text" name="transaksi" id="transaksi" class="form-control">
+                      </div>
+                      <div class="form-group">
+                        <label for="nominal">Nilai (Rp)</label>
+                        <input type="number" name="nominal" id="nominal" class="form-control">
+                      </div>
+                      <div class="form-group">
+                        <label for="type">Jenis Transaksi</label>
+                        <select name="type" id="type" class="form-control">
+                          <option value="">Select Here</option>
+                          <option value="debit">Uang Masuk</option>
+                          <option value="credit">Uang Keluar</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label for="kategori_transaksi">Kategori Transaksi</label>
+                        <select name="kategori_transaksi" id="kategori_transaksi" class="form-control">
+                          <option value="">Select Here</option>
+                          <option value="pembayaran_dp">Pembayaran DP</option>
+                          <option value="pembayaran_pelunasan">Pembayaran Pelunasan</option>
+                          <option value="belanja_bahan">Belanja bahan</option>
+                          <option value="belanja_poliflex">Belanja poliflex</option>
+                          <option value="belanja_logo">Belanja logo</option>
+                          <option value="bayar_jahit">Bayar Jahit</option>
+                          <option value="bayar_sublim">Bayar sublim</option>
+                          <option value="bayar_lasercut">Bayar lasercut</option>
+                          <option value="aksesoris">Aksesoris</option>
+                          <option value="operasional">Operasional</option>
+                          <option value="gopay">Gopay</option>
+                          <option value="internet">Internet</option>
+                          <option value="listrik">Listrik</option>
+                          <option value="air">Air</option>
+                          <option value="entertainment">Entertainment</option>
+                          <option value="maintenance">Maintenance</option>
+                          <option value="ads">Ads (Iklan)</option>
+                          <option value="tata_usaha">Tata usaha (iuran keamanan dan sampah)</option>
+                          <option value="cicilan_alat">Cicilan Pembelian Alat</option>
+                          <option value="salary">Salary</option>
+                          <option value="fee_marketing">Fee Marketing</option>
+                          <option value="laba_ditahan">Laba di tahan</option>
+                          <option value="dividen">Dividen</option>
+                          <option value="pengeluaran_lain">Pengeluaran Tak terduga</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label for="status_uang">Status Uang</label>
+                        <select name="status_uang" id="status_uang" class="form-control">
+                          <option value="">Select Here</option>
+                          <option value="lunas">Lunas</option>
+                          <option value="hutang">Hutang</option>
+                          <option value="piutang">Piutag</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label for="note">Keterangan</label>
+                        <textarea name="note" id="note" class="form-control"></textarea>
+                      </div>
+                      
+                      <!--<div class="form-group">-->
+                      <!--  <label for="status">Status</label>-->
+                      <!--  <select name="status" id="status" class="form-control">-->
+                      <!--    <option value="">Select Here</option>-->
+                      <!--    <option value="order">Order</option>-->
+                      <!--    <option value="belanja">Belanja</option>-->
+                      <!--    <option value="hr">HR</option>-->
+                      <!--    <option value="ads">Ads</option>-->
+                      <!--  </select>-->
+                      <!--</div>-->
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

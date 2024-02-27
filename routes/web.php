@@ -102,7 +102,7 @@ Route::controller(PesananController::class)->group(function () {
     // Route::get('/form-1/invoice/{id}', 'invoice')->name('invoice');
     Route::post('/form-1/action/{kd_step}', 'addForm1')->name('addForm1');
     Route::get('/form-2/{id}', 'form_2')->name('form_2');
-    Route::post('/form-2/add', 'addForm2')->name('addForm2');
+    Route::post('/form-2/add', 'upload')->name('addForm2');
     Route::get('/form-3/{id}', 'form_3')->name('form_3');
     Route::post('/form-3/add', 'addForm3')->name('addForm3');
     Route::get('/form-4/{id}', 'form_4')->name('form_4');
@@ -163,6 +163,7 @@ Route::controller(adminController::class)->group(function () {
         Route::get('/admin_landingpage/linkweb/delete/{id}', 'landingpage_linkweb_delete')->name('admin.landingpage.linkweb.delete');
         Route::get('/view-order', 'vieworder')->name('vieworder');
         Route::get('/production', 'production')->name('production');
+        Route::post('/production/update_progress', 'update_progress')->name('update_progress');
         Route::get('/production/{id}', 'production_edit')->name('production_edit');
         Route::get('/production/design/{id}', 'production_design')->name('production_design');
         Route::get('/finance', 'finance')->name('finance');

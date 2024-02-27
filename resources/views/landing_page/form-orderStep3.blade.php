@@ -70,6 +70,7 @@
                     <div class="title">Pola lengan
                     </div>
                     <select name="pola_lengan" class="input ddl">
+                      <option value="{{ $data->pola_lengan }}">{{ $data->pola_lengan }}</option>
                       <option value="Normal">Normal</option>
                       <option value="Raglan">Raglan</option>
                     </select>
@@ -82,6 +83,7 @@
                     <div class="title">Model Kerah
                     </div>
                     <select name="model_kerah" class="input ddl w-100">
+                      <option value="{{ $data->model_kerah }}">{{ $data->model_kerah }}</option>
                       <option value="K.R 01">K.R 01</option>
                       <option value="K.R 02">K.R 02</option>
                       <option value="K.R 03">K.R 03</option>
@@ -102,14 +104,14 @@
                   <div class="field">
                     <div class="title">Bahan baju
                     </div>
-                    <input type="text" name="bb" class="input txt" value='' />
+                    <input type="text" name="bb" class="input txt" value='{{ $data->bahan_baju }}' />
                   </div>
                 </div>
                 <div class="row">
                   <div class="field">
                     <div class="title">Bahan celana
                     </div>
-                    <input type="text" name="bc" class="input txt" value='' />
+                    <input type="text" name="bc" class="input txt" value='{{ $data->bahan_celana }}' />
                   </div>
                 </div>
               </div>

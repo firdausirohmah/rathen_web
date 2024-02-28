@@ -13,6 +13,7 @@ use App\Models\ModelStep4;
 use App\Models\OrderStep;
 use App\Models\pemesananModel;
 use App\Models\ProgressProduction;
+use App\Models\TargetOmset;
 use DateTime;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -131,6 +132,51 @@ class adminController extends Controller
             ]);
         }
     }
+    
+    public function progress_edit($request)
+    {
+        $kode = $request;
+        // dd($request);
+        $data = ModelStep1::where('kd_step4', $kode)
+            ->join('tbl_step2', 'tbl_step1.kd_step2', '=', 'tbl_step2.kd_step2')
+            ->join('tbl_step3', 'tbl_step1.kd_step3', '=', 'tbl_step3.kd_step3')
+            ->join('tbl_part', 'tbl_step1.kategori_harga', '=', 'tbl_part.kd_part')
+            ->join('user_order', 'user_order.kd_order', '=', 'tbl_step1.kd_step2')
+            ->select('tbl_step1.*', 'tbl_step2.*', 'tbl_step3.*','tbl_part.harga','user_order.*')
+            ->get();
+        $harga = DB::table('tbl_harga')
+            ->join('tbl_logo', 'tbl_harga.id', '=', 'tbl_logo.id_logo')
+            ->select('tbl_logo.*', 'tbl_harga.*')
+            ->get();
+        
+        foreach ($harga as $h){
+            $price = $h;
+        }
+        foreach ($data as $pesanan) {
+            // dd($pesanan->status_order);
+            $JarseyOrder = $pesanan->tipe_kualitas;
+            if($JarseyOrder == 'Stadium'){
+                $JarseyDefault = 'Jarsey'.' - '.$JarseyOrder.' '.$pesanan->kategori_harga;
+                $Jarsey = strtoupper($JarseyDefault);
+            }else{
+                $JarseyDefault = 'Jarsey'.'-'.$JarseyOrder.' VERSION';
+                $Jarsey = strtoupper($JarseyDefault);
+            } 
+            $d = [
+                'Jarsey' => $Jarsey,
+                'pesanan' => $pesanan,
+                'price' => $price, 
+            ];
+            // dd($Jarsey);
+            
+            return view('landing_page.progress', [
+                'pesanan' => $pesanan,
+                'price' => $price,
+                'Jarsey' => $Jarsey,
+                'kode' => $kode, 
+            ]);
+        }
+    }
 
     public function production_design($request)
     {
@@ -170,6 +216,17 @@ class adminController extends Controller
     public function update_progress(Request $request){
         $kd_step = $request->kd_step;
         $is_shipping_payment = $request->has('is_shipping_payment') ? true : false;
+        if($is_shipping_payment){
+            $finance = new Finance();
+        $finance->transaction_date = now()->format('Y-m-d');
+        $finance->type = 'debit';
+        $finance->money_status = 'lunas';
+        $finance->transactions = 'transasksi final Payment';
+        $finance->status = 'pembayaran_';
+        $finance->note = 'generate by system ';
+        $finance->nominal = $request->biaya_akhir;
+        $finance->save();
+        }
         $is_final_concept = $request->has('is_final_concept') ? true : false;
         $is_order_quantity = $request->has('is_order_quantity') ? true : false;
         $is_production_data = $request->has('is_production_data') ? true : false;
@@ -184,6 +241,7 @@ class adminController extends Controller
         ->where('kd_step', $kd_step)
         ->update([
             'is_shipping_payment' => $is_shipping_payment,
+            'shipping_payment' => $request->biaya_pengiriman,
             'is_final_concept' => $is_final_concept,
             'is_order_quantity' => $is_order_quantity,
             'is_production_data' => $is_production_data,
@@ -236,6 +294,11 @@ class adminController extends Controller
         
 
             $current_ratio = (($omset == null || $omset == 0)?0:$omset) / (($expense == null || $expense == 0)?1:$expense);
+            $target = TargetOmset::select(DB::raw('SUM(nominal) as target'))->get()->value('target');
+            $target_omset = TargetOmset::get();
+            $hutang = $finance->select(DB::raw('SUM(nominal) as hutang'))->where('money_status', 'hutang')->get()->value('hutang');
+            $piutang = $finance->select(DB::raw('SUM(nominal) as hutang'))->where('money_status', 'piutang')->get()->value('piutang');
+        
        
 
         if($request->date != null){
@@ -256,7 +319,6 @@ class adminController extends Controller
             ->whereYear('transaction_date', $year)
             ->whereMonth('transaction_date', $month)
             ->where('type', 'credit')
-            ->where('status', 'belanja')
             ->get()->value('expense');
 
             $netProfit = $saldo;
@@ -268,7 +330,18 @@ class adminController extends Controller
         
 
             $current_ratio = (($omset == null || $omset == 0)?0:$omset) / (($expense == null || $expense == 0)?1:$expense);
-            
+            $target = TargetOmset::select(DB::raw('SUM(nominal) as target'))
+            ->whereYear('target_date', $year)
+            ->whereMonth('target_date', $month)
+            ->get()->value('target');
+            $hutang = $finance->select(DB::raw('SUM(nominal) as hutang'))
+            ->whereYear('transaction_date', $year)
+            ->whereMonth('transaction_date', $month)
+            ->where('money_status', 'hutang')->get()->value('hutang');
+            $piutang = $finance->select(DB::raw('SUM(nominal) as hutang'))
+            ->whereYear('transaction_date', $year)
+            ->whereMonth('transaction_date', $month)
+            ->where('money_status', 'piutang')->get()->value('piutang');
         }
         if($order== null){
             $order = 0;
@@ -299,6 +372,10 @@ class adminController extends Controller
             'order' => $order,
             'current_ratio' => $current_ratio,
             'financeData' => $financeData,
+            'target' => $target,
+            'target_omset' => $target_omset,
+            'hutang' => $hutang,
+            'piutang' => $piutang,
 
 
         ]);
@@ -308,10 +385,21 @@ class adminController extends Controller
         $finance = new Finance();
         $finance->transaction_date = $request->date;
         $finance->type = $request->type;
-        $finance->status = $request->status;
+        $finance->transactions = $request->transaksi;
+        $finance->status = $request->kategori_transaksi;
         $finance->note = $request->note;
         $finance->nominal = $request->nominal;
+        $finance->money_status = $request->status_uang;
         $finance->save();
+        return redirect()->back();
+
+    }
+    public function financeTargetAdd(Request $request)
+    {
+        $target = new TargetOmset();
+        $target->target_date = $request->date;
+        $target->nominal = $request->nominal;
+        $target->save();
         return redirect()->back();
 
     }

@@ -168,6 +168,8 @@ Route::controller(adminController::class)->group(function () {
         Route::get('/production/design/{id}', 'production_design')->name('production_design');
         Route::get('/finance', 'finance')->name('finance');
         Route::post('/finance/add', 'financeAdd')->name('finance.add');
+        Route::post('/finance/import', 'importExcel')->name('finance.import');
+        Route::post('/finance/target/add', 'financeTargetAdd')->name('finance.target.add');
         Route::post('/finance', 'finance')->name('finance.update.chart');
         Route::get('/master', 'master')->name('master');
         Route::post('/master/updateHargaBahan', 'updateHargaBahan')->name('updateHargaBahan');
@@ -175,6 +177,7 @@ Route::controller(adminController::class)->group(function () {
         Route::post('/approval/action', 'approval_action')->name('approval_action');
         Route::delete('/data/invoice/{id}', 'destroyInvoice')->name('data.destroyInv');
         Route::delete('/data/quotation/{id}', 'destroyQuo')->name('data.destroyQuo');
+        Route::get('/progress/{id}', 'progress_edit')->name('progress_edit');
     });
 });
 

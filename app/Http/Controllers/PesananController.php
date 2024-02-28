@@ -801,8 +801,10 @@ class PesananController extends Controller
        $finance = new Finance();
         $finance->transaction_date = now()->format('Y-m-d');
         $finance->type = 'debit';
-        $finance->status = 'order';
-        $finance->note = 'order by system ';
+        $finance->money_status = 'lunas';
+        $finance->transactions = 'transasksi by system';
+        $finance->status = 'pembayaran_dp';
+        $finance->note = 'generate by system ';
         $finance->nominal = ($biaya_desain + $biaya_dp);
         $finance->save();
 

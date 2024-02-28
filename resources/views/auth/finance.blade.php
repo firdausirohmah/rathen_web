@@ -21,6 +21,9 @@
     <li class="nav-item" role="presentation">
       <a class="nav-link" id="dataFinance-tab" data-bs-toggle="tab" href="#dataFinance" role="tab" aria-controls="dataFinance" aria-selected="false">Data</a>
     </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" id="targetFinance-tab" data-bs-toggle="tab" href="#targetFinance" role="tab" aria-controls="targetFinance" aria-selected="false">Target</a>
+    </li>
   </ul>
 
   <!-- <div class="row mt-2"> -->
@@ -48,7 +51,7 @@
                 <!-- Target OMSET -->
                 <!-- ADMIN BISA INPUT-->
                 <h3 class="m-0">Target</h3>
-                <h2 class="m-0">Rp 20.000.000</h1>
+                <h2 class="m-0">Rp {{number_format($target,0,',','.')}}</h1>
                 <input type="hidden">
 
               </div>
@@ -78,7 +81,7 @@
           <div class="card z-index-2">
             <div class="card-header d-flex">
               <div class="text-center">
-                <p>{{$order}} Order<i class="ms-2 fa fa-shopping-bag"></i></p>
+                <!-- <p>{{$order}} Order<i class="ms-2 fa fa-shopping-bag"></i></p> -->
                 <span>Rp {{number_format($omset,0,',','.')}}</span>
               </div>
               <div class="ms-auto d-flex w-25">
@@ -139,6 +142,32 @@
             <div class="card-body p-3">
               <div class="text-center">
                 <h1>{{$current_ratio}}</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-12 mb-4">
+          <div class="card z-index-2">
+            <div class="card-header pb-0 text-center">
+              <h6>Hutang</h6>
+              
+            </div>
+            <div class="card-body p-3">
+              <div class="text-center">
+                <h1>{{$hutang}}</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-12 mb-4">
+          <div class="card z-index-2">
+            <div class="card-header pb-0 text-center">
+              <h6>Piutang</h6>
+              
+            </div>
+            <div class="card-body p-3">
+              <div class="text-center">
+                <h1>{{$piutang}}</h1>
               </div>
             </div>
           </div>
@@ -254,6 +283,14 @@
 
         <div class="card-body px-0 pt-0 pb-2">
           <div class="table-responsive p-0">
+            <form action="{{route('finance.import')}}" method="post" class="input-group mb-3" enctype="multipart/form-data">
+              @csrf
+              <input type="file" name="import" id="import" class="form-control">
+              <div class="input-group-append">
+
+                <button type="submit" class="btn btn-primary form-control">import</button>
+              </div>
+            </form>
             <table class="table align-items-center mb-0 display" id="view-finance" style="width:100%">
               <thead>
                 <tr>
@@ -295,6 +332,102 @@
                   <td class="text-center text-sm"> {{date("d-m-Y", strtotime($item->created_at))}}
                     
                   </td>
+                  <td class="text-center text-sm">
+                    
+                  </td>
+                </tr>
+                @endforeach
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    <!-- targetFinance Tab -->
+    <div class="tab-pane fade" id="targetFinance" role="tabpanel" aria-labelledby="targetFinance-tab">
+      <div class="card card-tab mb-4">
+        <div class="card-header pb-0 d-flex">
+          <h6>Target Finance</h6>
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-primary ms-auto m-2S" data-bs-toggle="modal" data-bs-target="#target">
+            Input Data
+          </button>
+          <!-- Modal -->
+          <div class="modal fade" id="target" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <form action="{{route('finance.target.add')}}" method="post">
+                @csrf
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">FINANCIAL - RATHEN</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                      <div class="form-group">
+                        <label for="date">Date</label>
+                        <input type="date" name="date" id="date" class="form-control">
+                      </div>
+                      <!--new-->
+                      <div class="form-group">
+                        <label for="nominal">Nilai (Rp)</label>
+                        <input type="number" name="nominal" id="nominal" class="form-control">
+                      </div>
+                     
+                      
+                      <!--<div class="form-group">-->
+                      <!--  <label for="status">Status</label>-->
+                      <!--  <select name="status" id="status" class="form-control">-->
+                      <!--    <option value="">Select Here</option>-->
+                      <!--    <option value="order">Order</option>-->
+                      <!--    <option value="belanja">Belanja</option>-->
+                      <!--    <option value="hr">HR</option>-->
+                      <!--    <option value="ads">Ads</option>-->
+                      <!--  </select>-->
+                      <!--</div>-->
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-body px-0 pt-0 pb-2">
+          <div class="table-responsive p-0">
+            <table class="table align-items-center mb-0 display" id="view-targetfinance" style="width:100%">
+              <thead>
+                <tr>
+                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">No
+                  </th>
+                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Target Date
+                  </th>
+                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nominal
+                  </th>
+          
+      
+                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Action
+                  </th>
+                  <!-- <th class="text-secondary opacity-7"></th> -->
+                </tr>
+              </thead>
+              <tbody>
+                @php $index = 1 @endphp
+                @foreach ($target_omset as $item)
+                <tr class="text-center">
+                  <td>
+                    {{ $index++ }}
+                  </td>
+                  <td>
+                    {{ $item->target_date }}
+                  </td>
+                  <td>
+                    Rp {{number_format($item->nominal,0,',','.')}}
+                  </td>    
                   <td class="text-center text-sm">
                     
                   </td>

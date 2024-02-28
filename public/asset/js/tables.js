@@ -13,6 +13,15 @@ $(document).ready(function() {
             'pdfHtml5'
         ]
     } );
+    $('#view-progress').DataTable( {
+        dom: '<"top"Bfi>rt<"bottom"lp>',
+        buttons: [
+            'copyHtml5',
+            'excelHtml5',
+            'csvHtml5',
+            'pdfHtml5'
+        ]
+    } );
     $('#view-finance').DataTable( {
         dom: '<"top"Bfi>rt<"bottom"lp>',
         buttons: [
@@ -114,3 +123,28 @@ document.addEventListener('DOMContentLoaded', function() {
         form.submit();
     });
 });
+
+function shipping_rate(id){
+    console.log('ini id ke-'+id);
+    var biaya_pengiriman = document.getElementById(('biaya_pengiriman_'+id));
+    var pelunasan_before = document.getElementById(('pelunasan_before_'+id));
+    var biaya_pelunasan = document.getElementById(('biaya_pelunasan_'+id));
+    var pelunasan = document.getElementById(('pelunasan_'+id)); 
+    var final_payment = (+biaya_pengiriman.value) + (+pelunasan_before.value);
+    biaya_pelunasan.value = final_payment;
+    pelunasan.value = final_payment;
+
+    console.log(final_payment);
+
+}
+function final_payment(id){
+    var biaya_pengiriman = document.getElementById(('biaya_pengiriman_'+id));
+    var biaya_pelunasan = document.getElementById(('biaya_pelunasan_'+id));
+    var final_payment = document.getElementById(('final_payment_'+id));
+    var pelunasan = document.getElementById(('pelunasan_'+id)); 
+    if(final_payment.checked){
+        biaya_pengiriman.disabled = true;
+        pelunasan.value = '0';
+    }
+
+}

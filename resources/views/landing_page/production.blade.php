@@ -146,7 +146,10 @@
                         <div>Approval</div>
                         <div class="py-5"></div>
                         <div>
-                          <span class="m-5">(Rhofik)</span>
+                          <span class="m-5">
+                            <img src="https://cdn.kibrispdr.org/data/957/tanda-tangan-keren-png-6.png" alt="" style="width: 100px;display:none;float:left;" id="ttd1"><br>
+                            (Rhofik)</span>
+                            <img src="https://cdn.kibrispdr.org/data/957/tanda-tangan-keren-png-6.png" alt="" style="width: 100px;display:none;" id="ttd2"><br>
                           <span>(Ervina)</span>
                         </div>
                       </td>
@@ -259,6 +262,7 @@
                 <div class="row">
                   <div class="col-lg-12">
                     <p class="right-align mb-4 pb-4">Best regard,</p>
+                    <img src="https://cdn.kibrispdr.org/data/957/tanda-tangan-keren-png-6.png" alt="" style="width: 100px;display:none;float:right;" id="ttd3">
                     <p class="right-align mt-4 pt-4"><u>R. Esa Pangersa Gusti</u></p>
                     <p class="right-align" style="line-height: 0px">RATHEN INDONESIA</p>
                   </div>
@@ -806,8 +810,50 @@
                 <i class="icon icon-cloud-download"></i>
               </a>
             </div>
+            
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="approval1" id="approval1" onchange="approve()">
+              <label class="form-check-label" for="approval1">
+                Rhofik
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="approval2" id="approval2" onchange="approve()">
+              <label class="form-check-label" for="approval2">
+              Ervina
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="approval3" id="approval3" onchange="approve()">
+              <label class="form-check-label" for="approval3">
+              R. Esa Pangersa Gusti
+              </label>
+            </div>
             @endif
           </div>
+          <script>
+            function approve(){
+
+              var approval_1 = document.getElementById('approval1');
+              var approval_2 = document.getElementById('approval2');
+              var approval_3 = document.getElementById('approval3');
+              if(approval_1.checked){
+                document.getElementById('ttd1').style = 'display:inline;width:100px;';
+              }else{
+                document.getElementById('ttd1').style = 'display:none;width:100px;';
+              }
+              if(approval_2.checked){
+                document.getElementById('ttd2').style = 'display:inline;width:100px;';
+              }else{
+                document.getElementById('ttd2').style = 'display:none;width:100px;';
+              }
+              if(approval_3.checked){
+                document.getElementById('ttd3').style = 'display:inline;width:100px;';
+              }else{
+                document.getElementById('ttd3').style = 'display:none;width:100px;';
+              }
+            }
+          </script>
           <!-- <div class="payment__shipping">
             <div class="row">
               <div class="field">

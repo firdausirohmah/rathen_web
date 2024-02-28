@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Finance extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'transaction_date',
+        'transactions',
+        'type',
+        'status',
+        'money_status',
+        'nominal',
+        'note',
+        // Daftar semua kolom lainnya di sini
+    ];
 }

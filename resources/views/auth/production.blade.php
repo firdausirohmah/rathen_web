@@ -94,19 +94,14 @@
                   @endphp
 
                   <td class="align-middle text-center text-sm">
-                    <!--<div class="progress" style ="height:25px">-->
-                    <!--  <div class="progress-bar" role="progressbar" style="width: {{$progress}}%; height:30px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">-->
+                    <div class="progress" style ="height:25px">
+                      <div class="progress-bar" role="progressbar" style="width: {{$progress}}%; height:30px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
                           @php
                             $progress_bulat = round($progress);
-                            if ($progress_bulat > 0 && $progress_bulat < 100) {
-                                $progress_bulat = 'In Progress';
-                            } elseif ($progress_bulat >= 100) {
-                                $progress_bulat = 'Done';
-                            }
                           @endphp
-                          {{$progress_bulat}}
-                    <!--  </div>-->
-                    <!--</div>-->
+                          {{$progress_bulat}}%
+                      </div>
+                    </div>
                   </td>
                   <td class="align-middle text-sm">
                     <div class="d-flex">
@@ -180,7 +175,7 @@
                                     </label>
                                   </div>
                                   <label for="photoUpload" class="form-label">Upload Photo:</label>
-                                  <input type="file" class="form-control" id="photoUpload" name="photo_upload">
+                                  <input type="file" class="form-control" id="photoUpload" name="final_concept">
                                 </div>
                                 <div class="mb-3">
                                   <div class="form-check">
@@ -190,7 +185,7 @@
                                     </label>
                                   </div>
                                   <label for="photoUpload" class="form-label">Upload Photo:</label>
-                                  <input type="file" class="form-control" id="photoUpload" name="photo_upload">
+                                  <input type="file" class="form-control" id="photoUpload" name="order_quantity>
                                 </div>
                                 <div class="mb-3">
                                   <div class="form-check">
@@ -200,7 +195,7 @@
                                     </label>
                                   </div>
                                   <label for="photoUpload" class="form-label">Upload Photo:</label>
-                                  <input type="file" class="form-control" id="photoUpload" name="photo_upload">
+                                  <input type="file" class="form-control" id="photoUpload" name="production_data">
                                 </div>
                                 <div class="mb-3">
                                   <div class="form-check">
@@ -210,7 +205,7 @@
                                     </label>
                                   </div>
                                   <label for="photoUpload" class="form-label">Upload Photo:</label>
-                                  <input type="file" class="form-control" id="photoUpload" name="photo_upload">
+                                  <input type="file" class="form-control" id="photoUpload" name="logo">
                                 </div>
                                 <div class="mb-3">
                                   <div class="form-check">
@@ -220,7 +215,7 @@
                                     </label>
                                   </div>
                                   <label for="photoUpload" class="form-label">Upload Photo:</label>
-                                  <input type="file" class="form-control" id="photoUpload" name="photo_upload">
+                                  <input type="file" class="form-control" id="photoUpload" name="polifek_quality">
                                 </div>
                                 <div class="mb-3">
                                   <div class="form-check">
@@ -230,7 +225,7 @@
                                     </label>
                                   </div>
                                   <label for="photoUpload" class="form-label">Upload Photo:</label>
-                                  <input type="file" class="form-control" id="photoUpload" name="photo_upload">
+                                  <input type="file" class="form-control" id="photoUpload" name="stitching_neatness">
                                 </div>
                                 <div class="mb-3">
                                   <div class="form-check">
@@ -240,7 +235,7 @@
                                     </label>
                                   </div>
                                   <label for="photoUpload" class="form-label">Upload Photo:</label>
-                                  <input type="file" class="form-control" id="photoUpload" name="photo_upload">
+                                  <input type="file" class="form-control" id="photoUpload" name="packaging">
                                 </div>
                                 <div class="mb-3">
                                   <div class="form-check">
@@ -250,7 +245,7 @@
                                     </label>
                                   </div>
                                   <label for="photoUpload" class="form-label">Upload Photo:</label>
-                                  <input type="file" class="form-control" id="photoUpload" name="photo_upload">
+                                  <input type="file" class="form-control" id="photoUpload" name="delivery">
                                 </div>
   
                               </div>
@@ -277,7 +272,6 @@
         </div>
       </div>
     </div>
-    
     <div class="tab-pane fade " id="progress" role="tabpanel" aria-labelledby="progress-tab">
       <div class="card card-tab mb-4">
         <div class="card-header pb-0">

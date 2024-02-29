@@ -80,114 +80,138 @@ class PesananController extends Controller
 
         // Menyimpan file pertama
         $djp = $request->file('djp');
+        $data = [];
         if ($djp == null) {
             $file1Name = '-';
         } else {
-            $file1Name = $kode . '_Design-Pemain' . '.' . $djp->extension();
+            $file1Name = $kode . '_Design-Pemain_' .time(). '.' . $djp->extension();
             $djp->move('uploads', $file1Name);
+            $data += ['design_jersey_pemain' => $file1Name];
         }
         // ===========================
         $djk = $request->file('djk');
         if ($djk == null) {
             $file2Name = '-';
         } else {
-            $file2Name = $kode . '_Design-Kiper' . '.' . $djk->extension();
+            $file2Name = $kode . '_Design-Kiper_' .time().'.' . $djk->extension();
             $djk->move('uploads', $file2Name);
+            $data += ['design_jersey_kiper' => $file2Name];
         }
         // ===========================
         $lt = $request->file('lt');
         if ($lt == null) {
             $file3Name = '-';
         } else {
-            $file3Name = $kode . '_Logo-Tim' . '.' . $lt->extension();
+            $file3Name = $kode . '_Logo-Tim_' .time().'.' . $lt->extension();
             $lt->move('uploads', $file3Name);
+            $data += ['logo_tim' => $file3Name];
         }
         // ===========================
-        $sdd = $request->file('sdd');
+        $sdd = $request->file('sdt');
         if ($sdd == null) {
             $file4Name = '-';
         } else {
-            $file4Name = $kode . '-Sponsor-Dada-1baris' . '.' . $sdd->extension();
+            $file4Name = $kode . '-Sponsor-Dada-1baris_' .time(). '.' . $sdd->extension();
             $sdd->move('uploads', $file4Name);
+            $data += ['sponsor_dada_tulisan1baris' => $file4Name];
         }
         // =========================== 
-        $sd = $request->file('sd');
+        $sd = $request->file('sdl');
         if ($sd == null) {
             $file5Name = '-';
         } else {
-            $file5Name = $kode . '_Sponsor-Dada-Logo' . '.' . $sd->extension();
+            $file5Name = $kode . '_Sponsor-Dada-Logo_' .time(). '.' . $sd->extension();
             $sd->move('uploads', $file5Name);
+            $data += ['sponsor_dada_logodantulisan' => $file5Name];
         }
         // =========================== 
         $t1b = $request->file('t1b');
         if ($t1b == null) {
             $file6Name = '-';
         } else {
-            $file6Name = $kode . '_Sponsor-Dada-t1b' . '.' . $t1b->extension();
+            $file6Name = $kode . '_Sponsor-Dada-t1b_' .time(). '.' . $t1b->extension();
             $t1b->move('uploads', $file6Name);
+            $data += ['extra_tulisan1baris' => $file6Name];
         }
         // ===========================
-        $ltt = $request->file('ltt');
+        $ltt = $request->file('ldt');
         if ($ltt == null) {
             $file7Name = '-';
         } else {
-            $file7Name = $kode . '_Sponsor-Dada-Logo-Tulisan' . '.' . $ltt->extension();
+            $file7Name = $kode . '_Sponsor-Dada-Logo-Tulisan_' .time(). '.' . $ltt->extension();
             $ltt->move('uploads', $file7Name);
+            $data += ['extra_logodantulisan' => $file7Name];
         }
         // ===========================
         $lk = $request->file('lk');
         if ($lk == null) {
             $file8Name = '-';
         } else {
-            $file8Name = $kode . '_Logo-Lengan-R' . '.' . $lk->extension();
+            $file8Name = $kode . '_Logo-Lengan-R_' .time(). '.' . $lk->extension();
             $lk->move('uploads', $file8Name);
+            $data += ['logo_dilengan_kanan' => $file8Name];
         }
         // ===========================
         $llk = $request->file('llk');
         if ($llk == null) {
             $file9Name = '-';
         } else {
-            $file9Name = $kode . '-Logo-Lengan-LR' . '.' . $llk->extension();
+            $file9Name = $kode . '-Logo-Lengan-LR_' .time(). '.' . $llk->extension();
             $llk->move('uploads', $file9Name);
+            $data += ['logo_dilengan_kiri' => $file9Name];
         }
         // ===========================
         $sbt = $request->file('sbt');
         if ($sbt == null) {
             $file10Name = '-';
         } else {
-            $file10Name = $kode . '_Sponsor-Belakang-t1b' . '.' . $sbt->extension();
+            $file10Name = $kode . '_Sponsor-Belakang-t1b_' .time(). '.' . $sbt->extension();
             $sbt->move('uploads', $file10Name);
+            $data += ['sponsor_belakang_tulisan1baris' => $file10Name];
         }
         // ===========================
-        $sblt = $request->file('sblt');
+        $sblt = $request->file('sbl');
         if ($sblt == null) {
             $file11Name = '-';
         } else {
-            $file11Name = $kode . '_Sponsor-Belakang-Logo' . '.' . $sblt->extension();
+            $file11Name = $kode . '_Sponsor-Belakang-Logo_' .time(). '.' . $sblt->extension();
             $sblt->move('uploads', $file11Name);
+            $data += ['sponsor_belakang_logodantulisan' => $file11Name];
         }
         // ===========================
         // dd($file1Name,$file2Name,$file3Name,$file4Name,$file5Name,$file6Name,$file7Name,$file8Name,$file9Name,$file10Name,$file11Name);
 
 
         // dd($file1Name,$file2Name); 
-        $data = ModeStep2::where('kd_step2', $kode )
-        ->update([ 
-            'design_jersey_pemain' => $file1Name,
-            'design_jersey_kiper' => $file2Name,
-            'logo_tim' => $file3Name,
-            'sponsor_dada_tulisan1baris' => $file4Name,
-            'sponsor_dada_logodantulisan' => $file5Name,
-            'extra_tulisan1baris' => $file6Name,
-            'extra_logodantulisan' => $file7Name,
-            'logo_dilengan_kanan' => $file8Name,
-            'logo_dilengan_kiri' => $file9Name,
-            'sponsor_belakang_tulisan1baris' => $file10Name,
-            'sponsor_belakang_logodantulisan' => $file11Name,
-        ]);
+        //return $data;
+        // ->update([ 
+        //     'design_jersey_pemain' => $file1Name,
+        //     'design_jersey_kiper' => $file2Name,
+        //     'logo_tim' => $file3Name,
+        //     'sponsor_dada_tulisan1baris' => $file4Name,
+        //     'sponsor_dada_logodantulisan' => $file5Name,
+        //     'extra_tulisan1baris' => $file6Name,
+        //     'extra_logodantulisan' => $file7Name,
+        //     'logo_dilengan_kanan' => $file8Name,
+        //     'logo_dilengan_kiri' => $file9Name,
+        //     'sponsor_belakang_tulisan1baris' => $file10Name,
+        //     'sponsor_belakang_logodantulisan' => $file11Name,
+        // ]);
+        // $datas = ModeStep2::where('kd_step2', $kode )
+        // ->update($data);
+        if(isset($data)){
+
+            $datas = DB::table('tbl_step2')
+            ->where('kd_step2', $kode)
+            ->update($data);
+        }
+    
         // Lakukan operasi lain jika diperlukan
         // dd($file1,$file2);
-        return redirect('/form-3/'.$kode)->with('success', 'Files successfully uploaded.');
+       
+
+            return redirect('/form-3/'.$kode)->with('success', 'Files successfully uploaded.');
+       
     }
     public function form_3($request)
     {

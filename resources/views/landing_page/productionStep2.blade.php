@@ -291,7 +291,7 @@
                     <div class="form-uploads w-17">
                       <label for="fileInput1" id="customLabel1" class="customLabel" style="width:20rem;">
                         <div class="img-upload" id="cutomerDesign1">
-                          <img src="{{ asset(strlen($data->design_jersey_pemain) > 3 ? 'asset/dataClient/'.$data->design_jersey_pemain : '') }}" alt="" onerror="hideBrokenImage(this)">
+                          <img src="{{ asset('uploads/'.$data->design_jersey_pemain)}}" alt="" onerror="hideBrokenImage(this)">
                         </div>
                         <div class="title" id="statusUpload1">*</div>
                         <div class="form-upload payment__type--cc">
@@ -311,7 +311,7 @@
                     <div class="form-uploads w-17">
                       <label for="fileInput2" id="customLabel2" class="customLabel" style="width:20rem;">
                         <div class="img-upload" id="cutomerDesign">
-                          <img src="{{ asset(strlen($data->design_jersey_kiper) > 3 ? 'asset/dataClient/'.$data->design_jersey_kiper : '') }}" alt="" onerror="hideBrokenImage(this)">
+                        <img src="{{ asset('uploads/'.$data->design_jersey_kiper)}}" alt="" onerror="hideBrokenImage(this)">
                         </div>
                         <div class="title" id="statusUpload2">*</div>
                         <div class="form-upload payment__type--cc">
@@ -331,7 +331,7 @@
                     <div class="form-uploads w-17">
                       <label for="fileInput3" id="customLabel3" class="customLabel" style="width:20rem;">
                         <div class="img-upload" id="cutomerDesign">
-                          <img src="{{ asset(strlen($data->logo_tim) > 3 ? 'asset/dataClient/'.$data->logo_tim : '') }}" alt="" onerror="hideBrokenImage(this)">
+                        <img src="{{ asset('uploads/'.$data->logo_tim)}}" alt="" onerror="hideBrokenImage(this)">
                         </div>
                         <div class="title" id="statusUpload3">*</div>
                         <div class="form-upload payment__type--cc">
@@ -350,6 +350,9 @@
                     </div>
                     <div class="form-uploads w-17">
                       <label for="fileInput4" id="customLabel4" class="customLabel" style="width:20rem;">
+                      <div class="img-upload" id="cutomerDesign">
+                        <img src="{{ asset('uploads/'.$data->sponsor_dada_tulisan1baris)}}" alt="" onerror="hideBrokenImage(this)">
+                        </div>
                         <div class="title" id="statusUpload4">*</div>
                         <div class="form-upload payment__type--cc">
                           <i class="icon icon-cloud-upload"></i>Upload
@@ -369,6 +372,9 @@
                     </div>
                     <div class="form-uploads w-17">
                       <label for="fileInput5" id="customLabel5" class="customLabel" style="width:20rem;">
+                      <div class="img-upload" id="cutomerDesign">
+                        <img src="{{ asset('uploads/'.$data->sponsor_dada_logodantulisan)}}" alt="" onerror="hideBrokenImage(this)">
+                        </div>
                         <div class="title" id="statusUpload5">*</div>
                         <div class="form-upload payment__type--cc">
                           <i class="icon icon-cloud-upload"></i>Upload
@@ -397,6 +403,9 @@
                 </div>
                 <div class="form-uploads">
                   <label for="fileInput6" id="customLabel6" class="customLabel" style="width:20rem;">
+                  <div class="img-upload" id="cutomerDesign">
+                        <img src="{{ asset('uploads/'.$data->extra_tulisan1baris)}}" alt="" onerror="hideBrokenImage(this)">
+                        </div>
                     <div class="title" id="statusUpload6">*</div>
                     <div class="form-upload payment__type--cc">
                       <i class="icon icon-cloud-upload"></i>Upload
@@ -414,6 +423,9 @@
                 </div>
                 <div class="form-uploads">
                   <label for="fileInput7" id="customLabel7" class="customLabel" style="width:20rem;">
+                  <div class="img-upload" id="cutomerDesign">
+                        <img src="{{ asset('uploads/'.$data->extra_logodantulisan)}}" alt="" onerror="hideBrokenImage(this)">
+                        </div>
                     <div class="title" id="statusUpload7">*</div>
                     <div class="form-upload payment__type--cc">
                       <i class="icon icon-cloud-upload"></i>Upload
@@ -431,25 +443,31 @@
                 </div>
                 <div class="form-uploads">
                   <label for="fileInput8" id="customLabel8" class="customLabel" style="width:20rem;">
-                    <div class="title" id="statusUpload8">*</div>
-                    <div class="form-upload payment__type--cc">
-                      <i class="icon icon-cloud-upload"></i>Upload
+                  <div class="img-upload" id="cutomerDesign">
+                        <img src="{{ asset('uploads/'.$data->logo_dilengan_kanan)}}" alt="" onerror="hideBrokenImage(this)">
+                        </div>
+                        <div class="title" id="statusUpload8">*</div>
+                        <div class="form-upload payment__type--cc">
+                          <i class="icon icon-cloud-upload"></i>Upload
+                        </div>
+                        <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput8" name="lk" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" onchange="updateFileName('fileInput8', 'statusUpload8')">
+                        <!-- <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput8" name="lk" class="fileInput form-control fw-lighter hidden" placeholder="Upload File"> -->
+                      </label>
                     </div>
-                    <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput8" name="lk" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" onchange="updateFileName('fileInput8', 'statusUpload8')">
-                    <!-- <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput8" name="lk" class="fileInput form-control fw-lighter hidden" placeholder="Upload File"> -->
-                  </label>
+                    <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes">(format file : .cdr./.ai/.pdf/.jpg)</small><br>
+                    <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes"> 15,000/pcs utk NON-PRINT dan HALF-PRINT ; free utk kategori FULL PRINT </small>
+                    <!-- <input type="text" class="input txt text-validated" value='Upload' /> -->
+                  </div>
                 </div>
-                <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes">(format file : .cdr./.ai/.pdf/.jpg)</small><br>
-                <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes"> 15,000/pcs utk NON-PRINT dan HALF-PRINT ; free utk kategori FULL PRINT </small>
-                <!-- <input type="text" class="input txt text-validated" value='Upload' /> -->
-              </div>
-            </div>
-            <div class="row">
-              <div class="field">
-                <div class="title">Logo di lengan kanan kiri
-                </div>
-                <div class="form-uploads">
-                  <label for="fileInput9" id="customLabel9" class="customLabel" style="width:20rem;">
+                <div class="row">
+                  <div class="field">
+                    <div class="title">Logo di lengan kanan kiri
+                      </div>
+                      <div class="form-uploads">
+                        <label for="fileInput9" id="customLabel9" class="customLabel" style="width:20rem;">
+                          <div class="img-upload" id="cutomerDesign">
+                                <img src="{{ asset('uploads/'.$data->logo_dilengan_kiri)}}" alt="" onerror="hideBrokenImage(this)">
+                                </div>
                     <div class="title" id="statusUpload9">*</div>
                     <div class="form-upload payment__type--cc">
                       <i class="icon icon-cloud-upload"></i>Upload
@@ -469,6 +487,9 @@
                 </div>
                 <div class="form-uploads">
                   <label for="fileInput10" id="customLabel0" class="customLabel" style="width:20rem;">
+                  <div class="img-upload" id="cutomerDesign">
+                                <img src="{{ asset('uploads/'.$data->sponsor_belakang_tulisan1baris)}}" alt="" onerror="hideBrokenImage(this)">
+                                </div>
                     <div class="title" id="statusUpload10">*</div>
                     <div class="form-upload payment__type--cc">
                       <i class="icon icon-cloud-upload"></i>Upload
@@ -488,6 +509,9 @@
                 </div>
                 <div class="form-uploads">
                   <label for="fileOrder1" id="OrderLabel1" class="customLabel" style="width:20rem;">
+                  <div class="img-upload" id="cutomerDesign">
+                                <img src="{{ asset('uploads/'.$data->sponsor_belakang_logodantulisan)}}" alt="" onerror="hideBrokenImage(this)">
+                                </div>
                     <div class="title" id="statusUpload11">*</div>
                     <div class="form-upload payment__type--cc">
                       <i class="icon icon-cloud-upload"></i>Upload

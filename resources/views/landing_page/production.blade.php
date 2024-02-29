@@ -806,29 +806,34 @@
 
             @if($pesanan->status_order == 'produksi')
             <div>
-              <a href="{{ route('generate') }}" class="btn action__submit">Download
+              <a href="{{ route('production_generate', ['id' => $kode]) }}" class="btn action__submit">Download
                 <i class="icon icon-cloud-download"></i>
               </a>
             </div>
-            
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" name="approval1" id="approval1" onchange="approve()">
-              <label class="form-check-label" for="approval1">
-                Rhofik
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" name="approval2" id="approval2" onchange="approve()">
-              <label class="form-check-label" for="approval2">
-              Ervina
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" name="approval3" id="approval3" onchange="approve()">
-              <label class="form-check-label" for="approval3">
-              R. Esa Pangersa Gusti
-              </label>
-            </div>
+            <form action="{{route('production.approval')}}" method="post">
+              <input type="hidden" name="kode" value="{{$kode}}">
+              @csrf
+             
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="approval3" id="approval3" onchange="approve()" {{(isset($aproval_3))?(($aproval_3->is_agreed == 1)?'checked':''):''}}>
+                <label class="form-check-label" for="approval3">
+                  Rhofik
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="approval2" id="approval2" onchange="approve()" {{(isset($aproval_2))?(($aproval_2->is_agreed == 1)?'checked':''):''}}>
+                <label class="form-check-label" for="approval2">
+                Ervina
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="approval1" id="approval1" onchange="approve()" {{(isset($aproval_1))?(($aproval_1->is_agreed == 1)?'checked':''):''}}>
+                <label class="form-check-label" for="approval1">
+                R. Esa Pangersa Gusti
+                </label>
+              </div>
+              <button type="submit" class="btn btn-primary">submit</button>
+            </form>
             @endif
           </div>
           <script>
@@ -838,9 +843,9 @@
               var approval_2 = document.getElementById('approval2');
               var approval_3 = document.getElementById('approval3');
               if(approval_1.checked){
-                document.getElementById('ttd1').style = 'display:inline;width:100px;';
+                document.getElementById('ttd3').style = 'display:inline;width:100px;';
               }else{
-                document.getElementById('ttd1').style = 'display:none;width:100px;';
+                document.getElementById('ttd3').style = 'display:none;width:100px;';
               }
               if(approval_2.checked){
                 document.getElementById('ttd2').style = 'display:inline;width:100px;';
@@ -848,11 +853,13 @@
                 document.getElementById('ttd2').style = 'display:none;width:100px;';
               }
               if(approval_3.checked){
-                document.getElementById('ttd3').style = 'display:inline;width:100px;';
+                document.getElementById('ttd1').style = 'display:inline;width:100px;';
               }else{
-                document.getElementById('ttd3').style = 'display:none;width:100px;';
+                document.getElementById('ttd1').style = 'display:none;width:100px;';
               }
+
             }
+            approve();
           </script>
           <!-- <div class="payment__shipping">
             <div class="row">

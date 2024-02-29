@@ -51,7 +51,7 @@
               <div class="row content-center">
                 <div class="col-md-12">
                   <h3 class="text-center font-weight-bold text-primary mt-2">Results</h3>
-                  <p class="text-center"><small>No. $id_production/inv-{{$pesanan->kd_step2}}/2024</small></p>
+                  <p class="text-center"><small>No. inv-{{$pesanan->kd_step2}}/2024</small></p>
                 </div>
               </div>
               <div class="row pb-2 p-2 text-center-mb" style="text-align:justify;">
@@ -75,7 +75,6 @@
                       <th class="text-uppercase small font-weight-bold">No.</th>
                       <th class="text-uppercase small font-weight-bold">Production</th>
                       <th class="text-uppercase small font-weight-bold text-center">Image</th>
-                      <th class="text-uppercase small font-weight-bold">Note</th>
                     </tr>
                   </thead>
                   <?php
@@ -85,17 +84,35 @@
                   $total = $jqty * $jharga;
                   ?>
                   <tbody>
+                    @php
+                    $data = [];
+                    $progress = json_decode($progress, true);
+                    foreach ($progress as $key => $value) {
+                        $data[] = [$key, $value];
+                    }
+                    @endphp
+                    @foreach($data as $row)
+
+                    @if(in_array($row[0], ['final_concept', 'production_data', 'order_quantity', 'logo', 'polifek_quality', 'delivery', 'packaging', 'stitching_neatness']))
                     <tr>
                       <td>{{ $i++ }}</td>
-                      <td>Konsep Akhir</td>
-                      <td class="text-center"><img src="{{asset('asset/images/image1.jpg')}}" class="h-50 w-50" alt=""></td>
-                      <td>Note for this production</td>
+                      <td>{{$row[0]}}</td>
+                      <td class="text-center">
+                        @if($row[1] != null)
+                        <img src="{{asset('uploads/'.$row[1])}}" class="h-50 w-50" alt="">
+                        @else
+                        <p>Not yet</p>
+                        @endif
+                      </td>
+        
                     </tr>
+                    @endif
+                    @endforeach
                   </tbody>
 
                   <tfoot class="text-primary">
                     <tr>
-                      <td colspan="4" class="text-center">
+                      <td colspan="3" class="text-center">
                       <div class="col-lg-12">
                         <p class="right-align mb-4 pb-4">Best regard,</p>
                         <p class="right-align mt-4 pt-4"><u>R. Esa Pangersa Gusti</u></p>

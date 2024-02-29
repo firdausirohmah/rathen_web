@@ -6,6 +6,7 @@ use App\Http\Controllers\loginController;
 use App\Http\Controllers\PesananController;
 use App\Http\Controllers\PriceListController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Rating;
 use App\Http\Controllers\registerController;
 use Illuminate\Support\Facades\Route;
 
@@ -165,6 +166,8 @@ Route::controller(adminController::class)->group(function () {
         Route::get('/production', 'production')->name('production');
         Route::post('/production/update_progress', 'update_progress')->name('update_progress');
         Route::get('/production/{id}', 'production_edit')->name('production_edit');
+        Route::get('/production/generate/{id}', 'production_generate')->name('production_generate');
+        Route::post('/production/approval', 'approval_edit')->name('production.approval');
         Route::get('/production/design/{id}', 'production_design')->name('production_design');
         Route::get('/finance', 'finance')->name('finance');
         Route::post('/finance/add', 'financeAdd')->name('finance.add');
@@ -183,6 +186,9 @@ Route::controller(adminController::class)->group(function () {
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/rating', [Rating::class, 'index'])->name('rating');
+Route::post('/rating/add', [Rating::class, 'add'])->name('rating.add');
 
 
 // Route::get('/dashboard', function () {

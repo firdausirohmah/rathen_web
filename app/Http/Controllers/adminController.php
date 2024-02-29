@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Imports\FinanceImport;
 use App\Models\AboutUs;
+use App\Models\Approval;
 use App\Models\Faq;
 use App\Models\Finance;
 use App\Models\LinkWeb;
@@ -15,10 +17,15 @@ use App\Models\pemesananModel;
 use App\Models\ProgressProduction;
 use App\Models\TargetOmset;
 use DateTime;
+use Dompdf\Dompdf;
+use Dompdf\Options;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\View as FacadesView;
+use Maatwebsite\Excel\Facades\Excel;
 use Spatie\FlareClient\View;
 
 class adminController extends Controller
@@ -88,10 +95,46 @@ class adminController extends Controller
             'quo' => $dataQ,
         ]);
     }
+    public function approval_edit(Request $input){
+        $kode = $input->kode;
+        if(isset($input)){
+            for($i = 1; $i < 4; $i++){
+                $aproval_get = Approval::where('id_user',$i)->where('kd_step', $kode)->first();
+                if($aproval_get != null){
+                    Approval::where('id_user',$i)->update(['is_agreed' => (($input->has(('approval'.$i))?true:false))]);
+                }else{
+                    
+                    $insert = new Approval();
+                    if($input->has(('approval'.$i))){
+
+                        $insert->id_user = $i;
+                        $insert->kd_step = $kode;
+                        $insert->is_agreed = true;
+                        $insert->save();
+                    }else{
+                        $insert->id_user = $i;
+                        $insert->kd_step = $kode;
+                        $insert->is_agreed = false;
+                        $insert->save();
+
+                    }
+                    
+                }
+
+               
+            }
+
+        }
+        return redirect()->back();
+    }
     public function production_edit($request)
     {
         $kode = $request;
+
         // dd($request);
+        $aproval_1 = Approval::where('id_user',1)->where('kd_step', $kode)->first();
+        $aproval_2 = Approval::where('id_user',2)->where('kd_step', $kode)->first();
+        $aproval_3 = Approval::where('id_user',3)->where('kd_step', $kode)->first();
         $data = ModelStep1::where('kd_step4', $kode)
             ->join('tbl_step2', 'tbl_step1.kd_step2', '=', 'tbl_step2.kd_step2')
             ->join('tbl_step3', 'tbl_step1.kd_step3', '=', 'tbl_step3.kd_step3')
@@ -129,14 +172,100 @@ class adminController extends Controller
                 'price' => $price,
                 'Jarsey' => $Jarsey,
                 'kode' => $kode, 
+                'aproval_1' => $aproval_1,
+                'aproval_2' => $aproval_2,
+                'aproval_3' => $aproval_3,
             ]);
         }
+    }
+    public function production_generate($request)
+    {
+        $kode = $request;
+
+        // dd($request);
+        $aproval_1 = Approval::where('id_user',1)->where('kd_step', $kode)->first();
+        $aproval_2 = Approval::where('id_user',2)->where('kd_step', $kode)->first();
+        $aproval_3 = Approval::where('id_user',3)->where('kd_step', $kode)->first();
+        $pesanan = ModelStep1::where('kd_step4', $kode)
+            ->join('tbl_step2', 'tbl_step1.kd_step2', '=', 'tbl_step2.kd_step2')
+            ->join('tbl_step3', 'tbl_step1.kd_step3', '=', 'tbl_step3.kd_step3')
+            ->join('tbl_part', 'tbl_step1.kategori_harga', '=', 'tbl_part.kd_part')
+            ->join('user_order', 'user_order.kd_order', '=', 'tbl_step1.kd_step2')
+            ->select('tbl_step1.*', 'tbl_step2.*', 'tbl_step3.*','tbl_part.harga','user_order.*')
+            ->first();
+        $harga = DB::table('tbl_harga')
+            ->join('tbl_logo', 'tbl_harga.id', '=', 'tbl_logo.id_logo')
+            ->select('tbl_logo.*', 'tbl_harga.*')
+            ->get();
+        
+        foreach ($harga as $h){
+            $price = $h;
+        }
+        
+            // dd($pesanan->status_order);
+            $JarseyOrder = $pesanan->tipe_kualitas;
+            if($JarseyOrder == 'Stadium'){
+                $JarseyDefault = 'Jarsey'.' - '.$JarseyOrder.' '.$pesanan->kategori_harga;
+                $Jarsey = strtoupper($JarseyDefault);
+            }else{
+                $JarseyDefault = 'Jarsey'.'-'.$JarseyOrder.' VERSION';
+                $Jarsey = strtoupper($JarseyDefault);
+            } 
+            $d = [
+                'Jarsey' => $Jarsey,
+                'pesanan' => $pesanan,
+                'price' => $price, 
+            ];
+            // dd($Jarsey);
+            $pdf = new Dompdf();
+            $options = new Options();
+            $options->set(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true])->setChroot('');
+            $pdf->setOptions($options);
+
+            // Load Bootstrap CSS locally
+            $bootstrapCSS = file_get_contents('https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css'); // Ganti path sesuai dengan lokasi CSS Bootstrap Anda
+            $html = FacadesView::make('landing_page.production-generate', [
+                'pesanan' => $pesanan,
+                'price' => $price,
+                'Jarsey' => $Jarsey,
+                'kode' => $kode, 
+                'aproval_1' => $aproval_1,
+                'aproval_2' => $aproval_2,
+                'aproval_3' => $aproval_3,
+            ])->render();
+            $srcImg= "{{public_path('/asset/images/logo-dark.png')}}";
+
+
+            // Combine Bootstrap CSS with your HTML
+            $combinedHtml = '<style> html *{margin:0;padding:0;}.button.back{display:none;}.print{
+                display:none;}.container{margin:0!important;} .card{width:650px!important;border:none!important}
+                .table-responsive table thead tr th, .table-responsive table tbody tr td, .table-responsive table tfoot tr td{border-color: #3c3f44;}'
+                . $bootstrapCSS.'<style>' . $html;
+
+            $pdf->loadHtml($combinedHtml);
+            $pdf->setPaper('A4', 'lanscape');
+            $pdf->render();
+
+            // return $pdf::setOptions(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true])->loadView('reports.invoiceSell')->stream();
+            return $pdf->stream('production.pdf');
+            
+            // return view('landing_page.production-generate', [
+            //     'pesanan' => $pesanan,
+            //     'price' => $price,
+            //     'Jarsey' => $Jarsey,
+            //     'kode' => $kode, 
+            //     'aproval_1' => $aproval_1,
+            //     'aproval_2' => $aproval_2,
+            //     'aproval_3' => $aproval_3,
+            // ]);
+        
     }
     
     public function progress_edit($request)
     {
         $kode = $request;
         // dd($request);
+        
         $data = ModelStep1::where('kd_step4', $kode)
             ->join('tbl_step2', 'tbl_step1.kd_step2', '=', 'tbl_step2.kd_step2')
             ->join('tbl_step3', 'tbl_step1.kd_step3', '=', 'tbl_step3.kd_step3')
@@ -153,6 +282,7 @@ class adminController extends Controller
             $price = $h;
         }
         foreach ($data as $pesanan) {
+            $progress = ProgressProduction::where('kd_step', $request)->first();
             // dd($pesanan->status_order);
             $JarseyOrder = $pesanan->tipe_kualitas;
             if($JarseyOrder == 'Stadium'){
@@ -168,12 +298,13 @@ class adminController extends Controller
                 'price' => $price, 
             ];
             // dd($Jarsey);
-            
             return view('landing_page.progress', [
                 'pesanan' => $pesanan,
                 'price' => $price,
                 'Jarsey' => $Jarsey,
                 'kode' => $kode, 
+                'progress' => $progress, 
+                
             ]);
         }
     }
@@ -214,44 +345,72 @@ class adminController extends Controller
         }
     }
     public function update_progress(Request $request){
-        $kd_step = $request->kd_step;
-        $is_shipping_payment = $request->has('is_shipping_payment') ? true : false;
-        if($is_shipping_payment){
-            $finance = new Finance();
-        $finance->transaction_date = now()->format('Y-m-d');
-        $finance->type = 'debit';
-        $finance->money_status = 'lunas';
-        $finance->transactions = 'transasksi final Payment';
-        $finance->status = 'pembayaran_';
-        $finance->note = 'generate by system ';
-        $finance->nominal = $request->biaya_akhir;
-        $finance->save();
-        }
-        $is_final_concept = $request->has('is_final_concept') ? true : false;
-        $is_order_quantity = $request->has('is_order_quantity') ? true : false;
-        $is_production_data = $request->has('is_production_data') ? true : false;
-        $is_polifek_quality = $request->has('is_polifek_quality') ? true : false;
-        $is_stitching_neatness = $request->has('is_stitching_neatness') ? true : false;
-        $is_logo = $request->has('is_logo') ? true : false;
-        $is_packaging = $request->has('is_packaging') ? true : false;
-        $is_delivery = $request->has('is_delivery') ? true : false;
-
-        // Menyimpan nilai-nilai ke dalam database
-        DB::table('progress_productions')
-        ->where('kd_step', $kd_step)
-        ->update([
-            'is_shipping_payment' => $is_shipping_payment,
-            'shipping_payment' => $request->biaya_pengiriman,
-            'is_final_concept' => $is_final_concept,
-            'is_order_quantity' => $is_order_quantity,
-            'is_production_data' => $is_production_data,
-            'is_polifek_quality' => $is_polifek_quality,
-            'is_stitching_neatness' => $is_stitching_neatness,
-            'is_logo' => $is_logo,
-            'is_packaging' => $is_packaging,
-            'is_delivery' => $is_delivery,
+        $validator = Validator::make($request->all(), [
+            'shiping_payment' => 'required_if:is_shipping_payment,true',
+            'final_concept' => 'required_if:is_final_concept,true|file',
+            'order_quantity' => 'required_if:is_order_quantity,true|file',
+            'production_data' => 'required_if:is_production_data,true|file',
+            'logo' => 'required_if:is_logo,true|file',
+            'polifek_quality' => 'required_if:is_polifek_quality,true|file',
+            'stitching_neatness' => 'required_if:is_stitching_neatness,true|file',
+            'packaging' => 'required_if:is_packaging,true|file',
+            'delivery' => 'required_if:is_delivery,true|file',
         ]);
-        return redirect()->back();
+
+        if ($validator->fails()) {
+            $errors = $validator->errors()->all();
+            return redirect()->back()->withErrors(['error' => $errors[0]]);
+        }
+
+    $uploads = [];
+
+    $kd_step = $request->kd_step;
+    // Proses penyimpanan file-file yang diunggah
+    // Proses penyimpanan file-file yang diunggah
+    foreach (['final_concept', 'order_quantity', 'production_data', 'logo', 'polifek_quality', 'stitching_neatness', 'packaging', 'delivery'] as $fileKey) {
+        if ($request->hasFile($fileKey)) {
+            $filename = time() . '.' . $request->file($fileKey)->getClientOriginalExtension();
+            $uploads[$fileKey] = $filename;
+            $request->file($fileKey)->move('uploads', $filename);
+
+            // Simpan nama file di dalam database
+            DB::table('progress_productions')
+                ->where('kd_step', $kd_step)
+                ->update([$fileKey => $filename]);
+        }
+    }
+
+
+
+    // Ambil data yang sudah ada di database
+    $existingData = DB::table('progress_productions')->where('kd_step', $kd_step)->first();
+
+    // Data yang akan disimpan ke database
+    $dataToSave = [
+        'is_shipping_payment' => $request->has('is_shipping_payment') ? true : false,
+        'shipping_payment' => $request->biaya_pengiriman,
+        'is_final_concept' => $request->has('is_final_concept') ? true : false,
+        'is_order_quantity' => $request->has('is_order_quantity') ? true : false,
+        'is_production_data' => $request->has('is_production_data') ? true : false,
+        'is_polifek_quality' => $request->has('is_polifek_quality') ? true : false,
+        'is_stitching_neatness' => $request->has('is_stitching_neatness') ? true : false,
+        'is_logo' => $request->has('is_logo') ? true : false,
+        'is_packaging' => $request->has('is_packaging') ? true : false,
+        'is_delivery' => $request->has('is_delivery') ? true : false,
+    ];
+
+    // Set data file yang diunggah
+    foreach ($uploads as $key => $filename) {
+        $dataToSave[$key] = $filename;
+    }
+
+    // Update data di database jika ada data yang diunggah
+   
+        DB::table('progress_productions')->where('kd_step', $kd_step)->update($dataToSave);
+    
+
+    return redirect()->back();
+
 
     }
     public function approval_action(Request $request)
@@ -727,6 +886,16 @@ class adminController extends Controller
         $faq->answer = $input->answer;
         $faq->save();
         return redirect()->back()->with('success', 'berhasil add data');
+    }
+    public function importExcel(Request $request)
+    {
+        $file = $request->file('import');
+
+
+
+        Excel::import(new FinanceImport, $file);
+
+        return redirect()->back()->with('success', 'Data berhasil diimpor.');
     }
 
 }

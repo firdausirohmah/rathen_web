@@ -169,6 +169,7 @@ Route::controller(adminController::class)->group(function () {
         Route::get('/production/generate/{id}', 'production_generate')->name('production_generate');
         Route::post('/production/approval', 'approval_edit')->name('production.approval');
         Route::get('/production/design/{id}', 'production_design')->name('production_design');
+        Route::post('/production/design/update', 'production_design_update')->name('update_production_desain');
         Route::get('/finance', 'finance')->name('finance');
         Route::post('/finance/add', 'financeAdd')->name('finance.add');
         Route::post('/finance/import', 'importExcel')->name('finance.import');

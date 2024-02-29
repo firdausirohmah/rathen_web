@@ -29,6 +29,9 @@
       </div>
     </div>
   </header>
+  <form action="{{route('update_production_desain')}}" method="post" enctype="multipart/form-data">
+    @csrf
+
   <section class="content content-back">
     <a class="btn btn-back" href="/production/{{$kode}}">
       <i class="icon-arrow-left"></i>
@@ -110,7 +113,7 @@
             <div class="row">
               <div class="field">
                 <div class="title">Note for Form</div>
-                <textarea type="text" class="input txt" value="{{ $data->note_order }}"> </textarea>
+                <textarea class="input txt" name="note">{{ $data->note_order }}</textarea>
               </div>
             </div>
           </div>
@@ -122,14 +125,13 @@
             <div class="payment__title fw-6">
               <i class="icon icon-pencil"></i>Extra Data Order
             </div>
-
             <div class="form__cc">
 
               <div class="row">
                 <div class="field">
                   <div class="title">Kerah pakai kancing
                   </div>
-                  <input type='checkbox' id='kerah_kancing' name='kerah_kancing' value='10000' {{$data->kerah_kancing == 1 ? 'checked' : ''}}>
+                  <input type='checkbox' id='kerah_kancing' name='kerah_kancing' value='10000' {{($data->kerah_kancing != null) ? 'checked' : ''}}>
                   <label class='label_harga' class='label_harga' for='kerah_kancing'>(+10,000)</label>
                 </div>
               </div>
@@ -137,7 +139,7 @@
                 <div class="field">
                   <div class="title">Badan bawah melengkung
                   </div>
-                  <input type='checkbox' id='bb_melengkung' name='bb_melengkung' value='15000' {{$data->badan_bawah == 1 ? 'checked' : ''}}>
+                  <input type='checkbox' id='bb_melengkung' name='bb_melengkung' value='15000' {{($data->bb_melengkung != null) ? 'checked' : ''}}>
                   <label class='label_harga' for='bb_lengkung'>(+15,000)</label>
                 </div>
               </div>
@@ -145,7 +147,7 @@
                 <div class="field">
                   <div class="title">Lengan pola raglan
                   </div>
-                  <input type='checkbox' id='lengan_raglan' name='lengan_raglan' value='15000' {{$data->pola_lengan == 1 ? 'checked' : ''}}>
+                  <input type='checkbox' id='lengan_raglan' name='lengan_raglan' value='15000' {{($data->lengan_raglan != null) ? 'checked' : ''}}>
                   <label class='label_harga' for='lengan_raglan'>(+15,000)</label>
                 </div>
               </div>
@@ -155,7 +157,7 @@
                   <div class="title">Lengan Panjang
                   </div>
                   <div>
-                    <input type='text' class='input txt2' placeholder='Jumlah' name='lengan_panjang' value="{{$data->lengan_panjang}}" />
+                    <input type='text' class='input txt2' placeholder='Jumlah' name='lengan_panjang' value="{{$data->lengan_panjang}}">
                     <span class='title'>PCS</span><br>
                   </div>
                   <span>(+30,000)</span>
@@ -280,9 +282,7 @@
             <div class="payment__title fw-6">
               <i class="icon icon-picture"></i>Design dan Logo
             </div>
-            <form action="{{ route('addForm2') }}" id="upload" method="POST" enctype="multipart/form-data">
-              @method('POST')
-              @csrf
+            
               <input type="hidden" name="idForm2" value="{{$kode}}" />
               <div class="form__cc">
                 <div class="row">
@@ -296,7 +296,7 @@
                         <div class="title" id="statusUpload1">*</div>
                         <div class="form-upload payment__type--cc">
                           <i class="icon icon-cloud-upload"></i>ReUpload
-                          <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput1" name="djp" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" onchange="updateFileName('fileInput1', 'statusUpload1')">
+                          <input type="file" id="fileInput1" name="djp" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" onchange="updateFileName('fileInput1', 'statusUpload1')">
                         </div>
                       </label>
                     </div>
@@ -316,7 +316,7 @@
                         <div class="title" id="statusUpload2">*</div>
                         <div class="form-upload payment__type--cc">
                           <i class="icon icon-cloud-upload"></i>ReUpload
-                          <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput2" name="djk" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" onchange="updateFileName('fileInput2', 'statusUpload2')">
+                          <input type="file"   id="fileInput2" name="djk" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" onchange="updateFileName('fileInput2', 'statusUpload2')">
                         </div>
                       </label>
                     </div>
@@ -337,7 +337,7 @@
                         <div class="form-upload payment__type--cc">
                           <i class="icon icon-cloud-upload"></i>Upload
                         </div>
-                        <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput3" name="lt" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" onchange="updateFileName('fileInput3', 'statusUpload3')">
+                        <input type="file"   id="fileInput3" name="lt" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" onchange="updateFileName('fileInput3', 'statusUpload3')">
                       </label>
                     </div>
                     <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes">(format file : .cdr./.ai/.pdf/.jpg)</small>
@@ -357,8 +357,8 @@
                         <div class="form-upload payment__type--cc">
                           <i class="icon icon-cloud-upload"></i>Upload
                         </div>
-                        <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput4" name="sdt" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" onchange="updateFileName('fileInput4', 'statusUpload4')">
-                        <!-- <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput4" name="sdd" class="fileInput form-control fw-lighter hidden" placeholder="Upload File"> -->
+                        <input type="file"   id="fileInput4" name="sdt" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" onchange="updateFileName('fileInput4', 'statusUpload4')">
+                        <!-- <input type="file"   id="fileInput4" name="sdd" class="fileInput form-control fw-lighter hidden" placeholder="Upload File"> -->
                       </label>
                     </div>
                     <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes">(format file : .cdr./.ai/.pdf/.jpg)</small><br>
@@ -379,8 +379,8 @@
                         <div class="form-upload payment__type--cc">
                           <i class="icon icon-cloud-upload"></i>Upload
                         </div>
-                        <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput5" name="sdl" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" onchange="updateFileName('fileInput5', 'statusUpload5')">
-                        <!-- <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput5" name="sd" class="fileInput form-control fw-lighter hidden" placeholder="Upload File"> -->
+                        <input type="file"   id="fileInput5" name="sdl" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" onchange="updateFileName('fileInput5', 'statusUpload5')">
+                        <!-- <input type="file"   id="fileInput5" name="sd" class="fileInput form-control fw-lighter hidden" placeholder="Upload File"> -->
                       </label>
                     </div>
                     <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes">(format file : .cdr./.ai/.pdf/.jpg) </small> <br>
@@ -410,8 +410,8 @@
                     <div class="form-upload payment__type--cc">
                       <i class="icon icon-cloud-upload"></i>Upload
                     </div>
-                    <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput6" name="t1b" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" onchange="updateFileName('fileInput6', 'statusUpload6')">
-                    <!-- <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput8" name="lk" class="fileInput form-control fw-lighter hidden" placeholder="Upload File"> -->
+                    <input type="file"   id="fileInput6" name="t1b" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" onchange="updateFileName('fileInput6', 'statusUpload6')">
+                    <!-- <input type="file"   id="fileInput8" name="lk" class="fileInput form-control fw-lighter hidden" placeholder="Upload File"> -->
                   </label>
                 </div>
                 <!-- <input type="text" class="input txt text-validated" value='Upload' /> -->
@@ -430,8 +430,8 @@
                     <div class="form-upload payment__type--cc">
                       <i class="icon icon-cloud-upload"></i>Upload
                     </div>
-                    <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput7" name="ldt" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" onchange="updateFileName('fileInput7', 'statusUpload7')">
-                    <!-- <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput8" name="lk" class="fileInput form-control fw-lighter hidden" placeholder="Upload File"> -->
+                    <input type="file"   id="fileInput7" name="ldt" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" onchange="updateFileName('fileInput7', 'statusUpload7')">
+                    <!-- <input type="file"   id="fileInput8" name="lk" class="fileInput form-control fw-lighter hidden" placeholder="Upload File"> -->
                   </label>
                 </div>
                 <!-- <input type="text" class="input txt text-validated" value='Upload' /> -->
@@ -450,8 +450,8 @@
                         <div class="form-upload payment__type--cc">
                           <i class="icon icon-cloud-upload"></i>Upload
                         </div>
-                        <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput8" name="lk" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" onchange="updateFileName('fileInput8', 'statusUpload8')">
-                        <!-- <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput8" name="lk" class="fileInput form-control fw-lighter hidden" placeholder="Upload File"> -->
+                        <input type="file"   id="fileInput8" name="lk" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" onchange="updateFileName('fileInput8', 'statusUpload8')">
+                        <!-- <input type="file"   id="fileInput8" name="lk" class="fileInput form-control fw-lighter hidden" placeholder="Upload File"> -->
                       </label>
                     </div>
                     <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes">(format file : .cdr./.ai/.pdf/.jpg)</small><br>
@@ -472,8 +472,8 @@
                     <div class="form-upload payment__type--cc">
                       <i class="icon icon-cloud-upload"></i>Upload
                     </div>
-                    <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput9" name="llk" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" onchange="updateFileName('fileInput9', 'statusUpload9')">
-                    <!-- <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput9" name="llk" class="fileInput form-control fw-lighter hidden" placeholder="Upload File"> -->
+                    <input type="file"   id="fileInput9" name="llk" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" onchange="updateFileName('fileInput9', 'statusUpload9')">
+                    <!-- <input type="file"   id="fileInput9" name="llk" class="fileInput form-control fw-lighter hidden" placeholder="Upload File"> -->
                   </label>
                 </div>
                 <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes">(format file : .cdr./.ai/.pdf/.jpg)</small><br>
@@ -494,8 +494,8 @@
                     <div class="form-upload payment__type--cc">
                       <i class="icon icon-cloud-upload"></i>Upload
                     </div>
-                    <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput10" name="sbt" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" onchange="updateFileName('fileInput10', 'statusUpload10')">
-                    <!-- <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput10" name="sbt" class="fileInput form-control fw-lighter hidden" placeholder="Upload File"> -->
+                    <input type="file"   id="fileInput10" name="sbt" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" onchange="updateFileName('fileInput10', 'statusUpload10')">
+                    <!-- <input type="file"   id="fileInput10" name="sbt" class="fileInput form-control fw-lighter hidden" placeholder="Upload File"> -->
                   </label>
                 </div>
                 <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes">(format file : .cdr./.ai/.pdf/.jpg)</small><br>
@@ -516,8 +516,8 @@
                     <div class="form-upload payment__type--cc">
                       <i class="icon icon-cloud-upload"></i>Upload
                     </div>
-                    <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileOrder1" name="sbl" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" onchange="updateFileName('fileOrder1', 'statusUpload11')">
-                    <!-- <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileOrder1" name="sblt" class="fileInput form-control fw-lighter hidden" placeholder="Upload File"> -->
+                    <input type="file"   id="fileOrder1" name="sbl" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" onchange="updateFileName('fileOrder1', 'statusUpload11')">
+                    <!-- <input type="file"   id="fileOrder1" name="sblt" class="fileInput form-control fw-lighter hidden" placeholder="Upload File"> -->
                   </label>
                 </div>
                 <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes">(format file : .cdr./.ai/.pdf/.jpg)</small> <br>
@@ -603,6 +603,25 @@
 
       </div>
     </div>
+    <div id="inputDataModal" class="modal pt200">
+      <div class="modal-content mw-32">
+        <span class="close">&times;</span>
+        <div class="form-modal">
+          <h4>Silahkan inputkan data</h4>
+          <form action="{{ route('tambahDataPesanan') }}" id="inputDataForm" method="post">
+            @csrf
+            <input type="hidden" name="idDataPesanan" value="{{$kode}}" />
+            <label for="namaPunggung">Nama Punggung:</label>
+            <input class="input-modal" type="text" id="namaPunggung" name="namaPunggung" required>
+            <label for="nomor">Nomor:</label>
+            <input class="input-modal" type="text" id="nomor" name="nomor" required>
+            <label for="ukuran">Ukuran:</label>
+            <input class="input-modal" type="text" id="ukuran" name="ukuran" required>
+            <button class="btn-modal" type="submit">Save</button>
+          </form>
+        </div>
+      </div>
+    </div>
     
     <div class="container">
       <div class="actions pt250">
@@ -611,21 +630,68 @@
         </button>
         <!-- <a href="/form/orderStep1" class="backBtn">Go Back to Form Order</a> -->
       </div>
-      </form>
-  </section>
+    </section>
+  </form>
   </div>
   <!-- partial -->
   <script>
-    function updateFileName(inputId) {
-      const input = document.getElementById(inputId);
-      const label = input.closest('label');
+     document.addEventListener('DOMContentLoaded', function() {
+      var modal = document.getElementById('inputDataModal');
+      var btn = document.getElementById('inputDataBtn');
+      var span = document.getElementsByClassName('close')[0];
+      var form = document.getElementById('inputDataForm');
+      var tableBody = document.querySelector('.wp-table tbody');
 
-      if (input.files.length > 0) {
-        label.innerText = 'File Selected: ' + input.files[0].name;
-      } else {
-        label.innerText = 'Upload';
-      }
-    }
+      // Counter for row index
+      var rowIndex = 1;
+
+      // Display the modal when the button is clicked
+      btn.onclick = function() {
+        modal.style.display = 'block';
+      };
+
+      // Close the modal when the close button is clicked
+      span.onclick = function() {
+        modal.style.display = 'none';
+      };
+
+      // Close the modal when clicking outside of it
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = 'none';
+        }
+      };
+
+      // // Handle form submission
+      // form.addEventListener('submit', function (e) {
+      //   e.preventDefault();
+
+      //   // Get input values
+      //   var name = document.getElementById('name').value;
+      //   var number = document.getElementById('number').value;
+      //   var size = document.getElementById('size').value;
+
+      //   // Check if any input is provided
+      //   if (name || number || size) {
+      //     // Create a new table row with the input values
+      //     var newRow = tableBody.insertRow();
+      //     var cell1 = newRow.insertCell(0);
+      //     var cell2 = newRow.insertCell(1);
+      //     var cell3 = newRow.insertCell(2);
+      //     var cell4 = newRow.insertCell(3);
+      //     cell1.innerHTML = rowIndex++; // Increment the counter
+      //     cell2.innerHTML = name || '-';
+      //     cell3.innerHTML = number || '-';
+      //     cell4.innerHTML = size || '-';
+      //   }
+
+      //   // Close the modal
+      //   modal.style.display = 'none';
+
+      //   // Clear the form fields for the next input
+      //   form.reset();
+      // });
+    });
 
     function hideBrokenImage(img) {
       img.style.display = 'none'; // Mengubah properti display menjadi none untuk menyembunyikan gambar yang rusak

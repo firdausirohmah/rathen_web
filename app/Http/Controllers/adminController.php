@@ -277,6 +277,8 @@ class adminController extends Controller
             ->join('tbl_logo', 'tbl_harga.id', '=', 'tbl_logo.id_logo')
             ->select('tbl_logo.*', 'tbl_harga.*')
             ->get();
+
+           
         
         foreach ($harga as $h){
             $price = $h;
@@ -309,6 +311,202 @@ class adminController extends Controller
         }
     }
 
+    public function production_design_update(Request $request){
+
+        //return $request;
+        $kode = $request->idForm2; 
+        $data_quotation_order = [];
+        if($request->kerah_kancing != null){
+            $data_quotation_order += ['kerah_kancing' => $request->kerah_kancing];
+        }
+        if($request->bb_melengkung != null){
+            $data_quotation_order += ['bb_melengkung' => $request->bb_melengkung];
+        }
+        if($request->lengan_raglan != null){
+            $data_quotation_order += ['lengan_raglan' => $request->lengan_raglan];
+        }
+        if($request->lengan_panjang != null){
+            $data_quotation_order += ['lengan_panjang' => $request->lengan_panjang];
+        }
+        if(count($data_quotation_order) > 0){
+            //return $data_quotation_order;
+
+            DB::table('tbl_quotation_order')->where('kd_step', $kode)->update($data_quotation_order);
+        }
+        
+        
+        $data_step3 = [];
+        if($request->model_kerah != null){
+            $data_step3 += ['model_kerah' => $request->model_kerah];
+        }
+        if($request->bb != null){
+            $data_step3 += ['bahan_baju' => $request->bb];
+        }
+        if($request->bc != null){
+            $data_step3 += ['bahan_celana' => $request->bc];
+        }
+
+        if(count($data_step3) > 0){
+
+            DB::table('tbl_step3')->where('kd_step3', $kode)->update($data_step3);
+        }
+
+        if($request->note != null){
+            DB::table('user_order')->where('kd_order', $kode)->update(['note_order' => $request->note]);
+        }
+        
+        // Validasi file
+        // $request->validate([
+        //     'djp' => 'required|mimes:cdr,ai,pdf,jpg',
+        //     'djk' => 'required|mimes:cdr,ai,pdf,jpg',
+        //     'lt' => 'required|mimes:cdr,ai,pdf,jpg',
+        //     'sdd' => 'required|mimes:cdr,ai,pdf,jpg',
+        //     'sd' => 'required|mimes:cdr,ai,pdf,jpg',
+        //     't1b' => 'required|mimes:cdr,ai,pdf,jpg',
+        //     'ltt' => 'required|mimes:cdr,ai,pdf,jpg',
+        //     'lk' => 'required|mimes:cdr,ai,pdf,jpg',
+        //     'llk' => 'required|mimes:cdr,ai,pdf,jpg',
+        //     'sbt' => 'required|mimes:cdr,ai,pdf,jpg',
+        //     'sblt' => 'required|mimes:cdr,ai,pdf,jpg', 
+        // ]);
+
+        // Menyimpan file pertama
+        $djp = $request->file('djp');
+        $data = [];
+        if ($djp == null) {
+            $file1Name = '-';
+        } else {
+            $file1Name = $kode . '_Design-Pemain_' .time(). '.' . $djp->extension();
+            $djp->move('uploads', $file1Name);
+            $data += ['design_jersey_pemain' => $file1Name];
+        }
+        // ===========================
+        $djk = $request->file('djk');
+        if ($djk == null) {
+            $file2Name = '-';
+        } else {
+            $file2Name = $kode . '_Design-Kiper_' .time().'.' . $djk->extension();
+            $djk->move('uploads', $file2Name);
+            $data += ['design_jersey_kiper' => $file2Name];
+        }
+        // ===========================
+        $lt = $request->file('lt');
+        if ($lt == null) {
+            $file3Name = '-';
+        } else {
+            $file3Name = $kode . '_Logo-Tim_' .time().'.' . $lt->extension();
+            $lt->move('uploads', $file3Name);
+            $data += ['logo_tim' => $file3Name];
+        }
+        // ===========================
+        $sdd = $request->file('sdt');
+        if ($sdd == null) {
+            $file4Name = '-';
+        } else {
+            $file4Name = $kode . '-Sponsor-Dada-1baris_' .time(). '.' . $sdd->extension();
+            $sdd->move('uploads', $file4Name);
+            $data += ['sponsor_dada_tulisan1baris' => $file4Name];
+        }
+        // =========================== 
+        $sd = $request->file('sdl');
+        if ($sd == null) {
+            $file5Name = '-';
+        } else {
+            $file5Name = $kode . '_Sponsor-Dada-Logo_' .time(). '.' . $sd->extension();
+            $sd->move('uploads', $file5Name);
+            $data += ['sponsor_dada_logodantulisan' => $file5Name];
+        }
+        // =========================== 
+        $t1b = $request->file('t1b');
+        if ($t1b == null) {
+            $file6Name = '-';
+        } else {
+            $file6Name = $kode . '_Sponsor-Dada-t1b_' .time(). '.' . $t1b->extension();
+            $t1b->move('uploads', $file6Name);
+            $data += ['extra_tulisan1baris' => $file6Name];
+        }
+        // ===========================
+        $ltt = $request->file('ldt');
+        if ($ltt == null) {
+            $file7Name = '-';
+        } else {
+            $file7Name = $kode . '_Sponsor-Dada-Logo-Tulisan_' .time(). '.' . $ltt->extension();
+            $ltt->move('uploads', $file7Name);
+            $data += ['extra_logodantulisan' => $file7Name];
+        }
+        // ===========================
+        $lk = $request->file('lk');
+        if ($lk == null) {
+            $file8Name = '-';
+        } else {
+            $file8Name = $kode . '_Logo-Lengan-R_' .time(). '.' . $lk->extension();
+            $lk->move('uploads', $file8Name);
+            $data += ['logo_dilengan_kanan' => $file8Name];
+        }
+        // ===========================
+        $llk = $request->file('llk');
+        if ($llk == null) {
+            $file9Name = '-';
+        } else {
+            $file9Name = $kode . '-Logo-Lengan-LR_' .time(). '.' . $llk->extension();
+            $llk->move('uploads', $file9Name);
+            $data += ['logo_dilengan_kiri' => $file9Name];
+        }
+        // ===========================
+        $sbt = $request->file('sbt');
+        if ($sbt == null) {
+            $file10Name = '-';
+        } else {
+            $file10Name = $kode . '_Sponsor-Belakang-t1b_' .time(). '.' . $sbt->extension();
+            $sbt->move('uploads', $file10Name);
+            $data += ['sponsor_belakang_tulisan1baris' => $file10Name];
+        }
+        // ===========================
+        $sblt = $request->file('sbl');
+        if ($sblt == null) {
+            $file11Name = '-';
+        } else {
+            $file11Name = $kode . '_Sponsor-Belakang-Logo_' .time(). '.' . $sblt->extension();
+            $sblt->move('uploads', $file11Name);
+            $data += ['sponsor_belakang_logodantulisan' => $file11Name];
+        }
+        // ===========================
+        // dd($file1Name,$file2Name,$file3Name,$file4Name,$file5Name,$file6Name,$file7Name,$file8Name,$file9Name,$file10Name,$file11Name);
+
+
+        // dd($file1Name,$file2Name); 
+        //return $data;
+        // ->update([ 
+        //     'design_jersey_pemain' => $file1Name,
+        //     'design_jersey_kiper' => $file2Name,
+        //     'logo_tim' => $file3Name,
+        //     'sponsor_dada_tulisan1baris' => $file4Name,
+        //     'sponsor_dada_logodantulisan' => $file5Name,
+        //     'extra_tulisan1baris' => $file6Name,
+        //     'extra_logodantulisan' => $file7Name,
+        //     'logo_dilengan_kanan' => $file8Name,
+        //     'logo_dilengan_kiri' => $file9Name,
+        //     'sponsor_belakang_tulisan1baris' => $file10Name,
+        //     'sponsor_belakang_logodantulisan' => $file11Name,
+        // ]);
+        // $datas = ModeStep2::where('kd_step2', $kode )
+        // ->update($data);
+        if(count($data) > 0){
+
+
+           // return $data;
+
+            $datas = DB::table('tbl_step2')
+            ->where('kd_step2', $kode)
+            ->update($data);
+        }
+    
+        // Lakukan operasi lain jika diperlukan
+        // dd($file1,$file2);
+       
+
+            return redirect('production/design/'.$kode)->with('success', 'Files successfully uploaded.');
+    }
     public function production_design($request)
     {
         
@@ -318,15 +516,17 @@ class adminController extends Controller
             ->join('tbl_step2', 'tbl_step2.kd_step2', '=', 'tbl_step1.kd_step2')
             ->join('tbl_step3', 'tbl_step3.kd_step3', '=', 'tbl_step1.kd_step2')
             ->join('user_order', 'user_order.kd_order', '=', 'tbl_step1.kd_step2')
+            ->join('tbl_quotation_order', 'tbl_quotation_order.kd_step', '=', 'tbl_step1.kd_step2')
             ->where('tbl_step1.kd_step2', $kode)
-            ->select('tbl_step1.*', 'tbl_step2.*','tbl_step3.*','user_order.*')
-            ->get();
+            ->select('tbl_step1.*', 'tbl_step2.*','tbl_step3.*','user_order.*', 'tbl_quotation_order.*')
+            ->first();
 
+    
             // Loop through each item in $pesanan to get kategori_harga
-            foreach ($data as $item) {
+        
                 // Assign kategori_harga from each item to $kd_part
-                $kd_part = $item->kategori_harga;
-            }
+                $kd_part = $data->kategori_harga;
+            
 
         
             $Step4 = ModelStep4::where('kd_step1', $kode)
@@ -335,14 +535,14 @@ class adminController extends Controller
         
         $part = DB::table('tbl_part')->where('kd_part', $kd_part)->get();
 
-        foreach ($data as $key) { 
+         
             return view('landing_page.productionStep2', [
                 'dataStep4' => $Step4,
-                'data' =>$key,
+                'data' =>$data,
                 'pesanan' => $part,
                 'kode' => $kode, 
             ]);
-        }
+        
     }
     public function update_progress(Request $request){
         $validator = Validator::make($request->all(), [

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Imports\FinanceImport;
+use App\Imports\PemainImport;
 use App\Models\AboutUs;
 use App\Models\Approval;
 use App\Models\Faq;
@@ -15,6 +16,7 @@ use App\Models\ModelStep4;
 use App\Models\OrderStep;
 use App\Models\pemesananModel;
 use App\Models\ProgressProduction;
+use App\Models\Rating;
 use App\Models\TargetOmset;
 use DateTime;
 use Dompdf\Dompdf;
@@ -511,6 +513,7 @@ class adminController extends Controller
     {
         
         $kode = $request;
+        session(['id_invoice' => $kode]);
 
         $data = DB::table('tbl_step1')
             ->join('tbl_step2', 'tbl_step2.kd_step2', '=', 'tbl_step1.kd_step2')
@@ -1090,12 +1093,25 @@ class adminController extends Controller
     public function importExcel(Request $request)
     {
         $file = $request->file('import');
+        $type = $request->type;
+        if($type == 'finance'){
+            Excel::import(new FinanceImport, $file);
+
+        }
+        if($type == 'pemain'){
+            Excel::import(new PemainImport, $file);
+
+        }
 
 
 
-        Excel::import(new FinanceImport, $file);
 
         return redirect()->back()->with('success', 'Data berhasil diimpor.');
+    }
+
+    public function rating_view(){
+        $data = Rating::with('media')->get();
+        return view('admin.rating_view', ['data' =>$data]);
     }
 
 }

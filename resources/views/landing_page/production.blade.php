@@ -145,12 +145,15 @@
                       <td class="text-right">
                         <div>Approval</div>
                         <div class="py-5"></div>
-                        <div>
-                          <span class="m-5">
+                        <div class="d-flex justify-content-end">
+                          <div class="px-5 ttd">
                             <img src="https://cdn.kibrispdr.org/data/957/tanda-tangan-keren-png-6.png" alt="" style="width: 100px;display:none;float:left;" id="ttd1"><br>
-                            (Rhofik)</span>
+                            <span class="m-5">(Rhofik)</span>
+                          </div>
+                          <div class="pl-5 pr-3 ttd">
                             <img src="https://cdn.kibrispdr.org/data/957/tanda-tangan-keren-png-6.png" alt="" style="width: 100px;display:none;" id="ttd2"><br>
-                          <span>(Ervina)</span>
+                            <span>(Ervina)</span>
+                          </div>
                         </div>
                       </td>
 
@@ -260,8 +263,8 @@
               </style>
               <div class="container w-680">
                 <div class="row">
-                  <div class="col-lg-12">
-                    <p class="right-align mb-4 pb-4">Best regard,</p>
+                  <div class="col-lg-12 ttd">
+                    <p class="right-align mb-4 pb-5">Best regard,</p>
                     <img src="https://cdn.kibrispdr.org/data/957/tanda-tangan-keren-png-6.png" alt="" style="width: 100px;display:none;float:right;" id="ttd3">
                     <p class="right-align mt-4 pt-4"><u>R. Esa Pangersa Gusti</u></p>
                     <p class="right-align" style="line-height: 0px">RATHEN INDONESIA</p>
@@ -832,7 +835,7 @@
                 R. Esa Pangersa Gusti
                 </label>
               </div>
-              <button type="submit" class="btn btn-primary">submit</button>
+              <button type="submit" class="btn btn-primary w-fit">submit</button>
             </form>
             @endif
           </div>

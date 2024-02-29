@@ -283,8 +283,10 @@
 
         <div class="card-body px-0 pt-0 pb-2">
           <div class="table-responsive p-0">
+            <a href="{{ asset('import/format-import-finance.xlsx') }}">format import</a>
             <form action="{{route('finance.import')}}" method="post" class="input-group mb-3" enctype="multipart/form-data">
               @csrf
+              <input type="hidden" name="type" value="finance">
               <input type="file" name="import" id="import" class="form-control">
               <div class="input-group-append">
 

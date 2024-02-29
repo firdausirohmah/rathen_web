@@ -182,6 +182,7 @@ Route::controller(adminController::class)->group(function () {
         Route::delete('/data/invoice/{id}', 'destroyInvoice')->name('data.destroyInv');
         Route::delete('/data/quotation/{id}', 'destroyQuo')->name('data.destroyQuo');
         Route::get('/progress/{id}', 'progress_edit')->name('progress_edit');
+        Route::get('/rating_view', 'rating_view')->name('rating_view');
     });
 });
 

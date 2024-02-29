@@ -90,11 +90,12 @@
               <div class="field pt-5">
                 <div class="payment__title"></div>
                 <div class="form-uploads h-3 w-20">
-                  <div class="form-upload payment__type--cc btn-black">
+                  <div class="form-upload payment__type--cc btn-black" id="importDatabtn">
+
                     <i class="icon icon-cloud-upload"></i>Upload File
                   </div>
                 </div>
-                <!-- <input type="text" class="input txt text-validated" value='Upload' /> -->
+                
               </div>
             </div>
             <div class="row">
@@ -110,7 +111,7 @@
             <div class="row">
               <div class="field pt-5">
                 <div class="form-uploads h-3 w-20">
-                  <a href="{{ route('downloadPdf') }}" class="form-upload payment__type--cc btn-black">
+                  <a href="{{ asset('import/format-pemain.xlsx') }}" class="form-upload payment__type--cc btn-black">
                     <i class="icon icon-cloud-download"></i>Format Ukuran</a>
                 </div>
                 <!-- <input type="text" class="input txt text-validated" value='Upload' /> -->
@@ -141,6 +142,23 @@
         </div>
       </div>
     </div>
+    <div id="importDataModal" class="modal pt200">
+      <div class="modal-content mw-32">
+        <span class="close">&times;</span>
+        <div class="form-modal">
+          <h4>Silahkan inputkan data</h4>
+          <form action="{{route('finance.import') }}" id="inputDataForm" method="post" enctype="multipart/form-data">
+            @csrf
+            <input type="hidden" name="idDataPesanan" value="{{$kode}}" />
+            <label for="import">File</label>
+            <input type="file" name="import" id="import">
+            <input type="hidden" name="type" value="pemain">
+            <button class="btn-modal" type="submit">Save</button>
+          </form>
+          
+        </div>
+      </div>
+    </div>
 
 
     <div class="container">
@@ -161,7 +179,10 @@
     document.addEventListener('DOMContentLoaded', function() {
       var modal = document.getElementById('inputDataModal');
       var btn = document.getElementById('inputDataBtn');
+      var import_modal = document.getElementById('importDataModal');
+      var import_btn = document.getElementById('importDatabtn');
       var span = document.getElementsByClassName('close')[0];
+      var span2 = document.getElementsByClassName('close')[1];
       var form = document.getElementById('inputDataForm');
       var tableBody = document.querySelector('.wp-table tbody');
 
@@ -172,16 +193,23 @@
       btn.onclick = function() {
         modal.style.display = 'block';
       };
+      import_btn.onclick = function() {
+        import_modal.style.display = 'block';
+      };
 
       // Close the modal when the close button is clicked
       span.onclick = function() {
         modal.style.display = 'none';
+      };
+      span2.onclick = function() {
+        import_modal.style.display = 'none';
       };
 
       // Close the modal when clicking outside of it
       window.onclick = function(event) {
         if (event.target == modal) {
           modal.style.display = 'none';
+          import_modal.style.display = 'none';
         }
       };
 

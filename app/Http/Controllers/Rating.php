@@ -35,12 +35,14 @@ class Rating extends Controller
         $media->save();
 
         $request->file('photo')->move('uploads', $filename);
-        
+
         $model = new ModelsRating();
         $model->name = $request->nama;
+        $model->team_name = $request->nama_tim;
         $model->pesan = $request->note;
         $model->rating = $request->rate;
         $model->id_media = $media->id;
+        $model->save();
 
         return redirect()->back();
 

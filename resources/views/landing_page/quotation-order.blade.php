@@ -944,9 +944,17 @@
             </div>
             @endif
             <div>
-              <a href="{{ route('export', ['kode'=> $pesanan->kd_step]) }}" class="btn action__submit">Download
-                <i class="icon icon-cloud-download"></i>
-              </a>
+            @if(request()->routeIs('invoice'))
+                
+            <a href="{{ route('export', ['kode'=> $pesanan->kd_step]) }}" class="btn action__submit">Download
+              <i class="icon icon-cloud-download"></i>
+            </a>
+            @elseif(request()->routeIs('quotation_view'))
+                
+            <a href="{{ route('generate') }}" class="btn action__submit">Download
+              <i class="icon icon-cloud-download"></i>
+            </a>
+            @endif
             </div>
           </div>
          

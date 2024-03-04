@@ -10,6 +10,24 @@ let availableKeywords = [
 const resultsHarga = document.querySelector('.result-harga');
 const inputHarga = document.getElementById('input-harga');
 
+inputHarga.addEventListener('click', function() {
+    display(availableKeywords);
+});
+
+document.addEventListener('click', function(event) {
+    if (!event.target.closest('.input-box')) {
+        inputHarga.value = '';
+        resultsHarga.innerHTML = '';
+    }
+});
+
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        inputHarga.value = '';
+        resultsHarga.innerHTML = '';
+    }
+});
+
 inputHarga.onkeyup = function(){
     let result = [];
     let input = inputHarga.value;

@@ -109,7 +109,7 @@ src="https://www.facebook.com/tr?id=1058956608607048&amp;ev=PageView&amp;noscrip
                 </a>
             </div>
             <div class="main-banner__cekresi--list cek-tarif">
-                <a class="form button-search"  href="{{ url('https://rathen-apparel.com/') }}" style="margin-left:66px; margin-top:15px">
+                <a class="form button-search"  href="{{ url('https://rathen-apparel.com/store/') }}" style="margin-left:66px; margin-top:15px">
                     <i><img src="{{asset('asset/images/icon baju - ungu.png')}}"></i>
                     
                     <div class="input-box">

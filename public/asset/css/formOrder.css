@@ -1354,7 +1354,7 @@ textarea {
   .field {
     padding-top: 15px;
     /* padding-right: 30px; */
-    width: 100%;
+    width: 100%!important;
   }
   .payment__shipping{
     position: relative;

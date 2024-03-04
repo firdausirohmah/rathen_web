@@ -75,6 +75,7 @@
                       <th class="text-uppercase small font-weight-bold">No.</th>
                       <th class="text-uppercase small font-weight-bold">Production</th>
                       <th class="text-uppercase small font-weight-bold text-center">Image</th>
+                      
                     </tr>
                   </thead>
                   <?php
@@ -104,9 +105,9 @@
                         <p>Not yet</p>
                         @endif
                       </td>
-        
-                    </tr>
-                    @endif
+                        
+                      </tr>
+                      @endif
                     @endforeach
                   </tbody>
 
@@ -115,6 +116,9 @@
                       <td colspan="3" class="text-center">
                       <div class="col-lg-12">
                         <p class="right-align mb-4 pb-4">Best regard,</p>
+                        @if($pesanan->status_order == 'produksi')
+                        <img src="https://cdn.kibrispdr.org/data/957/tanda-tangan-keren-png-6.png" alt="" style="width: 100px;display:none;float:right;" id="ttd1"><br>
+                        @endif
                         <p class="right-align mt-4 pt-4"><u>R. Esa Pangersa Gusti</u></p>
                         <p class="right-align" style="line-height: 0px">RATHEN INDONESIA</p>
                       </div>
@@ -246,13 +250,13 @@
 
             @if($pesanan->status_order == 'produksi')
             <div>
-              <a href="{{ route('generate') }}" class="btn action__submit">Download
+              <a href="{{ route('progress.generate', ['kd_step' => $kode]) }}" class="btn action__submit">Download
                 <i class="icon icon-cloud-download"></i>
               </a>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" name="approval3" id="approval3" >
-              <label class="form-check-label" for="approval3">
+              <input class="form-check-input" type="checkbox" name="approval1" id="approval1" >
+              <label class="form-check-label" for="approval1">
               R. Esa Pangersa Gusti
               </label>
             </div>
@@ -310,6 +314,14 @@
     }
   </style>
   <script>
+    var approval = document.getElementById('approval1');
+    approval.addEventListener('change', function(){
+      ttd = document.getElementById('ttd1');
+      if(approval.checked){
+
+        ttd.style = 'display:block;width: 100px;float:right'
+      }
+    });
     document.addEventListener('DOMContentLoaded', function() {
       var modal = document.getElementById('inputDataModal');
       var btn = document.getElementById('inputDataBtn');

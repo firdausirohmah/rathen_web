@@ -239,6 +239,7 @@ class PesananController extends Controller
     public function form_4($request)
     {
         $kode = $request;
+        session(['id_invoice' => $kode]);
         $order = Quotation2::where('kd_step',$kode)->first();
         // dd($order);
         $data = ModelStep4::where('kd_step1', $kode) 
@@ -721,6 +722,71 @@ class PesananController extends Controller
             return $pdf->stream('quotation.pdf');
         }
     }
+    public function generate_invoice($request)
+    {
+        
+        $data = DB::table('tbl_step1')
+            ->join('tbl_step2', 'tbl_step1.kd_step2', '=', 'tbl_step2.kd_step2')
+            ->join('tbl_step3', 'tbl_step1.kd_step3', '=', 'tbl_step3.kd_step3')
+            ->select('tbl_step1.*', 'tbl_step2.*', 'tbl_step3.*')
+            ->get();
+
+        foreach ($data as $pesanan) {
+            $d = [
+                'data' => $pesanan,
+                'nama' => $nama,
+                'kontak' => $kontak,
+                'email' => $email,
+                'alamat' => $alamat,
+                'tanggal' => $tanggal,
+
+                'price' => $price,
+                'product' => $product,
+                'harga' => $harga,
+                'qty' => $qty,
+
+                'kerah_kancing' => $kerah_kancing , 
+                'badan_bawah' => $badan_bawah , 
+                'pola_lengan' => $pola_lengan ,
+                'lengan_panjang' => $lengan_panjang ,
+                's2xl' => $s2xl,
+                's3xl' => $s3xl,
+                's4xl' => $s4xl,
+                'celana_printing' => $celana_printing,
+                'celana_pro' => $celana_pro,
+                'kaoskaki' => $kaoskaki,
+                'bahan_embos' => $bahan_embos,
+                'logo_3d' => $logo_3d,
+                'kerah_rib' => $kerah_rib,
+                'tangan_rib' => $tangan_rib,
+            ];
+            $pdf = new Dompdf();
+            $options = new Options();
+            $options->set(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true])->setChroot('');
+            $pdf->setOptions($options);
+
+            // Load Bootstrap CSS locally
+            $bootstrapCSS = file_get_contents('https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css'); // Ganti path sesuai dengan lokasi CSS Bootstrap Anda
+            $html = View::make('landing_page.quotation', compact('data', 'nama', 'kontak', 'email', 
+            'alamat', 'tanggal','qty','harga','product','kerah_kancing','badan_bawah','pola_lengan', 'price', 'logo_3d',
+            'lengan_panjang','s2xl','s3xl','s4xl','celana_printing','celana_pro','kaoskaki','bahan_embos','kerah_rib','tangan_rib'))->render();
+            $srcImg= "{{public_path('/asset/images/logo-dark.png')}}";
+
+
+            // Combine Bootstrap CSS with your HTML
+            $combinedHtml = '<style> html *{margin:0;padding:0;}.button.back{display:none;}.print{
+                display:none;}.container{margin:0!important;} .card{width:650px!important;border:none!important}
+                .table-responsive table thead tr th, .table-responsive table tbody tr td, .table-responsive table tfoot tr td{border-color: #3c3f44;}'
+                . $bootstrapCSS . '<style>' . $html;
+
+            $pdf->loadHtml($combinedHtml);
+            $pdf->setPaper('A4', 'portrait');
+            $pdf->render();
+
+            // return $pdf::setOptions(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true])->loadView('reports.invoiceSell')->stream();
+            return $pdf->stream('quotation.pdf');
+        }
+    }
     // ================================ add ==================================
     public function addForm1($kd_step,Request $request)
     {
@@ -860,12 +926,15 @@ class PesananController extends Controller
     public function invoice($request)
     {
         $kode = $request;
+        session()->put('kode', $kode);
+
         // dd($request);
         $data = ModelStep1::where('kd_step4', $kode)
             ->join('tbl_step2', 'tbl_step1.kd_step2', '=', 'tbl_step2.kd_step2')
             ->join('tbl_step3', 'tbl_step1.kd_step3', '=', 'tbl_step3.kd_step3')
             ->join('tbl_part', 'tbl_step1.kategori_harga', '=', 'tbl_part.kd_part')
-            ->select('tbl_step1.*', 'tbl_step2.*', 'tbl_step3.*','tbl_part.harga')
+            ->join('tbl_quotation_order', 'tbl_step1.kd_step3', '=', 'tbl_quotation_order.kd_step')
+            ->select('tbl_step1.*', 'tbl_step2.*', 'tbl_step3.*','tbl_part.harga', 'tbl_quotation_order.*')
             ->get();
         $harga = DB::table('tbl_harga')
             ->join('tbl_logo', 'tbl_harga.id', '=', 'tbl_logo.id_logo')
@@ -890,7 +959,9 @@ class PesananController extends Controller
                 'pesanan' => $pesanan,
                 'price' => $price, 
             ];
+            //return $pesanan;
             // dd($Jarsey);
+            //return $pesanan;
             
             return view('landing_page.quotation-order', [
                 'pesanan' => $pesanan,
@@ -900,11 +971,13 @@ class PesananController extends Controller
             ]);
         }
     }
-    public function export(){
-        $kode = session('kode');
+    public function export($request = null){
+        $tanggal = session('tanggal');
+        $kode = $request;
         $data = ModelStep1::where('kd_step4', $kode)
             ->join('tbl_step2', 'tbl_step1.kd_step2', '=', 'tbl_step2.kd_step2')
             ->join('tbl_step3', 'tbl_step1.kd_step3', '=', 'tbl_step3.kd_step3')
+            ->join('tbl_quotation_order', 'tbl_step1.kd_step3', '=', 'tbl_quotation_order.kd_step')
             ->join('tbl_part', 'tbl_step1.kategori_harga', '=', 'tbl_part.kd_part')
             ->select('tbl_step1.*', 'tbl_step2.*', 'tbl_step3.*','tbl_part.harga')
             ->get();
@@ -938,7 +1011,7 @@ class PesananController extends Controller
 
             // Load Bootstrap CSS locally
             $bootstrapCSS = file_get_contents(public_path('c.css')); // Ganti path sesuai dengan lokasi CSS Bootstrap Anda
-            $html = View::make('landing_page.invoice', compact('pesanan', 'price','Jarsey'))->render();
+            $html = View::make('landing_page.invoice', compact('pesanan', 'price','Jarsey', 'tanggal'))->render();
             
             // Combine Bootstrap CSS with your HTML
             $combinedHtml = '<style> .print{

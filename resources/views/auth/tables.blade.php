@@ -35,6 +35,8 @@
           <!-- Modal -->
           <div class="modal fade" id="invoiceCreate" tabindex="-1" aria-labelledby="invoiceCreateLabel" aria-hidden="true">
             <div class="modal-dialog">
+              <form action="{{route('create_invoice')}}" method="post">
+                @csrf
               <div class="modal-content">
                 <div class="modal-header">
                   <h5 class="modal-title" id="invoiceCreateLabel">Invoice Input</h5>
@@ -44,25 +46,44 @@
 
                   <div class="mb-3">
                     <label for="name" class="form-label">Nama Pemesan:</label>
-                    <input type="text" class="form-control" id="name" name="np" placeholder="Enter Name">
-                    <label for="product" class="form-label">Order Product:</label>
-                    <input type="text" class="form-control" id="product" name="product" placeholder="Enter Order">
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name">
+                    <label for="team_name" class="form-label">Nama Team:</label>
+                    <input type="text" class="form-control" id="team_name" name="team_name" placeholder="Enter Team Name">
+                    <label for="kontak" class="form-label">Kontak:</label>
+                    <input type="text" class="form-control" id="kontak" name="kontak" placeholder="Enter Contact">
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="">
+                    <label for="alamat" class="form-label">Alamat:</label>
+                   <textarea name="alamat" id="alamat" class="form-control"></textarea>
+                    <label for="product" class="form-label">Product:</label>
+                    <select class="form-select form-control" aria-label="Default select example" name="product" id="product">
+                      <option selected>Select Order Product</option>
+                      <option value="non-print">Jersey Stadiun Version - Non Print</option>
+                      <option value="half-print">Jersey Stadiun Version - Half Print</option>
+                      <option value="full-print">Jersey Stadiun Version - Full Print</option>
+                      <option value="pro">Jersey Pro Version</option>
+                      <option value="pro-plus">Jersey Pro Plus Version</option>
+                      <option value="jackeyt-anthem">Jacket Anthem Pro</option>
+                    </select>
+                    <label for="qty" class="form-label">Quantity:</label>
+                    <input type="number" class="form-control" id="qty" name="qty" placeholder="Enter Quantity">
                     <label for="total_harga" class="form-label">Total Harga:</label>
-                    <input type="text" class="form-control" id="total_harga" oninput="formatRupiah(this)" name="total_harga" readonly>
+                    <input type="text" class="form-control" id="total_harga"  name="total_harga" readonly>
                     <label for="design_create" class="form-label">Design Payment:</label>
-                    <input type="text" class="form-control" id="design_create" oninput="formatRupiah(this);" name="biaya_desain_create" placeholder="Enter Design Payment">
+                    <input type="text" class="form-control" id="design_create" name="biaya_desain" placeholder="Enter Design Payment" >
                     <label for="dp_create" class="form-label">Initial Payment (DP):</label>
-                    <input type="text" class="form-control" id="dp_create" oninput="formatRupiah(this);" name="biaya_dp_create" placeholder="Enter Initial Payment">
+                    <input type="text" class="form-control" id="dp_create" name="biaya_dp" placeholder="Enter Initial Payment">
                     <label for="pelunasan_create" class="form-label">Final Payment:</label>
-                    <input type="text" class="form-control" id="pelunasan_create" oninput="formatRupiah(this)" name="biaya_pelunasan_create" readonly>
+                    <input type="text" class="form-control" id="pelunasan_create"  name="biaya_pelunasan" readonly>
                   </div>
 
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="submit" class="btn btn-primary" value="Submit" id="submit_create_btn">Submit</button>
+                  <button type="submit" class="btn btn-primary" value="Submit">Submit</button>
                 </div>
               </div>
+              </form>
             </div>
           </div>
           <!-- end modal -->
@@ -299,4 +320,40 @@
     </div>
   </div>
 </div>
+<script>
+  var total_harga =  document.getElementById("total_harga");
+  var design_create =  document.getElementById("design_create");
+  var dp_create =  document.getElementById("dp_create");
+  var pelunasan_create =  document.getElementById("pelunasan_create");
+  design_create.addEventListener("change", function(){
+    pelunasan_create.value = (+pelunasan_create.value) - (+design_create.value);
+  });
+  dp_create.addEventListener("change", function(){
+    pelunasan_create.value = (+pelunasan_create.value) - (+dp_create.value);
+  });
+  document.getElementById("product").addEventListener("change", function() {
+
+  var xhr = new XMLHttpRequest(); // Membuat objek XMLHttpRequest
+
+
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === XMLHttpRequest.DONE) { // Periksa jika permintaan selesai
+      if (xhr.status === 200) { // Periksa jika permintaan berhasil
+        var data =  JSON.parse(xhr.responseText);
+        console.log(data);
+        document.getElementById("qty").value = data.min_order; // Tampilkan respons dari server
+        total_harga.value = (+(data.harga))*(+(data.min_order)); // Tampilkan respons dari server
+        pelunasan_create.value = (+(data.harga))*(+(data.min_order)); // Tampilkan respons dari server
+      } else {
+        alert('Terjadi kesalahan: ' + xhr.status); // Tampilkan pesan kesalahan jika permintaan gagal
+      }
+    }
+  };
+
+  var kd_part = this.value;
+
+  xhr.open("GET", "/api/get-harga/"+kd_part, true); // Konfigurasi permintaan GET ke data.php
+  xhr.send(); // Kir
+});
+</script>
 @endsection

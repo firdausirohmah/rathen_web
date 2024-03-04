@@ -11,19 +11,26 @@ use App\Models\Finance;
 use App\Models\LinkWeb;
 use App\Models\Location;
 use App\Models\Media;
+use App\Models\ModelOrder;
 use App\Models\ModelStep1;
 use App\Models\ModelStep4;
+use App\Models\ModeStep2;
+use App\Models\ModeStep3;
 use App\Models\OrderStep;
 use App\Models\pemesananModel;
 use App\Models\ProgressProduction;
+use App\Models\Quotation1;
+use App\Models\Quotation2;
 use App\Models\Rating;
 use App\Models\TargetOmset;
+use Carbon\Carbon;
 use DateTime;
 use Dompdf\Dompdf;
 use Dompdf\Options;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\View as FacadesView;
@@ -144,6 +151,7 @@ class adminController extends Controller
             ->join('user_order', 'user_order.kd_order', '=', 'tbl_step1.kd_step2')
             ->select('tbl_step1.*', 'tbl_step2.*', 'tbl_step3.*','tbl_part.harga','user_order.*')
             ->get();
+            
         $harga = DB::table('tbl_harga')
             ->join('tbl_logo', 'tbl_harga.id', '=', 'tbl_logo.id_logo')
             ->select('tbl_logo.*', 'tbl_harga.*')
@@ -237,7 +245,7 @@ class adminController extends Controller
             ])->render();
             $srcImg= "{{public_path('/asset/images/logo-dark.png')}}";
 
-
+             
             // Combine Bootstrap CSS with your HTML
             $combinedHtml = '<style> html *{margin:0;padding:0;}.button.back{display:none;}.print{
                 display:none;}.container{margin:0!important;} .card{width:650px!important;border:none!important}
@@ -245,7 +253,7 @@ class adminController extends Controller
                 . $bootstrapCSS.'<style>' . $html;
 
             $pdf->loadHtml($combinedHtml);
-            $pdf->setPaper('A4', 'lanscape');
+            $pdf->setPaper('A4', 'potrait');
             $pdf->render();
 
             // return $pdf::setOptions(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true])->loadView('reports.invoiceSell')->stream();
@@ -260,6 +268,88 @@ class adminController extends Controller
             //     'aproval_2' => $aproval_2,
             //     'aproval_3' => $aproval_3,
             // ]);
+        
+    }
+    public function progress_generate($request)
+    {
+        $kode = $request;
+        // dd($request);
+        
+        $data = ModelStep1::where('kd_step4', $kode)
+            ->join('tbl_step2', 'tbl_step1.kd_step2', '=', 'tbl_step2.kd_step2')
+            ->join('tbl_step3', 'tbl_step1.kd_step3', '=', 'tbl_step3.kd_step3')
+            ->join('tbl_part', 'tbl_step1.kategori_harga', '=', 'tbl_part.kd_part')
+            ->join('user_order', 'user_order.kd_order', '=', 'tbl_step1.kd_step2')
+            ->select('tbl_step1.*', 'tbl_step2.*', 'tbl_step3.*','tbl_part.harga','user_order.*')
+            ->get();
+        $harga = DB::table('tbl_harga')
+            ->join('tbl_logo', 'tbl_harga.id', '=', 'tbl_logo.id_logo')
+            ->select('tbl_logo.*', 'tbl_harga.*')
+            ->get();
+
+           
+        
+        foreach ($harga as $h){
+            $price = $h;
+        }
+        foreach ($data as $pesanan) {
+            $progress = ProgressProduction::where('kd_step', $request)->first();
+            // dd($pesanan->status_order);
+            $JarseyOrder = $pesanan->tipe_kualitmmas;
+            if($JarseyOrder == 'Stadium'){
+                $JarseyDefault = 'Jarsey'.' - '.$JarseyOrder.' '.$pesanan->kategori_harga;
+                $Jarsey = strtoupper($JarseyDefault);
+            }else{
+                $JarseyDefault = 'Jarsey'.'-'.$JarseyOrder.' VERSION';
+                $Jarsey = strtoupper($JarseyDefault);
+            } 
+            $d = [
+                'Jarsey' => $Jarsey,
+                'pesanan' => $pesanan,
+                'price' => $price, 
+            ];
+            // dd($Jarsey);
+            $pdf = new Dompdf();
+            $options = new Options();
+            $options->set(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true])->setChroot('');
+            $pdf->setOptions($options);
+
+            // Load Bootstrap CSS locally
+            $bootstrapCSS = file_get_contents('https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css'); // Ganti path sesuai dengan lokasi CSS Bootstrap Anda
+            $html = FacadesView::make('landing_page.progress', [
+                'pesanan' => $pesanan,
+                'price' => $price,
+                'Jarsey' => $Jarsey,
+                'kode' => $kode, 
+                'progress' => $progress, 
+                
+            ])->render();
+            $srcImg= "{{public_path('/asset/images/logo-dark.png')}}";
+
+             
+            // Combine Bootstrap CSS with your HTML
+            $combinedHtml = '<style> html *{margin:0;padding:0;}header{display:none;}.button.back{display:none;}.print{
+                display:none;}.container{margin:0!important;} .card{width:650px!important;border:none!important}
+                .table-responsive table thead tr th, .table-responsive table tbody tr td, .table-responsive table tfoot tr td{border-color: #3c3f44;}'
+                . $bootstrapCSS.'<style>' . $html;
+
+            $pdf->loadHtml($combinedHtml);
+            $pdf->setPaper('A4', 'potrait');
+            $pdf->render();
+
+            // return $pdf::setOptions(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true])->loadView('reports.invoiceSell')->stream();
+            return $pdf->stream('progress.pdf');
+            
+            // return view('landing_page.production-generate', [
+            //     'pesanan' => $pesanan,
+            //     'price' => $price,
+            //     'Jarsey' => $Jarsey,
+            //     'kode' => $kode, 
+            //     'aproval_1' => $aproval_1,
+            //     'aproval_2' => $aproval_2,
+            //     'aproval_3' => $aproval_3,
+            // ]);
+            }
         
     }
     
@@ -288,7 +378,7 @@ class adminController extends Controller
         foreach ($data as $pesanan) {
             $progress = ProgressProduction::where('kd_step', $request)->first();
             // dd($pesanan->status_order);
-            $JarseyOrder = $pesanan->tipe_kualitas;
+            $JarseyOrder = $pesanan->tipe_kualitmmas;
             if($JarseyOrder == 'Stadium'){
                 $JarseyDefault = 'Jarsey'.' - '.$JarseyOrder.' '.$pesanan->kategori_harga;
                 $Jarsey = strtoupper($JarseyDefault);
@@ -301,6 +391,7 @@ class adminController extends Controller
                 'pesanan' => $pesanan,
                 'price' => $price, 
             ];
+            // return $pesanan;
             // dd($Jarsey);
             return view('landing_page.progress', [
                 'pesanan' => $pesanan,
@@ -317,20 +408,91 @@ class adminController extends Controller
 
         //return $request;
         $kode = $request->idForm2; 
+        $pesanan = ModelStep1::where('kd_step4', $kode)
+        ->join('tbl_step2', 'tbl_step1.kd_step2', '=', 'tbl_step2.kd_step2')
+        ->join('tbl_step3', 'tbl_step1.kd_step3', '=', 'tbl_step3.kd_step3')
+        ->join('tbl_part', 'tbl_step1.kategori_harga', '=', 'tbl_part.kd_part')
+        ->join('user_order', 'user_order.kd_order', '=', 'tbl_step1.kd_step2')
+        ->select('tbl_step1.*', 'tbl_step2.*', 'tbl_step3.*','tbl_part.harga','user_order.*')
+        ->first();
+        $price = DB::table('tbl_harga')
+        ->join('tbl_logo', 'tbl_harga.id', '=', 'tbl_logo.id_logo')
+        ->select('tbl_logo.*', 'tbl_harga.*')
+        ->first();
+
         $data_quotation_order = [];
+        $subtotal = 0;
         if($request->kerah_kancing != null){
             $data_quotation_order += ['kerah_kancing' => $request->kerah_kancing];
+            $total =  $pesanan->jumlah_pemesanan * $price->kerah_kancing;
+            $subtotal += $total;
         }
         if($request->bb_melengkung != null){
             $data_quotation_order += ['bb_melengkung' => $request->bb_melengkung];
+            
         }
         if($request->lengan_raglan != null){
             $data_quotation_order += ['lengan_raglan' => $request->lengan_raglan];
+            $total =  $pesanan->jumlah_pemesanan * $price->p_lenganraglan;
+            $subtotal += $total;
         }
         if($request->lengan_panjang != null){
             $data_quotation_order += ['lengan_panjang' => $request->lengan_panjang];
+            $total =  $request->lengan_panjang * $price->l_panjang;
+            $subtotal += $total;
+        }
+        if($request->s2xl != null){
+            $data_quotation_order += ['s2xl' => $request->s2xl];
+            $total =  $request->s2xl * $price->s_2xl;
+            $subtotal += $total;
+        }
+        if($request->s3xl != null){
+            $data_quotation_order += ['s3xl' => $request->s3xl];
+            $total =  $request->s3xl * $price->s_3xl;
+            $subtotal += $total;
+        }
+        if($request->s4xl != null){
+            $data_quotation_order += ['s4xl' => $request->s4xl];
+            $total =  $request->s4xl * $price->s_4xl;
+            $subtotal += $total;
+        }
+        if($request->celana_printing != null){
+            $data_quotation_order += ['celana_printing' => $request->celana_printing];
+            $total =  $pesanan->jumlah_pemesanan * $price->celana_printing;
+            $subtotal += $total;
+        }
+        if($request->celana_pro != null){
+            $data_quotation_order += ['celana_pro' => $request->celana_pro];
+            $total =  $request->celana_pro * $price->c_panjang;
+            $subtotal += $total;
+        }
+        if($request->kaoskaki != null){
+            $data_quotation_order += ['kaoskaki' => $request->kaoskaki];
+            $total =  $request->kaoskaki * $price->kaoskaki;
+            $subtotal += $total;
+        }
+        if($request->bahan_embos != null){
+            $data_quotation_order += ['bahan_embos' => $request->bahan_embos];
+            $total =  $pesanan->jumlah_pemesanan * $price->bahan_embos;
+            $subtotal += $total;
+        }
+        if($request->logo_3d != null){
+            $data_quotation_order += ['logo_3d' => $request->logo_3d];
+            $total =  $pesanan->jumlah_pemesanan * $price->u_logo3d;
+            $subtotal += $total;
+        }
+        if($request->kerah_rib != null){
+            $data_quotation_order += ['kerah_rib' => $request->kerah_rib];
+            $total =  $pesanan->jumlah_pemesanan * $price->kerah_custom;
+            $subtotal += $total;
+        }
+        if($request->tangan_rib != null){
+            $data_quotation_order += ['tangan_rib' => $request->tangan_rib];
+            $total =  $pesanan->jumlah_pemesanan * $price->tangan_rib;
+            $subtotal += $total; 
         }
         if(count($data_quotation_order) > 0){
+            $data_quotation_order += ['total_harga' => (($pesanan->harga*$pesanan->jumlah_pemesanan)+$subtotal)];
             //return $data_quotation_order;
 
             DB::table('tbl_quotation_order')->where('kd_step', $kode)->update($data_quotation_order);
@@ -356,6 +518,52 @@ class adminController extends Controller
         if($request->note != null){
             DB::table('user_order')->where('kd_order', $kode)->update(['note_order' => $request->note]);
         }
+
+        $data_step1 = [];
+        if($request->s2xl != null){
+            $data_step1 += ['size_2xl' => $request->s2xl];
+        }
+        if($request->s3xl != null){
+            $data_step1 += ['size_3xl' => $request->s3xl];
+        }
+        if($request->s4xl != null){
+            $data_step1 += ['size_4xl' => $request->s4xl];
+        }
+        if($request->celana_printing != null){
+            $data_step1 += ['celana_printing' => $request->celana_printing];
+        }
+        if($request->celana_panjang != null){
+            $data_step1 += ['celana_panjang' => $request->celana_panjang];
+        }
+        if($request->celana_pro != null){
+            $data_step1 += ['celana_panjang' => $request->celana_pro];
+        }
+        if($request->kaoskaki != null){
+            $data_step1 += ['kaoskaki' => $request->kaoskaki];
+        }
+        if($request->bahan_embos != null){
+            $data_step1 += ['bahan_embos' => $request->bahan_embos];
+        }
+        if($request->logo_3d != null){
+            $data_step1 += ['upgrade_logo_3d' => $request->logo_3d];
+        }
+        if($request->kerah_rib != null){
+            $data_step1 += ['kerah_rib' => $request->kerah_rib];
+        }
+        if($request->tangan_rib != null){
+            $data_step1 += ['tangan_rib' => $request->tangan_rib];
+        }
+
+        if(count($data_step1) > 0){
+            $data_step1 += ['total_harga' => (($pesanan->harga*$pesanan->jumlah_pemesanan)+$subtotal)];
+            $data_step1 += ['biaya_pelunasan' => ((($pesanan->harga*$pesanan->jumlah_pemesanan)+$subtotal)-$pesanan->biaya_desain-$pesanan->biaya_dp)];
+
+            DB::table('tbl_step1')->where('kd_step3', $kode)->update($data_step1);
+        }
+        if($request->note != null){
+            DB::table('user_order')->where('kd_order', $kode)->update(['note_order' => $request->note]);
+        }
+        // return ($pesanan->total_harga);
         
         // Validasi file
         // $request->validate([
@@ -523,6 +731,8 @@ class adminController extends Controller
             ->where('tbl_step1.kd_step2', $kode)
             ->select('tbl_step1.*', 'tbl_step2.*','tbl_step3.*','user_order.*', 'tbl_quotation_order.*')
             ->first();
+
+           // return $data;
 
     
             // Loop through each item in $pesanan to get kategori_harga
@@ -1112,6 +1322,108 @@ class adminController extends Controller
     public function rating_view(){
         $data = Rating::with('media')->get();
         return view('admin.rating_view', ['data' =>$data]);
+    }
+    public function create_invoice(Request $request){
+        $now = Carbon::now();
+        $formattedNow = $now->format('dHmiys'); 
+        $kd_part = $request->product;
+        
+        $total_harga = $request->total_harga;
+        // dd($request->totalHarga);
+        $qty = $request->qty;
+        // $data = DB::table('tbl_step1')->get('*');
+        $rev = DB::table('tbl_part')->where('kd_part', $kd_part)->first();
+
+        $str = Str::random(12);
+
+        // Save data to tbl_quotation
+        Quotation1::create([
+            'kd_quotation' => 'Q' . $str,
+            'nama_pelanggan' => $request->name,
+            'alamat' => $request->alamat,
+            'email' => $request->email,
+            'no_hp' => $request->kontak,
+            // Add other columns as needed
+        ]);
+
+        // Rest of your existing code...
+
+
+        Quotation2::create([
+            'kd_step' => $formattedNow,
+            'kd_quotation' => 'Q' . $str,
+            'product' => $rev->product,
+            'qty' => $qty,
+            'kategori_harga'=>$kd_part,
+            'harga'=>$rev->harga,
+            'total_harga'=>$total_harga,
+            'tipe_kualitas'=>$rev->kualitas,
+        ]);
+
+        
+
+        $biaya_desain = intval(preg_replace('/[^0-9]/', '', $request->biaya_desain));
+        $biaya_dp = intval(preg_replace('/[^0-9]/', '', $request->biaya_dp));
+        $biaya_pelunasan = intval(preg_replace('/[^0-9]/', '', $request->biaya_pelunasan));
+        // dd($biaya_pelunasan);
+        // Simpan username ke dalam sesi
+        session([
+            'kode' => $formattedNow, 
+        ]);
+        $step2 = ModeStep2::create([
+            'kd_step2' => $formattedNow,
+        ]);
+        $step3 = ModeStep3::create([
+            'kd_step3' => $formattedNow,
+        ]);
+        $data = ModelStep1::create([
+            'kd_pembelian' => 'R' . $str,
+            'product' => $rev->product,
+            'nama_pemesanan' => $request->name,
+            'nama_tim' => $request->team_name,
+            'domisili' => $request->alamat,
+            'kontak' => $request->kontak,
+            'alamat_pengirim' => $request->alamat,
+            'jumlah_pemesanan' => $qty,
+            'kategori_harga' => $kd_part,
+            'tipe_kualitas' => $rev->kualitas,
+            'harga' => $rev->harga,
+            'total_harga' => $total_harga,
+            'kd_step2' => $formattedNow,
+            'kd_step3' => $formattedNow,
+            'kd_step4' => $formattedNow,
+            'biaya_desain' => $biaya_desain,
+            'biaya_dp' => $biaya_dp,
+            'biaya_pelunasan' => $biaya_pelunasan,
+            
+
+        ]);
+        $order = ModelOrder::create([
+            'kd_order' => $formattedNow,
+            'kd_step2' => $formattedNow,
+            'kd_step3' => $formattedNow,
+            'status_order' => 'proses',
+        ]); 
+        // auth()->login($order);
+       // return $formattedNow;
+       $finance = new Finance();
+        $finance->transaction_date = now()->format('Y-m-d');
+        $finance->type = 'debit';
+        $finance->money_status = 'lunas';
+        $finance->transactions = 'transasksi by system';
+        $finance->status = 'pembayaran_dp';
+        $finance->note = 'generate by system ';
+        $finance->nominal = ($biaya_desain + $biaya_dp);
+        $finance->save();
+
+        $progress = new ProgressProduction();
+        $progress->kd_step = $formattedNow;
+        $progress->save();
+
+        return redirect()->back()->with([
+            'kode' => $formattedNow,
+        ]);
+    
     }
 
 }

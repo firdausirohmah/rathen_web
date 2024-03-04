@@ -9,7 +9,9 @@
   <body>
 
   @foreach($data as $d)
+  @if(isset($d->media->filename))
   <img src="{{asset('uploads/'.$d->media->filename)}}" alt="">
+  @endif
   nama: {{$d->name}} <br> 
   nama tim: {{$d->team_name}} <br> 
   pesan: {{$d->pesan}} <br> 

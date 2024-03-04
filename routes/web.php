@@ -110,7 +110,7 @@ Route::controller(PesananController::class)->group(function () {
     Route::get('/downloadPdf', 'downloadPdf')->name('downloadPdf');
     Route::post('/form-4/pemain', 'tambahDataPesanan')->name('tambahDataPesanan');
     Route::get('/invoice/{id}', 'invoice')->name('invoice');
-    Route::get('/export', 'export')->name('export');
+    Route::get('/export/{kode?}', 'export')->name('export');
 
     // Route::get('/invoice')->name('invoice');
     // Route::get('/form-1/orderNew', 'orderNew')->name('orderNew');
@@ -182,7 +182,9 @@ Route::controller(adminController::class)->group(function () {
         Route::delete('/data/invoice/{id}', 'destroyInvoice')->name('data.destroyInv');
         Route::delete('/data/quotation/{id}', 'destroyQuo')->name('data.destroyQuo');
         Route::get('/progress/{id}', 'progress_edit')->name('progress_edit');
+        Route::get('/progress/generate/{kd_step}', 'progress_generate')->name('progress.generate');
         Route::get('/rating_view', 'rating_view')->name('rating_view');
+        Route::post('/create-invoice', 'create_invoice')->name('create_invoice');
     });
 });
 

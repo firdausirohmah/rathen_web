@@ -127,7 +127,7 @@
                                 $subtotal = 0;
                                 ?>
                                 <tbody>
-                                @if ($pesanan->kerah_kancing ==null)
+                                @if ($pesanan->kerah_kancing == null)
                                 @else 
                                     @php
                                         $total = $jqty * $price->kerah_kancing;
@@ -137,8 +137,8 @@
                                     <td>{{ $i++ }}</td>
                                     <td>Kerah Kancing</td>
                                     <td class="text-center">{{ $jqty }}</td>
-                                    <td><span id="hargaBbm">Rp <?= number_format($price->kerah_kancing , 0, ','); ?><</span></td>
-                                    <td id="totalBbm">Rp <?= number_format($total , 0, ','); ?><</td> 
+                                    <td><span id="hargaBbm">Rp <?= number_format($price->kerah_kancing , 0, ','); ?></span></td>
+                                    <td id="totalBbm">Rp <?= number_format($total , 0, ','); ?></td> 
                                 </tr> 
                                 @endif
                                 @if ($pesanan->badan_bawah ==null)
@@ -151,11 +151,11 @@
                                     <td>{{ $i++ }}</td>
                                     <td>Badan Bawah Melengkung</td>
                                     <td class="text-center">{{ $jqty }}</td>
-                                    <td><span id="hargaBbm">Rp <?= number_format($price->p_badan_m , 0, ','); ?><</span></td>
+                                    <td><span id="hargaBbm">Rp <?= number_format($price->p_badan_m , 0, ','); ?></span></td>
                                     <td id="totalBbm">Rp <?= number_format($total , 0, ','); ?><</td> 
                                 </tr> 
                                 @endif
-                                @if ($pesanan->pola_lengan ==null)
+                                @if ($pesanan->lengan_raglan ==null)
                                 @else 
                                     @php
                                         $total = $jqty * $price->pola_lr;
@@ -942,20 +942,14 @@
                     <i class="icon icon-doc"></i>
                 </a>
             </div>
+            @endif
             <div>
-                <a href="{{ $kode ? route('export', ['id' => $kode]) : '#' }}" class="btn action__submit">Download
-                    <i class="icon icon-cloud-download"></i>
-                </a>
-            </div>
-            @else
-            <div>
-              <a href="{{ route('generate') }}" class="btn action__submit">Download
+              <a href="{{ route('export', ['kode'=> $pesanan->kd_step]) }}" class="btn action__submit">Download
                 <i class="icon icon-cloud-download"></i>
               </a>
             </div>
-            @endif
           </div>
-          
+         
         </div>
       </div>
     </div>

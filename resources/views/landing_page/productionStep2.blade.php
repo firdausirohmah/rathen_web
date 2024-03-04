@@ -16,7 +16,7 @@
 <body>
   <!-- partial:index.partial.html -->
   <header>
-    <div class="container">
+    <div class="container" style="width: 1024px;">
       <div class="navigation center-content">
 
         <div class="logo">
@@ -40,18 +40,6 @@
 
       <div class="payment">
 
-        <!-- <div class="payment__title fw-6">
-          Step Order
-        </div>
-        <div class="payment__types">
-          <a class="payment__type payment__type--cc active" href="/form-2/{{$kode}}">
-            <i class="icon icon-picture"></i>Design Logo</a>
-          <a class="payment__type payment__type--paypal" href="/form-3/{{$kode}}">
-            <i class="icon icon-pencil"></i>Spesifikasi</a>
-          <a class="payment__type payment__type--paypal" href="/form-4/{{$kode}}">
-            <i class="icon icon-docs"></i>Form Data</a>
-          
-        </div> -->
         <div class="payment__info">
           <div class="payment__cc">
             <div class="payment__title fw-6">
@@ -106,14 +94,16 @@
 
           </div>
 
-          <div class="payment__order2">
+          <div class="payment__cc">
             <div class="payment__title fw-6">
               <i class="icon icon-plus"></i> Extra
             </div>
-            <div class="row">
-              <div class="field">
-                <div class="title">Note for Form</div>
-                <textarea class="input txt" name="note">{{ $data->note_order }}</textarea>
+            <div class="form__cc">
+              <div class="row">
+                <div class="field">
+                  <div class="title">Note for Form</div>
+                  <textarea class="input txt" name="note">{{ $data->note_order }}</textarea>
+                </div>
               </div>
             </div>
           </div>
@@ -151,7 +141,6 @@
                   <label class='label_harga' for='lengan_raglan'>(+15,000)</label>
                 </div>
               </div>
-              <div></div>
               <div class="row">
                 <div class="field">
                   <div class="title">Lengan Panjang
@@ -163,116 +152,112 @@
                   <span>(+30,000)</span>
                 </div>
               </div>
-
-
-              {{--<div class="card mt-4-mobile">
-                <div class="card-body">
-                  <h5 class="card-title mb-4">Extra</h5>
-                  <div>
-                    <h6 class='card-subtitle text-black-50'>Add Cost</h6>
-                    <div class='payment__shipping'>
-
-                      <div class='field small'>
-                        <div class='title'>Lengan Panjang</div>
-                        <div>
-                          <input type='text' class='input txt2' placeholder='Jumlah' name='lengan_panjang'/>
-                          <span class='title'>PCS</span><br>
-                        </div>
-                        <span>(+30,000)</span>
-                      </div>
-
-                      <div class='title pt-3'>Big Size</div>
-                      <div class='field small pt-0'>
-                        <div class='title'>- Size 2XL</div>
-                        <div>
-                          <input type='text' class='input txt2' placeholder='Jumlah' name='s2xl'/>
-                          <span class='title'>PCS</span><br>
-                        </div>
-                        <span>(+20,000)</span>
-                      </div>
-                      <div class='field small'>
-                        <div class='title'>- Size 3XL</div>
-                        <div>
-                          <input type='text' class='input txt2' placeholder='Jumlah' name='s3xl'/>
-                          <span class='title'>PCS</span><br>
-                        </div>
-                        <span>(+35,000)</span>
-                      </div>
-                      <div class='field small'>
-                        <div class='title'>- Size >4XL</div>
-                        <div>
-                          <input type='text' class='input txt2' placeholder='Jumlah' name='s4xl'/>
-                          <span class='title'>PCS</span><br>
-                        </div>
-                        <span>(+50,000)</span>
-                      </div>
-
-                      <div class='field small'>
-                        <div class='title'>Celana printing</div>
-                        <div class='ms-auto'>
-                          <input type='checkbox' id='celana_printing' name='celana_printing' value='50000'>
-                          <label class='label_harga' for='celana_printing'>(+50,000)</label>
-                        </div>
-                      </div>
-
-                      <div class='field small'>
-                        <div class='title'>Celana panjang PRO</div>
-                        <div>
-                          <input type='text' class='input txt2' placeholder='Jumlah' name='celana_pro'/>
-                          <span class='title'>PCS</span><br>
-                        </div>
-                        <span>(+150,000)</span>
-                      </div>
-                      <div class='field small'>
-                        <div class='title'>Kaoskaki</div>
-                        <div>
-                          <input type='text' class='input txt2' placeholder='Jumlah' name='kaoskaki'/>
-                          <span class='title'>PCS</span><br>
-                        </div>
-                        <span>(+50,000)</span>
-                      </div>
-                    </div>
-                    
-                    <h6 class='card-subtitle text-black-50 mt-4'>Upgrade Fitur</h6>
-                    <div class='payment__shipping'>
-
-                      <div class='field small'>
-                        <div class='title'>Bahan embos</div>
-                        <div class='ms-auto'>
-                          <input type='checkbox' id='bahan_embos' name='bahan_embos' value='20000'>
-                          <label class='label_harga' for='bahan_embos'>(+20,000)</label>
-                        </div>
-                      </div>
-                      <div class='field small'>
-                        <div class='title'>Logo 3D</div>
-                        <div class='ms-auto'>
-                          <input type='checkbox' id='logo_3d' name='logo_3d' value='30000'>
-                          <label class='label_harga' for='logo_3d'>(+30,000)</label>
-                        </div>
-                      </div>
-                      <div class='field small'>
-                        <div class='title'>Kerah elastic rib</div>
-                        <div class='ms-auto'>
-                          <input type='checkbox' id='kerah_rib' name='kerah_rib' value='20000'>
-                          <label class='label_harga' for='kerah_rib'>(+20,000)</label>
-                        </div>
-                      </div>
-                      <div class='field small'>
-                        <div class='title'>Ujung tangan elastic rib</div>
-                        <div class='ms-auto'>
-                          <input type='checkbox' id='tangan_rib' name='tangan_rib' value='20000'>
-                          <label class='label_harga' for='tangan_rib'>(+20,000)</label>
-                        </div>
-                      </div>
-                      
-                    </div>
+              <div class='field'>Big Size</div>
+              <div class="row">
+                <div class="field">
+                  <div class="title">- Size 2XL
                   </div>
-                  <!-- <h6 class="card-subtitle mb-2 text-body-secondary">Simulasi Harga</h6> -->
-
-                  <!-- <button type="submit" class="btn btn-outline-secondary w-100 mt-5" id="QuotationBtn">Order Now</button> -->
+                  <div>
+                    <input type='text' class='input txt2' placeholder='Jumlah' name='s2xl' value="{{$data->s2xl}}">
+                    <span class='title'>PCS</span><br>
+                  </div>
+                  <span>(+20,000)</span>
                 </div>
-              </div>--}}
+              </div>
+              <div class="row">
+                <div class="field">
+                  <div class="title">- Size 3XL
+                  </div>
+                  <div>
+                    <input type='text' class='input txt2' placeholder='Jumlah' name='s3xl' value="{{$data->s3xl}}">
+                    <span class='title'>PCS</span><br>
+                  </div>
+                  <span>(+35,000)</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="field">
+                  <div class="title">- Size >4XL
+                  </div>
+                  <div>
+                    <input type='text' class='input txt2' placeholder='Jumlah' name='s4xl' value="{{$data->s4xl}}">
+                    <span class='title'>PCS</span><br>
+                  </div>
+                  <span>(+50,000)</span>
+                </div>
+              </div>
+              
 
+            </div>
+          </div>
+          <div class="payment__cc">
+            <div class="payment__title fw-6">
+              
+            </div>
+            <div class="form__cc">
+              <div class="row">
+                <div class="field">
+                  <div class="title">Celana printing
+                  </div>
+                  <input type='checkbox' id='celana_printing' name='celana_printing' value='50000' {{($data->celana_printing != null) ? 'checked' : ''}}>
+                  <label class='label_harga' for='celana_printing'>(+50,000)</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="field">
+                  <div class="title">Celana panjang PRO
+                  </div>
+                  <div>
+                    <input type='text' class='input txt2' placeholder='Jumlah' name='celana_pro' value="{{$data->celana_pro}}">
+                    <span class='title'>PCS</span><br>
+                  </div>
+                  <span>(+150,000)</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="field">
+                  <div class="title">Kaoskaki
+                  </div>
+                  <div>
+                    <input type='text' class='input txt2' placeholder='Jumlah' name='kaoskaki' value="{{$data->kaoskaki}}">
+                    <span class='title'>PCS</span><br>
+                  </div>
+                  <span>(+50,000)</span>
+                </div>
+              </div>
+              <div class="payment__title fw-6">Upgrade Fitur</div>
+              <div class="row">
+                <div class="field">
+                  <div class="title">Bahan embos
+                  </div>
+                  <input type='checkbox' id='bahan_embos' name='bahan_embos' value='20000' {{($data->bahan_embos != null) ? 'checked' : ''}}>
+                  <label class='label_harga' for='bahan_embos'>(+20,000)</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="field">
+                  <div class="title">Logo 3D
+                  </div>
+                  <input type='checkbox' id='logo_3d' name='logo_3d' value='30000' {{($data->logo_3d != null) ? 'checked' : ''}}>
+                  <label class='label_harga' for='logo_3d'>(+30,000)</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="field">
+                  <div class="title">Kerah elastic rib
+                  </div>
+                  <input type='checkbox' id='kerah_rib' name='kerah_rib' value='20000' {{($data->kerah_rib != null) ? 'checked' : ''}}>
+                  <label class='label_harga' for='kerah_rib'>(+20,000)</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="field">
+                  <div class="title">Ujung tangan elastic rib
+                  </div>
+                  <input type='checkbox' id='tangan_rib' name='tangan_rib' value='20000' {{($data->tangan_rib != null) ? 'checked' : ''}}>
+                  <label class='label_harga' for='tangan_rib'>(+20,000)</label>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -293,7 +278,7 @@
                         <div class="img-upload" id="cutomerDesign1">
                           <img src="{{ asset('uploads/'.$data->design_jersey_pemain)}}" alt="" onerror="hideBrokenImage(this)">
                         </div>
-                        <div class="title" id="statusUpload1">*</div>
+                        <div class="title" id="statusUpload1"></div>
                         <div class="form-upload payment__type--cc">
                           <i class="icon icon-cloud-upload"></i>ReUpload
                           <input type="file" id="fileInput1" name="djp" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" onchange="updateFileName('fileInput1', 'statusUpload1')">
@@ -313,7 +298,7 @@
                         <div class="img-upload" id="cutomerDesign">
                         <img src="{{ asset('uploads/'.$data->design_jersey_kiper)}}" alt="" onerror="hideBrokenImage(this)">
                         </div>
-                        <div class="title" id="statusUpload2">*</div>
+                        <div class="title" id="statusUpload2"></div>
                         <div class="form-upload payment__type--cc">
                           <i class="icon icon-cloud-upload"></i>ReUpload
                           <input type="file"   id="fileInput2" name="djk" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" onchange="updateFileName('fileInput2', 'statusUpload2')">
@@ -333,7 +318,7 @@
                         <div class="img-upload" id="cutomerDesign">
                         <img src="{{ asset('uploads/'.$data->logo_tim)}}" alt="" onerror="hideBrokenImage(this)">
                         </div>
-                        <div class="title" id="statusUpload3">*</div>
+                        <div class="title" id="statusUpload3"></div>
                         <div class="form-upload payment__type--cc">
                           <i class="icon icon-cloud-upload"></i>Upload
                         </div>
@@ -353,7 +338,7 @@
                       <div class="img-upload" id="cutomerDesign">
                         <img src="{{ asset('uploads/'.$data->sponsor_dada_tulisan1baris)}}" alt="" onerror="hideBrokenImage(this)">
                         </div>
-                        <div class="title" id="statusUpload4">*</div>
+                        <div class="title" id="statusUpload4"></div>
                         <div class="form-upload payment__type--cc">
                           <i class="icon icon-cloud-upload"></i>Upload
                         </div>
@@ -375,7 +360,7 @@
                       <div class="img-upload" id="cutomerDesign">
                         <img src="{{ asset('uploads/'.$data->sponsor_dada_logodantulisan)}}" alt="" onerror="hideBrokenImage(this)">
                         </div>
-                        <div class="title" id="statusUpload5">*</div>
+                        <div class="title" id="statusUpload5"></div>
                         <div class="form-upload payment__type--cc">
                           <i class="icon icon-cloud-upload"></i>Upload
                         </div>
@@ -393,140 +378,140 @@
                 </button> -->
               </div>
           </div>
-          <div class="payment__order2">
+          <div class="payment__cc">
             <div class="payment__title fw-6">
               <i class="icon icon-plus"></i> Extra
             </div>
-            <div class="row">
-              <div class="field">
-                <div class="title">Extra Tulisan 1 Baris
-                </div>
-                <div class="form-uploads">
-                  <label for="fileInput6" id="customLabel6" class="customLabel" style="width:20rem;">
-                  <div class="img-upload" id="cutomerDesign">
-                        <img src="{{ asset('uploads/'.$data->extra_tulisan1baris)}}" alt="" onerror="hideBrokenImage(this)">
-                        </div>
-                    <div class="title" id="statusUpload6">*</div>
-                    <div class="form-upload payment__type--cc">
-                      <i class="icon icon-cloud-upload"></i>Upload
-                    </div>
-                    <input type="file"   id="fileInput6" name="t1b" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" onchange="updateFileName('fileInput6', 'statusUpload6')">
-                    <!-- <input type="file"   id="fileInput8" name="lk" class="fileInput form-control fw-lighter hidden" placeholder="Upload File"> -->
-                  </label>
-                </div>
-                <!-- <input type="text" class="input txt text-validated" value='Upload' /> -->
-              </div>
-            </div>
-            <div class="row">
-              <div class="field">
-                <div class="title">Extra Logo dan Tulisan
-                </div>
-                <div class="form-uploads">
-                  <label for="fileInput7" id="customLabel7" class="customLabel" style="width:20rem;">
-                  <div class="img-upload" id="cutomerDesign">
-                        <img src="{{ asset('uploads/'.$data->extra_logodantulisan)}}" alt="" onerror="hideBrokenImage(this)">
-                        </div>
-                    <div class="title" id="statusUpload7">*</div>
-                    <div class="form-upload payment__type--cc">
-                      <i class="icon icon-cloud-upload"></i>Upload
-                    </div>
-                    <input type="file"   id="fileInput7" name="ldt" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" onchange="updateFileName('fileInput7', 'statusUpload7')">
-                    <!-- <input type="file"   id="fileInput8" name="lk" class="fileInput form-control fw-lighter hidden" placeholder="Upload File"> -->
-                  </label>
-                </div>
-                <!-- <input type="text" class="input txt text-validated" value='Upload' /> -->
-              </div>
-            </div>
-            <div class="row">
-              <div class="field">
-                <div class="title">Logo di lengan kanan
-                </div>
-                <div class="form-uploads">
-                  <label for="fileInput8" id="customLabel8" class="customLabel" style="width:20rem;">
-                  <div class="img-upload" id="cutomerDesign">
-                        <img src="{{ asset('uploads/'.$data->logo_dilengan_kanan)}}" alt="" onerror="hideBrokenImage(this)">
-                        </div>
-                        <div class="title" id="statusUpload8">*</div>
-                        <div class="form-upload payment__type--cc">
-                          <i class="icon icon-cloud-upload"></i>Upload
-                        </div>
-                        <input type="file"   id="fileInput8" name="lk" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" onchange="updateFileName('fileInput8', 'statusUpload8')">
-                        <!-- <input type="file"   id="fileInput8" name="lk" class="fileInput form-control fw-lighter hidden" placeholder="Upload File"> -->
-                      </label>
-                    </div>
-                    <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes">(format file : .cdr./.ai/.pdf/.jpg)</small><br>
-                    <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes"> 15,000/pcs utk NON-PRINT dan HALF-PRINT ; free utk kategori FULL PRINT </small>
-                    <!-- <input type="text" class="input txt text-validated" value='Upload' /> -->
+            <div class="form__cc">
+              <div class="row">
+                <div class="field">
+                  <div class="title">Extra Tulisan 1 Baris
                   </div>
-                </div>
-                <div class="row">
-                  <div class="field">
-                    <div class="title">Logo di lengan kanan kiri
+                  <div class="form-uploads">
+                    <label for="fileInput6" id="customLabel6" class="customLabel" style="width:20rem;">
+                    <div class="img-upload" id="cutomerDesign">
+                          <img src="{{ asset('uploads/'.$data->extra_tulisan1baris)}}" alt="" onerror="hideBrokenImage(this)">
+                          </div>
+                      <div class="title" id="statusUpload6"></div>
+                      <div class="form-upload payment__type--cc">
+                        <i class="icon icon-cloud-upload"></i>Upload
                       </div>
-                      <div class="form-uploads">
-                        <label for="fileInput9" id="customLabel9" class="customLabel" style="width:20rem;">
-                          <div class="img-upload" id="cutomerDesign">
-                                <img src="{{ asset('uploads/'.$data->logo_dilengan_kiri)}}" alt="" onerror="hideBrokenImage(this)">
-                                </div>
-                    <div class="title" id="statusUpload9">*</div>
+                      <input type="file"   id="fileInput6" name="t1b" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" onchange="updateFileName('fileInput6', 'statusUpload6')">
+                      <!-- <input type="file"   id="fileInput8" name="lk" class="fileInput form-control fw-lighter hidden" placeholder="Upload File"> -->
+                    </label>
+                  </div>
+                  <!-- <input type="text" class="input txt text-validated" value='Upload' /> -->
+                </div>
+              </div>
+              <div class="row">
+                <div class="field">
+                  <div class="title">Extra Logo dan Tulisan
+                  </div>
+                  <div class="form-uploads">
+                    <label for="fileInput7" id="customLabel7" class="customLabel" style="width:20rem;">
+                    <div class="img-upload" id="cutomerDesign">
+                          <img src="{{ asset('uploads/'.$data->extra_logodantulisan)}}" alt="" onerror="hideBrokenImage(this)">
+                          </div>
+                      <div class="title" id="statusUpload7"></div>
+                      <div class="form-upload payment__type--cc">
+                        <i class="icon icon-cloud-upload"></i>Upload
+                      </div>
+                      <input type="file"   id="fileInput7" name="ldt" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" onchange="updateFileName('fileInput7', 'statusUpload7')">
+                      <!-- <input type="file"   id="fileInput8" name="lk" class="fileInput form-control fw-lighter hidden" placeholder="Upload File"> -->
+                    </label>
+                  </div>
+                  <!-- <input type="text" class="input txt text-validated" value='Upload' /> -->
+                </div>
+              </div>
+              <div class="row">
+                <div class="field">
+                  <div class="title">Logo di lengan kanan
+                  </div>
+                  <div class="form-uploads">
+                    <label for="fileInput8" id="customLabel8" class="customLabel" style="width:20rem;">
+                    <div class="img-upload" id="cutomerDesign">
+                      <img src="{{ asset('uploads/'.$data->logo_dilengan_kanan)}}" alt="" onerror="hideBrokenImage(this)">
+                    </div>
+                    <div class="title" id="statusUpload8"></div>
+                    <div class="form-upload payment__type--cc">
+                      <i class="icon icon-cloud-upload"></i>Upload
+                    </div>
+                      <input type="file"   id="fileInput8" name="lk" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" onchange="updateFileName('fileInput8', 'statusUpload8')">
+                      <!-- <input type="file"   id="fileInput8" name="lk" class="fileInput form-control fw-lighter hidden" placeholder="Upload File"> -->
+                    </label>
+                  </div>
+                  <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes">(format file : .cdr./.ai/.pdf/.jpg)</small><br>
+                  <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes"> 15,000/pcs utk NON-PRINT dan HALF-PRINT ; free utk kategori FULL PRINT </small>
+                  <!-- <input type="text" class="input txt text-validated" value='Upload' /> -->
+                </div>
+              </div>
+              <div class="row">
+                <div class="field">
+                  <div class="title">Logo di lengan kanan kiri
+                  </div>
+                  <div class="form-uploads">
+                    <label for="fileInput9" id="customLabel9" class="customLabel" style="width:20rem;">
+                      <div class="img-upload" id="cutomerDesign">
+                        <img src="{{ asset('uploads/'.$data->logo_dilengan_kiri)}}" alt="" onerror="hideBrokenImage(this)">
+                      </div>
+                    <div class="title" id="statusUpload9"></div>
                     <div class="form-upload payment__type--cc">
                       <i class="icon icon-cloud-upload"></i>Upload
                     </div>
                     <input type="file"   id="fileInput9" name="llk" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" onchange="updateFileName('fileInput9', 'statusUpload9')">
                     <!-- <input type="file"   id="fileInput9" name="llk" class="fileInput form-control fw-lighter hidden" placeholder="Upload File"> -->
-                  </label>
+                    </label>
+                  </div>
+                  <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes">(format file : .cdr./.ai/.pdf/.jpg)</small><br>
+                  <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes"> +15,000/pcs utk NON-PRINT dan HALF-PRINT ; free utk kategori FULL PRINT </small>
+                    <!-- <input type="text" class="input txt text-validated" value='Upload' /> -->
                 </div>
-                <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes">(format file : .cdr./.ai/.pdf/.jpg)</small><br>
-                <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes"> +15,000/pcs utk NON-PRINT dan HALF-PRINT ; free utk kategori FULL PRINT </small>
-                <!-- <input type="text" class="input txt text-validated" value='Upload' /> -->
+              </div>
+              <div class="row">
+                <div class="field">
+                  <div class="title">Sponsor belakang (tulisan 1 baris)
+                  </div>
+                  <div class="form-uploads">
+                    <label for="fileInput10" id="customLabel0" class="customLabel" style="width:20rem;">
+                    <div class="img-upload" id="cutomerDesign">
+                                  <img src="{{ asset('uploads/'.$data->sponsor_belakang_tulisan1baris)}}" alt="" onerror="hideBrokenImage(this)">
+                                  </div>
+                      <div class="title" id="statusUpload10"></div>
+                      <div class="form-upload payment__type--cc">
+                        <i class="icon icon-cloud-upload"></i>Upload
+                      </div>
+                      <input type="file"   id="fileInput10" name="sbt" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" onchange="updateFileName('fileInput10', 'statusUpload10')">
+                      <!-- <input type="file"   id="fileInput10" name="sbt" class="fileInput form-control fw-lighter hidden" placeholder="Upload File"> -->
+                    </label>
+                  </div>
+                  <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes">(format file : .cdr./.ai/.pdf/.jpg)</small><br>
+                  <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes"> +15,000/pcs utk NON-PRINT dan HALF-PRINT ; free utk kategori FULL PRINT </small>
+                  <!-- <input type="text" class="input txt text-validated" value='Upload' /> -->
+                </div>
+              </div>
+              <div class="row">
+                <div class="field">
+                  <div class="title">Sponsor belakang (logo + tulisan)
+                  </div>
+                  <div class="form-uploads">
+                    <label for="fileOrder1" id="OrderLabel1" class="customLabel" style="width:20rem;">
+                    <div class="img-upload" id="cutomerDesign">
+                                  <img src="{{ asset('uploads/'.$data->sponsor_belakang_logodantulisan)}}" alt="" onerror="hideBrokenImage(this)">
+                                  </div>
+                      <div class="title" id="statusUpload11"></div>
+                      <div class="form-upload payment__type--cc">
+                        <i class="icon icon-cloud-upload"></i>Upload
+                      </div>
+                      <input type="file"   id="fileOrder1" name="sbl" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" onchange="updateFileName('fileOrder1', 'statusUpload11')">
+                      <!-- <input type="file"   id="fileOrder1" name="sblt" class="fileInput form-control fw-lighter hidden" placeholder="Upload File"> -->
+                    </label>
+                  </div>
+                  <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes">(format file : .cdr./.ai/.pdf/.jpg)</small> <br>
+                  <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes"> +30,000/pcs utk NON-PRINT dan HALF-PRINT ; free utk kategori </small>
+                  <!-- <input type="text" class="input txt text-validated" value='Upload' /> -->
+                </div>
               </div>
             </div>
-            <div class="row">
-              <div class="field">
-                <div class="title">Sponsor belakang (tulisan 1 baris)
-                </div>
-                <div class="form-uploads">
-                  <label for="fileInput10" id="customLabel0" class="customLabel" style="width:20rem;">
-                  <div class="img-upload" id="cutomerDesign">
-                                <img src="{{ asset('uploads/'.$data->sponsor_belakang_tulisan1baris)}}" alt="" onerror="hideBrokenImage(this)">
-                                </div>
-                    <div class="title" id="statusUpload10">*</div>
-                    <div class="form-upload payment__type--cc">
-                      <i class="icon icon-cloud-upload"></i>Upload
-                    </div>
-                    <input type="file"   id="fileInput10" name="sbt" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" onchange="updateFileName('fileInput10', 'statusUpload10')">
-                    <!-- <input type="file"   id="fileInput10" name="sbt" class="fileInput form-control fw-lighter hidden" placeholder="Upload File"> -->
-                  </label>
-                </div>
-                <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes">(format file : .cdr./.ai/.pdf/.jpg)</small><br>
-                <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes"> +15,000/pcs utk NON-PRINT dan HALF-PRINT ; free utk kategori FULL PRINT </small>
-                <!-- <input type="text" class="input txt text-validated" value='Upload' /> -->
-              </div>
-            </div>
-            <div class="row">
-              <div class="field">
-                <div class="title">Sponsor belakang (logo + tulisan)
-                </div>
-                <div class="form-uploads">
-                  <label for="fileOrder1" id="OrderLabel1" class="customLabel" style="width:20rem;">
-                  <div class="img-upload" id="cutomerDesign">
-                                <img src="{{ asset('uploads/'.$data->sponsor_belakang_logodantulisan)}}" alt="" onerror="hideBrokenImage(this)">
-                                </div>
-                    <div class="title" id="statusUpload11">*</div>
-                    <div class="form-upload payment__type--cc">
-                      <i class="icon icon-cloud-upload"></i>Upload
-                    </div>
-                    <input type="file"   id="fileOrder1" name="sbl" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" onchange="updateFileName('fileOrder1', 'statusUpload11')">
-                    <!-- <input type="file"   id="fileOrder1" name="sblt" class="fileInput form-control fw-lighter hidden" placeholder="Upload File"> -->
-                  </label>
-                </div>
-                <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes">(format file : .cdr./.ai/.pdf/.jpg)</small> <br>
-                <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes"> +30,000/pcs utk NON-PRINT dan HALF-PRINT ; free utk kategori </small>
-                <!-- <input type="text" class="input txt text-validated" value='Upload' /> -->
-              </div>
-            </div>
-            
-
           </div>
         </div>
 
@@ -572,7 +557,7 @@
               <div class="field pt-5">
                 <div class="payment__title"></div>
                 <div class="form-uploads h-3 w-20">
-                  <div class="form-upload payment__type--cc btn-black">
+                  <div class="form-upload payment__type--cc btn-black" id="importDataBtn">
                     <i class="icon icon-cloud-upload"></i>Upload File
                   </div>
                 </div>
@@ -622,6 +607,21 @@
         </div>
       </div>
     </div>
+    <div id="importDataModal" class="modal pt200">
+      <div class="modal-content mw-32">
+        <span class="close">&times;</span>
+        <div class="form-modal">
+          <h4>Silahkan inputkan data</h4>
+          <form action="{{ route('finance.import') }}" id="inputDataForm" method="post">
+            @csrf
+            <label for="import">file:</label>
+            <input class="input-modal" type="file" id="import" name="import" required>
+            <input type="hidden" name="type" value="pemain">
+            <button class="btn-modal" type="submit">Save</button>
+          </form>
+        </div>
+      </div>
+    </div>
     
     <div class="container">
       <div class="actions pt250">
@@ -634,11 +634,31 @@
   </form>
   </div>
   <!-- partial -->
+  <style>
+    .field{
+      width:75%;
+    }
+  </style>
   <script>
+      function updateFileName(inputId, statusId) {
+        const input = document.getElementById(inputId);
+        const label = input.closest('label');
+        const statusUpload = document.getElementById(statusId);
+
+        if (input.files.length > 0) {
+          statusUpload.innerText = 'File Selected: ' + input.files[0].name;
+        } else {
+          statusUpload.innerText = '*';
+        }
+      }
+
      document.addEventListener('DOMContentLoaded', function() {
       var modal = document.getElementById('inputDataModal');
       var btn = document.getElementById('inputDataBtn');
       var span = document.getElementsByClassName('close')[0];
+      var import_modal = document.getElementById('importDataModal');
+      var import_btn = document.getElementById('importDataBtn');
+      var import_span = document.getElementsByClassName('close')[1];
       var form = document.getElementById('inputDataForm');
       var tableBody = document.querySelector('.wp-table tbody');
 
@@ -653,6 +673,14 @@
       // Close the modal when the close button is clicked
       span.onclick = function() {
         modal.style.display = 'none';
+      };
+      import_btn.onclick = function() {
+        import_modal.style.display = 'block';
+      };
+
+      // Close the modal when the close button is clicked
+      import_span.onclick = function() {
+        import_modal.style.display = 'none';
       };
 
       // Close the modal when clicking outside of it

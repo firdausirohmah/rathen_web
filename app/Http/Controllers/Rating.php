@@ -15,6 +15,7 @@ class Rating extends Controller
 
     }
     public function add(Request $request){
+        // return $request;
         $filename = time().'.'.$request->file('photo')->getClientOriginalExtension();
         $type = null;
         $media_type = 'rating';
@@ -39,8 +40,14 @@ class Rating extends Controller
         $model = new ModelsRating();
         $model->name = $request->nama;
         $model->team_name = $request->nama_tim;
-        $model->pesan = $request->note;
-        $model->rating = $request->rate;
+        $model->kesesuaian = $request->kesesuaian;
+        $model->kualitas = $request->kualitas;
+        $model->fitur = $request->fitur;
+        $model->waktu_produksi = $request->waktu_produksi;
+        $model->pelayanan = $request->pelayanan;
+        $model->alasan = json_encode($request->alasan);
+        $model->pesan = $request->pesan;
+        $model->penilaian = $request->penilaian;
         $model->id_media = $media->id;
         $model->save();
 

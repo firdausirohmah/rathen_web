@@ -85,7 +85,6 @@
                   </td>
                   <td>
                     Rp. <?= number_format($item->biaya_pelunasan, 0, ','); ?>
-
                   </td>
                   @php 
                   $progress = (($item->is_shipping_payment+$item->is_final_concept+$item->is_order_quantity+$item->is_production_data+$item->is_polifek_quality+$item->is_stitching_neatness+$item->is_packaging+$item->is_delivery+$item->is_logo)/9)*100;
@@ -132,13 +131,13 @@
   
                                 <div class="mb-3">
                                   <label for="biaya_pengiriman" class="form-label">Shipping Payment:</label>
-                                  <input type="text" class="form-control" id="biaya_pengiriman_{{$item->id}}"  name="biaya_pengiriman" placeholder="Enter Shipping Payment" onchange="shipping_rate({{$item->id}})" onfocus="shipping_rate({{$item->id}})" value="{{(isset($item->shipping_payment)?$item->shipping_payment:'')}}" disabled="false">
+                                  <input type="number" class="form-control" id="biaya_pengiriman_{{$item->id}}"  name="biaya_pengiriman" placeholder="Enter Shipping Payment" oninput="shipping_rate({{$item->id}})"  value="{{(isset($item->shipping_payment)?$item->shipping_payment:' ')}}">
                                 </div>
   
                                 <!-- Final Payment => biaya_pelunasan += biaya_pengiriman -->
                                 <div class="mb-3">
                                   <label for="biaya_pelunasan" class="form-label">Final Payment:</label>
-                                  <input type="number" class="form-control" id="biaya_pelunasan_{{$item->id}}"   name="biaya_akhir">
+                                  <input type="number" class="form-control" id="biaya_pelunasan_{{$item->id}}"  name="biaya_akhir" value="{{($item->biaya_pelunasan+$item->shipping_payment)}}">
                                   <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="final_payment_{{$item->id}}" name="is_shipping_payment" onchange="final_payment({{$item->id}});"  {{ $item->is_shipping_payment ? 'checked' : '' }}>
                                     <label class="form-check-label" for="statusChecklist1">
@@ -152,20 +151,7 @@
                                   <label for="pelunasan" class="form-label">Remaining Payment:</label>
                                   <input type="text" class="form-control" id="pelunasan_{{$item->id}}"  name="biaya_pelunasan" value="{{ ($item->is_shipping_payment ?'0': $item->biaya_pelunasan) }}" disabled >
                                 </div>
-                                <script>
-                                  var biaya_pengiriman = document.getElementById('biaya_pengiriman_{{$item->id}}');
-                                  var biaya_pelunasan = document.getElementById('biaya_pelunasan_{{$item->id}}');
-                                  var final_payments = document.getElementById('final_payment_{{$item->id}}');
-                                  var pelunasan = document.getElementById('pelunasan_{{$item->id}}'); 
-                                  if(final_payments.checked){
-                                      biaya_pengiriman.disabled = true;
-                                      biaya_pengiriman.readonly = true;
-                                      console.log('test');
-                                  }else{
-                                      biaya_pengiriman.disabled = false;
-          
-                                  }
-                                </script>
+                               
                                 <label for="statusChecklist" class="form-label">Quality Control:</label>
                                 <div class="mb-3">
                                   <div class="form-check">
@@ -185,7 +171,7 @@
                                     </label>
                                   </div>
                                   <label for="photoUpload" class="form-label">Upload Photo:</label>
-                                  <input type="file" class="form-control" id="photoUpload" name="order_quantity>
+                                  <input type="file" class="form-control" id="photoUpload" name="order_quantity">
                                 </div>
                                 <div class="mb-3">
                                   <div class="form-check">
@@ -451,15 +437,12 @@
 
 }
 function final_payment(id){
-    var biaya_pengiriman = document.getElementById(('biaya_pengiriman_'+id));
     var biaya_pelunasan = document.getElementById(('biaya_pelunasan_'+id));
     var final_payment = document.getElementById(('final_payment_'+id));
     var pelunasan = document.getElementById(('pelunasan_'+id)); 
     if(final_payment.checked){
-        biaya_pengiriman.disabled = true;
+       
         pelunasan.value = '0';
-    }else{
-        biaya_pengiriman.disabled = false;
     }
 
 }

@@ -124,7 +124,7 @@
                       <td rowspan="2">
                         <div class="img-tableView">
                           <b class="title">Design - Kiper</b>
-                          <img src="{{asset('uploads'.'/'.$pesanan->design_jersey_pemain)}}" alt="">
+                          <img src="{{asset('uploads'.'/'.$pesanan->design_jersey_kiper)}}" alt="">
                           <span><b>Size</b>: M-2, L-2</span>
                         </div>
                       </td>
@@ -145,15 +145,12 @@
                       <td class="text-right">
                         <div>Approval</div>
                         <div class="py-5"></div>
-                        <div class="d-flex justify-content-end">
-                          <div class="px-5 ttd">
+                        <div>
+                          <span class="m-5">
                             <img src="https://cdn.kibrispdr.org/data/957/tanda-tangan-keren-png-6.png" alt="" style="width: 100px;display:none;float:left;" id="ttd1"><br>
-                            <span class="m-5">(Rhofik)</span>
-                          </div>
-                          <div class="pl-5 pr-3 ttd">
+                            (Rhofik)</span>
                             <img src="https://cdn.kibrispdr.org/data/957/tanda-tangan-keren-png-6.png" alt="" style="width: 100px;display:none;" id="ttd2"><br>
-                            <span>(Ervina)</span>
-                          </div>
+                          <span>(Ervina)</span>
                         </div>
                       </td>
 
@@ -263,8 +260,8 @@
               </style>
               <div class="container w-680">
                 <div class="row">
-                  <div class="col-lg-12 ttd">
-                    <p class="right-align mb-4 pb-5">Best regard,</p>
+                  <div class="col-lg-12">
+                    <p class="right-align mb-4 pb-4">Best regard,</p>
                     <img src="https://cdn.kibrispdr.org/data/957/tanda-tangan-keren-png-6.png" alt="" style="width: 100px;display:none;float:right;" id="ttd3">
                     <p class="right-align mt-4 pt-4"><u>R. Esa Pangersa Gusti</u></p>
                     <p class="right-align" style="line-height: 0px">RATHEN INDONESIA</p>
@@ -835,7 +832,7 @@
                 R. Esa Pangersa Gusti
                 </label>
               </div>
-              <button type="submit" class="btn btn-primary w-fit">submit</button>
+              <button type="submit" class="btn btn-primary">submit</button>
             </form>
             @endif
           </div>

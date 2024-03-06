@@ -195,6 +195,7 @@
                       <div class="py-5"></div>
                       <div class="d-flex justify-content-end">
                         <div class="px-5 ttd">
+                          <img src="https://cdn.kibrispdr.org/data/957/tanda-tangan-keren-png-6.png" alt="" style="width: 100px;display:inline;float:left;" id="ttd1"><br>
                           @if(isset($aproval_3))
                             @if($aproval_3->is_agreed == 1)
                           <img src="https://cdn.kibrispdr.org/data/957/tanda-tangan-keren-png-6.png" alt="" style="width: 100px;display:inline;float:left;" id="ttd1"><br>
@@ -203,6 +204,7 @@
                           <span class="m-5">(Rhofik)</span>
                         </div>
                         <div class="pl-5 pr-3 ttd">
+                          <img src="https://cdn.kibrispdr.org/data/957/tanda-tangan-keren-png-6.png" alt="" style="width: 100px;display:inline;" id="ttd2"><br>
                           @if(isset($aproval_2))
                             @if($aproval_2->is_agreed == 1)
                           <img src="https://cdn.kibrispdr.org/data/957/tanda-tangan-keren-png-6.png" alt="" style="width: 100px;display:inline;" id="ttd2"><br>

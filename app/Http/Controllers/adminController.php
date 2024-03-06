@@ -8,6 +8,7 @@ use App\Models\AboutUs;
 use App\Models\Approval;
 use App\Models\Faq;
 use App\Models\Finance;
+use App\Models\Instagram;
 use App\Models\LinkWeb;
 use App\Models\Location;
 use App\Models\Media;
@@ -758,6 +759,7 @@ class adminController extends Controller
         
     }
     public function update_progress(Request $request){
+        //return $request;
         $validator = Validator::make($request->all(), [
             'shiping_payment' => 'required_if:is_shipping_payment,true',
             'final_concept' => 'required_if:is_final_concept,true|file',
@@ -1101,6 +1103,8 @@ class adminController extends Controller
         $faq = Faq::get();
         $faq_edit = null;
         $step_edit = null;
+        $instagram = Instagram::get();
+        $instagram_edit = null;
         if(isset($request->faq_edit)){
 
             $faq_edit = Faq::find($request->id);
@@ -1115,11 +1119,25 @@ class adminController extends Controller
             
             
         }
+        if(isset($request->instagram_edit)){
+
+            $instagram_edit = Instagram::find($request->id);
+            //return $faq_edit;
+            
+            
+        }
         if(isset($request->save_faq)){
             $faq_edit = Faq::find($request->id);
             $faq_edit->question = $request->question;
             $faq_edit->answer = $request->answer;
             $faq_edit->save();
+            return redirect()->route('admin.landingpage')->with('success', 'berhasil edit data');
+        }
+        if(isset($request->save_instagram)){
+            $instagram_edit = Faq::find($request->id);
+            $instagram_edit->question = $request->question;
+            $instagram_edit->answer = $request->answer;
+            $instagram_edit->save();
             return redirect()->route('admin.landingpage')->with('success', 'berhasil edit data');
         }
         if(isset($request->save_step)){
@@ -1155,6 +1173,8 @@ class adminController extends Controller
             'footer_image' => $footer_image,
             'faq_edit' => $faq_edit,
             'step_edit' => $step_edit,
+            'instagram_edit' => $instagram_edit,
+            'instagram' => $instagram,
         ]);
     }
     public function landingpage_about_us(Request $input){
@@ -1298,6 +1318,13 @@ class adminController extends Controller
         $faq->question = $input->question;
         $faq->answer = $input->answer;
         $faq->save();
+        return redirect()->back()->with('success', 'berhasil add data');
+    }
+    public function landingpage_instagram_add(Request $request){
+        $link = explode('?', $request->link);
+        $model = new Instagram();
+        $model->link = $link[0];
+        $model->save();
         return redirect()->back()->with('success', 'berhasil add data');
     }
     public function importExcel(Request $request)

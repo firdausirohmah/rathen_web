@@ -157,6 +157,7 @@ Route::controller(adminController::class)->group(function () {
         Route::post('/admin_landingpage/about_us', 'landingpage_about_us')->name('admin.landingpage.about_us');
         Route::post('/admin_landingpage/location/add', 'landingpage_location_add')->name('admin.landingpage.location.add');
         Route::post('/admin_landingpage/linkweb/add', 'landingpage_linkweb_add')->name('admin.landingpage.linkweb.add');
+        Route::post('/admin_landingpage/instagram/add', 'landingpage_instagram_add')->name('admin.landingpage.instagram.add');
         Route::post('/admin_landingpage/how_to_order/add', 'landingpage_how_to_order_add')->name('admin.landingpage.how_to_order.add');
         Route::post('/admin_landingpage/faq/add', 'landingpage_faq_add')->name('admin.landingpage.faq.add');
         Route::post('/admin_landingpage/about_us/upload', 'landingpage_media_upload')->name('admin.landingpage.media_upload');

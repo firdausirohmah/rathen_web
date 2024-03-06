@@ -63,10 +63,10 @@
                       <option value="full-print">Jersey Stadiun Version - Full Print</option>
                       <option value="pro">Jersey Pro Version</option>
                       <option value="pro-plus">Jersey Pro Plus Version</option>
-                      <option value="jackeyt-anthem">Jacket Anthem Pro</option>
+                      <option value="jacket-anthem">Jacket Anthem Pro</option>
                     </select>
                     <label for="qty" class="form-label">Quantity:</label>
-                    <input type="number" class="form-control" id="qty" name="qty" placeholder="Enter Quantity">
+                    <input type="number" class="form-control" id="qty" name="qty" placeholder="Enter Quantity" onchange="qtyubah()">
                     <label for="total_harga" class="form-label">Total Harga:</label>
                     <input type="text" class="form-control" id="total_harga"  name="total_harga" readonly>
                     <label for="design_create" class="form-label">Design Payment:</label>
@@ -325,6 +325,7 @@
   var design_create =  document.getElementById("design_create");
   var dp_create =  document.getElementById("dp_create");
   var pelunasan_create =  document.getElementById("pelunasan_create");
+  var harge = null;
   design_create.addEventListener("change", function(){
     pelunasan_create.value = (+pelunasan_create.value) - (+design_create.value);
   });
@@ -333,27 +334,36 @@
   });
   document.getElementById("product").addEventListener("change", function() {
 
-  var xhr = new XMLHttpRequest(); // Membuat objek XMLHttpRequest
+    var xhr = new XMLHttpRequest(); // Membuat objek XMLHttpRequest
+    
+    
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === XMLHttpRequest.DONE) { // Periksa jika permintaan selesai
+        if (xhr.status === 200) { // Periksa jika permintaan berhasil
+          var data =  JSON.parse(xhr.responseText);
+          console.log(data);
+          harga = +(data.harga);
 
-
-  xhr.onreadystatechange = function() {
-    if (xhr.readyState === XMLHttpRequest.DONE) { // Periksa jika permintaan selesai
-      if (xhr.status === 200) { // Periksa jika permintaan berhasil
-        var data =  JSON.parse(xhr.responseText);
-        console.log(data);
-        document.getElementById("qty").value = data.min_order; // Tampilkan respons dari server
-        total_harga.value = (+(data.harga))*(+(data.min_order)); // Tampilkan respons dari server
-        pelunasan_create.value = (+(data.harga))*(+(data.min_order)); // Tampilkan respons dari server
-      } else {
-        alert('Terjadi kesalahan: ' + xhr.status); // Tampilkan pesan kesalahan jika permintaan gagal
+          document.getElementById("qty").value = data.min_order; // Tampilkan respons dari server
+          total_harga.value = (+(data.harga))*(+(data.min_order)); // Tampilkan respons dari server
+          pelunasan_create.value = (+(data.harga))*(+(data.min_order)); // Tampilkan respons dari server
+        } else {
+          alert('Terjadi kesalahan: ' + xhr.status); // Tampilkan pesan kesalahan jika permintaan gagal
+        }
       }
-    }
-  };
+    };
+    
+    var kd_part = this.value;
+    
+    xhr.open("GET", "/api/get-harga/"+kd_part, true); // Konfigurasi permintaan GET ke data.php
+    xhr.send(); // Kir
+  });
+  function qtyubah(){
+    var qty = document.getElementById('qty');
+    total_harga.value = +(qty.value) * harga;
+    pelunasan_create.value = +(qty.value) * harga;
 
-  var kd_part = this.value;
 
-  xhr.open("GET", "/api/get-harga/"+kd_part, true); // Konfigurasi permintaan GET ke data.php
-  xhr.send(); // Kir
-});
+  }
 </script>
 @endsection

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\AboutUs;
 use App\Models\Faq;
+use App\Models\Instagram;
 use App\Models\LinkWeb;
 use App\Models\Location;
 use App\Models\Media;
@@ -55,6 +56,7 @@ class HomeController extends Controller
       $location_carousel = $media->where('media_type_of', 'location_carousel')->get(); 
       $footer_image = $media->where('media_type_of', 'footer_image')->first(); 
       $order_step = OrderStep::get();
+      $instgram = Instagram::get();
       return view('landing_page.page-costum', 
       [
         'about_us' => $row,
@@ -70,6 +72,7 @@ class HomeController extends Controller
         'top_image' => $topImage,
         'buttom_image' => $buttomImage,
         'footer_image' => $footer_image,
+        'instagram' => $instgram,
       ]);
     }
     public function a()

@@ -247,6 +247,62 @@
         <div class="card m-2">
             <div class="card-body">
                 <h5  class="card-title">
+                    Instgram latest result
+                </h5>
+                @if(isset($instagram_edit))
+                <form action="{{route('admin.landingpage.edit')}}" method="post" class="row">
+                <input type="hidden" name="id" value="{{$instagram->id}}">
+                @else
+                <form action="{{route('admin.landingpage.instagram.add')}}" method="post" class="row">
+                @endif
+                    @csrf
+                    
+                    <div class="form-group col-md-12">
+                        <label for="type">Link (contoh:https://www.instagram.com/p/C4CwtxFtPRe)</label>
+                        <input type="text" name="link" id="link" class="form-control" value="{{(isset($instagram_edit->link)?$instagram_edit->link:'')}}">
+                    </div>
+                    @if(isset($instagram_edit))
+                    <div class="form-group col-6">
+                        <a href="{{route('admin.landingpage')}}" class="form-control btn btn-primary">batal</a>
+                    </div>
+                    <div class="form-group col-6">
+                        <input type="hidden" name="save_instagram" value="true">
+                        <button type="submit" class="form-control btn btn-primary">simpan</button>
+                    </div>
+                    @else
+                    <div class="form-group col-12">
+                        <button type="submit" class="form-control btn btn-primary">add</button>
+                    </div>
+                    @endif
+                </form>
+                <table class="table">
+                    <tr>
+                        <th>No</th>
+                        <th>Link</th>
+                        <th>Action</th>
+                    </tr>
+                    @foreach($instagram as $index => $data)
+                    <tr>
+                        <td>{{($index+1)}}</td>
+                        <td>{{$data['link']}}</td>
+                        <td>
+                        <form action="{{route('admin.landingpage.edit')}}" method="post">
+                            @csrf
+                            <input type="hidden" name="id" value="{{$data->id}}">
+                            <input type="hidden" name="instagram_edit" value="true">
+                            <button type="submit"  class="btn btn-warning">edit</button>
+                        </form>
+                        </td>
+                    </tr>
+                    @endforeach
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="card m-2">
+            <div class="card-body">
+                <h5  class="card-title">
                     Faq
                 </h5>
                 @if(isset($faq_edit))

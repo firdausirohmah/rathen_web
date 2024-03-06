@@ -64,9 +64,7 @@
 			background-color: whitesmoke;
 			}
 	</style>
-	<button class="button back" onclick="goBack()"><i class='bx bx-arrow-back'></i></button>
-	<a href="{{ route('generate') }}" class="print"><button>
-		<i class='bx bx-printer'></i></button></a>
+
 	<div class="container mt-3">
 		<div class="row justify-content-center">
 			<div class="col-8">
@@ -78,29 +76,28 @@
 							INDONESIA, Jl. Mayjen Ishak Djuarsa no.167B Gunung Batu Bogor, Indonesia</p>
 						<p class="text-center font-weight-bold mont"><small class="font-weight-bold">Phone No:
 								0896-1108-1988 | 0878-1108-1988</small></p>
-								<div class="row content-center">
+								s<div class="row content-center">
                 <div class="col-md-12">
                   <h3 class="text-center font-weight-bold text-primary mt-2">INVOICE</h3>
                   <p class="text-center"><small >No. 00178/inv-10/2023</small></p>
                 </div>
               </div>
-
-						<div class="row pb-2 p-2">
-							<div class="col-md-6" style="text-align:justify">
-								<p class="mb-0 font-weight-bold">Kepada Yth:</p>
-								<p class="mb-0">{{ $pesanan->nama_pemesanan }}</p>
-								<p class="mb-0">{{ $pesanan->kontak }}</p>
-								<p class="mb-0">{{ $pesanan->email }}</p>
-								<p class="mb-0">{{ $pesanan->domisili }}</p>
-								{{-- <p>di tempat</p> --}}
-
-							</div>
-							<div class="col-md-6">
-								<p class="mb-0 text-right">{{ $tanggal }}</p>
-							</div>
-
-						</div>
-						<div class="table-responsive">
+              <div class="row pb-2 p-2 text-center-mb" style="text-align:justify;">
+                <div class="col-md-6 mx-4 px-4">
+                  <p class="mb-0 font-weight-bold text-primary">Bill to:</p>
+                  <p class="mb-0">{{ $pesanan->nama_pemesanan }}</p>
+                  <p class="mb-0">{{ $pesanan->nama_tim }}</p>			 
+                            <p class="mb-0">{{ $pesanan->domisili }}</p>			 
+                            </div>
+                            <div class="col-lg-2"></div>
+                            <div class="col-md-2">
+                                <p class="mb-0 font-weight-bold text-primary">Ship to:</p>			 
+                                <p class="mb-0">{{ $pesanan->nama_pemesanan }}</p>			 
+                                <p class="mb-0">{{ $pesanan->nama_tim }}</p>			 
+                                <p class="mb-0">{{ $pesanan->domisili }}</p>			 
+                              </div>
+                        </div>
+                        <div class="table-responsive">
                             <table class="table table-bordered mt-4 mb-0">
                                 <thead>
                                 <tr>
@@ -471,7 +468,7 @@
 								width: 62%;
 							}
 						</style>
-						{{-- <div class="container">
+						<div class="container">
 							<div class="row">
 								<table
 									style="width: 100%; border:10px; font-size:14px; font-weight: bold;  font-weight:100; color:black;">
@@ -497,7 +494,7 @@
 									</tr>
 								</table>
 							</div>
-						</div> --}}
+						</div>
 
 						<style>
 							.right-align {

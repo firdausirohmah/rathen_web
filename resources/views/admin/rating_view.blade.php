@@ -18,7 +18,7 @@
     <tr>
         <td>{{$dt->name}}</td>
         <td>{{$dt->team_name}}</td>
-        <td>{{$dt->kesesuain}}</td>
+        <td>{{$dt->kesesuaian}}</td>
         <td>{{$dt->kualitas}}</td>
         <td>{{$dt->fitur}}</td>
         <td>{{$dt->waktu_produksi}}</td>

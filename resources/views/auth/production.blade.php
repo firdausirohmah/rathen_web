@@ -36,9 +36,11 @@
         </div>
         <div class="card-body px-0 pt-0 pb-2">
           <div class="table-responsive p-0">
-            <table class="table align-items-center mb-0 display" id="view-invoice" style="width:100%">
+            <table class="table align-items-center mb-0 display" id="view-production" style="width:100%">
               <thead>
                 <tr>
+                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Id Production
+                  </th>
                   <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Name
                   </th>
                   <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Address
@@ -64,6 +66,9 @@
 
                 @if($item->status_order == 'produksi')
                 <tr>
+                  <td>
+                    {{ $item->kd_step }}
+                  </td>
                   <td>
                     {{ $item->nama_pemesanan }}
                   </td>
@@ -247,6 +252,7 @@
 
                     </div>
                   </td>
+                  
                 </tr>
                 @endif
                 @endforeach
@@ -348,7 +354,7 @@
         </div>
         <div class="card-body px-0 pt-0 pb-2">
           <div class="table-responsive p-0">
-            <table class="table align-items-center mb-0 display" id="view-quotation" style="width:100%">
+            <table class="table align-items-center mb-0 display" id="view-approval" style="width:100%">
               <thead>
                 <tr>
                   <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Name

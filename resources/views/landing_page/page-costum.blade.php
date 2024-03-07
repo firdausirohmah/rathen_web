@@ -669,7 +669,7 @@
     </section>
     <div class="container">
         <div class="col-lg-12 mb-5">
-            <iframe src='https://896f3f023ba8402bb34db702ed55fd7d.elf.site' width='100%' frameborder='0' style="height:960px; overflow:hidden" class="ig-frame" scrolling="no"></iframe>
+            <iframe src='https://9dd6b738c9454a42b64822c62423e89e.elf.site' width='100%' frameborder='0' style="height:960px; overflow:hidden" class="ig-frame" scrolling="no"></iframe>
         </div>
         
         {{--<div class="row center-hori">
@@ -1344,6 +1344,14 @@ document.addEventListener('DOMContentLoaded', function () {
     
     
 
+</section>
+
+<section id="rating">
+    
+    <div class="text-center">
+        <a href="/rating" class="btn btn-dark px-5 mb-5 fs-5" style="padding-bottom:2.5rem">Rate Us</a>
+    </div>
+    
 </section>
 
 <section id="contact" >

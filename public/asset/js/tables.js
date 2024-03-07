@@ -11,17 +11,21 @@ $(document).ready(function() {
             'excelHtml5',
             'csvHtml5',
             'pdfHtml5'
-        ]
+        ],
+        order: [[6, 'desc']]
     } );
-    $('#view-progress').DataTable( {
+
+    $('#view-quotation').DataTable( {
         dom: '<"top"Bfi>rt<"bottom"lp>',
         buttons: [
             'copyHtml5',
             'excelHtml5',
             'csvHtml5',
             'pdfHtml5'
-        ]
+        ],
+        order: [[5, 'desc']]
     } );
+
     $('#view-finance').DataTable( {
         dom: '<"top"Bfi>rt<"bottom"lp>',
         buttons: [
@@ -35,20 +39,38 @@ $(document).ready(function() {
 var id_invoice = 1;
 
 $(document).ready(function() {
-    // new DataTable('#view-order', {
-    //     dom: '<"top"i>rt<"bottom"flp><"clear">'
-    // });
-    // $('#view-order').DataTable();
     
-    $('#view-quotation').DataTable( {
+    $('#view-approval').DataTable( {
         dom: '<"top"Bfi>rt<"bottom"lp>',
         buttons: [
             'copyHtml5',
             'excelHtml5',
             'csvHtml5',
             'pdfHtml5'
-        ]
+        ],
+        order: [[4, 'desc']]
     } );
+    $('#view-production').DataTable( {
+        dom: '<"top"Bfi>rt<"bottom"lp>',
+        buttons: [
+            'copyHtml5',
+            'excelHtml5',
+            'csvHtml5',
+            'pdfHtml5'
+        ],
+        order: [[0, 'desc']]
+    } );
+    $('#view-progress').DataTable( {
+        dom: '<"top"Bfi>rt<"bottom"lp>',
+        buttons: [
+            'copyHtml5',
+            'excelHtml5',
+            'csvHtml5',
+            'pdfHtml5'
+        ],
+        order: [[0, 'desc']]
+    } );
+    
 } );
 
 function formatRupiah(input) {

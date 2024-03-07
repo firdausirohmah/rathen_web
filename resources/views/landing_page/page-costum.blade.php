@@ -4,7 +4,7 @@
 {{-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> --}}
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <link rel="stylesheet" href="asset/css/styles.css">
-<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+<link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
 <!-- <link id="pagestyle" href="asset/admin/css/soft-ui-dashboard.  css?v=1.0.3" rel="stylesheet" /> -->
 <section id="home" class="section-home" style="overflow: hidden;">
  
@@ -658,7 +658,7 @@
 
 <section id="result" class="result" class="mt-4 pt-4">
     
-    <section class="py-2 py-xl-4">
+    <section class="pt-2 py-xl-4">
         <div class="container">
           <div class="row center-hori">
             <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
@@ -668,16 +668,32 @@
         </div>
     </section>
     <div class="container">
-        <div class="row center-hori">
+        <div class="col-lg-12 mb-5">
+            <iframe src='https://896f3f023ba8402bb34db702ed55fd7d.elf.site' width='100%' frameborder='0' style="height:960px; overflow:hidden" class="ig-frame" scrolling="no"></iframe>
+        </div>
+        
+        {{--<div class="row center-hori">
             @foreach($instagram as $data)
             <div class="col-lg-3 m-4 mb2-mobile">
                 <blockquote class="instagram-media" data-instgrm-permalink="{{$data->link}}/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#000; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
             </div> 
             @endforeach
             
-        </div>
+        </div>--}}
     </div>
 
+    <style>
+        .instagram-media-children {
+            max-height: 500px;
+            overflow: hidden;
+        }
+        .instagram-media-footer {
+            display: none !important;
+        }
+        .instagram-media-header {
+            display: none !important;
+        }
+    </style>
 <script async src="//www.instagram.com/embed.js"></script>
 </section>
 <style>
@@ -800,54 +816,83 @@
               </div>
             </div>
 
-            <div class="row center-hori pb-5">
-                <div class="col-lg-8">
-                    <div class="container pb-5">
-                        <div class="pricelist-slider swiper-container pt-3 pb-5">
-                            <div class="swiper-wrapper align-items-center">
-                                <div class="swiper-slide">
-                                    <a href="{{ url('/price-list', ['kd_part' => 'non-print']) }}" target="_blank">
-                                        <img src="{{asset('asset/images/price-list/detail/nonprint/cover.png')}}" class="img-pricelist" alt="nonprint"> 
-                                    </a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a href="{{ url('/price-list', ['kd_part' => 'half-print']) }}" target="_blank">
-                                        <img src=" {{asset('asset/images/price-list/detail/halfprint/cover.png')}}" class="img-pricelist" alt="halfprint"> 
-                                    </a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a href="{{ url('/price-list', ['kd_part' => 'full-print']) }}" target="_blank">
-                                        <img src="{{asset('asset/images/price-list/detail/fullprint/cover.png')}}" class="img-pricelist" alt="fullpint"> 
-                                    </a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a href="{{ url('/price-list', ['kd_part' => 'pro']) }}" target="_blank">
-                                        <img src=" {{asset('asset/images/price-list/detail/pro/cover.png')}}" class="img-pricelist" alt="pro">
-                                    </a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a href="{{ url('/price-list', ['kd_part' => 'pro-plus']) }}" target="_blank">
-                                        <img src=" {{asset('asset/images/price-list/detail/proplus/cover.png')}}" class="img-pricelist" alt="proplus">
-                                    </a>
-                                </div>
-                                <div class="swiper-slide">
-                                    <a href="{{ url('/price-list', ['kd_part' => 'jacket-anthem']) }}" target="_blank">
-                                        <img src=" {{asset('asset/images/price-list/detail/jacket-anthem/cover.png')}}" class="img-pricelist" alt="jacket-anthem">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="swiper-button-next"></div>
-                            <div class="swiper-button-prev"></div>
+            <div class="container-tranding">
+                <div class="swiper tranding-slider">
+                    <div class="swiper-wrapper">
+                        <!-- Slide-start -->
+                        <div class="swiper-slide tranding-slide">
+                        <div class="tranding-slide-img">
+                            <a href="{{ url('/price-list', ['kd_part' => 'non-print']) }}" target="_blank">
+                                <img src="{{asset('asset/images/price-list/detail/nonprint/cover.png')}}" class="img-pricelist" alt="nonprint"> 
+                            </a>
                         </div>
+                        </div>
+                        <!-- Slide-end -->
+                        <!-- Slide-start -->
+                        <div class="swiper-slide tranding-slide">
+                        <div class="tranding-slide-img">
+                            <a href="{{ url('/price-list', ['kd_part' => 'half-print']) }}" target="_blank">
+                                <img src="{{asset('asset/images/price-list/detail/halfprint/cover.png')}}" class="img-pricelist" alt="nonprint"> 
+                            </a>
+                        </div>
+                        </div>
+                        <!-- Slide-end -->
+                        <!-- Slide-start -->
+                        <div class="swiper-slide tranding-slide">
+                        <div class="tranding-slide-img">
+                            <a href="{{ url('/price-list', ['kd_part' => 'full-print']) }}" target="_blank">
+                                <img src="{{asset('asset/images/price-list/detail/fullprint/cover.png')}}" class="img-pricelist" alt="nonprint"> 
+                            </a>
+                        </div>
+                        </div>
+                        <!-- Slide-end -->
+                        <!-- Slide-start -->
+                        <div class="swiper-slide tranding-slide">
+                        <div class="tranding-slide-img">
+                            <a href="{{ url('/price-list', ['kd_part' => 'pro']) }}" target="_blank">
+                                <img src="{{asset('asset/images/price-list/detail/pro/cover.png')}}" class="img-pricelist" alt="nonprint"> 
+                            </a>
+                        </div>
+                        </div>
+                        <!-- Slide-end -->
+                        <!-- Slide-start -->
+                        <div class="swiper-slide tranding-slide">
+                        <div class="tranding-slide-img">
+                            <a href="{{ url('/price-list', ['kd_part' => 'pro-plus']) }}" target="_blank">
+                                <img src="{{asset('asset/images/price-list/detail/proplus/cover.png')}}" class="img-pricelist" alt="nonprint"> 
+                            </a>
+                        </div>
+                        </div>
+                        <!-- Slide-end -->
+                        <!-- Slide-start -->
+                        <div class="swiper-slide tranding-slide">
+                        <div class="tranding-slide-img">
+                            <a href="{{ url('/price-list', ['kd_part' => 'jacket-anthem']) }}" target="_blank">
+                                <img src=" {{asset('asset/images/price-list/detail/jacket-anthem/cover.png')}}" class="img-pricelist" alt="jacket-anthem">
+                            </a>
+                        </div>
+                        </div>
+                        <!-- Slide-end -->
+                        
                     </div>
-                    
+
+                    <div class="tranding-slider-control">
+                        <div class="swiper-button-prev slider-arrow">
+                        <ion-icon name="arrow-back-outline"></ion-icon>
+                        </div>
+                        <div class="swiper-button-next slider-arrow">
+                        <ion-icon name="arrow-forward-outline"></ion-icon>
+                        </div>
+                        <!-- <div class="swiper-pagination"></div> -->
+                    </div>
+
                 </div>
             </div>
 
     </section> 
     <!-- </div> -->
 
-    <section id="faq" class="py-5 py-xl-8 mt-5">
+    <section id="faq" class="py-xl-8 mt-5">
         <div class="container">
             <div class="row center-hori">
             <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
@@ -914,7 +959,35 @@
     <!-- End Clients Section -->
 </div>
 
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
+<script>
+    var TrandingSlider = new Swiper('.tranding-slider', {
+    effect: 'coverflow',
+    grabCursor: true,
+    centeredSlides: true,
+    loop: true,
+    slidesPerView: 'auto',
+    coverflowEffect: {
+        rotate: 0,
+        stretch: 0,
+        depth: 200,
+        modifier: 2.5,
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    autoplay:{
+        delay:2500,
+        disableOnInteraction: false,
+    },
+    });
+</script>
 
 <!-- Initialize Swiper -->
 <script>
@@ -952,47 +1025,7 @@
             }
         }
     });
-    document.addEventListener('DOMContentLoaded', function(){
-        var swiper = new Swiper(".pricelist-slider", {
-            // direction: 'horizontal',
-            effect:'coverflow',
-            grabCursor:true,
-            centeredSlides:true,
-            loop: true,
-            slidesPerView: getSlidesPerView(),
-            coverflowEffect:{
-                rotate:0,
-                stretch:0,
-                depth:50,
-                modifier:15,
-                slideShadows:false,
-            },
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            autoplay:{
-                delay:3000,
-                disableOnInteraction: false,
-            },
-        });
-        window.addEventListener('resize', function(){
-            swiper.params.slidesPerView = getSlidesPerView();
-            swiper.update();
-        });
-        function getSlidesPerView() {
-            // Check device width and return appropriate slidesPerView
-            if (window.innerWidth <= 768) { // For mobile and tablet devices
-                return 1;
-            } else { // For larger devices
-                return 2;
-            }
-        }
-    })
+    
     
 </script>
 
@@ -1168,54 +1201,54 @@ document.addEventListener('DOMContentLoaded', function () {
             });
     
             // Event listener untuk tombol cek total harga
-            document.querySelector('.total1').addEventListener('click', function () {
-                // Cek apakah gambar dan kualitas sudah dipilih
-                if (selectedImage && selectedQuality) {
-                    // Ambil harga dari data-price pada gambar yang dipilih
-                    var hargaProduk = parseFloat(selectedImage.getAttribute('data-price'));
+            // document.querySelector('.total1').addEventListener('click', function () {
+            //     // Cek apakah gambar dan kualitas sudah dipilih
+            //     if (selectedImage && selectedQuality) {
+            //         // Ambil harga dari data-price pada gambar yang dipilih
+            //         var hargaProduk = parseFloat(selectedImage.getAttribute('data-price'));
     
-                    // Hitung total harga dengan mengalikan harga produk dengan multiplier kualitas
-                    var totalHarga = hargaProduk * selectedQuality;
+            //         // Hitung total harga dengan mengalikan harga produk dengan multiplier kualitas
+            //         var totalHarga = hargaProduk * selectedQuality;
     
-                    // Tampilkan total harga pada elemen dengan ID displayText
-                    document.getElementById('displayText').innerText = totalHarga.toLocaleString('id-ID');
-                } else {
-                    // Tampilkan pesan jika gambar atau kualitas belum dipilih
-                    alert('Pilih gambar dan kualitas terlebih dahulu.');
-                }
-            });
-            document.querySelector('.total2').addEventListener('click', function () {
-                // Cek apakah gambar dan kualitas sudah dipilih
-                if (selectedImage && selectedQuality) {
-                    // Ambil harga dari data-price pada gambar yang dipilih
-                    var hargaProduk = parseFloat(selectedImage.getAttribute('data-price'));
+            //         // Tampilkan total harga pada elemen dengan ID displayText
+            //         document.getElementById('displayText').innerText = totalHarga.toLocaleString('id-ID');
+            //     } else {
+            //         // Tampilkan pesan jika gambar atau kualitas belum dipilih
+            //         alert('Pilih gambar dan kualitas terlebih dahulu.');
+            //     }
+            // });
+            // document.querySelector('.total2').addEventListener('click', function () {
+            //     // Cek apakah gambar dan kualitas sudah dipilih
+            //     if (selectedImage && selectedQuality) {
+            //         // Ambil harga dari data-price pada gambar yang dipilih
+            //         var hargaProduk = parseFloat(selectedImage.getAttribute('data-price'));
     
-                    // Hitung total harga dengan mengalikan harga produk dengan multiplier kualitas
-                    var totalHarga = hargaProduk * selectedQuality;
+            //         // Hitung total harga dengan mengalikan harga produk dengan multiplier kualitas
+            //         var totalHarga = hargaProduk * selectedQuality;
     
-                    // Tampilkan total harga pada elemen dengan ID displayText
-                    document.getElementById('displayText').innerText = totalHarga.toLocaleString('id-ID');
-                } else {
-                    // Tampilkan pesan jika gambar atau kualitas belum dipilih
-                    alert('Pilih gambar dan kualitas terlebih dahulu.');
-                }
-            });
-            document.querySelector('.total3').addEventListener('click', function () {
-                // Cek apakah gambar dan kualitas sudah dipilih
-                if (selectedImage && selectedQuality) {
-                    // Ambil harga dari data-price pada gambar yang dipilih
-                    var hargaProduk = parseFloat(selectedImage.getAttribute('data-price'));
+            //         // Tampilkan total harga pada elemen dengan ID displayText
+            //         document.getElementById('displayText').innerText = totalHarga.toLocaleString('id-ID');
+            //     } else {
+            //         // Tampilkan pesan jika gambar atau kualitas belum dipilih
+            //         alert('Pilih gambar dan kualitas terlebih dahulu.');
+            //     }
+            // });
+            // document.querySelector('.total3').addEventListener('click', function () {
+            //     // Cek apakah gambar dan kualitas sudah dipilih
+            //     if (selectedImage && selectedQuality) {
+            //         // Ambil harga dari data-price pada gambar yang dipilih
+            //         var hargaProduk = parseFloat(selectedImage.getAttribute('data-price'));
     
-                    // Hitung total harga dengan mengalikan harga produk dengan multiplier kualitas
-                    var totalHarga = hargaProduk * selectedQuality;
+            //         // Hitung total harga dengan mengalikan harga produk dengan multiplier kualitas
+            //         var totalHarga = hargaProduk * selectedQuality;
     
-                    // Tampilkan total harga pada elemen dengan ID displayText
-                    document.getElementById('displayText').innerText = totalHarga.toLocaleString('id-ID');
-                } else {
-                    // Tampilkan pesan jika gambar atau kualitas belum dipilih
-                    alert('Pilih gambar dan kualitas terlebih dahulu.');
-                }
-            });
+            //         // Tampilkan total harga pada elemen dengan ID displayText
+            //         document.getElementById('displayText').innerText = totalHarga.toLocaleString('id-ID');
+            //     } else {
+            //         // Tampilkan pesan jika gambar atau kualitas belum dipilih
+            //         alert('Pilih gambar dan kualitas terlebih dahulu.');
+            //     }
+            // });
         });
     </script>
 

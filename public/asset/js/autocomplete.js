@@ -1,10 +1,10 @@
 let availableKeywords = [
-    '<a href="/price-list/non-print" target="_blank"><img src="asset/images/price-list/detail/nonprint/cover.png" alt="stadium-version-nonprint"></a>',
-    '<a href="/price-list/half-print" target="_blank"><img src="asset/images/price-list/detail/halfprint/cover.png" alt="stadium-version-halfprint">',
-    '<a href="/price-list/full-print" target="_blank"><img src="asset/images/price-list/detail/fullprint/cover.png" alt="stadium-version-fullprint">',
-    '<a href="/price-list/pro" target="_blank"><img src="asset/images/price-list/detail/pro/cover.png" alt="pro-version">',
-    '<a href="/price-list/pro-plus" target="_blank"><img src="asset/images/price-list/detail/proplus/cover.png" alt="pro-plus-/-pro+-version">',
-    '<a href="/price-list/jacket-anthem" target="_blank"><img src="asset/images/price-list/detail/jacket-anthem/cover.png" alt="jacket/-jaket-anthem-pro">',
+    '<a href="/price-list/non-print" target="_blank"><img src="asset/images/price-list/detail/nonprint/cover.png" alt="stadium-version-nonprint"><span class="d-grid text-center">Stadium Non Print</span></a>',
+    '<a href="/price-list/half-print" target="_blank"><img src="asset/images/price-list/detail/halfprint/cover.png" alt="stadium-version-halfprint"><span class="d-grid text-center">Stadium Half Print</span></a>',
+    '<a href="/price-list/full-print" target="_blank"><img src="asset/images/price-list/detail/fullprint/cover.png" alt="stadium-version-fullprint"><span class="d-grid text-center">Stadium Full Print</span></a>',
+    '<a href="/price-list/pro" target="_blank"><img src="asset/images/price-list/detail/pro/cover.png" alt="pro-version"><span class="d-grid text-center">Pro Version</span></a>',
+    '<a href="/price-list/pro-plus" target="_blank"><img src="asset/images/price-list/detail/proplus/cover.png" alt="pro-plus-/-pro+-version"><span class="d-grid text-center">Pro+ Version</span></a>',
+    '<a href="/price-list/jacket-anthem" target="_blank"><img src="asset/images/price-list/detail/jacket-anthem/cover.png" alt="jacket/-jaket-anthem-pro"><span class="d-grid text-center">Jacket Anthem</span></a>',
 ];
 
 const resultsHarga = document.querySelector('.result-harga');

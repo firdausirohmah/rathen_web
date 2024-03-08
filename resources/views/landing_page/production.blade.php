@@ -257,6 +257,11 @@
                 .container.container-logo {
                   margin: 0 auto;
                 }
+                @media only screen and (max-width: 600px){
+                  #myDIV {
+                      width: 305px;
+                  }
+                }
               </style>
               <div class="container w-680">
                 <div class="row">
@@ -734,6 +739,11 @@
                 .container {
                   width: 100rem;
                 }
+                @media only screen and (max-width: 600px){
+                  .container {
+                      width: 330px;
+                  }
+                }
               </style>
               <div class="container w-680">
                 <div class="row">
@@ -832,7 +842,7 @@
                 R. Esa Pangersa Gusti
                 </label>
               </div>
-              <button type="submit" class="btn btn-primary">submit</button>
+              <button type="submit" class="btn btn-primary w-auto">submit</button>
             </form>
             @endif
           </div>

@@ -1,6 +1,22 @@
 @extends('layout.admin')
 @section('content') 
 <script src="https://cdn.ckeditor.com/ckeditor5/41.1.0/classic/ckeditor.js"></script>
+<style>
+    .table-md-6 {
+        display: block;
+        height: 20rem;
+        width: auto;
+        overflow-y: scroll;
+    }
+    @media only screen and (max-width: 600px){
+        .table-md {
+            display: block;
+            height: 10rem;
+            width: auto;
+            overflow-y: scroll;
+        }
+    }
+</style>
 <div class="row m-2">
     <div class="col-md-6">
     <div class="card m-2">
@@ -19,15 +35,15 @@
                     </div>
                     <input type="hidden" name="media_type_of" value="header_banner">
                 </form>
-                <table class="table">
+                <table class="table table-md-6 table-md">
                     <tr>
-                        <th>Thumnail</th>
+                        <th>Thumbnail</th>
                         <th>Name</th>
                         <th>Action</th>
                     </tr>
                     @foreach($header_banner_media as $index => $data)
                     <tr>
-                        <td class="w-auto ratio ratio-1x1">
+                        <td class="w-50 ratio ratio-1x1 bg-dark">
                         @if($data['type'] == 'video')
 
                             <video id="video1" class="d-block w-100 csabout" controls autoplay muted> 
@@ -72,15 +88,15 @@
                     </div>
                     <input type="hidden" name="media_type_of" value="logo">
                 </form>
-                <table class="table">
+                <table class="table table-md-6 table-md">
                     <tr>
-                        <th>Thumnail</th>
+                        <th>Thumbnail</th>
                         <th>Name</th>
                         <th>Action</th>
                     </tr>
                     @foreach($logo as $data)
                     <tr>
-                        <td class="w-auto">
+                        <td class="w-50 ratio ratio-1x1 bg-dark">
                         
                             
                                 <img src="{{asset('/uploads').'/' .$data['filename']}}" class="d-block w-100 img-fluid"  alt="swiss"> 
@@ -127,7 +143,7 @@
             </div>
         </div>
     </div>
-    <div class="col-md-12">
+    <div class="col-md-6">
         <div class="card m-2">
             <div class="card-body">
                 <h5  class="card-title">
@@ -144,15 +160,15 @@
                     </div>
                     <input type="hidden" name="media_type_of" value="carousel_about_us">
                 </form>
-                <table class="table">
+                <table class="table table-md-6">
                     <tr>
-                        <th>Thumnail</th>
+                        <th>Thumbnail</th>
                         <th>Name</th>
                         <th>Action</th>
                     </tr>
                     @foreach($about_us_media as $index => $data)
                     <tr>
-                        <td class="w-auto ratio ratio-1x1">
+                        <td class="w-50 ratio ratio-1x1">
                         @if($data['type'] == 'video')
 
                             <video id="video1" class="d-block w-100 csabout" controls autoplay muted> 
@@ -180,7 +196,63 @@
             </div>
         </div>
     </div>
-    <div class="col-md-12">
+    <div class="col-md-6">
+        <div class="card m-2">
+            <div class="card-body">
+                <h5  class="card-title">
+                    Instagram latest result
+                </h5>
+                @if(isset($instagram_edit))
+                <form action="{{route('admin.landingpage.edit')}}" method="post" class="row">
+                <input type="hidden" name="id" value="{{$instagram->id}}">
+                @else
+                <form action="{{route('admin.landingpage.instagram.add')}}" method="post" class="row">
+                @endif
+                    @csrf
+                    
+                    <div class="form-group col-md-12">
+                        <label for="type">Link (contoh:https://www.instagram.com/p/C4CwtxFtPRe)</label>
+                        <input type="text" name="link" id="link" class="form-control" value="{{(isset($instagram_edit->link)?$instagram_edit->link:'')}}">
+                    </div>
+                    @if(isset($instagram_edit))
+                    <div class="form-group col-6">
+                        <a href="{{route('admin.landingpage')}}" class="form-control btn btn-primary">batal</a>
+                    </div>
+                    <div class="form-group col-6">
+                        <input type="hidden" name="save_instagram" value="true">
+                        <button type="submit" class="form-control btn btn-primary">simpan</button>
+                    </div>
+                    @else
+                    <div class="form-group col-12">
+                        <button type="submit" class="form-control btn btn-primary">add</button>
+                    </div>
+                    @endif
+                </form>
+                <table class="table table-md-6">
+                    <tr>
+                        <th>No</th>
+                        <th>Link</th>
+                        <th>Action</th>
+                    </tr>
+                    @foreach($instagram as $index => $data)
+                    <tr>
+                        <td>{{($index+1)}}</td>
+                        <td>{{$data['link']}}</td>
+                        <td>
+                        <form action="{{route('admin.landingpage.edit')}}" method="post">
+                            @csrf
+                            <input type="hidden" name="id" value="{{$data->id}}">
+                            <input type="hidden" name="instagram_edit" value="true">
+                            <button type="submit"  class="btn btn-warning">edit</button>
+                        </form>
+                        </td>
+                    </tr>
+                    @endforeach
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
         <div class="card m-2">
             <div class="card-body">
                 <h5  class="card-title">
@@ -214,12 +286,12 @@
                         <button type="submit" class="form-control btn btn-primary">simpan</button>
                     </div>
                     @else
-                    <div class="form-group col-12">
+                    <div class="form-group col-12 pt-2">
                         <button type="submit" class="form-control btn btn-primary">add</button>
                     </div>
                     @endif
                 </form>
-                <table class="table">
+                <table class="table table-md-6">
                     <tr>
                         <th>Name</th>
                         <th>Icon</th>
@@ -243,63 +315,8 @@
             </div>
         </div>
     </div>
-    <div class="col-md-12">
-        <div class="card m-2">
-            <div class="card-body">
-                <h5  class="card-title">
-                    Instgram latest result
-                </h5>
-                @if(isset($instagram_edit))
-                <form action="{{route('admin.landingpage.edit')}}" method="post" class="row">
-                <input type="hidden" name="id" value="{{$instagram->id}}">
-                @else
-                <form action="{{route('admin.landingpage.instagram.add')}}" method="post" class="row">
-                @endif
-                    @csrf
-                    
-                    <div class="form-group col-md-12">
-                        <label for="type">Link (contoh:https://www.instagram.com/p/C4CwtxFtPRe)</label>
-                        <input type="text" name="link" id="link" class="form-control" value="{{(isset($instagram_edit->link)?$instagram_edit->link:'')}}">
-                    </div>
-                    @if(isset($instagram_edit))
-                    <div class="form-group col-6">
-                        <a href="{{route('admin.landingpage')}}" class="form-control btn btn-primary">batal</a>
-                    </div>
-                    <div class="form-group col-6">
-                        <input type="hidden" name="save_instagram" value="true">
-                        <button type="submit" class="form-control btn btn-primary">simpan</button>
-                    </div>
-                    @else
-                    <div class="form-group col-12">
-                        <button type="submit" class="form-control btn btn-primary">add</button>
-                    </div>
-                    @endif
-                </form>
-                <table class="table">
-                    <tr>
-                        <th>No</th>
-                        <th>Link</th>
-                        <th>Action</th>
-                    </tr>
-                    @foreach($instagram as $index => $data)
-                    <tr>
-                        <td>{{($index+1)}}</td>
-                        <td>{{$data['link']}}</td>
-                        <td>
-                        <form action="{{route('admin.landingpage.edit')}}" method="post">
-                            @csrf
-                            <input type="hidden" name="id" value="{{$data->id}}">
-                            <input type="hidden" name="instagram_edit" value="true">
-                            <button type="submit"  class="btn btn-warning">edit</button>
-                        </form>
-                        </td>
-                    </tr>
-                    @endforeach
-                </table>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-12">
+    
+    <div class="col-md-6">
         <div class="card m-2">
             <div class="card-body">
                 <h5  class="card-title">
@@ -334,24 +351,26 @@
                     </div>
                     @endif
                 </form>
+                <div class="table-md-6">
                 @foreach($faq as $index => $data)
-                <p class="d-inline-flex gap-1">
-                <a class="text-dark" data-bs-toggle="collapse" href="#faq_{{$index}}" role="button" aria-expanded="false" aria-controls="collapseExample">
-                    {{$data->question}}
-                </a>
-                <form action="{{route('admin.landingpage.edit')}}" method="post">
-                    @csrf
-                    <input type="hidden" name="id" value="{{$data->id}}">
-                    <input type="hidden" name="faq_edit" value="true">
-                    <button type="submit"  class="btn btn-warning">edit</button>
-                </form>
-                </p>
-                <div class="collapse" id="faq_{{$index}}">
-                <div class="card card-body">
-                {!!$data->answer!!}
-                </div>
-                </div>
+                    <p class="d-inline-flex gap-1">
+                    <a class="text-dark" data-bs-toggle="collapse" href="#faq_{{$index}}" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        {{$data->question}}
+                    </a>
+                    <form action="{{route('admin.landingpage.edit')}}" method="post">
+                        @csrf
+                        <input type="hidden" name="id" value="{{$data->id}}">
+                        <input type="hidden" name="faq_edit" value="true">
+                        <button type="submit"  class="btn btn-warning">edit</button>
+                    </form>
+                    </p>
+                    <div class="collapse" id="faq_{{$index}}">
+                        <div class="card card-body">
+                        {!!$data->answer!!}
+                        </div>
+                    </div>
                 @endforeach
+                </div>
             </div>
         </div>
     </div>
@@ -382,7 +401,7 @@
             </div>
         </div>
     </div>
-    <div class="col-md-12">
+    <div class="col-md-6">
     <div class="card m-2">
             <div class="card-body">
                 <h5  class="card-title">
@@ -399,7 +418,7 @@
                     </div>
                     <input type="hidden" name="media_type_of" value="location_carousel">
                 </form>
-                <table class="table">
+                <table class="table table-md-6">
                     <tr>
                         <th>Thumnail</th>
                         <th>Name</th>
@@ -407,7 +426,7 @@
                     </tr>
                     @foreach($location_carousel as $index => $data)
                     <tr>
-                        <td class="w-auto ratio ratio-1x1">
+                        <td class="w-50 ratio ratio-1x1">
                         @if($data['type'] == 'video')
 
                             <video id="video1" class="d-block w-100 csabout" controls autoplay muted> 
@@ -435,7 +454,7 @@
             </div>
         </div>
     </div>
-    <div class="col-md-12">
+    <div class="col-md-6">
     <div class="card m-2">
             <div class="card-body">
                 <h5  class="card-title">
@@ -452,7 +471,7 @@
                     </div>
                     <input type="hidden" name="media_type_of" value="client">
                 </form>
-                <table class="table">
+                <table class="table table-md-6">
                     <tr>
                         <th>Thumnail</th>
                         <th>Name</th>
@@ -460,7 +479,7 @@
                     </tr>
                     @foreach($client_carousel as $index => $data)
                     <tr>
-                        <td class="w-auto ratio ratio-1x1">
+                        <td class="w-25">
                         @if($data['type'] == 'video')
 
                             <video id="video1" class="d-block w-100 csabout" controls autoplay muted> 
@@ -541,7 +560,7 @@
             </div>
         </div>
     </div>
-    <div class="col-md-12">
+    <div class="col-md-6">
     <div class="card m-2">
             <div class="card-body">
                 <h5  class="card-title">
@@ -566,7 +585,7 @@
                     </div>
                     <input type="hidden" name="media_type_of" value="icon_link_section_1">
                 </form>
-                <table class="table">
+                <table class="table table-md-6">
                     <tr>
                         <th>Icon</th>
                         <th>Name</th>
@@ -576,7 +595,7 @@
                     </tr>
                     @foreach($link_web_section_1 as $data)
                     <tr>
-                        <td class="w-auto ratio ratio-1x1">
+                        <td class="w-25">
                         
                         
                             
@@ -585,7 +604,7 @@
                            
                         </td>
                         <td>{{$data['name']}}</td>
-                        <td>{{$data['link']}}</td>
+                        <td><a href="{{$data['link']}}">Link {{$data['name']}}</a></td>
                         <td>
                             @php
                             $id = $data['id'];
@@ -598,7 +617,7 @@
             </div>
         </div>
     </div>
-    <div class="col-md-12">
+    <div class="col-md-6">
     <div class="card m-2">
             <div class="card-body">
                 <h5  class="card-title">
@@ -623,7 +642,7 @@
                     </div>
                     <input type="hidden" name="media_type_of" value="icon_link_section_2">
                 </form>
-                <table class="table">
+                <table class="table table-md-6">
                     <tr>
                         <th>Icon</th>
                         <th>Name</th>
@@ -633,7 +652,7 @@
                     </tr>
                     @foreach($link_web_section_2 as $data)
                     <tr>
-                        <td class="w-auto ratio ratio-1x1">
+                        <td class="w-25">
                         
                         
                             
@@ -642,7 +661,7 @@
                            
                         </td>
                         <td>{{$data['name']}}</td>
-                        <td>{{$data['link']}}</td>
+                        <td><a href="{{$data['link']}}">Link {{$data['name']}}</a></td>
                         <td>
                             @php
                             $id = $data['id'];

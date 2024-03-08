@@ -60,7 +60,7 @@
               @method('POST')
               @csrf
               <input type="hidden" name="idForm2" value="{{$kode}}" />
-            <div class="form__cc">
+              <div class="form__cc">
                 <div class="row">
                   <div class="field">
                     <div class="title">Design jersey pemain*</div>
@@ -72,7 +72,7 @@
                         <!-- <div class="img-upload" id="cutomerDesign1">
                           <img src="{{ asset('asset/images/content/customerDesign.png') }}" alt="">
                         </div> -->
-                        <div class="title" id="statusUpload1">*</div>
+                        <div class="title" id="statusUpload1"></div>
                         <div class="form-upload payment__type--cc">
                           <i class="icon icon-cloud-upload"></i>Upload
                           <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput1" name="djp" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" onchange="updateFileName('fileInput1', 'statusUpload1')">
@@ -95,7 +95,7 @@
                         <!-- <div class="img-upload" id="cutomerDesign">
                           <img src="{{ asset('asset/images/content/customerDesign.png') }}" alt="">
                         </div> -->
-                        <div class="title" id="statusUpload2">*</div>
+                        <div class="title" id="statusUpload2"></div>
                         <div class="form-upload payment__type--cc">
                           <i class="icon icon-cloud-upload"></i>Upload
                           <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileInput2" name="djk" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" onchange="updateFileName('fileInput2', 'statusUpload2')">
@@ -115,7 +115,7 @@
                           @if(isset($data->logo_tim))
                           <img src="{{asset('uploads'.'/'.$data->logo_tim)}}" alt="" class="w-75">
                           @endif
-                        <div class="title" id="statusUpload3">*</div>
+                        <div class="title" id="statusUpload3"></div>
                           <div class="form-upload payment__type--cc">
                             <i class="icon icon-cloud-upload"></i>Upload
                           </div>
@@ -135,7 +135,7 @@
                         @if(isset($data->sponsor_dada_tulisan1baris))
                         <img src="{{asset('uploads'.'/'.$data->sponsor_dada_tulisan1baris)}}" class="w-75" alt="">
                         @endif
-                        <div class="title" id="statusUpload4">*</div>
+                        <div class="title" id="statusUpload4"></div>
                         <div class="form-upload payment__type--cc">
                           <i class="icon icon-cloud-upload"></i>Upload
                         </div>
@@ -158,7 +158,7 @@
 
                         <img src="{{asset('uploads'.'/'.$data->sponsor_dada_logodantulisan)}}" class="w-75" alt="">
                         @endif
-                        <div class="title" id="statusUpload5">*</div>
+                        <div class="title" id="statusUpload5"></div>
                         <div class="form-upload payment__type--cc">
                           <i class="icon icon-cloud-upload"></i>Upload
                         </div>
@@ -171,12 +171,11 @@
                   <!-- <input type="text" class="input txt text-validated" value='Upload' /> -->
                   </div>
                 </div>
-                <!-- <button type="submit" class="btn action__submit">Save
-                  <i class="icon icon-arrow-right-circle"></i>
-                </button> -->
+                
               </div>
             </div>
-            <div class="payment__order2">
+
+            <div class="payment__cc">
               <div class="payment__title fw-6">
                 <i class="icon icon-plus"></i> Extra
               </div>
@@ -191,7 +190,7 @@
 
                         <img src="{{asset('uploads'.'/'.$data->logo_dilengan_kanan)}}" class="w-75" alt="">
                         @endif
-                        <div class="title" id="statusUpload6">*</div>
+                        <div class="title" id="statusUpload6"></div>
                         <div class="form-upload payment__type--cc">
                           <i class="icon icon-cloud-upload"></i>Upload
                         </div>
@@ -212,7 +211,7 @@
                               
                         <img src="{{asset('uploads'.'/'.$data->logo_dilengan_kiri)}}" class="w-75" alt="">
                         @endif
-                        <div class="title" id="statusUpload7">*</div>
+                        <div class="title" id="statusUpload7"></div>
                         <div class="form-upload payment__type--cc">
                           <i class="icon icon-cloud-upload"></i>Upload
                         </div>
@@ -233,7 +232,7 @@
   
                         <img src="{{asset('uploads'.'/'.$data->logo_dilengan_kanan)}}" class="w-75" alt="">
                         @endif
-                        <div class="title" id="statusUpload8">*</div>
+                        <div class="title" id="statusUpload8"></div>
                         <div class="form-upload payment__type--cc">
                           <i class="icon icon-cloud-upload"></i>Upload
                         </div>
@@ -255,7 +254,7 @@
                           @if(isset($data->logo_dilengan_kiri))
                           <img src="{{asset('uploads'.'/'.$data->logo_dilengan_kiri)}}" class="w-75" alt="">
                           @endif
-                          <div class="title" id="statusUpload9">*</div>
+                          <div class="title" id="statusUpload9"></div>
                           <div class="form-upload payment__type--cc">
                             <i class="icon icon-cloud-upload"></i>Upload
                           </div>
@@ -278,7 +277,7 @@
   
                         <img src="{{asset('uploads'.'/'.$data->sponsor_belakang_tulisan1baris)}}" class="w-75" alt="">
                         @endif
-                        <div class="title" id="statusUpload10">*</div>
+                        <div class="title" id="statusUpload10"></div>
                         <div class="form-upload payment__type--cc">
                           <i class="icon icon-cloud-upload"></i>Upload
                         </div>
@@ -301,7 +300,7 @@
   
                           <img src="{{asset('uploads'.'/'.$data->sponsor_belakang_logodantulisan)}}" class="w-75" alt="">
                           @endif
-                          <div class="title" id="statusUpload11">*</div>
+                          <div class="title" id="statusUpload11"></div>
                           <div class="form-upload payment__type--cc">
                             <i class="icon icon-cloud-upload"></i>Upload
                           </div>
@@ -315,19 +314,13 @@
                   </div>
                 </div>
               </div>
-            <!-- <div class="details__user">
-              <div class="user__name">John Doe
-                <br> 13/03/1980</div>
-              <div class="user__address">Shipping Address: 22 Street, Address
-                <br>Country</div>
-            </div> -->
 
           </div>
         </div>
       </div>
     </div>
     <div class="container">
-      <div class="actions pt250 align-items-start">
+      <div class="actions align-items-center">
         <button type="submit" class="btn action__submit">Save & Next
           <i class="icon icon-arrow-right-circle"></i>
         </button>

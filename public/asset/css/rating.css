@@ -1,0 +1,157 @@
+body{
+    font-family: "Montserrat", sans-serif;
+    line-height: 1.4;
+}
+
+/* multiple select */
+select[multiple] {
+appearance: none;
+-webkit-appearance: none;
+-moz-appearance: none;
+background-color: transparent;
+border: none;
+padding: 0;
+margin: 0;
+overflow: hidden;
+height: 200px;
+width: 100%;
+}
+
+select[multiple] option {
+padding: 10px;
+background-color: #fff;
+border-bottom: 1px solid #ddd;
+cursor: pointer;
+}
+
+select[multiple] option:hover {
+background-color: #f0f0f0;
+}
+
+select[multiple] option:checked {
+background-color: #e0e0e0;
+}
+.form-select#alasan{
+    height: 250px;
+    padding-left: 1rem;
+}
+
+/* form */
+.form-group{
+    padding-top:1rem;
+}
+.form-check-input:checked {
+    background-color: #000;
+    border-color: #000;
+}
+.form-control:focus, .form-check-input:focus, .form-select:focus{
+    border-color: #57595c;
+    box-shadow: 0 0 0 0.25rem rgb(36 45 59 / 25%);
+}
+.logo img{
+    width:12%;
+}
+@media only screen and (max-width: 600px) {
+    .row{
+        display:block;
+    }
+    .form-check-inline{
+        margin-right:0.75rem;
+    }
+    select[multiple] option {
+        font-size:10px;
+        padding: 8px;
+    }
+    .form-select#alasan{
+        height: 175px;
+        padding-left: 0.5rem;
+    }
+    .logo img{
+        width:25%
+    }
+
+}
+
+/* rating star */
+:root{
+    --primary-colour: #fff;
+    --secondary-colour: #7d7b7b;
+
+    --star-colour: hsl(38 90% 55%);
+}
+
+.container_rate{
+  position: relative;
+  top: 1.5rem;
+  left: 10rem;
+  
+  width: 35%;
+  height: 20%;
+  
+  transform: translate(-50%, -50%) rotateY(180deg);
+}
+
+.container .container__items{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    gap: 0 .5em;
+    
+    width: 100%;
+    height: 100%;
+  }
+  
+  .container .container__items input{
+    display: none;
+  }
+  
+  .container .container__items label{
+    width: 20%;
+    aspect-ratio: 1;
+    cursor: pointer;
+  }
+  
+  .container .container__items label .star-stroke{
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    background: var(--secondary-colour);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  }
+  
+  .container .container__items label .star-stroke .star-fill{
+    width: 70%;
+    aspect-ratio: 1;
+    background: var(--primary-colour);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  }
+  
+  .container .container__items input:hover ~ label .star-stroke,.container .container__items input:checked ~ label .star-stroke{
+    background: var(--star-colour);
+  }
+  
+  .container .container__items input:checked ~ label .star-stroke .star-fill{
+    background: var(--star-colour);
+  }
+  
+  .container .container__items label:hover .label-description::after{
+    content: attr(data-content);
+    position: fixed;
+    top: 1px;
+    right: 11rem;
+    
+    margin-top: 0.3em;
+    margin-inline: auto;
+    
+    width: 100%;
+    height: 2em;
+    
+    color: #000;
+    
+    text-align: center;
+    font-size: 1rem;
+    
+    transform: rotateY(180deg);
+  }

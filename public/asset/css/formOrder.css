@@ -1317,10 +1317,19 @@ input[type=text] {
 textarea {
   height: 10rem!important;
 }
+.action-btn-sm{
+  display: none;
+}
 
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
 @media only screen and (max-width: 600px) {
+  .action-btn-sm{
+    display: block;
+  }
+  .action-btn-lg{
+    display: none;
+  }
   .img-upload{
     width: auto;
     height: 8rem;

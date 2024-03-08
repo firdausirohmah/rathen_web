@@ -3,14 +3,16 @@
 <div class="container">
   <div class="row mt-4">
     <div class="col-lg-12">
-      <div class="mb-3 d-flex">
-        <label for="startDatePicker" class="me-3 form-label">Start Date:</label>
-        <input type="date" id="startDatePicker" class="form-control-sm">
+      <div class="mb-3">
+        <div class="d-flex">
+          <label for="startDatePicker" class="me-1 form-label">Start Date:</label>
+          <input type="date" id="startDatePicker" class="form-control-sm">
 
-        <label for="endDatePicker" class="me-3 ms-4 form-label">End Date:</label>
-        <input type="date" id="endDatePicker" class="form-control-sm">
+          <label for="endDatePicker" class="me-1 ms-2 form-label">End Date:</label>
+          <input type="date" id="endDatePicker" class="form-control-sm">
+        </div>
 
-        <button class="ms-4 btn-sm btn-primary" onclick="updateChart()">Update Chart</button>
+        <button class="btn-sm btn-primary mt-2" onclick="updateChart()">Update Chart</button>
 
       </div>
     </div>
@@ -198,7 +200,7 @@
       datasets: [
         @foreach ($uniqueCustomers as $customer)
           {
-            label: "{{ $customer['nama_pemesanan'] }}",
+            label: "{{ $customer['nama_tim'] }}",
             tension: 0.4,
             borderWidth: 3,
             pointRadius: 0,
@@ -208,8 +210,8 @@
             data: [
               @foreach ($data as $item)
                 @php
-                  $itemNamaTim = strtolower(str_replace(' ', '', $item->nama_pemesanan));
-                  $customerNamaTim = strtolower(str_replace(' ', '', $customer['nama_pemesanan']));
+                  $itemNamaTim = strtolower(str_replace(' ', '', $item->nama_tim));
+                  $customerNamaTim = strtolower(str_replace(' ', '', $customer['nama_tim']));
                 @endphp
                 @if ($itemNamaTim === $customerNamaTim)
                   {{ $item->jumlah_pemesanan.',' }}
@@ -311,7 +313,7 @@
       datasets: [
         @foreach ($uniqueCustomers as $customer)
           {
-            label: "{{ $customer['nama_pemesanan'] }}",
+            label: "{{ $customer['nama_tim'] }}",
             tension: 0.4,
             borderWidth: 3,
             pointRadius: 0,
@@ -321,8 +323,8 @@
             data: [
               @foreach ($data as $item)
                 @php
-                  $itemNamaTim = strtolower(str_replace(' ', '', $item->nama_pemesanan));
-                  $customerNamaTim = strtolower(str_replace(' ', '', $customer['nama_pemesanan']));
+                  $itemNamaTim = strtolower(str_replace(' ', '', $item->nama_tim));
+                  $customerNamaTim = strtolower(str_replace(' ', '', $customer['nama_tim']));
                 @endphp
                 @if ($itemNamaTim === $customerNamaTim)
                   {{ $item->harga.',' }}

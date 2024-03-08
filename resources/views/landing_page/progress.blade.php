@@ -93,11 +93,24 @@
                     }
                     @endphp
                     @foreach($data as $row)
+                    
+                    @php
+                      $displayNames = [
+                          'final_concept' => 'Konsep Akhir',
+                          'order_quantity' => 'Jumlah Pesanan',
+                          'production_data' => 'Data Produksi',
+                          'logo' => 'Jenis Logo',
+                          'polifek_quality' => 'Kualitas Polifek',
+                          'stitching_neatness' => 'Kerapihan Jahitan',
+                          'packaging' => 'Packaging',
+                          'delivery' => 'Pengiriman'
+                      ];
+                    @endphp
 
-                    @if(in_array($row[0], ['final_concept', 'production_data', 'order_quantity', 'logo', 'polifek_quality', 'delivery', 'packaging', 'stitching_neatness']))
+                    @if(in_array($row[0], array_keys($displayNames)))
                     <tr>
                       <td>{{ $i++ }}</td>
-                      <td>{{$row[0]}}</td>
+                      <td>{{$displayNames[$row[0]]}}</td>
                       <td class="text-center">
                         @if($row[1] != null)
                         <img src="{{asset('uploads/'.$row[1])}}" class="h-50 w-50" alt="">
@@ -193,6 +206,11 @@
 
                 .container {
                   width: 100rem;
+                }
+                @media only screen and (max-width: 600px){
+                  .container {
+                      width: 330px;
+                  }
                 }
               </style>
               

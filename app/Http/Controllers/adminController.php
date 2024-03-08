@@ -45,10 +45,10 @@ class adminController extends Controller
         $data = DB::table('tbl_step1')->orderBy('created_at', 'asc')->take(30)->get();
 
         $uniqueCustomers = $data->groupBy(function ($item) {
-            return strtolower(str_replace(' ', '', $item->nama_pemesanan));
+            return strtolower(str_replace(' ', '', $item->nama_tim));
         })->map(function ($group) {
             return [
-                'nama_pemesanan' => $group->first()->nama_pemesanan,
+                'nama_tim' => $group->first()->nama_tim,
                 // 'total_orders' => $group->sum('harga'),
             ];
         })->values();

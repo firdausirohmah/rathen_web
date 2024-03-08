@@ -85,7 +85,46 @@
               </div>
             </form>
           </div>
-          <div class="payment__shipping w-215-tab">
+
+          <details class="action-btn-sm">
+            <summary><strong>Action Button</strong></summary>
+            <div class="content">
+              <div class="payment__shipping w-215-tab">
+                <div class="row">
+                  <div class="field pt-5">
+                    <div class="form-uploads h-3 w-20">
+                      <div class="form-upload payment__type--cc btn-black" id="importDatabtn">
+
+                        <i class="icon icon-cloud-upload"></i>Upload File
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="field pt-5">
+                    <div class="form-uploads h-3 w-20">
+                      <div class="form-upload payment__type--cc btn-black" id="inputDataBtn">
+                        <i class="icon icon-pencil"></i>Input Data
+                      </div>
+                    </div>
+                    <!-- <input type="text" class="input txt text-validated" value='Upload' /> -->
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="field pt-5">
+                    <div class="form-uploads h-3 w-20">
+                      <a href="{{ asset('import/format-pemain.xlsx') }}" class="form-upload payment__type--cc btn-black">
+                        <i class="icon icon-cloud-download"></i>Format Ukuran</a>
+                    </div>
+                    <!-- <input type="text" class="input txt text-validated" value='Upload' /> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </details>
+
+          <div class="payment__shipping w-215-tab action-btn-lg">
             <div class="row">
               <div class="field pt-5">
                 <div class="payment__title"></div>

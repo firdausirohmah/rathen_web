@@ -8,93 +8,12 @@
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
-    <style>
-        body{
-            font-family: "Montserrat", sans-serif;
-            line-height: 1.4;
-        }
-
-        /* multiple select */
-        select[multiple] {
-        appearance: none;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        background-color: transparent;
-        border: none;
-        padding: 0;
-        margin: 0;
-        overflow: hidden;
-        height: 200px;
-        width: 100%;
-        }
-
-        select[multiple] option {
-        padding: 10px;
-        background-color: #fff;
-        border-bottom: 1px solid #ddd;
-        cursor: pointer;
-        }
-
-        select[multiple] option:hover {
-        background-color: #f0f0f0;
-        }
-
-        select[multiple] option:checked {
-        background-color: #e0e0e0;
-        }
-        .form-select#alasan{
-            height: 250px;
-            padding-left: 1rem;
-        }
-
-        /* form */
-        .form-group{
-            padding-top:1rem;
-        }
-        .form-check-input:checked {
-            background-color: #000;
-            border-color: #000;
-        }
-        .form-control:focus, .form-check-input:focus, .form-select:focus{
-            border-color: #57595c;
-            box-shadow: 0 0 0 0.25rem rgb(36 45 59 / 25%);
-        }
-        .logo img{
-            width:12%;
-        }
-        @media only screen and (max-width: 600px) {
-            .row{
-                display:block;
-            }
-            .form-check-inline{
-                margin-right:0.75rem;
-            }
-            select[multiple] option {
-                font-size:10px;
-                padding: 8px;
-            }
-            .form-select#alasan{
-                height: 175px;
-                padding-left: 0.5rem;
-            }
-            .logo img{
-                width:25%
-            }
-
-        }
-    </style>
-    <!-- <link rel="stylesheet" href="{{ asset('asset/css/formOrder.css') }}"> -->
+    <link rel="stylesheet" href="{{ asset('asset/css/rating.css') }}">
+    
   </head>
   <body>
 
-  <!-- @foreach($data as $d)
-  <img src="{{asset('uploads/'.$d->media->filename)}}" alt="">
-  nama: {{$d->name}} <br> 
-  nama tim: {{$d->team_name}} <br> 
-  pesan: {{$d->pesan}} <br> 
-  rating: {{$d->rating}} <br> 
 
-  @endforeach -->
     <header class="bg-black">
         <div class="container text-center">
             <div class="navigation center-content">
@@ -113,7 +32,7 @@
     </a>
 
     <div class="container pt-3 ps-5">
-        <h5 class="fw-semibold">Note of Value</h5>
+        <h5 class="fw-semibold">Note of Stars</h5>
         <div class="row">
             <div class="col-sm">1 = Sangat Tidak Puas</div>
             <div class="col-sm">2 = Tidak Puas</div>
@@ -143,7 +62,47 @@
                     </div>
                     <div class="form-group">
                         <label for="kesesuaian">1. Bagaimana kesesuain desain dengan hasil produksi</label>
-                        <div class="form-check">
+                        <div class="container_rate">
+                            <div class="container__items">
+                                <input type="radio" name="kesesuaian" id="st5" value="5" class="form-check-input">
+                                <label for="st5">
+                                <div class="star-stroke">
+                                    <div class="star-fill"></div>
+                                </div>
+                                <div class="label-description" data-content="Excellent"></div>
+                                </label>
+                                <input type="radio" name="kesesuaian" id="st4" value="4" class="form-check-input">
+                                <label for="st4">
+                                <div class="star-stroke">
+                                    <div class="star-fill"></div>
+                                </div>
+                                <div class="label-description" data-content="Good"></div>
+                                </label>
+                                <input type="radio" name="kesesuaian" id="st3" value="3" class="form-check-input">
+                                <label for="st3">
+                                <div class="star-stroke">
+                                    <div class="star-fill"></div>
+                                </div>
+                                <div class="label-description" data-content="OK"></div>
+                                </label>
+                                <input type="radio" name="kesesuaian" id="st2" value="2" class="form-check-input">
+                                <label for="st2">
+                                <div class="star-stroke">
+                                    <div class="star-fill"></div>
+                                </div>
+                                <div class="label-description" data-content="Bad"></div>
+                                </label>
+                                <input type="radio" name="kesesuaian" id="st1" value="1" class="form-check-input">
+                                <label for="st1">
+                                <div class="star-stroke">
+                                    <div class="star-fill"></div>
+                                </div>
+                                <div class="label-description" data-content="Terrible"></div>
+                                </label>
+                            </div>
+                        </div>
+
+                        {{--<div class="form-check">
                             <div class="form-check form-check-inline">
                                 <input type="radio" name="kesesuaian" id="kesesuaian" value="1" class="form-check-input">1
                             </div>
@@ -159,12 +118,52 @@
                             <div class="form-check form-check-inline">
                                 <input type="radio" name="kesesuaian" id="kesesuaian" value="5" class="form-check-input">5
                             </div>
-                        </div>
+                        </div>--}}
                     </div>
 
                     <div class="form-group">
                         <label for="kualitas">2. Bagaimana kualitas produk yang diterima</label>
-                        <div class="form-check">
+                        <div class="container_rate">
+                            <div class="container__items">
+                                <input type="radio" name="kualitas" id="kualitas5" value="5" class="form-check-input">
+                                <label for="kualitas5">
+                                <div class="star-stroke">
+                                    <div class="star-fill"></div>
+                                </div>
+                                <div class="label-description" data-content="Excellent"></div>
+                                </label>
+                                <input type="radio" name="kualitas" id="kualitas4" value="4" class="form-check-input">
+                                <label for="kualitas4">
+                                <div class="star-stroke">
+                                    <div class="star-fill"></div>
+                                </div>
+                                <div class="label-description" data-content="Good"></div>
+                                </label>
+                                <input type="radio" name="kualitas" id="kualitas3" value="3" class="form-check-input">
+                                <label for="kualitas3">
+                                <div class="star-stroke">
+                                    <div class="star-fill"></div>
+                                </div>
+                                <div class="label-description" data-content="OK"></div>
+                                </label>
+                                <input type="radio" name="kualitas" id="kualitas2" value="2" class="form-check-input">
+                                <label for="kualitas2">
+                                <div class="star-stroke">
+                                    <div class="star-fill"></div>
+                                </div>
+                                <div class="label-description" data-content="Bad"></div>
+                                </label>
+                                <input type="radio" name="kualitas" id="kualitas1" value="1" class="form-check-input">
+                                <label for="kualitas1">
+                                <div class="star-stroke">
+                                    <div class="star-fill"></div>
+                                </div>
+                                <div class="label-description" data-content="Terrible"></div>
+                                </label>
+                            </div>
+                        </div>
+
+                        {{--<div class="form-check">
                             <div class="form-check form-check-inline">
                                 <input type="radio" name="kualitas" id="kualitas" value="1" class="form-check-input">1
                             </div>
@@ -180,11 +179,51 @@
                             <div class="form-check form-check-inline">
                                 <input type="radio" name="kualitas" id="kualitas" value="5" class="form-check-input">5
                             </div>
-                        </div>
+                        </div>--}}
                     </div>
                     <div class="form-group">
                         <label for="fitur">3. Bagaimana dengan fitur yang ditawarkan</label>
-                        <div class="form-check">
+                        <div class="container_rate">
+                            <div class="container__items">
+                                <input type="radio" name="fitur" id="fitur5" value="5" class="form-check-input">
+                                <label for="fitur5">
+                                <div class="star-stroke">
+                                    <div class="star-fill"></div>
+                                </div>
+                                <div class="label-description" data-content="Excellent"></div>
+                                </label>
+                                <input type="radio" name="fitur" id="fitur4" value="4" class="form-check-input">
+                                <label for="fitur4">
+                                <div class="star-stroke">
+                                    <div class="star-fill"></div>
+                                </div>
+                                <div class="label-description" data-content="Good"></div>
+                                </label>
+                                <input type="radio" name="fitur" id="fitur3" value="3" class="form-check-input">
+                                <label for="fitur3">
+                                <div class="star-stroke">
+                                    <div class="star-fill"></div>
+                                </div>
+                                <div class="label-description" data-content="OK"></div>
+                                </label>
+                                <input type="radio" name="fitur" id="fitur2" value="2" class="form-check-input">
+                                <label for="fitur2">
+                                <div class="star-stroke">
+                                    <div class="star-fill"></div>
+                                </div>
+                                <div class="label-description" data-content="Bad"></div>
+                                </label>
+                                <input type="radio" name="fitur" id="fitur1" value="1" class="form-check-input">
+                                <label for="fitur1">
+                                <div class="star-stroke">
+                                    <div class="star-fill"></div>
+                                </div>
+                                <div class="label-description" data-content="Terrible"></div>
+                                </label>
+                            </div>
+                        </div>
+
+                        {{--<div class="form-check">
                             <div class="form-check form-check-inline">
                                 <input type="radio" name="fitur" id="fitur" value="1" class="form-check-input">1
                             </div>
@@ -200,11 +239,51 @@
                             <div class="form-check form-check-inline">
                                 <input type="radio" name="fitur" id="fitur" value="5" class="form-check-input">5
                             </div>
-                        </div>
+                        </div>--}}
                     </div>
                     <div class="form-group">
                         <label for="waktu_produksi">4. Bagaimana priode waktu produksi</label>
-                        <div class="form-check">
+                        <div class="container_rate">
+                            <div class="container__items">
+                                <input type="radio" name="waktu_produksi" id="waktu_produksi5" value="5" class="form-check-input">
+                                <label for="waktu_produksi5">
+                                <div class="star-stroke">
+                                    <div class="star-fill"></div>
+                                </div>
+                                <div class="label-description" data-content="Excellent"></div>
+                                </label>
+                                <input type="radio" name="waktu_produksi" id="waktu_produksi4" value="4" class="form-check-input">
+                                <label for="waktu_produksi4">
+                                <div class="star-stroke">
+                                    <div class="star-fill"></div>
+                                </div>
+                                <div class="label-description" data-content="Good"></div>
+                                </label>
+                                <input type="radio" name="waktu_produksi" id="waktu_produksi3" value="3" class="form-check-input">
+                                <label for="waktu_produksi3">
+                                <div class="star-stroke">
+                                    <div class="star-fill"></div>
+                                </div>
+                                <div class="label-description" data-content="OK"></div>
+                                </label>
+                                <input type="radio" name="waktu_produksi" id="waktu_produksi2" value="2" class="form-check-input">
+                                <label for="waktu_produksi2">
+                                <div class="star-stroke">
+                                    <div class="star-fill"></div>
+                                </div>
+                                <div class="label-description" data-content="Bad"></div>
+                                </label>
+                                <input type="radio" name="waktu_produksi" id="waktu_produksi1" value="1" class="form-check-input">
+                                <label for="waktu_produksi1">
+                                <div class="star-stroke">
+                                    <div class="star-fill"></div>
+                                </div>
+                                <div class="label-description" data-content="Terrible"></div>
+                                </label>
+                            </div>
+                        </div>
+
+                        {{--<div class="form-check">
                             <div class="form-check form-check-inline">
                                 <input type="radio" name="waktu_produksi" id="waktu_produksi" value="1" class="form-check-input">1
                             </div>
@@ -220,11 +299,51 @@
                             <div class="form-check form-check-inline">
                                 <input type="radio" name="waktu_produksi" id="waktu_produksi" value="5" class="form-check-input">5
                             </div>
-                        </div>
+                        </div>--}}
                     </div>
                     <div class="form-group">
                         <label for="pelayanan">5. Bagaimaan pelayanan dan komunikasi dengan admin</label>
-                        <div class="form-check">
+                        <div class="container_rate">
+                            <div class="container__items">
+                                <input type="radio" name="pelayanan" id="pelayanan5" value="5" class="form-check-input">
+                                <label for="pelayanan5">
+                                <div class="star-stroke">
+                                    <div class="star-fill"></div>
+                                </div>
+                                <div class="label-description" data-content="Excellent"></div>
+                                </label>
+                                <input type="radio" name="pelayanan" id="pelayanan4" value="4" class="form-check-input">
+                                <label for="pelayanan4">
+                                <div class="star-stroke">
+                                    <div class="star-fill"></div>
+                                </div>
+                                <div class="label-description" data-content="Good"></div>
+                                </label>
+                                <input type="radio" name="pelayanan" id="pelayanan3" value="3" class="form-check-input">
+                                <label for="pelayanan3">
+                                <div class="star-stroke">
+                                    <div class="star-fill"></div>
+                                </div>
+                                <div class="label-description" data-content="OK"></div>
+                                </label>
+                                <input type="radio" name="pelayanan" id="pelayanan2" value="2" class="form-check-input">
+                                <label for="pelayanan2">
+                                <div class="star-stroke">
+                                    <div class="star-fill"></div>
+                                </div>
+                                <div class="label-description" data-content="Bad"></div>
+                                </label>
+                                <input type="radio" name="pelayanan" id="pelayanan1" value="1" class="form-check-input">
+                                <label for="pelayanan1">
+                                <div class="star-stroke">
+                                    <div class="star-fill"></div>
+                                </div>
+                                <div class="label-description" data-content="Terrible"></div>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        {{--<div class="form-check">
                             <div class="form-check form-check-inline">
                                 <input type="radio" name="pelayanan" id="pelayanan" value="1" class="form-check-input">1
                             </div>
@@ -240,7 +359,7 @@
                             <div class="form-check form-check-inline">
                                 <input type="radio" name="pelayanan" id="pelayanan" value="5" class="form-check-input">5
                             </div>
-                        </div>
+                        </div>--}}
                     </div>
                 </div>
                 

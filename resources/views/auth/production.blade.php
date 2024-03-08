@@ -98,14 +98,14 @@
                   @endphp
 
                   <td class="align-middle text-center text-sm">
-                    <div class="progress" style ="height:25px">
-                      <div class="progress-bar" role="progressbar" style="width: {{$progress}}%; height:30px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                          @php
-                            $progress_bulat = round($progress);
-                          @endphp
-                          {{$progress_bulat}}%
-                      </div>
-                    </div>
+                    @php
+                        $progress_bulat = round($progress);
+                        if ($progress_bulat >= 0 && $progress_bulat < 100) {
+                            echo '<span class="badge bg-warning">in progress</span>';
+                        } elseif ($progress_bulat >= 100) {
+                            echo '<span class="badge bg-success">done</span>';
+                        }
+                    @endphp
                   </td>
                   <td class="align-middle text-sm">
                     <div class="d-flex">
@@ -401,7 +401,16 @@
                     {{ $item->domisili }}
                   </td>
                   <td class="text-center">
-                    {{ date("d-m-Y", strtotime($item->created_at))}}
+                    @php
+                    $utcTimestamp = $item->created_at;
+
+                    $dateUtc = new DateTime($utcTimestamp, new DateTimeZone('UTC'));
+
+                    $dateUtc->setTimezone(new DateTimeZone('Asia/Jakarta'));
+
+                    $jakartaTime = $dateUtc->format('Y-m-d / H:i');
+                    @endphp
+                    {{ $jakartaTime}}
                   </td>
                   <td class="text-center">
                     <div class="d-flex">

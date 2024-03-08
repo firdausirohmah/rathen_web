@@ -146,8 +146,17 @@
                     @endphp
                     <a href="{{ $baseUrl }}/{{ $link_kode }}" target="_blank">{{ $baseUrl }}/{{ $link_kode }}</a>
                   </td>
-                  <td class="align-middle text-center text-sm"> {{date("d-m-Y", strtotime($item->created_at))}}
-                    {{-- <span class="badge badge-sm bg-gradient-warning">{{ $item->status }}</span> --}}
+                  <td class="align-middle text-center text-sm">
+                    @php
+                    $utcTimestamp = $item->created_at;
+
+                    $dateUtc = new DateTime($utcTimestamp, new DateTimeZone('UTC'));
+
+                    $dateUtc->setTimezone(new DateTimeZone('Asia/Jakarta'));
+
+                    $jakartaTime = $dateUtc->format('Y-m-d / H:i');
+                    @endphp
+                    {{ $jakartaTime}}                    
                   </td>
                   <td class="align-middle text-center text-sm">
                     <div class="d-flex">
@@ -290,7 +299,16 @@
                     {{ $item->alamat }}
                   </td>
                   <td class="text-center">
-                    {{ date("d-m-Y", strtotime($item->created_at))}}
+                    @php
+                    $utcTimestamp = $item->created_at;
+
+                    $dateUtc = new DateTime($utcTimestamp, new DateTimeZone('UTC'));
+
+                    $dateUtc->setTimezone(new DateTimeZone('Asia/Jakarta'));
+
+                    $jakartaTime = $dateUtc->format('Y-m-d / H:i');
+                    @endphp
+                    {{ $jakartaTime}}
                   </td>
                   <td class="text-center">
                     <div class="d-flex">

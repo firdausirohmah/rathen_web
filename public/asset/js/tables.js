@@ -35,6 +35,25 @@ $(document).ready(function() {
             'pdfHtml5'
         ]
     } );
+    $('#view-targetfinance').DataTable( {
+        dom: '<"top"Bfi>rt<"bottom"lp>',
+        buttons: [
+            'copyHtml5',
+            'excelHtml5',
+            'csvHtml5',
+            'pdfHtml5'
+        ]
+    } );
+    $('#view-rating').DataTable( {
+        dom: '<"top"Bfi>rt<"bottom"lp>',
+        buttons: [
+            'copyHtml5',
+            'excelHtml5',
+            'csvHtml5',
+            'pdfHtml5'
+        ],
+        order: [[11, 'desc']]
+    } );
 } );
 var id_invoice = 1;
 
@@ -58,7 +77,7 @@ $(document).ready(function() {
             'csvHtml5',
             'pdfHtml5'
         ],
-        order: [[0, 'desc']]
+        order: [[0, 'asc']]
     } );
     $('#view-progress').DataTable( {
         dom: '<"top"Bfi>rt<"bottom"lp>',
@@ -68,7 +87,7 @@ $(document).ready(function() {
             'csvHtml5',
             'pdfHtml5'
         ],
-        order: [[0, 'desc']]
+        order: [[0, 'asc']]
     } );
     
 } );

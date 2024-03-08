@@ -366,7 +366,7 @@
                 <div class="col">
                     <div class="form-group">
                         <label for="alasan">6. Sebutkan 3 alasan utama Anda membuat jersey di rathen</label>
-                        <p class="multiple-note">select in the box below</p>
+                        <p class="multiple-note">*Select option below</p>
                         <select class="form-select" aria-label="multiple select example" name="alasan[] " id="alasan" multiple>
                             <option value="Kualitas produk bagus">Kualitas Produk Bagus</option>
                             <option value="Design-design yang keren">Design-design yang keren</option>
@@ -405,22 +405,25 @@
         var selectElement = document.getElementById('alasan');
         var options = selectElement.options;
 
-        if (window.innerWidth > 768) {
-            selectElement.addEventListener('mousedown', function (event) {
-                event.preventDefault(); // Prevent default behavior (e.g., closing dropdown)
-                var option = event.target;
+        function handleSelection(event) {
+            event.preventDefault(); // Prevent default behavior (e.g., closing dropdown)
+            var option = event.target;
 
-                var selectedOptions = Array.from(options).filter(option => option.selected);
-                if (selectedOptions.length < 3 || option.selected) {
-                    if (!option.selected) {
-                        option.selected = true; // Toggle selection
-                        option.classList.add('active'); // Add active class
-                    } else {
-                        option.selected = false; // Toggle selection
-                        option.classList.remove('active'); // Remove active class
-                    }
+            var selectedOptions = Array.from(options).filter(option => option.selected);
+
+            if (selectedOptions.length < 3 || option.selected) {
+                if (!option.selected) {
+                    option.selected = true; // Toggle selection
+                    option.classList.add('active'); // Add active class
+                } else {
+                    option.selected = false; // Toggle selection
+                    option.classList.remove('active'); // Remove active class
                 }
-            });
+            }
+        }
+
+        if (window.innerWidth > 768) {
+            selectElement.addEventListener('mousedown', handleSelection);
 
             // Add event listener to clear selection on mouseup
             document.addEventListener('mouseup', function () {

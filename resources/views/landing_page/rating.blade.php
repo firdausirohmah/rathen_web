@@ -404,33 +404,35 @@
         var selectElement = document.getElementById('alasan');
         var options = selectElement.options;
 
-        selectElement.addEventListener('mousedown', function (event) {
-            event.preventDefault(); // Prevent default behavior (e.g., closing dropdown)
-            var option = event.target;
+        if (window.innerWidth > 768) {
+            selectElement.addEventListener('mousedown', function (event) {
+                event.preventDefault(); // Prevent default behavior (e.g., closing dropdown)
+                var option = event.target;
 
-            var selectedOptions = Array.from(options).filter(option => option.selected);
-            if (selectedOptions.length < 3 || option.selected) {
-                if (!option.selected) {
-                    option.selected = true; // Toggle selection
-                    option.classList.add('active'); // Add active class
-                } else {
-                    option.selected = false; // Toggle selection
-                    option.classList.remove('active'); // Remove active class
-                }
-            }
-        });
-
-        // Add event listener to clear selection on mouseup
-        document.addEventListener('mouseup', function () {
-            var selectedOptions = Array.from(options).filter(option => option.selected);
-            if (selectedOptions.length > 3) {
-                selectedOptions.forEach(option => {
-                    if (!option.classList.contains('active')) {
-                        option.selected = false;
+                var selectedOptions = Array.from(options).filter(option => option.selected);
+                if (selectedOptions.length < 3 || option.selected) {
+                    if (!option.selected) {
+                        option.selected = true; // Toggle selection
+                        option.classList.add('active'); // Add active class
+                    } else {
+                        option.selected = false; // Toggle selection
+                        option.classList.remove('active'); // Remove active class
                     }
-                });
-            }
-        });
+                }
+            });
+
+            // Add event listener to clear selection on mouseup
+            document.addEventListener('mouseup', function () {
+                var selectedOptions = Array.from(options).filter(option => option.selected);
+                if (selectedOptions.length > 3) {
+                    selectedOptions.forEach(option => {
+                        if (!option.classList.contains('active')) {
+                            option.selected = false;
+                        }
+                    });
+                }
+            });
+        }
     });
     </script>
 

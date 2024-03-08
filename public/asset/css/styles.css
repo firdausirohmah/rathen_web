@@ -850,11 +850,14 @@ input:checked + .label_harga {
     width: 8rem;
   }
   .txt2{
-    width: 55px;
+    width: 40px;
   }
   .input{
-    height: 30px;
-    padding-left: unset;
+    height: 25px;
+    padding-left: 4px;
+  }
+  .input.txt2::placeholder {
+    font-size: 8px ;
   }
   .mw-32{
     max-width: 100%;

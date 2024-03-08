@@ -366,6 +366,7 @@
                 <div class="col">
                     <div class="form-group">
                         <label for="alasan">6. Sebutkan 3 alasan utama Anda membuat jersey di rathen</label>
+                        <p class="multiple-note">select in the box below</p>
                         <select class="form-select" aria-label="multiple select example" name="alasan[] " id="alasan" multiple>
                             <option value="Kualitas produk bagus">Kualitas Produk Bagus</option>
                             <option value="Design-design yang keren">Design-design yang keren</option>

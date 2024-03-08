@@ -51,25 +51,8 @@ background-color: #e0e0e0;
 .logo img{
     width:12%;
 }
-@media only screen and (max-width: 600px) {
-    .row{
-        display:block;
-    }
-    .form-check-inline{
-        margin-right:0.75rem;
-    }
-    select[multiple] option {
-        font-size:10px;
-        padding: 8px;
-    }
-    .form-select#alasan{
-        height: 175px;
-        padding-left: 0.5rem;
-    }
-    .logo img{
-        width:25%
-    }
-
+.multiple-note{
+    display: none;
 }
 
 /* rating star */
@@ -155,3 +138,53 @@ background-color: #e0e0e0;
     
     transform: rotateY(180deg);
   }
+
+@media only screen and (max-width: 600px) {
+    .row{
+        display:block;
+    }
+    .form-check-inline{
+        margin-right:0.75rem;
+    }
+    select[multiple] option {
+        font-size:10px;
+        padding: 8px;
+    }
+    .form-select#alasan{
+        height: 2rem;
+        padding-left: 0.5rem;
+    }
+    .logo img{
+        width:25%
+    }
+    .multiple-note{
+        display: block;
+        margin-top: 5px;
+        margin-bottom: 2px;
+    }
+
+    /* rate star */
+    .container_rate{
+        top: 1rem;
+        left: 5rem;
+        width: 45%;
+    }
+    .container .container__items label:hover .label-description::after{
+        top: -5px;
+        right: 8rem;
+    }
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    /* rate star */
+    .container_rate{
+        top: 1rem;
+        left: 5rem;
+        width: 45%;
+    }
+    .container .container__items label:hover .label-description::after{
+        top: -5px;
+        right: 8rem;
+    }
+}

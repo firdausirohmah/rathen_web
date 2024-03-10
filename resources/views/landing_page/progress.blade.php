@@ -13,9 +13,9 @@
   <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700|Open+Sans:400,600'>
   <!-- <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700|Open+Sans:400,600'> -->
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css'>
-  <link rel="stylesheet" href="{{ asset('asset/css/formOrder.css') }}">
-  <!-- <link id="pagestyle" href="{{asset('asset/admin/css/soft-ui-dashboard.css?v=1.0.3')}}" rel="stylesheet" /> -->
-  <!-- <link rel="stylesheet" href="{{ asset('asset/css/ex.css') }}"> -->
+  <link rel="stylesheet" href="{{ public_path('asset/css/formOrder.css') }}">
+  <!-- <link id="pagestyle" href="{{public_path('asset/admin/css/soft-ui-dashboard.css?v=1.0.3')}}" rel="stylesheet" /> -->
+  <!-- <link rel="stylesheet" href="{{ public_path('asset/css/ex.css') }}"> -->
 
 </head>
 
@@ -26,7 +26,7 @@
       <div class="navigation center-content">
 
         <div class="logo">
-          <img class="icon icon-basket" src="{{asset('asset/cfind/source/images/rathen.png')}}" width="12%">
+          <img class="icon icon-basket" src="{{public_path('asset/cfind/source/images/rathen.png')}}" width="12%">
         </div>
 
       </div>
@@ -45,7 +45,7 @@
         <div class="payment__info" style="width:129rem">
           <div class="payment__cc" id="myDIV">
             <div class="card-body card-body-mobile" id="content">
-              <h3 class="text-center font-weight-bold mb-1"><img src="{{ asset('/asset/images/logo-dark.png') }}" width="15%" alt=""></h3>
+              <h3 class="text-center font-weight-bold mb-1"><img src="{{ public_path('/asset/images/logo-dark.png') }}" width="15%" alt=""></h3>
               <p class="text-center font-weight-bold mont mb-0" style="font-size: 12px;">Office: RATHEN INDONESIA, Jl. Mayjen Ishak Djuarsa no.167B Gunung Batu Bogor, Indonesia</p>
               <p class="text-center font-weight-bold mont"><small class="font-weight-bold">Phone No: 0896-1108-1988 | 0878-1108-1988</small></p>
               <div class="row content-center">
@@ -113,7 +113,7 @@
                       <td>{{$displayNames[$row[0]]}}</td>
                       <td class="text-center">
                         @if($row[1] != null)
-                        <img src="{{asset('uploads/'.$row[1])}}" class="h-50 w-50" alt="">
+                        <img src="{{public_path('uploads/'.$row[1])}}" class="h-50 w-50" alt="">
                         @else
                         <p>Not yet</p>
                         @endif
@@ -224,7 +224,7 @@
 
                   if (dynamicImage) {
                     console.log("Element dengan ID dynamicImage ditemukan.");
-                    dynamicImage.src = "{{asset('/asset/images/logo-dark.png')}}";
+                    dynamicImage.src = "{{public_path('/asset/images/logo-dark.png')}}";
                     console.log("Src gambar diubah menjadi: " + dynamicImage.src);
                   } else {
                     console.error("Element dengan ID dynamicImage tidak ditemukan!");

@@ -50,15 +50,15 @@
                 <div class="col">
                     <div class="form-group">
                         <label for="nama">Nama</label>
-                        <input type="text" name="nama" id="nama" class="form-control">
+                        <input type="text" name="nama" id="nama" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="nama_tim">Nama Tim</label>
-                        <input type="text" name="nama_tim" id="nama_tim" class="form-control">
+                        <input type="text" name="nama_tim" id="nama_tim" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="photo">Foto</label>
-                        <input type="file" name="photo" id="photo" class="form-control">
+                        <input type="file" name="photo" id="photo" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="kesesuaian">1. Bagaimana kesesuain desain dengan hasil produksi</label>
@@ -374,12 +374,18 @@
                             <option value="Memiliki pilihan kain yang unik dan berbeda">Memiliki pilihan kain yang unik dan berbeda</option>
                             <option value="Fitur mewah lasercut">Fitur mewah lasercut</option>
                             <option value="Proses produksi yang cepat">Proses produksi yang cepat</option>
+                            <option value="Pelayanan yang baik">Pelayanan yang baik</option>
+                            <option value="Sajian portofolio produksi yang baik">Sajian portofolio produksi yang baik</option>
+                            <option value="Memiliki store ofline">Memiliki store ofline</option>
+                            <option value="Proses pemesanan yang mudah (user friendly) di website">Proses pemesanan yang mudah (user friendly) di website</option>
+                            <option value="Ingin coba produk rathen">Ingin coba produk rathen</option>
+                            <option value="Harga yang worth it dengan kualitas yang diterima">Harga yang worth it dengan kualitas yang diterima</option>
                             <!-- tambahkan option lainya yang diminta client sesuaikan saja value sama yang ditampilkan-->
                         </select>
                     </div>
                     
                     <div class="form-group">
-                        <label for="penialaian">7. Apa saja bsisnis proses atau pelayanan kami yang sudah sangat baik</label>
+                        <label for="penialaian">7. Apa saja bisnis proses atau pelayanan kami yang sudah sangat baik</label>
                         <textarea name="penilaian" id="penilaian" class="form-control" rows="3"></textarea>
                     </div>
                     <div class="form-group">

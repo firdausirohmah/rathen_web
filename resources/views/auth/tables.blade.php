@@ -66,7 +66,7 @@
                       <option value="jacket-anthem">Jacket Anthem Pro</option>
                     </select>
                     <label for="qty" class="form-label">Quantity:</label>
-                    <input type="number" class="form-control" id="qty" name="qty" placeholder="Enter Quantity" onchange="qtyubah()">
+                    <input type="number" class="form-control" id="qty" name="qty" placeholder="Enter Quantity" oninput="qtyubah()">
                     <label for="total_harga" class="form-label">Total Harga:</label>
                     <input type="text" class="form-control" id="total_harga"  name="total_harga" readonly>
                     <label for="design_create" class="form-label">Design Payment:</label>
@@ -344,10 +344,10 @@
   var dp_create =  document.getElementById("dp_create");
   var pelunasan_create =  document.getElementById("pelunasan_create");
   var harge = null;
-  design_create.addEventListener("change", function(){
+  design_create.addEventListener("input", function(){
     pelunasan_create.value = (+pelunasan_create.value) - (+design_create.value);
   });
-  dp_create.addEventListener("change", function(){
+  dp_create.addEventListener("input", function(){
     pelunasan_create.value = (+pelunasan_create.value) - (+dp_create.value);
   });
   document.getElementById("product").addEventListener("change", function() {

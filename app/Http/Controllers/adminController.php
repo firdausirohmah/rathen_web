@@ -317,7 +317,7 @@ class adminController extends Controller
 
             // Load Bootstrap CSS locally
             $bootstrapCSS = file_get_contents('https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css'); // Ganti path sesuai dengan lokasi CSS Bootstrap Anda
-            $html = FacadesView::make('landing_page.progress', [
+            $html = FacadesView::make('landing_page.progress-generate', [
                 'pesanan' => $pesanan,
                 'price' => $price,
                 'Jarsey' => $Jarsey,
@@ -335,7 +335,7 @@ class adminController extends Controller
                 . $bootstrapCSS.'<style>' . $html;
 
             $pdf->loadHtml($combinedHtml);
-            $pdf->setPaper('A4', 'potrait');
+            $pdf->setPaper('A4', 'landscape');
             $pdf->render();
 
             // return $pdf::setOptions(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true])->loadView('reports.invoiceSell')->stream();

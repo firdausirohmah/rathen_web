@@ -21,24 +21,8 @@
 
 <body>
   <!-- partial:index.partial.html -->
-  <header>
-    <div class="container container-logo">
-      <div class="navigation center-content">
-
-        <div class="logo">
-          <img class="icon icon-basket" src="{{asset('asset/cfind/source/images/rathen.png')}}" width="12%">
-        </div>
-
-      </div>
-      <div class="notification">
-        Rathen - Production Results
-      </div>
-
-    </div>
-  </header>
   <section class="content" style="overflow-x:hidden;">
 
-    <button class="m-3 button back" onclick="goBack()"><i class='icon icon-arrow-left'></i></button>
 
     <div class="container">
       <div class="payment">
@@ -130,7 +114,7 @@
                       <div class="col-lg-12">
                         <p class="right-align mb-4 pb-4">Best regard,</p>
                         @if($pesanan->status_order == 'produksi')
-                        <img src="https://cdn.kibrispdr.org/data/957/tanda-tangan-keren-png-6.png" alt="" style="width: 100px;display:none;float:right;" id="ttd1"><br>
+                        <img src="https://cdn.kibrispdr.org/data/957/tanda-tangan-keren-png-6.png" alt="" style="width: 100px;float:right;" id="ttd1"><br>
                         @endif
                         <p class="right-align mt-4 pt-4"><u>R. Esa Pangersa Gusti</u></p>
                         <p class="right-align" style="line-height: 0px">RATHEN INDONESIA</p>
@@ -264,23 +248,6 @@
 
 
           </div>
-          <div class="container w-unset">
-
-            @if($pesanan->status_order == 'produksi')
-            <div>
-              <a href="{{ route('progress.generate', ['kd_step' => $kode]) }}" class="btn action__submit">Download
-                <i class="icon icon-cloud-download"></i>
-              </a>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" name="approval1" id="approval1" >
-              <label class="form-check-label" for="approval1">
-              R. Esa Pangersa Gusti
-              </label>
-            </div>
-            
-            @endif
-          </div>
           <!-- <div class="payment__shipping">
             <div class="row">
               <div class="field">
@@ -294,16 +261,7 @@
         </div>
       </div>
     </div>
-
-    <div class="container">
-      <div class="actions pt135">
-        <a href="/form/orderStep5" class="btn action__submit hidden">Next
-          <i class="icon icon-arrow-right-circle"></i>
-        </a>
-        <a href="/page-custom" class="backBtn">Go Back to Rathen</a>
-      </div>
   </section>
-  </div>
   <!-- partial -->
   <style>
     *,

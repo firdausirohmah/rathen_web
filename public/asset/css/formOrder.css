@@ -1324,6 +1324,13 @@ textarea {
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
 @media only screen and (max-width: 600px) {
+  .ttd #ttd1 {
+    top: 116rem;
+    right: 12rem;
+  }
+  .ttd #ttd2 {
+    top: 115rem;
+  }
   .action-btn-sm{
     display: block;
   }

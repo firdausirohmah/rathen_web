@@ -26,10 +26,10 @@
 
     <div class="container">
       <div class="payment">
-        <div class="payment__info" style="width:129rem">
+        <div class="payment__info" style="width:45rem">
           <div class="payment__cc" id="myDIV">
             <div class="card-body card-body-mobile" id="content">
-              <h3 class="text-center font-weight-bold mb-1"><img src="{{ asset('/asset/images/logo-dark.png') }}" width="15%" alt=""></h3>
+              <h3 class="text-center font-weight-bold mb-1"><img src="{{ public_path('/asset/images/logo-dark.png') }}" width="15%" alt=""></h3>
               <p class="text-center font-weight-bold mont mb-0" style="font-size: 12px;">Office: RATHEN INDONESIA, Jl. Mayjen Ishak Djuarsa no.167B Gunung Batu Bogor, Indonesia</p>
               <p class="text-center font-weight-bold mont"><small class="font-weight-bold">Phone No: 0896-1108-1988 | 0878-1108-1988</small></p>
               <div class="row content-center">
@@ -38,20 +38,31 @@
                   <p class="text-center"><small>No. inv-{{$pesanan->kd_step2}}/2024</small></p>
                 </div>
               </div>
-              <div class="row pb-2 p-2 text-center-mb" style="text-align:justify;">
-                <div class="col-md-7 mx-4 px-4">
-                  <p class="mb-0 font-weight-bold text-primary">Customer:</p>
-                  <p class="mb-0">{{ $pesanan->nama_pemesanan }}</p>
-                  <p class="mb-0">{{ $pesanan->kontak }}</p>
-                  <p class="mb-0">{{ $pesanan->domisili }}</p>
-                </div>
-                <div class="col-md-4">
-                  <p class="mb-0 font-weight-bold text-primary">Product:</p>
-                  <p class="mb-0">{{ $pesanan->product }}</p>
-                  <p class="mb-0">{{ $pesanan->jumlah_pemesanan }}</p>
-                  <p class="mb-0">Rp <?= number_format($pesanan->total_harga, 0, ','); ?></p>
-                </div>
+              <div class="table-responsive detail-customer">
+                <table>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div class="col-md-12">
+                          <p class="mb-0 font-weight-bold text-primary">Customer:</p>
+                          <p class="mb-0">{{ $pesanan->nama_pemesanan }}</p>
+                          <p class="mb-0">{{ $pesanan->kontak }}</p>
+                          <p class="mb-0">{{ $pesanan->domisili }}</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="col-md-12">
+                          <p class="mb-0 font-weight-bold text-primary">Product:</p>
+                          <p class="mb-0">{{ $pesanan->product }}</p>
+                          <p class="mb-0">{{ $pesanan->jumlah_pemesanan }}</p>
+                          <p class="mb-0">Rp <?= number_format($pesanan->total_harga, 0, ','); ?></p>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
+              
               <div class="table-responsive">
                 <table class="table table-bordered mt-4 mb-0">
                   <thead>
@@ -94,9 +105,9 @@
                     <tr>
                       <td>{{ $i++ }}</td>
                       <td>{{$displayNames[$row[0]]}}</td>
-                      <td class="text-center">
+                      <td class="text-center img-progress">
                         @if($row[1] != null)
-                        <img src="{{asset('uploads/'.$row[1])}}" class="h-50 w-50" alt="">
+                        <img src="{{public_path('uploads/'.$row[1])}}" class="w-25" alt="">
                         @else
                         <p>Not yet</p>
                         @endif

@@ -32,6 +32,7 @@ select[multiple] option:checked {
 background-color: #e0e0e0;
 }
 .form-select#alasan{
+    overflow: scroll;
     height: 250px;
     padding-left: 1rem;
 }

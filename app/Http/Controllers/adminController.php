@@ -249,7 +249,8 @@ class adminController extends Controller
              
             // Combine Bootstrap CSS with your HTML
             $combinedHtml = '<style> html *{margin:0;padding:0;}.button.back{display:none;}.print{
-                display:none;}.container{margin:0!important;} .card{width:650px!important;border:none!important}
+                display:none;}.container{margin:0!important;} .detail-customer table{width:100rem!important;}
+                .card{width:1104px!important;border:none!important}
                 .table-responsive table thead tr th, .table-responsive table tbody tr td, .table-responsive table tfoot tr td{border-color: #3c3f44;}'
                 . $bootstrapCSS.'<style>' . $html;
 

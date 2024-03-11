@@ -76,7 +76,7 @@
 				<div class="card">
 
 					<div class="card-body">
-            <h3 class="text-center font-weight-bold mb-1"><img id="dynamicImage" src="{{ asset('/asset/images/logo-dark.png') }}" width="15%" alt=""></h3>
+            <h3 class="text-center font-weight-bold mb-1"><img id="dynamicImage" src="{{ public_path('/asset/images/logo-dark.png') }}" width="15%" alt=""></h3>
             <p class="text-center font-weight-bold mont mb-0" style="font-size: 12px;">Office: RATHEN INDONESIA, Jl. Mayjen Ishak Djuarsa no.167B Gunung Batu Bogor, Indonesia</p>
             <p class="text-center font-weight-bold mont"><small class="font-weight-bold">Phone No: 0896-1108-1988 | 0878-1108-1988</small></p>
             <div class="row pb-2 p-2">
@@ -85,20 +85,29 @@
                 <p class="text-center"><small>No. {{$pesanan->kd_order}}/inv-{{$pesanan->kd_order}}/2024</small></p>
               </div>
             </div>
-            <div class="row pb-2 p-2">
-              <div class="col-md-6 mx-4 px-4">
-                <p class="mb-0 font-weight-bold text-dark">Bill to:</p>
-                <p class="mb-0">{{ $pesanan->nama_pemesanan }}</p>
-                <p class="mb-0">{{ $pesanan->nama_tim }}</p>
-                <p class="mb-0">{{ $pesanan->domisili }}</p>
-              </div>
-              <div class="col-lg-2"></div>
-              <div class="col-md-2">
-                <p class="mb-0 font-weight-bold text-dark">Ship to:</p>
-                <p class="mb-0">{{ $pesanan->nama_pemesanan }}</p>
-                <p class="mb-0">{{ $pesanan->nama_tim }}</p>
-                <p class="mb-0">{{ $pesanan->domisili }}</p>
-              </div>
+            <div class="table-responsive detail-customer">
+              <table>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="col-md-12">
+                        <p class="mb-0 font-weight-bold text-dark">Bill to:</p>
+                        <p class="mb-0">{{ $pesanan->nama_pemesanan }}</p>
+                        <p class="mb-0">{{ $pesanan->nama_tim }}</p>
+                        <p class="mb-0">{{ $pesanan->domisili }}</p>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="col-md-12">
+                        <p class="mb-0 font-weight-bold text-dark">Ship to:</p>
+                        <p class="mb-0">{{ $pesanan->nama_pemesanan }}</p>
+                        <p class="mb-0">{{ $pesanan->nama_tim }}</p>
+                        <p class="mb-0">{{ $pesanan->domisili }}</p>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
             <div class="table-responsive">
               <table class="table table-bordered mt-4 mb-0" style="table-layout: fixed;width:max-content;">
@@ -121,48 +130,48 @@
                     <td>
                       <div class="img-tableView">
                         <b class="title">Design - Pemain</b>
-                        <img src="{{asset('uploads'.'/'.$pesanan->design_jersey_pemain)}}" id="design_pemain" alt="">
+                        <img src="{{public_path('uploads'.'/'.$pesanan->design_jersey_pemain)}}" id="design_pemain" alt="">
                         <span><b>Size</b>: S-3, M-11, L-14, XL-5, 2XL-1</span>
                       </div>
                     </td>
-                    <td class="d-flex text-center border-top-0 border-bottom-0 border-left-0 flex-wrap detail-table" >
+                    <td colspan="4" class="text-center border-top-0 border-bottom-0 border-left-0 detail-table" >
                       <div class="img-tableDetail">
-                        <img src="{{ asset('asset/images/price-list/komparasi/fabrics.jpg') }}">
+                        <img src="{{ public_path('asset/images/price-list/komparasi/fabrics.jpg') }}">
                         <span class="font-weight-bold">Pola Badan:</span>
                         <span>{{ $pesanan->badan_bawah }}</span>
                       </div>
                       <div class="img-tableDetail">
-                        <img src="{{ asset('asset/extra/putih2.png') }}">
+                        <img src="{{ public_path('asset/extra/putih2.png') }}">
                         <span class="font-weight-bold">Pola Lengan:</span>
                         <span>{{ $pesanan->pola_lengan }}</span>
                       </div>
                       <div class="img-tableDetail">
-                        <img src="{{ asset('asset/extra/casual/C-3.png') }}">
+                        <img src="{{ public_path('asset/extra/casual/C-3.png') }}">
                         <span class="font-weight-bold">Jenis Kerah:</span>
                         <span>{{ $pesanan->model_kerah }}</span>
                       </div>
                       <div class="img-tableDetail">
-                        <img src="{{ asset('asset/polabadan/belakangNormal.png') }}">
+                        <img src="{{ public_path('asset/polabadan/belakangNormal.png') }}">
                         <span class="font-weight-bold">Bawah Baju:</span>
                         <span>Normal</span>
                       </div>
                       <div class="img-tableDetail">
-                        <img src="{{ asset('asset/images/price-list/komparasi/lasercut.jpg') }}">
+                        <img src="{{ public_path('asset/images/price-list/komparasi/lasercut.jpg') }}">
                         <span class="font-weight-bold">Lasercut:</span>
                         <span>Tidak</span>
                       </div>
                       <div class="img-tableDetail">
-                        <img src="{{ asset('asset/images/price-list/komparasi/logo-tim.jpg') }}">
+                        <img src="{{ public_path('asset/images/price-list/komparasi/logo-tim.jpg') }}">
                         <span class="font-weight-bold">Jenis Logo:</span>
                         <span>Print</span>
                       </div>
                       <div class="img-tableDetail">
-                        <img src="{{ asset('asset/images/price-list/komparasi/fabrics.jpg') }}">
+                        <img src="{{ public_path('asset/images/price-list/komparasi/fabrics.jpg') }}">
                         <span class="font-weight-bold">Jenis Bahan:</span>
                         <span>Adidas</span>
                       </div>
                       <div class="img-tableDetail">
-                        <img src="{{ asset('asset/images/kaoskaki.jpeg') }}">
+                        <img src="{{ public_path('asset/images/kaoskaki.jpeg') }}">
                         <span class="font-weight-bold">Kaoskaki:</span>
                         <span>{{ $pesanan->kaoskaki }}</span>
                       </div>
@@ -172,7 +181,7 @@
                     <td rowspan="2">
                       <div class="img-tableView">
                         <b class="title">Design - Kiper</b>
-                        <img src="{{asset('uploads'.'/'.$pesanan->design_jersey_pemain)}}" alt="">
+                        <img src="{{public_path('uploads'.'/'.$pesanan->design_jersey_pemain)}}" alt="">
                         <span><b>Size</b>: M-2, L-2</span>
                       </div>
                     </td>
@@ -204,10 +213,10 @@
                           <span class="m-5">(Rhofik)</span>
                         </div>
                         <div class="pl-5 pr-3 ttd">
-                          <img src="https://cdn.kibrispdr.org/data/957/tanda-tangan-keren-png-6.png" alt="" style="width: 100px;display:inline;" id="ttd2"><br>
+                          <img src="{{public_path('/asset/images/ttd/ervina_ttd.png')}}" alt="" style="width: 100px;display:inline;" id="ttd2"><br>
                           @if(isset($aproval_2))
                             @if($aproval_2->is_agreed == 1)
-                          <img src="https://cdn.kibrispdr.org/data/957/tanda-tangan-keren-png-6.png" alt="" style="width: 100px;display:inline;" id="ttd2"><br>
+                          <img src="{{public_path('/asset/images/ttd/ervina_ttd.png')}}" alt="" style="width: 100px;display:inline;" id="ttd2"><br>
                             @endif
                           @endif
                           <span>(Ervina)</span>
@@ -382,7 +391,7 @@
     
       if (dynamicImage) {
         console.log("Element dengan ID dynamicImage ditemukan.");
-        dynamicImage.src = "{{asset('/asset/images/logo-dark.png')}}";
+        dynamicImage.src = "{{public_path('/asset/images/logo-dark.png')}}";
         // design_pemain.src = "{{asset('uploads'.'/'.$pesanan->design_jersey_pemain)}}"
         console.log("Src gambar diubah menjadi: " + dynamicImage.src);
       } else {

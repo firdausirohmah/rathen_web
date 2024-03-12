@@ -1231,13 +1231,13 @@ input[type=text] {
 }
 .ttd #ttd1 {
   position: absolute; /* Change this line */
-  top: 56rem;
+  top: 61rem;
   bottom: 1rem; /* Add this line */
   right: 14rem; /* Add this line */
 }
 .ttd #ttd2 {
   position: absolute; /* Change this line */
-  top: 56rem;
+  top: 60rem;
   bottom: 1rem; /* Add this line */
   right: 1rem; /* Add this line */
 }

@@ -73,7 +73,7 @@
 	<div class="mt-3">
 		<div class="row justify-content-center">
 			<div class="col-12">
-				<div class="card">
+				<div class="card" style="width:1104px">
 
 					<div class="card-body">
             <h3 class="text-center font-weight-bold mb-1"><img id="dynamicImage" src="{{ public_path('/asset/images/logo-dark.png') }}" width="15%" alt=""></h3>
@@ -113,8 +113,8 @@
               <table class="table table-bordered mt-4 mb-0" style="table-layout: fixed;width:max-content;">
                 <thead>
                   <tr>
-                    <th class="text-uppercase font-weight-bold" style="width:18rem;">Design</th>
-                    <th class="text-uppercase font-weight-bold">Detail</th>
+                    <th class="text-uppercase font-weight-bold" style="width:27%;">Design</th>
+                    <th class="text-uppercase font-weight-bold" style="width:73%;">Detail</th>
                   </tr>
                 </thead>
                 <?php
@@ -134,46 +134,66 @@
                         <span><b>Size</b>: S-3, M-11, L-14, XL-5, 2XL-1</span>
                       </div>
                     </td>
-                    <td colspan="4" class="text-center border-top-0 border-bottom-0 border-left-0 detail-table" >
-                      <div class="img-tableDetail">
-                        <img src="{{ public_path('asset/images/price-list/komparasi/fabrics.jpg') }}">
-                        <span class="font-weight-bold">Pola Badan:</span>
-                        <span>{{ $pesanan->badan_bawah }}</span>
+                    <td class="text-center border-top-0 border-bottom-0 border-left-0 detail-table" style="height:75%">
+                      <div style="position:relative;right:2rem">
+                        <div class="img-tableDetail">
+                          <img src="{{ public_path('asset/images/price-list/komparasi/fabrics.jpg') }}">
+                          <span class="font-weight-bold">Pola Badan:</span>
+                          <span>Slim-fit</span>
+                        </div>
+                        <div class="img-tableDetail">
+                          <img src="{{ public_path('asset/extra/putih2.png') }}">
+                          <span class="font-weight-bold">Pola Lengan:</span>
+                          @if(isset($pesanan->pola_lengan))
+                          <span>{{ $pesanan->pola_lengan }}</span>
+                          @else
+                          <span>Normal</span>
+                          @endif
+                        </div>
+                        <div class="img-tableDetail">
+                          <img src="{{ public_path('asset/extra/casual/C-3.png') }}">
+                          <span class="font-weight-bold">Jenis Kerah:</span>
+                          <span>{{ $pesanan->model_kerah }}</span>
+                        </div>
+                        <div class="img-tableDetail">
+                          <img src="{{ public_path('asset/polabadan/belakangNormal.png') }}">
+                          <span class="font-weight-bold">Bawah Baju:</span>
+                          @if(isset($pesanan->badan_bawah))
+                          <span>Melengkung</span>
+                          @else
+                          <span>Normal</span>
+                          @endif
+                        </div>
                       </div>
-                      <div class="img-tableDetail">
-                        <img src="{{ public_path('asset/extra/putih2.png') }}">
-                        <span class="font-weight-bold">Pola Lengan:</span>
-                        <span>{{ $pesanan->pola_lengan }}</span>
-                      </div>
-                      <div class="img-tableDetail">
-                        <img src="{{ public_path('asset/extra/casual/C-3.png') }}">
-                        <span class="font-weight-bold">Jenis Kerah:</span>
-                        <span>{{ $pesanan->model_kerah }}</span>
-                      </div>
-                      <div class="img-tableDetail">
-                        <img src="{{ public_path('asset/polabadan/belakangNormal.png') }}">
-                        <span class="font-weight-bold">Bawah Baju:</span>
-                        <span>Normal</span>
-                      </div>
-                      <div class="img-tableDetail">
-                        <img src="{{ public_path('asset/images/price-list/komparasi/lasercut.jpg') }}">
-                        <span class="font-weight-bold">Lasercut:</span>
-                        <span>Tidak</span>
-                      </div>
-                      <div class="img-tableDetail">
-                        <img src="{{ public_path('asset/images/price-list/komparasi/logo-tim.jpg') }}">
-                        <span class="font-weight-bold">Jenis Logo:</span>
-                        <span>Print</span>
-                      </div>
-                      <div class="img-tableDetail">
-                        <img src="{{ public_path('asset/images/price-list/komparasi/fabrics.jpg') }}">
-                        <span class="font-weight-bold">Jenis Bahan:</span>
-                        <span>Adidas</span>
-                      </div>
-                      <div class="img-tableDetail">
-                        <img src="{{ public_path('asset/images/kaoskaki.jpeg') }}">
-                        <span class="font-weight-bold">Kaoskaki:</span>
-                        <span>{{ $pesanan->kaoskaki }}</span>
+                      <div style="padding-top:10rem;position:relative;left:2rem">
+                        <div class="img-tableDetail2">
+                          <img src="{{ public_path('asset/images/kaoskaki.jpeg') }}">
+                          <span class="font-weight-bold">Kaoskaki:</span>
+                          @if(isset($pesanan->kaoskaki))
+                          <span>Ada ({{ $pesanan->kaoskaki }})</span>
+                          @else
+                          <span>Tidak</span>
+                          @endif
+                        </div>
+                        <div class="img-tableDetail2">
+                          <img src="{{ public_path('asset/images/price-list/komparasi/fabrics.jpg') }}">
+                          <span class="font-weight-bold">Jenis Bahan:</span>
+                          <span>{{ $pesanan->bahan_baju }}</span>
+                        </div>
+                        <div class="img-tableDetail2">
+                          <img src="{{ public_path('asset/images/price-list/komparasi/logo-tim.jpg') }}">
+                          <span class="font-weight-bold">Jenis Logo:</span>
+                          @if(isset($pesanan->upgrade_logo_3d))
+                          <span>3D</span>
+                          @else
+                          <span>Print</span>
+                          @endif
+                        </div>
+                        <div class="img-tableDetail2">
+                          <img src="{{ public_path('asset/images/price-list/komparasi/lasercut.jpg') }}">
+                          <span class="font-weight-bold">Lasercut:</span>
+                          <span>Tidak</span>
+                        </div>
                       </div>
                     </td>
                   </tr>
@@ -186,40 +206,40 @@
                       </div>
                     </td>
                     <td>
-                      Note:
-                      <ul>
-                        <li>Sublim badan depan saja</li>
-                        <li>lengan dan badan belakang bahan adidas (putih, dongker)</li>
-                        <li>Samping baju variasi zig zag gold 2 cm</li>
-                        <li>Nat/list ujung tangan gold 1,5 cm disambung</li>
-                        <li>ujung tangan adidas (putih, dongker) 3 cm</li>
-                        <li>Celana adidas (putih, dongker)polos</li>
-                      </ul>
+                      <div style="position:relative;left:1rem">
+                        Note:
+                        <ul>
+                          <li>Sublim badan depan saja</li>
+                          <li>lengan dan badan belakang bahan adidas (putih, dongker)</li>
+                          <li>Samping baju variasi zig zag gold 2 cm</li>
+                          <li>Nat/list ujung tangan gold 1,5 cm disambung</li>
+                          <li>ujung tangan adidas (putih, dongker) 3 cm</li>
+                          <li>Celana adidas (putih, dongker)polos</li>
+                        </ul>
+                      </div>
                     </td>
 
                   </tr>
                   <tr>
-                    <td class="text-right">
+                    <td class="text-right" style="height:25%">
                       <div>Approval</div>
-                      <div class="py-5"></div>
-                      <div class="d-flex justify-content-end">
-                        <div class="px-5 ttd">
-                          <img src="https://cdn.kibrispdr.org/data/957/tanda-tangan-keren-png-6.png" alt="" style="width: 100px;display:inline;float:left;" id="ttd1"><br>
+                      <div class="py-2"></div>
+                      <div class="justify-content-end">
+                        <div class="pl-5 pr-3" style="float:right">
+                          @if(isset($aproval_2))
+                          @if($aproval_2->is_agreed == 1)
+                          <img src="{{public_path('asset/images/ttd/ervina_ttd.png')}}" alt="" style="height:100px; width: 100px;display:inline;" id="ttd2"><br>
+                          @endif
+                          @endif
+                          <span>(Ervina)</span>
+                        </div>
+                        <div class="px-5 " style="float:right">
                           @if(isset($aproval_3))
                             @if($aproval_3->is_agreed == 1)
-                          <img src="https://cdn.kibrispdr.org/data/957/tanda-tangan-keren-png-6.png" alt="" style="width: 100px;display:inline;float:left;" id="ttd1"><br>
+                            <img src="https://cdn.kibrispdr.org/data/957/tanda-tangan-keren-png-6.png" alt="" style="height:100px; width: 100px;display:inline;" id="ttd1"><br>
                             @endif
                           @endif
                           <span class="m-5">(Rhofik)</span>
-                        </div>
-                        <div class="pl-5 pr-3 ttd">
-                          <img src="{{public_path('/asset/images/ttd/ervina_ttd.png')}}" alt="" style="width: 100px;display:inline;" id="ttd2"><br>
-                          @if(isset($aproval_2))
-                            @if($aproval_2->is_agreed == 1)
-                          <img src="{{public_path('/asset/images/ttd/ervina_ttd.png')}}" alt="" style="width: 100px;display:inline;" id="ttd2"><br>
-                            @endif
-                          @endif
-                          <span>(Ervina)</span>
                         </div>
                       </div>
                     </td>
@@ -232,7 +252,7 @@
             </div>
 
             <br>
-            <p style="font-style: italic;">Note: All payment should be direct bank in into our official bank account as following bank:</p>
+            <p class="text-justify" style="font-style: italic;">Note: All payment should be direct bank in into our official bank account as following bank:</p>
             <style>
               table {
                 width: 80%;
@@ -295,6 +315,7 @@
                 margin-top: 0.2rem;
               }
               .img-tableDetail{
+                float:left;
                 padding: 0 1rem;
                 width: 11rem;
                 height: 10rem;
@@ -305,6 +326,22 @@
                 object-fit: cover;
               }
               .img-tableDetail span{
+                display: block;
+                font-size: 14px;
+                margin-top: 0.2rem;
+              }
+              .img-tableDetail2{
+                float:right;
+                padding: 0 1rem;
+                width: 11rem;
+                height: 10rem;
+              }
+              .img-tableDetail2 img{
+                height: 4rem;
+                width: 4rem;
+                object-fit: cover;
+              }
+              .img-tableDetail2 span{
                 display: block;
                 font-size: 14px;
                 margin-top: 0.2rem;
@@ -358,11 +395,11 @@
             </div>
             <div class="container">
               <div class="row">
-                <div class="col-lg-12 ttd">
+                <div class="col-lg-12 ">
                   <p class="right-align mb-4 pb-4">Best regard,</p>
                   @if(isset($aproval_1))
                     @if($aproval_1->is_agreed == 1)
-                    <img src="https://cdn.kibrispdr.org/data/957/tanda-tangan-keren-png-6.png" alt="" style="width: 100px;display:inline;float:left;" id="ttd3"><br>
+                    <img src="https://cdn.kibrispdr.org/data/957/tanda-tangan-keren-png-6.png" alt="" style="width: 100px;display:inline;float:right;" id="ttd3"><br>
                     @endif
                   @endif
                   <p class="right-align mt-4 pt-4"><u>R. Esa Pangersa Gusti</u></p>

@@ -51,6 +51,21 @@
                   <p class="text-center"><small>No. {{$pesanan->kd_order}}/inv-{{$pesanan->kd_order}}/2024</small></p>
                 </div>
               </div>
+              <div class="row col-md-12 text-justify">
+                <div class="col-md-9">
+                  <p class="mb-0 font-weight-bold text-dark">Bill to:</p>
+                  <p class="mb-0">{{ $pesanan->nama_pemesanan }}</p>
+                  <p class="mb-0">{{ $pesanan->nama_tim }}</p>
+                  <p class="mb-0">{{ $pesanan->domisili }}</p>
+                </div>
+                <div class="col-md-3">
+                  <p class="mb-0 font-weight-bold text-dark">Ship to:</p>
+                  <p class="mb-0">{{ $pesanan->nama_pemesanan }}</p>
+                  <p class="mb-0">{{ $pesanan->nama_tim }}</p>
+                  <p class="mb-0">{{ $pesanan->domisili }}</p>
+                </div>
+              </div>
+              
 
               <div class="table-responsive">
                 <table class="table table-bordered mt-4 mb-0">
@@ -81,12 +96,16 @@
                         <div class="img-tableDetail">
                           <img src="{{ asset('asset/images/price-list/komparasi/fabrics.jpg') }}">
                           <span class="font-weight-bold">Pola Badan:</span>
-                          <span>{{ $pesanan->badan_bawah }}</span>
+                          <span>Slim-fit</span>
                         </div>
                         <div class="img-tableDetail">
                           <img src="{{ asset('asset/extra/putih2.png') }}">
                           <span class="font-weight-bold">Pola Lengan:</span>
+                          @if(isset($pesanan->pola_lengan))
                           <span>{{ $pesanan->pola_lengan }}</span>
+                          @else
+                          <span>Normal</span>
+                          @endif
                         </div>
                         <div class="img-tableDetail">
                           <img src="{{ asset('asset/extra/casual/C-3.png') }}">
@@ -96,7 +115,11 @@
                         <div class="img-tableDetail">
                           <img src="{{ asset('asset/polabadan/belakangNormal.png') }}">
                           <span class="font-weight-bold">Bawah Baju:</span>
+                          @if(isset($pesanan->badan_bawah))
+                          <span>Melengkung</span>
+                          @else
                           <span>Normal</span>
+                          @endif
                         </div>
                         <div class="img-tableDetail">
                           <img src="{{ asset('asset/images/price-list/komparasi/lasercut.jpg') }}">
@@ -106,17 +129,25 @@
                         <div class="img-tableDetail">
                           <img src="{{ asset('asset/images/price-list/komparasi/logo-tim.jpg') }}">
                           <span class="font-weight-bold">Jenis Logo:</span>
+                          @if(isset($pesanan->upgrade_logo_3d))
+                          <span>3D</span>
+                          @else
                           <span>Print</span>
+                          @endif
                         </div>
                         <div class="img-tableDetail">
                           <img src="{{ asset('asset/images/price-list/komparasi/fabrics.jpg') }}">
                           <span class="font-weight-bold">Jenis Bahan:</span>
-                          <span>Adidas</span>
+                          <span>{{ $pesanan->bahan_baju }}</span>
                         </div>
                         <div class="img-tableDetail">
                           <img src="{{ asset('asset/images/kaoskaki.jpeg') }}">
-                          <span class="font-weight-bold">Kaoskaki:</span>
-                          <span>{{ $pesanan->kaoskaki }}</span>
+                          <span class="font-weight-bold">Kaos kaki:</span>
+                          @if(isset($pesanan->kaoskaki))
+                          <span>Ada ({{ $pesanan->kaoskaki }})</span>
+                          @else
+                          <span>Tidak</span>
+                          @endif
                         </div>
                       </td>
                     </tr>

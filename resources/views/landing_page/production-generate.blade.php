@@ -201,21 +201,14 @@
                     <td rowspan="2">
                       <div class="img-tableView">
                         <b class="title">Design - Kiper</b>
-                        <img src="{{public_path('uploads'.'/'.$pesanan->design_jersey_pemain)}}" alt="">
+                        <img src="{{public_path('uploads'.'/'.$pesanan->design_jersey_kiper)}}" alt="">
                         <span><b>Size</b>: M-2, L-2</span>
                       </div>
                     </td>
                     <td>
                       <div style="position:relative;left:1rem">
                         Note:
-                        <ul>
-                          <li>Sublim badan depan saja</li>
-                          <li>lengan dan badan belakang bahan adidas (putih, dongker)</li>
-                          <li>Samping baju variasi zig zag gold 2 cm</li>
-                          <li>Nat/list ujung tangan gold 1,5 cm disambung</li>
-                          <li>ujung tangan adidas (putih, dongker) 3 cm</li>
-                          <li>Celana adidas (putih, dongker)polos</li>
-                        </ul>
+                        {!!$pesanan->note_order!!}
                       </div>
                     </td>
 

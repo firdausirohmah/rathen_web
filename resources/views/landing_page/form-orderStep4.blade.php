@@ -88,14 +88,14 @@
             </form>
           </div>
 
-          <!-- <details class="action-btn-sm">
+          <details class="action-btn-sm">
             <summary><strong>Action Button</strong></summary>
             <div class="content">
               <div class="payment__shipping w-215-tab">
                 <div class="row">
                   <div class="field pt-5">
                     <div class="form-uploads h-3 w-20">
-                      <div class="form-upload payment__type--cc btn-black" id="importDatabtn">
+                      <div class="form-upload payment__type--cc btn-black" id="importDatabtnMbl">
 
                         <i class="icon icon-cloud-upload"></i>Upload File
                       </div>
@@ -106,11 +106,10 @@
                 <div class="row">
                   <div class="field pt-5">
                     <div class="form-uploads h-3 w-20">
-                      <div class="form-upload payment__type--cc btn-black" id="inputDataBtn">
+                      <div class="form-upload payment__type--cc btn-black" id="inputDataBtnMbl">
                         <i class="icon icon-pencil"></i>Input Data
                       </div>
                     </div>
-                    <input type="text" class="input txt text-validated" value='Upload' />
                   </div>
                 </div>
                 <div class="row">
@@ -119,12 +118,11 @@
                       <a href="{{ asset('import/format-pemain.xlsx') }}" class="form-upload payment__type--cc btn-black">
                         <i class="icon icon-cloud-download"></i>Format Ukuran</a>
                     </div>
-                   <input type="text" class="input txt text-validated" value='Upload' />
                   </div>
                 </div>
               </div>
             </div>
-          </details> -->
+          </details>
 
           <div class="payment__shipping w-215-tab action-btn-lg">
             <div class="row">
@@ -188,11 +186,11 @@
         <span class="close">&times;</span>
         <div class="form-modal">
           <h4>Silahkan inputkan data</h4>
-          <form action="{{route('excel.import') }}" id="importDataForm" method="post" enctype="multipart/form-data">
+          <form action="{{route('excel.import') }}" id="importDataForm" class="modalForm" method="post" enctype="multipart/form-data">
             @csrf
             <input type="hidden" name="idDataPesanan" value="{{$kode}}" />
             <label for="import">File</label>
-            <input type="file" name="import" id="import">
+            <input type="file" name="import" id="import" class="form-upload payment__type--cc" style="width:100%">
             <input type="hidden" name="type" value="pemain">
             <button class="btn-modal" type="submit">Save</button>
           </form>
@@ -220,8 +218,10 @@
     document.addEventListener('DOMContentLoaded', function() {
       var modal = document.getElementById('inputDataModal');
       var btn = document.getElementById('inputDataBtn');
+      var btnMbl = document.getElementById('inputDataBtnMbl');
       var import_modal = document.getElementById('importDataModal');
       var import_btn = document.getElementById('importDatabtn');
+      var import_btnMbl = document.getElementById('importDatabtnMbl');
       var span = document.getElementsByClassName('close')[0];
       var span2 = document.getElementsByClassName('close')[1];
       var form = document.getElementById('inputDataForm');
@@ -238,6 +238,17 @@
       });
 
       import_btn.onclick = function() {
+        import_modal.style.display = 'block';
+        console.log('ini modal import');
+      };
+
+      btnMbl.addEventListener('click', function(){
+
+        modal.style.display = 'block';
+        console.log('ini modal input');
+      });
+
+      import_btnMbl.onclick = function() {
         import_modal.style.display = 'block';
         console.log('ini modal import');
       };

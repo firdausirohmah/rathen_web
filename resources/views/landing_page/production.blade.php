@@ -168,7 +168,7 @@
                     <tr>
                       <td class="text-right">
                         <div>Approval</div>
-                        <div class="py-5"></div>
+                        <div class="py-4"></div>
                         <div class="d-flex justify-content-end">
                           <div class="px-5 ttd">
                             <img src="https://cdn.kibrispdr.org/data/957/tanda-tangan-keren-png-6.png" alt="" style="width: 100px;display:none;float:left;" id="ttd1"><br>
@@ -843,7 +843,7 @@
             @endif
 
             @if($pesanan->status_order == 'produksi')
-                @if($aproval_1->is_agreed == 1 && $aproval_2->is_agreed == 1 && $aproval_3->is_agreed == 1)
+                @if( isset($aproval_1) && isset($aproval_2) && isset($aproval_3) && $aproval_1->is_agreed == 1 && $aproval_2->is_agreed == 1 && $aproval_3->is_agreed == 1)
                 <div>
                   <a href="{{ route('production_generate', ['id' => $kode]) }}" class="btn action__submit">Download
                     <i class="icon icon-cloud-download"></i>
@@ -888,14 +888,14 @@
                 document.getElementById('ttd3').style = 'display:none;width:100px;';
               }
               if(approval_2.checked){
-                document.getElementById('ttd2').style = 'display:inline;width:100px;';
+                document.getElementById('ttd2').style = 'display:inline;width:100px;height:100px;';
               }else{
-                document.getElementById('ttd2').style = 'display:none;width:100px;';
+                document.getElementById('ttd2').style = 'display:none;width:100px;height:100px;';
               }
               if(approval_3.checked){
-                document.getElementById('ttd1').style = 'display:inline;width:100px;';
+                document.getElementById('ttd1').style = 'display:inline;width:100px;height:100px;';
               }else{
-                document.getElementById('ttd1').style = 'display:none;width:100px;';
+                document.getElementById('ttd1').style = 'display:none;width:100px;height:100px;';
               }
 
             }

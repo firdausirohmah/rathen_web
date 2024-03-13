@@ -254,18 +254,19 @@
     <div class="container">
 
       @if(session('success'))
-      <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <div class="alert alert-success alert-dismissible fade show" role="alert" id="success-alert">
           {{ session('success') }}
           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       </div>
       @endif
       @if(session('error'))
-      <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <div class="alert alert-danger alert-dismissible fade show" role="alert" id="failed-alert">
           {{ session('error') }}
           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       </div>
       @endif
     </div>
+    
 
     @yield('content')
   {{-- footer --}}
@@ -361,6 +362,17 @@
   <script src="asset/admin/js/core/bootstrap.min.js"></script>
   <script src="asset/admin/js/plugins/perfect-scrollbar.min.js"></script>
   <script src="asset/admin/js/plugins/smooth-scrollbar.min.js"></script>
+
+  <script>
+      $(document).ready(function() {
+          $("#success-alert").fadeTo(2000, 500).slideUp(500, function() {
+            $("#success-alert").slideUp(500);
+          });
+          $("#failed-alert").fadeTo(2000, 500).slideUp(500, function() {
+            $("#failed-alert").slideUp(500);
+          });
+      });
+    </script>
   
   <script>
     var win = navigator.platform.indexOf('Win') > -1;

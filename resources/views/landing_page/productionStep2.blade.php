@@ -41,6 +41,24 @@
 
       <div class="payment">
 
+        @if($data->status_order == 'produksi')
+        <div class="payment__info">
+          <div class="payment__cc">
+            <div class="payment__title fw-6">
+              <i class="icon icon-plus"></i> Extra
+            </div>
+            <div class="form__cc">
+              <div class="row">
+                <div class="field" style="padding-right:0; width:100%">
+                  <div class="title">Note for Form</div>
+                  <textarea class="input txt" name="note" id="note">{!! $data->note_order !!}</textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        @endif
+
         <div class="payment__info">
           <div class="payment__cc">
             <div class="payment__title fw-6">
@@ -95,20 +113,7 @@
 
           </div>
 
-          <div class="payment__cc">
-            <div class="payment__title fw-6">
-              <i class="icon icon-plus"></i> Extra
-            </div>
-            <div class="form__cc">
-              <div class="row">
-                <div class="field">
-                  <div class="title">Note for Form</div>
-                  <textarea class="input txt" name="note" id="note">{!! $data->note_order !!}</textarea>
-                </div>
-              </div>
-            </div>
-          </div>
-
+          
         </div>
 
         <div class="payment__info">

@@ -66,6 +66,7 @@
                         <th>Nama Punggung</th>
                         <th>Nomor</th>
                         <th>Ukuran</th>
+                        <th>Action</th>
                       </tr>
 
                       <?php $i = 1; ?>
@@ -76,6 +77,7 @@
                         <td>{{ $row->namapunggung }}</td>
                         <td>{{ $row->nomor; }}</td>
                         <td>{{ $row->ukuran; }}</td>
+                        <td><a href="{{ route('form-4.delete', ['id' => $row->kd_step4]) }}">delete</a></td>
                       </tr>
                       @endforeach
 
@@ -186,7 +188,7 @@
         <span class="close">&times;</span>
         <div class="form-modal">
           <h4>Silahkan inputkan data</h4>
-          <form action="{{route('finance.import') }}" id="importDataForm" method="post" enctype="multipart/form-data">
+          <form action="{{route('excel.import') }}" id="importDataForm" method="post" enctype="multipart/form-data">
             @csrf
             <input type="hidden" name="idDataPesanan" value="{{$kode}}" />
             <label for="import">File</label>

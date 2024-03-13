@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Finance extends Model
 {
@@ -16,6 +17,12 @@ class Finance extends Model
         'money_status',
         'nominal',
         'note',
+        'media',
         // Daftar semua kolom lainnya di sini
     ];
+
+    public function file():BelongsTo
+    {
+        return $this->belongsTo(Media::class, 'media');
+    }
 }

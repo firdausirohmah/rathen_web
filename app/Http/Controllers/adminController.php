@@ -823,6 +823,17 @@ class adminController extends Controller
     // Update data di database jika ada data yang diunggah
    
         DB::table('progress_productions')->where('kd_step', $kd_step)->update($dataToSave);
+        if($request->has('is_shipping_payment')){
+        $finance = new Finance();
+        $finance->transaction_date = Carbon::now()->format('Y-m-d');
+        $finance->type = 'debit';
+        $finance->transactions = 'pelunasasn order';
+        $finance->status = 'pembayaran_pelunasan';
+        $finance->note = 'generate by system';
+        $finance->nominal = $request->biaya_akhir;
+        $finance->money_status = 'lunas';
+        $finance->save();
+        }
     
 
     return redirect()->back();
@@ -847,7 +858,7 @@ class adminController extends Controller
 
     {
         $finance = new Finance();
-        $financeData = $finance->all();
+        $financeData = $finance->with('file')->get();
         
         $row =  $finance->select('transaction_date', DB::raw('sum(nominal) as nominal'))->groupBy('transaction_date')->where('type', 'debit')->get();
         $omset = $finance->select(DB::raw('SUM(nominal) as omset'))->where('type', 'debit')->get()->value('omset');
@@ -958,6 +969,20 @@ class adminController extends Controller
     public function financeAdd(Request $request)
     {
         $finance = new Finance();
+        $finance->transaction_date = $request->date;
+        $finance->type = $request->type;
+        $finance->transactions = $request->transaksi;
+        $finance->status = $request->kategori_transaksi;
+        $finance->note = $request->note;
+        $finance->nominal = $request->nominal;
+        $finance->money_status = $request->status_uang;
+        $finance->save();
+        return redirect()->back();
+
+    }
+    public function financeEdit(Request $request)
+    {
+        $finance = Finance::find($request->id);
         $finance->transaction_date = $request->date;
         $finance->type = $request->type;
         $finance->transactions = $request->transaksi;
@@ -1234,6 +1259,36 @@ class adminController extends Controller
         $about_us->media_type_of = $media_type;
         $about_us->save();
         $input->file('file')->move('uploads', $filename);
+
+
+
+        return redirect()->back()->with('success', 'berhasil upload data');
+    }
+    public function finance_media_upload(Request $input){
+        $filename = time().'.'.$input->file('file')->getClientOriginalExtension();
+        $type = null;
+        $media_type = $input->media_type_of;
+        if (str_starts_with($input->file('file')->getMimeType(), 'image')) {
+            // File adalah gambar
+            // Proses gambar di sini
+            $type = 'image';
+        } else {
+            // File bukan gambar atau video
+            return redirect()->back()->with('error', 'File harus berupa gambar');
+        }
+
+        $model = new Media();
+        $model->filename = $filename;
+        $model->alt = $filename;
+        $model->type = $type;
+        $model->media_type_of = $media_type;
+        $model->save();
+        $input->file('file')->move('uploads', $filename);
+
+        $finance = new Finance();
+        $row = $finance->find($input->id);
+        $row->media = $model->id;
+        $row->save();
 
 
 

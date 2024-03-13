@@ -246,6 +246,7 @@ class PesananController extends Controller
         ->orderByRaw("FIELD(ukuran, 'S', 'M', 'L', 'XL', 'XXL', 'XXXL')") // Sesuaikan dengan ukuran yang sesuai 
         ->get();  
         
+        
         // dd($status);
 
             return view('landing_page.form-orderStep4', [
@@ -254,6 +255,11 @@ class PesananController extends Controller
                 'sukses' => $order->status_order,
             ]); 
         
+    }
+    public function deleteStep4($id){
+        $model = ModelStep4::find($id);
+        $model->delete();
+        return redirect()->back();
     }
     public function downloadPdf()
 {
@@ -913,12 +919,16 @@ class PesananController extends Controller
         $mk = $request->model_kerah;
         $bb = $request->bb;
         $bc = $request->bc;
+        $pb = $request->pola_badan;
+        $lasercut = $request->lasercut;
         // dd($kode, $pl, $mk, $bb, $bc);
         $data = ModeStep3::where('kd_step3', $kode)->update([
             'pola_lengan' => $pl ,
             'model_kerah' => $mk ,
             'bahan_baju' => $bb ,
-            'bahan_celana' => $bc , 
+            'bahan_celana' => $bb , 
+            'pola_badan' => $pb,
+            'lasercut' => $lasercut,
         ]);   
 
         return redirect('/form-4/'.$kode);

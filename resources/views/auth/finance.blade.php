@@ -284,7 +284,7 @@
         <div class="card-body px-0 pt-0 pb-2">
           <div class="table-responsive p-0">
             <a href="{{ asset('import/format-import-finance.xlsx') }}">format import</a>
-            <form action="{{route('finance.import')}}" method="post" class="input-group mb-3" enctype="multipart/form-data">
+            <form action="{{route('excel.import')}}" method="post" class="input-group mb-3" enctype="multipart/form-data">
               @csrf
               <input type="hidden" name="type" value="finance">
               <input type="file" name="import" id="import" class="form-control">
@@ -307,6 +307,8 @@
                   <!-- u. kategori dan kualitas -->
                   <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Created at
                   </th>
+                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">image
+                  </th>
                   <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Action
                   </th>
                   <!-- <th class="text-secondary opacity-7"></th> -->
@@ -323,7 +325,11 @@
                     {{ $item->status }}
                   </td>
                   <td>
-                    {{ $item->type }}
+                    @if($item->type == "debit")
+                    Uang Masuk
+                    @else
+                    Uang Keluar
+                    @endif
                   </td>
                   <td>
                     Rp {{number_format($item->nominal,0,',','.')}}
@@ -335,7 +341,145 @@
                     
                   </td>
                   <td class="text-center text-sm">
-                    
+                    @if(isset($item->file->filename))
+                    <img src="{{asset('uploads/'.$item->file->filename)}}" alt="" class="img-thumbnail">
+                    @endif
+                  </td>
+                  <td class="text-center text-sm">
+                  <button type="button" class="btn btn-primary ms-auto m-2S" data-bs-toggle="modal" data-bs-target="#upload_{{$item->id}}">
+                  upload
+                </button>
+                  <button type="button" class="btn btn-primary ms-auto m-2S" data-bs-toggle="modal" data-bs-target="#edit_{{$item->id}}">
+                  edit
+                </button>
+
+                <div class="modal fade" id="edit_{{$item->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <form action="{{route('finance.edit')}}" method="post">
+                    @csrf
+                    <input type="hidden" name="id" value="{{$item->id}}">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">FINANCIAL - RATHEN</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                          <div class="form-group">
+                            <label for="date">Date</label>
+                            <input type="date" name="date" id="date" class="form-control" value="{{$item->transaction_date}}" required>
+                          </div>
+                          <!--new-->
+                          <div class="form-group">
+                            <label for="nominal">Transaksi</label>
+                            <input type="text" name="transaksi" id="transaksi" class="form-control" value="{{$item->transactions}}" required>
+                          </div>
+                          <div class="form-group">
+                            <label for="nominal">Nilai (Rp)</label>
+                            <input type="number" name="nominal" id="nominal" class="form-control" value="{{$item->nominal}}" required>
+                          </div>
+                          <div class="form-group">
+                            <label for="type">Jenis Transaksi</label>
+                            <select name="type" id="type" class="form-control" required>
+                              @if($item->type == 'debit')
+                              <option value="debit">Uang Masuk</option>
+                              <option value="credit">Uang Keluar</option>
+                              @else
+                              <option value="credit">Uang Keluar</option>
+                              <option value="debit">Uang Masuk</option>
+                              @endif
+                            </select>
+                          </div>
+                          <div class="form-group">
+                            <label for="kategori_transaksi">Kategori Transaksi</label>
+                            <select name="kategori_transaksi" id="kategori_transaksi" class="form-control" required>
+                              <option value="{{$item->status}}">{{ucwords(str_replace('_', ' ', $item->status))}}</option>
+                              
+                              <option value="pembayaran_dp">Pembayaran DP</option>
+                              <option value="pembayaran_pelunasan">Pembayaran Pelunasan</option>
+                              <option value="belanja_bahan">Belanja bahan</option>
+                              <option value="belanja_poliflex">Belanja poliflex</option>
+                              <option value="belanja_logo">Belanja logo</option>
+                              <option value="bayar_jahit">Bayar Jahit</option>
+                              <option value="bayar_sublim">Bayar sublim</option>
+                              <option value="bayar_lasercut">Bayar lasercut</option>
+                              <option value="aksesoris">Aksesoris</option>
+                              <option value="operasional">Operasional</option>
+                              <option value="gopay">Gopay</option>
+                              <option value="internet">Internet</option>
+                              <option value="listrik">Listrik</option>
+                              <option value="air">Air</option>
+                              <option value="entertainment">Entertainment</option>
+                              <option value="maintenance">Maintenance</option>
+                              <option value="ads">Ads (Iklan)</option>
+                              <option value="tata_usaha">Tata usaha (iuran keamanan dan sampah)</option>
+                              <option value="cicilan_alat">Cicilan Pembelian Alat</option>
+                              <option value="salary">Salary</option>
+                              <option value="fee_marketing">Fee Marketing</option>
+                              <option value="laba_ditahan">Laba di tahan</option>
+                              <option value="dividen">Dividen</option>
+                              <option value="pengeluaran_lain">Pengeluaran Tak terduga</option>
+                            </select>
+                          </div>
+                          <div class="form-group">
+                            <label for="status_uang">Status Uang</label>
+                            <select name="status_uang" id="status_uang" class="form-control" required>
+                              <option value="{{$item->money_status}}" selected>{{ucwords($item->money_status)}}</option>
+                              <option value="lunas">Lunas</option>
+                              <option value="hutang">Hutang</option>
+                              <option value="piutang">Piutag</option>
+                            </select>
+                          </div>
+                          <div class="form-group" >
+                            <label for="note">Keterangan</label>
+                            <textarea name="note" id="note" class="form-control" required>{{$item->note}}</textarea>
+                          </div>
+                          
+                          <!--<div class="form-group">-->
+                          <!--  <label for="status">Status</label>-->
+                          <!--  <select name="status" id="status" class="form-control">-->
+                          <!--    <option value="">Select Here</option>-->
+                          <!--    <option value="order">Order</option>-->
+                          <!--    <option value="belanja">Belanja</option>-->
+                          <!--    <option value="hr">HR</option>-->
+                          <!--    <option value="ads">Ads</option>-->
+                          <!--  </select>-->
+                          <!--</div>-->
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save changes</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                </div>
+                <div class="modal fade" id="upload_{{$item->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <form action="{{route('finance.media_upload')}}" method="post" enctype="multipart/form-data">
+                      @csrf
+                      <input type="hidden" name="media_type_of" value="finance">
+                      <input type="hidden" name="id" value="{{$item->id}}">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h1 class="modal-title fs-5" id="exampleModalLabel">FINANCIAL - RATHEN</h1>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                              <label for="file">File</label>
+                              <input type="file" name="file" id="file" class="form-control">
+                            </div>
+                            <!--new-->
+                            
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          <button type="submit" class="btn btn-primary">Save changes</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
                   </td>
                 </tr>
                 @endforeach

@@ -161,14 +161,7 @@
                       </td>
                       <td>
                         Note:
-                        <ul>
-                          <li>Sublim badan depan saja</li>
-                          <li>lengan dan badan belakang bahan adidas (putih, dongker)</li>
-                          <li>Samping baju variasi zig zag gold 2 cm</li>
-                          <li>Nat/list ujung tangan gold 1,5 cm disambung</li>
-                          <li>ujung tangan adidas (putih, dongker) 3 cm</li>
-                          <li>Celana adidas (putih, dongker)polos</li>
-                        </ul>
+                        {!!$pesanan->note_order!!}
                       </td>
 
                     </tr>
@@ -850,11 +843,13 @@
             @endif
 
             @if($pesanan->status_order == 'produksi')
-            <div>
-              <a href="{{ route('production_generate', ['id' => $kode]) }}" class="btn action__submit">Download
-                <i class="icon icon-cloud-download"></i>
-              </a>
-            </div>
+                @if($aproval_1->is_agreed == 1 && $aproval_2->is_agreed == 1 && $aproval_3->is_agreed == 1)
+                <div>
+                  <a href="{{ route('production_generate', ['id' => $kode]) }}" class="btn action__submit">Download
+                    <i class="icon icon-cloud-download"></i>
+                  </a>
+                </div>
+                @endif
             <form action="{{route('production.approval')}}" method="post">
               <input type="hidden" name="kode" value="{{$kode}}">
               @csrf

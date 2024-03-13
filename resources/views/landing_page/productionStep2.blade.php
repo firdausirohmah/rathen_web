@@ -10,6 +10,7 @@
   <!-- <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700|Open+Sans:400,600'> -->
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css'>
   <link rel="stylesheet" href="{{ asset('asset/css/formOrder.css') }}">
+  <script src="https://cdn.ckeditor.com/ckeditor5/41.1.0/classic/ckeditor.js"></script>
 
 </head>
 
@@ -102,7 +103,7 @@
               <div class="row">
                 <div class="field">
                   <div class="title">Note for Form</div>
-                  <textarea class="input txt" name="note">{{ $data->note_order }}</textarea>
+                  <textarea class="input txt" name="note" id="note">{!! $data->note_order !!}</textarea>
                 </div>
               </div>
             </div>
@@ -116,7 +117,7 @@
               <i class="icon icon-pencil"></i>Extra Data Order
             </div>
             <div class="form__cc">
-
+              @if($data->kategori_harga !== 'pro' && $data->kategori_harga !== 'pro-plus' && $data->kategori_harga !== 'jacket-anthem')
               <div class="row">
                 <div class="field">
                   <div class="title">Kerah pakai kancing
@@ -141,6 +142,9 @@
                   <label class='label_harga' for='lengan_raglan'>(+15,000)</label>
                 </div>
               </div>
+              @endif
+
+              @if($data->kategori_harga !== 'jacket-anthem')
               <div class="row">
                 <div class="field">
                   <div class="title">Lengan Panjang
@@ -152,6 +156,8 @@
                   <span>(+30,000)</span>
                 </div>
               </div>
+              @endif
+              
               <div class='field'>Big Size</div>
               <div class="row">
                 <div class="field">
@@ -195,6 +201,8 @@
               
             </div>
             <div class="form__cc">
+                
+              @if($data->kategori_harga !== 'jacket-anthem')
               <div class="row">
                 <div class="field">
                   <div class="title">Celana printing
@@ -203,6 +211,8 @@
                   <label class='label_harga' for='celana_printing'>(+50,000)</label>
                 </div>
               </div>
+              @endif
+              
               <div class="row">
                 <div class="field">
                   <div class="title">Celana panjang PRO
@@ -225,7 +235,9 @@
                   <span>(+50,000)</span>
                 </div>
               </div>
+              @if($data->kategori_harga !== 'jacket-anthem')
               <div class="payment__title fw-6">Upgrade Fitur</div>
+              @if($data->kategori_harga !== 'pro' && $data->kategori_harga !== 'pro-plus' && $data->kategori_harga !== 'jacket-anthem')
               <div class="row">
                 <div class="field">
                   <div class="title">Bahan embos
@@ -242,6 +254,7 @@
                   <label class='label_harga' for='logo_3d'>(+30,000)</label>
                 </div>
               </div>
+              @endif
               <div class="row">
                 <div class="field">
                   <div class="title">Kerah elastic rib
@@ -258,6 +271,7 @@
                   <label class='label_harga' for='tangan_rib'>(+20,000)</label>
                 </div>
               </div>
+              @endif
             </div>
           </div>
         </div>
@@ -533,6 +547,7 @@
                         <th>Nama Punggung</th>
                         <th>Nomor</th>
                         <th>Ukuran</th>
+                        <th>Action</th>
                       </tr>
 
                       <?php $i = 1; ?>
@@ -543,6 +558,8 @@
                         <td>{{ $row->namapunggung }}</td>
                         <td>{{ $row->nomor; }}</td>
                         <td>{{ $row->ukuran; }}</td>
+                        <td><a href="{{ route('form-4.delete', ['id' => $row->kd_step4]) }}">delete</a></td>
+
                       </tr>
                       @endforeach
 
@@ -612,7 +629,7 @@
         <span class="close">&times;</span>
         <div class="form-modal">
           <h4>Silahkan inputkan data</h4>
-          <form action="{{ route('finance.import') }}" id="inputDataForm" method="post" enctype="multipart/form-data">
+          <form action="{{ route('excel.import') }}" id="inputDataForm" method="post" enctype="multipart/form-data">
             @csrf
             <label for="import">file:</label>
             <input class="input-modal" type="file" id="import" name="import" required>
@@ -640,6 +657,11 @@
     }
   </style>
   <script>
+     ClassicEditor
+        .create( document.querySelector( '#note' ))
+        .catch( error => {
+            console.error( error );
+        } );
       function updateFileName(inputId, statusId) {
         const input = document.getElementById(inputId);
         const label = input.closest('label');

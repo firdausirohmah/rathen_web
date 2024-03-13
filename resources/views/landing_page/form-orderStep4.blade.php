@@ -86,7 +86,7 @@
             </form>
           </div>
 
-          <details class="action-btn-sm">
+          <!-- <details class="action-btn-sm">
             <summary><strong>Action Button</strong></summary>
             <div class="content">
               <div class="payment__shipping w-215-tab">
@@ -108,7 +108,7 @@
                         <i class="icon icon-pencil"></i>Input Data
                       </div>
                     </div>
-                    <!-- <input type="text" class="input txt text-validated" value='Upload' /> -->
+                    <input type="text" class="input txt text-validated" value='Upload' />
                   </div>
                 </div>
                 <div class="row">
@@ -117,12 +117,12 @@
                       <a href="{{ asset('import/format-pemain.xlsx') }}" class="form-upload payment__type--cc btn-black">
                         <i class="icon icon-cloud-download"></i>Format Ukuran</a>
                     </div>
-                    <!-- <input type="text" class="input txt text-validated" value='Upload' /> -->
+                   <input type="text" class="input txt text-validated" value='Upload' />
                   </div>
                 </div>
               </div>
             </div>
-          </details>
+          </details> -->
 
           <div class="payment__shipping w-215-tab action-btn-lg">
             <div class="row">
@@ -186,7 +186,7 @@
         <span class="close">&times;</span>
         <div class="form-modal">
           <h4>Silahkan inputkan data</h4>
-          <form action="{{route('finance.import') }}" id="inputDataForm" method="post" enctype="multipart/form-data">
+          <form action="{{route('finance.import') }}" id="importDataForm" method="post" enctype="multipart/form-data">
             @csrf
             <input type="hidden" name="idDataPesanan" value="{{$kode}}" />
             <label for="import">File</label>
@@ -229,11 +229,15 @@
       var rowIndex = 1;
 
       // Display the modal when the button is clicked
-      btn.onclick = function() {
+      btn.addEventListener('click', function(){
+
         modal.style.display = 'block';
-      };
+        console.log('ini modal input');
+      });
+
       import_btn.onclick = function() {
         import_modal.style.display = 'block';
+        console.log('ini modal import');
       };
 
       // Close the modal when the close button is clicked

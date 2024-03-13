@@ -612,7 +612,7 @@
         <span class="close">&times;</span>
         <div class="form-modal">
           <h4>Silahkan inputkan data</h4>
-          <form action="{{ route('finance.import') }}" id="inputDataForm" method="post">
+          <form action="{{ route('finance.import') }}" id="inputDataForm" method="post" enctype="multipart/form-data">
             @csrf
             <label for="import">file:</label>
             <input class="input-modal" type="file" id="import" name="import" required>

@@ -59,6 +59,13 @@
               <div class="form__cc">
                 <div class="row">
                   <div class="field">
+                    <div class="title">Nama Tim
+                    </div>
+                    <input type="text" name="nama_tim" class="input txt" value="{{ $data->nama_tim }}" />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="field">
                     <div class="title">Product
                     </div>
                     <input type="text" class="input txt" value="{{ $data->product }}" readonly />
@@ -84,19 +91,22 @@
                     </div>
                     <select name="model_kerah" class="input ddl w-100">
                       <option value="{{ $data->model_kerah }}">{{ $data->model_kerah }}</option>
-                      <option value="K.R 01">K.R 01</option>
-                      <option value="K.R 02">K.R 02</option>
-                      <option value="K.R 03">K.R 03</option>
-                      <option value="K.R 04">K.R 04</option>
-                      <option value="K.R 05">K.R 05</option>
-                      <option value="K.R 06">K.R 06</option>
-                      <option value="K.R 07">K.R 07</option>
-                      <option value="K.R 08">K.R 08</option>
-                      <option value="K.R 09">K.R 09</option>
-                      <option value="K.R 10">K.R 10</option>
-                      <option value="K.R 11">K.R 11</option>
-                      <option value="K.R 12">K.R 12</option>
-                      <option value="K.R 13">K.R 13</option>
+                      <option value="C-1">C-1</option>
+                      <option value="C-2">C-2</option>
+                      <option value="C-3">C-3</option>
+                      <option value="C-4">C-4</option>
+                      <option value="C-5">C-5</option>
+                      <option value="V-1">V-1</option>
+                      <option value="V-2">V-2</option>
+                      <option value="V-3">V-3</option>
+                      <option value="V-4">V-4</option>
+                      <option value="V-5">V-5</option>
+                      <option value="V-6">V-6</option>
+                      <option value="O-1">O-1</option>
+                      <option value="O-2">O-2</option>
+                      <option value="O-3">O-3</option>
+                      <option value="O-4">O-4</option>
+                      <option value="O-5">O-5</option>
                     </select>
                   </div>
                 </div>

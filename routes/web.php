@@ -169,11 +169,14 @@ Route::controller(adminController::class)->group(function () {
         Route::get('/production', 'production')->name('production');
         Route::post('/production/update_progress', 'update_progress')->name('update_progress');
         Route::get('/production/{id}', 'production_edit')->name('production_edit');
+        Route::get('/production-invoice/{id}', 'production_invoice')->name('production_invoice');
         Route::get('/production/generate/{id}', 'production_generate')->name('production_generate');
         Route::post('/production/approval', 'approval_edit')->name('production.approval');
-        Route::get('/production/design/{id}', 'production_design')->name('production_design');
+        Route::get('/production/edit-invoice/{id}', 'production_editInvoice')->name('production_editInvoice');
+        Route::get('/production/design-production/{id}', 'production_design')->name('production_design');
         Route::post('/production/design/update', 'production_design_update')->name('update_production_desain');
         Route::get('/finance', 'finance')->name('finance');
+        Route::get('/finance-input', 'financeInput')->name('finance-input');
         Route::post('/finance/add', 'financeAdd')->name('finance.add');
         Route::post('/finance/edit', 'financeEdit')->name('finance.edit');
         Route::post('/finance/import', 'importExcel')->name('excel.import');

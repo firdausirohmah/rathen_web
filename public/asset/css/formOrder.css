@@ -2,7 +2,7 @@
 *:after,
 *:before {
   box-sizing: border-box;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 
@@ -416,9 +416,6 @@ input[type=text] {
   background-color: #f0f4f7;
   width: 200px;
   margin-right: 10px;
-}
-.w-100{
-    width: 100%!important;
 }
 
 .title {
@@ -856,12 +853,17 @@ input[type=text] {
   max-width: 80%;
   max-height: 80%;
 }
+.d-grid-table{
+  width: 348px;
+  height: 348px;
+  display: grid;
+}
 
 .close {
   position: absolute;
-  top: 15px;
+  top: 0;
   right: 35px;
-  color: #f1f1f1;
+  color: #969696;
   font-size: 40px;
   font-weight: bold;
   cursor: pointer;
@@ -1240,6 +1242,7 @@ input[type=text] {
   width: 250px;
   overflow: auto;
   position: relative;
+  overflow-x: hidden;
 }
 .ttd #ttd1 {
   position: relative; 
@@ -1252,9 +1255,8 @@ input[type=text] {
   left: 1rem; 
 }
 .ttd #ttd3 {
-  position: absolute; /* Change this line */
-  top: 3.5rem;
-  right: 3rem; /* Add this line */
+  position: relative; 
+  left: 30rem;
 }
 .w-fit{
   width: fit-content;
@@ -1336,19 +1338,96 @@ textarea {
 .bg-unset{
   background-color: unset!important;
 }
-
+.card-body h3 img.w-10 {
+  width: 10%;
+}
+.customDetailKerja{
+  font-size: 14px;
+}
+.titleCustom{
+  height: 23px;
+}
+.d-table-custom{
+  width: 180px;
+  height: 250px;
+}
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
 @media only screen and (max-width: 600px) {
+  .card-body h3 img.w-10 {
+    width: 20%;
+  }
+  .text-justify.badge{
+    font-size:8px;
+  }
+  .card h5{
+    font-size: 10px;
+  }
+  .card h6{
+    font-size: 8px;
+  }
+  .img-tableView .title{
+    font-size: 12px;
+  }
+  .img-tableView img{
+    height: 6rem;
+    width: 8rem;
+  }
+  .img-tableDetail{
+    padding: 0 0.5rem;
+    width: 6rem;
+    height: 6rem;
+  }
+  .img-tableDetail img{
+    height: 3rem;
+    width: 3rem;
+  }
+  .img-tableDetail span{
+    font-size: 8px;
+  }
+  .customNote{
+    font-size: 12px;
+    width: 50%;
+  }
+  .customDetailKerja{
+    font-size: 8px;
+    /* width: 33%; */
+  }
+  .d-grid-table {
+    width: 100px;
+    height: 100px;
+  }
+  .d-grid-table img{
+    width: 50%!important;
+  }
+  .d-grid-table p{
+    font-size: 8px!important;
+  }
+  .card .wp-table{
+    font-size: 8px;
+  }
+  .card .paddingCustom{
+    padding-left:1rem!important;
+    padding-right:1rem!important
+  }
+  .titleCustom{
+    font-size: 8px;
+    height: 10px;
+  }
+  .d-table-custom{
+    font-size: 8px;
+    width: 85px;
+    height: 100px;
+  }
+  .font-note-finish{
+    font-size: 10px;
+  }
   .field-bahan .title-note{
     font-size: 10px;
   }
-  .ttd #ttd1 {
-    top: 116rem;
-    right: 12rem;
-  }
-  .ttd #ttd2 {
-    top: 115rem;
+  .ttd #ttd3 {
+    width: 150px !important;
+    left: 5rem;
   }
   .action-btn-sm{
     display: block;

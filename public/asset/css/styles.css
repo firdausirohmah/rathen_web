@@ -523,9 +523,9 @@ input:checked + .label_harga {
 
 .close {
   position: absolute;
-  top: 15px;
-  right: 35px;
-  color: #f1f1f1;
+  top: 0;
+  right: 15px;
+  color: #969696;
   font-size: 40px;
   font-weight: bold;
   cursor: pointer;

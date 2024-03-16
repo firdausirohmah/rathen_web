@@ -8,6 +8,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700|Open+Sans:400,600'>
   <!-- <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700|Open+Sans:400,600'> -->
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="asset/admin/js/core/bootstrap.min.js"></script>
+
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css'>
   <link rel="stylesheet" href="{{ asset('asset/css/formOrder.css') }}">
   <script src="https://cdn.ckeditor.com/ckeditor5/41.1.0/classic/ckeditor.js"></script>
@@ -17,7 +22,7 @@
 <body>
   <!-- partial:index.partial.html -->
   <header>
-    <div class="container" style="width: 1024px;">
+    <div class="container">
       <div class="navigation center-content">
 
         <div class="logo">
@@ -26,641 +31,821 @@
 
       </div>
       <div class="notification">
-        Rathen - Edit Data
+        Rathen - Form Production
       </div>
     </div>
   </header>
-  <form action="{{route('update_production_desain')}}" method="post" enctype="multipart/form-data">
-    @csrf
-
-  <section class="content content-back">
+  
+  <div class="content content-back">
     <a class="btn btn-back" href="/production/{{$kode}}">
       <i class="icon-arrow-left"></i>
     </a>
-    <div class="container">
+  </div>
+  <div class="container container-fluid pt-4">
+    <ul class="nav nav-tabs text-center" id="myTabs" role="tablist">
+      <li class="nav-item" role="presentation">
+        <a class="nav-link active" id="produksi-tab" data-bs-toggle="tab" href="#produksi" role="tab" aria-controls="produksi" aria-selected="true">Produksi</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link " id="finishing-tab" data-bs-toggle="tab" href="#finishing" role="tab" aria-controls="finishing" aria-selected="false">Finishing</a>
+      </li>
+    </ul>
+  </div>
 
-      <div class="payment">
-
-        @if($data->status_order == 'produksi')
-        <div class="payment__info">
-          <div class="payment__cc">
-            <div class="payment__title fw-6">
-              <i class="icon icon-plus"></i> Extra
+<div class="tab-content">
+  <!-- Invoice Tab -->
+  <div class="tab-pane fade show active" id="produksi" role="tabpanel" aria-labelledby="produksi-tab">
+    <form action="{{route('update_production_desain')}}" method="post" enctype="multipart/form-data">
+      @csrf
+      <section>
+        <div class="container">
+          <div class="row">
+            <div class="payment__title fw-6 mt-3 align-items-center">
+              <i class="icon icon-pencil"></i>Data Produksi
             </div>
-            <div class="form__cc">
-              <div class="row">
-                <div class="field" style="padding-right:0; width:100%">
-                  <div class="title">Note for Form</div>
-                  <textarea class="input txt" name="note" id="note">{!! $data->note_order !!}</textarea>
+
+            <div class="col-sm-6">
+              <div class="mb-3 row align-items-center">
+                <div class="col-sm-4">
+                  <label for="pola_badan" class="col-form-label">Pola Badan</label>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        @endif
-
-        <div class="payment__info">
-          <div class="payment__cc">
-            <div class="payment__title fw-6">
-              <i class="icon icon-pencil"></i>Data Order
-            </div>
-
-            <div class="form__cc">
-
-              <div class="row">
-                <div class="field">
-                  <div class="title">Product
-                  </div>
-                  <input type="text" class="input txt" value="{{ $data->product }}" />
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="field">
-                  <div class="title">Model Kerah
-                  </div>
-                  <select name="model_kerah" class="input ddl w-100">
-                    <option value="K.R 01" {{ $data->model_kerah == 'K.R 01' ? 'selected' : '' }}>K.R 01</option>
-                    <option value="K.R 02" {{ $data->model_kerah == 'K.R 02' ? 'selected' : '' }}>K.R 02</option>
-                    <option value="K.R 03" {{ $data->model_kerah == 'K.R 03' ? 'selected' : '' }}>K.R 03</option>
-                    <option value="K.R 04" {{ $data->model_kerah == 'K.R 04' ? 'selected' : '' }}>K.R 04</option>
-                    <option value="K.R 05" {{ $data->model_kerah == 'K.R 05' ? 'selected' : '' }}>K.R 05</option>
-                    <option value="K.R 06" {{ $data->model_kerah == 'K.R 06' ? 'selected' : '' }}>K.R 06</option>
-                    <option value="K.R 07" {{ $data->model_kerah == 'K.R 07' ? 'selected' : '' }}>K.R 07</option>
-                    <option value="K.R 08" {{ $data->model_kerah == 'K.R 08' ? 'selected' : '' }}>K.R 08</option>
-                    <option value="K.R 09" {{ $data->model_kerah == 'K.R 09' ? 'selected' : '' }}>K.R 09</option>
-                    <option value="K.R 10" {{ $data->model_kerah == 'K.R 10' ? 'selected' : '' }}>K.R 10</option>
-                    <option value="K.R 11" {{ $data->model_kerah == 'K.R 11' ? 'selected' : '' }}>K.R 11</option>
-                    <option value="K.R 12" {{ $data->model_kerah == 'K.R 12' ? 'selected' : '' }}>K.R 12</option>
-                    <option value="K.R 13" {{ $data->model_kerah == 'K.R 13' ? 'selected' : '' }}>K.R 13</option>
+                <div class="col-sm-7">
+                  <select name="pola_badan" class="form-select input form-control">
+                    <option value="{{ $data->pola_badan }}">{{ $data->pola_badan }}</option>
+                    <option value="Normal">Normal</option>
+                    <option value="Slim-fit">Slim-fit</option>
                   </select>
                 </div>
-              </div>
-              <div class="row">
-                <div class="field">
-                  <div class="title">Bahan baju</div>
-                  <input type="text" name="bb" class="input txt" value='{{$data->bahan_baju}}' />
+              </div>  
+              <div class="mb-3 row align-items-center">
+                <div class="col-sm-4">
+                  <label for="pola_lengan" class="col-form-label">Pola Lengan</label>
                 </div>
-              </div>
-              <div class="row">
-                <div class="field">
-                  <div class="title">Bahan celana
-                  </div>
-                  <input type="text" name="bc" class="input txt" value='{{$data->bahan_celana}}' />
+                <div class="col-sm-7">
+                  <select name="pola_lengan" class="form-select input form-control">
+                    <option value="{{ $data->pola_lengan }}">{{ $data->pola_lengan }}</option>
+                    <option value="Normal">Normal</option>
+                    <option value="Raglan">Raglan</option>
+                  </select>
                 </div>
-              </div>
-            </div>
-
-          </div>
-
-          
-        </div>
-
-        <div class="payment__info">
-          <div class="payment__cc">
-            <div class="payment__title fw-6">
-              <i class="icon icon-pencil"></i>Extra Data Order
-            </div>
-            <div class="form__cc">
-              @if($data->kategori_harga !== 'pro' && $data->kategori_harga !== 'pro-plus' && $data->kategori_harga !== 'jacket-anthem')
-              <div class="row">
-                <div class="field">
-                  <div class="title">Kerah pakai kancing
-                  </div>
-                  <input type='checkbox' id='kerah_kancing' name='kerah_kancing' value='10000' {{($data->kerah_kancing != null) ? 'checked' : ''}}>
-                  <label class='label_harga' class='label_harga' for='kerah_kancing'>(+10,000)</label>
+              </div>  
+              <div class="mb-3 row align-items-center">
+                <div class="col-sm-4">
+                  <label for="model_kerah" class="col-form-label">Jenis Kerah</label>
                 </div>
-              </div>
-              <div class="row">
-                <div class="field">
-                  <div class="title">Badan bawah melengkung
-                  </div>
-                  <input type='checkbox' id='bb_melengkung' name='bb_melengkung' value='15000' {{($data->bb_melengkung != null) ? 'checked' : ''}}>
-                  <label class='label_harga' for='bb_lengkung'>(+15,000)</label>
+                <div class="col-sm-7">
+                  <select name="model_kerah" class="form-select input form-control">
+                    <option value="{{ $data->model_kerah }}">{{ $data->model_kerah }}</option>
+                    <option value="C-1">C-1</option>
+                    <option value="C-2">C-2</option>
+                    <option value="C-3">C-3</option>
+                    <option value="C-4">C-4</option>
+                    <option value="C-5">C-5</option>
+                    <option value="V-1">V-1</option>
+                    <option value="V-2">V-2</option>
+                    <option value="V-3">V-3</option>
+                    <option value="V-4">V-4</option>
+                    <option value="V-5">V-5</option>
+                    <option value="V-6">V-6</option>
+                    <option value="O-1">O-1</option>
+                    <option value="O-2">O-2</option>
+                    <option value="O-3">O-3</option>
+                    <option value="O-4">O-4</option>
+                    <option value="O-5">O-5</option>
+                  </select>
                 </div>
-              </div>
-              <div class="row">
-                <div class="field">
-                  <div class="title">Lengan pola raglan
-                  </div>
-                  <input type='checkbox' id='lengan_raglan' name='lengan_raglan' value='15000' {{($data->lengan_raglan != null) ? 'checked' : ''}}>
-                  <label class='label_harga' for='lengan_raglan'>(+15,000)</label>
+              </div>  
+              <div class="mb-3 row align-items-center">
+                <div class="col-sm-4">
+                  <label for="bawah_baju" class="col-form-label">Bawah Baju</label>
                 </div>
-              </div>
-              @endif
-
-              @if($data->kategori_harga !== 'jacket-anthem')
-              <div class="row">
-                <div class="field">
-                  <div class="title">Lengan Panjang
-                  </div>
-                  <div>
-                    <input type='text' class='input txt2' placeholder='Jumlah' name='lengan_panjang' value="{{$data->lengan_panjang}}">
-                    <span class='title'>PCS</span><br>
-                  </div>
-                  <span>(+30,000)</span>
+                <div class="col-sm-7">
+                  <select name="bawah_baju" class="form-select input form-control">
+                    <option value="{{ $data->bawah_baju }}">{{ $data->bawah_baju }}</option>
+                    <option value="Normal">Normal</option>
+                    <option value="Melengkung">Melengkung</option>
+                  </select>
                 </div>
-              </div>
-              @endif
-              
-              <div class='field'>Big Size</div>
-              <div class="row">
-                <div class="field">
-                  <div class="title">- Size 2XL
-                  </div>
-                  <div>
-                    <input type='text' class='input txt2' placeholder='Jumlah' name='s2xl' value="{{$data->s2xl}}">
-                    <span class='title'>PCS</span><br>
-                  </div>
-                  <span>(+20,000)</span>
-                </div>
-              </div>
-              <div class="row">
-                <div class="field">
-                  <div class="title">- Size 3XL
-                  </div>
-                  <div>
-                    <input type='text' class='input txt2' placeholder='Jumlah' name='s3xl' value="{{$data->s3xl}}">
-                    <span class='title'>PCS</span><br>
-                  </div>
-                  <span>(+35,000)</span>
-                </div>
-              </div>
-              <div class="row">
-                <div class="field">
-                  <div class="title">- Size >4XL
-                  </div>
-                  <div>
-                    <input type='text' class='input txt2' placeholder='Jumlah' name='s4xl' value="{{$data->s4xl}}">
-                    <span class='title'>PCS</span><br>
-                  </div>
-                  <span>(+50,000)</span>
-                </div>
-              </div>
-              
+              </div>  
 
             </div>
-          </div>
-          <div class="payment__cc">
-            <div class="payment__title fw-6">
-              
-            </div>
-            <div class="form__cc">
-                
-              @if($data->kategori_harga !== 'jacket-anthem')
-              <div class="row">
-                <div class="field">
-                  <div class="title">Celana printing
-                  </div>
-                  <input type='checkbox' id='celana_printing' name='celana_printing' value='50000' {{($data->celana_printing != null) ? 'checked' : ''}}>
-                  <label class='label_harga' for='celana_printing'>(+50,000)</label>
-                </div>
-              </div>
-              @endif
-              
-              <div class="row">
-                <div class="field">
-                  <div class="title">Celana panjang PRO
-                  </div>
-                  <div>
-                    <input type='text' class='input txt2' placeholder='Jumlah' name='celana_pro' value="{{$data->celana_pro}}">
-                    <span class='title'>PCS</span><br>
-                  </div>
-                  <span>(+150,000)</span>
-                </div>
-              </div>
-              <div class="row">
-                <div class="field">
-                  <div class="title">Kaoskaki
-                  </div>
-                  <div>
-                    <input type='text' class='input txt2' placeholder='Jumlah' name='kaoskaki' value="{{$data->kaoskaki}}">
-                    <span class='title'>PCS</span><br>
-                  </div>
-                  <span>(+50,000)</span>
-                </div>
-              </div>
-              @if($data->kategori_harga !== 'jacket-anthem')
-              <div class="payment__title fw-6">Upgrade Fitur</div>
-              @if($data->kategori_harga !== 'pro' && $data->kategori_harga !== 'pro-plus' && $data->kategori_harga !== 'jacket-anthem')
-              <div class="row">
-                <div class="field">
-                  <div class="title">Bahan embos
-                  </div>
-                  <input type='checkbox' id='bahan_embos' name='bahan_embos' value='20000' {{($data->bahan_embos != null) ? 'checked' : ''}}>
-                  <label class='label_harga' for='bahan_embos'>(+20,000)</label>
-                </div>
-              </div>
-              <div class="row">
-                <div class="field">
-                  <div class="title">Logo 3D
-                  </div>
-                  <input type='checkbox' id='logo_3d' name='logo_3d' value='30000' {{($data->logo_3d != null) ? 'checked' : ''}}>
-                  <label class='label_harga' for='logo_3d'>(+30,000)</label>
-                </div>
-              </div>
-              @endif
-              <div class="row">
-                <div class="field">
-                  <div class="title">Kerah elastic rib
-                  </div>
-                  <input type='checkbox' id='kerah_rib' name='kerah_rib' value='20000' {{($data->kerah_rib != null) ? 'checked' : ''}}>
-                  <label class='label_harga' for='kerah_rib'>(+20,000)</label>
-                </div>
-              </div>
-              <div class="row">
-                <div class="field">
-                  <div class="title">Ujung tangan elastic rib
-                  </div>
-                  <input type='checkbox' id='tangan_rib' name='tangan_rib' value='20000' {{($data->tangan_rib != null) ? 'checked' : ''}}>
-                  <label class='label_harga' for='tangan_rib'>(+20,000)</label>
-                </div>
-              </div>
-              @endif
-            </div>
-          </div>
-        </div>
 
-        <div class="payment__info">
-          <div class="payment__cc">
-            <div class="payment__title fw-6">
-              <i class="icon icon-picture"></i>Design dan Logo
+            <div class="col-sm-6">
+              <div class="mb-3 row align-items-center">
+                <div class="col-sm-4">
+                  <label for="lasercut" class="col-form-label">Lasercut</label>
+                </div>
+                <div class="col-sm-7">
+                  <select name="lasercut" class="form-select input form-control">
+                    <option value="{{ $data->lasercut }}">{{ $data->lasercut }}</option>
+                    <option value="Ada">Ada</option>
+                    <option value="Tidak">Tidak Ada</option>
+                  </select>
+                </div>
+              </div>  
+              <div class="mb-3 row align-items-center">
+                <div class="col-sm-4">
+                  <label for="jenis_logo" class="col-form-label">Jenis Logo</label>
+                </div>
+                <div class="col-sm-7">
+                  <select name="jenis_logo" class="form-select input form-control">
+                    <option value="{{ $data->jenis_logo }}">{{ $data->jenis_logo }}</option>
+                    <option value="Normal">Normal</option>
+                    <option value="3D">3D</option>
+                  </select>
+                </div>
+              </div>  
+              <div class="mb-3 row align-items-center">
+                <div class="col-sm-4">
+                  <label for="bahan_baju" class="col-form-label">Jenis Bahan</label>
+                </div>
+                <div class="col-sm-7">
+                  <select name="bahan_baju" class="form-select input form-control">
+                    <option value="{{ $data->bahan_baju }}">{{ $data->bahan_baju }}</option>
+                    <option value="AIRWALK">AIRWALK</option>
+                    <option value="EMBROSS-STRAW">EMBROSS-STRAW</option>
+                    <option value="EMBROSS-TOPO">EMBROSS-TOPO</option>
+                    <option value="EMBROSS-MIX">EMBROSS-MIX</option>
+                    <option value="ERBINA">ERBINA</option>
+                    <option value="MILANO">MILANO</option>
+                    <option value="PUMA">PUMA</option>
+                    <option value="RATHEN-TECH">RATHEN-TECH</option>
+                    <option value="RHABIT">RHABIT</option>
+                    <option value="SMASH">SMASH</option>
+                    <option value="SULKUL">SULKUL</option>
+                    <option value="WAVE">WAVE</option>
+                    <option value="VAPORKNIT">VAPORKNIT</option>
+                    <option value="MOVING-KNIT">MOVING-KNIT</option>
+                  </select>
+                </div>
+              </div>  
+              <div class="mb-3 row align-items-center">
+                <div class="col-sm-4">
+                  <label for="kaos_kaki" class="col-form-label">Kaos Kaki</label>
+                </div>
+                <div class="col-sm-7">
+                  <select name="kaos_kaki" class="form-select input form-control">
+                    <option value="{{ $data->kaos_kaki }}">{{ $data->kaos_kaki }}</option>
+                    <option value="Ada">Ada</option>
+                    <option value="Tidak">Tidak Ada</option>
+                  </select>
+                </div>
+              </div>  
+
+            </div>
+            <div class="col-sm-12">
+              <label for="">Note for Form</label>
+              <textarea class="input txt" name="note" id="note">{!! $data->note_order !!}</textarea>
             </div>
             
-              <input type="hidden" name="idForm2" value="{{$kode}}" />
-              <div class="form__cc">
-                <div class="row">
-                  <div class="field">
-                    <div class="title">Design jersey pemain*</div>
-                    <div class="form-uploads w-17">
-                      <label for="fileInput1" id="customLabel1" class="customLabel" style="width:20rem;">
-                        <div class="img-upload" id="cutomerDesign1">
-                          <img src="{{ asset('uploads/'.$data->design_jersey_pemain)}}" alt="" onerror="hideBrokenImage(this)">
-                        </div>
-                        <div class="title" id="statusUpload1"></div>
-                        <div class="form-upload payment__type--cc">
-                          <i class="icon icon-cloud-upload"></i>ReUpload
-                          <input type="file" id="fileInput1" name="djp" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" onchange="updateFileName('fileInput1', 'statusUpload1')">
-                        </div>
-                      </label>
-                    </div>
-                    <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes">(format file : .cdr./.ai/.pdf/.jpg)</small>
-                    <!-- <input type="text" class="input txt text-validated" value='Upload' /> -->
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="field">
-                    <div class="title">Design jersey kiper*
-                    </div>
-                    <div class="form-uploads w-17">
-                      <label for="fileInput2" id="customLabel2" class="customLabel" style="width:20rem;">
-                        <div class="img-upload" id="cutomerDesign">
-                        <img src="{{ asset('uploads/'.$data->design_jersey_kiper)}}" alt="" onerror="hideBrokenImage(this)">
-                        </div>
-                        <div class="title" id="statusUpload2"></div>
-                        <div class="form-upload payment__type--cc">
-                          <i class="icon icon-cloud-upload"></i>ReUpload
-                          <input type="file"   id="fileInput2" name="djk" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" onchange="updateFileName('fileInput2', 'statusUpload2')">
-                        </div>
-                      </label>
-                    </div>
-                    <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes">(format file : .cdr./.ai/.pdf/.jpg)</small>
-                    <!-- <input type="text" class="input txt text-validated" value='Upload' /> -->
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="field">
-                    <div class="title">Logo tim*
-                    </div>
-                    <div class="form-uploads w-17">
-                      <label for="fileInput3" id="customLabel3" class="customLabel" style="width:20rem;">
-                        <div class="img-upload" id="cutomerDesign">
-                        <img src="{{ asset('uploads/'.$data->logo_tim)}}" alt="" onerror="hideBrokenImage(this)">
-                        </div>
-                        <div class="title" id="statusUpload3"></div>
-                        <div class="form-upload payment__type--cc">
-                          <i class="icon icon-cloud-upload"></i>Upload
-                        </div>
-                        <input type="file"   id="fileInput3" name="lt" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" onchange="updateFileName('fileInput3', 'statusUpload3')">
-                      </label>
-                    </div>
-                    <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes">(format file : .cdr./.ai/.pdf/.jpg)</small>
-                    <!-- <input type="text" class="input txt text-validated" value='Upload' /> -->
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="field">
-                    <div class="title">Sponsor dada (tulisan 1 baris)
-                    </div>
-                    <div class="form-uploads w-17">
-                      <label for="fileInput4" id="customLabel4" class="customLabel" style="width:20rem;">
-                      <div class="img-upload" id="cutomerDesign">
-                        <img src="{{ asset('uploads/'.$data->sponsor_dada_tulisan1baris)}}" alt="" onerror="hideBrokenImage(this)">
-                        </div>
-                        <div class="title" id="statusUpload4"></div>
-                        <div class="form-upload payment__type--cc">
-                          <i class="icon icon-cloud-upload"></i>Upload
-                        </div>
-                        <input type="file"   id="fileInput4" name="sdt" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" onchange="updateFileName('fileInput4', 'statusUpload4')">
-                        <!-- <input type="file"   id="fileInput4" name="sdd" class="fileInput form-control fw-lighter hidden" placeholder="Upload File"> -->
-                      </label>
-                    </div>
-                    <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes">(format file : .cdr./.ai/.pdf/.jpg)</small><br>
-                    <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes"> Free utk semua kategori harga </small>
-                    <!-- <input type="text" class="input txt text-validated" value='Upload' /> -->
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="field">
-                    <div class="title">Sponsor dada (logo + tulisan)
-                    </div>
-                    <div class="form-uploads w-17">
-                      <label for="fileInput5" id="customLabel5" class="customLabel" style="width:20rem;">
-                      <div class="img-upload" id="cutomerDesign">
-                        <img src="{{ asset('uploads/'.$data->sponsor_dada_logodantulisan)}}" alt="" onerror="hideBrokenImage(this)">
-                        </div>
-                        <div class="title" id="statusUpload5"></div>
-                        <div class="form-upload payment__type--cc">
-                          <i class="icon icon-cloud-upload"></i>Upload
-                        </div>
-                        <input type="file"   id="fileInput5" name="sdl" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" onchange="updateFileName('fileInput5', 'statusUpload5')">
-                        <!-- <input type="file"   id="fileInput5" name="sd" class="fileInput form-control fw-lighter hidden" placeholder="Upload File"> -->
-                      </label>
-                    </div>
-                    <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes">(format file : .cdr./.ai/.pdf/.jpg) </small> <br>
-                    <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes"> +30,000/pcs utk NON-PRINT ; free utk kategori HALF-PRINT dan FULL PRINT </small>
-                    <!-- <input type="text" class="input txt text-validated" value='Upload' /> -->
-                  </div>
-                </div>
-                <!-- <button type="submit" class="btn action__submit">Save
-                  <i class="icon icon-arrow-right-circle"></i>
-                </button> -->
-              </div>
           </div>
-          <div class="payment__cc">
-            <div class="payment__title fw-6">
-              <i class="icon icon-plus"></i> Extra
+          <div class="row mb-4">
+            <div class="payment__title fw-6 mt-3 align-items-center">
+              <i class="icon icon-picture"></i>Desain Customer
             </div>
-            <div class="form__cc">
-              <div class="row">
-                <div class="field">
-                  <div class="title">Extra Tulisan 1 Baris
+          
+            <div class="col-sm-6">
+              <label for="design_pemain">Desain Pemain</label>
+              <img src="/asset/images/content/customerDesign.png" class="w-100" alt="">
+            </div>
+            <div class="col-sm-6">
+              <label for="design_kiper">Desain Kiper</label>
+              <img src="/asset/images/content/customerDesign.png" class="w-100" alt="">
+            </div>
+          </div>
+          <div class="row">
+            <div class="payment__title fw-6 mt-3 align-items-center">
+              <i class="icon icon-picture"></i>Desain Rathen
+            </div>
+          
+            <div class="col-sm-6">
+              <label for="design_pemain">Desain Pemain</label>
+              <img src="/asset/images/content/rathenDesign.jpg" class="w-100" alt="">
+              <div class="my-3 mx-auto form-upload payment__type--cc">
+                <i class="icon icon-cloud-upload"></i>Upload
+                <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileJersey1" name="djp" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" onchange="updateFileName('fileJersey1', 'statusUpload1')">
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <label for="/asset/images/content/rathenDesign.jpg">Desain Kiper</label>
+              <img src="/asset/images/content/rathenDesign.jpg" class="w-100" alt="">
+              <div class="my-3 mx-auto form-upload payment__type--cc">
+                <i class="icon icon-cloud-upload"></i>Upload
+                <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileJersey2" name="djk" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" onchange="updateFileName('fileJersey2', 'statusUpload2')">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="payment__title fw-6">
+                <i class="icon icon-docs"></i>Form Data Pesanan
+              </div>
+              <div class="col-sm-6">
+                <div class="row align-items-center">
+                  <div class="col-sm-5">
+                    <label for="date_ambil" class="col-form-label">Tanggal Pengambilan</label>
                   </div>
-                  <div class="form-uploads">
-                    <label for="fileInput6" id="customLabel6" class="customLabel" style="width:20rem;">
-                    <div class="img-upload" id="cutomerDesign">
-                          <img src="{{ asset('uploads/'.$data->extra_tulisan1baris)}}" alt="" onerror="hideBrokenImage(this)">
-                          </div>
-                      <div class="title" id="statusUpload6"></div>
-                      <div class="form-upload payment__type--cc">
-                        <i class="icon icon-cloud-upload"></i>Upload
+                  <div class="col-sm-7">
+                    <input type="date" class="form-control" id="date_ambil">
+                  </div>
+                </div>  
+              </div>
+
+              
+              <form>
+                <div class="form__cc">
+                  <div class="row">
+                    <div class="table-responsive">
+                      <div class="title">
+                        <i class="icon icon-info" style="display:contents;"></i> <?php echo isset($data->nama_tim) ? $data->nama_tim : "nama_tim belum ada"; ?> ( $total_pemain stel) diambil ($tanggal_ambil)
                       </div>
-                      <input type="file"   id="fileInput6" name="t1b" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" onchange="updateFileName('fileInput6', 'statusUpload6')">
-                      <!-- <input type="file"   id="fileInput8" name="lk" class="fileInput form-control fw-lighter hidden" placeholder="Upload File"> -->
-                    </label>
-                  </div>
-                  <!-- <input type="text" class="input txt text-validated" value='Upload' /> -->
-                </div>
-              </div>
-              <div class="row">
-                <div class="field">
-                  <div class="title">Extra Logo dan Tulisan
-                  </div>
-                  <div class="form-uploads">
-                    <label for="fileInput7" id="customLabel7" class="customLabel" style="width:20rem;">
-                    <div class="img-upload" id="cutomerDesign">
-                          <img src="{{ asset('uploads/'.$data->extra_logodantulisan)}}" alt="" onerror="hideBrokenImage(this)">
-                          </div>
-                      <div class="title" id="statusUpload7"></div>
-                      <div class="form-upload payment__type--cc">
-                        <i class="icon icon-cloud-upload"></i>Upload
-                      </div>
-                      <input type="file"   id="fileInput7" name="ldt" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" onchange="updateFileName('fileInput7', 'statusUpload7')">
-                      <!-- <input type="file"   id="fileInput8" name="lk" class="fileInput form-control fw-lighter hidden" placeholder="Upload File"> -->
-                    </label>
-                  </div>
-                  <!-- <input type="text" class="input txt text-validated" value='Upload' /> -->
-                </div>
-              </div>
-              <div class="row">
-                <div class="field">
-                  <div class="title">Logo di lengan kanan
-                  </div>
-                  <div class="form-uploads">
-                    <label for="fileInput8" id="customLabel8" class="customLabel" style="width:20rem;">
-                    <div class="img-upload" id="cutomerDesign">
-                      <img src="{{ asset('uploads/'.$data->logo_dilengan_kanan)}}" alt="" onerror="hideBrokenImage(this)">
-                    </div>
-                    <div class="title" id="statusUpload8"></div>
-                    <div class="form-upload payment__type--cc">
-                      <i class="icon icon-cloud-upload"></i>Upload
-                    </div>
-                      <input type="file"   id="fileInput8" name="lk" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" onchange="updateFileName('fileInput8', 'statusUpload8')">
-                      <!-- <input type="file"   id="fileInput8" name="lk" class="fileInput form-control fw-lighter hidden" placeholder="Upload File"> -->
-                    </label>
-                  </div>
-                  <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes">(format file : .cdr./.ai/.pdf/.jpg)</small><br>
-                  <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes"> 15,000/pcs utk NON-PRINT dan HALF-PRINT ; free utk kategori FULL PRINT </small>
-                  <!-- <input type="text" class="input txt text-validated" value='Upload' /> -->
-                </div>
-              </div>
-              <div class="row">
-                <div class="field">
-                  <div class="title">Logo di lengan kanan kiri
-                  </div>
-                  <div class="form-uploads">
-                    <label for="fileInput9" id="customLabel9" class="customLabel" style="width:20rem;">
-                      <div class="img-upload" id="cutomerDesign">
-                        <img src="{{ asset('uploads/'.$data->logo_dilengan_kiri)}}" alt="" onerror="hideBrokenImage(this)">
-                      </div>
-                    <div class="title" id="statusUpload9"></div>
-                    <div class="form-upload payment__type--cc">
-                      <i class="icon icon-cloud-upload"></i>Upload
-                    </div>
-                    <input type="file"   id="fileInput9" name="llk" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" onchange="updateFileName('fileInput9', 'statusUpload9')">
-                    <!-- <input type="file"   id="fileInput9" name="llk" class="fileInput form-control fw-lighter hidden" placeholder="Upload File"> -->
-                    </label>
-                  </div>
-                  <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes">(format file : .cdr./.ai/.pdf/.jpg)</small><br>
-                  <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes"> +15,000/pcs utk NON-PRINT dan HALF-PRINT ; free utk kategori FULL PRINT </small>
-                    <!-- <input type="text" class="input txt text-validated" value='Upload' /> -->
-                </div>
-              </div>
-              <div class="row">
-                <div class="field">
-                  <div class="title">Sponsor belakang (tulisan 1 baris)
-                  </div>
-                  <div class="form-uploads">
-                    <label for="fileInput10" id="customLabel0" class="customLabel" style="width:20rem;">
-                    <div class="img-upload" id="cutomerDesign">
-                                  <img src="{{ asset('uploads/'.$data->sponsor_belakang_tulisan1baris)}}" alt="" onerror="hideBrokenImage(this)">
+                      <div class="accordion mb-3" id="accordionFlushExample">
+                        <div class="accordion-item">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                              Action Form Pemain
+                            </button>
+                          </h2>
+                          <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                              <div class="row mb-3 g-2">
+                                <div class="col-sm-4">
+                                  <div class="btn btn-black px-3" id="importDataBtn" style="font-size:12px">
+                                    <i class="icon icon-cloud-upload me-3"></i>Upload File
                                   </div>
-                      <div class="title" id="statusUpload10"></div>
-                      <div class="form-upload payment__type--cc">
-                        <i class="icon icon-cloud-upload"></i>Upload
-                      </div>
-                      <input type="file"   id="fileInput10" name="sbt" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" onchange="updateFileName('fileInput10', 'statusUpload10')">
-                      <!-- <input type="file"   id="fileInput10" name="sbt" class="fileInput form-control fw-lighter hidden" placeholder="Upload File"> -->
-                    </label>
-                  </div>
-                  <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes">(format file : .cdr./.ai/.pdf/.jpg)</small><br>
-                  <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes"> +15,000/pcs utk NON-PRINT dan HALF-PRINT ; free utk kategori FULL PRINT </small>
-                  <!-- <input type="text" class="input txt text-validated" value='Upload' /> -->
-                </div>
-              </div>
-              <div class="row">
-                <div class="field">
-                  <div class="title">Sponsor belakang (logo + tulisan)
-                  </div>
-                  <div class="form-uploads">
-                    <label for="fileOrder1" id="OrderLabel1" class="customLabel" style="width:20rem;">
-                    <div class="img-upload" id="cutomerDesign">
-                                  <img src="{{ asset('uploads/'.$data->sponsor_belakang_logodantulisan)}}" alt="" onerror="hideBrokenImage(this)">
+                                </div>
+                                <div class="col-sm-4">
+                                  <div class="btn btn-black px-3" id="inputDataBtn" style="font-size:12px">
+                                    <i class="icon icon-pencil me-3"></i>Input Data
                                   </div>
-                      <div class="title" id="statusUpload11"></div>
-                      <div class="form-upload payment__type--cc">
-                        <i class="icon icon-cloud-upload"></i>Upload
+                                </div>
+                                <div class="col-sm-4">
+                                  <a href="{{ route('downloadPdf') }}" class="btn btn-black px-3" style="font-size:12px">
+                                    <i class="icon icon-cloud-download me-3"></i>Format Ukuran
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
-                      <input type="file"   id="fileOrder1" name="sbl" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" onchange="updateFileName('fileOrder1', 'statusUpload11')">
-                      <!-- <input type="file"   id="fileOrder1" name="sblt" class="fileInput form-control fw-lighter hidden" placeholder="Upload File"> -->
-                    </label>
-                  </div>
-                  <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes">(format file : .cdr./.ai/.pdf/.jpg)</small> <br>
-                  <small style="font-size: 12px; color: grey;" class="input-group-text fw-lighter text-wrap notes"> +30,000/pcs utk NON-PRINT dan HALF-PRINT ; free utk kategori </small>
-                  <!-- <input type="text" class="input txt text-validated" value='Upload' /> -->
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+                      <h6 class="fw-6">Data Pemain</h6>
+                      <table class="wp-table w-100">
+                        <tr>
+                          <th>No</th>
+                          <th>Nama Punggung</th>
+                          <th>Nomor</th>
+                          <th>Ukuran</th>
+                          <th>Action</th>
+                        </tr>
 
-        <div class="payment__info">
-          <div class="payment__cc">
-            <div class="payment__title fw-6">
-              <i class="icon icon-docs"></i>Form Data Pesanan
-            </div>
-            <form>
-              <div class="form__cc">
-                <div class="row">
-                  <div class="table-pesan">
-                    <div class="title">
-                      <i class="icon icon-info" style="display:contents;"></i> Nama Tim (27 stel) diambil 15 Jan 2024
+                        <?php $i = 1; ?>
+
+                        @foreach ($dataStep4 as $row)
+                        <tr>
+                          <td>{{ $i++; }}</td>
+                          <td>{{ $row->namapunggung }}</td>
+                          <td>{{ $row->nomor; }}</td>
+                          <td>{{ $row->ukuran; }}</td>
+                          <td><a href="{{ route('form-4.delete', ['id' => $row->kd_step4]) }}">delete</a></td>
+
+                        </tr>
+                        @endforeach
+
+                      </table>
+
+                      <div class="accordion my-3" id="accordionFlushExample2">
+                        <div class="accordion-item">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne2" aria-expanded="false" aria-controls="flush-collapseOne2">
+                              Action Form Kiper
+                            </button>
+                          </h2>
+                          <div id="flush-collapseOne2" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample2">
+                            <div class="accordion-body">
+                              <div class="row mb-3 g-2">
+                                <div class="col-sm-4">
+                                  <div class="btn btn-black px-3" id="importDataBtn" style="font-size:12px">
+                                    <i class="icon icon-cloud-upload me-3"></i>Upload File
+                                  </div>
+                                </div>
+                                <div class="col-sm-4">
+                                  <div class="btn btn-black px-3" id="inputDataBtn" style="font-size:12px">
+                                    <i class="icon icon-pencil me-3"></i>Input Data
+                                  </div>
+                                </div>
+                                <div class="col-sm-4">
+                                  <a href="{{ route('downloadPdf') }}" class="btn btn-black px-3" style="font-size:12px">
+                                    <i class="icon icon-cloud-download me-3"></i>Format Ukuran
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <h6 class="fw-6 mt-3">Data Kiper</h6>
+                      <table class="wp-table w-100">
+                        <tr>
+                          <th>No</th>
+                          <th>Nama Punggung</th>
+                          <th>Nomor</th>
+                          <th>Ukuran</th>
+                          <th>Action</th>
+                        </tr>
+
+                        <?php $i = 1; ?>
+
+                        @foreach ($dataStep4 as $row)
+                        <tr>
+                          <td>{{ $i++; }}</td>
+                          <td>{{ $row->namapunggung }}</td>
+                          <td>{{ $row->nomor; }}</td>
+                          <td>{{ $row->ukuran; }}</td>
+                          <td><a href="{{ route('form-4.delete', ['id' => $row->kd_step4]) }}">delete</a></td>
+
+                        </tr>
+                        @endforeach
+
+                      </table>
                     </div>
-                    <table class="wp-table">
-                      <tr>
-                        <th>No</th>
-                        <th>Nama Punggung</th>
-                        <th>Nomor</th>
-                        <th>Ukuran</th>
-                        <th>Action</th>
-                      </tr>
-
-                      <?php $i = 1; ?>
-
-                      @foreach ($dataStep4 as $row)
-                      <tr>
-                        <td>{{ $i++; }}</td>
-                        <td>{{ $row->namapunggung }}</td>
-                        <td>{{ $row->nomor; }}</td>
-                        <td>{{ $row->ukuran; }}</td>
-                        <td><a href="{{ route('form-4.delete', ['id' => $row->kd_step4]) }}">delete</a></td>
-
-                      </tr>
-                      @endforeach
-
-                    </table>
                   </div>
                 </div>
-              </div>
-            </form>
+              </form>
+            </div>
+            
           </div>
-          <div class="payment__shipping w-215-tab">
-            <div class="row">
-              <div class="field pt-5">
-                <div class="payment__title"></div>
-                <div class="form-uploads h-3 w-20">
-                  <div class="form-upload payment__type--cc btn-black" id="importDataBtn">
-                    <i class="icon icon-cloud-upload"></i>Upload File
-                  </div>
-                </div>
-                <!-- <input type="text" class="input txt text-validated" value='Upload' /> -->
-              </div>
+
+        </div>
+
+        <div id="inputDataModal" class="modal pt200">
+          <div class="modal-content mw-32">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5 mx-auto" id="exampleModalLabel">Input Data</h1>
+              <span class="btn-close m-0" data-bs-dismiss="modal" aria-label="Close"></span>
             </div>
-            <div class="row">
-              <div class="field pt-5">
-                <div class="form-uploads h-3 w-20">
-                  <div class="form-upload payment__type--cc btn-black" id="inputDataBtn">
-                    <i class="icon icon-pencil"></i>Input Data
-                  </div>
-                </div>
-                <!-- <input type="text" class="input txt text-validated" value='Upload' /> -->
-              </div>
+            <div class="form-modal">
+              <h4>Silahkan inputkan data</h4>
+              <form action="{{ route('tambahDataPesanan') }}" id="inputDataForm" method="post">
+                @csrf
+                <input type="hidden" name="idDataPesanan" value="{{$kode}}" />
+                <label for="namaPunggung">Nama Punggung:</label>
+                <input class="input-modal" type="text" id="namaPunggung" name="namaPunggung" required>
+                <label for="nomor">Nomor:</label>
+                <input class="input-modal" type="text" id="nomor" name="nomor" required>
+                <label for="ukuran">Ukuran:</label>
+                <input class="input-modal" type="text" id="ukuran" name="ukuran" required>
+                <button class="btn-modal" type="submit">Save</button>
+              </form>
             </div>
-            <div class="row">
-              <div class="field pt-5">
-                <div class="form-uploads h-3 w-20">
-                  <a href="{{ route('downloadPdf') }}" class="form-upload payment__type--cc btn-black">
-                    <i class="icon icon-cloud-download"></i>Format Ukuran</a>
-                </div>
-                <!-- <input type="text" class="input txt text-validated" value='Upload' /> -->
-              </div>
+          </div>
+        </div>
+        
+        
+        <div id="importDataModal" class="modal pt200">
+          <div class="modal-content mw-32">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5 mx-auto" id="exampleModalLabel">Input File</h1>
+              <span class="btn-close m-0" data-bs-dismiss="modal" aria-label="Close"></span>
+            </div>
+            <div class="form-modal">
+              <h4>Silahkan inputkan file</h4>
+              <form action="{{ route('excel.import') }}" id="inputDataForm" method="post" enctype="multipart/form-data">
+                @csrf
+                <label for="import">file:</label>
+                <input class="input-modal" type="file" id="import" name="import" required>
+                <input type="hidden" name="type" value="pemain">
+                <button class="btn-modal" type="submit">Save</button>
+              </form>
             </div>
           </div>
         </div>
 
-      </div>
-    </div>
-    <div id="inputDataModal" class="modal pt200">
-      <div class="modal-content mw-32">
-        <span class="close">&times;</span>
-        <div class="form-modal">
-          <h4>Silahkan inputkan data</h4>
-          <form action="{{ route('tambahDataPesanan') }}" id="inputDataForm" method="post">
-            @csrf
-            <input type="hidden" name="idDataPesanan" value="{{$kode}}" />
-            <label for="namaPunggung">Nama Punggung:</label>
-            <input class="input-modal" type="text" id="namaPunggung" name="namaPunggung" required>
-            <label for="nomor">Nomor:</label>
-            <input class="input-modal" type="text" id="nomor" name="nomor" required>
-            <label for="ukuran">Ukuran:</label>
-            <input class="input-modal" type="text" id="ukuran" name="ukuran" required>
-            <button class="btn-modal" type="submit">Save</button>
-          </form>
+        <div class="container">
+          <div class="actions">
+            <button type="submit" class="btn action__submit">Save
+              <i class="icon icon-arrow-right-circle"></i>
+            </button>
+            <!-- <a href="/form/orderStep1" class="backBtn">Go Back to Form Order</a> -->
+          </div>
         </div>
-      </div>
-    </div>
-    <div id="importDataModal" class="modal pt200">
-      <div class="modal-content mw-32">
-        <span class="close">&times;</span>
-        <div class="form-modal">
-          <h4>Silahkan inputkan data</h4>
-          <form action="{{ route('excel.import') }}" id="inputDataForm" method="post" enctype="multipart/form-data">
-            @csrf
-            <label for="import">file:</label>
-            <input class="input-modal" type="file" id="import" name="import" required>
-            <input type="hidden" name="type" value="pemain">
-            <button class="btn-modal" type="submit">Save</button>
-          </form>
-        </div>
-      </div>
-    </div>
-    
-    <div class="container">
-      <div class="actions pt250">
-        <button type="submit" class="btn action__submit">Save
-          <i class="icon icon-arrow-right-circle"></i>
-        </button>
-        <!-- <a href="/form/orderStep1" class="backBtn">Go Back to Form Order</a> -->
-      </div>
-    </section>
-  </form>
+
+      </section>
+    </form> 
+
   </div>
+  <div class="tab-pane fade " id="finishing" role="tabpanel" aria-labelledby="finishing-tab">
+  
+    <form action="" method="post" enctype="multipart/form-data">
+      @csrf
+      <section>
+        <div class="container">
+          <div class="row">
+            <!-- <div class="payment__title fw-6 mt-3 align-items-center">
+              <i class="icon icon-pencil"></i>Data Finishing
+            </div> -->
+            <h3 class="fw-6 pt-4 text-center"><?php echo isset($data->nama_tim) ? $data->nama_tim : "nama_tim belum ada"; ?> ( $total_pemain stel)</h3>
+            <h4 class="pb-4 text-center">Diambil tanggal: $tanggal_ambil</h4>
+
+            <div class="col-sm-4">
+              <h6 class="fw-6 text-uppercase">Baju Depan</h6>
+              <div class="mb-3 row align-items-center">
+                <div class="col-sm-4">
+                  <label for="size_chart" class="col-form-label">Size Chart</label>
+                </div>
+                <div class="col-sm-7">
+                  <input class="form-control py-1 px-1" type="text">
+                </div>
+              </div>  
+              <div class="mb-3 row align-items-center">
+                <div class="col-sm-4">
+                  <label for="t_pundak" class="col-form-label">T-pundak</label>
+                </div>
+                <div class="col-sm-7">
+                  <input class="form-control py-1 px-1" type="text">
+                </div>
+              </div> 
+              <div class="mb-3 row align-items-center">
+                <div class="col-sm-4">
+                  <label for="apparel" class="col-form-label">Apparel</label>
+                </div>
+                <div class="col-sm-7">
+                  <input class="form-control py-1 px-1" type="text">
+                </div>
+              </div> 
+              <div class="mb-3 row align-items-center">
+                <div class="col-sm-4">
+                  <label for="logo_tim" class="col-form-label">Logo Tim</label>
+                </div>
+                <div class="col-sm-7">
+                  <input class="form-control py-1 px-1" type="text">
+                </div>
+              </div> 
+              <div class="mb-3 row align-items-center">
+                <div class="col-sm-4">
+                  <label for="sponsor_dada" class="col-form-label">Sponsor Dada</label>
+                </div>
+                <div class="col-sm-7">
+                  <input class="form-control py-1 px-1" type="text">
+                </div>
+              </div> 
+              <div class="mb-3 row align-items-center">
+                <div class="col-sm-4">
+                  <label for="warna_depan" class="col-form-label">Warna</label>
+                </div>
+                <div class="col-sm-7">
+                  <input class="form-control py-1 px-1" type="text">
+                </div>
+              </div> 
+              <div class="mb-3 row align-items-center">
+                <div class="col-sm-4">
+                  <label for="font_depan" class="col-form-label">Font</label>
+                </div>
+                <div class="col-sm-7">
+                  <input class="form-control py-1 px-1" type="text">
+                </div>
+              </div> 
+            </div>
+
+            <div class="col-sm-4">
+              <h6 class="fw-6 text-uppercase">Baju Belakang</h6>
+              <div class="mb-3 row align-items-center">
+                <div class="col-sm-4">
+                  <label for="logo_rKecil" class="col-form-label">Logo R kecil</label>
+                </div>
+                <div class="col-sm-7">
+                  <input class="form-control py-1 px-1" type="text">
+                </div>
+              </div>  
+              <div class="mb-3 row align-items-center">
+                <div class="col-sm-4">
+                  <label for="nameset" class="col-form-label">Nameset</label>
+                </div>
+                <div class="col-sm-7">
+                  <input class="form-control py-1 px-1" type="text">
+                </div>
+              </div> 
+              <div class="mb-3 row align-items-center">
+                <div class="col-sm-4">
+                  <label for="poliflek" class="col-form-label">Poliflek</label>
+                </div>
+                <div class="col-sm-7">
+                  <input class="form-control py-1 px-1" type="text">
+                </div>
+              </div> 
+              <div class="mb-3 row align-items-center">
+                <div class="col-sm-4">
+                  <label for="nama_belakang" class="col-form-label">Nama</label>
+                </div>
+                <div class="col-sm-7">
+                  <input class="form-control py-1 px-1" type="text">
+                </div>
+              </div> 
+              <div class="mb-3 row align-items-center">
+                <div class="col-sm-4">
+                  <label for="nomor_belakang" class="col-form-label">Nomor</label>
+                </div>
+                <div class="col-sm-7">
+                  <input class="form-control py-1 px-1" type="text">
+                </div>
+              </div> 
+              <div class="mb-3 row align-items-center">
+                <div class="col-sm-4">
+                  <label for="sponsor_belakang" class="col-form-label">Sponsor Belakang</label>
+                </div>
+                <div class="col-sm-7">
+                  <input class="form-control py-1 px-1" type="text">
+                </div>
+              </div> 
+              <div class="mb-3 row align-items-center">
+                <div class="col-sm-4">
+                  <label for="warna_belakang" class="col-form-label">Warna</label>
+                </div>
+                <div class="col-sm-7">
+                  <input class="form-control py-1 px-1" type="text">
+                </div>
+              </div> 
+              <div class="mb-3 row align-items-center">
+                <div class="col-sm-4">
+                  <label for="font_belakang" class="col-form-label">Font</label>
+                </div>
+                <div class="col-sm-7">
+                  <input class="form-control py-1 px-1" type="text">
+                </div>
+              </div> 
+            </div>
+
+            <div class="col-sm-4">
+              <div class="mb-3 row align-items-center">
+                <div class="col-sm-4">
+                  <label for="celana" class="fw-6 col-form-label text-uppercase">Celana</label>
+                </div>
+                <div class="col-sm-7">
+                  <input class="form-control py-1 px-1" type="text">
+                </div>
+              </div>  
+              <div class="mb-3 row align-items-center">
+                <div class="col-sm-4">
+                  <label for="nomor_celana" class="col-form-label">Nomor</label>
+                </div>
+                <div class="col-sm-7">
+                  <input class="form-control py-1 px-1" type="text">
+                </div>
+              </div> 
+              <div class="mb-3 row align-items-center">
+                <div class="col-sm-4">
+                  <label for="logo_rCelana" class="col-form-label">Logo R</label>
+                </div>
+                <div class="col-sm-7">
+                  <input class="form-control py-1 px-1" type="text">
+                </div>
+              </div> 
+              <div class="mb-3 row align-items-center">
+                <div class="col-sm-4">
+                  <label for="nama_tim" class="col-form-label">Nama Tim</label>
+                </div>
+                <div class="col-sm-7">
+                  <input class="form-control py-1 px-1" type="text">
+                </div>
+              </div> 
+              <div class="mb-3 row align-items-center">
+                <div class="col-sm-4">
+                  <label for="font_celana" class="col-form-label">Font</label>
+                </div>
+                <div class="col-sm-7">
+                  <input class="form-control py-1 px-1" type="text">
+                </div>
+              </div>
+              <div class="mb-3 row align-items-center">
+                <div class="col-sm-4">
+                  <label for="warna_celana" class="col-form-label">Warna</label>
+                </div>
+                <div class="col-sm-7">
+                  <input class="form-control py-1 px-1" type="text">
+                </div>
+              </div>
+              <h6 class="fw-6 text-uppercase">Kaoskaki</h6>
+              <div class="mb-3 row align-items-center">
+                <div class="col-sm-4">
+                  <label for="kaoskaki_pemain" class="col-form-label">Pemain</label>
+                </div>
+                <div class="col-sm-7">
+                  <input class="form-control py-1 px-1" type="text">
+                </div>
+              </div>
+              <div class="mb-3 row align-items-center">
+                <div class="col-sm-4">
+                  <label for="kaoskaki_kiper" class="col-form-label">Kiper</label>
+                </div>
+                <div class="col-sm-7">
+                  <input class="form-control py-1 px-1" type="text">
+                </div>
+              </div>
+            </div>  
+          </div>
+
+          <div class="row">
+            <div class="payment__title fw-6 mt-3 align-items-center">
+              <i class="icon icon-picture"></i>Desain Rathen
+            </div>
+          
+            <div class="col-sm-6">
+              <label for="design_pemain" class="mb-3">Desain Pemain</label>
+              <img src="/asset/images/content/rathenDesign.jpg" class="w-100" alt="">
+              
+            </div>
+            <div class="col-sm-6">
+              <label for="design_kiper" class="mb-3">Desain Kiper</label>
+              <img src="/asset/images/content/rathenDesign.jpg" class="w-100" alt="">
+              
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <label for="note_finishing" class="fw-6 my-3">Catatan Tambahan</label>
+              <textarea class="input txt" name="note_finishing" id="note_finishing"></textarea>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="payment__title fw-6 mt-3 align-items-center">
+              <i class="icon icon-picture"></i>Logo
+            </div>
+          
+            <div class="col-sm-4">
+              <label for="logo_tim_note" class="mb-3">Logo Tim</label>
+              <img src="/asset/images/content/rathenDesign.jpg" class="w-100" alt="">
+              <div class="my-3 mx-auto form-upload payment__type--cc">
+                <i class="icon icon-cloud-upload"></i>Upload
+                <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileLogo1" name="djp" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" onchange="updateFileName('fileLogo1', 'statusUpload1')">
+              </div>
+              <input class="form-control py-1 px-1" type="text">
+
+              <label for="sponsor_belakang_note" class="my-3">Sponsor Belakang</label>
+              <img src="/asset/images/content/rathenDesign.jpg" class="w-100" alt="">
+              <div class="my-3 mx-auto form-upload payment__type--cc">
+                <i class="icon icon-cloud-upload"></i>Upload
+                <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileLogo2" name="djp" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" onchange="updateFileName('fileLogo2', 'statusUpload1')">
+              </div>
+              <input class="form-control py-1 px-1" type="text">
+              
+            </div>
+            <div class="col-sm-4">
+              <label for="sponsor_dada_note" class="mb-3">Sponsor Dada</label>
+              <img src="/asset/images/content/rathenDesign.jpg" class="w-100" alt="">
+              <div class="my-3 mx-auto form-upload payment__type--cc">
+                <i class="icon icon-cloud-upload"></i>Upload
+                <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileLogo3" name="djp" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" onchange="updateFileName('fileLogo3', 'statusUpload1')">
+              </div>
+              <input class="form-control py-1 px-1" type="text">
+
+              <label for="font_nameset_note" class="my-3">Font Nameset</label>
+              <img src="/asset/images/content/rathenDesign.jpg" class="w-100" alt="">
+              <div class="my-3 mx-auto form-upload payment__type--cc">
+                <i class="icon icon-cloud-upload"></i>Upload
+                <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileLogo4" name="djp" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" onchange="updateFileName('fileLogo4', 'statusUpload1')">
+              </div>
+              <input class="form-control py-1 px-1" type="text">
+              
+            </div>
+            <div class="col-sm-4">
+              <label for="logo_lengan_note" class="mb-3">Logo Lengan</label>
+              <img src="/asset/images/content/rathenDesign.jpg" class="w-100" alt="">
+              <div class="my-3 mx-auto form-upload payment__type--cc">
+                <i class="icon icon-cloud-upload"></i>Upload
+                <input type="file" accept=".cdr, .ai, .pdf, .jpg" id="fileLogo5" name="djp" class="fileInput form-control fw-lighter hidden" placeholder="Upload File" onchange="updateFileName('fileLogo5', 'statusUpload1')">
+              </div>
+              <input class="form-control py-1 px-1" type="text">
+              
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="payment__title fw-6">
+                <i class="icon icon-docs"></i>Form Data Pesanan {{--Tampilan Formnya saja--}}
+              </div>
+              
+              <form>
+                <div class="form__cc">
+                  <div class="row">
+                    <div class="table-responsive">
+                      <div class="title">
+                        <i class="icon icon-info" style="display:contents;"></i> <?php echo isset($data->nama_tim) ? $data->nama_tim : "nama_tim belum ada"; ?> ( $total_pemain stel) diambil ($tanggal_ambil)
+                      </div>
+                      <h6 class="fw-6">Data Pemain</h6>
+                      <table class="wp-table w-100">
+                        <tr>
+                          <th>No</th>
+                          <th>Nama Punggung</th>
+                          <th>Nomor</th>
+                          <th>Ukuran</th>
+                        </tr>
+
+                        <?php $i = 1; ?>
+
+                        @foreach ($dataStep4 as $row)
+                        <tr>
+                          <td>{{ $i++; }}</td>
+                          <td>{{ $row->namapunggung }}</td>
+                          <td>{{ $row->nomor; }}</td>
+                          <td>{{ $row->ukuran; }}</td>
+
+                        </tr>
+                        @endforeach
+
+                      </table>
+                      <h6 class="fw-6 mt-3">Data Kiper</h6>
+                      <table class="wp-table w-100">
+                        <tr>
+                          <th>No</th>
+                          <th>Nama Punggung</th>
+                          <th>Nomor</th>
+                          <th>Ukuran</th>
+                        </tr>
+
+                        <?php $i = 1; ?>
+
+                        @foreach ($dataStep4 as $row)
+                        <tr>
+                          <td>{{ $i++; }}</td>
+                          <td>{{ $row->namapunggung }}</td>
+                          <td>{{ $row->nomor; }}</td>
+                          <td>{{ $row->ukuran; }}</td>
+
+                        </tr>
+                        @endforeach
+
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            
+          </div>
+
+        </div>
+
+        <div id="inputDataModal" class="modal pt200">
+          <div class="modal-content mw-32">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5 mx-auto" id="exampleModalLabel">Input Data</h1>
+              <span class="btn-close m-0" data-bs-dismiss="modal" aria-label="Close"></span>
+            </div>
+            <div class="form-modal">
+              <h4>Silahkan inputkan data</h4>
+              <form action="{{ route('tambahDataPesanan') }}" id="inputDataForm" method="post">
+                @csrf
+                <input type="hidden" name="idDataPesanan" value="{{$kode}}" />
+                <label for="namaPunggung">Nama Punggung:</label>
+                <input class="input-modal" type="text" id="namaPunggung" name="namaPunggung" required>
+                <label for="nomor">Nomor:</label>
+                <input class="input-modal" type="text" id="nomor" name="nomor" required>
+                <label for="ukuran">Ukuran:</label>
+                <input class="input-modal" type="text" id="ukuran" name="ukuran" required>
+                <button class="btn-modal" type="submit">Save</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        
+        
+        <div id="importDataModal" class="modal pt200">
+          <div class="modal-content mw-32">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5 mx-auto" id="exampleModalLabel">Input File</h1>
+              <span class="btn-close m-0" data-bs-dismiss="modal" aria-label="Close"></span>
+            </div>
+            <div class="form-modal">
+              <h4>Silahkan inputkan file</h4>
+              <form action="{{ route('excel.import') }}" id="inputDataForm" method="post" enctype="multipart/form-data">
+                @csrf
+                <label for="import">file:</label>
+                <input class="input-modal" type="file" id="import" name="import" required>
+                <input type="hidden" name="type" value="pemain">
+                <button class="btn-modal" type="submit">Save</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="actions">
+            <button type="submit" class="btn action__submit">Save
+              <i class="icon icon-arrow-right-circle"></i>
+            </button>
+            <!-- <a href="/form/orderStep1" class="backBtn">Go Back to Form Order</a> -->
+          </div>
+        </div>
+
+      </section>
+    </form>
+  </div>
+
   <!-- partial -->
-  <style>
-    .field{
-      width:75%;
-    }
-  </style>
+
   <script>
      ClassicEditor
         .create( document.querySelector( '#note' ))
@@ -682,10 +867,10 @@
      document.addEventListener('DOMContentLoaded', function() {
       var modal = document.getElementById('inputDataModal');
       var btn = document.getElementById('inputDataBtn');
-      var span = document.getElementsByClassName('close')[0];
+      var span = document.getElementsByClassName('btn-close')[0];
       var import_modal = document.getElementById('importDataModal');
       var import_btn = document.getElementById('importDataBtn');
-      var import_span = document.getElementsByClassName('close')[1];
+      var import_span = document.getElementsByClassName('btn-close')[1];
       var form = document.getElementById('inputDataForm');
       var tableBody = document.querySelector('.wp-table tbody');
 

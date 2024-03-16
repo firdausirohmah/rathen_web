@@ -218,9 +218,9 @@ class PesananController extends Controller
         $kode = $request;
         // dd($kode);
         $data = DB::table('tbl_step3')
-            ->join('tbl_quotation_order', 'tbl_step3.kd_step3', '=', 'tbl_quotation_order.kd_step') // Sesuaikan kondisi join 
+            ->join('tbl_step1', 'tbl_step3.kd_step3', '=', 'tbl_step1.kd_step3') // Sesuaikan kondisi join 
             ->where('tbl_step3.kd_step3', $kode) // Sesuaikan kondisi WHERE
-            ->select('tbl_quotation_order.*', 'tbl_step3.*') // Pilih kolom yang ingin Anda ambil
+            ->select('tbl_step1.*', 'tbl_step3.*') // Pilih kolom yang ingin Anda ambil
             ->first();
         
        
@@ -921,7 +921,11 @@ class PesananController extends Controller
         $bc = $request->bc;
         $pb = $request->pola_badan;
         $lasercut = $request->lasercut;
+        $nama_tim = $request->nama_tim;
         // dd($kode, $pl, $mk, $bb, $bc);
+        $data = ModelStep1::where('kd_step3', $kode)->update([
+            'nama_tim' => $nama_tim,
+        ]);
         $data = ModeStep3::where('kd_step3', $kode)->update([
             'pola_lengan' => $pl ,
             'model_kerah' => $mk ,

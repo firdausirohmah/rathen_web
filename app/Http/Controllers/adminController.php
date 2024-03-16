@@ -177,8 +177,12 @@ class adminController extends Controller
                 'price' => $price, 
             ];
             // dd($Jarsey);
+            $Step4 = ModelStep4::where('kd_step1', $kode)
+            ->orderByRaw("FIELD(ukuran, 'S', 'M', 'L', 'XL', 'XXL', 'XXXL')") // Sesuaikan dengan ukuran yang sesuai 
+            ->get();
             
             return view('landing_page.production', [
+                'dataStep4' => $Step4,
                 'pesanan' => $pesanan,
                 'price' => $price,
                 'Jarsey' => $Jarsey,
@@ -189,6 +193,60 @@ class adminController extends Controller
             ]);
         }
     }
+
+    public function production_invoice($request)
+    {
+        $kode = $request;
+
+        // dd($request);
+        $aproval_1 = Approval::where('id_user',1)->where('kd_step', $kode)->first();
+        $aproval_2 = Approval::where('id_user',2)->where('kd_step', $kode)->first();
+        $aproval_3 = Approval::where('id_user',3)->where('kd_step', $kode)->first();
+        $data = ModelStep1::where('kd_step4', $kode)
+            ->join('tbl_step2', 'tbl_step1.kd_step2', '=', 'tbl_step2.kd_step2')
+            ->join('tbl_step3', 'tbl_step1.kd_step3', '=', 'tbl_step3.kd_step3')
+            ->join('tbl_part', 'tbl_step1.kategori_harga', '=', 'tbl_part.kd_part')
+            ->join('user_order', 'user_order.kd_order', '=', 'tbl_step1.kd_step2')
+            ->select('tbl_step1.*', 'tbl_step2.*', 'tbl_step3.*','tbl_part.harga','user_order.*')
+            ->get();
+            
+        $harga = DB::table('tbl_harga')
+            ->join('tbl_logo', 'tbl_harga.id', '=', 'tbl_logo.id_logo')
+            ->select('tbl_logo.*', 'tbl_harga.*')
+            ->get();
+        
+        foreach ($harga as $h){
+            $price = $h;
+        }
+        foreach ($data as $pesanan) {
+            // dd($pesanan->status_order);
+            $JarseyOrder = $pesanan->tipe_kualitas;
+            if($JarseyOrder == 'Stadium'){
+                $JarseyDefault = 'Jarsey'.' - '.$JarseyOrder.' '.$pesanan->kategori_harga;
+                $Jarsey = strtoupper($JarseyDefault);
+            }else{
+                $JarseyDefault = 'Jarsey'.'-'.$JarseyOrder.' VERSION';
+                $Jarsey = strtoupper($JarseyDefault);
+            } 
+            $d = [
+                'Jarsey' => $Jarsey,
+                'pesanan' => $pesanan,
+                'price' => $price, 
+            ];
+            // dd($Jarsey);
+            
+            return view('landing_page.production-invoice', [
+                'pesanan' => $pesanan,
+                'price' => $price,
+                'Jarsey' => $Jarsey,
+                'kode' => $kode, 
+                'aproval_1' => $aproval_1,
+                'aproval_2' => $aproval_2,
+                'aproval_3' => $aproval_3,
+            ]);
+        }
+    }
+
     public function production_generate($request)
     {
         $kode = $request;
@@ -717,7 +775,48 @@ class adminController extends Controller
         // dd($file1,$file2);
        
 
-            return redirect('production/design/'.$kode)->with('success', 'Files successfully uploaded.');
+            return redirect('production/edit-invoice/'.$kode)->with('success', 'Files successfully uploaded.');
+    }
+    
+    public function production_editInvoice($request)
+    {
+        
+        $kode = $request;
+        session(['id_invoice' => $kode]);
+
+        $data = DB::table('tbl_step1')
+            ->join('tbl_step2', 'tbl_step2.kd_step2', '=', 'tbl_step1.kd_step2')
+            ->join('tbl_step3', 'tbl_step3.kd_step3', '=', 'tbl_step1.kd_step2')
+            ->join('user_order', 'user_order.kd_order', '=', 'tbl_step1.kd_step2')
+            ->join('tbl_quotation_order', 'tbl_quotation_order.kd_step', '=', 'tbl_step1.kd_step2')
+            ->where('tbl_step1.kd_step2', $kode)
+            ->select('tbl_step1.*', 'tbl_step2.*','tbl_step3.*','user_order.*', 'tbl_quotation_order.*')
+            ->first();
+
+           // return $data;
+
+    
+            // Loop through each item in $pesanan to get kategori_harga
+        
+                // Assign kategori_harga from each item to $kd_part
+                $kd_part = $data->kategori_harga;
+            
+
+        
+            $Step4 = ModelStep4::where('kd_step1', $kode)
+            ->orderByRaw("FIELD(ukuran, 'S', 'M', 'L', 'XL', 'XXL', 'XXXL')") // Sesuaikan dengan ukuran yang sesuai 
+            ->get();
+        
+        $part = DB::table('tbl_part')->where('kd_part', $kd_part)->get();
+
+         
+            return view('landing_page.production_invoiceEdit', [
+                'dataStep4' => $Step4,
+                'data' =>$data,
+                'pesanan' => $part,
+                'kode' => $kode, 
+            ]);
+        
     }
     public function production_design($request)
     {
@@ -847,7 +946,10 @@ class adminController extends Controller
         // Update the records in the database
         DB::table('user_order')
             ->where('kd_order', $kode)
-            ->update(['status_order' => 'produksi']);
+            ->update([
+                'status_order' => 'produksi',
+                'updated_at_production' => now(),
+            ]);
         
 
         // Redirect back to the same route
@@ -965,6 +1067,14 @@ class adminController extends Controller
 
 
         ]);
+    }
+    public function financeInput(Request $request)
+    {
+
+        return view('landing_page.finance-input', [
+
+        ]);
+
     }
     public function financeAdd(Request $request)
     {

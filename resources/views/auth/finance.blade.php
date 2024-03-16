@@ -211,7 +211,6 @@
                       <div class="form-group">
                         <label for="type">Jenis Transaksi</label>
                         <select name="type" id="type" class="form-control">
-                          <option value="">Select Here</option>
                           <option value="debit">Uang Masuk</option>
                           <option value="credit">Uang Keluar</option>
                         </select>
@@ -219,7 +218,6 @@
                       <div class="form-group">
                         <label for="kategori_transaksi">Kategori Transaksi</label>
                         <select name="kategori_transaksi" id="kategori_transaksi" class="form-control">
-                          <option value="">Select Here</option>
                           <option value="pembayaran_dp">Pembayaran DP</option>
                           <option value="pembayaran_pelunasan">Pembayaran Pelunasan</option>
                           <option value="belanja_bahan">Belanja bahan</option>
@@ -249,7 +247,6 @@
                       <div class="form-group">
                         <label for="status_uang">Status Uang</label>
                         <select name="status_uang" id="status_uang" class="form-control">
-                          <option value="">Select Here</option>
                           <option value="lunas">Lunas</option>
                           <option value="hutang">Hutang</option>
                           <option value="piutang">Piutag</option>

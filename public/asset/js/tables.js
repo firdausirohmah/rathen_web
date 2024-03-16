@@ -33,7 +33,8 @@ $(document).ready(function() {
             'excelHtml5',
             'csvHtml5',
             'pdfHtml5'
-        ]
+        ],
+        order: [[0, 'desc']]
     } );
     $('#view-targetfinance').DataTable( {
         dom: '<"top"Bfi>rt<"bottom"lp>',
@@ -77,7 +78,7 @@ $(document).ready(function() {
             'csvHtml5',
             'pdfHtml5'
         ],
-        order: [[0, 'asc']]
+        order: [[6, 'desc']]
     } );
     $('#view-progress').DataTable( {
         dom: '<"top"Bfi>rt<"bottom"lp>',
@@ -87,7 +88,7 @@ $(document).ready(function() {
             'csvHtml5',
             'pdfHtml5'
         ],
-        order: [[0, 'asc']]
+        order: [[4, 'desc']]
     } );
     
 } );

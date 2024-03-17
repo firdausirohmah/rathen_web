@@ -547,6 +547,18 @@ input[type=text] {
   right: 0;
   width: 600px;
 }
+.model_kerah {
+  /* flex: 60%; */
+  position: absolute;
+  right: 35px;
+  width: 600px;
+}
+.model_kerah .swiper-pagination{
+  bottom: 20px;
+}
+.model_kerah .swiper-pagination-bullet{
+  background: #fff;
+}
 
 .shipping__info {
   background: #f6f9fc;
@@ -1473,6 +1485,20 @@ textarea {
   .payment__shipping{
     position: relative;
   }
+  .model_kerah{
+    position: relative;
+    right: 0;
+    width: 330px;
+  }
+  .model_kerah .swiper-button-prev{
+    left: 1px;
+  }
+  .model_kerah .swiper-button-next{
+    right: 1px;
+  }
+  .model_kerah .swiper-pagination{
+    bottom: 10px;
+  }
   .col-unset-mobile{
     column-count: unset!important;
   }
@@ -1673,8 +1699,25 @@ textarea {
   .pt275{
     padding-top: 0;
   }
+  .field-bahan{
+    width: 33%;
+  }
   .payment__shipping{
     position: relative;
+  }
+  .model_kerah{
+    position: relative;
+    width: 400px;
+    right: 0;
+  }
+  .model_kerah .swiper-button-prev{
+    left: 5px;
+  }
+  .model_kerah .swiper-button-next{
+    right: 5px;
+  }
+  .model_kerah .swiper-pagination{
+    bottom: 14px;
   }
   .field.small{
     overflow-y: hidden;

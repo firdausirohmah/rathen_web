@@ -5,6 +5,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rathen</title>
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700|Open+Sans:400,600'>
   <!-- <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700|Open+Sans:400,600'> -->
@@ -137,21 +145,54 @@
                 
               </div>
           </div>
-          <div class="payment__shipping">
+          <div class="model_kerah">
             <div class="payment__title fw-6">
               <i class="icon icon-info"></i> Model Kerah
             </div>
             <div class="row">
-              <div class="image">
-                <div class="form-upload payment__type--cc">
-                  <img src="{{ asset('asset/images/KERAH.jpg')}}" alt="">
+              <div class="swiper img-kerah">
+                <div class="swiper-wrapper image ">
+                  <div class="swiper-slide">
+                    <img src="{{ asset('asset/images/kerah/modelC.jpeg')}}" alt="">
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="{{ asset('asset/images/kerah/modelO.jpeg')}}" alt="">
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="{{ asset('asset/images/kerah/modelV.jpeg')}}" alt="">
+                  </div>
                 </div>
-                
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
               </div>
             </div>
           </div>
           
         </div>
+        <div class="payment__info">
+          <div class="payment__cc">
+            <div class="form__cc">
+              <!-- <div class="swiper img-kerah">
+                <div class="swiper-wrapper image ">
+                  <div class="swiper-slide">
+                    <img src="{{ asset('asset/images/kerah/modelC.jpeg')}}" alt="" class="w-50">
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="{{ asset('asset/images/kerah/modelO.jpeg')}}" alt="" class="w-50">
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="{{ asset('asset/images/kerah/modelV.jpeg')}}" alt="" class="w-50">
+                  </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+              </div> -->
+            </div>
+          </div>
+        </div>
+        
         <div class="payment__info">
           <div class="payment__cc">
             <div class="form__cc">
@@ -329,6 +370,34 @@
             modal.style.display = "none";
           }
         };
+      </script>
+      <style>
+        .swiper {
+          width: auto;
+          height: auto;
+        }
+      </style>
+      <script>
+        const swiper = new Swiper('.img-kerah', {
+          // Optional parameters
+          loop: true,
+
+          // If we need pagination
+          pagination: {
+            el: '.swiper-pagination',
+          },
+
+          // Navigation arrows
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+
+          // And if we need scrollbar
+          scrollbar: {
+            el: '.swiper-scrollbar',
+          },
+        });
       </script>
 
 

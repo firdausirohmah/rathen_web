@@ -51,8 +51,11 @@
               <div class="row content-center">
                 <div class="col-md-12">
                   <h3 class="text-center font-weight-bold text-primary mt-2">INVOICE</h3>
-                  <p class="text-center"><small >No. 00178/inv-10/2023</small></p>
+                  <p class="text-center"><small >No. $th$bln$no_order/inv-$bln/$tahun</small></p>
                 </div>
+              </div>
+              <div class="row col-md-12 text-justify">
+                <div class="text-uppercase text-justify badge badge-dark w-auto m-1">{{$pesanan->kd_step}}</div>
               </div>
               <div class="row pb-2 p-2 text-center-mb" style="text-align:justify;">
                 <div class="col-md-6 mx-4 px-4">
